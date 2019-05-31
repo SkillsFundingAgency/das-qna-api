@@ -5,20 +5,20 @@
         "serviceName": {
             "type": "string"
         },
-        "appServicePlanResourceGroup": {
-            "type": "string"
-        },
         "customHostName": {
             "type": "string"
         },
         "certificateName": {
-            "type": "string"
+            "type": "string",
+            "defaultValue": ""
         },
         "keyVaultName": {
-            "type": "string"
+            "type": "string",
+            "defaultValue": ""
         },
         "keyVaultResourceGroup": {
-            "type": "string"
+            "type": "string",
+            "defaultValue": ""
         },
         "configurationStorageConnectionString": {
             "type": "securestring"
@@ -34,6 +34,14 @@
         },
         "loggingRedisKey": {
             "type": "securestring"
+        },
+        "aspSize": {
+            "type": "string",
+            "defaultValue": "1"
+        },
+        "aspInstances": {
+            "type": "int",
+            "defaultValue": 1
         }
     },
     "variables": {
@@ -58,13 +66,13 @@
                         "value": "[variables('appServicePlanName')]"
                     },
                     "aspLocation": {
-                        "value": "West Europe"
+                        "value": "[resourceGroup().location] "
                     },
                     "aspSize": {
-                        "value": "1"
+                        "value": "[parameters('aspSize')]"
                     },
                     "aspInstances": {
-                        "value": 1
+                        "value": "[parameters('aspInstances')]"
                     }
                 }
             }
@@ -73,6 +81,7 @@
             "apiVersion": "2017-05-10",
             "name": "app-service-certificate",
             "type": "Microsoft.Resources/deployments",
+            "condition": "[greater(length(parameters('certificateName')), 0)]",
             "properties": {
                 "mode": "Incremental",
                 "templateLink": {
@@ -110,7 +119,7 @@
                         "value": "[variables('appServicePlanName')]"
                     },
                     "appServicePlanResourceGroup": {
-                        "value": "[parameters('appServicePlanResourceGroup')]"
+                        "value": "[resourceGroup().name]"
                     },
                     "deployStagingSlot": {
                         "value": true
@@ -143,7 +152,7 @@
                         "value": "[parameters('customHostName')]"
                     },
                     "certificateThumbprint": {
-                        "value": "[reference('app-service-certificate').outputs.certificateThumbprint.value]"
+                        "value": "[if(greater(length(parameters('certificateName')), 0), reference('app-service-certificate').outputs.certificateThumbprint.value]"
                     }
                 }
             },
