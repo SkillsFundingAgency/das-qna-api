@@ -60,6 +60,7 @@ steps:
     command: publish
     publishWebProjects: false
     projects: src/SFA.DAS.Qna.Data/SFA.DAS.Qna.Data.csproj
+    arguments: '--configuration $(buildConfiguration) --output $(build.artifactstagingdirectory)/publish --no-restore  --no-build'
 
 - task: CopyFiles@2
   displayName: 'Copy Files to: $(build.artifactstagingdirectory)'
