@@ -7,8 +7,6 @@ namespace SFA.DAS.Qna.Data
     {
         public QnaDataContext(DbContextOptions<QnaDataContext> options) : base(options)
         {
-        }
-        
-        
+        }   
     }
 }
