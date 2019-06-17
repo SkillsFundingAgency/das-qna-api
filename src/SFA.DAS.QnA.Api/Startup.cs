@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -82,10 +83,7 @@ namespace SFA.DAS.QnA.Api
                 {
                     setup.Filters.Add(new AuthorizeFilter("default"));
                 }
-            });
-            
-            var logger = serviceProvider.GetService<ILogger<Startup>>();
-            logger.LogInformation("End of ConfigureServices");
+            }).SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
