@@ -42,13 +42,38 @@
         "aspInstances": {
             "type": "int",
             "defaultValue": 1
+        },
+        "sharedSqlServerName": {
+            "type": "string"
+        },
+        "sharedSqlResourceGroup": {
+            "type": "string"
+        },
+        "databaseSkuName": {
+            "type": "string",
+            "defaultValue": "S0"
+        },
+        "databaseTier": {
+            "type": "string",
+            "defaultValue": "Standard"
+        },
+        "logAnalyticsSubscriptionId": {
+            "type": "string",
+            "defaultValue": "[subscription().subscriptionId]"
+        },
+        "logAnalyticsResourceGroup": {
+            "type": "string"
+        },
+        "logAnalyticsWorkspaceName": {
+            "type": "string"
         }
     },
     "variables": {
         "deploymentUrlBase": "https://raw.githubusercontent.com/SkillsFundingAgency/das-platform-building-blocks/master/templates/",
         "resourceNamePrefix": "[toLower(concat('das-', parameters('resourceEnvironmentName'),'-', parameters('serviceName')))]",
         "appServiceName": "[concat(variables('resourceNamePrefix'), '-as')]",
-        "appServicePlanName": "[concat(variables('resourceNamePrefix'), '-asp')]"
+        "appServicePlanName": "[concat(variables('resourceNamePrefix'), '-asp')]",
+        "databaseName": "[concat(variables('resourceNamePrefix'), '-db')]"
     },
     "resources": [
         {
@@ -66,7 +91,7 @@
                         "value": "[variables('appServicePlanName')]"
                     },
                     "aspLocation": {
-                        "value": "[resourceGroup().location] "
+                        "value": "[resourceGroup().location]"
                     },
                     "aspSize": {
                         "value": "[parameters('aspSize')]"
@@ -145,6 +170,10 @@
                             {
                                 "name": "APPINSIGHTS_INSTRUMENTATIONKEY",
                                 "value": "[reference('app-insights').outputs.InstrumentationKey.value]"
+                            },
+                            {
+                                "name": "EnvironmentName",
+                                "value":  "[toUpper(parameters('environmentName'))]"
                             }
                         ]
                     },
@@ -181,6 +210,42 @@
                 }
             },
             "dependsOn": []
+        },
+        {
+            "apiVersion": "2017-05-10",
+            "name": "sqlDatabase",
+            "type": "Microsoft.Resources/deployments",
+            "resourceGroup": "[parameters('sharedSqlResourceGroup')]",
+            "properties": {
+                "mode": "Incremental",
+                "templateLink": {
+                    "uri": "[concat(variables('deploymentUrlBase'),'sql-database.json')]",
+                    "contentVersion": "1.0.0.0"
+                },
+                "parameters": {
+                    "databaseName": {
+                        "value": "[variables('databaseName')]"
+                    },
+                    "sqlServerName": {
+                        "value": "[parameters('sharedSqlServerName')]"
+                    },
+                    "databaseSkuName": {
+                        "value": "[parameters('databaseSkuName')]"
+                    },
+                    "databaseTier": {
+                        "value": "[parameters('databaseTier')]"
+                    },
+                    "logAnalyticsSubscriptionId": {
+                        "value": "[parameters('logAnalyticsSubscriptionId')]"
+                    },
+                    "logAnalyticsResourceGroup": {
+                        "value": "[parameters('logAnalyticsResourceGroup')]"
+                    },
+                    "logAnalyticsWorkspaceName": {
+                        "value": "[parameters('logAnalyticsWorkspaceName')]"
+                    }
+                }
+            }
         }
     ],
     "outputs": {
