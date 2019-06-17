@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using SFA.DAS.Qna.Data;
 using SFA.DAS.QnA.Application;
@@ -82,6 +83,9 @@ namespace SFA.DAS.QnA.Api
                     setup.Filters.Add(new AuthorizeFilter("default"));
                 }
             });
+            
+            var logger = serviceProvider.GetService<ILogger<Startup>>();
+            logger.LogInformation("End of ConfigureServices");
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
@@ -90,8 +94,18 @@ namespace SFA.DAS.QnA.Api
             {
                 app.UseDeveloperExceptionPage();
             }
+            else
+            {
+                app.UseHsts();
+                app.UseAuthentication();
+            }
 
-            app.Run(async (context) => { await context.Response.WriteAsync("Hello World!"); });
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute(
+                    name: "default",
+                    template: "api/{controller}/{action}/{id?}");
+            });
         }
     }
 }
