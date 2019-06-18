@@ -73,9 +73,27 @@
         "resourceNamePrefix": "[toLower(concat('das-', parameters('resourceEnvironmentName'),'-', parameters('serviceName')))]",
         "appServiceName": "[concat(variables('resourceNamePrefix'), '-as')]",
         "appServicePlanName": "[concat(variables('resourceNamePrefix'), '-asp')]",
-        "databaseName": "[concat(variables('resourceNamePrefix'), '-db')]"
+        "databaseName": "[concat(variables('resourceNamePrefix'), '-db')]",
+        "storageAccountName": "[concat('das', parameters('resourceEnvironmentName'), parameters('serviceName'), 'str' )]",
     },
     "resources": [
+        {
+            "apiVersion": "2017-05-10",
+            "name": "storage-account",
+            "type": "Microsoft.Resources/deployments",
+            "properties": {
+                "mode": "Incremental",
+                "templateLink": {
+                    "uri": "[concat(variables('deploymentUrlBase'), 'storage-account-arm.json')]",
+                    "contentVersion": "1.0.0.0"
+                },
+                "parameters": {
+                    "storageAccountName": {
+                        "value": "[variables('storageAccountName')]"
+                    }
+                }
+            }
+        },
         {
             "apiVersion": "2017-05-10",
             "name": "app-service-plan",
@@ -249,9 +267,17 @@
         }
     ],
     "outputs": {
-        "appServiceName": {
+        "AppServiceName": {
             "type": "string",
             "value": "[variables('appServiceName')]"
+        },
+        "StorageConnectionString": {
+            "type": "string",
+            "value": "[reference('storage-account').outputs.storageConnectionString.value]"
+        },
+        "DatabaseName": {
+            "type": "string",
+            "value": "[variables('databaseName')]"
         }
     }
 }
