@@ -72,7 +72,7 @@ namespace SFA.DAS.QnA.Api
                     });
             }
             
-            services.AddMediatR(typeof(Class1).Assembly);
+            services.AddMediatR(typeof(HandlerResponseBase).Assembly);
 
             services.AddDbContext<QnaDataContext>(options => options.UseSqlServer(config.Value.SqlConnectionstring));
 
