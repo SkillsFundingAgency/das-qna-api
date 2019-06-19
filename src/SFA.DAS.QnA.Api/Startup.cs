@@ -1,4 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Reflection;
 using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -15,6 +18,7 @@ using SFA.DAS.Qna.Data;
 using SFA.DAS.QnA.Application;
 using SFA.DAS.QnA.Configuration.Config;
 using SFA.DAS.QnA.Configuration.Infrastructure;
+using Swashbuckle.AspNetCore.Swagger;
 
 namespace SFA.DAS.QnA.Api
 {
@@ -84,6 +88,14 @@ namespace SFA.DAS.QnA.Api
                     setup.Filters.Add(new AuthorizeFilter("default"));
                 }
             }).SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new Info{Title = "QnA API", Version = "0.1"});
+                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+                c.IncludeXmlComments(xmlPath);
+            });
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
@@ -98,6 +110,19 @@ namespace SFA.DAS.QnA.Api
                 app.UseAuthentication();
             }
 
+            app.UseExceptionHandler("/errors/500");
+            app.UseStatusCodePagesWithReExecute("/errors/{0}");
+            
+            app.UseSwagger();
+
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "QnA API");
+                c.RoutePrefix = string.Empty;
+            });
+
+           
+            
             app.UseMvc(routes =>
             {
                 routes.MapRoute(

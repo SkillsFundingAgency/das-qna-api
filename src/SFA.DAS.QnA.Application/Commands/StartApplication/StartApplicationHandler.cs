@@ -11,7 +11,7 @@ using SFA.DAS.QnA.Data.Entities;
 
 namespace SFA.DAS.QnA.Application.Commands.StartApplication
 {
-    public class StartApplicationHandler : IRequestHandler<StartApplicationRequest, StartApplicationResponseBase>
+    public class StartApplicationHandler : IRequestHandler<StartApplicationRequest, StartApplicationResponse>
     {
         private readonly QnaDataContext _dataContext;
 
@@ -20,19 +20,22 @@ namespace SFA.DAS.QnA.Application.Commands.StartApplication
             _dataContext = dataContext;
         }
         
-        public async Task<StartApplicationResponseBase> Handle(StartApplicationRequest request, CancellationToken cancellationToken)
+        public async Task<StartApplicationResponse> Handle(StartApplicationRequest request, CancellationToken cancellationToken)
         {
             var newApplication = await CreateNewApplication(request, cancellationToken);
 
+            if (newApplication is null) return new StartApplicationResponse() {Success = false, Message = $"WorkflowType '{request.WorkflowType}' does not exist."};
+            
             await CopyWorkflows(cancellationToken, newApplication);
 
-            return new StartApplicationResponseBase { ApplicationId = Guid.NewGuid() };
+            return new StartApplicationResponse { ApplicationId = Guid.NewGuid() };
         }
 
         private async Task<Data.Entities.Application> CreateNewApplication(StartApplicationRequest request, CancellationToken cancellationToken)
         {
-            var latestWorkflow = await _dataContext.Workflows.FirstOrDefaultAsync(w => w.Type == request.Type && w.Status == "Live", cancellationToken);
-
+            var latestWorkflow = await _dataContext.Workflows.FirstOrDefaultAsync(w => w.Type == request.WorkflowType && w.Status == "Live", cancellationToken);
+            if (latestWorkflow is null) return null;
+            
             var newApplication = new Data.Entities.Application
             {
                 ApplicationStatus = ApplicationStatus.InProgress,
@@ -40,6 +43,8 @@ namespace SFA.DAS.QnA.Application.Commands.StartApplication
                 CreatedBy = request.UserReference,
                 CreatedAt = SystemTime.UtcNow()
             };
+
+            _dataContext.Applications.Add(newApplication);
 
             await _dataContext.SaveChangesAsync(cancellationToken);
             return newApplication;

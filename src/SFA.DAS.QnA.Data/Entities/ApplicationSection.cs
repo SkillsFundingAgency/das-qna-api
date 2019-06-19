@@ -3,8 +3,10 @@ using SFA.DAS.Qna.Data;
 
 namespace SFA.DAS.QnA.Data.Entities
 {
-    public class ApplicationSection : EntityBase
+    public class ApplicationSection 
     {
+        public Guid Id { get; set; }
+        public string Status { get; set; }
         public Guid ApplicationId { get; set; }
         public int SectionId { get; set; }
         public int SequenceId { get; set; }
