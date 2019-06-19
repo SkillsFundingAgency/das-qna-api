@@ -74,7 +74,7 @@
         "appServiceName": "[concat(variables('resourceNamePrefix'), '-as')]",
         "appServicePlanName": "[concat(variables('resourceNamePrefix'), '-asp')]",
         "databaseName": "[concat(variables('resourceNamePrefix'), '-db')]",
-        "storageAccountName": "[concat('das', parameters('resourceEnvironmentName'), parameters('serviceName'), 'str' )]",
+        "storageAccountName": "[concat('das', parameters('resourceEnvironmentName'), parameters('serviceName'), 'str' )]"
     },
     "resources": [
         {
