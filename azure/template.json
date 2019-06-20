@@ -74,7 +74,7 @@
         "appServiceName": "[concat(variables('resourceNamePrefix'), '-as')]",
         "appServicePlanName": "[concat(variables('resourceNamePrefix'), '-asp')]",
         "databaseName": "[concat(variables('resourceNamePrefix'), '-db')]",
-        "storageAccountName": "[concat('das', parameters('resourceEnvironmentName'), parameters('serviceName'), 'str' )]",
+        "storageAccountName": "[tolower(concat('das', parameters('resourceEnvironmentName'), parameters('serviceName'), 'str' ))]"
     },
     "resources": [
         {
@@ -109,7 +109,7 @@
                         "value": "[variables('appServicePlanName')]"
                     },
                     "aspLocation": {
-                        "value": "[resourceGroup().location]"
+                        "value": "West Europe"
                     },
                     "aspSize": {
                         "value": "[parameters('aspSize')]"
