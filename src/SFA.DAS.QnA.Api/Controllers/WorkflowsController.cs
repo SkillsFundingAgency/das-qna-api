@@ -9,6 +9,7 @@ using SFA.DAS.QnA.Data.Entities;
 namespace SFA.DAS.QnA.Api.Controllers
 {
     [Route("/workflows")]
+    [Produces("application/json")]
     public class WorkflowsController : Controller
     {
         private readonly IMediator _mediator;

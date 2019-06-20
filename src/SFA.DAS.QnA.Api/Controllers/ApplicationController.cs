@@ -9,6 +9,7 @@ using SFA.DAS.QnA.Application.Commands.StartApplication;
 namespace SFA.DAS.QnA.Api.Controllers
 {
     [Route("/applications")]
+    [Produces("application/json")]
     public class ApplicationController : Controller
     {
         private readonly IMediator _mediator;

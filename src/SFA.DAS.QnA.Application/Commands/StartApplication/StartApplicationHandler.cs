@@ -28,7 +28,7 @@ namespace SFA.DAS.QnA.Application.Commands.StartApplication
             
             await CopyWorkflows(cancellationToken, newApplication);
 
-            return new StartApplicationResponse { ApplicationId = Guid.NewGuid() };
+            return new StartApplicationResponse { ApplicationId = newApplication.Id };
         }
 
         private async Task<Data.Entities.Application> CreateNewApplication(StartApplicationRequest request, CancellationToken cancellationToken)
