@@ -8,6 +8,7 @@ using SFA.DAS.QnA.Application.Commands.StartApplication;
 
 namespace SFA.DAS.QnA.Api.Controllers
 {
+    [Route("/applications")]
     public class ApplicationController : Controller
     {
         private readonly IMediator _mediator;
@@ -24,7 +25,7 @@ namespace SFA.DAS.QnA.Api.Controllers
         /// <returns>The newly created application's Id</returns>
         /// <response code="201">Returns the newly created application's Id</response>
         /// <response code="400">If the WorkflowType does not exist</response>
-        [HttpPost("/Application/Start")]
+        [HttpPost("start")]
         [ProducesResponseType(201)]
         [ProducesResponseType(400)]
         public async Task<ActionResult> Start([FromBody] StartApplicationRequest request)
@@ -39,7 +40,7 @@ namespace SFA.DAS.QnA.Api.Controllers
             return CreatedAtAction("Application", "Application", new {newApplication.ApplicationId}, new {newApplication.ApplicationId});
         }
 
-        [HttpGet("/Application/{applicationId}")]
+        [HttpGet("{applicationId}")]
         public async Task<ActionResult> Application(Guid applicationId)
         {
             return Ok(new {ApplicationId = applicationId});
