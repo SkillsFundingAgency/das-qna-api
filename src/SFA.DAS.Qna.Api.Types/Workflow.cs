@@ -1,8 +1,8 @@
 using System;
 
-namespace SFA.DAS.QnA.Application.Queries.GetWorkflows
+namespace SFA.DAS.Qna.Api.Types
 {
-    public class WorkflowResponse
+    public class Workflow
     {
         public Guid Id { get; set; }
         public string Description { get; set; }

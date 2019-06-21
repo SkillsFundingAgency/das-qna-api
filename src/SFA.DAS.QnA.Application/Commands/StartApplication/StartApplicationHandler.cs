@@ -6,12 +6,13 @@ using System.Web;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
+using SFA.DAS.Qna.Api.Types;
 using SFA.DAS.Qna.Data;
 using SFA.DAS.QnA.Data.Entities;
 
 namespace SFA.DAS.QnA.Application.Commands.StartApplication
 {
-    public class StartApplicationHandler : IRequestHandler<StartApplicationRequest, StartApplicationResponse>
+    public class StartApplicationHandler : IRequestHandler<StartApplicationRequest, HandlerResponse<StartApplicationResponse>>
     {
         private readonly QnaDataContext _dataContext;
 
@@ -20,15 +21,15 @@ namespace SFA.DAS.QnA.Application.Commands.StartApplication
             _dataContext = dataContext;
         }
         
-        public async Task<StartApplicationResponse> Handle(StartApplicationRequest request, CancellationToken cancellationToken)
+        public async Task<HandlerResponse<StartApplicationResponse>> Handle(StartApplicationRequest request, CancellationToken cancellationToken)
         {
             var newApplication = await CreateNewApplication(request, cancellationToken);
 
-            if (newApplication is null) return new StartApplicationResponse() {Success = false, Message = $"WorkflowType '{request.WorkflowType}' does not exist."};
+            if (newApplication is null) return new HandlerResponse<StartApplicationResponse>(false, $"WorkflowType '{request.WorkflowType}' does not exist.");
             
             await CopyWorkflows(cancellationToken, newApplication);
 
-            return new StartApplicationResponse { ApplicationId = Guid.NewGuid() };
+            return new HandlerResponse<StartApplicationResponse>(new StartApplicationResponse {ApplicationId = newApplication.Id});
         }
 
         private async Task<Data.Entities.Application> CreateNewApplication(StartApplicationRequest request, CancellationToken cancellationToken)
@@ -76,13 +77,11 @@ namespace SFA.DAS.QnA.Application.Commands.StartApplication
                 LinkTitle = sec.LinkTitle,
                 Status = sec.Status,
                 DisplayType = sec.DisplayType
-            });
-            
-            await _dataContext.ApplicationSections.AddRangeAsync(newApplicationSections, cancellationToken);
+            }).ToList();
             
             var assets = await _dataContext.Assets.ToListAsync(cancellationToken: cancellationToken);
             
-            foreach (var applicationSection in workflowSections)
+            foreach (var applicationSection in newApplicationSections)
             {
                 var qnADataJson = JsonConvert.SerializeObject(applicationSection.QnAData);
                 foreach (var asset in assets)
@@ -92,6 +91,8 @@ namespace SFA.DAS.QnA.Application.Commands.StartApplication
 
                 applicationSection.QnAData = JsonConvert.DeserializeObject<QnAData>(qnADataJson);
             }
+            
+            await _dataContext.ApplicationSections.AddRangeAsync(newApplicationSections, cancellationToken);
             
             await _dataContext.SaveChangesAsync(cancellationToken);
         }

@@ -1,7 +1,9 @@
+using System.Diagnostics.CodeAnalysis;
 using Newtonsoft.Json;
 
 namespace SFA.DAS.QnA.Api.Infrastructure
 {
+    [ExcludeFromCodeCoverage]
     public class ApiError
     {
         public int StatusCode { get; private set; }

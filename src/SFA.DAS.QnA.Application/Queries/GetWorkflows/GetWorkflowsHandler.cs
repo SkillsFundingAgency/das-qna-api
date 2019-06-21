@@ -7,10 +7,11 @@ using MediatR;
 using Microsoft.EntityFrameworkCore;
 using SFA.DAS.Qna.Data;
 using SFA.DAS.QnA.Data.Entities;
+using Workflow = SFA.DAS.Qna.Api.Types.Workflow;
 
 namespace SFA.DAS.QnA.Application.Queries.GetWorkflows
 {
-    public class GetWorkflowsHandler : IRequestHandler<GetWorkflowsRequest, List<WorkflowResponse>>
+    public class GetWorkflowsHandler : IRequestHandler<GetWorkflowsRequest, List<Workflow>>
     {
         private readonly QnaDataContext _dataContext;
         private readonly IMapper _mapper;
@@ -21,11 +22,11 @@ namespace SFA.DAS.QnA.Application.Queries.GetWorkflows
             _mapper = mapper;
         }
         
-        public async Task<List<WorkflowResponse>> Handle(GetWorkflowsRequest request, CancellationToken cancellationToken)
+        public async Task<List<Workflow>> Handle(GetWorkflowsRequest request, CancellationToken cancellationToken)
         {
             var workflows = await _dataContext.Workflows.Where(w => w.Status == WorkflowStatus.Live).ToListAsync(cancellationToken: cancellationToken);
 
-            var responses =  _mapper.Map<List<WorkflowResponse>>(workflows);
+            var responses =  _mapper.Map<List<Workflow>>(workflows);
             
             return responses;
         }
