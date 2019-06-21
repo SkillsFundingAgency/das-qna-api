@@ -1,7 +1,16 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
         <TargetFramework>netcoreapp2.2</TargetFramework>
     </PropertyGroup>
 
+    <ItemGroup>
+      <PackageReference Include="AutoMapper" Version="8.1.1" />
+      <PackageReference Include="MediatR" Version="7.0.0" />
+      <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\SFA.DAS.Qna.Data\SFA.DAS.QnA.Data.csproj" />
+    </ItemGroup>
 </Project>
