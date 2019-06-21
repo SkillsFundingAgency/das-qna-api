@@ -29,7 +29,7 @@ namespace SFA.DAS.QnA.Api.UnitTests.SequencesControllerTests.GetSequences
 
             var result = await controller.GetSequences(Guid.NewGuid());
 
-            result.Result.Should().BeOfType<NotFoundResult>();
+            result.Result.Should().BeOfType<NotFoundObjectResult>();
         }
     }
 }

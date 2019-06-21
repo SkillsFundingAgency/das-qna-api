@@ -4,8 +4,10 @@ using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using SFA.DAS.QnA.Api.Infrastructure;
 using SFA.DAS.Qna.Api.Types;
 using SFA.DAS.QnA.Application.Queries.Sequences.GetCurrentSequence;
+using SFA.DAS.QnA.Application.Queries.Sequences.GetSequence;
 using SFA.DAS.QnA.Application.Queries.Sequences.GetSequences;
 
 namespace SFA.DAS.QnA.Api.Controllers
@@ -15,7 +17,7 @@ namespace SFA.DAS.QnA.Api.Controllers
     public class SequencesController : Controller
     {
         private readonly IMediator _mediator;
-        
+
         public SequencesController(IMediator mediator)
         {
             _mediator = mediator;
@@ -35,12 +37,12 @@ namespace SFA.DAS.QnA.Api.Controllers
         public async Task<ActionResult<List<Sequence>>> GetSequences(Guid applicationId)
         {
             var sequences = await _mediator.Send(new GetSequencesRequest(applicationId), CancellationToken.None);
-            if (!sequences.Success) return NotFound();
+            if (!sequences.Success) return NotFound(new NotFoundError(sequences.Message));
             if (sequences.Value.Count == 0) return NoContent();
-            
+
             return sequences.Value;
         }
-        
+
         /// <summary>
         /// Returns the Application's currently active Sequence
         /// </summary>
@@ -55,10 +57,28 @@ namespace SFA.DAS.QnA.Api.Controllers
         public async Task<ActionResult<Sequence>> GetCurrentSequence(Guid applicationId)
         {
             var sequence = await _mediator.Send(new GetCurrentSequenceRequest(applicationId), CancellationToken.None);
-            if (!sequence.Success) return NotFound();
+            if (!sequence.Success) return NotFound(new NotFoundError(sequence.Message));
             if (sequence.Value == null) return NoContent();
-            
+
             return sequence.Value;
         }
+        
+        /// <summary>
+        /// Returns the requested Sequence
+        /// </summary>
+        /// <returns>The requested Sequence</returns>
+        /// <response code="200">Returns the requested sequence</response>
+        /// <response code="404">If the ApplicationId or SequenceId are not found</response>
+        [HttpGet("{applicationId}/sequences/{sequenceId}")]
+        [ProducesResponseType(200)]
+        [ProducesResponseType(404)]
+        public async Task<ActionResult<Sequence>> GetSequence(Guid applicationId, Guid sequenceId)
+        {
+            var sequence = await _mediator.Send(new GetSequenceRequest(applicationId, sequenceId), CancellationToken.None);
+            if (!sequence.Success) return NotFound(new NotFoundError(sequence.Message));
+
+            return sequence.Value;
+        }
+        
     }
 }

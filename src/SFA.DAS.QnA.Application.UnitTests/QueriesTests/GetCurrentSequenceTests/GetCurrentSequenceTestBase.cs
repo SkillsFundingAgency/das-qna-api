@@ -33,6 +33,9 @@ namespace SFA.DAS.QnA.Application.UnitTests.QueriesTests.GetCurrentSequenceTests
                 new ApplicationSequence {ApplicationId = Guid.NewGuid(), IsActive = true, SequenceId = 1}
             });
 
+
+            await context.Applications.AddAsync(new Data.Entities.Application() {Id = ApplicationId});
+            
             await context.SaveChangesAsync();
             
             var mapper = new Mapper(new MapperConfiguration(config => { config.AddMaps(AppDomain.CurrentDomain.GetAssemblies()); }));
