@@ -190,7 +190,7 @@
                                 "value": "[reference('app-insights').outputs.InstrumentationKey.value]"
                             },
                             {
-                                "name": "EnvironmentName",
+                                "name": "Environment",
                                 "value":  "[toUpper(parameters('environmentName'))]"
                             },
                             {
