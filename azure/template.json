@@ -190,8 +190,25 @@
                                 "value": "[reference('app-insights').outputs.InstrumentationKey.value]"
                             },
                             {
-                                "name": "EnvironmentName",
+                                "name": "Environment",
                                 "value":  "[toUpper(parameters('environmentName'))]"
+                            },
+                            {
+                                "name": "ConfigNames",
+                                "value":  "SFA.DAS.QnA.Api"
+                            },
+                            {
+                                "name": "AllowedHosts",
+                                "value": "*"
+                            }
+                        ]
+                    },
+                    "appServiceConnectionStrings": {
+                        "value": [
+                            {
+                                "name": "RedisLogging",
+                                "connectionString": "[parameters('loggingRedisConnectionString')]",
+                                "type": "Custom"
                             }
                         ]
                     },
