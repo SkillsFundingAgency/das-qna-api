@@ -26,6 +26,8 @@ namespace SFA.DAS.QnA.Application.UnitTests.QueriesTests.GetSequencesTests
             var context = new QnaDataContext(dbContextOptions);
 
             ApplicationId = Guid.NewGuid();
+
+            context.Applications.Add(new Data.Entities.Application {Id = ApplicationId});
             
             context.ApplicationSequences.AddRange(new[]
             {

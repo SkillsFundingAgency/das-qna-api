@@ -14,7 +14,7 @@ namespace SFA.DAS.QnA.Application.UnitTests.QueriesTests.GetCurrentSequenceTests
         {
             var results = await Handler.Handle(new GetCurrentSequenceRequest(Guid.NewGuid()), CancellationToken.None);
 
-            results.Should().BeNull();
+            results.Value.Should().BeNull();
         }
     }
 }

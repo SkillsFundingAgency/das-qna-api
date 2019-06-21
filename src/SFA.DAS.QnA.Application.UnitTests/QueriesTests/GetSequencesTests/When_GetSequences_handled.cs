@@ -13,7 +13,7 @@ namespace SFA.DAS.QnA.Application.UnitTests.QueriesTests.GetSequencesTests
         {
             var results = await Handler.Handle(new GetSequencesRequest(ApplicationId), CancellationToken.None);
 
-            results.Count.Should().Be(2);
+            results.Value.Count.Should().Be(2);
         }
     }
 }

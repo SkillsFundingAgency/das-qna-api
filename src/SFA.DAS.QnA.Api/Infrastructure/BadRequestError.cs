@@ -1,7 +1,9 @@
+using System.Diagnostics.CodeAnalysis;
 using System.Net;
 
 namespace SFA.DAS.QnA.Api.Infrastructure
 {
+    [ExcludeFromCodeCoverage]
     public class BadRequestError : ApiError
     {
         public BadRequestError()

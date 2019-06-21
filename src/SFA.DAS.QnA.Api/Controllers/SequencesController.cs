@@ -4,7 +4,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using SFA.DAS.QnA.Application.Queries.Sequences;
+using SFA.DAS.Qna.Api.Types;
 using SFA.DAS.QnA.Application.Queries.Sequences.GetCurrentSequence;
 using SFA.DAS.QnA.Application.Queries.Sequences.GetSequences;
 
@@ -30,11 +30,13 @@ namespace SFA.DAS.QnA.Api.Controllers
         [HttpGet("{applicationId}/sequences")]
         [ProducesResponseType(200)]
         [ProducesResponseType(204)]
-        public async Task<ActionResult<List<SequenceResponse>>> GetSequences(Guid applicationId)
+        public async Task<ActionResult<List<Sequence>>> GetSequences(Guid applicationId)
         {
             var sequences = await _mediator.Send(new GetSequencesRequest(applicationId), CancellationToken.None);
-            if (sequences.Count == 0) return NoContent();
-            return sequences;
+            if (!sequences.Success) return NotFound();
+            if (sequences.Value.Count == 0) return NoContent();
+            
+            return sequences.Value;
         }
         
         /// <summary>
@@ -46,11 +48,13 @@ namespace SFA.DAS.QnA.Api.Controllers
         [HttpGet("{applicationId}/sequences/current")]
         [ProducesResponseType(200)]
         [ProducesResponseType(204)]
-        public async Task<ActionResult<SequenceResponse>> GetCurrentSequence(Guid applicationId)
+        public async Task<ActionResult<Sequence>> GetCurrentSequence(Guid applicationId)
         {
-            var sequences = await _mediator.Send(new GetCurrentSequenceRequest(applicationId), CancellationToken.None);
+            var sequence = await _mediator.Send(new GetCurrentSequenceRequest(applicationId), CancellationToken.None);
+            if (!sequence.Success) return NotFound();
+            if (sequence.Value == null) return NoContent();
             
-            return sequences;
+            return sequence.Value;
         }
     }
 }

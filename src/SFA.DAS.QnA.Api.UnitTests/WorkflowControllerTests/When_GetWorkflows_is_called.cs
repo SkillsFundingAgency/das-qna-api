@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 using NSubstitute;
 using NUnit.Framework;
 using SFA.DAS.QnA.Api.Controllers;
+using SFA.DAS.Qna.Api.Types;
 using SFA.DAS.QnA.Application.Queries.GetWorkflows;
 
 namespace SFA.DAS.QnA.Api.UnitTests.WorkflowControllerTests
@@ -22,7 +23,7 @@ namespace SFA.DAS.QnA.Api.UnitTests.WorkflowControllerTests
 
             var workflowId = Guid.NewGuid();
 
-            var workflowResponse = new WorkflowResponse()
+            var workflowResponse = new Workflow()
             {
                 Description = "Workflow 1",
                 Id = workflowId,
@@ -30,7 +31,7 @@ namespace SFA.DAS.QnA.Api.UnitTests.WorkflowControllerTests
                 Version = "1"
             };
             mediator.Send(Arg.Any<GetWorkflowsRequest>(), Arg.Any<CancellationToken>())
-                .Returns(new List<WorkflowResponse>
+                .Returns(new List<Workflow>
                 {
                     workflowResponse
                 });
@@ -39,9 +40,9 @@ namespace SFA.DAS.QnA.Api.UnitTests.WorkflowControllerTests
 
             var result = await workflowController.GetWorkflows();
 
-            result.Should().BeOfType<ActionResult<List<WorkflowResponse>>>();
-            result.As<ActionResult<List<WorkflowResponse>>>().Value.Count.Should().Be(1);
-            result.As<ActionResult<List<WorkflowResponse>>>().Value.First().Should().BeEquivalentTo(workflowResponse);
+            result.Value.Should().BeOfType<List<Workflow>>();
+            result.Value.Count.Should().Be(1);
+            result.Value.First().Should().BeEquivalentTo(workflowResponse);
         }
     }
 }

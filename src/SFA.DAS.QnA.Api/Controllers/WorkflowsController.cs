@@ -2,9 +2,8 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using SFA.DAS.Qna.Api.Types;
 using SFA.DAS.QnA.Application.Queries.GetWorkflows;
-using SFA.DAS.Qna.Data;
-using SFA.DAS.QnA.Data.Entities;
 
 namespace SFA.DAS.QnA.Api.Controllers
 {
@@ -25,7 +24,7 @@ namespace SFA.DAS.QnA.Api.Controllers
         /// <returns>An array of workflows</returns>
         [HttpGet]
         [ProducesResponseType(200)]
-        public async Task<ActionResult<List<WorkflowResponse>>> GetWorkflows()
+        public async Task<ActionResult<List<Workflow>>> GetWorkflows()
         {
             var workflows = await _mediator.Send(new GetWorkflowsRequest());
             return workflows;

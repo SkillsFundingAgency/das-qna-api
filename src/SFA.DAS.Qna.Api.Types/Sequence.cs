@@ -1,8 +1,8 @@
 using System;
 
-namespace SFA.DAS.QnA.Application.Queries.Sequences
+namespace SFA.DAS.Qna.Api.Types
 {
-    public class SequenceResponse
+    public class Sequence
     {
         public Guid Id { get; set; }
         public string Status { get; set; }

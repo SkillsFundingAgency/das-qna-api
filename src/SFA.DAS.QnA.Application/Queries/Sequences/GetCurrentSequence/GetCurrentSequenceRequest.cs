@@ -1,10 +1,10 @@
 using System;
 using MediatR;
-using SFA.DAS.QnA.Application.Queries.Sequences.GetSequences;
+using SFA.DAS.Qna.Api.Types;
 
 namespace SFA.DAS.QnA.Application.Queries.Sequences.GetCurrentSequence
 {
-    public class GetCurrentSequenceRequest : IRequest<SequenceResponse>
+    public class GetCurrentSequenceRequest : IRequest<HandlerResponse<Sequence>>
     {
         public Guid ApplicationId { get; }
 

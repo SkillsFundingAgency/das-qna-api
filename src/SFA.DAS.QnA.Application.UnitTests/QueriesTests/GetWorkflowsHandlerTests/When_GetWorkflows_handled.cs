@@ -6,9 +6,11 @@ using AutoMapper;
 using FluentAssertions;
 using Microsoft.EntityFrameworkCore;
 using NUnit.Framework;
+using SFA.DAS.Qna.Api.Types;
 using SFA.DAS.QnA.Application.Queries.GetWorkflows;
 using SFA.DAS.Qna.Data;
 using SFA.DAS.QnA.Data.Entities;
+using Workflow = SFA.DAS.Qna.Api.Types.Workflow;
 
 namespace SFA.DAS.QnA.Application.UnitTests.QueriesTests.GetWorkflowsHandlerTests
 {
@@ -26,9 +28,9 @@ namespace SFA.DAS.QnA.Application.UnitTests.QueriesTests.GetWorkflowsHandlerTest
             
             context.Workflows.AddRange(new []
             {
-                new Workflow(){Id = Guid.NewGuid(), Status = WorkflowStatus.Live}, 
-                new Workflow(){Id = Guid.NewGuid()}, 
-                new Workflow(){Id = Guid.NewGuid(), Status = WorkflowStatus.Live}, 
+                new Data.Entities.Workflow(){Id = Guid.NewGuid(), Status = WorkflowStatus.Live}, 
+                new Data.Entities.Workflow(){Id = Guid.NewGuid()}, 
+                new Data.Entities.Workflow(){Id = Guid.NewGuid(), Status = WorkflowStatus.Live}, 
             });
 
             await context.SaveChangesAsync();
@@ -39,7 +41,7 @@ namespace SFA.DAS.QnA.Application.UnitTests.QueriesTests.GetWorkflowsHandlerTest
 
             var results = await handler.Handle(new GetWorkflowsRequest(), CancellationToken.None);
 
-            results.Should().BeOfType<List<WorkflowResponse>>();
+            results.Should().BeOfType<List<Workflow>>();
             results.Count.Should().Be(2);
         }
     }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Reflection;
 using AutoMapper;
@@ -23,6 +24,7 @@ using Swashbuckle.AspNetCore.Swagger;
 
 namespace SFA.DAS.QnA.Api
 {
+    [ExcludeFromCodeCoverage]
     public class Startup
     {
         private readonly IHostingEnvironment _hostingEnvironment;
@@ -78,8 +80,7 @@ namespace SFA.DAS.QnA.Api
             }
 
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
-            
-            services.AddMediatR(typeof(HandlerResponseBase).Assembly);
+            services.AddMediatR(AppDomain.CurrentDomain.GetAssemblies());
 
             services.AddDbContext<QnaDataContext>(options => options.UseSqlServer(config.Value.SqlConnectionstring));
 

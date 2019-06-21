@@ -29,7 +29,7 @@ namespace SFA.DAS.QnA.Api.Controllers
         [HttpPost("start")]
         [ProducesResponseType(201)]
         [ProducesResponseType(400)]
-        public async Task<ActionResult> Start([FromBody] StartApplicationRequest request)
+        public async Task<ActionResult> StartApplication([FromBody] StartApplicationRequest request)
         {
             var newApplication = await _mediator.Send(request);
 
@@ -38,13 +38,7 @@ namespace SFA.DAS.QnA.Api.Controllers
                 return BadRequest(new BadRequestError(newApplication.Message));
             }
             
-            return CreatedAtAction("Application", "Application", new {newApplication.ApplicationId}, new {newApplication.ApplicationId});
-        }
-
-        [HttpGet("{applicationId}")]
-        public async Task<ActionResult> Application(Guid applicationId)
-        {
-            return Ok(new {ApplicationId = applicationId});
+            return CreatedAtAction("GetCurrentSequence", "Sequences", new {newApplication.Value.ApplicationId}, new {newApplication.Value.ApplicationId});
         }
     }
 }
