@@ -66,6 +66,9 @@
         },
         "logAnalyticsWorkspaceName": {
             "type": "string"
+        },
+        "ConfigNames": {
+            "type": "string"
         }
     },
     "variables": {
@@ -192,6 +195,14 @@
                             {
                                 "name": "EnvironmentName",
                                 "value":  "[toUpper(parameters('environmentName'))]"
+                            },
+                            {
+                                "name": "ConfigNames",
+                                "value":  "SFA.DAS.QnA.Api"
+                            },
+                            {
+                                "name": "AllowedHosts",
+                                "value": "*"
                             }
                         ]
                     },
