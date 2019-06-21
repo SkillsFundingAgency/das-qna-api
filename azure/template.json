@@ -66,9 +66,6 @@
         },
         "logAnalyticsWorkspaceName": {
             "type": "string"
-        },
-        "ConfigNames": {
-            "type": "string"
         }
     },
     "variables": {
