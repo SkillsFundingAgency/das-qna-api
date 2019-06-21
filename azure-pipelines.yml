@@ -36,7 +36,7 @@ steps:
 - task: DotNetCoreCLI@2
   displayName: dotnet build
   inputs:
-    projects: src/**/*.csproj'
+    projects: 'src/**/*.csproj'
     arguments: '--configuration $(buildConfiguration)  --no-restore'
     
 - task: DotNetCoreCLI@2
