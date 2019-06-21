@@ -7,13 +7,13 @@ namespace SFA.DAS.QnA.Api.Infrastructure
     public class BadRequestError : ApiError
     {
         public BadRequestError()
-            : base(400, HttpStatusCode.InternalServerError.ToString())
+            : base(400, HttpStatusCode.BadRequest.ToString())
         {
         }
 
 
         public BadRequestError(string message)
-            : base(400, HttpStatusCode.InternalServerError.ToString(), message)
+            : base(400, HttpStatusCode.BadRequest.ToString(), message)
         {
         }
     }

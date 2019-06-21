@@ -5,7 +5,6 @@ using System.Threading.Tasks;
 using AutoMapper;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
-using SFA.DAS.Qna.Api.Types;
 using SFA.DAS.Qna.Data;
 using SFA.DAS.QnA.Data.Entities;
 using Workflow = SFA.DAS.Qna.Api.Types.Workflow;

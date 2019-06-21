@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 using AutoMapper;
 using MediatR;
@@ -79,7 +80,7 @@ namespace SFA.DAS.QnA.Api
                     });
             }
 
-            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+            services.AddAutoMapper(typeof(HandlerResponse<>).Assembly);
             services.AddMediatR(AppDomain.CurrentDomain.GetAssemblies());
 
             services.AddDbContext<QnaDataContext>(options => options.UseSqlServer(config.Value.SqlConnectionstring));

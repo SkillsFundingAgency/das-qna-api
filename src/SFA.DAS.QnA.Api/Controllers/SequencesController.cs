@@ -27,9 +27,11 @@ namespace SFA.DAS.QnA.Api.Controllers
         /// <returns>An array of Sequences</returns>
         /// <response code="200">Returns the Application's Sequences</response>
         /// <response code="204">If there are no Sequences for the given Application Id</response>
+        /// <response code="404">If there is no Application for the given Application Id</response>
         [HttpGet("{applicationId}/sequences")]
         [ProducesResponseType(200)]
         [ProducesResponseType(204)]
+        [ProducesResponseType(404)]
         public async Task<ActionResult<List<Sequence>>> GetSequences(Guid applicationId)
         {
             var sequences = await _mediator.Send(new GetSequencesRequest(applicationId), CancellationToken.None);
@@ -45,9 +47,11 @@ namespace SFA.DAS.QnA.Api.Controllers
         /// <returns>The active sequence</returns>
         /// <response code="200">Returns the active sequence</response>
         /// <response code="204">If there is no current sequence for the given Application Id</response>
+        /// <response code="404">If there is no Application for the given Application Id</response>
         [HttpGet("{applicationId}/sequences/current")]
         [ProducesResponseType(200)]
         [ProducesResponseType(204)]
+        [ProducesResponseType(404)]
         public async Task<ActionResult<Sequence>> GetCurrentSequence(Guid applicationId)
         {
             var sequence = await _mediator.Send(new GetCurrentSequenceRequest(applicationId), CancellationToken.None);
