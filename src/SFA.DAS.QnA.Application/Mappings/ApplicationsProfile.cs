@@ -13,8 +13,8 @@ namespace SFA.DAS.QnA.Application.Mappings
         public ApplicationsProfile()
         {
             CreateMap<Data.Entities.Workflow, Workflow>();
-            CreateMap<ApplicationSequence, Sequence>()
-                .ForMember(response => response.SequenceNumber, opt => opt.MapFrom(applicationSequence => applicationSequence.SequenceId));
+            CreateMap<ApplicationSequence, Sequence>();
+            CreateMap<ApplicationSection, Section>();
         }
     }
 }

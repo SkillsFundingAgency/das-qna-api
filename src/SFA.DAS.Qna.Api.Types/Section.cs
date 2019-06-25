@@ -1,9 +1,9 @@
 using System;
 using SFA.DAS.Qna.Data;
 
-namespace SFA.DAS.QnA.Data.Entities
+namespace SFA.DAS.Qna.Api.Types
 {
-    public class ApplicationSection 
+    public class Section
     {
         public Guid Id { get; set; }
         public Guid ApplicationId { get; set; }
@@ -11,9 +11,9 @@ namespace SFA.DAS.QnA.Data.Entities
         public int SectionNo { get; set; }
         public QnAData QnAData { get; set; }
         public string Status { get; set; }
+        
         public string Title { get; set; }
         public string LinkTitle { get; set; }
         public string DisplayType { get; set; }
-        public Guid SequenceId { get; set; }
     }
 }

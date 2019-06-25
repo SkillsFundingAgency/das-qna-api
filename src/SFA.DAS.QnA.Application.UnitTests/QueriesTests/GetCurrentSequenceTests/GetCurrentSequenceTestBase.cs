@@ -28,11 +28,14 @@ namespace SFA.DAS.QnA.Application.UnitTests.QueriesTests.GetCurrentSequenceTests
             
             context.ApplicationSequences.AddRange(new[]
             {
-                new ApplicationSequence {ApplicationId = ApplicationId, IsActive = false, SequenceId = 1},
-                new ApplicationSequence {ApplicationId = ApplicationId, IsActive = true, SequenceId = 2},
-                new ApplicationSequence {ApplicationId = Guid.NewGuid(), IsActive = true, SequenceId = 1}
+                new ApplicationSequence {ApplicationId = ApplicationId, IsActive = false, SequenceNo = 1},
+                new ApplicationSequence {ApplicationId = ApplicationId, IsActive = true, SequenceNo = 2},
+                new ApplicationSequence {ApplicationId = Guid.NewGuid(), IsActive = true, SequenceNo = 1}
             });
 
+
+            await context.Applications.AddAsync(new Data.Entities.Application() {Id = ApplicationId});
+            
             await context.SaveChangesAsync();
             
             var mapper = new Mapper(new MapperConfiguration(config => { config.AddMaps(AppDomain.CurrentDomain.GetAssemblies()); }));

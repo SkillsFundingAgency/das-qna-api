@@ -25,7 +25,7 @@ namespace SFA.DAS.QnA.Api.UnitTests.SequencesControllerTests.GetCurrentSequence
             
             var result = await Controller.GetCurrentSequence(Guid.NewGuid());
 
-            result.Result.Should().BeOfType<NotFoundResult>();
+            result.Result.Should().BeOfType<NotFoundObjectResult>();
         }
     }
 }

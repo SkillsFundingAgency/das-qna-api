@@ -31,9 +31,9 @@ namespace SFA.DAS.QnA.Application.UnitTests.QueriesTests.GetSequencesTests
             
             context.ApplicationSequences.AddRange(new[]
             {
-                new ApplicationSequence {ApplicationId = ApplicationId, IsActive = false, SequenceId = 1},
-                new ApplicationSequence {ApplicationId = ApplicationId, IsActive = true, SequenceId = 2},
-                new ApplicationSequence {ApplicationId = Guid.NewGuid(), IsActive = true, SequenceId = 1}
+                new ApplicationSequence {ApplicationId = ApplicationId, IsActive = false, SequenceNo = 1},
+                new ApplicationSequence {ApplicationId = ApplicationId, IsActive = true, SequenceNo = 2},
+                new ApplicationSequence {ApplicationId = Guid.NewGuid(), IsActive = true, SequenceNo = 1}
             });
 
             await context.SaveChangesAsync();

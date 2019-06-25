@@ -17,7 +17,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SFA.DAS.QnA.Api.UnitTests",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SFA.DAS.QnA.Application.UnitTests", "SFA.DAS.QnA.Application.UnitTests\SFA.DAS.QnA.Application.UnitTests.csproj", "{7C51C3A3-DBBF-4493-9A46-C85C4CFAB6FC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SFA.DAS.Qna.Api.Types", "SFA.DAS.Qna.Api.Types\SFA.DAS.Qna.Api.Types.csproj", "{694626D7-BA6C-487B-9F2B-0CED6BFD7519}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SFA.DAS.QnA.Api.Types", "SFA.DAS.Qna.Api.Types\SFA.DAS.QnA.Api.Types.csproj", "{694626D7-BA6C-487B-9F2B-0CED6BFD7519}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{00AD1E6C-7A90-44EF-9713-2724978F25CE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -65,5 +67,9 @@ Global
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9AFB93E9-481C-404F-8C8B-136E1F878AD1}
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7C51C3A3-DBBF-4493-9A46-C85C4CFAB6FC} = {00AD1E6C-7A90-44EF-9713-2724978F25CE}
+		{96E54966-9B0E-4EF2-A10B-3AE92F0B4A83} = {00AD1E6C-7A90-44EF-9713-2724978F25CE}
 	EndGlobalSection
 EndGlobal
