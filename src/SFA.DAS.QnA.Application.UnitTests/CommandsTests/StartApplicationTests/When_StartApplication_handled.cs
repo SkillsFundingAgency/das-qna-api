@@ -21,9 +21,9 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.StartApplicationTests
             var newApplications = await DataContext.Applications.ToListAsync();
 
             newApplications.Count.Should().Be(1);
-            newApplications.First().CreatedFromWorkflowId.Should().Be(WorkflowId);
+            newApplications.First().WorkflowId.Should().Be(WorkflowId);
             newApplications.First().ApplicationStatus.Should().Be(ApplicationStatus.InProgress);
-            newApplications.First().CreatedBy.Should().Be("dave");
+            newApplications.First().Reference.Should().Be("dave");
         }
         
         [Test]
@@ -36,6 +36,8 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.StartApplicationTests
 
             newSequences.Count.Should().Be(2);
             newSequences.Should().AllBeEquivalentTo(new{ApplicationId = newApplication.Id});
+            newSequences[0].SequenceNo.Should().Be(1);
+            newSequences[1].SequenceNo.Should().Be(2);
         }
         
         [Test]
@@ -48,39 +50,21 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.StartApplicationTests
 
             newSections.Count.Should().Be(4);
             newSections.Should().AllBeEquivalentTo(new{ApplicationId = newApplication.Id});
-            newSections[0].Title.Should().Be("Section 1");
-            newSections[1].Title.Should().Be("Section 2");
-            newSections[2].Title.Should().Be("Section 3");
-            newSections[3].Title.Should().Be("Section 4");
+            newSections[0].Should().BeEquivalentTo(new {Title = "Section 1", SequenceNo = 1, SectionNo = 1});
+            newSections[1].Should().BeEquivalentTo(new {Title = "Section 2", SequenceNo = 1, SectionNo = 2});
+            newSections[2].Should().BeEquivalentTo(new {Title = "Section 3", SequenceNo = 1, SectionNo = 3});
+            newSections[3].Should().BeEquivalentTo(new {Title = "Section 4", SequenceNo = 2, SectionNo = 4});
         }
 
         [Test]
         public async Task Then_QnAData_is_updated_from_assets()
         {
-            DataContext.WorkflowSections.RemoveRange(DataContext.WorkflowSections);
-            await DataContext.WorkflowSections.AddAsync(new WorkflowSection()
-            {
-               WorkflowId = WorkflowId,
-               QnAData = new QnAData(){Pages = new List<Page>()
-               {
-                   new Page() {Title = "[PageTitleToken1]"},
-                   new Page() {Title = "[PageTitleToken2]"}
-               }}
-            });
-            
-            await DataContext.Assets.AddRangeAsync(new[]
-            {
-                new Asset(){Reference = "[PageTitleToken1]", Text = "Page 1"}, 
-                new Asset(){Reference = "[PageTitleToken2]", Text = "Page 2"} 
-            });
-
-            await DataContext.SaveChangesAsync();
-            
             await Handler.Handle(new StartApplicationRequest() {UserReference = "dave", WorkflowType = "EPAO"}, CancellationToken.None);
             var newSections = await DataContext.ApplicationSections.ToListAsync();
 
             newSections[0].QnAData.Pages[0].Title.Should().Be("Page 1");
             newSections[0].QnAData.Pages[1].Title.Should().Be("Page 2");
         }
+
     }
 }

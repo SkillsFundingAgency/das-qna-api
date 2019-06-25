@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using SFA.DAS.Qna.Api.Types;
+using SFA.DAS.QnA.Application.Queries.Sections.GetSequenceSections;
 using SFA.DAS.QnA.Application.Queries.Sequences.GetCurrentSequence;
 
 namespace SFA.DAS.QnA.Api.Controllers
@@ -27,7 +28,7 @@ namespace SFA.DAS.QnA.Api.Controllers
         /// <response code="200">Returns the Sequence's Sections</response>
         /// <response code="204">If there are no Sections for the given SequenceId</response>
         /// <response code="404">If the ApplicationId or SequenceId are invalid</response>
-        [HttpGet("{applicationId}/sequences/{sequenceId}/current")]
+        [HttpGet("{applicationId}/sequences/{sequenceId}/sections")]
         [ProducesResponseType(200)]
         [ProducesResponseType(204)]
         [ProducesResponseType(404)]

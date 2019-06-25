@@ -1,14 +1,15 @@
 CREATE TABLE [dbo].[ApplicationSections](
 	[Id] [uniqueidentifier] NOT NULL,
 	[ApplicationId] [uniqueidentifier] NOT NULL,
-	[SequenceId] [int] NOT NULL,
-	[SectionId] [int] NOT NULL,
+	[SequenceNo] [int] NOT NULL,
+	[SectionNo] [int] NOT NULL,
 	[QnAData] [nvarchar](max) NOT NULL,
 	[Status] [nvarchar](50) NOT NULL,
 	[Title] [nvarchar](50) NOT NULL,
 	[LinkTitle] [nvarchar](50) NOT NULL,
 	[DisplayType] [nvarchar](50) NOT NULL,
-	[NotRequired] [bit] NOT NULL DEFAULT 0
+	[NotRequired] [bit] NOT NULL DEFAULT 0,
+  [SequenceId] [uniqueidentifier] NOT NULL
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
 

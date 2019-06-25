@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using NUnit.Framework;
 using SFA.DAS.QnA.Application.Commands.StartApplication;
@@ -23,22 +24,40 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.StartApplicationTests
 
             WorkflowId = Guid.NewGuid();
             
-            await DataContext.Workflows.AddAsync(new Workflow() {Type = "EPAO", Status = WorkflowStatus.Live, Id = WorkflowId});
+            await DataContext.Workflows.AddAsync(
+                new Workflow() {Type = "EPAO", Status = WorkflowStatus.Live, Id = WorkflowId});
+
+            await DataContext.Assets.AddRangeAsync(new[]
+            {
+                new Asset(){Reference = "[PageTitleToken1]", Text = "Page 1"}, 
+                new Asset(){Reference = "[PageTitleToken2]", Text = "Page 2"} 
+            });
+
+            var workflowSections = new[]
+            {
+                new WorkflowSection {Id = Guid.NewGuid(), Title = "Section 1", QnAData = new QnAData(){Pages = new List<Page>()
+                {
+                    new Page() {Title = "[PageTitleToken1]"},
+                    new Page() {Title = "[PageTitleToken2]"}
+                }}}, 
+                new WorkflowSection {Id = Guid.NewGuid(), Title = "Section 2", QnAData = new QnAData(){Pages = new List<Page>()}}, 
+                new WorkflowSection {Id = Guid.NewGuid(), Title = "Section 3", QnAData = new QnAData(){Pages = new List<Page>()}}, 
+                new WorkflowSection {Id = Guid.NewGuid(), Title = "Section 4", QnAData = new QnAData(){Pages = new List<Page>()}}, 
+                new WorkflowSection {Id = Guid.NewGuid(), Title = "Invalid section", QnAData = new QnAData(){Pages = new List<Page>()}}
+            };
+            
+            await DataContext.WorkflowSections.AddRangeAsync(workflowSections);
+
             await DataContext.WorkflowSequences.AddRangeAsync(new[]
             {
-                new WorkflowSequence {WorkflowId = WorkflowId}, 
-                new WorkflowSequence {WorkflowId = WorkflowId}, 
+                new WorkflowSequence {WorkflowId = WorkflowId, SectionId = workflowSections[0].Id, SectionNo = 1, SequenceNo = 1, IsActive = true}, 
+                new WorkflowSequence {WorkflowId = WorkflowId, SectionId = workflowSections[1].Id, SectionNo = 2, SequenceNo = 1, IsActive = true}, 
+                new WorkflowSequence {WorkflowId = WorkflowId, SectionId = workflowSections[2].Id, SectionNo = 3, SequenceNo = 1, IsActive = true}, 
+                new WorkflowSequence {WorkflowId = WorkflowId, SectionId = workflowSections[3].Id, SectionNo = 4, SequenceNo = 2, IsActive = false}, 
                 new WorkflowSequence {WorkflowId = Guid.NewGuid()}, 
                 new WorkflowSequence {WorkflowId = Guid.NewGuid()}, 
             });
-            await DataContext.WorkflowSections.AddRangeAsync(new[]
-            {
-                new WorkflowSection {WorkflowId = WorkflowId, Title = "Section 1"}, 
-                new WorkflowSection {WorkflowId = WorkflowId, Title = "Section 2"}, 
-                new WorkflowSection {WorkflowId = WorkflowId, Title = "Section 3"}, 
-                new WorkflowSection {WorkflowId = WorkflowId, Title = "Section 4"}, 
-                new WorkflowSection {WorkflowId = Guid.NewGuid(), Title = "Invalid section"}
-            });
+            
             await DataContext.SaveChangesAsync();
         }
     }

@@ -1,16 +1,10 @@
 CREATE TABLE [dbo].[Applications](
 	[Id] [uniqueidentifier] NOT NULL,
-	[ApplicationStatus] [nvarchar](20) NOT NULL,
-	[ApplicationData] [nvarchar](max) NULL,
+	[WorkflowId] [uniqueidentifier] NOT NULL,
+	[Reference] [nvarchar](256) NOT NULL,
 	[CreatedAt] [datetime2](7) NOT NULL,
-	[CreatedBy] [nvarchar](256) NOT NULL,
-	[UpdatedAt] [datetime2](7) NULL,
-	[UpdatedBy] [nvarchar](256) NULL,
-	[WithdrawnAt] [datetime2](7) NULL,
-	[WithdrawnBy] [nvarchar](256) NULL,
-	[DeletedAt] [datetime2](7) NULL,
-	[DeletedBy] [nvarchar](256) NULL,
-	[CreatedFromWorkflowId] [uniqueidentifier] NOT NULL,
+	[ApplicationStatus] [nvarchar](20) NOT NULL,
+	[ApplicationData] [nvarchar](max) NULL
  CONSTRAINT [PK_Applications] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
