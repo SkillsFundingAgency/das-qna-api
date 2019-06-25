@@ -39,7 +39,13 @@ namespace SFA.DAS.QnA.Api.Controllers
             return sectionsResponse.Value;
         }
 
+        /// <summary>
+        /// Sets the answers on the page.
+        /// </summary>
+        /// <returns>An object describing validity / next steps</returns>
+        /// <response code="200">Returns the response</response>
         [HttpPost("{applicationId}/sections/{sectionId}/pages/{pageId}")]
+        [ProducesResponseType(200)]
         public async Task<ActionResult<SetPageAnswersResponse>> SetPageAnswers(Guid applicationId, Guid sectionId, string pageId, [FromBody] List<Answer> answers)
         {
             var savePageAnswersResponse = await _mediator.Send(new SetPageAnswersRequest(applicationId, sectionId, pageId, answers), CancellationToken.None);
