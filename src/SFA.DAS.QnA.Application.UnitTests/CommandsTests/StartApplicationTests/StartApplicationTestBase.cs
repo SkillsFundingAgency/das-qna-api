@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using NUnit.Framework;
+using SFA.DAS.Qna.Api.Types.Page;
 using SFA.DAS.QnA.Application.Commands.StartApplication;
 using SFA.DAS.Qna.Data;
 using SFA.DAS.QnA.Data.Entities;

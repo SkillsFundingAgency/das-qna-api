@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
@@ -8,6 +7,7 @@ using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using SFA.DAS.Qna.Api.Types;
+using SFA.DAS.Qna.Api.Types.Page;
 using SFA.DAS.Qna.Data;
 using SFA.DAS.QnA.Data.Entities;
 
