@@ -275,3 +275,5 @@ src/Tools/PhantomJS/tools/phantomjs/ChangeLog
 
 # Development app settings
 *.Development.json
+
+.sonarqube/

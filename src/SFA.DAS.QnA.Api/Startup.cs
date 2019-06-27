@@ -18,7 +18,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using SFA.DAS.Qna.Data;
+using SFA.DAS.QnA.Api.Infrastructure;
 using SFA.DAS.QnA.Application;
+using SFA.DAS.QnA.Application.Validators;
 using SFA.DAS.QnA.Configuration.Config;
 using SFA.DAS.QnA.Configuration.Infrastructure;
 using Swashbuckle.AspNetCore.Swagger;
@@ -80,6 +82,9 @@ namespace SFA.DAS.QnA.Api
                     });
             }
 
+            services.RegisterAllTypes<IValidator>(new[] { typeof(IValidator).Assembly });
+            services.AddTransient<IValidatorFactory, ValidatorFactory>();
+            
             services.AddAutoMapper(typeof(HandlerResponse<>).Assembly);
             services.AddMediatR(AppDomain.CurrentDomain.GetAssemblies());
 
