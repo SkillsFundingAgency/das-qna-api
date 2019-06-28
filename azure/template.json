@@ -66,6 +66,10 @@
         },
         "logAnalyticsWorkspaceName": {
             "type": "string"
+        },
+        "appServiceAllowedIPs": {
+            "type": "array",
+            "defaultValue": []
         }
     },
     "variables": {
@@ -166,6 +170,9 @@
                     },
                     "deployStagingSlot": {
                         "value": true
+                    },
+                    "ipSecurityRestrictions": {
+                        "value": "[parameters('appServiceAllowedIPs')]"
                     },
                     "appServiceAppSettings": {
                         "value": [
