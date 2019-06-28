@@ -4,7 +4,7 @@ using MediatR;
 using SFA.DAS.Qna.Api.Types;
 using SFA.DAS.Qna.Api.Types.Page;
 
-namespace SFA.DAS.QnA.Application.Commands.SavePageAnswers
+namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
 {
     public class SetPageAnswersRequest : IRequest<HandlerResponse<SetPageAnswersResponse>>
     {

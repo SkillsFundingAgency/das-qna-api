@@ -6,7 +6,7 @@ using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using SFA.DAS.Qna.Api.Types;
 using SFA.DAS.Qna.Api.Types.Page;
-using SFA.DAS.QnA.Application.Commands.SavePageAnswers;
+using SFA.DAS.QnA.Application.Commands.SetPageAnswers;
 using SFA.DAS.QnA.Application.Queries.Sections.GetPage;
 
 namespace SFA.DAS.QnA.Api.Controllers
