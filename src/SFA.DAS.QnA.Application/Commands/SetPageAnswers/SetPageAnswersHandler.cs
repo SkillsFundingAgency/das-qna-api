@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
@@ -40,39 +41,106 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
 
             MarkFeedbackComplete(page);
 
+            var nextAction = GetNextAction(page, request.Answers, section);
+
+            SetStatusOfNextPagesBasedOnAnswer(qnaData, page, request.Answers, nextAction);
+
             await SaveAnswersIntoPage(request, cancellationToken, qnaData, section);
 
-            SetStatusOfNextPagesBasedOnAnswer(section, page, request.Answers);
-            
-            // If validation passes.....
-            // Get next action...
-            return new HandlerResponse<SetPageAnswersResponse>(new SetPageAnswersResponse("REPLACETHIS", "REPLACETHIS"));
-
-            // return response
+            return new HandlerResponse<SetPageAnswersResponse>(new SetPageAnswersResponse(nextAction.Action, nextAction.ReturnId));
         }
 
-        private void SetStatusOfNextPagesBasedOnAnswer(ApplicationSection section, Page page, List<Answer> answers)
+        private Next GetNextAction(Page page, List<Answer> answers, ApplicationSection section)
+        {
+            if (page.Next is null || !page.Next.Any())
+            {
+                throw new ApplicationException($"Page {page.PageId}, in Sequence {page.SequenceId}, Section {page.SectionId} has no 'Next' instructions.");
+            }
+
+            if (page.Next.Count == 1)
+            {
+                return page.Next.First();
+            }
+
+            foreach (var next in page.Next)
+            {
+                if (next.Condition != null)
+                {
+                    var answer = answers.Single(a => a.QuestionId == next.Condition.QuestionId);
+                    if (answer.QuestionId == next.Condition.QuestionId && answer.Value == next.Condition.MustEqual)
+                    {
+                        return next;
+                    }
+                }
+                else
+                {
+                    return next;
+                }
+            }
+
+            throw new ApplicationException($"Page {page.PageId}, in Sequence {page.SequenceId}, Section {page.SectionId} is missing a matching 'Next' instruction for Application {section.ApplicationId}");
+        }
+
+        private void SetStatusOfNextPagesBasedOnAnswer(QnAData qnaData, Page page, List<Answer> answers, Next nextAction)
         {
             var hasConditionalBranch = page.Next.Any(n => n.Condition != null);
             if (!hasConditionalBranch) return;
 
-            var conditionMet = false;
-//            foreach (var next in page.Next)
-//            {
-//                if (next.Condition != null)
-//                {
-//                    var answer = answers.Single(a => a.QuestionId == nextCondition.Condition.QuestionId);
-//                    if (answer.Value == nextCondition.Condition.MustEqual)
-//                    {
-//                        // Set next page Active = true
-//                    }
-//                }
-//                
+            if (page.PageOfAnswers != null && page.PageOfAnswers.Count > 0)
+            {
+                var existingAnswer = page.PageOfAnswers?[0].Answers.SingleOrDefault(a => a.QuestionId == nextAction.Condition.QuestionId);
+
+                if (existingAnswer != answers.Single(a => a.QuestionId == nextAction.Condition.QuestionId))
+                {
+                    DeactivateDependentPages(page.PageId, qnaData, page, nextAction);
+                }
+            }
+            
+            ActivateDependentPages(nextAction, page.PageId, qnaData);
+            
 //                else
 //                {
-//                    
+//                    var nextPage = qnaData.Pages.Single(p => p.PageId == next.ReturnId);
+//                    nextPage.Active = false;
 //                }
-//            }
+            
+        }
+
+        private void DeactivateDependentPages(string branchingPageId, QnAData qnaData, Page page, Next chosenAction)
+        {
+            foreach (var nextAction in page.Next.Where(n => n != chosenAction))
+            {
+                if (nextAction.Action == "NextPage")
+                {
+                    var nextPage = qnaData.Pages.Single(p => p.PageId == nextAction.ReturnId);
+                    if (nextPage.IsActivatedByPageId == branchingPageId)
+                    {
+                        nextPage.Active = false;
+                    }
+                    
+                    foreach (var thisPagesNext in nextPage.Next)
+                    {
+                        DeactivateDependentPages(branchingPageId, qnaData, nextPage, chosenAction);
+                    }
+                }
+            }
+        }
+
+        private void ActivateDependentPages(Next next, string branchingPageId, QnAData qnaData)
+        {
+            if (next.Action == "NextPage")
+            {
+                var nextPage = qnaData.Pages.Single(p => p.PageId == next.ReturnId);
+                if (nextPage.IsActivatedByPageId == branchingPageId)
+                {
+                    nextPage.Active = true;
+                }
+
+                foreach (var thisPagesNext in nextPage.Next)
+                {
+                    ActivateDependentPages(thisPagesNext, branchingPageId, qnaData);
+                }
+            }
         }
 
         private async Task SaveAnswersIntoPage(SetPageAnswersRequest request, CancellationToken cancellationToken, QnAData qnaData, ApplicationSection section)

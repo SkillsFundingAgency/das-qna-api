@@ -43,5 +43,7 @@ namespace SFA.DAS.Qna.Api.Types.Page
 
         [JsonIgnore]
         public bool AllFeedbackIsCompleted => HasFeedback ? Feedback.All(f => f.IsCompleted) : true;
+
+        public string IsActivatedByPageId { get; set; }
     }
 }
