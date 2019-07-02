@@ -1,0 +1,26 @@
+using System.Collections.Generic;
+
+namespace SFA.DAS.Qna.Api.Types
+{
+    public class SetPageAnswersResponse
+    {
+        public List<KeyValuePair<string, string>> ValidationErrors { get; }
+        public bool ValidationPassed { get; set; }
+        public string NextAction { get; set; }
+
+        public string NextActionId { get; set; }
+
+        public SetPageAnswersResponse(string nextAction, string nextActionId)
+        {
+            ValidationPassed = true;
+            NextAction = nextAction;
+            NextActionId = nextActionId;
+        }
+
+        public SetPageAnswersResponse(List<KeyValuePair<string,string>> validationErrors)
+        {
+            ValidationErrors = validationErrors;
+            ValidationPassed = false;
+        }
+    }
+}

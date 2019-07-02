@@ -5,6 +5,9 @@ using System.Threading.Tasks;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using SFA.DAS.Qna.Api.Types;
+using SFA.DAS.Qna.Api.Types.Page;
+using SFA.DAS.QnA.Application.Queries.Sections.GetPage;
+using SFA.DAS.QnA.Application.Queries.Sections.GetSection;
 using SFA.DAS.QnA.Application.Queries.Sections.GetSequenceSections;
 using SFA.DAS.QnA.Application.Queries.Sequences.GetCurrentSequence;
 
@@ -37,6 +40,23 @@ namespace SFA.DAS.QnA.Api.Controllers
             var sectionsResponse = await _mediator.Send(new GetSequenceSectionsRequest(applicationId, sequenceId), CancellationToken.None);
             if (!sectionsResponse.Success) return NotFound();
             if (sectionsResponse.Value == null) return NoContent();
+
+            return sectionsResponse.Value;
+        }
+        
+        /// <summary>
+        /// Returns the requested Section
+        /// </summary>
+        /// <returns>The requested Section</returns>
+        /// <response code="200">Returns a Section</response>
+        /// <response code="404">If the ApplicationId or SectionId are invalid</response>
+        [HttpGet("{applicationId}/sections/{sectionId}")]
+        [ProducesResponseType(200)]
+        [ProducesResponseType(404)]
+        public async Task<ActionResult<Section>> GetSection(Guid applicationId, Guid sectionId)
+        {
+            var sectionsResponse = await _mediator.Send(new GetSectionRequest(applicationId, sectionId), CancellationToken.None);
+            if (!sectionsResponse.Success) return NotFound();
 
             return sectionsResponse.Value;
         }

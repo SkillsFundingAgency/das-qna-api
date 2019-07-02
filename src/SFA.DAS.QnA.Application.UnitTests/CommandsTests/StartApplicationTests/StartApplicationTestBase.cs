@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using NUnit.Framework;
+using SFA.DAS.Qna.Api.Types.Page;
 using SFA.DAS.QnA.Application.Commands.StartApplication;
 using SFA.DAS.Qna.Data;
 using SFA.DAS.QnA.Data.Entities;
@@ -26,12 +27,6 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.StartApplicationTests
             
             await DataContext.Workflows.AddAsync(
                 new Workflow() {Type = "EPAO", Status = WorkflowStatus.Live, Id = WorkflowId});
-
-            await DataContext.Assets.AddRangeAsync(new[]
-            {
-                new Asset(){Reference = "[PageTitleToken1]", Text = "Page 1"}, 
-                new Asset(){Reference = "[PageTitleToken2]", Text = "Page 2"} 
-            });
 
             var workflowSections = new[]
             {

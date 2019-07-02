@@ -56,15 +56,5 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.StartApplicationTests
             newSections[3].Should().BeEquivalentTo(new {Title = "Section 4", SequenceNo = 2, SectionNo = 4});
         }
 
-        [Test]
-        public async Task Then_QnAData_is_updated_from_assets()
-        {
-            await Handler.Handle(new StartApplicationRequest() {UserReference = "dave", WorkflowType = "EPAO"}, CancellationToken.None);
-            var newSections = await DataContext.ApplicationSections.ToListAsync();
-
-            newSections[0].QnAData.Pages[0].Title.Should().Be("Page 1");
-            newSections[0].QnAData.Pages[1].Title.Should().Be("Page 2");
-        }
-
     }
 }
