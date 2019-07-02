@@ -113,7 +113,7 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
                 if (nextAction.Action == "NextPage")
                 {
                     var nextPage = qnaData.Pages.Single(p => p.PageId == nextAction.ReturnId);
-                    if (nextPage.IsActivatedByPageId == branchingPageId)
+                    if (nextPage.ActivatedByPageId == branchingPageId)
                     {
                         nextPage.Active = false;
                     }
@@ -131,7 +131,7 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
             if (next.Action == "NextPage")
             {
                 var nextPage = qnaData.Pages.Single(p => p.PageId == next.ReturnId);
-                if (nextPage.IsActivatedByPageId == branchingPageId)
+                if (nextPage.ActivatedByPageId == branchingPageId)
                 {
                     nextPage.Active = true;
                 }

@@ -28,12 +28,6 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.StartApplicationTests
             await DataContext.Workflows.AddAsync(
                 new Workflow() {Type = "EPAO", Status = WorkflowStatus.Live, Id = WorkflowId});
 
-            await DataContext.Assets.AddRangeAsync(new[]
-            {
-                new Asset(){Reference = "[PageTitleToken1]", Text = "Page 1"}, 
-                new Asset(){Reference = "[PageTitleToken2]", Text = "Page 2"} 
-            });
-
             var workflowSections = new[]
             {
                 new WorkflowSection {Id = Guid.NewGuid(), Title = "Section 1", QnAData = new QnAData(){Pages = new List<Page>()

@@ -29,8 +29,7 @@ namespace SFA.DAS.Qna.Data
                     v => JsonConvert.DeserializeObject<QnAData>(v,
                         new JsonSerializerSettings {NullValueHandling = NullValueHandling.Ignore}));
         }
-
-        public DbSet<Asset> Assets { get; set; }
+        
         public DbSet<Workflow> Workflows { get; set; }
         public DbSet<WorkflowSection> WorkflowSections { get; set; }
         public DbSet<WorkflowSequence> WorkflowSequences { get; set; }

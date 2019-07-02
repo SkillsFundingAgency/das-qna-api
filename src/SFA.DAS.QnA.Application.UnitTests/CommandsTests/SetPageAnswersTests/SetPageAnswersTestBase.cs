@@ -61,7 +61,7 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.SetPageAnswersTests
                                 new Next(){Action = "NextPage", ReturnId = "5", Condition = new Condition{QuestionId = "Q2", MustEqual = "No"}}
                             },
                             Active = false,
-                            IsActivatedByPageId = "1"
+                            ActivatedByPageId = "1"
                         },
                         new Page()
                         {
@@ -73,7 +73,7 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.SetPageAnswersTests
                                 new Next(){Action = "NextPage", ReturnId = "7"}
                             },
                             Active = false,
-                            IsActivatedByPageId = "2"
+                            ActivatedByPageId = "2"
                         },
                         new Page()
                         {
@@ -85,7 +85,7 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.SetPageAnswersTests
                                 new Next(){Action = "NextPage", ReturnId = "6"}
                             },
                             Active = false,
-                            IsActivatedByPageId = "1"
+                            ActivatedByPageId = "1"
                         },
                         new Page()
                         {
@@ -97,7 +97,7 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.SetPageAnswersTests
                                 new Next(){Action = "NextPage", ReturnId = "7"}
                             },
                             Active = false,
-                            IsActivatedByPageId = "2"
+                            ActivatedByPageId = "2"
                         },
                         new Page()
                         {
@@ -109,7 +109,7 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.SetPageAnswersTests
                                 new Next(){Action = "NextPage", ReturnId = "8"}
                             },
                             Active = false,
-                            IsActivatedByPageId = "1"
+                            ActivatedByPageId = "1"
                         },
                         new Page()
                         {
@@ -121,7 +121,7 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.SetPageAnswersTests
                                 new Next(){Action = "NextPage", ReturnId = "8"}
                             },
                             Active = false,
-                            IsActivatedByPageId = "1"
+                            ActivatedByPageId = "1"
                         },
                         new Page()
                         {

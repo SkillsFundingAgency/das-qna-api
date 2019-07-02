@@ -105,20 +105,9 @@ namespace SFA.DAS.QnA.Application.Commands.StartApplication
             await _dataContext.ApplicationSections.AddRangeAsync(newApplicationSections, cancellationToken);
 
             await _dataContext.SaveChangesAsync(cancellationToken);
-
-            var assets = await _dataContext.Assets.ToListAsync(cancellationToken: cancellationToken);
-
+            
             foreach (var applicationSection in newApplicationSections)
             {
-                var qnADataJson = JsonConvert.SerializeObject(applicationSection.QnAData);
-                foreach (var asset in assets)
-                {
-                    qnADataJson = qnADataJson.Replace(asset.Reference, HttpUtility.JavaScriptStringEncode(asset.Text));
-                }
-
-                applicationSection.QnAData = JsonConvert.DeserializeObject<QnAData>(qnADataJson);
-
-
                 foreach (var page in applicationSection.QnAData.Pages)
                 {
                     page.SectionId = applicationSection.Id.ToString();
