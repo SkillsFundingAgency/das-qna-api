@@ -1,11 +1,14 @@
 using System;
 using System.Collections.Generic;
+using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using SFA.DAS.Qna.Api.Types;
 using SFA.DAS.Qna.Api.Types.Page;
+using SFA.DAS.QnA.Application.Commands.AddPageAnswer;
+using SFA.DAS.QnA.Application.Commands.RemovePageAnswer;
 using SFA.DAS.QnA.Application.Commands.SetPageAnswers;
 using SFA.DAS.QnA.Application.Queries.Sections.GetPage;
 
@@ -49,6 +52,34 @@ namespace SFA.DAS.QnA.Api.Controllers
         public async Task<ActionResult<SetPageAnswersResponse>> SetPageAnswers(Guid applicationId, Guid sectionId, string pageId, [FromBody] List<Answer> answers)
         {
             var savePageAnswersResponse = await _mediator.Send(new SetPageAnswersRequest(applicationId, sectionId, pageId, answers), CancellationToken.None);
+            
+            return savePageAnswersResponse.Value;
+        }
+        
+        /// <summary>
+        /// Adds an answer on a page that allows multiple sets of answers
+        /// </summary>
+        /// <returns>An object describing validity</returns>
+        /// <response code="200">Returns the response</response>
+        [HttpPost("{applicationId}/sections/{sectionId}/pages/{pageId}/multiple")]
+        [ProducesResponseType(200)]
+        public async Task<ActionResult<AddPageAnswerResponse>> AddPageAnswer(Guid applicationId, Guid sectionId, string pageId, [FromBody] List<Answer> answers)
+        {
+            var savePageAnswersResponse = await _mediator.Send(new AddPageAnswerRequest(applicationId, sectionId, pageId, answers), CancellationToken.None);
+            
+            return savePageAnswersResponse.Value;
+        }
+        
+        /// <summary>
+        /// Removes an answer from a page that allows multiple sets of answers
+        /// </summary>
+        /// <returns>An object describing validity</returns>
+        /// <response code="200">Returns the response</response>
+        [HttpDelete("{applicationId}/sections/{sectionId}/pages/{pageId}/multiple/{answerId}")]
+        [ProducesResponseType((int)HttpStatusCode.OK)]
+        public async Task<ActionResult<RemovePageAnswerResponse>> AddPageAnswer(Guid applicationId, Guid sectionId, string pageId, Guid answerId)
+        {
+            var savePageAnswersResponse = await _mediator.Send(new RemovePageAnswerRequest(applicationId, sectionId, pageId, answerId), CancellationToken.None);
             
             return savePageAnswersResponse.Value;
         }
