@@ -1,15 +1,50 @@
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
 using SFA.DAS.Qna.Api.Types;
+using SFA.DAS.QnA.Application.Commands.AddPageAnswer;
+using SFA.DAS.Qna.Data;
 
 namespace SFA.DAS.QnA.Application.Commands.RemovePageAnswer
 {
-    public class RemovePageAnswerHandler : IRequestHandler<RemovePageAnswerRequest, HandlerResponse<RemovePageAnswerResponse>>
+    public class RemovePageAnswerHandler : PageHandlerBase, IRequestHandler<RemovePageAnswerRequest, HandlerResponse<RemovePageAnswerResponse>>
     {
-        public Task<HandlerResponse<RemovePageAnswerResponse>> Handle(RemovePageAnswerRequest request, CancellationToken cancellationToken)
+        private readonly QnaDataContext _dataContext;
+
+        public RemovePageAnswerHandler(QnaDataContext dataContext) : base(dataContext)
         {
-            return null;
+            _dataContext = dataContext;
+        }
+        
+        public async Task<HandlerResponse<RemovePageAnswerResponse>> Handle(RemovePageAnswerRequest request, CancellationToken cancellationToken)
+        {
+            await GetSectionAndPage(request.ApplicationId, request.SectionId, request.PageId);
+
+            if (Application == null || Section == null || Page == null)
+            {
+                return new HandlerResponse<RemovePageAnswerResponse>(false, $"ApplicationId {request.ApplicationId}, Section {request.SectionId} or PageId {request.PageId} does not exist.");
+            }
+            
+            if (Page.AllowMultipleAnswers == false)
+            {
+                return new HandlerResponse<RemovePageAnswerResponse>(false, $"ApplicationId {request.ApplicationId}, Section {request.SectionId}, PageId {request.PageId} does not AllowMultipleAnswers ");
+            }
+
+            var pageOfAnswers = Page.PageOfAnswers.SingleOrDefault(poa => poa.Id == request.AnswerId);
+            
+            if (pageOfAnswers == null)
+            {
+                return new HandlerResponse<RemovePageAnswerResponse>(false, $"AnswerId {request.AnswerId} does not exist.");
+            }
+            
+            Page.PageOfAnswers.Remove(pageOfAnswers);
+            
+            Section.QnAData = QnaData;
+
+            await _dataContext.SaveChangesAsync(CancellationToken.None);
+            
+            return new HandlerResponse<RemovePageAnswerResponse>(new RemovePageAnswerResponse(Page));
         }
     }
 }

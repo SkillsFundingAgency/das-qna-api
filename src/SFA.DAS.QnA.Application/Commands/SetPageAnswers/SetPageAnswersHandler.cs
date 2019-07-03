@@ -31,7 +31,7 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
 
             if (page.AllowMultipleAnswers) return new HandlerResponse<SetPageAnswersResponse>(success: false, message: "This endpoint cannot be used for Multiple Answers pages. Use AddAnswer / RemoveAnswer instead.");
 
-            var validationErrors = _answerValidator.Validate(request, page);
+            var validationErrors = _answerValidator.Validate(request.Answers, page);
             if (validationErrors.Any())
             {
                 return new HandlerResponse<SetPageAnswersResponse>(new SetPageAnswersResponse(validationErrors));

@@ -25,7 +25,7 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.SetPageAnswersTests
             DataContext = DataContextHelpers.GetInMemoryDataContext();
             var validator = Substitute.For<IAnswerValidator>();
 
-            validator.Validate(Arg.Any<SetPageAnswersRequest>(), Arg.Any<Page>()).Returns(new List<KeyValuePair<string, string>>());
+            validator.Validate(Arg.Any<List<Answer>>(), Arg.Any<Page>()).Returns(new List<KeyValuePair<string, string>>());
             
             Handler = new SetPageAnswersHandler(DataContext, validator);
 

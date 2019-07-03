@@ -6,6 +6,6 @@ namespace SFA.DAS.QnA.Application.Commands
 {
     public interface IAnswerValidator
     {
-        List<KeyValuePair<string, string>> Validate(SetPageAnswersRequest request, Page page);
+        List<KeyValuePair<string, string>> Validate(List<Answer> answers, Page page);
     }
 }

@@ -12,6 +12,7 @@ namespace SFA.DAS.QnA.Application.Commands.AddPageAnswer
     {
         private readonly QnaDataContext _dataContext;
         protected ApplicationSection Section;
+        protected Data.Entities.Application Application;
         protected QnAData QnaData;
         protected Page Page;
 
@@ -22,10 +23,13 @@ namespace SFA.DAS.QnA.Application.Commands.AddPageAnswer
         
         public async Task GetSectionAndPage(Guid applicationId, Guid sectionId, string pageId)
         {
-            Section = await _dataContext.ApplicationSections.FirstOrDefaultAsync(sec => sec.Id == sectionId && sec.ApplicationId == applicationId);
-            QnaData = new QnAData(Section.QnAData);
-            Page = QnaData.Pages.FirstOrDefault(p => p.PageId == pageId);
-    
+            Application = await _dataContext.Applications.SingleOrDefaultAsync(app => app.Id == applicationId);
+            Section = await _dataContext.ApplicationSections.SingleOrDefaultAsync(sec => sec.Id == sectionId && sec.ApplicationId == applicationId);
+            if (Section != null)
+            {
+                QnaData = new QnAData(Section.QnAData);
+                Page = QnaData.Pages.SingleOrDefault(p => p.PageId == pageId);   
+            }
         }
     }
 }
