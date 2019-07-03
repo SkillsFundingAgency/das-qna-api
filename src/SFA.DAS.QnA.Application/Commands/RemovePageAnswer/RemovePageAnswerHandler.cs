@@ -39,6 +39,11 @@ namespace SFA.DAS.QnA.Application.Commands.RemovePageAnswer
             }
             
             Page.PageOfAnswers.Remove(pageOfAnswers);
+
+            if (Page.PageOfAnswers.Count == 0)
+            {
+                Page.Complete = false;
+            }
             
             Section.QnAData = QnaData;
 
