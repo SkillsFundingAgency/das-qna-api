@@ -6,6 +6,7 @@ namespace SFA.DAS.QnA.Data.Entities
     public class WorkflowSection
     {
         public Guid Id { get; set; }
+        public Guid ProjectId { get; set; }
         public string Title { get; set; }
         public string LinkTitle { get; set; }
         public string Status { get; set; }

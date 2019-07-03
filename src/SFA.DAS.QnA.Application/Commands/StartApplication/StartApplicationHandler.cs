@@ -10,21 +10,33 @@ using SFA.DAS.Qna.Api.Types;
 using SFA.DAS.Qna.Api.Types.Page;
 using SFA.DAS.Qna.Data;
 using SFA.DAS.QnA.Data.Entities;
+using Workflow = SFA.DAS.QnA.Data.Entities.Workflow;
 
 namespace SFA.DAS.QnA.Application.Commands.StartApplication
 {
     public class StartApplicationHandler : IRequestHandler<StartApplicationRequest, HandlerResponse<StartApplicationResponse>>
     {
         private readonly QnaDataContext _dataContext;
+        private readonly IApplicationDataValidator _applicationDataValidator;
 
-        public StartApplicationHandler(QnaDataContext dataContext)
+        public StartApplicationHandler(QnaDataContext dataContext, IApplicationDataValidator applicationDataValidator)
         {
             _dataContext = dataContext;
+            _applicationDataValidator = applicationDataValidator;
         }
 
         public async Task<HandlerResponse<StartApplicationResponse>> Handle(StartApplicationRequest request, CancellationToken cancellationToken)
         {
-            var newApplication = await CreateNewApplication(request, cancellationToken);
+            var latestWorkflow = await _dataContext.Workflows.SingleOrDefaultAsync(w => w.Type == request.WorkflowType && w.Status == "Live", cancellationToken);
+            if (latestWorkflow is null) return null;
+
+            var project = await _dataContext.Projects.SingleOrDefaultAsync(p => p.Id == latestWorkflow.ProjectId, cancellationToken);
+            if (!_applicationDataValidator.IsValid(project.ApplicationDataSchema, request.ApplicationData))
+            {
+                return new HandlerResponse<StartApplicationResponse>(false, $"Supplied ApplicationData is not valid using Project's Schema.");
+            }
+            
+            var newApplication = await CreateNewApplication(request, latestWorkflow, cancellationToken);
 
             if (newApplication is null) return new HandlerResponse<StartApplicationResponse>(false, $"WorkflowType '{request.WorkflowType}' does not exist.");
 
@@ -33,11 +45,8 @@ namespace SFA.DAS.QnA.Application.Commands.StartApplication
             return new HandlerResponse<StartApplicationResponse>(new StartApplicationResponse {ApplicationId = newApplication.Id});
         }
 
-        private async Task<Data.Entities.Application> CreateNewApplication(StartApplicationRequest request, CancellationToken cancellationToken)
+        private async Task<Data.Entities.Application> CreateNewApplication(StartApplicationRequest request, Workflow latestWorkflow, CancellationToken cancellationToken)
         {
-            var latestWorkflow = await _dataContext.Workflows.FirstOrDefaultAsync(w => w.Type == request.WorkflowType && w.Status == "Live", cancellationToken);
-            if (latestWorkflow is null) return null;
-
             var newApplication = new Data.Entities.Application
             {
                 ApplicationStatus = ApplicationStatus.InProgress,
@@ -117,5 +126,10 @@ namespace SFA.DAS.QnA.Application.Commands.StartApplication
 
             await _dataContext.SaveChangesAsync(cancellationToken);
         }
+    }
+
+    public interface IApplicationDataValidator
+    {
+        bool IsValid(string projectApplicationDataSchema, string applicationData);
     }
 }

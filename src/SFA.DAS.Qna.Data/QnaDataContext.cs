@@ -36,5 +36,6 @@ namespace SFA.DAS.Qna.Data
         public DbSet<Application> Applications { get; set; }
         public DbSet<ApplicationSequence> ApplicationSequences { get; set; }
         public DbSet<ApplicationSection> ApplicationSections { get; set; }
+        public DbSet<Project> Projects { get; set; }
     }
 }

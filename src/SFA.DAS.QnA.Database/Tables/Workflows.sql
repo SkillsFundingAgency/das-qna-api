@@ -1,5 +1,6 @@
 CREATE TABLE [dbo].[Workflows](
 	[Id] [uniqueidentifier] NOT NULL,
+	[ProjectId] [uniqueidentifier] NOT NULL,
 	[Description] [nvarchar](200) NOT NULL,
 	[Version] [nvarchar](10) NOT NULL,
 	[Type] [nvarchar](10) NOT NULL,
