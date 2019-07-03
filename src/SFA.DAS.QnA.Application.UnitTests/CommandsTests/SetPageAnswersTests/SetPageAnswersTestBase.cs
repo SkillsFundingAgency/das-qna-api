@@ -6,6 +6,7 @@ using NUnit.Framework;
 using SFA.DAS.Qna.Api.Types.Page;
 using SFA.DAS.QnA.Application.Commands.SetPageAnswers;
 using SFA.DAS.Qna.Data;
+using SFA.DAS.QnA.Application.Commands;
 using SFA.DAS.QnA.Data.Entities;
 
 namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.SetPageAnswersTests
@@ -24,7 +25,7 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.SetPageAnswersTests
             DataContext = DataContextHelpers.GetInMemoryDataContext();
             var validator = Substitute.For<IAnswerValidator>();
 
-            validator.Validate(Arg.Any<SetPageAnswersRequest>(), Arg.Any<Page>()).Returns(new List<KeyValuePair<string, string>>());
+            validator.Validate(Arg.Any<List<Answer>>(), Arg.Any<Page>()).Returns(new List<KeyValuePair<string, string>>());
             
             Handler = new SetPageAnswersHandler(DataContext, validator);
 

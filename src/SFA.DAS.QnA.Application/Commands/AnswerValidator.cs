@@ -1,9 +1,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using SFA.DAS.Qna.Api.Types.Page;
+using SFA.DAS.QnA.Application.Commands.SetPageAnswers;
 using SFA.DAS.QnA.Application.Validators;
 
-namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
+namespace SFA.DAS.QnA.Application.Commands
 {
     public class AnswerValidator : IAnswerValidator
     {
@@ -14,12 +15,12 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
             _validatorFactory = validatorFactory;
         }
 
-        public List<KeyValuePair<string, string>> Validate(SetPageAnswersRequest request, Page page)
+        public List<KeyValuePair<string, string>> Validate(List<Answer> answers, Page page)
         {
             var validationErrors = new List<KeyValuePair<string, string>>();
             foreach (var question in page.Questions)
             {
-                var answerToThisQuestion = request.Answers.Single(a => a.QuestionId == question.QuestionId);
+                var answerToThisQuestion = answers.Single(a => a.QuestionId == question.QuestionId);
 
                 ValidateQuestion(question, validationErrors, answerToThisQuestion);
 
@@ -29,7 +30,7 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
                 {
                     foreach (var furtherQuestion in option.FurtherQuestions)
                     {
-                        var furtherAnswer = request.Answers.FirstOrDefault(a => a.QuestionId == furtherQuestion.QuestionId);
+                        var furtherAnswer = answers.FirstOrDefault(a => a.QuestionId == furtherQuestion.QuestionId);
                         ValidateQuestion(furtherQuestion, validationErrors, furtherAnswer);
                     }
                 }
