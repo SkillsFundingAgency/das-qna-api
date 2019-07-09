@@ -5,6 +5,9 @@ using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using Newtonsoft.Json.Serialization;
 using SFA.DAS.Qna.Api.Types;
 using SFA.DAS.Qna.Api.Types.Page;
 using SFA.DAS.Qna.Data;
@@ -47,7 +50,28 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
 
             await SaveAnswersIntoPage(request, cancellationToken, qnaData, section);
 
+            await UpdateApplicationData(request.ApplicationId, page, request.Answers);
+            
             return new HandlerResponse<SetPageAnswersResponse>(new SetPageAnswersResponse(nextAction.Action, nextAction.ReturnId));
+        }
+
+        private async Task UpdateApplicationData(Guid applicationId, Page page, List<Answer> answers)
+        {
+            var application = await _dataContext.Applications.SingleOrDefaultAsync(app => app.Id == applicationId);
+            var applicationData = JObject.Parse(application.ApplicationData);
+            foreach (var question in page.Questions.Where(q => !string.IsNullOrWhiteSpace(q.QuestionTag)))
+            {
+                if (applicationData.ContainsKey(question.QuestionTag))
+                {
+                    applicationData[question.QuestionTag] = answers.Single(a => a.QuestionId == question.QuestionId).Value;
+                }
+                else
+                {
+                    applicationData.Add(question.QuestionTag, new JValue(answers.Single(a => a.QuestionId == question.QuestionId).Value));
+                }
+            }
+
+            await _dataContext.SaveChangesAsync();
         }
 
         private Next GetNextAction(Page page, List<Answer> answers, ApplicationSection section)

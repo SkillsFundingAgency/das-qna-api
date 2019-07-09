@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using NSubstitute;
 using NUnit.Framework;
 using SFA.DAS.Qna.Api.Types.Page;
 using SFA.DAS.QnA.Application.Commands.StartApplication;
@@ -20,8 +21,10 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.StartApplicationTests
         public async Task SetUp()
         {
             DataContext = DataContextHelpers.GetInMemoryDataContext();
-            
-            Handler = new StartApplicationHandler(DataContext);
+
+            var applicationDataValidator = Substitute.For<IApplicationDataValidator>();
+            applicationDataValidator.IsValid("","").ReturnsForAnyArgs(true);
+            Handler = new StartApplicationHandler(DataContext, applicationDataValidator);
 
             WorkflowId = Guid.NewGuid();
             

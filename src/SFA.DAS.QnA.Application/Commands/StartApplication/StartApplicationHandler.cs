@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
@@ -18,6 +19,7 @@ namespace SFA.DAS.QnA.Application.Commands.StartApplication
     {
         private readonly QnaDataContext _dataContext;
         private readonly IApplicationDataValidator _applicationDataValidator;
+        private bool applicationDataIsInvalid;
 
         public StartApplicationHandler(QnaDataContext dataContext, IApplicationDataValidator applicationDataValidator)
         {
@@ -31,12 +33,21 @@ namespace SFA.DAS.QnA.Application.Commands.StartApplication
             if (latestWorkflow is null) return null;
 
             var project = await _dataContext.Projects.SingleOrDefaultAsync(p => p.Id == latestWorkflow.ProjectId, cancellationToken);
-            if (!_applicationDataValidator.IsValid(project.ApplicationDataSchema, request.ApplicationData))
+            try
+            {
+                applicationDataIsInvalid = !_applicationDataValidator.IsValid(project.ApplicationDataSchema, request.ApplicationData);
+            }
+            catch (JsonReaderException)
+            {
+                return new HandlerResponse<StartApplicationResponse>(false, $"Supplied ApplicationData is not valid JSON.");
+            }
+            
+            if (applicationDataIsInvalid)
             {
                 return new HandlerResponse<StartApplicationResponse>(false, $"Supplied ApplicationData is not valid using Project's Schema.");
             }
             
-            var newApplication = await CreateNewApplication(request, latestWorkflow, cancellationToken);
+            var newApplication = await CreateNewApplication(request, latestWorkflow, cancellationToken, request.ApplicationData);
 
             if (newApplication is null) return new HandlerResponse<StartApplicationResponse>(false, $"WorkflowType '{request.WorkflowType}' does not exist.");
 
@@ -45,14 +56,15 @@ namespace SFA.DAS.QnA.Application.Commands.StartApplication
             return new HandlerResponse<StartApplicationResponse>(new StartApplicationResponse {ApplicationId = newApplication.Id});
         }
 
-        private async Task<Data.Entities.Application> CreateNewApplication(StartApplicationRequest request, Workflow latestWorkflow, CancellationToken cancellationToken)
+        private async Task<Data.Entities.Application> CreateNewApplication(StartApplicationRequest request, Workflow latestWorkflow, CancellationToken cancellationToken, string applicationData)
         {
             var newApplication = new Data.Entities.Application
             {
                 ApplicationStatus = ApplicationStatus.InProgress,
                 WorkflowId = latestWorkflow.Id,
                 Reference = request.UserReference,
-                CreatedAt = SystemTime.UtcNow()
+                CreatedAt = SystemTime.UtcNow(),
+                ApplicationData = applicationData
             };
 
             _dataContext.Applications.Add(newApplication);
@@ -126,10 +138,5 @@ namespace SFA.DAS.QnA.Application.Commands.StartApplication
 
             await _dataContext.SaveChangesAsync(cancellationToken);
         }
-    }
-
-    public interface IApplicationDataValidator
-    {
-        bool IsValid(string projectApplicationDataSchema, string applicationData);
     }
 }

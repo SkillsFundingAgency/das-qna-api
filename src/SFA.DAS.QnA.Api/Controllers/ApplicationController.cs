@@ -25,10 +25,10 @@ namespace SFA.DAS.QnA.Api.Controllers
         /// <param name="request">The required parameters to start the application</param>
         /// <returns>The newly created application's Id</returns>
         /// <response code="201">Returns the newly created application's Id</response>
-        /// <response code="400">If the WorkflowType does not exist</response>
+        /// <response code="400">If the WorkflowType does not exist or the ApplicationData supplied does not match the Project's schema.</response>
         [HttpPost("start")]
-        [ProducesResponseType(201)]
-        [ProducesResponseType(400)]
+        [ProducesResponseType((int)HttpStatusCode.Created)]
+        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
         public async Task<ActionResult> StartApplication([FromBody] StartApplicationRequest request)
         {
             var newApplication = await _mediator.Send(request);
