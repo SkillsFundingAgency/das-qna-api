@@ -4665,13 +4665,13 @@ GO
 INSERT [dbo].[WorkflowSequences]
   ([Id], [WorkflowId], [SequenceNo], [SectionNo], [SectionId], [Status], [IsActive])
 VALUES
-  (NEWID(), N'83b35024-8aef-440d-8f59-8c1cc459c350', 1,2,'5da45e68-d4fd-4fb6-9b04-4038d7adb4df', N'Draft', 0)
+  (NEWID(), N'83b35024-8aef-440d-8f59-8c1cc459c350', 1,2,'5da45e68-d4fd-4fb6-9b04-4038d7adb4df', N'Draft', 1)
 GO
 
 INSERT [dbo].[WorkflowSequences]
   ([Id], [WorkflowId], [SequenceNo], [SectionNo], [SectionId], [Status], [IsActive])
 VALUES
-  (NEWID(), N'83b35024-8aef-440d-8f59-8c1cc459c350', 1,3,'580aa30f-f65b-4c05-808f-f8eb3d539459', N'Draft', 0)
+  (NEWID(), N'83b35024-8aef-440d-8f59-8c1cc459c350', 1,3,'580aa30f-f65b-4c05-808f-f8eb3d539459', N'Draft', 1)
 GO
 
 INSERT [dbo].[WorkflowSequences]
