@@ -98,11 +98,14 @@ namespace SFA.DAS.QnA.Api
                 {
                     setup.Filters.Add(new AuthorizeFilter("default"));
                 }
+
+                setup.Conventions.Add(new ApiExplorerGroupConvention());
             }).SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new Info{Title = "QnA API", Version = "0.1"});
+                c.SwaggerDoc("config", new Info{Title = "QnA API Config", Version = "0.1"});
                 var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
                 var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
                 c.IncludeXmlComments(xmlPath);
@@ -129,6 +132,7 @@ namespace SFA.DAS.QnA.Api
             app.UseSwaggerUI(c =>
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "QnA API");
+                c.SwaggerEndpoint("/swagger/config/swagger.json", "QnA API Config");
                 c.RoutePrefix = string.Empty;
             });
 
