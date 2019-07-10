@@ -70,14 +70,6 @@
         "appServiceAllowedIPs": {
             "type": "array",
             "defaultValue": []
-        },
-        "aseResourceGroup": {
-            "type": "string",
-            "defaultValue": ""
-        },
-        "aseHostingEnvironmentName": {
-            "type": "string",
-            "defaultValue": ""
         }
     },
     "variables": {
@@ -128,12 +120,6 @@
                     },
                     "aspInstances": {
                         "value": "[parameters('aspInstances')]"
-                    },
-                    "aseHostingEnvironmentName": {
-                        "value": "[parameters('aseHostingEnvironmentName')]"
-                    },
-                    "aseResourceGroup": {
-                        "value": "[parameters('aseResourceGroup')]"
                     }
                 }
             }
