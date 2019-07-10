@@ -59,19 +59,38 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
         {
             var application = await _dataContext.Applications.SingleOrDefaultAsync(app => app.Id == applicationId);
             var applicationData = JObject.Parse(application.ApplicationData);
-            foreach (var question in page.Questions.Where(q => !string.IsNullOrWhiteSpace(q.QuestionTag)))
+            foreach (var question in page.Questions)
             {
-                if (applicationData.ContainsKey(question.QuestionTag))
+                SetApplicationDataField(answers, applicationData, question);
+
+                if (question.Input.Options == null) continue;
+
+                foreach (var option in question.Input.Options.Where(o => o.FurtherQuestions != null))
                 {
-                    applicationData[question.QuestionTag] = answers.Single(a => a.QuestionId == question.QuestionId).Value;
-                }
-                else
-                {
-                    applicationData.Add(question.QuestionTag, new JValue(answers.Single(a => a.QuestionId == question.QuestionId).Value));
+                    foreach (var furtherQuestion in option.FurtherQuestions)
+                    {
+                        SetApplicationDataField(answers, applicationData, furtherQuestion);
+                    }
                 }
             }
 
+            application.ApplicationData = applicationData.ToString(Formatting.None);
+
             await _dataContext.SaveChangesAsync();
+        }
+
+        private static void SetApplicationDataField(List<Answer> answers, JObject applicationData, Question question)
+        {
+            if (string.IsNullOrWhiteSpace(question.QuestionTag)) return;
+
+            if (applicationData.ContainsKey(question.QuestionTag))
+            {
+                applicationData[question.QuestionTag] = answers.Single(a => a.QuestionId == question.QuestionId).Value;
+            }
+            else
+            {
+                applicationData.Add(question.QuestionTag, new JValue(answers.Single(a => a.QuestionId == question.QuestionId).Value));
+            }
         }
 
         private Next GetNextAction(Page page, List<Answer> answers, ApplicationSection section)
@@ -121,49 +140,40 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
             }
             
             ActivateDependentPages(nextAction, page.PageId, qnaData);
-            
-//                else
-//                {
-//                    var nextPage = qnaData.Pages.Single(p => p.PageId == next.ReturnId);
-//                    nextPage.Active = false;
-//                }
-            
         }
 
         private void DeactivateDependentPages(string branchingPageId, QnAData qnaData, Page page, Next chosenAction)
         {
             foreach (var nextAction in page.Next.Where(n => n != chosenAction))
             {
-                if (nextAction.Action == "NextPage")
+                if (nextAction.Action != "NextPage") continue;
+                
+                var nextPage = qnaData.Pages.Single(p => p.PageId == nextAction.ReturnId);
+                if (nextPage.ActivatedByPageId == branchingPageId)
                 {
-                    var nextPage = qnaData.Pages.Single(p => p.PageId == nextAction.ReturnId);
-                    if (nextPage.ActivatedByPageId == branchingPageId)
-                    {
-                        nextPage.Active = false;
-                    }
+                    nextPage.Active = false;
+                }
                     
-                    foreach (var thisPagesNext in nextPage.Next)
-                    {
-                        DeactivateDependentPages(branchingPageId, qnaData, nextPage, chosenAction);
-                    }
+                foreach (var thisPagesNext in nextPage.Next)
+                {
+                    DeactivateDependentPages(branchingPageId, qnaData, nextPage, chosenAction);
                 }
             }
         }
 
         private void ActivateDependentPages(Next next, string branchingPageId, QnAData qnaData)
         {
-            if (next.Action == "NextPage")
+            if (next.Action != "NextPage") return;
+            
+            var nextPage = qnaData.Pages.Single(p => p.PageId == next.ReturnId);
+            if (nextPage.ActivatedByPageId == branchingPageId)
             {
-                var nextPage = qnaData.Pages.Single(p => p.PageId == next.ReturnId);
-                if (nextPage.ActivatedByPageId == branchingPageId)
-                {
-                    nextPage.Active = true;
-                }
+                nextPage.Active = true;
+            }
 
-                foreach (var thisPagesNext in nextPage.Next)
-                {
-                    ActivateDependentPages(thisPagesNext, branchingPageId, qnaData);
-                }
+            foreach (var thisPagesNext in nextPage.Next)
+            {
+                ActivateDependentPages(thisPagesNext, branchingPageId, qnaData);
             }
         }
 
