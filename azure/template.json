@@ -70,6 +70,14 @@
         "appServiceAllowedIPs": {
             "type": "array",
             "defaultValue": []
+        },
+        "aseResourceGroup": {
+            "type": "string",
+            "defaultValue": ""
+        },
+        "aseHostingEnvironmentName": {
+            "type": "string",
+            "defaultValue": ""
         }
     },
     "variables": {
@@ -120,6 +128,12 @@
                     },
                     "aspInstances": {
                         "value": "[parameters('aspInstances')]"
+                    },
+                    "aseHostingEnvironmentName": {
+                        "value": "[parameters('aseHostingEnvironmentName')]"
+                    },
+                    "aseResourceGroup": {
+                        "value": "[parameters('aseResourceGroup')]"
                     }
                 }
             }
@@ -144,6 +158,9 @@
                     },
                     "keyVaultResourceGroup": {
                         "value": "[parameters('keyVaultResourceGroup')]"
+                    },
+                    "serverFarmId": {
+                        "value": "[resourceId ('Microsoft.Web/serverfarms', variables('appServicePlanName'))]"
                     }
                 }
             }
