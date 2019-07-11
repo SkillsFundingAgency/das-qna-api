@@ -42,7 +42,7 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.SetPageAnswersTests
                         new Page()
                         {
                             PageId = "1",
-                            Questions = new List<Question>{new Question(){QuestionId = "Q1"}},
+                            Questions = new List<Question>{new Question(){QuestionId = "Q1", Input = new Input()}},
                             PageOfAnswers = new List<PageOfAnswers>(),
                             Next = new List<Next>
                             {
@@ -54,7 +54,7 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.SetPageAnswersTests
                         new Page()
                         {
                             PageId = "2",
-                            Questions = new List<Question>{new Question(){QuestionId = "Q2"}},
+                            Questions = new List<Question>{new Question(){QuestionId = "Q2", Input = new Input()}},
                             PageOfAnswers = new List<PageOfAnswers>(),
                             Next = new List<Next>
                             {
@@ -67,7 +67,7 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.SetPageAnswersTests
                         new Page()
                         {
                             PageId = "3",
-                            Questions = new List<Question>{new Question(){QuestionId = "Q3"}},
+                            Questions = new List<Question>{new Question(){QuestionId = "Q3", Input = new Input()}},
                             PageOfAnswers = new List<PageOfAnswers>(),
                             Next = new List<Next>
                             {
@@ -79,7 +79,7 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.SetPageAnswersTests
                         new Page()
                         {
                             PageId = "4",
-                            Questions = new List<Question>{new Question(){QuestionId = "Q4"}},
+                            Questions = new List<Question>{new Question(){QuestionId = "Q4", Input = new Input()}},
                             PageOfAnswers = new List<PageOfAnswers>(),
                             Next = new List<Next>
                             {
@@ -91,7 +91,7 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.SetPageAnswersTests
                         new Page()
                         {
                             PageId = "5",
-                            Questions = new List<Question>{new Question(){QuestionId = "Q5"}},
+                            Questions = new List<Question>{new Question(){QuestionId = "Q5", Input = new Input()}},
                             PageOfAnswers = new List<PageOfAnswers>(),
                             Next = new List<Next>
                             {
@@ -103,7 +103,7 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.SetPageAnswersTests
                         new Page()
                         {
                             PageId = "6",
-                            Questions = new List<Question>{new Question(){QuestionId = "Q6"}},
+                            Questions = new List<Question>{new Question(){QuestionId = "Q6", Input = new Input()}},
                             PageOfAnswers = new List<PageOfAnswers>(),
                             Next = new List<Next>
                             {
@@ -115,7 +115,7 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.SetPageAnswersTests
                         new Page()
                         {
                             PageId = "7",
-                            Questions = new List<Question>{new Question(){QuestionId = "Q7"}},
+                            Questions = new List<Question>{new Question(){QuestionId = "Q7", Input = new Input()}},
                             PageOfAnswers = new List<PageOfAnswers>(),
                             Next = new List<Next>
                             {
@@ -127,7 +127,7 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.SetPageAnswersTests
                         new Page()
                         {
                             PageId = "8",
-                            Questions = new List<Question>{new Question(){QuestionId = "Q8"}},
+                            Questions = new List<Question>{new Question(){QuestionId = "Q8", Input = new Input()}},
                             PageOfAnswers = new List<PageOfAnswers>(),
                             Next = new List<Next>
                             {
@@ -138,7 +138,7 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.SetPageAnswersTests
                         new Page()
                         {
                             PageId = "9",
-                            Questions = new List<Question>{new Question(){QuestionId = "Q9"}},
+                            Questions = new List<Question>{new Question(){QuestionId = "Q9", Input = new Input()}},
                             PageOfAnswers = new List<PageOfAnswers>(),
                             Next = new List<Next>
                             {
@@ -149,7 +149,7 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.SetPageAnswersTests
                         new Page()
                         {
                             PageId = "10",
-                            Questions = new List<Question>{new Question(){QuestionId = "Q10"}},
+                            Questions = new List<Question>{new Question(){QuestionId = "Q10", Input = new Input()}},
                             PageOfAnswers = new List<PageOfAnswers>(),
                             Next = new List<Next>
                             {
@@ -160,6 +160,8 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.SetPageAnswersTests
                     }
                 }
             });
+
+            await DataContext.Applications.AddAsync(new Data.Entities.Application() {Id = ApplicationId, ApplicationData = "{}"});
 
             await DataContext.SaveChangesAsync();
         }

@@ -27,9 +27,10 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.StartApplicationTests
             Handler = new StartApplicationHandler(DataContext, applicationDataValidator);
 
             WorkflowId = Guid.NewGuid();
-            
+
+            var projectId = Guid.NewGuid();
             await DataContext.Workflows.AddAsync(
-                new Workflow() {Type = "EPAO", Status = WorkflowStatus.Live, Id = WorkflowId});
+                new Workflow() {Type = "EPAO", Status = WorkflowStatus.Live, Id = WorkflowId, ProjectId = projectId});
 
             var workflowSections = new[]
             {
@@ -55,6 +56,8 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.StartApplicationTests
                 new WorkflowSequence {WorkflowId = Guid.NewGuid()}, 
                 new WorkflowSequence {WorkflowId = Guid.NewGuid()}, 
             });
+
+            await DataContext.Projects.AddAsync(new Project{Id = projectId, ApplicationDataSchema = ""});
             
             await DataContext.SaveChangesAsync();
         }

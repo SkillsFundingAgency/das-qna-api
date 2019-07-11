@@ -30,7 +30,7 @@ namespace SFA.DAS.QnA.Application.Commands.StartApplication
         public async Task<HandlerResponse<StartApplicationResponse>> Handle(StartApplicationRequest request, CancellationToken cancellationToken)
         {
             var latestWorkflow = await _dataContext.Workflows.SingleOrDefaultAsync(w => w.Type == request.WorkflowType && w.Status == "Live", cancellationToken);
-            if (latestWorkflow is null) return null;
+            if (latestWorkflow is null) return new HandlerResponse<StartApplicationResponse>(false, $"Workflow Type does not exist.");;
 
             var project = await _dataContext.Projects.SingleOrDefaultAsync(p => p.Id == latestWorkflow.ProjectId, cancellationToken);
             try
