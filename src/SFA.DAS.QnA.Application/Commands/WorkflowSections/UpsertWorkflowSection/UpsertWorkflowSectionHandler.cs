@@ -1,6 +1,5 @@
 using System.Threading;
 using System.Threading.Tasks;
-using AutoMapper;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using SFA.DAS.Qna.Data;
@@ -11,12 +10,10 @@ namespace SFA.DAS.QnA.Application.Commands.WorkflowSections.UpsertWorkflowSectio
     public class UpsertWorkflowSectionHandler : IRequestHandler<UpsertWorkflowSectionRequest, HandlerResponse<WorkflowSection>>
     {
         private readonly QnaDataContext _dataContext;
-        private readonly IMapper _mapper;
 
-        public UpsertWorkflowSectionHandler(QnaDataContext dataContext, IMapper mapper)
+        public UpsertWorkflowSectionHandler(QnaDataContext dataContext)
         {
             _dataContext = dataContext;
-            _mapper = mapper;
         }
         
         public async Task<HandlerResponse<WorkflowSection>> Handle(UpsertWorkflowSectionRequest request, CancellationToken cancellationToken)
@@ -28,7 +25,11 @@ namespace SFA.DAS.QnA.Application.Commands.WorkflowSections.UpsertWorkflowSectio
             }
             else
             {
-                existingSection = _mapper.Map<WorkflowSection>(request.Section);
+                existingSection.Status = request.Section.Status;
+                existingSection.Title = request.Section.Title;
+                existingSection.DisplayType = request.Section.DisplayType;
+                existingSection.LinkTitle = request.Section.LinkTitle;
+                existingSection.QnAData = request.Section.QnAData;
             }
 
             await _dataContext.SaveChangesAsync(cancellationToken);

@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using SFA.DAS.QnA.Api.Infrastructure;
+using SFA.DAS.QnA.Application.Commands.WorkflowSections.CreateWorkflowSection;
 using SFA.DAS.QnA.Application.Commands.WorkflowSections.UpsertWorkflowSection;
 using SFA.DAS.QnA.Application.Queries.WorkflowSections.GetWorkflowSection;
 using SFA.DAS.QnA.Application.Queries.WorkflowSections.GetWorkflowSections;
@@ -49,9 +50,12 @@ namespace SFA.DAS.QnA.Api.Controllers.Config
         }
 
         [HttpPost("{projectId}/sections")]
-        public async Task<ActionResult<List<WorkflowSection>>> CreateWorkflowSection(Guid projectId, [FromBody] WorkflowSection section)
+        public async Task<ActionResult<WorkflowSection>> CreateWorkflowSection(Guid projectId, [FromBody] WorkflowSection section)
         {
-            throw new NotImplementedException();
+            var createWorkflowSectionResponse = await _mediator.Send(new CreateWorkflowSectionRequest(projectId, section));
+            if (!createWorkflowSectionResponse.Success) return BadRequest(new BadRequestError(createWorkflowSectionResponse.Message));
+            
+            return createWorkflowSectionResponse.Value;
         }
     }
 }
