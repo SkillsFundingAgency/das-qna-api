@@ -4,7 +4,9 @@ using System.Threading.Tasks;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using SFA.DAS.QnA.Api.Infrastructure;
+using SFA.DAS.QnA.Application.Commands.WorkflowSections.UpsertWorkflowSection;
 using SFA.DAS.QnA.Application.Queries.WorkflowSections.GetWorkflowSection;
+using SFA.DAS.QnA.Application.Queries.WorkflowSections.GetWorkflowSections;
 using SFA.DAS.QnA.Data.Entities;
 
 namespace SFA.DAS.QnA.Api.Controllers.Config
@@ -22,7 +24,10 @@ namespace SFA.DAS.QnA.Api.Controllers.Config
         [HttpGet("{projectId}/sections")]
         public async Task<ActionResult<List<WorkflowSection>>> GetWorkflowSections(Guid projectId)
         {
-            throw new NotImplementedException();
+            var getWorkflowSectionsResponse = await _mediator.Send(new GetWorkflowSectionsRequest(projectId));
+            if (!getWorkflowSectionsResponse.Success) return NotFound(new NotFoundError(getWorkflowSectionsResponse.Message));
+
+            return getWorkflowSectionsResponse.Value;
         }
 
         [HttpGet("{projectId}/sections/{sectionId}")]
@@ -33,13 +38,16 @@ namespace SFA.DAS.QnA.Api.Controllers.Config
 
             return getWorkflowSectionResponse.Value;
         }
-        
+
         [HttpPut("{projectId}/sections/{sectionId}")]
-        public async Task<ActionResult<List<WorkflowSection>>> UpdateWorkflowSection(Guid projectId, Guid sectionId, [FromBody] WorkflowSection section)
+        public async Task<ActionResult<WorkflowSection>> UpsertWorkflowSection(Guid projectId, Guid sectionId, [FromBody] WorkflowSection section)
         {
-            throw new NotImplementedException();
+            var upsertWorkflowSectionResponse = await _mediator.Send(new UpsertWorkflowSectionRequest(projectId, sectionId, section));
+            if (!upsertWorkflowSectionResponse.Success) return BadRequest(new BadRequestError(upsertWorkflowSectionResponse.Message));
+            
+            return upsertWorkflowSectionResponse.Value;
         }
-        
+
         [HttpPost("{projectId}/sections")]
         public async Task<ActionResult<List<WorkflowSection>>> CreateWorkflowSection(Guid projectId, [FromBody] WorkflowSection section)
         {
