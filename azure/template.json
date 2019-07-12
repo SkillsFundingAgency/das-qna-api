@@ -163,7 +163,10 @@
                         "value": "[resourceId ('Microsoft.Web/serverfarms', variables('appServicePlanName'))]"
                     }
                 }
-            }
+            },
+            "dependsOn": [
+                "app-service-plan"
+            ]
         },
         {
             "apiVersion": "2017-05-10",
