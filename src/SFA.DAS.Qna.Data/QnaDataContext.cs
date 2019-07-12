@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
+using SFA.DAS.QnA.Api.Types;
 using SFA.DAS.Qna.Api.Types.Page;
 using SFA.DAS.QnA.Data.Entities;
 

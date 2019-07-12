@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using SFA.DAS.QnA.Api.Infrastructure;
+using SFA.DAS.QnA.Api.Types;
 using SFA.DAS.QnA.Application.Commands.WorkflowSections.CreateWorkflowSection;
 using SFA.DAS.QnA.Application.Commands.WorkflowSections.UpsertWorkflowSection;
 using SFA.DAS.QnA.Application.Queries.WorkflowSections.GetWorkflowSection;

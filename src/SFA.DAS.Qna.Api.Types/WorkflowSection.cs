@@ -1,7 +1,7 @@
 using System;
 using SFA.DAS.Qna.Api.Types.Page;
 
-namespace SFA.DAS.QnA.Data.Entities
+namespace SFA.DAS.QnA.Api.Types
 {
     public class WorkflowSection
     {

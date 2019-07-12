@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp2.2</TargetFramework>
+        <PackageId>SFA.DAS.QnA.Api.Views</PackageId>
+        <Version>1.0.0</Version>
+        <Authors>EFSA</Authors>
+        <Company>EFSA</Company>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <PackageOutputPath>..\NugetPackages</PackageOutputPath>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Content Include="Views/**/*.*">
+            <IncludeInPackage>true</IncludeInPackage>
+            <BuildAction>Content</BuildAction>
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+    </ItemGroup>
+    
+    <ItemGroup>
+        <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.2.0" />
+        <PackageReference Include="Microsoft.AspNetCore" Version="2.2.0" />
+    </ItemGroup>
+    
+</Project>

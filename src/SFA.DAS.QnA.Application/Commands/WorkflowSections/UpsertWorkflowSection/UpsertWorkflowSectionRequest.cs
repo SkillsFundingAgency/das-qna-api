@@ -1,5 +1,6 @@
 using System;
 using MediatR;
+using SFA.DAS.QnA.Api.Types;
 using SFA.DAS.QnA.Data.Entities;
 
 namespace SFA.DAS.QnA.Application.Commands.WorkflowSections.UpsertWorkflowSection

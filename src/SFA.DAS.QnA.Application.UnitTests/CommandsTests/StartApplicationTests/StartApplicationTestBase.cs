@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using NSubstitute;
 using NUnit.Framework;
+using SFA.DAS.QnA.Api.Types;
 using SFA.DAS.Qna.Api.Types.Page;
 using SFA.DAS.QnA.Application.Commands.StartApplication;
 using SFA.DAS.Qna.Data;
