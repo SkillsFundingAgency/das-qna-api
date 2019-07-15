@@ -1,6 +1,6 @@
 using System;
 
-namespace SFA.DAS.QnA.Data.Entities
+namespace SFA.DAS.QnA.Api.Types
 {
     public class WorkflowSequence
     {
