@@ -14,7 +14,7 @@ using SFA.DAS.QnA.Data.Entities;
 
 namespace SFA.DAS.QnA.Api.Controllers.Config
 {
-    [Route("/config/workflow")]
+    [Route("/config/workflows")]
     public class WorkflowSequencesController : Controller
     {
         private readonly IMediator _mediator;

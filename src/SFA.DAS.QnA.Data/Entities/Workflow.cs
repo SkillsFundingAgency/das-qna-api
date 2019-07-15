@@ -1,4 +1,5 @@
 using System;
+using SFA.DAS.QnA.Api.Types;
 
 namespace SFA.DAS.QnA.Data.Entities
 {

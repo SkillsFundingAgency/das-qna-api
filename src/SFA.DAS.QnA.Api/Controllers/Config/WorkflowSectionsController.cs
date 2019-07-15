@@ -13,7 +13,7 @@ using SFA.DAS.QnA.Data.Entities;
 
 namespace SFA.DAS.QnA.Api.Controllers.Config
 {
-    [Route("/config/project")]
+    [Route("/config/projects")]
     public class WorkflowSectionsController : Controller
     {
         private readonly IMediator _mediator;
