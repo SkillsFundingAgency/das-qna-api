@@ -58,8 +58,8 @@ namespace SFA.DAS.QnA.Api
             var serviceProvider = services.BuildServiceProvider();
             var config = serviceProvider.GetService<IOptions<QnAConfig>>();
 
-//            if (!_hostingEnvironment.IsDevelopment())
-//            {
+            if (!_hostingEnvironment.IsDevelopment())
+            {
                 var azureActiveDirectoryConfiguration =
                     serviceProvider.GetService<IOptions<AuthenticationConfig>>();
                 services.AddAuthorization(o =>
@@ -80,7 +80,7 @@ namespace SFA.DAS.QnA.Api
                             }
                         };
                     });
-            //}
+            }
 
             services.RegisterAllTypes<IValidator>(new[] { typeof(IValidator).Assembly });
             services.AddTransient<IValidatorFactory, ValidatorFactory>();
@@ -95,9 +95,10 @@ namespace SFA.DAS.QnA.Api
             services.AddEntityFrameworkSqlServer();
 
             services.AddMvc(setup => {
-
+                if (!_hostingEnvironment.IsDevelopment())
+                {
                     setup.Filters.Add(new AuthorizeFilter("default"));
-
+                }
                 setup.Conventions.Add(new ApiExplorerGroupConvention());
             }).SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
@@ -120,14 +121,12 @@ namespace SFA.DAS.QnA.Api
             else
             {
                 app.UseHsts();
-                
+                app.UseAuthentication();
             }
 
             app.UseExceptionHandler("/errors/500");
             app.UseStatusCodePagesWithReExecute("/errors/{0}");
-            
-            app.UseAuthentication();
-            
+
             app.UseSwagger();
 
             app.UseSwaggerUI(c =>
@@ -136,8 +135,6 @@ namespace SFA.DAS.QnA.Api
                 c.SwaggerEndpoint("/swagger/config/swagger.json", "QnA API Config");
                 c.RoutePrefix = string.Empty;
             });
-
-           
             
             app.UseMvc(routes =>
             {
