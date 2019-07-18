@@ -1,7 +1,7 @@
 using MediatR;
 using SFA.DAS.Qna.Api.Types;
 
-namespace SFA.DAS.QnA.Application.Commands.StartApplication
+namespace SFA.DAS.QnA.Api.Types
 {
     public class StartApplicationRequest : IRequest<HandlerResponse<StartApplicationResponse>>
     {

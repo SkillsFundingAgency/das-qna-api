@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
+using SFA.DAS.QnA.Api.Types;
 using SFA.DAS.QnA.Application.Commands.StartApplication;
 using SFA.DAS.Qna.Data;
 

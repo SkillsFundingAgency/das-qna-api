@@ -1,5 +1,6 @@
 using System;
 using MediatR;
+using SFA.DAS.QnA.Api.Types;
 
 namespace SFA.DAS.QnA.Application.Queries.ApplicationData.GetApplicationData
 {

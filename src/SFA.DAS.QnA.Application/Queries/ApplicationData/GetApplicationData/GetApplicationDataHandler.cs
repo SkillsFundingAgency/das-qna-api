@@ -2,6 +2,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
+using SFA.DAS.QnA.Api.Types;
 using SFA.DAS.Qna.Data;
 
 namespace SFA.DAS.QnA.Application.Queries.ApplicationData.GetApplicationData

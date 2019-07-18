@@ -1,5 +1,6 @@
 using System;
 using MediatR;
+using SFA.DAS.QnA.Api.Types;
 using SFA.DAS.Qna.Api.Types.Page;
 
 namespace SFA.DAS.QnA.Application.Queries.Sections.GetPage

@@ -2,15 +2,18 @@ using System;
 using System.Net;
 using System.Threading.Tasks;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SFA.DAS.QnA.Api.Infrastructure;
+using SFA.DAS.QnA.Api.Types;
 using SFA.DAS.QnA.Application.Commands.StartApplication;
 
 namespace SFA.DAS.QnA.Api.Controllers
 {
     [Route("/applications")]
     [Produces("application/json")]
-    public class ApplicationController : Controller
+    [ApiController]
+    public class ApplicationController : ControllerBase
     {
         private readonly IMediator _mediator;
 

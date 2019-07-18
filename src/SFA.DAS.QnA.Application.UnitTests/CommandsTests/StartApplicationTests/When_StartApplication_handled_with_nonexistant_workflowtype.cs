@@ -2,6 +2,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using FluentAssertions;
 using NUnit.Framework;
+using SFA.DAS.QnA.Api.Types;
 using SFA.DAS.QnA.Application.Commands.StartApplication;
 
 namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.StartApplicationTests

@@ -1,4 +1,4 @@
-namespace SFA.DAS.QnA.Application
+namespace SFA.DAS.QnA.Api.Types
 {
     public class HandlerResponse<TResponseType>
     {

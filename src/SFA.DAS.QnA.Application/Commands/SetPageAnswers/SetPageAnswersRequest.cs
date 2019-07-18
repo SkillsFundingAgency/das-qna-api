@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using MediatR;
 using SFA.DAS.Qna.Api.Types;
+using SFA.DAS.QnA.Api.Types;
 using SFA.DAS.Qna.Api.Types.Page;
 
 namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers

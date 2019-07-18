@@ -5,6 +5,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
 using SFA.DAS.Qna.Api.Types;
+using SFA.DAS.QnA.Api.Types;
 using SFA.DAS.Qna.Api.Types.Page;
 using SFA.DAS.Qna.Data;
 
