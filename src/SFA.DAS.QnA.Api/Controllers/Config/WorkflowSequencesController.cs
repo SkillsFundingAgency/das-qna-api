@@ -7,10 +7,8 @@ using SFA.DAS.QnA.Api.Infrastructure;
 using SFA.DAS.QnA.Api.Types;
 using SFA.DAS.QnA.Application.Commands.WorkflowSequences.CreateWorkflowSequence;
 using SFA.DAS.QnA.Application.Commands.WorkflowSequences.UpsertWorkflowSequence;
-using SFA.DAS.QnA.Application.Queries.WorkflowSections.GetWorkflowSections;
 using SFA.DAS.QnA.Application.Queries.WorkflowSequences.GetWorkflowSequence;
 using SFA.DAS.QnA.Application.Queries.WorkflowSequences.GetWorkflowSequences;
-using SFA.DAS.QnA.Data.Entities;
 
 namespace SFA.DAS.QnA.Api.Controllers.Config
 {
@@ -41,13 +39,13 @@ namespace SFA.DAS.QnA.Api.Controllers.Config
 
             return getWorkflowSequenceResult.Value;
         }
-        
+
         [HttpPut("{workflowId}/sequences/{sequenceId}")]
         public async Task<ActionResult<WorkflowSequence>> UpsertWorkflowSequence(Guid workflowId, Guid sequenceId, [FromBody] WorkflowSequence sequence)
         {
             var upsertWorkflowSequenceResponse = await _mediator.Send(new UpsertWorkflowSequenceRequest(workflowId, sequenceId, sequence));
             if (!upsertWorkflowSequenceResponse.Success) return BadRequest(new BadRequestError(upsertWorkflowSequenceResponse.Message));
-            
+
             return upsertWorkflowSequenceResponse.Value;
         }
 
@@ -56,7 +54,7 @@ namespace SFA.DAS.QnA.Api.Controllers.Config
         {
             var createWorkflowSequenceResponse = await _mediator.Send(new CreateWorkflowSequenceRequest(workflowId, sequence));
             if (!createWorkflowSequenceResponse.Success) return BadRequest(new BadRequestError(createWorkflowSequenceResponse.Message));
-            
+
             return createWorkflowSequenceResponse.Value;
         }
     }

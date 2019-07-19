@@ -13,7 +13,7 @@ namespace SFA.DAS.QnA.Api.Controllers
         {
             _mediator = mediator;
         }
-        
+
         //TODO: Add some methods to allow File upload.  Might be a good start.
     }
 }

@@ -9,7 +9,6 @@ using SFA.DAS.QnA.Application.Commands.WorkflowSections.CreateWorkflowSection;
 using SFA.DAS.QnA.Application.Commands.WorkflowSections.UpsertWorkflowSection;
 using SFA.DAS.QnA.Application.Queries.WorkflowSections.GetWorkflowSection;
 using SFA.DAS.QnA.Application.Queries.WorkflowSections.GetWorkflowSections;
-using SFA.DAS.QnA.Data.Entities;
 
 namespace SFA.DAS.QnA.Api.Controllers.Config
 {
@@ -46,7 +45,7 @@ namespace SFA.DAS.QnA.Api.Controllers.Config
         {
             var upsertWorkflowSectionResponse = await _mediator.Send(new UpsertWorkflowSectionRequest(projectId, sectionId, section));
             if (!upsertWorkflowSectionResponse.Success) return BadRequest(new BadRequestError(upsertWorkflowSectionResponse.Message));
-            
+
             return upsertWorkflowSectionResponse.Value;
         }
 
@@ -55,7 +54,7 @@ namespace SFA.DAS.QnA.Api.Controllers.Config
         {
             var createWorkflowSectionResponse = await _mediator.Send(new CreateWorkflowSectionRequest(projectId, section));
             if (!createWorkflowSectionResponse.Success) return BadRequest(new BadRequestError(createWorkflowSectionResponse.Message));
-            
+
             return createWorkflowSectionResponse.Value;
         }
     }

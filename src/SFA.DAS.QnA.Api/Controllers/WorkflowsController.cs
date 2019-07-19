@@ -19,7 +19,7 @@ namespace SFA.DAS.QnA.Api.Controllers
         }
 
         /// <summary>
-        /// Returns all of the current live workflows
+        ///     Returns all of the current live workflows
         /// </summary>
         /// <returns>An array of workflows</returns>
         [HttpGet]

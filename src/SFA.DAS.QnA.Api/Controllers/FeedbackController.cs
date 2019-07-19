@@ -8,7 +8,6 @@ using SFA.DAS.QnA.Api.Infrastructure;
 using SFA.DAS.Qna.Api.Types.Page;
 using SFA.DAS.QnA.Application.Commands.PageFeedback.DeleteFeedback;
 using SFA.DAS.QnA.Application.Commands.PageFeedback.UpsertFeedback;
-using SFA.DAS.QnA.Application.Queries.Sections.GetPage;
 
 namespace SFA.DAS.QnA.Api.Controllers
 {
@@ -22,16 +21,16 @@ namespace SFA.DAS.QnA.Api.Controllers
         {
             _mediator = mediator;
         }
-        
+
         /// <summary>
-        /// Inserts / Updates Page Feedback
+        ///     Inserts / Updates Page Feedback
         /// </summary>
         /// <returns>The page containing the feedback</returns>
         /// <response code="200">Returns a Page</response>
         /// <response code="404">If the ApplicationId, SectionId or PageId are invalid</response>
         [HttpPut("{applicationId}/sections/{sectionId}/pages/{pageId}/feedback")]
-        [ProducesResponseType((int)HttpStatusCode.OK)]
-        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
+        [ProducesResponseType((int) HttpStatusCode.OK)]
+        [ProducesResponseType((int) HttpStatusCode.BadRequest)]
         public async Task<ActionResult<Page>> UpsertFeedback(Guid applicationId, Guid sectionId, string pageId, [FromBody] Feedback feedback)
         {
             var upsertFeedbackResponse = await _mediator.Send(new UpsertFeedbackRequest(applicationId, sectionId, pageId, feedback), CancellationToken.None);
@@ -39,10 +38,10 @@ namespace SFA.DAS.QnA.Api.Controllers
 
             return upsertFeedbackResponse.Value;
         }
-        
+
         [HttpDelete("{applicationId}/sections/{sectionId}/pages/{pageId}/feedback/{feedbackId}")]
-        [ProducesResponseType((int)HttpStatusCode.OK)]
-        [ProducesResponseType((int)HttpStatusCode.NotFound)]
+        [ProducesResponseType((int) HttpStatusCode.OK)]
+        [ProducesResponseType((int) HttpStatusCode.NotFound)]
         public async Task<ActionResult<Page>> DeleteFeedback(Guid applicationId, Guid sectionId, string pageId, Guid feedbackId)
         {
             var deleteFeedbackResponse = await _mediator.Send(new DeleteFeedbackRequest(applicationId, sectionId, pageId, feedbackId), CancellationToken.None);

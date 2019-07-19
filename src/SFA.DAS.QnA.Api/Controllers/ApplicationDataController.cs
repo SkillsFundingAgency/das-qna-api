@@ -21,7 +21,7 @@ namespace SFA.DAS.QnA.Api.Controllers
         }
 
         /// <summary>
-        /// Returns the ApplicationData for the Application
+        ///     Returns the ApplicationData for the Application
         /// </summary>
         /// <returns>The ApplicationData</returns>
         /// <response code="200">Returns the Application's ApplicationData</response>
@@ -39,7 +39,7 @@ namespace SFA.DAS.QnA.Api.Controllers
         }
 
         /// <summary>
-        /// Sets the ApplicationData for the Application
+        ///     Sets the ApplicationData for the Application
         /// </summary>
         /// <response code="200">Returns the Application's ApplicationData</response>
         /// <response code="404">If there is no Application for the given Application Id</response>

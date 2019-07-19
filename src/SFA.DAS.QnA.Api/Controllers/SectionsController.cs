@@ -5,11 +5,8 @@ using System.Threading.Tasks;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using SFA.DAS.Qna.Api.Types;
-using SFA.DAS.Qna.Api.Types.Page;
-using SFA.DAS.QnA.Application.Queries.Sections.GetPage;
 using SFA.DAS.QnA.Application.Queries.Sections.GetSection;
 using SFA.DAS.QnA.Application.Queries.Sections.GetSequenceSections;
-using SFA.DAS.QnA.Application.Queries.Sequences.GetCurrentSequence;
 
 namespace SFA.DAS.QnA.Api.Controllers
 {
@@ -23,9 +20,9 @@ namespace SFA.DAS.QnA.Api.Controllers
         {
             _mediator = mediator;
         }
-        
+
         /// <summary>
-        /// Returns the Sequence's Sections
+        ///     Returns the Sequence's Sections
         /// </summary>
         /// <returns>The Sequence's Sections</returns>
         /// <response code="200">Returns the Sequence's Sections</response>
@@ -43,9 +40,9 @@ namespace SFA.DAS.QnA.Api.Controllers
 
             return sectionsResponse.Value;
         }
-        
+
         /// <summary>
-        /// Returns the requested Section
+        ///     Returns the requested Section
         /// </summary>
         /// <returns>The requested Section</returns>
         /// <response code="200">Returns a Section</response>

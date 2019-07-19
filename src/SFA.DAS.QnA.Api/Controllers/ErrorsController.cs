@@ -17,7 +17,7 @@ namespace SFA.DAS.QnA.Api.Controllers
             var error = new ApiError(code, parsedCode.ToString());
             return new ObjectResult(error);
         }
-        
+
         [HttpPost("{code}")]
         public IActionResult ErrorPost(int code)
         {

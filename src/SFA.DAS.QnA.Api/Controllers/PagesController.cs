@@ -25,9 +25,9 @@ namespace SFA.DAS.QnA.Api.Controllers
         {
             _mediator = mediator;
         }
-        
+
         /// <summary>
-        /// Returns the requested Page
+        ///     Returns the requested Page
         /// </summary>
         /// <returns>The requested Page</returns>
         /// <response code="200">Returns a Page</response>
@@ -44,7 +44,7 @@ namespace SFA.DAS.QnA.Api.Controllers
         }
 
         /// <summary>
-        /// Sets the answers on the page.
+        ///     Sets the answers on the page.
         /// </summary>
         /// <returns>An object describing validity / next steps</returns>
         /// <response code="200">Returns the response</response>
@@ -53,41 +53,41 @@ namespace SFA.DAS.QnA.Api.Controllers
         public async Task<ActionResult<SetPageAnswersResponse>> SetPageAnswers(Guid applicationId, Guid sectionId, string pageId, [FromBody] List<Answer> answers)
         {
             var savePageAnswersResponse = await _mediator.Send(new SetPageAnswersRequest(applicationId, sectionId, pageId, answers), CancellationToken.None);
-            
+
             return savePageAnswersResponse.Value;
         }
-        
+
         /// <summary>
-        /// Adds an answer on a page that allows multiple sets of answers
+        ///     Adds an answer on a page that allows multiple sets of answers
         /// </summary>
         /// <returns>An object describing validity</returns>
         /// <response code="200">Returns the Page</response>
         /// <response code="400">If this page is not a multiple answers page or this ApplicationId, SectionId or PageId does not exist</response>
         [HttpPost("{applicationId}/sections/{sectionId}/pages/{pageId}/multiple")]
-        [ProducesResponseType((int)HttpStatusCode.OK)]
-        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
+        [ProducesResponseType((int) HttpStatusCode.OK)]
+        [ProducesResponseType((int) HttpStatusCode.BadRequest)]
         public async Task<ActionResult<Page>> AddPageAnswer(Guid applicationId, Guid sectionId, string pageId, [FromBody] List<Answer> answers)
         {
             var addPageAnswerResponse = await _mediator.Send(new AddPageAnswerRequest(applicationId, sectionId, pageId, answers), CancellationToken.None);
             if (!addPageAnswerResponse.Success) return BadRequest(new BadRequestError(addPageAnswerResponse.Message));
-            
+
             return addPageAnswerResponse.Value.Page;
         }
-        
+
         /// <summary>
-        /// Removes an answer from a page that allows multiple sets of answers
+        ///     Removes an answer from a page that allows multiple sets of answers
         /// </summary>
         /// <returns>An object describing validity</returns>
         /// <response code="200">Returns the Page</response>
         /// <response code="400">If this page is not a multiple answers page or this ApplicationId, SectionId or PageId does not exist</response>
         [HttpDelete("{applicationId}/sections/{sectionId}/pages/{pageId}/multiple/{answerId}")]
-        [ProducesResponseType((int)HttpStatusCode.OK)]
-        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
+        [ProducesResponseType((int) HttpStatusCode.OK)]
+        [ProducesResponseType((int) HttpStatusCode.BadRequest)]
         public async Task<ActionResult<Page>> RemovePageAnswer(Guid applicationId, Guid sectionId, string pageId, Guid answerId)
         {
             var removePageAnswerResponse = await _mediator.Send(new RemovePageAnswerRequest(applicationId, sectionId, pageId, answerId), CancellationToken.None);
             if (!removePageAnswerResponse.Success) return BadRequest(new BadRequestError(removePageAnswerResponse.Message));
-            
+
             return removePageAnswerResponse.Value.Page;
         }
     }

@@ -7,12 +7,8 @@ using SFA.DAS.QnA.Api.Infrastructure;
 using SFA.DAS.QnA.Api.Types;
 using SFA.DAS.QnA.Application.Commands.Projects.CreateProject;
 using SFA.DAS.QnA.Application.Commands.Projects.UpsertProject;
-using SFA.DAS.QnA.Application.Commands.WorkflowSequences.CreateWorkflowSequence;
-using SFA.DAS.QnA.Application.Commands.WorkflowSequences.UpsertWorkflowSequence;
 using SFA.DAS.QnA.Application.Queries.Projects.GetProject;
 using SFA.DAS.QnA.Application.Queries.Projects.GetProjects;
-using SFA.DAS.QnA.Application.Queries.WorkflowSequences.GetWorkflowSequence;
-using SFA.DAS.QnA.Application.Queries.WorkflowSequences.GetWorkflowSequences;
 
 namespace SFA.DAS.QnA.Api.Controllers.Config
 {
@@ -43,13 +39,13 @@ namespace SFA.DAS.QnA.Api.Controllers.Config
 
             return getProjectResult.Value;
         }
-        
+
         [HttpPut("{projectId}")]
         public async Task<ActionResult<Project>> UpsertProject(Guid projectId, [FromBody] Project project)
         {
             var upsertProjectResult = await _mediator.Send(new UpsertProjectRequest(projectId, project));
             if (!upsertProjectResult.Success) return BadRequest(new BadRequestError(upsertProjectResult.Message));
-            
+
             return upsertProjectResult.Value;
         }
 
@@ -58,7 +54,7 @@ namespace SFA.DAS.QnA.Api.Controllers.Config
         {
             var createProjectResult = await _mediator.Send(new CreateProjectRequest(project));
             if (!createProjectResult.Success) return BadRequest(new BadRequestError(createProjectResult.Message));
-            
+
             return createProjectResult.Value;
         }
     }

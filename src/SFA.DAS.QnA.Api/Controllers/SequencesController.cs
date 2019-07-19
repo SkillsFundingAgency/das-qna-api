@@ -24,7 +24,7 @@ namespace SFA.DAS.QnA.Api.Controllers
         }
 
         /// <summary>
-        /// Returns all of the Sequences for the Application
+        ///     Returns all of the Sequences for the Application
         /// </summary>
         /// <returns>An array of Sequences</returns>
         /// <response code="200">Returns the Application's Sequences</response>
@@ -44,7 +44,7 @@ namespace SFA.DAS.QnA.Api.Controllers
         }
 
         /// <summary>
-        /// Returns the Application's currently active Sequence
+        ///     Returns the Application's currently active Sequence
         /// </summary>
         /// <returns>The active sequence</returns>
         /// <response code="200">Returns the active sequence</response>
@@ -62,9 +62,9 @@ namespace SFA.DAS.QnA.Api.Controllers
 
             return sequence.Value;
         }
-        
+
         /// <summary>
-        /// Returns the requested Sequence
+        ///     Returns the requested Sequence
         /// </summary>
         /// <returns>The requested Sequence</returns>
         /// <response code="200">Returns the requested sequence</response>
@@ -79,6 +79,5 @@ namespace SFA.DAS.QnA.Api.Controllers
 
             return sequence.Value;
         }
-        
     }
 }

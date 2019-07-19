@@ -17,9 +17,6 @@
         <PackageReference Include="SFA.DAS.QnA.Api.Types" Version="1.0.0" />
         <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="2.2.0" />
         <PackageReference Include="Microsoft.Extensions.Options" Version="2.2.0" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <ProjectReference Include="..\SFA.DAS.Qna.Api.Types\SFA.DAS.QnA.Api.Types.csproj" />
+        <PackageReference Include="SFA.DAS.QnA.Api.Types" Version="1.0.1" />
     </ItemGroup>
 </Project>
