@@ -1,6 +1,6 @@
 using System;
 using Microsoft.EntityFrameworkCore;
-using SFA.DAS.Qna.Data;
+using SFA.DAS.QnA.Data;
 
 namespace SFA.DAS.QnA.Application.UnitTests
 {

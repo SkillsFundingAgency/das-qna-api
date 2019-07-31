@@ -5,8 +5,7 @@ using System.Threading.Tasks;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using SFA.DAS.QnA.Api.Types;
-using SFA.DAS.QnA.Application.Queries.WorkflowSequences.GetWorkflowSequences;
-using SFA.DAS.Qna.Data;
+using SFA.DAS.QnA.Data;
 
 namespace SFA.DAS.QnA.Application.Queries.Projects.GetProjects
 {

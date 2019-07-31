@@ -4,7 +4,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using SFA.DAS.Qna.Api.Types;
+using SFA.DAS.QnA.Api.Types;
 using SFA.DAS.QnA.Application.Queries.Sections.GetSection;
 using SFA.DAS.QnA.Application.Queries.Sections.GetSequenceSections;
 

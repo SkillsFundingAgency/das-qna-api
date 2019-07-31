@@ -1,5 +1,5 @@
 using System;
-using SFA.DAS.Qna.Api.Types.Page;
+using SFA.DAS.QnA.Api.Types.Page;
 
 namespace SFA.DAS.QnA.Data.Entities
 {

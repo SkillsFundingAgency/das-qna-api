@@ -2,7 +2,7 @@ using System;
 using MediatR;
 using Newtonsoft.Json.Schema;
 using SFA.DAS.QnA.Api.Types;
-using SFA.DAS.Qna.Api.Types.Page;
+using SFA.DAS.QnA.Api.Types.Page;
 
 namespace SFA.DAS.QnA.Application.Commands.PageFeedback.UpsertFeedback
 {

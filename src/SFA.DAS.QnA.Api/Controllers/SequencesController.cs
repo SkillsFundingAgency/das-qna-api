@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using SFA.DAS.QnA.Api.Infrastructure;
-using SFA.DAS.Qna.Api.Types;
+using SFA.DAS.QnA.Api.Types;
 using SFA.DAS.QnA.Application.Queries.Sequences.GetCurrentSequence;
 using SFA.DAS.QnA.Application.Queries.Sequences.GetSequence;
 using SFA.DAS.QnA.Application.Queries.Sequences.GetSequences;

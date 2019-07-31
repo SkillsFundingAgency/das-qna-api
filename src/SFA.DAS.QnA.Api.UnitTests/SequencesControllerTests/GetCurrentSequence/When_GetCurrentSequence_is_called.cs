@@ -4,7 +4,6 @@ using System.Threading.Tasks;
 using FluentAssertions;
 using NSubstitute;
 using NUnit.Framework;
-using SFA.DAS.Qna.Api.Types;
 using SFA.DAS.QnA.Api.Types;
 using SFA.DAS.QnA.Application;
 using SFA.DAS.QnA.Application.Queries.Sequences.GetCurrentSequence;

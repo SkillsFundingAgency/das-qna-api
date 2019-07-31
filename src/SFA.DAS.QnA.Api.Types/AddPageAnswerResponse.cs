@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace SFA.DAS.Qna.Api.Types
+namespace SFA.DAS.QnA.Api.Types
 {
     public class AddPageAnswerResponse
     {

@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using SFA.DAS.QnA.Api.Types;
 using SFA.DAS.QnA.Application.Commands.StartApplication;
-using SFA.DAS.Qna.Data;
+using SFA.DAS.QnA.Data;
 
 namespace SFA.DAS.QnA.Application.Commands.SetApplicationData
 {
@@ -25,11 +25,11 @@ namespace SFA.DAS.QnA.Application.Commands.SetApplicationData
             
             if (application is null) return new HandlerResponse<string>(success:false, message:"Application does not exist.");
             
-            var workflow = await _dataContext.Workflows.Include(wf => wf.Project).SingleOrDefaultAsync(wf => wf.Id == application.WorkflowId, cancellationToken);
+            var workflow = await _dataContext.Workflows.SingleOrDefaultAsync(wf => wf.Id == application.WorkflowId, cancellationToken);
 
             var serializedApplicationData = JsonConvert.SerializeObject(request.ApplicationData);
             
-            if (!_applicationDataValidator.IsValid(workflow.Project.ApplicationDataSchema, serializedApplicationData))
+            if (!_applicationDataValidator.IsValid(workflow.ApplicationDataSchema, serializedApplicationData))
             {
                 return new HandlerResponse<string>(success:false, message:"ApplicationData does not validated against the Project's Schema.");
             }

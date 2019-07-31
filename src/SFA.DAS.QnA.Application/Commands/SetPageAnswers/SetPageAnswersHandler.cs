@@ -7,11 +7,9 @@ using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using Newtonsoft.Json.Serialization;
-using SFA.DAS.Qna.Api.Types;
 using SFA.DAS.QnA.Api.Types;
-using SFA.DAS.Qna.Api.Types.Page;
-using SFA.DAS.Qna.Data;
+using SFA.DAS.QnA.Api.Types.Page;
+using SFA.DAS.QnA.Data;
 using SFA.DAS.QnA.Data.Entities;
 
 namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers

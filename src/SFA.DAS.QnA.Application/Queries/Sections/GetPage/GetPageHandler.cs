@@ -1,12 +1,11 @@
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using AutoMapper;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using SFA.DAS.QnA.Api.Types;
-using SFA.DAS.Qna.Api.Types.Page;
-using SFA.DAS.Qna.Data;
+using SFA.DAS.QnA.Api.Types.Page;
+using SFA.DAS.QnA.Data;
 
 namespace SFA.DAS.QnA.Application.Queries.Sections.GetPage
 {

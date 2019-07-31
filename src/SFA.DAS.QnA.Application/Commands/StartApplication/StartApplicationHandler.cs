@@ -1,18 +1,13 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Web;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
-using SFA.DAS.Qna.Api.Types;
 using SFA.DAS.QnA.Api.Types;
-using SFA.DAS.Qna.Api.Types.Page;
-using SFA.DAS.Qna.Data;
+using SFA.DAS.QnA.Data;
 using SFA.DAS.QnA.Data.Entities;
-using Workflow = SFA.DAS.QnA.Data.Entities.Workflow;
 
 namespace SFA.DAS.QnA.Application.Commands.StartApplication
 {
@@ -20,7 +15,7 @@ namespace SFA.DAS.QnA.Application.Commands.StartApplication
     {
         private readonly QnaDataContext _dataContext;
         private readonly IApplicationDataValidator _applicationDataValidator;
-        private bool applicationDataIsInvalid;
+        private bool _applicationDataIsInvalid;
 
         public StartApplicationHandler(QnaDataContext dataContext, IApplicationDataValidator applicationDataValidator)
         {
@@ -33,17 +28,16 @@ namespace SFA.DAS.QnA.Application.Commands.StartApplication
             var latestWorkflow = await _dataContext.Workflows.SingleOrDefaultAsync(w => w.Type == request.WorkflowType && w.Status == "Live", cancellationToken);
             if (latestWorkflow is null) return new HandlerResponse<StartApplicationResponse>(false, $"Workflow Type does not exist.");;
 
-            var project = await _dataContext.Projects.SingleOrDefaultAsync(p => p.Id == latestWorkflow.ProjectId, cancellationToken);
             try
             {
-                applicationDataIsInvalid = !_applicationDataValidator.IsValid(project.ApplicationDataSchema, request.ApplicationData);
+                _applicationDataIsInvalid = !_applicationDataValidator.IsValid(latestWorkflow.ApplicationDataSchema, request.ApplicationData);
             }
             catch (JsonReaderException)
             {
                 return new HandlerResponse<StartApplicationResponse>(false, $"Supplied ApplicationData is not valid JSON.");
             }
             
-            if (applicationDataIsInvalid)
+            if (_applicationDataIsInvalid)
             {
                 return new HandlerResponse<StartApplicationResponse>(false, $"Supplied ApplicationData is not valid using Project's Schema.");
             }

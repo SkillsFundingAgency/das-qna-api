@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 using FluentAssertions;
 using Microsoft.EntityFrameworkCore;
 using NUnit.Framework;
-using SFA.DAS.Qna.Api.Types.Page;
+using SFA.DAS.QnA.Api.Types.Page;
 using SFA.DAS.QnA.Application.Commands.PageFeedback.UpsertFeedback;
-using SFA.DAS.Qna.Data;
+using SFA.DAS.QnA.Data;
 using SFA.DAS.QnA.Data.Entities;
 
 namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.UpsertFeedbackTests

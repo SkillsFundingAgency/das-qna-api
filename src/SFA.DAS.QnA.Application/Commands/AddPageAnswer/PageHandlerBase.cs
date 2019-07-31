@@ -2,8 +2,8 @@ using System;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using SFA.DAS.Qna.Api.Types.Page;
-using SFA.DAS.Qna.Data;
+using SFA.DAS.QnA.Api.Types.Page;
+using SFA.DAS.QnA.Data;
 using SFA.DAS.QnA.Data.Entities;
 
 namespace SFA.DAS.QnA.Application.Commands.AddPageAnswer

@@ -1,7 +1,7 @@
 using System;
-using SFA.DAS.Qna.Api.Types.Page;
+using SFA.DAS.QnA.Api.Types.Page;
 
-namespace SFA.DAS.Qna.Api.Types
+namespace SFA.DAS.QnA.Api.Types
 {
     public class Section
     {

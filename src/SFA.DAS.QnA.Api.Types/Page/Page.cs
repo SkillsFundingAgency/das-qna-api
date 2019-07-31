@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Newtonsoft.Json;
 
-namespace SFA.DAS.Qna.Api.Types.Page
+namespace SFA.DAS.QnA.Api.Types.Page
 {
     public class Page
     {

@@ -1,4 +1,4 @@
-namespace SFA.DAS.Qna.Api.Types.Page
+namespace SFA.DAS.QnA.Api.Types.Page
 {
     public class Condition
     {

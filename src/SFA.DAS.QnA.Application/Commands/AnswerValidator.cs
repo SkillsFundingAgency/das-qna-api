@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
-using SFA.DAS.Qna.Api.Types.Page;
+using SFA.DAS.QnA.Api.Types.Page;
 using SFA.DAS.QnA.Application.Commands.SetPageAnswers;
 using SFA.DAS.QnA.Application.Validators;
 

@@ -2,10 +2,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
-using SFA.DAS.Qna.Api.Types;
 using SFA.DAS.QnA.Api.Types;
 using SFA.DAS.QnA.Application.Commands.AddPageAnswer;
-using SFA.DAS.Qna.Data;
+using SFA.DAS.QnA.Data;
 
 namespace SFA.DAS.QnA.Application.Commands.RemovePageAnswer
 {

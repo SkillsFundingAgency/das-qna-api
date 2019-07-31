@@ -1,10 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using SFA.DAS.QnA.Api.Types;
-using SFA.DAS.Qna.Api.Types.Page;
+using SFA.DAS.QnA.Api.Types.Page;
 using SFA.DAS.QnA.Data.Entities;
 
-namespace SFA.DAS.Qna.Data
+namespace SFA.DAS.QnA.Data
 {
     public class QnaDataContext : DbContext
     {

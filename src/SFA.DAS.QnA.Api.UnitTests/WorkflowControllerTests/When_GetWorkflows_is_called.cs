@@ -5,11 +5,10 @@ using System.Threading;
 using System.Threading.Tasks;
 using FluentAssertions;
 using MediatR;
-using Microsoft.AspNetCore.Mvc;
 using NSubstitute;
 using NUnit.Framework;
 using SFA.DAS.QnA.Api.Controllers;
-using SFA.DAS.Qna.Api.Types;
+using SFA.DAS.QnA.Api.Types;
 using SFA.DAS.QnA.Application.Queries.GetWorkflows;
 
 namespace SFA.DAS.QnA.Api.UnitTests.WorkflowControllerTests
@@ -31,14 +30,14 @@ namespace SFA.DAS.QnA.Api.UnitTests.WorkflowControllerTests
                 Version = "1"
             };
             mediator.Send(Arg.Any<GetWorkflowsRequest>(), Arg.Any<CancellationToken>())
-                .Returns(new List<Workflow>
+                .Returns(new HandlerResponse<List<Workflow>>(new List<Workflow>
                 {
                     workflowResponse
-                });
+                }));
             
             var workflowController = new WorkflowsController(mediator);
 
-            var result = await workflowController.GetWorkflows();
+            var result = await workflowController.GetWorkflows(Guid.NewGuid());
 
             result.Value.Should().BeOfType<List<Workflow>>();
             result.Value.Count.Should().Be(1);

@@ -1,5 +1,4 @@
 using MediatR;
-using SFA.DAS.Qna.Api.Types;
 
 namespace SFA.DAS.QnA.Api.Types
 {

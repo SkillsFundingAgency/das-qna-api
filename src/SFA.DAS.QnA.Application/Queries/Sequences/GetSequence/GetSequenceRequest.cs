@@ -1,6 +1,5 @@
 using System;
 using MediatR;
-using SFA.DAS.Qna.Api.Types;
 using SFA.DAS.QnA.Api.Types;
 
 namespace SFA.DAS.QnA.Application.Queries.Sequences.GetSequence

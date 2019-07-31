@@ -3,7 +3,12 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using SFA.DAS.QnA.Api.Infrastructure;
 using SFA.DAS.QnA.Api.Types;
+using SFA.DAS.QnA.Application.Commands.Workflows.CreateWorkflow;
+using SFA.DAS.QnA.Application.Commands.Workflows.UpsertWorkflow;
+using SFA.DAS.QnA.Application.Queries.GetWorkflows;
+using SFA.DAS.QnA.Application.Queries.Workflows.GetWorkflow;
 
 namespace SFA.DAS.QnA.Api.Controllers.Config
 {
@@ -18,27 +23,39 @@ namespace SFA.DAS.QnA.Api.Controllers.Config
         }
 
         [HttpGet("{projectId}/workflows")]
-        public async Task<ActionResult<List<WorkflowSection>>> GetWorkflowSections(Guid projectId)
+        public async Task<ActionResult<List<Workflow>>> GetWorkflows(Guid projectId)
         {
-            throw new NotImplementedException();
+            var getWorkflowResponse = await _mediator.Send(new GetWorkflowsRequest(projectId));
+            if (!getWorkflowResponse.Success) return NotFound(new NotFoundError(getWorkflowResponse.Message));
+
+            return getWorkflowResponse.Value;
         }
 
-        [HttpGet("{projectId}/workflows/{sectionId}")]
-        public async Task<ActionResult<WorkflowSection>> GetWorkflowSection(Guid projectId, Guid sectionId)
+        [HttpGet("{projectId}/workflows/{workflowId}")]
+        public async Task<ActionResult<Workflow>> GetWorkflow(Guid projectId, Guid workflowId)
         {
-            throw new NotImplementedException();
+            var getWorkflowResponse = await _mediator.Send(new GetWorkflowRequest(projectId, workflowId));
+            if (!getWorkflowResponse.Success) return NotFound(new NotFoundError(getWorkflowResponse.Message));
+
+            return getWorkflowResponse.Value;
         }
 
-        [HttpPut("{projectId}/workflows/{sectionId}")]
-        public async Task<ActionResult<WorkflowSection>> UpsertWorkflowSection(Guid projectId, Guid sectionId, [FromBody] WorkflowSection section)
+        [HttpPut("{projectId}/workflows/{workflowId}")]
+        public async Task<ActionResult<Workflow>> UpsertWorkflow(Guid projectId, Guid workflowId, [FromBody] Workflow workflow)
         {
-            throw new NotImplementedException();
+            var upsertWorkflowResponse = await _mediator.Send(new UpsertWorkflowRequest(projectId, workflowId, workflow));
+            if (!upsertWorkflowResponse.Success) return BadRequest(new BadRequestError(upsertWorkflowResponse.Message));
+
+            return upsertWorkflowResponse.Value;
         }
 
         [HttpPost("{projectId}/workflows")]
-        public async Task<ActionResult<WorkflowSection>> CreateWorkflowSection(Guid projectId, [FromBody] WorkflowSection section)
+        public async Task<ActionResult<Workflow>> CreateWorkflow(Guid projectId, [FromBody] Workflow workflow)
         {
-            throw new NotImplementedException();
+            var createWorkflowResponse = await _mediator.Send(new CreateWorkflowRequest(projectId, workflow));
+            if (!createWorkflowResponse.Success) return BadRequest(new BadRequestError(createWorkflowResponse.Message));
+
+            return createWorkflowResponse.Value;
         }
     }
 }

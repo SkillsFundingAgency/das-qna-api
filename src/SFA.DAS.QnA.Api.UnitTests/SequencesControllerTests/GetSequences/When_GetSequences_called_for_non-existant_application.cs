@@ -8,7 +8,6 @@ using Microsoft.AspNetCore.Mvc;
 using NSubstitute;
 using NUnit.Framework;
 using SFA.DAS.QnA.Api.Controllers;
-using SFA.DAS.Qna.Api.Types;
 using SFA.DAS.QnA.Api.Types;
 using SFA.DAS.QnA.Application;
 using SFA.DAS.QnA.Application.Queries.Sequences.GetSequences;

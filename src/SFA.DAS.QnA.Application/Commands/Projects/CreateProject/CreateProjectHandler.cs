@@ -2,8 +2,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
 using SFA.DAS.QnA.Api.Types;
-using SFA.DAS.QnA.Application.Commands.WorkflowSequences.CreateWorkflowSequence;
-using SFA.DAS.Qna.Data;
+using SFA.DAS.QnA.Data;
 
 namespace SFA.DAS.QnA.Application.Commands.Projects.CreateProject
 {
@@ -18,6 +17,7 @@ namespace SFA.DAS.QnA.Application.Commands.Projects.CreateProject
         public async Task<HandlerResponse<Project>> Handle(CreateProjectRequest request, CancellationToken cancellationToken)
         {
             await _dataContext.Projects.AddAsync(request.Project, cancellationToken);
+            await _dataContext.SaveChangesAsync(cancellationToken);
             return new HandlerResponse<Project>(request.Project);
         }
     }

@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using SFA.DAS.QnA.Api.Infrastructure;
-using SFA.DAS.Qna.Api.Types.Page;
+using SFA.DAS.QnA.Api.Types.Page;
 using SFA.DAS.QnA.Application.Commands.PageFeedback.DeleteFeedback;
 using SFA.DAS.QnA.Application.Commands.PageFeedback.UpsertFeedback;
 

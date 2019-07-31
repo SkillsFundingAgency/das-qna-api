@@ -4,7 +4,7 @@ using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using NUnit.Framework;
 using SFA.DAS.QnA.Application.Queries.Sequences.GetCurrentSequence;
-using SFA.DAS.Qna.Data;
+using SFA.DAS.QnA.Data;
 using SFA.DAS.QnA.Data.Entities;
 
 namespace SFA.DAS.QnA.Application.UnitTests.QueriesTests.GetCurrentSequenceTests
