@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
-using SFA.DAS.Qna.Api.Types;
 using SFA.DAS.QnA.Api.Types;
 
 namespace SFA.DAS.QnA.Api.Client

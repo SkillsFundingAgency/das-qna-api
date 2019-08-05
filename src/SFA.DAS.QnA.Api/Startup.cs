@@ -54,6 +54,7 @@ namespace SFA.DAS.QnA.Api
             services.AddOptions();
             services.Configure<QnAConfig>(Configuration.GetSection("QnA"));
             services.Configure<AuthenticationConfig>(Configuration.GetSection("ApiAuthentication"));
+            services.Configure<FileStorageConfig>(Configuration.GetSection("FileStorage"));
             var serviceProvider = services.BuildServiceProvider();
             var config = serviceProvider.GetService<IOptions<QnAConfig>>();
 
