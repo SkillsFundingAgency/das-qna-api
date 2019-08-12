@@ -1,25 +1,24 @@
 using System;
 using MediatR;
-using Microsoft.AspNetCore.Http;
 using SFA.DAS.QnA.Api.Types;
 
-namespace SFA.DAS.QnA.Application.Commands.UploadFile
+namespace SFA.DAS.QnA.Application.Commands.Files.DownloadFile
 {
-    public class UploadFileRequest : IRequest<HandlerResponse<SetPageAnswersResponse>>
+    public class DownloadFileRequest : IRequest<HandlerResponse<DownloadFile>>
     {
         public Guid ApplicationId { get; }
         public Guid SectionId { get; }
         public string PageId { get; }
         public string QuestionId { get; }
-        public IFormFileCollection Files { get; }
+        public string FileName { get; }
 
-        public UploadFileRequest(Guid applicationId, Guid sectionId, string pageId, string questionId, IFormFileCollection files)
+        public DownloadFileRequest(Guid applicationId, Guid sectionId, string pageId, string questionId, string fileName)
         {
             ApplicationId = applicationId;
             SectionId = sectionId;
             PageId = pageId;
             QuestionId = questionId;
-            Files = files;
+            FileName = fileName;
         }
     }
 }

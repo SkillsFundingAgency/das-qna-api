@@ -17,6 +17,8 @@ using Microsoft.Extensions.Options;
 using SFA.DAS.QnA.Api.Infrastructure;
 using SFA.DAS.QnA.Application;
 using SFA.DAS.QnA.Application.Commands;
+using SFA.DAS.QnA.Application.Commands.Files;
+using SFA.DAS.QnA.Application.Commands.Files.UploadFile;
 using SFA.DAS.QnA.Application.Commands.StartApplication;
 using SFA.DAS.QnA.Application.Validators;
 using SFA.DAS.QnA.Configuration.Config;
@@ -86,6 +88,9 @@ namespace SFA.DAS.QnA.Api
             services.AddTransient<IValidatorFactory, ValidatorFactory>();
             services.AddTransient<IAnswerValidator, AnswerValidator>();
             services.AddTransient<IApplicationDataValidator, ApplicationDataValidator>();
+            
+            services.AddTransient<IEncryptionService, EncryptionService>();
+            services.AddTransient<IKeyProvider, ConfigKeyProvider>();
             
             services.AddAutoMapper(typeof(SystemTime).Assembly);
             services.AddMediatR(AppDomain.CurrentDomain.GetAssemblies());
