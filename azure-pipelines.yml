@@ -61,6 +61,24 @@ steps:
     publishWebProjects: false
     projects: src/SFA.DAS.Qna.Data/SFA.DAS.Qna.Data.csproj
     arguments: '--configuration $(buildConfiguration) --output $(build.artifactstagingdirectory)/publish --no-restore  --no-build'
+    
+- task: DotNetCoreCLI@2
+  displayName: 'dotnet pack'
+  inputs:
+    command: pack
+    packagesToPack: src/SFA.DAS.Qna.Api.Types/SFA.DAS.Qna.Api.Types.csproj
+    packDirectory: '$(build.artifactstagingdirectory)/publish'
+    versioningScheme: byBuildNumber
+    buildProperties: 'Version="$(Build.BuildNumber)"'
+
+- task: DotNetCoreCLI@2
+  displayName: 'dotnet pack'
+  inputs:
+    command: pack
+    packagesToPack: src/SFA.DAS.QnA.Api.Client/SFA.DAS.QnA.Api.Client.csproj
+    packDirectory: '$(build.artifactstagingdirectory)/publish'
+    versioningScheme: byBuildNumber
+    buildProperties: 'Version="$(Build.BuildNumber)"'
 
 - task: VSBuild@1
   displayName: 'Build DACPAC'
