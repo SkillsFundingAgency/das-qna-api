@@ -3,7 +3,7 @@
     <PropertyGroup>
         <TargetFramework>netcoreapp2.2</TargetFramework>
         <PackageId>SFA.DAS.QnA.Api.Views</PackageId>
-        <Version>1.0.0</Version>
+        <Version>0.1.0</Version>
         <Authors>EFSA</Authors>
         <Company>EFSA</Company>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
