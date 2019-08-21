@@ -23,6 +23,6 @@ namespace SFA.DAS.QnA.Api.Client
 
         public string TenantId { get; set; }
 
-        public Uri BaseUri { get; set; }
+        public Uri BaseUri { get; set; } 
     }
 }
