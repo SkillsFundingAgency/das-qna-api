@@ -3,7 +3,7 @@
     <PropertyGroup>
         <TargetFramework>netstandard2.0</TargetFramework>
         <PackageId>SFA.DAS.QnA.Api.Types</PackageId>
-        <Version>0.1.0</Version>
+        <Version>0.1.1</Version>
         <Authors>EFSA</Authors>
         <Company>EFSA</Company>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
