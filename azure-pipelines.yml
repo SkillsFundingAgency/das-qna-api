@@ -80,6 +80,15 @@ steps:
     versioningScheme: byBuildNumber
     buildProperties: 'Version="$(Build.BuildNumber)"'
 
+- task: DotNetCoreCLI@2
+  displayName: 'dotnet pack'
+  inputs:
+    command: pack
+    packagesToPack: src/SFA.DAS.QnA.Api.Views/SFA.DAS.QnA.Api.Views.csproj
+    packDirectory: '$(build.artifactstagingdirectory)/publish'
+    versioningScheme: byBuildNumber
+    buildProperties: 'Version="$(Build.BuildNumber)"'
+
 - task: VSBuild@1
   displayName: 'Build DACPAC'
   inputs:
