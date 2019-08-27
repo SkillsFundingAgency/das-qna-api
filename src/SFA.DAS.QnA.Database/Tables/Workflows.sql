@@ -12,6 +12,7 @@ CREATE TABLE [dbo].[Workflows](
 	[DeletedAt] [datetime2](7) NULL,
 	[DeletedBy] [nvarchar](256) NULL,
  [ReferenceFormat] NVARCHAR(10) NULL, 
+ [ApplicationDataSchema] NVARCHAR(MAX) NULL, 
     CONSTRAINT [PK_Workflows] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
