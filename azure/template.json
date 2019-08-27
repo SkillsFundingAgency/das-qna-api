@@ -250,6 +250,14 @@
         "AppServiceName": {
             "type": "string",
             "value": "[variables('appServiceName')]"
+        },
+        "StorageConnectionString": {
+            "type": "string",
+            "value": "[reference('storage-account').outputs.storageConnectionString.value]"
+        },
+        "DatabaseName": {
+            "type": "string",
+            "value": "[variables('databaseName')]"
         }
     }
 }
