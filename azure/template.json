@@ -14,10 +14,10 @@
         "serviceName": {
             "type": "string"
         },
-        "sharedFrontEndAppServicePlan": {
+        "sharedBackEndAppServicePlanName": {
             "type": "string"
         },
-        "sharedFrontEndAppServicePlanResourceGroupName": {
+        "sharedBackEndAppServicePlanResourceGroupName": {
             "type": "string"
         },
         "appServiceAllowedIPs": {
@@ -97,7 +97,7 @@
             "condition": "[greater(length(parameters('customHostName')), 0)]",
             "apiVersion": "2017-05-10",
             "name": "app-service-certificate",
-            "resourceGroup": "[parameters('sharedFrontEndAppServicePlanResourceGroupName')]",
+            "resourceGroup": "[parameters('sharedBackEndAppServicePlanResourceGroupName')]",
             "type": "Microsoft.Resources/deployments",
             "properties": {
                 "mode": "Incremental",
@@ -153,10 +153,10 @@
                         "value": "[variables('appServiceName')]"
                     },
                     "appServicePlanName": {
-                        "value": "[parameters('sharedFrontEndAppServicePlan')]"
+                        "value": "[parameters('sharedBackEndAppServicePlanName')]"
                     },
                     "appServicePlanResourceGroup": {
-                        "value": "[parameters('sharedFrontEndAppServicePlanResourceGroupName')]"
+                        "value": "[parameters('sharedBackEndAppServicePlanResourceGroupName')]"
                     },
                     "appServiceAppSettings": {
                         "value": [
@@ -211,7 +211,7 @@
         },
         {
             "apiVersion": "2017-05-10",
-            "name": "sqlDatabase",
+            "name": "sql-database",
             "type": "Microsoft.Resources/deployments",
             "resourceGroup": "[parameters('sharedSqlResourceGroup')]",
             "properties": {
