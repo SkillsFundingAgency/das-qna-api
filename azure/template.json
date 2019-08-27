@@ -14,7 +14,7 @@
         "serviceName": {
             "type": "string"
         },
-        "SharedBackEndAppServicePlanName": {
+        "sharedBackEndAppServicePlanName": {
             "type": "string"
         },
         "sharedBackEndAppServicePlanResourceGroupName": {
@@ -153,10 +153,10 @@
                         "value": "[variables('appServiceName')]"
                     },
                     "appServicePlanName": {
-                        "value": "[parameters('SharedBackEndAppServicePlanName')]"
+                        "value": "[parameters('sharedBackEndAppServicePlanName')]"
                     },
                     "appServicePlanResourceGroup": {
-                        "value": "[parameters('sharedFrontEndAppServicePlanResourceGroupName')]"
+                        "value": "[parameters('sharedBackEndAppServicePlanResourceGroupName')]"
                     },
                     "appServiceAppSettings": {
                         "value": [
