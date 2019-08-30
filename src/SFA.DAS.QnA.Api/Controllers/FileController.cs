@@ -4,6 +4,7 @@ using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SFA.DAS.QnA.Api.Infrastructure;
+using SFA.DAS.QnA.Api.Types;
 using SFA.DAS.QnA.Application.Commands.Files.DeleteFile;
 using SFA.DAS.QnA.Application.Commands.Files.DownloadFile;
 using SFA.DAS.QnA.Application.Commands.Files.UploadFile;
@@ -22,19 +23,32 @@ namespace SFA.DAS.QnA.Api.Controllers
             _mediator = mediator;
             _contextAccessor = contextAccessor;
         }
-
-        [HttpPost("{applicationId}/sections/{sectionId}/pages/{pageId}/questions/{questionId}/upload")]
-        public async Task<IActionResult> Upload(Guid applicationId, Guid sectionId, string pageId, string questionId)
+//
+//        [HttpPost("{applicationId}/sections/{sectionId}/pages/{pageId}/questions/{questionId}/upload")]
+//        public async Task<IActionResult> Upload(Guid applicationId, Guid sectionId, string pageId, string questionId)
+//        {
+//            var uploadResult = await _mediator.Send(new UploadFileRequest(applicationId, sectionId, pageId, questionId, _contextAccessor.HttpContext.Request.Form.Files));
+//
+//            if (!uploadResult.Success)
+//            {
+//                return BadRequest(new BadRequestError(uploadResult.Message));
+//            }
+//            
+//            return Ok();
+//        }
+        
+        [HttpPost("{applicationId}/sections/{sectionId}/pages/{pageId}/upload")]
+        public async Task<ActionResult<SetPageAnswersResponse>> Upload(Guid applicationId, Guid sectionId, string pageId)
         {
-            var uploadResult = await _mediator.Send(new UploadFileRequest(applicationId, sectionId, pageId, questionId, _contextAccessor.HttpContext.Request.Form.Files));
+            var uploadResult = await _mediator.Send(new SubmitPageOfFilesRequest(applicationId, sectionId, pageId, _contextAccessor.HttpContext.Request.Form.Files));
 
             if (!uploadResult.Success)
             {
                 return BadRequest(new BadRequestError(uploadResult.Message));
             }
             
-            return Ok();
-        }
+            return uploadResult.Value;
+        } 
         
         [HttpGet("{applicationId}/sections/{sectionId}/pages/{pageId}/questions/{questionId}/download")]
         public async Task<IActionResult> DownloadFileOrZipOfFiles(Guid applicationId, Guid sectionId, string pageId, string questionId)
