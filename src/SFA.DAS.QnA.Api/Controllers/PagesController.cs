@@ -66,12 +66,12 @@ namespace SFA.DAS.QnA.Api.Controllers
         [HttpPost("{applicationId}/sections/{sectionId}/pages/{pageId}/multiple")]
         [ProducesResponseType((int) HttpStatusCode.OK)]
         [ProducesResponseType((int) HttpStatusCode.BadRequest)]
-        public async Task<ActionResult<Page>> AddPageAnswer(Guid applicationId, Guid sectionId, string pageId, [FromBody] List<Answer> answers)
+        public async Task<ActionResult<AddPageAnswerResponse>> AddPageAnswer(Guid applicationId, Guid sectionId, string pageId, [FromBody] List<Answer> answers)
         {
             var addPageAnswerResponse = await _mediator.Send(new AddPageAnswerRequest(applicationId, sectionId, pageId, answers), CancellationToken.None);
             if (!addPageAnswerResponse.Success) return BadRequest(new BadRequestError(addPageAnswerResponse.Message));
 
-            return addPageAnswerResponse.Value.Page;
+            return addPageAnswerResponse.Value;
         }
 
         /// <summary>

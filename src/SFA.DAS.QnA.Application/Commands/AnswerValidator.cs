@@ -20,7 +20,7 @@ namespace SFA.DAS.QnA.Application.Commands
             var validationErrors = new List<KeyValuePair<string, string>>();
             foreach (var question in page.Questions)
             {
-                var answerToThisQuestion = answers.Single(a => a.QuestionId == question.QuestionId);
+                var answerToThisQuestion = answers.SingleOrDefault(a => a.QuestionId == question.QuestionId);
 
                 ValidateQuestion(question, validationErrors, answerToThisQuestion);
 

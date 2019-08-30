@@ -19,6 +19,13 @@ namespace SFA.DAS.QnA.Application.Validators
         {
             var validators = new List<IValidator>();
 
+            var typeValidator = _serviceProvider.GetServices<IValidator>()
+                .FirstOrDefault(v => v.GetType().Name == question.Input.Type + "TypeValidator");
+            if (typeValidator != null)
+            {
+                validators.Add(typeValidator);
+            }
+            
             if (question.Input.Validations != null && question.Input.Validations.Any())
             {
                 foreach (var inputValidation in question.Input.Validations)
