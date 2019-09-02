@@ -28,4 +28,11 @@
       <ProjectReference Include="..\SFA.DAS.QnA.Configuration\SFA.DAS.QnA.Configuration.csproj" />
       <ProjectReference Include="..\SFA.DAS.Qna.Data\SFA.DAS.Qna.Data.csproj" />
     </ItemGroup>
+
+    <ItemGroup>
+      <Content Update="nlog.config">
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+    </ItemGroup>
 </Project>
