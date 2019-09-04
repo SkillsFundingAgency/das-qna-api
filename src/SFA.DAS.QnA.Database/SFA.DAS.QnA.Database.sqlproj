@@ -62,12 +62,9 @@
     <Build Include="Tables\Applications.sql" />
     <Build Include="Tables\ApplicationSections.sql" />
     <Build Include="Tables\ApplicationSequences.sql" />
+    <Build Include="Tables\Projects.sql" />
     <Build Include="Tables\Workflows.sql" />
     <Build Include="Tables\WorkflowSections.sql" />
     <Build Include="Tables\WorkflowSequences.sql" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Tables\EMailTemplates.sql" />
-    <Content Include="Tables\Projects.sql" />
   </ItemGroup>
 </Project>
