@@ -19,9 +19,9 @@ namespace SFA.DAS.QnA.Api.Types.Page
         public bool AllowMultipleAnswers { get; set; }
         public int? Order { get; set; }
         public bool Active { get; set; }
-        public List<string> NotRequiredOrgTypes { get; set; }
-        public bool NotRequired { get; set; }
 
+        public List<NotRequiredCondition> NotRequiredConditions { get; set; }
+        
         public string BodyText { get; set; }
 
         public PageDetails Details { get; set; }

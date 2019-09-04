@@ -102,7 +102,7 @@ namespace SFA.DAS.QnA.Application.Commands.Files.UploadFile
             
             MarkFeedbackComplete(page);
 
-            var nextAction = GetNextAction(page, answersToValidate, section);
+            var nextAction = GetNextAction(page, answersToValidate, section, _dataContext);
             
             return new HandlerResponse<SetPageAnswersResponse>(new SetPageAnswersResponse(nextAction.Action, nextAction.ReturnId));
         }

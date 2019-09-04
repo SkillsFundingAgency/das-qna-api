@@ -1,23 +1,27 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Newtonsoft.Json.Linq;
 using SFA.DAS.QnA.Api.Types.Page;
+using SFA.DAS.QnA.Data;
 using SFA.DAS.QnA.Data.Entities;
 
 namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
 {
     public class SetAnswersBase
     {
-        protected Next GetNextAction(Page page, List<Answer> answers, ApplicationSection section)
+        protected Next GetNextAction(Page page, List<Answer> answers, ApplicationSection section, QnaDataContext qnaDataContext)
         {
             if (page.Next is null || !page.Next.Any())
             {
                 throw new ApplicationException($"Page {page.PageId}, in Sequence {page.SequenceId}, Section {page.SectionId} has no 'Next' instructions.");
             }
 
+            Next nextAction = null;
+            
             if (page.Next.Count == 1)
             {
-                return page.Next.First();
+                nextAction = page.Next.First();
             }
 
             foreach (var next in page.Next)
@@ -27,18 +31,65 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
                     var answer = answers.Single(a => a.QuestionId == next.Condition.QuestionId);
                     if (answer.QuestionId == next.Condition.QuestionId && answer.Value == next.Condition.MustEqual)
                     {
-                        return next;
+                        nextAction = next;
                     }
                 }
                 else
                 {
-                    return next;
+                    nextAction = next;
                 }
             }
 
+            nextAction = FindNextRequiredAction(section, qnaDataContext, nextAction);
+            
+            if (nextAction != null)
+            {
+                return nextAction;
+            }
+            
             throw new ApplicationException($"Page {page.PageId}, in Sequence {page.SequenceId}, Section {page.SectionId} is missing a matching 'Next' instruction for Application {section.ApplicationId}");
         }
-        
+
+        public Next FindNextRequiredAction(ApplicationSection section, QnaDataContext qnaDataContext, Next nextAction)
+        {
+            if (nextAction.Action != "NextPage") return nextAction;
+            
+            // Check here for any NotRequiredConditions on the next page.
+
+            var application = qnaDataContext.Applications.Single(app => app.Id == section.ApplicationId);
+            var applicationData = JObject.Parse(application.ApplicationData);
+
+            var nextPage = section.QnAData.Pages.Single(p => p.PageId == nextAction.ReturnId);
+            var isRequired = true;
+            if (nextPage.NotRequiredConditions != null && nextPage.NotRequiredConditions.Any())
+            {
+                if (nextPage.NotRequiredConditions.Any(nrc => nrc.IsOneOf.Contains(applicationData[nrc.Field].Value<string>())))
+                {
+                    isRequired = false;
+                }
+            }
+
+            if (isRequired) return nextAction;
+            
+            // Get the next default action from this page.
+            if (nextPage.Next.Count == 1)
+            {
+                nextAction = nextPage.Next.First();
+            }
+            else if (nextPage.Next.Any(n => n.Condition == null))
+            {
+                nextAction = nextPage.Next.Single(n => n.Condition == null);
+            }
+            else
+            {
+                nextAction = nextPage.Next.Last();
+            }
+
+            nextAction = FindNextRequiredAction(section, qnaDataContext, nextAction);
+
+            return nextAction;
+        }
+
         protected void MarkFeedbackComplete(Page page)
         {
             if (page.HasFeedback)

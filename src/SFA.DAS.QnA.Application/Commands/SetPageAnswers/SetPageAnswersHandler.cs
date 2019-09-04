@@ -43,7 +43,7 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
 
             MarkFeedbackComplete(page);
 
-            var nextAction = GetNextAction(page, request.Answers, section);
+            var nextAction = GetNextAction(page, request.Answers, section, _dataContext);
 
             SetStatusOfNextPagesBasedOnAnswer(qnaData, page, request.Answers, nextAction);
 
