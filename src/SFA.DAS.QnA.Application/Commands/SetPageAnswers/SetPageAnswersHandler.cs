@@ -97,13 +97,13 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
         private void SetStatusOfNextPagesBasedOnAnswer(QnAData qnaData, Page page, List<Answer> answers, Next nextAction)
         {
             var hasConditionalBranch = page.Next.Any(n => n.Condition != null);
-            if (!hasConditionalBranch) return;
+            if (!hasConditionalBranch || nextAction == null || nextAction.Condition == null) return;
 
             if (page.PageOfAnswers != null && page.PageOfAnswers.Count > 0)
             {
                 var existingAnswer = page.PageOfAnswers?[0].Answers.SingleOrDefault(a => a.QuestionId == nextAction.Condition.QuestionId);
 
-                if (existingAnswer != answers.Single(a => a.QuestionId == nextAction.Condition.QuestionId))
+                if (existingAnswer != null && existingAnswer != answers.Single(a => a.QuestionId == nextAction.Condition.QuestionId))
                 {
                     DeactivateDependentPages(page.PageId, qnaData, page, nextAction);
                 }
@@ -118,7 +118,11 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
             {
                 if (nextAction.Action != "NextPage") continue;
                 
-                var nextPage = qnaData.Pages.Single(p => p.PageId == nextAction.ReturnId);
+                var nextPage = qnaData.Pages.FirstOrDefault(p => p.PageId == nextAction.ReturnId);
+                if (nextPage == null)
+                {
+                    break;
+                }
                 if (nextPage.ActivatedByPageId == branchingPageId)
                 {
                     nextPage.Active = false;
@@ -135,7 +139,11 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
         {
             if (next.Action != "NextPage") return;
             
-            var nextPage = qnaData.Pages.Single(p => p.PageId == next.ReturnId);
+            var nextPage = qnaData.Pages.FirstOrDefault(p => p.PageId == next.ReturnId);
+            if (nextPage == null)
+            {
+                return;
+            }
             if (nextPage.ActivatedByPageId == branchingPageId)
             {
                 nextPage.Active = true;
