@@ -185,6 +185,10 @@
                                 "value": "[toUpper(parameters('environmentName'))]"
                             },
                             {
+                                "name": "Environment",
+                                "value": "[toUpper(parameters('environmentName'))]"
+                            },
+                            {
                                 "name": "ConfigNames",
                                 "value": "SFA.DAS.QnA.Api"
                             },
