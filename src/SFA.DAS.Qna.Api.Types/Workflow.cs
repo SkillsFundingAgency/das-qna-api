@@ -10,8 +10,6 @@ namespace SFA.DAS.QnA.Api.Types
         public string Version { get; set; }
         public string Type { get; set; }
         public Guid ProjectId { get; set; }
-        public string ReferenceFormat { get; set; }
-        
         public string ApplicationDataSchema { get; set; }
     }
 }

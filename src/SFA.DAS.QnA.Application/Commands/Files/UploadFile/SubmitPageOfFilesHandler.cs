@@ -52,6 +52,21 @@ namespace SFA.DAS.QnA.Application.Commands.Files.UploadFile
                 answersToValidate.Add(answer);
             }
             
+            // Need to add to answersToValidate here any existing answers on the page for questions not already in answersToValidate
+            if (page.PageOfAnswers != null)
+            {
+                foreach (var pageOfAnswers in page.PageOfAnswers)
+                {
+                    foreach (var existingAnswer in pageOfAnswers.Answers)
+                    {
+                        if (answersToValidate.All(a => a.QuestionId != existingAnswer.QuestionId))
+                        {
+                            answersToValidate.Add(existingAnswer);
+                        }
+                    }
+                }   
+            }
+
             var validationErrors = _answerValidator.Validate(answersToValidate, page);
             if (validationErrors.Any())
             {
