@@ -14,6 +14,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
+using Microsoft.IdentityModel.Logging;
 using SFA.DAS.QnA.Api.Infrastructure;
 using SFA.DAS.QnA.Application;
 using SFA.DAS.QnA.Application.Commands;
@@ -59,6 +60,8 @@ namespace SFA.DAS.QnA.Api
             services.Configure<FileStorageConfig>(Configuration.GetSection("FileStorage"));
             var serviceProvider = services.BuildServiceProvider();
             var config = serviceProvider.GetService<IOptions<QnAConfig>>();
+
+            IdentityModelEventSource.ShowPII = true; 
 
             if (!_hostingEnvironment.IsDevelopment())
             {
