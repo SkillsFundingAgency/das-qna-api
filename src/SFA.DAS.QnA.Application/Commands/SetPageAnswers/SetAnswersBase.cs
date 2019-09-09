@@ -28,11 +28,27 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
             {
                 if (next.Condition != null)
                 {
-                    var answer = answers.Single(a => a.QuestionId == next.Condition.QuestionId);
-                    if (answer.QuestionId == next.Condition.QuestionId && answer.Value == next.Condition.MustEqual)
+                    if (!String.IsNullOrWhiteSpace(next.Condition.QuestionTag))
                     {
-                        nextAction = next;
+                        var application =
+                            qnaDataContext.Applications.FirstOrDefault(app => app.Id == section.ApplicationId);
+                        var applicationData = JObject.Parse(application.ApplicationData);
+                        var questionTag = applicationData[next.Condition.QuestionTag];
+                        if (questionTag != null && questionTag.Value<string>() == next.Condition.MustEqual)
+                        {
+                            nextAction = next;
+                            break;
+                        }                        
                     }
+                    else
+                    {
+                        var answer = answers.FirstOrDefault(a => a.QuestionId == next.Condition.QuestionId);
+                        if (answer != null && answer.QuestionId == next.Condition.QuestionId && answer.Value == next.Condition.MustEqual)
+                        {
+                            nextAction = next;
+                            break;
+                        }
+                    }                  
                 }
                 else
                 {
@@ -59,9 +75,9 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
             var application = qnaDataContext.Applications.Single(app => app.Id == section.ApplicationId);
             var applicationData = JObject.Parse(application.ApplicationData);
 
-            var nextPage = section.QnAData.Pages.Single(p => p.PageId == nextAction.ReturnId);
+            var nextPage = section.QnAData.Pages.FirstOrDefault(p => p.PageId == nextAction.ReturnId);
             var isRequired = true;
-            if (nextPage.NotRequiredConditions != null && nextPage.NotRequiredConditions.Any())
+            if (nextPage != null && nextPage.NotRequiredConditions != null && nextPage.NotRequiredConditions.Any())
             {
                 if (nextPage.NotRequiredConditions.Any(nrc => nrc.IsOneOf.Contains(applicationData[nrc.Field].Value<string>())))
                 {
@@ -72,7 +88,7 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
             if (isRequired) return nextAction;
             
             // Get the next default action from this page.
-            if (nextPage.Next.Count == 1)
+            if (nextPage != null && nextPage.Next.Count == 1)
             {
                 nextAction = nextPage.Next.First();
             }
