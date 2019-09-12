@@ -18,17 +18,39 @@ namespace SFA.DAS.QnA.Api.Client
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", apiConfig.GetBearerToken());
         }
 
-        public async Task<HttpResponseMessage> StartApplication(StartApplicationRequest request)
+        public async Task<StartApplicationResponse> StartApplication(StartApplicationRequest request)
         {
-            return await _httpClient.PostAsJsonAsync(new Uri("applications/start"), request);
+            return await HttpCall<StartApplicationResponse>(async () => await _httpClient.PostAsJsonAsync(new Uri("applications/start"), request));
         }
 
-        public async Task<List<Workflow>> GetWorkflows()
+        public async Task<object> GetApplicationData(Guid applicationId)
         {
-            using (var response = await _httpClient.GetAsync(new Uri("workflows", UriKind.Relative)))
+            return await HttpCall<object>(async () => await _httpClient.GetAsync(new Uri($"applications/{applicationId}/applicationData")));
+        }
+
+//        public async Task<Sequence> GetCurrentSequence(Guid applicationId)
+//        {
+//            return await _httpClient.GetAsync(new Uri($"applications/{applicationId}/sequences/current")).Result.Content.ReadAsAsync<Sequence>();
+//        }
+//
+//        public async Task<List<Workflow>> GetWorkflows()
+//        {
+//            using (var response = await _httpClient.GetAsync(new Uri("workflows", UriKind.Relative)))
+//            {
+//                return await response.Content.ReadAsAsync<List<Workflow>>();
+//            }
+//        }
+        
+        private async Task<T> HttpCall<T>(Func<Task<HttpResponseMessage>> httpClientAction)
+        {
+            var httpResponse = await httpClientAction();
+
+            if (httpResponse.IsSuccessStatusCode)
             {
-                return await response.Content.ReadAsAsync<List<Workflow>>();
+                return await httpResponse.Content.ReadAsAsync<T>();
             }
+
+            throw new HttpRequestException($"Error sending {httpResponse.RequestMessage.Method} to {httpResponse.RequestMessage.RequestUri}. Returned: {await httpResponse.Content.ReadAsStringAsync()}");
         }
     }
 }
