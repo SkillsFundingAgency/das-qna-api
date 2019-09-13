@@ -5,6 +5,8 @@ using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
 using SFA.DAS.QnA.Api.Infrastructure;
 using SFA.DAS.QnA.Api.Types;
 using SFA.DAS.QnA.Api.Types.Page;
@@ -20,10 +22,12 @@ namespace SFA.DAS.QnA.Api.Controllers
     public class PagesController : Controller
     {
         private readonly IMediator _mediator;
+        private readonly ILogger<PagesController> _logger;
 
-        public PagesController(IMediator mediator)
+        public PagesController(IMediator mediator, ILogger<PagesController> logger)
         {
             _mediator = mediator;
+            _logger = logger;
         }
 
         /// <summary>
@@ -52,6 +56,8 @@ namespace SFA.DAS.QnA.Api.Controllers
         [ProducesResponseType(200)]
         public async Task<ActionResult<SetPageAnswersResponse>> SetPageAnswers(Guid applicationId, Guid sectionId, string pageId, [FromBody] List<Answer> answers)
         {
+            _logger.LogInformation($"Answers sent to SetPageAnswers: {JsonConvert.SerializeObject(answers)}");
+            
             var savePageAnswersResponse = await _mediator.Send(new SetPageAnswersRequest(applicationId, sectionId, pageId, answers), CancellationToken.None);
             if (!savePageAnswersResponse.Success) return BadRequest(new BadRequestError(savePageAnswersResponse.Message));
 

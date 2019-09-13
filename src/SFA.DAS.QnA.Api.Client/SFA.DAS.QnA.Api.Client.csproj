@@ -8,6 +8,7 @@
         <Company>EFSA</Company>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <PackageOutputPath>..\NugetPackages</PackageOutputPath>
+        <PackageVersion>0.2.20.1</PackageVersion>
     </PropertyGroup>
 
     <ItemGroup>

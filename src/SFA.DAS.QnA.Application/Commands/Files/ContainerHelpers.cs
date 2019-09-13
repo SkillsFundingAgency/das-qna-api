@@ -22,6 +22,10 @@ namespace SFA.DAS.QnA.Application.Commands.Files
             var sequenceFolder = applicationFolder.GetDirectoryReference(sequenceId.ToString());
             var sectionFolder = sequenceFolder.GetDirectoryReference(sectionId.ToString());
             var pageFolder = sectionFolder.GetDirectoryReference(pageId.ToLower());
+            if (questionId is null)
+            {
+                return pageFolder;
+            }
             var questionFolder = pageFolder.GetDirectoryReference(questionId.ToLower());
             return questionFolder;
         }

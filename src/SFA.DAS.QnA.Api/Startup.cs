@@ -118,6 +118,8 @@ namespace SFA.DAS.QnA.Api
                 var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
                 c.IncludeXmlComments(xmlPath);
             });
+            
+            services.AddHealthChecks();
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
@@ -144,7 +146,9 @@ namespace SFA.DAS.QnA.Api
                 c.RoutePrefix = string.Empty;
             });
             
-            app.UseMvc(routes =>
+            app
+                .UseHealthChecks("/health")
+            .UseMvc(routes =>
             {
                 routes.MapRoute(
                     name: "default",

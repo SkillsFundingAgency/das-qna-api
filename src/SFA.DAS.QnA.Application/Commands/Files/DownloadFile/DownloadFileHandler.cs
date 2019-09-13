@@ -56,20 +56,56 @@ namespace SFA.DAS.QnA.Application.Commands.Files.DownloadFile
             }
 
             var container = await ContainerHelpers.GetContainer(_fileStorageConfig.Value.StorageConnectionString, _fileStorageConfig.Value.ContainerName);
-            var directory = ContainerHelpers.GetDirectory(request.ApplicationId, section.SequenceId, request.SectionId, request.PageId, request.QuestionId, container);
+            var questionDirectory = ContainerHelpers.GetDirectory(request.ApplicationId, section.SequenceId, request.SectionId, request.PageId, request.QuestionId, container);
+            var pageDirectory = ContainerHelpers.GetDirectory(request.ApplicationId, section.SequenceId, request.SectionId, request.PageId, null, container);
+
+            if ((request.QuestionId is null)) return await PageFiles(request, cancellationToken, page, pageDirectory);
             
-            if (!(request.FileName is null)) return await SpecifiedFile(request, cancellationToken, page, directory);
+            if (!(request.FileName is null)) return await SpecifiedFile(request, cancellationToken, page, questionDirectory);
             
-            var blobs = directory.ListBlobs(useFlatBlobListing: true).ToList();
+            var blobs = questionDirectory.ListBlobs(useFlatBlobListing: true).ToList();
             if (blobs.Count() == 1)
             {
                 var answer = page.PageOfAnswers.SelectMany(poa => poa.Answers).Single(a => a.QuestionId == request.QuestionId);
-                return await IndividualFile(answer.Value, cancellationToken, directory);
+                return await IndividualFile(answer.Value, cancellationToken, questionDirectory);
             }
 
             if (!blobs.Any()) return new HandlerResponse<DownloadFile>(success: false, message: $"Page {request.PageId} in Application {request.ApplicationId} does not contain any uploads.");
                 
-            return await ZippedMultipleFiles(request, cancellationToken, page, directory);
+            return await ZippedMultipleFiles(request, cancellationToken, page, questionDirectory);
+        }
+
+        private async Task<HandlerResponse<DownloadFile>> PageFiles(DownloadFileRequest request, CancellationToken cancellationToken, Page page, CloudBlobDirectory pageDirectory)
+        {
+            // Get All answers on the page./
+            // Loop them.
+            // for each question...
+            //     get the blobdirectory for that question
+            //     download any files from that directory
+            //     add to the zip
+            using (var zipStream = new MemoryStream())
+            {
+                using (var zipArchive = new ZipArchive(zipStream, ZipArchiveMode.Create, true))
+                {
+                    foreach (var answer in page.PageOfAnswers.SelectMany(poa => poa.Answers))
+                    {
+                        var questionDirectory = pageDirectory.GetDirectoryReference(answer.QuestionId.ToLower());
+                        var blobStream = await GetFileStream(cancellationToken, questionDirectory, answer.Value);
+
+                        var zipEntry = zipArchive.CreateEntry(answer.Value);
+                        using (var entryStream = zipEntry.Open())
+                        {
+                            blobStream.Item1.CopyTo(entryStream);
+                        }
+                    }
+                }
+                
+                zipStream.Position = 0;
+                var newStream = new MemoryStream();
+                zipStream.CopyTo(newStream);
+                newStream.Position = 0;
+                return new HandlerResponse<DownloadFile>(new DownloadFile() {ContentType = "application/zip", FileName = $"{request.ApplicationId}_{request.PageId}_uploads.zip", Stream = newStream});
+            }
         }
 
         private async Task<HandlerResponse<DownloadFile>> ZippedMultipleFiles(DownloadFileRequest request, CancellationToken cancellationToken, Page page, CloudBlobDirectory directory)
@@ -77,6 +113,7 @@ namespace SFA.DAS.QnA.Application.Commands.Files.DownloadFile
             using (var zipStream = new MemoryStream())
             {
                 await ZipUploadedFiles(request, cancellationToken, zipStream, page, directory);
+                zipStream.Position = 0;
                 var newStream = new MemoryStream();
                 zipStream.CopyTo(newStream);
                 newStream.Position = 0;
@@ -99,8 +136,6 @@ namespace SFA.DAS.QnA.Application.Commands.Files.DownloadFile
                     }
                 }
             }
-
-            zipStream.Position = 0;
         }
 
         private async Task<HandlerResponse<DownloadFile>> SpecifiedFile(DownloadFileRequest request, CancellationToken cancellationToken, Page page, CloudBlobDirectory directory)

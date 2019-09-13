@@ -50,6 +50,21 @@ namespace SFA.DAS.QnA.Api.Controllers
             return uploadResult.Value;
         } 
         
+        [HttpGet("{applicationId}/sections/{sectionId}/pages/{pageId}/download")]
+        public async Task<IActionResult> DownloadPageZipOfFiles(Guid applicationId, Guid sectionId, string pageId)
+        {
+            var downloadResult = await _mediator.Send(new DownloadFileRequest(applicationId, sectionId, pageId,null, null));
+
+            if (!downloadResult.Success)
+            {
+                return BadRequest(new BadRequestError(downloadResult.Message));
+            }
+
+            var downloadResultValue = downloadResult.Value;
+            
+            return File(downloadResultValue.Stream, downloadResultValue.ContentType, downloadResultValue.FileName);
+        }
+        
         [HttpGet("{applicationId}/sections/{sectionId}/pages/{pageId}/questions/{questionId}/download")]
         public async Task<IActionResult> DownloadFileOrZipOfFiles(Guid applicationId, Guid sectionId, string pageId, string questionId)
         {
