@@ -7,6 +7,11 @@ namespace SFA.DAS.QnA.Api.Client
     {
         public string GetBearerToken()
         {
+            if (DisableBearerHeader)
+            {
+                return "";
+            }
+            
             var authority = $"https://login.microsoftonline.com/{TenantId}";
             var clientCredential = new ClientCredential(ClientId, ClientSecret);
             var context = new AuthenticationContext(authority, true);
@@ -23,6 +28,8 @@ namespace SFA.DAS.QnA.Api.Client
 
         public string TenantId { get; set; }
 
-        public Uri BaseUri { get; set; } 
+        public Uri BaseUri { get; set; }
+
+        public bool DisableBearerHeader { get; set; }
     }
 }
