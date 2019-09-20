@@ -74,7 +74,7 @@
                         }
                         <div class="govuk-form-group">
                             <label class="govuk-label" for="@Model.Options[i].FurtherQuestions[furtherQuestionIndex].QuestionId">@Model.Options[i].FurtherQuestions[furtherQuestionIndex].Label</label>
-                            @HtmlHelperPartialExtensions.Partial(Html, $"~/Views/Application/Pages/Controls/_{Model.Options[i].FurtherQuestions[furtherQuestionIndex].Input.Type}.cshtml", Model.Options[i].FurtherQuestions[furtherQuestionIndex])
+                            @HtmlHelperPartialExtensions.Partial(Html, $"~/Views/QuestionPartials/_{Model.Options[i].FurtherQuestions[furtherQuestionIndex].Input.Type}.cshtml", Model.Options[i].FurtherQuestions[furtherQuestionIndex])
                         </div>
                     }
                 </div>
