@@ -36,7 +36,16 @@ namespace SFA.DAS.QnA.Application.Validators
                     if (validator != null)
                     {
                         validator.ValidationDefinition = inputValidation;
-                        validators.Add(validator);
+                        var validatorAlreadyAdded = validators.FirstOrDefault(v => v.GetType().Name == inputValidation.Name + "Validator");
+                        if (validatorAlreadyAdded == null)
+                        {
+                            validator.ValidationDefinition = inputValidation;
+                            validators.Add(validator);
+                        }
+                        else
+                        {
+                            validatorAlreadyAdded.ValidationDefinition = inputValidation;
+                        }
                     }
                 }
             }

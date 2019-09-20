@@ -6,11 +6,24 @@ namespace SFA.DAS.QnA.Application.Validators
 {
     public class ComplexRadioTypeValidator : IValidator
     {
-        public ComplexRadioTypeValidator()
+        private ValidationDefinition _validationDefinition;
+       
+        public ValidationDefinition ValidationDefinition
         {
-            ValidationDefinition = new ValidationDefinition() {ErrorMessage = "Answer must be one of the Input Options"};
+            get
+            {
+                if (_validationDefinition == null)
+                {
+                    _validationDefinition = new ValidationDefinition() { ErrorMessage = "Answer must be one of the Input Options" };
+                }
+                return _validationDefinition;
+            }
+            set
+            {
+                _validationDefinition = value;
+            }
         }
-        public ValidationDefinition ValidationDefinition { get; set; }
+
         public List<KeyValuePair<string, string>> Validate(Question question, Answer answer)
         {
             var validValues = question.Input.Options.Select(o => o.Value).ToList();
