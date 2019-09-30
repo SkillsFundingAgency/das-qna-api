@@ -26,29 +26,39 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
 
             foreach (var next in page.Next)
             {
-                if (next.Condition != null)
+                if (next.Conditions != null)
                 {
-                    if (!String.IsNullOrWhiteSpace(next.Condition.QuestionTag))
+                    var someConditionsNotSatisfied = false;
+                    
+                    foreach (var condition in next.Conditions)
                     {
-                        var application =
-                            qnaDataContext.Applications.FirstOrDefault(app => app.Id == section.ApplicationId);
-                        var applicationData = JObject.Parse(application.ApplicationData);
-                        var questionTag = applicationData[next.Condition.QuestionTag];
-                        if (questionTag != null && questionTag.Value<string>() == next.Condition.MustEqual)
+                        if (!String.IsNullOrWhiteSpace(condition.QuestionTag))
                         {
-                            nextAction = next;
-                            break;
-                        }                        
-                    }
-                    else
-                    {
-                        var answer = answers.FirstOrDefault(a => a.QuestionId == next.Condition.QuestionId);
-                        if (answer != null && answer.QuestionId == next.Condition.QuestionId && answer.Value == next.Condition.MustEqual)
-                        {
-                            nextAction = next;
-                            break;
+                            var application =
+                                qnaDataContext.Applications.FirstOrDefault(app => app.Id == section.ApplicationId);
+                            var applicationData = JObject.Parse(application.ApplicationData);
+                            var questionTag = applicationData[condition.QuestionTag];
+
+                            if (questionTag == null || questionTag.Value<string>() != condition.MustEqual)
+                            {
+                                someConditionsNotSatisfied = true;
+                            }
                         }
-                    }                  
+                        else
+                        {
+                            var answer = answers.FirstOrDefault(a => a.QuestionId == condition.QuestionId);
+                            if (answer == null || answer.QuestionId != condition.QuestionId || answer.Value != condition.MustEqual)
+                            {
+                                someConditionsNotSatisfied = true;
+                            }
+                        }   
+                    }
+
+                    if (!someConditionsNotSatisfied)
+                    {
+                        nextAction = next;
+                        break;
+                    }
                 }
                 else
                 {
@@ -92,9 +102,9 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
             {
                 nextAction = nextPage.Next.First();
             }
-            else if (nextPage.Next.Any(n => n.Condition == null))
+            else if (nextPage.Next.Any(n => n.Conditions == null))
             {
-                nextAction = nextPage.Next.Single(n => n.Condition == null);
+                nextAction = nextPage.Next.Single(n => n.Conditions == null);
             }
             else
             {

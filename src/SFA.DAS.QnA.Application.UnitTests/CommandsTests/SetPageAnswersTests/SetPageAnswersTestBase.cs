@@ -46,8 +46,8 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.SetPageAnswersTests
                             PageOfAnswers = new List<PageOfAnswers>(),
                             Next = new List<Next>
                             {
-                                new Next(){Action = "NextPage", ReturnId = "2", Condition = new Condition{QuestionId = "Q1", MustEqual = "Yes"}},
-                                new Next(){Action = "NextPage", ReturnId = "4", Condition = new Condition{QuestionId = "Q1", MustEqual = "No"}}
+                                new Next(){Action = "NextPage", ReturnId = "2", Conditions = new List<Condition>(){ new Condition{QuestionId = "Q1", MustEqual = "Yes"}}},
+                                new Next(){Action = "NextPage", ReturnId = "4", Conditions = new List<Condition>(){ new Condition{QuestionId = "Q1", MustEqual = "No"}}}
                             },
                             Active = true
                         },
@@ -58,8 +58,8 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.SetPageAnswersTests
                             PageOfAnswers = new List<PageOfAnswers>(),
                             Next = new List<Next>
                             {
-                                new Next(){Action = "NextPage", ReturnId = "3", Condition = new Condition{QuestionId = "Q2", MustEqual = "Yes"}},
-                                new Next(){Action = "NextPage", ReturnId = "5", Condition = new Condition{QuestionId = "Q2", MustEqual = "No"}}
+                                new Next(){Action = "NextPage", ReturnId = "3", Conditions = new List<Condition>(){  new Condition{QuestionId = "Q2", MustEqual = "Yes"}}},
+                                new Next(){Action = "NextPage", ReturnId = "5", Conditions = new List<Condition>(){ new  Condition{QuestionId = "Q2", MustEqual = "No"}}}
                             },
                             Active = false,
                             ActivatedByPageId = "1"

@@ -101,14 +101,14 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
 
         private void SetStatusOfNextPagesBasedOnAnswer(QnAData qnaData, Page page, List<Answer> answers, Next nextAction)
         {
-            var hasConditionalBranch = page.Next.Any(n => n.Condition != null);
-            if (!hasConditionalBranch || nextAction == null || nextAction.Condition == null) return;
+            var hasConditionalBranch = page.Next.Any(n => n.Conditions != null && n.Conditions.Any());
+            if (!hasConditionalBranch || nextAction == null || (nextAction.Conditions == null && nextAction.Conditions.Any())) return;
 
             if (page.PageOfAnswers != null && page.PageOfAnswers.Count > 0)
             {
-                var existingAnswer = page.PageOfAnswers?[0].Answers.SingleOrDefault(a => a.QuestionId == nextAction.Condition.QuestionId);
+                var existingAnswer = page.PageOfAnswers?[0].Answers.SingleOrDefault(a => a.QuestionId == nextAction.Conditions[0].QuestionId);
 
-                if (existingAnswer != null && existingAnswer != answers.Single(a => a.QuestionId == nextAction.Condition.QuestionId))
+                if (existingAnswer != null && existingAnswer != answers.Single(a => a.QuestionId == nextAction.Conditions[0].QuestionId))
                 {
                     DeactivateDependentPages(page.PageId, qnaData, page, nextAction);
                 }

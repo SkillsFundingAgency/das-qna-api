@@ -17,7 +17,7 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.FindNextRequiredAction
             {
                 Action = "NextPage",
                 ReturnId = "3",
-                Condition = new Condition()
+                Conditions = new List<Condition>()
             };
             
             var section = new ApplicationSection
@@ -35,13 +35,13 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.FindNextRequiredAction
                             {
                                 Action = "NextPage",
                                 ReturnId = "12",
-                                Condition = new Condition()
+                                Conditions = new List<Condition>()
                             },
                             new Next
                             {
                                 Action = "NextPage",
                                 ReturnId = "14",
-                                Condition = new Condition()
+                                Conditions = new List<Condition>() 
                             },
                             expectedNextAction
                         }
@@ -64,7 +64,8 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.FindNextRequiredAction
             var actionWithNoCondition = new Next
             {
                 Action = "NextPage",
-                ReturnId = "3"
+                ReturnId = "3",
+                Conditions = null
             };
             
             var section = new ApplicationSection
@@ -82,14 +83,14 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.FindNextRequiredAction
                             {
                                 Action = "NextPage",
                                 ReturnId = "12",
-                                Condition = new Condition()
+                                Conditions = new List<Condition>()
                             },
                             actionWithNoCondition,
                             new Next
                             {
                                 Action = "NextPage",
                                 ReturnId = "14",
-                                Condition = new Condition()
+                                Conditions = new List<Condition>() 
                             }
                         }
                     },

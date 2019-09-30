@@ -60,8 +60,8 @@
                             PageOfAnswers = new List<PageOfAnswers>(),
                             Next = new List<Next>
                             {
-                                new Next(){Action = "NextPage", ReturnId = "101", Condition = new Condition{QuestionTag = "TagName", MustEqual = conditionValue}},
-                                new Next(){Action = "NextPage", ReturnId = "102", Condition = null}
+                                new Next(){Action = "NextPage", ReturnId = "101", Conditions = new List<Condition>(){  new Condition{QuestionTag = "TagName", MustEqual = conditionValue}}},
+                                new Next(){Action = "NextPage", ReturnId = "102", Conditions = new List<Condition>()}
                             },
                             Active = true
                         }
