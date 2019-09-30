@@ -54,7 +54,7 @@
             </div>
             if (Model.Options[i].FurtherQuestions != null)
             {
-                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-@(Model.QuestionId)">
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-@optionId">
                     @for (int furtherQuestionIndex = 0; furtherQuestionIndex < Model.Options[i].FurtherQuestions.Count; furtherQuestionIndex++)
                     {
                         {
