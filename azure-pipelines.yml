@@ -52,7 +52,7 @@ steps:
     command: publish
     publishWebProjects: false
     projects: 'src/SFA.DAS.QnA.Api/SFA.DAS.QnA.Api.csproj'
-    arguments: '--configuration $(buildConfiguration) --output $(build.artifactstagingdirectory)/publish --self-contained true -r win-x64'
+    arguments: '--configuration $(buildConfiguration) --output $(build.artifactstagingdirectory)/publish --self-contained true -r win10-x86'
 
 - task: DotNetCoreCLI@2
   displayName: 'Publish DB Job'
