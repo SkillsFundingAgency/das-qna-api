@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json.Linq;
 using SFA.DAS.QnA.Api.Types;
 using SFA.DAS.QnA.Data;
 
@@ -31,7 +32,19 @@ namespace SFA.DAS.QnA.Application.Queries.Sections.GetSequenceSections
 
             var sections = _mapper.Map<List<Section>>(await _dataContext.ApplicationSections.Where(section => section.SequenceId == request.SequenceId).ToListAsync(cancellationToken: cancellationToken));
 
+            foreach (var section in sections)
+            {
+                RemovePagesBasedOnNotRequiredConditions(application, section);
+            }
+            
             return new HandlerResponse<List<Section>>(sections);
+        }
+        
+        private static void RemovePagesBasedOnNotRequiredConditions(Data.Entities.Application application, Section section)
+        {
+            var applicationData = JObject.Parse(application.ApplicationData);
+
+            section.QnAData.Pages.RemoveAll(p => p.NotRequiredConditions != null && p.NotRequiredConditions.Any(nrc => nrc.IsOneOf.Contains(applicationData[nrc.Field].Value<string>())));
         }
     }
 }
