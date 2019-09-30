@@ -52,7 +52,7 @@ steps:
     command: publish
     publishWebProjects: false
     projects: 'src/SFA.DAS.QnA.Api/SFA.DAS.QnA.Api.csproj'
-    arguments: '--configuration $(buildConfiguration) --output $(build.artifactstagingdirectory)/publish --no-restore  --no-build'
+    arguments: '--configuration $(buildConfiguration) --output $(build.artifactstagingdirectory)/publish --self-contained true -r win-x64'
 
 - task: DotNetCoreCLI@2
   displayName: 'Publish DB Job'
@@ -60,7 +60,7 @@ steps:
     command: publish
     publishWebProjects: false
     projects: src/SFA.DAS.Qna.Data/SFA.DAS.Qna.Data.csproj
-    arguments: '--configuration $(buildConfiguration) --output $(build.artifactstagingdirectory)/publish --no-restore  --no-build'
+    arguments: '--configuration $(buildConfiguration) --output $(build.artifactstagingdirectory)/publish --no-restore --no-build'
     
 - task: DotNetCoreCLI@2
   displayName: 'dotnet pack'
