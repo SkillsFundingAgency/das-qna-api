@@ -43,7 +43,7 @@ namespace SFA.DAS.QnA.Application.Commands
         {
             var validators = _validatorFactory.Build(question);
 
-            if (answerToThisQuestion is null && validators.All(v => v.GetType().Name == "RequiredValidator"))
+            if ((answerToThisQuestion is null || answerToThisQuestion.Value == "") && validators.Any(v => v.GetType().Name == "RequiredValidator"))
             {
                 foreach (var validator in validators)
                 {
