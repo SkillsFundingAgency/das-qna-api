@@ -12,27 +12,28 @@
         <tbody class="govuk-table__body">
             <tr class="govuk-table__row">
                 <td class="govuk-table__cell govuk-table__cell--break-word" scope="row">
-                    <a href="@Url.Action("Download", "Application", new
-                    {
-                        applicationId = Model.ApplicationId,
-                        sequenceId = Model.SequenceId,
-                        sectionId = Model.SectionId,
-                        pageId = Model.PageId,
-                        questionId = Model.QuestionId,
-                        filename = Model.Value
-                    })">
+                    <a href="@Url.Action(" Download", "Application" , new
+                       {
+                       Id=Model.Id,
+                       sequenceNo=Model.SequenceNo,
+                       sectionId=Model.SectionId,
+                       pageId=Model.PageId,
+                       questionId=Model.QuestionId,
+                       filename=Model.Value
+                       })">
                         @Model.Value
                     </a>
                 </td>
                 <td class="govuk-table__cell govuk-table__cell--numeric">
                     <a class="govuk-link" href="@Url.Action("DeleteFile", "Application", new
                     {
-                        applicationId = Model.ApplicationId,
-                        sequenceId = Model.SequenceId,
+                        Id = Model.Id,
+                        sequenceNo = Model.SequenceNo,
                         sectionId = Model.SectionId,
                         pageId = Model.PageId,
                         questionId = Model.QuestionId,
-                        redirectAction = Model.RedirectAction
+                        filename = Model.Value,
+                        __redirectAction = Model.RedirectAction
                     })">
                         Remove
                         <span class="govuk-visually-hidden"> file</span>

@@ -43,13 +43,16 @@ namespace SFA.DAS.QnA.Application.Commands
         {
             var validators = _validatorFactory.Build(question);
 
-            foreach (var validator in validators)
+            if ((answerToThisQuestion is null || answerToThisQuestion.Value == "") && validators.Any(v => v.GetType().Name == "RequiredValidator"))
             {
-                var errors = validator.Validate(question, answerToThisQuestion);
-
-                if (errors.Any())
+                foreach (var validator in validators)
                 {
-                    validationErrors.AddRange(errors);
+                    var errors = validator.Validate(question, answerToThisQuestion);
+
+                    if (errors.Any())
+                    {
+                        validationErrors.AddRange(errors);
+                    }
                 }
             }
         }

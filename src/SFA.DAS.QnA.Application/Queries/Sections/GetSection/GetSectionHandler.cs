@@ -1,10 +1,14 @@
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using SFA.DAS.QnA.Api.Types;
 using SFA.DAS.QnA.Data;
+using SFA.DAS.QnA.Data.Entities;
 
 namespace SFA.DAS.QnA.Application.Queries.Sections.GetSection
 {
@@ -27,7 +31,16 @@ namespace SFA.DAS.QnA.Application.Queries.Sections.GetSection
             var section = await _dataContext.ApplicationSections.FirstOrDefaultAsync(sec => sec.Id == request.SectionId && sec.ApplicationId == request.ApplicationId, cancellationToken);
             if (section is null) return new HandlerResponse<Section>(false, "Section does not exist");
 
+            RemovePagesBasedOnNotRequiredConditions(application, section);
+
             return new HandlerResponse<Section>(_mapper.Map<Section>(section));
+        }
+
+        private static void RemovePagesBasedOnNotRequiredConditions(Data.Entities.Application application, ApplicationSection section)
+        {
+            var applicationData = JObject.Parse(application.ApplicationData);
+
+            section.QnAData.Pages.RemoveAll(p => p.NotRequiredConditions != null && p.NotRequiredConditions.Any(nrc => nrc.IsOneOf.Contains(applicationData[nrc.Field].Value<string>())));
         }
     }
 }
