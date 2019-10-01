@@ -58,6 +58,7 @@
   <ItemGroup>
     <Folder Include="Properties" />
     <Folder Include="Tables\" />
+    <Folder Include="ApplicationDataSchema" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Tables\Applications.sql" />
@@ -67,5 +68,8 @@
     <Build Include="Tables\Workflows.sql" />
     <Build Include="Tables\WorkflowSections.sql" />
     <Build Include="Tables\WorkflowSequences.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ApplicationDataSchema\Assessor.json" />
   </ItemGroup>
 </Project>
