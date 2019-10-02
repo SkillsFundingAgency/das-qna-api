@@ -106,9 +106,9 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
 
             if (page.PageOfAnswers != null && page.PageOfAnswers.Count > 0)
             {
-                var existingAnswer = page.PageOfAnswers?[0].Answers.SingleOrDefault(a => a.QuestionId == nextAction.Conditions[0].QuestionId);
+                var existingAnswer = page.PageOfAnswers?[0].Answers.SingleOrDefault(a => a.QuestionId == answers[0].QuestionId);
 
-                if (existingAnswer != null && existingAnswer != answers.Single(a => a.QuestionId == nextAction.Conditions[0].QuestionId))
+                if (existingAnswer != null && existingAnswer != answers.Single(a => a.QuestionId == answers[0].QuestionId))
                 {
                     DeactivateDependentPages(page.PageId, qnaData, page, nextAction);
                 }
@@ -135,7 +135,7 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
                     
                 foreach (var thisPagesNext in nextPage.Next)
                 {
-                    DeactivateDependentPages(branchingPageId, qnaData, nextPage, chosenAction);
+                    DeactivateDependentPages(branchingPageId, qnaData, nextPage, thisPagesNext);
                 }
             }
         }
