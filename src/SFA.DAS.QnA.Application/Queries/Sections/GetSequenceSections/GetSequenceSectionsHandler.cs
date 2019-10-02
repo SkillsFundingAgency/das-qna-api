@@ -34,16 +34,27 @@ namespace SFA.DAS.QnA.Application.Queries.Sections.GetSequenceSections
 
             foreach (var section in sections)
             {
-                RemovePagesBasedOnNotRequiredConditions(application, section);
+                RemovePages(application, section);
             }
             
             return new HandlerResponse<List<Section>>(sections);
         }
         
-        private static void RemovePagesBasedOnNotRequiredConditions(Data.Entities.Application application, Section section)
+        private static void RemovePages(Data.Entities.Application application, Section section)
         {
             var applicationData = JObject.Parse(application.ApplicationData);
 
+            RemovePagesBasedOnNotRequiredConditions(section, applicationData);
+            RemoveInactivePages(section);
+        }
+
+        private static void RemoveInactivePages(Section section)
+        {
+            section.QnAData.Pages.RemoveAll(p => !p.Active);
+        }
+
+        private static void RemovePagesBasedOnNotRequiredConditions(Section section, JObject applicationData)
+        {
             section.QnAData.Pages.RemoveAll(p => p.NotRequiredConditions != null && p.NotRequiredConditions.Any(nrc => nrc.IsOneOf.Contains(applicationData[nrc.Field].Value<string>())));
         }
     }
