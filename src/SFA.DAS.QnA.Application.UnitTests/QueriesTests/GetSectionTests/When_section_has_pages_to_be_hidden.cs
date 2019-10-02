@@ -37,9 +37,9 @@ namespace SFA.DAS.QnA.Application.UnitTests.QueriesTests.GetSectionTests
                 ApplicationId = applicationId,
                 QnAData = new QnAData(){Pages = new List<Page>()
                 {
-                    new Page() {PageId = "1"},
-                    new Page() {PageId = "2", NotRequiredConditions = new List<NotRequiredCondition>(){new NotRequiredCondition(){Field = "OrganisationType", IsOneOf = new []{"HEI"}}}},
-                    new Page() {PageId = "3"}
+                    new Page() {PageId = "1", Active = true},
+                    new Page() {PageId = "2", NotRequiredConditions = new List<NotRequiredCondition>(){new NotRequiredCondition(){Field = "OrganisationType", IsOneOf = new []{"HEI"}}}, Active = true},
+                    new Page() {PageId = "3", Active = true}
                 }}
             });
             
