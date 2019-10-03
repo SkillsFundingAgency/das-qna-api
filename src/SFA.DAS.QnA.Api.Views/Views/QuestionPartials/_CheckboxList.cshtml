@@ -26,15 +26,28 @@
 
 <div class="govuk-checkboxes js-checkbox-container">
     @for (int i = 0; i < Model.Options.Count; i++)
-    { 
+    {
         var checkboxChecked = (Model.Value != null && Model.Value.Contains(Model.Options[i].Value)) ? checkedStatus : "";
-
-        <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input js-check-all-checkbox" type="checkbox" id="option_@i" name="@Model.QuestionId" value="@Model.Options[i].Value" @checkboxChecked/>
-            <label class="govuk-label govuk-checkboxes__label" for="option_@i">
-                @Model.Options[i].Label
-            </label>
-        </div>
+        var optionId = Model.QuestionId + (i == 0 ? "" : "_" + i);
+    <div class="govuk-checkboxes__item">
+        @if (Model.Options[i].HasHintText)
+        {
+            <input class="govuk-checkboxes__input js-check-all-checkbox" type="checkbox" id="option_@i" name="@Model.QuestionId" value="@Model.Options[i].Value" @checkboxChecked aria-describedby="@optionId-hint" />
+        }
+        else
+        {
+            <input class="govuk-checkboxes__input js-check-all-checkbox" type="checkbox" id="option_@i" name="@Model.QuestionId" value="@Model.Options[i].Value" @checkboxChecked />
+        }
+        <label class="govuk-label govuk-checkboxes__label" for="option_@i">
+            @Model.Options[i].Label
+        </label>
+        @if (Model.Options[i].HasHintText)
+        {
+            <span id="@optionId-hint" class="govuk-hint govuk-radios__hint">
+                @Html.Raw(Model.Options[i].HintText)
+            </span>
+        }
+    </div>
     }
 </div>
 
