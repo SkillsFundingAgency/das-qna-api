@@ -78,7 +78,6 @@ namespace SFA.DAS.QnA.Application.Commands.StartApplication
             {
                 ApplicationId = newApplication.Id,
                 SequenceNo = seq.Key.SequenceNo,
-                Status = "Draft",
                 IsActive = seq.Key.IsActive
             }).ToList();
 

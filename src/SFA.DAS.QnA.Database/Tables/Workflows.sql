@@ -4,7 +4,6 @@ CREATE TABLE [dbo].[Workflows](
 	[Description] [nvarchar](200) NOT NULL,
 	[Version] [nvarchar](10) NOT NULL,
 	[Type] [nvarchar](10) NOT NULL,
-	[Status] [nvarchar](20) NOT NULL,
 	[CreatedAt] [datetime2](7) NOT NULL,
 	[CreatedBy] [nvarchar](256) NOT NULL,
 	[UpdatedAt] [datetime2](7) NULL,

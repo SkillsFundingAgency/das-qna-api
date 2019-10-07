@@ -25,7 +25,6 @@ namespace SFA.DAS.QnA.Application.Commands.WorkflowSequences.UpsertWorkflowSeque
             }
             else
             {
-                existingSequence.Status = request.Sequence.Status;
                 existingSequence.IsActive = request.Sequence.IsActive;
                 existingSequence.SectionId = request.Sequence.SectionId;
                 existingSequence.SectionNo = request.Sequence.SectionNo;

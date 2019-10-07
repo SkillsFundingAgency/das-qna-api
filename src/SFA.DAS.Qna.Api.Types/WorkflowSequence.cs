@@ -9,7 +9,6 @@ namespace SFA.DAS.QnA.Api.Types
         public int SequenceNo { get; set; }
         public int SectionNo { get; set; }
         public Guid SectionId { get; set; }
-        public string Status { get; set; }
         public bool IsActive { get; set; }
     }
 }
