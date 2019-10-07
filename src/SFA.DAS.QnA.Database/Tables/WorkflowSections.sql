@@ -4,7 +4,8 @@ CREATE TABLE [dbo].[WorkflowSections](
 	[QnAData] [nvarchar](max) NOT NULL,
 	[Title] [nvarchar](50) NOT NULL,
 	[LinkTitle] [nvarchar](50) NOT NULL,
-	[DisplayType] [nvarchar](50) NOT NULL
+	[DisplayType] [nvarchar](50) NOT NULL,
+    [Status] [nvarchar](50) NOT NULL,
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
 
