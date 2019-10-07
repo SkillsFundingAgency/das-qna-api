@@ -25,6 +25,7 @@ namespace SFA.DAS.QnA.Application.Commands.WorkflowSections.UpsertWorkflowSectio
             }
             else
             {
+                existingSection.Status = request.Section.Status;
                 existingSection.Title = request.Section.Title;
                 existingSection.DisplayType = request.Section.DisplayType;
                 existingSection.LinkTitle = request.Section.LinkTitle;
