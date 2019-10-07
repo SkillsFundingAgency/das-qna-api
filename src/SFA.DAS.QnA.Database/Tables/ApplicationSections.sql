@@ -4,7 +4,6 @@ CREATE TABLE [dbo].[ApplicationSections](
 	[SequenceNo] [int] NOT NULL,
 	[SectionNo] [int] NOT NULL,
 	[QnAData] [nvarchar](max) NOT NULL,
-    [Status] [nvarchar](50) NOT NULL,
 	[Title] [nvarchar](50) NOT NULL,
 	[LinkTitle] [nvarchar](50) NOT NULL,
 	[DisplayType] [nvarchar](50) NOT NULL,
@@ -14,7 +13,3 @@ GO
 
 ALTER TABLE [dbo].[ApplicationSections] ADD  CONSTRAINT [DF_ApplicationSequences_Id]  DEFAULT (newid()) FOR [Id]
 GO
-
-ALTER TABLE [dbo].[ApplicationSections] ADD  CONSTRAINT [DF_ApplicationSequences_Status]  DEFAULT (N'Draft') FOR [Status]
-GO
-
