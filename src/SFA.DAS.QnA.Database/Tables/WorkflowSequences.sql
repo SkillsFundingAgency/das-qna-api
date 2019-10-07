@@ -4,7 +4,6 @@ CREATE TABLE [dbo].[WorkflowSequences](
 	[SequenceNo] [int] NOT NULL,
 	[SectionNo] [int] NOT NULL,
 	[SectionId] [uniqueidentifier] NOT NULL,
-	[Status] [nvarchar](50) NOT NULL,
 	[IsActive] [bit] NOT NULL DEFAULT 0
 ) ON [PRIMARY]
 GO
