@@ -1,14 +1,14 @@
-CREATE TABLE [dbo].[WorkflowSections](
-	[Id] [uniqueidentifier] NOT NULL,
-	[ProjectId] [uniqueidentifier] NOT NULL,
-	[QnAData] [nvarchar](max) NOT NULL,
-	[Title] [nvarchar](50) NOT NULL,
-	[LinkTitle] [nvarchar](50) NOT NULL,
-	[DisplayType] [nvarchar](50) NOT NULL
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+CREATE TABLE [dbo].[ApplicationSequences](
+                                             [Id] [uniqueidentifier] NOT NULL,
+                                             [ApplicationId] [uniqueidentifier] NOT NULL,
+                                             [SequenceNo] [int] NOT NULL,
+                                             [Status] [nvarchar](50) NOT NULL,
+                                             [IsActive] [bit] NOT NULL DEFAULT 0,
+                                             [NotRequired] [bit] NOT NULL DEFAULT 0
+) ON [PRIMARY]
 GO
 
-ALTER TABLE [dbo].[WorkflowSections] ADD  CONSTRAINT [DF_WorkflowSections_Id]  DEFAULT (newid()) FOR [Id]
+ALTER TABLE [dbo].[ApplicationSequences] ADD  CONSTRAINT [DF_ApplicationSequences_Id_1]  DEFAULT (newid()) FOR [Id]
 GO
 
 

@@ -9,6 +9,7 @@ namespace SFA.DAS.QnA.Api.Types
         public Guid ProjectId { get; set; }
         public string Title { get; set; }
         public string LinkTitle { get; set; }
+        public string Status { get; set; }
         public string DisplayType { get; set; }
         public QnAData QnAData { get; set; }
     }
