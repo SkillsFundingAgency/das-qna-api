@@ -56,10 +56,10 @@ namespace SFA.DAS.QnA.Api.UnitTests.ApplicationControllerTests.StartApplication
         }
 
         [Test]
-        public void Then_CreatedAtActionResult_is_returned()
+        public void Then_OkActionResult_is_returned()
         {
             var result = Controller.StartApplication(new StartApplicationRequest(){UserReference = "dave", WorkflowType = "EPAO"});
-            result.Result.Should().BeOfType<CreatedAtActionResult>();
+            result.Result.Should().BeOfType<OkObjectResult>();
         }
     }
 }
