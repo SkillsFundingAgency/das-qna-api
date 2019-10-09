@@ -42,8 +42,14 @@ namespace SFA.DAS.QnA.Application.Commands
         private void ValidateQuestion(Question question, List<KeyValuePair<string, string>> validationErrors, Answer answerToThisQuestion)
         {
             var validators = _validatorFactory.Build(question);
+            
+            // only run validators if we have an answer _or_ we do not have an answer and one of the validators is Required
 
-            if ((answerToThisQuestion is null || answerToThisQuestion.Value == "") && validators.Any(v => v.GetType().Name == "RequiredValidator"))
+            if (
+                (answerToThisQuestion is null || answerToThisQuestion.Value == "") && validators.Any(v => v.GetType().Name == "RequiredValidator")
+                ||
+                (answerToThisQuestion != null && !string.IsNullOrWhiteSpace(answerToThisQuestion.Value))
+                )
             {
                 foreach (var validator in validators)
                 {

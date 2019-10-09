@@ -44,26 +44,6 @@ namespace SFA.DAS.QnA.Api.Controllers
         }
 
         /// <summary>
-        ///     Returns the Application's currently active Sequence
-        /// </summary>
-        /// <returns>The active sequence</returns>
-        /// <response code="200">Returns the active sequence</response>
-        /// <response code="204">If there is no current sequence for the given Application Id</response>
-        /// <response code="404">If there is no Application for the given Application Id</response>
-        [HttpGet("{applicationId}/sequences/current")]
-        [ProducesResponseType(200)]
-        [ProducesResponseType(204)]
-        [ProducesResponseType(404)]
-        public async Task<ActionResult<Sequence>> GetCurrentSequence(Guid applicationId)
-        {
-            var sequence = await _mediator.Send(new GetCurrentSequenceRequest(applicationId), CancellationToken.None);
-            if (!sequence.Success) return NotFound(new NotFoundError(sequence.Message));
-            if (sequence.Value == null) return NoContent();
-
-            return sequence.Value;
-        }
-
-        /// <summary>
         ///     Returns the requested Sequence
         /// </summary>
         /// <returns>The requested Sequence</returns>

@@ -35,7 +35,7 @@ namespace SFA.DAS.QnA.Api.Controllers
 
             if (newApplication.Success == false) return BadRequest(new BadRequestError(newApplication.Message));
 
-            return CreatedAtAction("GetCurrentSequence", "Sequences", new {newApplication.Value.ApplicationId}, new {newApplication.Value.ApplicationId});
+            return Ok(new {newApplication.Value.ApplicationId});
         }
     }
 }
