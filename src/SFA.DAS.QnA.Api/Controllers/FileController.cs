@@ -23,19 +23,6 @@ namespace SFA.DAS.QnA.Api.Controllers
             _mediator = mediator;
             _contextAccessor = contextAccessor;
         }
-//
-//        [HttpPost("{applicationId}/sections/{sectionId}/pages/{pageId}/questions/{questionId}/upload")]
-//        public async Task<IActionResult> Upload(Guid applicationId, Guid sectionId, string pageId, string questionId)
-//        {
-//            var uploadResult = await _mediator.Send(new UploadFileRequest(applicationId, sectionId, pageId, questionId, _contextAccessor.HttpContext.Request.Form.Files));
-//
-//            if (!uploadResult.Success)
-//            {
-//                return BadRequest(new BadRequestError(uploadResult.Message));
-//            }
-//            
-//            return Ok();
-//        }
         
         [HttpPost("{applicationId}/sections/{sectionId}/pages/{pageId}/upload")]
         public async Task<ActionResult<SetPageAnswersResponse>> Upload(Guid applicationId, Guid sectionId, string pageId)
