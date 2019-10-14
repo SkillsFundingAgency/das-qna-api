@@ -47,7 +47,7 @@ namespace SFA.DAS.QnA.Api.Controllers
         /// <returns>The requested Section</returns>
         /// <response code="200">Returns a Section</response>
         /// <response code="404">If the ApplicationId or SectionId are invalid</response>
-        [HttpGet("{applicationId}/sections/{sectionId}")]
+        [HttpGet("{applicationId}/sections/{sectionId:guid}")]
         [ProducesResponseType(200)]
         [ProducesResponseType(404)]
         public async Task<ActionResult<Section>> GetSection(Guid applicationId, Guid sectionId)
@@ -64,7 +64,7 @@ namespace SFA.DAS.QnA.Api.Controllers
         /// <returns>The requested Section</returns>
         /// <response code="200">Returns a Section</response>
         /// <response code="404">If the ApplicationId or SectionNo are invalid</response>
-        [HttpGet("{applicationId}/sections/{sectionNo}")]
+        [HttpGet("{applicationId}/sections/{sectionNo:int}")]
         [ProducesResponseType(200)]
         [ProducesResponseType(404)]
         public async Task<ActionResult<Section>> GetSection(Guid applicationId, int sectionNo)
