@@ -57,5 +57,13 @@ namespace SFA.DAS.QnA.Api.Controllers
 
             return sectionsResponse.Value;
         }
+
+        public async Task<ActionResult<Section>> GetSection(Guid applicationId, int sectionNo)
+        {
+            var sectionsResponse = await _mediator.Send(new GetSectionBySectionNoRequest(applicationId, sectionNo), CancellationToken.None);
+            if (!sectionsResponse.Success) return NotFound();
+
+            return sectionsResponse.Value;
+        }
     }
 }
