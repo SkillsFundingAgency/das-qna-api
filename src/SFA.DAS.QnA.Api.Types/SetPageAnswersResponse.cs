@@ -4,7 +4,7 @@ namespace SFA.DAS.QnA.Api.Types
 {
     public class SetPageAnswersResponse
     {
-        public List<KeyValuePair<string, string>> ValidationErrors { get; }
+        public List<KeyValuePair<string, string>> ValidationErrors { get; set; }
         public bool ValidationPassed { get; set; }
         public string NextAction { get; set; }
 
