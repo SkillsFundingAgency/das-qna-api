@@ -10,6 +10,9 @@ namespace SFA.DAS.QnA.Api.Types
 
         public string NextActionId { get; set; }
 
+        public SetPageAnswersResponse()
+        { }
+        
         public SetPageAnswersResponse(string nextAction, string nextActionId)
         {
             ValidationPassed = true;
