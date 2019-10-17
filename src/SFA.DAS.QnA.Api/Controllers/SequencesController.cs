@@ -69,7 +69,7 @@ namespace SFA.DAS.QnA.Api.Controllers
         [HttpGet("{applicationId}/sequences/{sequenceNo:int}")]
         [ProducesResponseType(200)]
         [ProducesResponseType(404)]
-        public async Task<ActionResult<Sequence>> GetSequence(Guid applicationId, int sequenceNo)
+        public async Task<ActionResult<Sequence>> GetSequenceBySequenceNo(Guid applicationId, int sequenceNo)
         {
             var sequence = await _mediator.Send(new GetSequenceBySequenceNoRequest(applicationId, sequenceNo), CancellationToken.None);
             if (!sequence.Success) return NotFound(new NotFoundError(sequence.Message));

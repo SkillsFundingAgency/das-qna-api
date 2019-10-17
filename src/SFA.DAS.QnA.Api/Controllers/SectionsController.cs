@@ -63,13 +63,13 @@ namespace SFA.DAS.QnA.Api.Controllers
         /// </summary>
         /// <returns>The requested Section</returns>
         /// <response code="200">Returns a Section</response>
-        /// <response code="404">If the ApplicationId or SectionNo are invalid</response>
-        [HttpGet("{applicationId}/sections/{sectionNo:int}")]
+        /// <response code="404">If the ApplicationId, SequenceNo or SectionNo are invalid</response>
+        [HttpGet("{applicationId}/sequences/{sequenceNo:int}/sections/{sectionNo:int}")]
         [ProducesResponseType(200)]
         [ProducesResponseType(404)]
-        public async Task<ActionResult<Section>> GetSection(Guid applicationId, int sectionNo)
+        public async Task<ActionResult<Section>> GetSectionBySectionNo(Guid applicationId, int sequenceNo, int sectionNo)
         {
-            var sectionsResponse = await _mediator.Send(new GetSectionBySectionNoRequest(applicationId, sectionNo), CancellationToken.None);
+            var sectionsResponse = await _mediator.Send(new GetSectionBySectionNoRequest(applicationId, sequenceNo, sectionNo), CancellationToken.None);
             if (!sectionsResponse.Success) return NotFound();
 
             return sectionsResponse.Value;

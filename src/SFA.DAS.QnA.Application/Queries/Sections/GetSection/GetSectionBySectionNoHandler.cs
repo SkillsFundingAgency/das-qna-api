@@ -1,14 +1,13 @@
-using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
 using AutoMapper;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
-using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using SFA.DAS.QnA.Api.Types;
 using SFA.DAS.QnA.Data;
 using SFA.DAS.QnA.Data.Entities;
+using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace SFA.DAS.QnA.Application.Queries.Sections.GetSection
 {
@@ -28,7 +27,10 @@ namespace SFA.DAS.QnA.Application.Queries.Sections.GetSection
             var application = await _dataContext.Applications.FirstOrDefaultAsync(app => app.Id == request.ApplicationId, cancellationToken: cancellationToken);
             if (application is null) return new HandlerResponse<Section>(false, "Application does not exist");
 
-            var section = await _dataContext.ApplicationSections.FirstOrDefaultAsync(sec => sec.SectionNo == request.SectionNo && sec.ApplicationId == request.ApplicationId, cancellationToken);
+            var sequence = await _dataContext.ApplicationSequences.FirstOrDefaultAsync(seq => seq.SequenceNo == request.SequenceNo && seq.ApplicationId == request.ApplicationId, cancellationToken: cancellationToken);
+            if (sequence is null) return new HandlerResponse<Section>(false, "Sequence does not exist");
+
+            var section = await _dataContext.ApplicationSections.FirstOrDefaultAsync(sec => sec.SectionNo == request.SectionNo && sec.SequenceNo == request.SequenceNo && sec.ApplicationId == request.ApplicationId, cancellationToken);
             if (section is null) return new HandlerResponse<Section>(false, "Section does not exist");
 
             RemovePages(application, section);
