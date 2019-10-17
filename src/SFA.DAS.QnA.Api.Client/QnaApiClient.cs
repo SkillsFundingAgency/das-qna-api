@@ -32,7 +32,17 @@ namespace SFA.DAS.QnA.Api.Client
         {
             return await HttpCall<Sequence>(async () => await _httpClient.GetAsync(new Uri($"applications/{applicationId}/sequences/current", UriKind.Relative)));
         }
-        
+
+        public async Task<List<Section>> GetSequence(Guid applicationId, Guid sequenceId)
+        {
+            return await HttpCall<List<Section>>(async () => await _httpClient.GetAsync(new Uri($"applications/{applicationId}/sequences/{sequenceId}", UriKind.Relative)));
+        }
+
+        public async Task<List<Section>> GetSequenceBySequenceNo(Guid applicationId, int sequenceNo)
+        {
+            return await HttpCall<List<Section>>(async () => await _httpClient.GetAsync(new Uri($"applications/{applicationId}/sequences/{sequenceNo}", UriKind.Relative)));
+        }
+
         public async Task<List<Section>> GetSections(Guid applicationId, Guid sequenceId)
         {
             return await HttpCall<List<Section>>(async () => await _httpClient.GetAsync(new Uri($"applications/{applicationId}/sequences/{sequenceId}/sections", UriKind.Relative)));
@@ -42,24 +52,29 @@ namespace SFA.DAS.QnA.Api.Client
         {
             return await HttpCall<Section>(async () => await _httpClient.GetAsync(new Uri($"applications/{applicationId}/sections/{sectionId}", UriKind.Relative)));
         }
-        
-//        public async Task<Section> DownloadPageFiles(Guid applicationId, Guid sectionId, string pageId)
-//        {
-//            var response = await _httpClient.GetAsync(new Uri($"{applicationId}/sections/{sectionId}/pages/{pageId}/download", UriKind.Relative));
-//            if (response.IsSuccessStatusCode)
-//            {
-//                response.Content.Headers.
-//            }
-//        }
 
-//        public async Task<List<Workflow>> GetWorkflows()
-//        {
-//            using (var response = await _httpClient.GetAsync(new Uri("workflows", UriKind.Relative)))
-//            {
-//                return await response.Content.ReadAsAsync<List<Workflow>>();
-//            }
-//        }
-        
+        public async Task<Section> GetSectionBySectionNo(Guid applicationId, int sequenceNo, int sectionNo)
+        {
+            return await HttpCall<Section>(async () => await _httpClient.GetAsync(new Uri($"applications/{applicationId}/sequences/{sequenceNo}/sections/{sectionNo}", UriKind.Relative)));
+        }
+
+        //        public async Task<Section> DownloadPageFiles(Guid applicationId, Guid sectionId, string pageId)
+        //        {
+        //            var response = await _httpClient.GetAsync(new Uri($"{applicationId}/sections/{sectionId}/pages/{pageId}/download", UriKind.Relative));
+        //            if (response.IsSuccessStatusCode)
+        //            {
+        //                response.Content.Headers.
+        //            }
+        //        }
+
+        //        public async Task<List<Workflow>> GetWorkflows()
+        //        {
+        //            using (var response = await _httpClient.GetAsync(new Uri("workflows", UriKind.Relative)))
+        //            {
+        //                return await response.Content.ReadAsAsync<List<Workflow>>();
+        //            }
+        //        }
+
         private async Task<T> HttpCall<T>(Func<Task<HttpResponseMessage>> httpClientAction)
         {
             var httpResponse = await httpClientAction();
