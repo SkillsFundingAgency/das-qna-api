@@ -23,6 +23,7 @@
     <SqlServerVerification>False</SqlServerVerification>
     <IncludeCompositeObjects>True</IncludeCompositeObjects>
     <TargetDatabaseSet>True</TargetDatabaseSet>
+    <GenerateCreateScript>False</GenerateCreateScript>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>bin\Release\</OutputPath>
@@ -58,7 +59,6 @@
   <ItemGroup>
     <Folder Include="Properties" />
     <Folder Include="Tables\" />
-    <Folder Include="ApplicationDataSchema" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Tables\Applications.sql" />
@@ -70,6 +70,6 @@
     <Build Include="Tables\WorkflowSequences.sql" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ApplicationDataSchema\Assessor.json" />
+    <PostDeploy Include="Script.PostDeployment1.sql" />
   </ItemGroup>
 </Project>
