@@ -11,32 +11,30 @@ using SFA.DAS.QnA.Application.Queries.Sections.GetSection;
 namespace SFA.DAS.QnA.Api.UnitTests.SectionsControllerTests.GetSection
 {
     [TestFixture]
-    public class When_GetSection_is_called_with_a_sectionNo
+    public class When_GetSection_is_called
     {
         [Test]
         public async Task And_Section_exists_Then_Section_is_returned()
         {
             var applicationId = Guid.NewGuid();
-            var sequenceNo = 1;
-            var sectionNo = 1;
-
+            var sectionId = Guid.NewGuid();
+            
             var mediator = Substitute.For<IMediator>();
 
-            mediator.Send(Arg.Any<GetSectionBySectionNoRequest>()).Returns(new HandlerResponse<Section>(new Section()
+            mediator.Send(Arg.Any<GetSectionRequest>()).Returns(new HandlerResponse<Section>(new Section()
             {
-                Id = Guid.NewGuid(),
-                SequenceNo = sequenceNo,
-                SectionNo = sectionNo,
+                Id = sectionId,
+                SequenceNo = 1,
+                SectionNo = 1,
                 ApplicationId = applicationId
             }));
             
             var sectionController = new SectionsController(mediator);
 
-            var result = await sectionController.GetSectionBySectionNo(applicationId, sequenceNo, sectionNo);
+            var result = await sectionController.GetSection(applicationId, sectionId);
             
             result.Value.Should().BeOfType<Section>();
-            result.Value.SequenceNo.Should().Be(sequenceNo);
-            result.Value.SectionNo.Should().Be(sectionNo);
+            result.Value.Id.Should().Be(sectionId);
         }
     }
 }
