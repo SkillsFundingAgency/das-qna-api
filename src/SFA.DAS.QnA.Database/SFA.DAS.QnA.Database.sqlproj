@@ -59,6 +59,9 @@
     <Folder Include="Properties" />
     <Folder Include="Tables\" />
     <Folder Include="ApplicationDataSchema" />
+    <Folder Include="projects\" />
+    <Folder Include="projects\epaoall\" />
+    <Folder Include="projects\epaoall\sections" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Tables\Applications.sql" />
