@@ -45,9 +45,9 @@ namespace SFA.DAS.QnA.Application.Commands
             
             if (answerToThisQuestion is null || answerToThisQuestion.Value == "")
             {
-                if (validators.Any(v => v.GetType().Name == "RequiredValidator"))
+                if (validators.Any(v => typeof(RequiredValidator).Name.Equals(v.GetType().Name)))
                 {
-                    var validator = validators.First(v => v.GetType().Name == "RequiredValidator");
+                    var validator = validators.First(v => typeof(RequiredValidator).Name.Equals(v.GetType().Name));
                     var errors = validator.Validate(question, answerToThisQuestion);
                     if (errors.Any())
                     {
