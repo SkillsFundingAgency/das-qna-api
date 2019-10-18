@@ -43,13 +43,19 @@ namespace SFA.DAS.QnA.Application.Commands
         {
             var validators = _validatorFactory.Build(question);
             
-            // only run validators if we have an answer _or_ we do not have an answer and one of the validators is Required
-
-            if (
-                (answerToThisQuestion is null || answerToThisQuestion.Value == "") && validators.Any(v => v.GetType().Name == "RequiredValidator")
-                ||
-                (answerToThisQuestion != null && !string.IsNullOrWhiteSpace(answerToThisQuestion.Value))
-                )
+            if (answerToThisQuestion is null || answerToThisQuestion.Value == "")
+            {
+                if (validators.Any(v => v.GetType().Name == "RequiredValidator"))
+                {
+                    var validator = validators.First(v => v.GetType().Name == "RequiredValidator");
+                    var errors = validator.Validate(question, answerToThisQuestion);
+                    if (errors.Any())
+                    {
+                        validationErrors.AddRange(errors);
+                    }
+                }
+            }
+            else
             {
                 foreach (var validator in validators)
                 {
