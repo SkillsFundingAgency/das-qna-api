@@ -49,8 +49,6 @@ namespace SFA.DAS.QnA.Application.Commands.PageFeedback.UpsertFeedback
                 existingFeedback.IsCompleted = request.Feedback.IsCompleted;
                 existingFeedback.IsNew = request.Feedback.IsNew;
             }
-
-            qnaData.RequestedFeedbackAnswered = false;
             
             section.QnAData = qnaData;
             await _dataContext.SaveChangesAsync(cancellationToken);

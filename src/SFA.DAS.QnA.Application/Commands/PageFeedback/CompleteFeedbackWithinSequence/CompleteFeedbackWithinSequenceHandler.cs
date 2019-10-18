@@ -36,7 +36,6 @@ namespace SFA.DAS.QnA.Application.Commands.PageFeedback.CompleteFeedbackWithinSe
                     {
                         page.Feedback.ForEach(f => f.IsNew = false);
                         page.Feedback.ForEach(f => f.IsCompleted = true);
-                        section.QnAData.RequestedFeedbackAnswered = true;
                     }
                 }
             }
