@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 
 namespace SFA.DAS.QnA.Api.Types.Page
 {
@@ -8,11 +9,10 @@ namespace SFA.DAS.QnA.Api.Types.Page
 
         public QnAData(QnAData copyFrom)
         {
-            this.RequestedFeedbackAnswered = copyFrom.RequestedFeedbackAnswered;
             this.Pages = copyFrom.Pages;
         }
-        
-        public bool? RequestedFeedbackAnswered { get; set; }
+
+        public bool? RequestedFeedbackAnswered =>  (Pages is null || Pages.All(p => !p.HasFeedback)) ? null : (bool?)Pages.All(p => p.AllFeedbackIsCompleted);
         public List<Page> Pages { get; set; }
     }
 }
