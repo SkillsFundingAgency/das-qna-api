@@ -6,6 +6,7 @@ using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using SFA.DAS.QnA.Api.Infrastructure;
 using SFA.DAS.QnA.Api.Types.Page;
+using SFA.DAS.QnA.Application.Commands.PageFeedback.CompleteFeedbackWithinSequence;
 using SFA.DAS.QnA.Application.Commands.PageFeedback.DeleteFeedback;
 using SFA.DAS.QnA.Application.Commands.PageFeedback.UpsertFeedback;
 
@@ -48,6 +49,24 @@ namespace SFA.DAS.QnA.Api.Controllers
             if (!deleteFeedbackResponse.Success) return NotFound(new NotFoundError(deleteFeedbackResponse.Message));
 
             return deleteFeedbackResponse.Value;
+        }
+
+
+        /// <summary>
+        ///     Completes all Feedback within the Sequence and its Sections
+        /// </summary>
+        /// <returns>Boolean stating that all Feedback as been set to complete</returns>
+        /// <response code="200">Returns success</response>
+        /// <response code="404">If the ApplicationId or SequenceId are invalid</response>
+        [HttpPost("{applicationId}/sequence/{sequenceId}/feedback/completed")]
+        [ProducesResponseType((int)HttpStatusCode.OK)]
+        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
+        public async Task<ActionResult<bool>> CompleteFeedbackWithinSequence(Guid applicationId, Guid sequenceId)
+        {
+            var completeFeedbackWithinSequenceResponse = await _mediator.Send(new CompleteFeedbackWithinSequenceRequest(applicationId, sequenceId), CancellationToken.None);
+            if (!completeFeedbackWithinSequenceResponse.Success) return BadRequest(new BadRequestError(completeFeedbackWithinSequenceResponse.Message));
+
+            return completeFeedbackWithinSequenceResponse.Value;
         }
     }
 }
