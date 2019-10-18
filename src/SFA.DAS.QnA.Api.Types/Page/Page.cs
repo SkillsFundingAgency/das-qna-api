@@ -42,7 +42,7 @@ namespace SFA.DAS.QnA.Api.Types.Page
         public bool HasNewFeedback => HasFeedback && Feedback.Any(f => f.IsNew || !f.IsCompleted);
 
         [JsonIgnore]
-        public bool AllFeedbackIsCompleted => HasFeedback ? Feedback.All(f => f.IsCompleted) : true;
+        public bool AllFeedbackIsCompleted => !HasFeedback || Feedback.All(f => f.IsCompleted);
 
         public string ActivatedByPageId { get; set; }
     }
