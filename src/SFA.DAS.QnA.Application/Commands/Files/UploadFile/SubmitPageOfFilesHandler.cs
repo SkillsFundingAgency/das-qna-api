@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using SFA.DAS.QnA.Api.Types;
 using SFA.DAS.QnA.Api.Types.Page;
 using SFA.DAS.QnA.Application.Commands.SetPageAnswers;
@@ -117,9 +119,39 @@ namespace SFA.DAS.QnA.Application.Commands.Files.UploadFile
             
             MarkFeedbackComplete(page);
 
+            await UpdateApplicationData(request.ApplicationId, page, page.PageOfAnswers.SelectMany(poa => poa.Answers).ToList());
+            
             var nextAction = GetNextAction(page, answersToValidate, section, _dataContext);
             
             return new HandlerResponse<SetPageAnswersResponse>(new SetPageAnswersResponse(nextAction.Action, nextAction.ReturnId));
+        }
+        
+        private async Task UpdateApplicationData(Guid applicationId, Page page, List<Answer> answers)
+        {
+            var application = await _dataContext.Applications.SingleOrDefaultAsync(app => app.Id == applicationId);
+            var applicationData = JObject.Parse(application.ApplicationData);
+            foreach (var question in page.Questions)
+            {
+                SetApplicationDataField(answers, applicationData, question);
+            }
+
+            application.ApplicationData = applicationData.ToString(Formatting.None);
+
+            await _dataContext.SaveChangesAsync();
+        }
+        
+        private static void SetApplicationDataField(List<Answer> answers, JObject applicationData, Question question)
+        {
+            if (string.IsNullOrWhiteSpace(question.QuestionTag)) return;
+
+            if (applicationData.ContainsKey(question.QuestionTag))
+            {
+                applicationData[question.QuestionTag] = answers.Single(a => a.QuestionId == question.QuestionId).Value;
+            }
+            else
+            {
+                applicationData.Add(question.QuestionTag, new JValue(answers.Single(a => a.QuestionId == question.QuestionId).Value));
+            }
         }
     }
 }
