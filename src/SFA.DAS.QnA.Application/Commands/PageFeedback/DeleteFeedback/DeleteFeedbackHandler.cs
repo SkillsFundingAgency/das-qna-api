@@ -35,11 +35,6 @@ namespace SFA.DAS.QnA.Application.Commands.PageFeedback.DeleteFeedback
             if (existingFeedback is null) return new HandlerResponse<Page>(success:false, message:$"Feedback {request.FeedbackId} does not exist");
 
             page.Feedback.Remove(existingFeedback);
-
-            if (!page.Feedback.Any())
-            {
-                qnaData.RequestedFeedbackAnswered = null;
-            }
             
             section.QnAData = qnaData;
             await _dataContext.SaveChangesAsync(cancellationToken);

@@ -49,12 +49,29 @@ namespace SFA.DAS.QnA.Api.Controllers
         /// <returns>The requested Sequence</returns>
         /// <response code="200">Returns the requested sequence</response>
         /// <response code="404">If the ApplicationId or SequenceId are not found</response>
-        [HttpGet("{applicationId}/sequences/{sequenceId}")]
+        [HttpGet("{applicationId}/sequences/{sequenceId:guid}")]
         [ProducesResponseType(200)]
         [ProducesResponseType(404)]
         public async Task<ActionResult<Sequence>> GetSequence(Guid applicationId, Guid sequenceId)
         {
             var sequence = await _mediator.Send(new GetSequenceRequest(applicationId, sequenceId), CancellationToken.None);
+            if (!sequence.Success) return NotFound(new NotFoundError(sequence.Message));
+
+            return sequence.Value;
+        }
+        
+        /// <summary>
+        ///     Returns the requested Sequence
+        /// </summary>
+        /// <returns>The requested Sequence</returns>
+        /// <response code="200">Returns the requested sequence</response>
+        /// <response code="404">If the ApplicationId or SequenceNo are not found</response>
+        [HttpGet("{applicationId}/sequences/{sequenceNo:int}")]
+        [ProducesResponseType(200)]
+        [ProducesResponseType(404)]
+        public async Task<ActionResult<Sequence>> GetSequenceBySequenceNo(Guid applicationId, int sequenceNo)
+        {
+            var sequence = await _mediator.Send(new GetSequenceBySequenceNoRequest(applicationId, sequenceNo), CancellationToken.None);
             if (!sequence.Success) return NotFound(new NotFoundError(sequence.Message));
 
             return sequence.Value;
