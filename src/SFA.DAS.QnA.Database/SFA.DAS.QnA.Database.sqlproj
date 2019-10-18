@@ -59,6 +59,8 @@
     <Folder Include="Properties" />
     <Folder Include="Tables\" />
     <Folder Include="ApplicationDataSchema" />
+    <Folder Include="PostDeploymentScripts" />
+    <Folder Include="StoredProcedures" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Tables\Applications.sql" />
@@ -71,5 +73,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="ApplicationDataSchema\Assessor.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="Script.PostDeployment.sql" />
   </ItemGroup>
 </Project>

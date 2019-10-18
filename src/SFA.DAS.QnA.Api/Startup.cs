@@ -114,9 +114,13 @@ namespace SFA.DAS.QnA.Api
             {
                 c.SwaggerDoc("v1", new Info{Title = "QnA API", Version = "0.1"});
                 c.SwaggerDoc("config", new Info{Title = "QnA API Config", Version = "0.1"});
-                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
-                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
-                c.IncludeXmlComments(xmlPath);
+
+                if (_hostingEnvironment.IsDevelopment())
+                {
+                    var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                    var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+                    c.IncludeXmlComments(xmlPath);
+                }
             });
             
             services.AddHealthChecks();
@@ -138,17 +142,14 @@ namespace SFA.DAS.QnA.Api
             app.UseStatusCodePagesWithReExecute("/errors/{0}");
 
             app.UseSwagger();
-
             app.UseSwaggerUI(c =>
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "QnA API");
                 c.SwaggerEndpoint("/swagger/config/swagger.json", "QnA API Config");
-                c.RoutePrefix = string.Empty;
             });
-            
-            app
-                .UseHealthChecks("/health")
-            .UseMvc(routes =>
+
+            app.UseHealthChecks("/health");
+            app.UseMvc(routes =>
             {
                 routes.MapRoute(
                     name: "default",
