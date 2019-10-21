@@ -23,7 +23,7 @@ namespace SFA.DAS.QnA.Application.Queries.Sequences.GetSequence
             var application = await _dataContext.Applications.FirstOrDefaultAsync(app => app.Id == request.ApplicationId, cancellationToken: cancellationToken);
             if (application is null) return new HandlerResponse<Sequence>(false, "Application does not exist");
 
-            var sequence = await _dataContext.ApplicationSequences.FirstOrDefaultAsync(seq => seq.SequenceNo == request.SequenceNo, cancellationToken: cancellationToken);
+            var sequence = await _dataContext.ApplicationSequences.FirstOrDefaultAsync(seq => seq.SequenceNo == request.SequenceNo && seq.ApplicationId == request.ApplicationId, cancellationToken: cancellationToken);
             if (sequence is null) return new HandlerResponse<Sequence>(false, "Sequence does not exist");
 
             return new HandlerResponse<Sequence>(_mapper.Map<Sequence>(sequence));
