@@ -41,10 +41,27 @@ namespace SFA.DAS.QnA.Api.Controllers
         [ProducesResponseType(404)]
         public async Task<ActionResult<Page>> GetPage(Guid applicationId, Guid sectionId, string pageId)
         {
-            var sectionsResponse = await _mediator.Send(new GetPageRequest(applicationId, sectionId, pageId), CancellationToken.None);
-            if (!sectionsResponse.Success) return NotFound();
+            var pageResponse = await _mediator.Send(new GetPageRequest(applicationId, sectionId, pageId), CancellationToken.None);
+            if (!pageResponse.Success) return NotFound();
 
-            return sectionsResponse.Value;
+            return pageResponse.Value;
+        }
+
+        /// <summary>
+        ///     Returns the requested Page
+        /// </summary>
+        /// <returns>The requested Page</returns>
+        /// <response code="200">Returns a Page</response>
+        /// <response code="404">If the ApplicationId, SequenceNo, SectionNo or PageId are invalid</response>
+        [HttpGet("{applicationId}/sequences/{sequenceNo}/sections/{sectionNo}/pages/{pageId}")]
+        [ProducesResponseType(200)]
+        [ProducesResponseType(404)]
+        public async Task<ActionResult<Page>> GetPageBySectionNo(Guid applicationId, int sequenceNo, int sectionNo, string pageId)
+        {
+            var pageResponse = await _mediator.Send(new GetPageBySectionNoRequest(applicationId, sequenceNo, sectionNo, pageId), CancellationToken.None);
+            if (!pageResponse.Success) return NotFound();
+
+            return pageResponse.Value;
         }
 
         /// <summary>
