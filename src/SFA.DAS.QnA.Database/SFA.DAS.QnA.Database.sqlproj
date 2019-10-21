@@ -57,7 +57,7 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <SqlCmdVariable  Include="ProjectPath">
-      <Value>"$(MSBuildProjectDirectory)"</Value>
+      <Value>"$(System.DefaultWorkingDirectory)"</Value>
     </SqlCmdVariable>
   </ItemGroup>
   <ItemGroup>
