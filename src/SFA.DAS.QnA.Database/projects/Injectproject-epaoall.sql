@@ -29,7 +29,7 @@ DECLARE @SectionDisplayType VARCHAR(200);
 -- get project file
 	SELECT @JSON = BulkColumn
 	FROM OPENROWSET 
-	(BULK '.\projects\epaoall\project.json', SINGLE_CLOB) 
+	(BULK '$(System.DefaultWorkingDirectory)\projects\epaoall\project.json', SINGLE_CLOB) 
 	AS project;
 	
 	SELECT @ProjectName = JSON_VALUE(@JSON,'$.Name'),  @ProjectDesc = JSON_VALUE(@JSON,'$.Description'), @Workflows = JSON_QUERY(@JSON,'$.Workflows[0]')
@@ -45,7 +45,7 @@ BEGIN
 	-- Need to create the "Project"
 		SELECT @ApplicationDataSchema = BulkColumn
 		FROM OPENROWSET 
-		(BULK '.\projects\epaoall\ApplicationDataSchema.json', SINGLE_CLOB) 
+		(BULK '$(System.DefaultWorkingDirectory)\projects\epaoall\ApplicationDataSchema.json', SINGLE_CLOB) 
 		AS ad;
 		
 		INSERT INTO projects (Name, Description, ApplicationDataSchema, CreatedAt, CreatedBy)
@@ -104,22 +104,22 @@ BEGIN
 		If @sectionNo = 1 
 			SELECT @JSON = BulkColumn
 			FROM OPENROWSET 
-			(BULK '.\projects\epaoall\sections\section1.json', SINGLE_CLOB) 
+			(BULK '$(System.DefaultWorkingDirectory)\projects\epaoall\sections\section1.json', SINGLE_CLOB) 
 			AS qnaData;
 		IF @sectionNo = 2 
 			SELECT @JSON = BulkColumn
 			FROM OPENROWSET 
-			(BULK '.\projects\epaoall\sections\section2.json', SINGLE_CLOB) 
+			(BULK '$(System.DefaultWorkingDirectory)\projects\epaoall\sections\section2.json', SINGLE_CLOB) 
 			AS qnaData;
 		IF @sectionNo = 3 
 			SELECT @JSON = BulkColumn
 			FROM OPENROWSET 
-			(BULK '.\projects\epaoall\sections\section3.json', SINGLE_CLOB) 
+			(BULK '$(System.DefaultWorkingDirectory)\projects\epaoall\sections\section3.json', SINGLE_CLOB) 
 			AS qnaData;
 		IF @sectionNo = 4 
 			SELECT @JSON = BulkColumn
 			FROM OPENROWSET 
-			(BULK '.\projects\epaoall\sections\section4.json', SINGLE_CLOB) 
+			(BULK '$(System.DefaultWorkingDirectory)\projects\epaoall\sections\section4.json', SINGLE_CLOB) 
 			AS qnaData;
 		
 		-- get the Section details
