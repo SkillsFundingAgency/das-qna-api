@@ -76,6 +76,9 @@
     <None Include="ApplicationDataSchema\Assessor.json" />
   </ItemGroup>
   <ItemGroup>
+    <SqlCommandVariableOverride Include="ProjectPath=$(MSBuildProjectDirectory)" />
+  </ItemGroup>  
+  <ItemGroup>
     <PostDeploy Include="Script.PostDeployment.sql" />
   </ItemGroup>
 </Project>

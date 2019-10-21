@@ -10,6 +10,6 @@ Post-Deployment Script Template
 --------------------------------------------------------------------------------------
 */
 
-:r .\projects\Injectproject-epaoall.sql
+:r .\Injectproject-epaoall.sql
 
 -- END
