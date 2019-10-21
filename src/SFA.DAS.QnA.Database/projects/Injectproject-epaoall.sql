@@ -26,7 +26,7 @@ DECLARE @SectionTitle VARCHAR(200),
 
 DECLARE @statement NVARCHAR(4000),
 		@parameterDefinition NVARCHAR(4000),
-		@path VARCHAR(MAX) = $(System.DefaultWorkingDirectory);
+		@path VARCHAR(MAX) = '$(ProjectPath)';
 
 -- inject project
 -- get project file
