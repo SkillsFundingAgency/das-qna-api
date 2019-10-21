@@ -45,10 +45,12 @@ namespace SFA.DAS.QnA.Application.Commands
             
             if (answerToThisQuestion is null || answerToThisQuestion.Value == "")
             {
-                if (validators.Any(v => typeof(RequiredValidator).Name.Equals(v.GetType().Name)))
+                if (!validators.Any(v => v.GetType().Name.EndsWith("RequiredValidator"))) return;
+                
+                var requiredValidators = validators.Where(v => v.GetType().Name.EndsWith("RequiredValidator"));
+                foreach (var requiredValidator in requiredValidators)
                 {
-                    var validator = validators.First(v => typeof(RequiredValidator).Name.Equals(v.GetType().Name));
-                    var errors = validator.Validate(question, answerToThisQuestion);
+                    var errors = requiredValidator.Validate(question, answerToThisQuestion);
                     if (errors.Any())
                     {
                         validationErrors.AddRange(errors);
