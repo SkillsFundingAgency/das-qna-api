@@ -79,6 +79,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="ApplicationDataSchema\Assessor.json" />
+    <None Include="projects\epaoall\project.json" />
     <None Include="SFA.DAS.QnA.Database.publish.xml" />
   </ItemGroup>
   <ItemGroup>
