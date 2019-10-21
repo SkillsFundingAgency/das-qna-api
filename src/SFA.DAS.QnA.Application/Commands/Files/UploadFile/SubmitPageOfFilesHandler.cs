@@ -76,7 +76,8 @@ namespace SFA.DAS.QnA.Application.Commands.Files.UploadFile
             }
 
             page.Complete = true;
-            
+            MarkFeedbackComplete(page);
+
             var container = await ContainerHelpers.GetContainer(_fileStorageConfig.Value.StorageConnectionString, _fileStorageConfig.Value.ContainerName);
 
             foreach (var file in request.Files)
