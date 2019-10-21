@@ -56,6 +56,11 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
+    <SqlCmdVariable  Include="ProjectPath">
+      <Value>"$(MSBuildProjectDirectory)"</Value>
+    </SqlCmdVariable>
+  </ItemGroup>
+  <ItemGroup>
     <Folder Include="Properties" />
     <Folder Include="Tables\" />
     <Folder Include="ApplicationDataSchema" />
@@ -74,10 +79,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="ApplicationDataSchema\Assessor.json" />
+    <None Include="SFA.DAS.QnA.Database.publish.xml" />
   </ItemGroup>
-  <ItemGroup>
-    <SqlCommandVariable Include="ProjectPath=$(MSBuildProjectDirectory)" />
-  </ItemGroup>  
   <ItemGroup>
     <PostDeploy Include="Script.PostDeployment.sql" />
   </ItemGroup>
