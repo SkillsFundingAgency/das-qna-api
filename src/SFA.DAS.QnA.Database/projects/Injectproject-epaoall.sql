@@ -29,7 +29,7 @@ DECLARE @SectionDisplayType VARCHAR(200);
 -- get project file
 	SELECT @JSON = BulkColumn
 	FROM OPENROWSET 
-	(BULK '.\projects\epaoall\project-1.json', SINGLE_CLOB) 
+	(BULK '.\projects\epaoall\project.json', SINGLE_CLOB) 
 	AS project;
 	
 	SELECT @ProjectName = JSON_VALUE(@JSON,'$.Name'),  @ProjectDesc = JSON_VALUE(@JSON,'$.Description'), @Workflows = JSON_QUERY(@JSON,'$.Workflows[0]')
@@ -45,7 +45,7 @@ BEGIN
 	-- Need to create the "Project"
 		SELECT @ApplicationDataSchema = BulkColumn
 		FROM OPENROWSET 
-		(BULK '.\ApplicationDataSchema\Assessor.json', SINGLE_CLOB) 
+		(BULK '.\projects\epaoall\ApplicationDataSchema.json', SINGLE_CLOB) 
 		AS ad;
 		
 		INSERT INTO projects (Name, Description, ApplicationDataSchema, CreatedAt, CreatedBy)
