@@ -1,41 +1,47 @@
 -- Load a project 
 -- needs one for every project setup. (or we need to build Dynamic SQL - one for another day)
 
-DECLARE @ProjectExists INT;
-DECLARE @ProjectName VARCHAR(100);
-DECLARE @ProjectDesc VARCHAR(100) ;
-DECLARE @ProjectId UNIQUEIDENTIFIER;
-DECLARE @ApplicationDataSchema VARCHAR(MAX);
-DECLARE @JSON VARCHAR(MAX);
+DECLARE @ProjectExists INT,
+		@ProjectName VARCHAR(100),
+		@ProjectDesc VARCHAR(100) ,
+		@ProjectId UNIQUEIDENTIFIER,
+		@ApplicationDataSchema VARCHAR(MAX),
+		@JSON VARCHAR(MAX);
 
-DECLARE @Workflows VARCHAR(MAX);
-DECLARE @WorkflowExists INT;
-DECLARE @WorkflowId UNIQUEIDENTIFIER;
-DECLARE @WorkFlowDescription VARCHAR(100);
-DECLARE @WorkFlowVersion VARCHAR(100);
-DECLARE @WorkFlowType VARCHAR(100);
+DECLARE @Workflows VARCHAR(MAX),
+		@WorkflowExists INT,
+		@WorkflowId UNIQUEIDENTIFIER,
+		@WorkFlowDescription VARCHAR(100),
+		@WorkFlowVersion VARCHAR(100),
+		@WorkFlowType VARCHAR(100);
 
-DECLARE @sectionNo INT;
-DECLARE @sequenceNo INT = 1;
-DECLARE @sequenceExists INT;
-DECLARE @sectionId UNIQUEIDENTIFIER;
+DECLARE @sectionNo INT,
+		@sequenceNo INT = 1,
+		@sequenceExists INT,
+		@sectionId UNIQUEIDENTIFIER;
 
-DECLARE @SectionTitle VARCHAR(200);
-DECLARE @SectionLinkTitle VARCHAR(200);
-DECLARE @SectionDisplayType VARCHAR(200);
+DECLARE @SectionTitle VARCHAR(200),
+		@SectionLinkTitle VARCHAR(200),
+		@SectionDisplayType VARCHAR(200);
 
+DECLARE @statement NVARCHAR(4000),
+		@parameterDefinition NVARCHAR(4000),
+		@path VARCHAR(MAX) = $(System.DefaultWorkingDirectory);
 
 -- inject project
 -- get project file
-	SELECT @JSON = BulkColumn
+	SET @parameterDefinition = '@projectData VARCHAR(MAX) OUTPUT';
+	SET @statement  = 'SELECT @projectData = BulkColumn
 	FROM OPENROWSET 
-	(BULK '$(System.DefaultWorkingDirectory)\projects\epaoall\project.json', SINGLE_CLOB) 
-	AS project;
+	(BULK '''+@path+'\projects\epaoall\project.json'', SINGLE_CLOB) 
+	AS project';
+	
+	EXEC sp_executesql @statement, @parameterDefinition,  @projectData = @JSON OUTPUT;
 	
 	SELECT @ProjectName = JSON_VALUE(@JSON,'$.Name'),  @ProjectDesc = JSON_VALUE(@JSON,'$.Description'), @Workflows = JSON_QUERY(@JSON,'$.Workflows[0]')
 
 	SELECT @WorkflowDescription = JSON_VALUE(@Workflows,'$.Description'), @WorkflowVersion = JSON_VALUE(@Workflows,'$.Version'), @WorkflowType = JSON_VALUE(@Workflows,'$.Type')
-	
+/*	
 BEGIN
 	SELECT @ProjectExists = COUNT(*) 
 	FROM projects WHERE Name = @ProjectName
@@ -138,7 +144,7 @@ BEGIN
    END
 
 END
-
+*/
 
 GO
 
