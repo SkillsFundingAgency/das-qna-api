@@ -41,7 +41,7 @@ DECLARE @LoadBLOB BIT = 0;  -- assume local - set to 1 if $(ProjectLocation) = "
 		---- Create an external data source with CREDENTIAL option.
 		CREATE EXTERNAL DATA SOURCE BlobStorage WITH (
 			LOCATION = '$(ProjectPath)',
-			CREDENTIAL = '$(ProjectCredentials)',
+			CREDENTIAL = $(ProjectCredentials),
 			TYPE = BLOB_STORAGE
 		);
 	END
