@@ -2,8 +2,20 @@
 -- needs one for every project setup. (or we need to build Dynamic SQL - one for another day)
 -- uses parameters
 -- $(ProjectLocation) = "local" (Default) / "azure" 
+-- If "azure" - then Database then External data Source / BlobStorage needs to exist
+/*    if working locally you will need a storage account and set the values in the Publish profilecreate
+		create using:
+		-- Create a database master key if one does not already exist, using your own password. This key is used to encrypt the credential secret in next step.
+		CREATE MASTER KEY ENCRYPTION BY PASSWORD = 'MaryHadALittleLAmb';
+		
+		-- Create a database scoped credential with Azure storage account key as the secret.
+		CREATE DATABASE SCOPED CREDENTIAL BlobCredential WITH IDENTITY = 'SHARED ACCESS SIGNATURE', SECRET = 'shared access secret';
+
+		-- Create an external data source with CREDENTIAL option.
+		CREATE EXTERNAL DATA SOURCE BlobStorage WITH (LOCATION = '<ProjectPath>',CREDENTIAL = BlobCredential,TYPE = BLOB_STORAGE);
+*/
 -- $(ProjectPath) = Directory Path for local / Location for Blob Storage
--- $(ProjectCredentials) = when $(ProjectLocation) = "azure"
+
 
 DECLARE @ProjectLocation VARCHAR(100) = '$(ProjectLocation)';
 DECLARE @ProjectExists INT;
@@ -33,19 +45,10 @@ DECLARE @LoadBLOB BIT = 0;  -- assume local - set to 1 if $(ProjectLocation) = "
 
 -- START
 BEGIN
-	--IF @ProjectLocation = 'azure'
+	IF @ProjectLocation = 'azure'
 	BEGIN
 		SET @LoadBLOB = 1;
-		PRINT 'Loading from BLOB Storage $(ProjectPath)';
-		
-		-- Create a database master key if one does not already exist, using your own password. This key is used to encrypt the credential secret in next step.
-		CREATE MASTER KEY ENCRYPTION BY PASSWORD = 'MaryHadALittleLAmb';
-		
-		-- Create a database scoped credential with Azure storage account key as the secret.
-		CREATE DATABASE SCOPED CREDENTIAL BlobCredential WITH IDENTITY = 'SHARED ACCESS SIGNATURE', SECRET = '$(ProjectCredentials)';
-
-		-- Create an external data source with CREDENTIAL option.
-		CREATE EXTERNAL DATA SOURCE BlobStorage WITH (LOCATION = '$(ProjectPath)',CREDENTIAL = BlobCredential,TYPE = BLOB_STORAGE);
+		PRINT 'Loading from BLOB Storage';
 	END
 
 	-- inject project
@@ -212,13 +215,6 @@ BEGIN
 			VALUES (@sectionId, @ProjectId, @JSON, @SectionTitle, @SectionLinkTitle, @SectionDisplayType);
 
 		SET @sectionNo = @sectionNo + 1;
-	END
-	-- tidyup
-	IF @LoadBLOB = 1
-	BEGIN
-		DROP EXTERNAL DATA SOURCE BlobStorage
-		DROP DATABASE SCOPED CREDENTIAL BlobCredential 
-		DROP MASTER KEY
 	END
 
 END
