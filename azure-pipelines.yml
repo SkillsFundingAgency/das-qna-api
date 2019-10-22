@@ -103,6 +103,7 @@ steps:
     Contents: |
      azure\**
      src\**\*.dacpac
+     src\SFA.DAS.QnA.Database\projects\**
     TargetFolder: '$(build.artifactstagingdirectory)/'
     OverWrite: true
 

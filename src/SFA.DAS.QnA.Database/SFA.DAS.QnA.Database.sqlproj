@@ -56,11 +56,23 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
+    <SqlCmdVariable  Include="ProjectLocation">
+      <Value>local</Value>
+    </SqlCmdVariable>
+    <SqlCmdVariable  Include="ProjectPath">
+      <Value>$(SourceRoot)</Value>
+    </SqlCmdVariable>
+    <SqlCmdVariable  Include="ProjectCredentials">
+      <Value>n/a</Value>
+    </SqlCmdVariable>
+  </ItemGroup>
+  <ItemGroup>
     <Folder Include="Properties" />
     <Folder Include="Tables\" />
     <Folder Include="ApplicationDataSchema" />
-    <Folder Include="PostDeploymentScripts" />
-    <Folder Include="StoredProcedures" />
+    <Folder Include="projects\" />
+    <Folder Include="projects\epaoall\" />
+    <Folder Include="projects\epaoall\sections" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Tables\Applications.sql" />
@@ -73,6 +85,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="ApplicationDataSchema\Assessor.json" />
+    <None Include="SFA.DAS.QnA.Database.publish.xml" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="Script.PostDeployment.sql" />
