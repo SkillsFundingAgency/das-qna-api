@@ -1,5 +1,10 @@
 -- Load a project 
 -- needs one for every project setup. (or we need to build Dynamic SQL - one for another day)
+-- uses parameters
+-- $(ProjectLocation) = "local" (Default) / "azure" 
+-- $(ProjectPath) = Directory Path for local / Location for Blob Storage
+-- $(ProjectCredentials) = when $(ProjectLocation) = "azure"
+
 
 DECLARE @ProjectExists INT;
 DECLARE @ProjectName VARCHAR(100);
@@ -24,29 +29,59 @@ DECLARE @SectionTitle VARCHAR(200);
 DECLARE @SectionLinkTitle VARCHAR(200);
 DECLARE @SectionDisplayType VARCHAR(200);
 
+DECLARE @LoadBLOB BIT = 0;  -- assume local - set to 1 if $(ProjectLocation) = "azure"
 
--- inject project
--- get project file
-	SELECT @JSON = BulkColumn
-	FROM OPENROWSET 
-	(BULK '$(ProjectPath)\projects\epaoall\project.json', SINGLE_CLOB) 
-	AS project;
-	
+-- START
+	IF '$(ProjectLocation)' = 'azure'
+		SET @LoadBLOB = 1;
+
+
+	IF @LoadBLOB = 1
+	BEGIN
+		---- Create an external data source with CREDENTIAL option.
+		CREATE EXTERNAL DATA SOURCE BlobStorage WITH (
+			LOCATION = '$(ProjectPath)',
+			CREDENTIAL = '$(ProjectCredentials)',
+			TYPE = BLOB_STORAGE
+		);
+	END
+
+	-- inject project
+
+	-- get project file
+	IF @LoadBLOB = 1
+		SELECT @JSON = BulkColumn
+		FROM OPENROWSET
+		(BULK 'projects\epaoall\project.json', DATA_SOURCE = 'MyAzureBlobStorage', SINGLE_CLOB) 
+		AS project;
+	ELSE
+		SELECT @JSON = BulkColumn
+		FROM OPENROWSET 
+		(BULK '$(ProjectPath)\projects\epaoall\project.json', SINGLE_CLOB) 
+		AS project;
+
+	-- extract project
 	SELECT @ProjectName = JSON_VALUE(@JSON,'$.Name'),  @ProjectDesc = JSON_VALUE(@JSON,'$.Description'), @Workflows = JSON_QUERY(@JSON,'$.Workflows[0]')
-
+	-- extract workflow(s)
 	SELECT @WorkflowDescription = JSON_VALUE(@Workflows,'$.Description'), @WorkflowVersion = JSON_VALUE(@Workflows,'$.Version'), @WorkflowType = JSON_VALUE(@Workflows,'$.Type')
-	
-BEGIN
-	SELECT @ProjectExists = COUNT(*) 
-	FROM projects WHERE Name = @ProjectName
-	
+
+	-- check if project exists
+	SELECT @ProjectExists = COUNT(*) FROM projects WHERE Name = @ProjectName
+
 	IF @ProjectExists = 0 
 	BEGIN
 	-- Need to create the "Project"
-		SELECT @ApplicationDataSchema = BulkColumn
-		FROM OPENROWSET 
-		(BULK '$(ProjectPath)\projects\epaoall\ApplicationDataSchema.json', SINGLE_CLOB) 
-		AS ad;
+	-- Get the ApplicationDataSchema
+		IF @LoadBLOB = 1
+			SELECT @ApplicationDataSchema = BulkColumn
+			FROM OPENROWSET
+			(BULK 'projects\epaoall\ApplicationDataSchema.json', DATA_SOURCE = 'MyAzureBlobStorage', SINGLE_CLOB) 
+			AS ad;
+		ELSE
+			SELECT @ApplicationDataSchema = BulkColumn
+			FROM OPENROWSET 
+			(BULK '$(ProjectPath)\projects\epaoall\ApplicationDataSchema.json', SINGLE_CLOB) 
+			AS ad;
 		
 		INSERT INTO projects (Name, Description, ApplicationDataSchema, CreatedAt, CreatedBy)
 			VALUES (@ProjectName, @ProjectDesc, @ApplicationDataSchema, GETUTCDATE(), 'Deployment');
@@ -108,34 +143,58 @@ BEGIN
 		If @sectionNo = 1 
 		BEGIN
 			PRINT 'Load Section '+CONVERT(char,@sectionNo);
-			SELECT @JSON = BulkColumn
-			FROM OPENROWSET 
-			(BULK '$(ProjectPath)\projects\epaoall\sections\section1.json', SINGLE_CLOB) 
-			AS qnaData;
+			IF @LoadBLOB = 1
+				SELECT @JSON = BulkColumn
+				FROM OPENROWSET
+				(BULK 'projects\epaoall\sections\section1.json', DATA_SOURCE = 'MyAzureBlobStorage', SINGLE_CLOB) 
+				AS qnaData;
+			ELSE
+				SELECT @JSON = BulkColumn
+				FROM OPENROWSET 
+				(BULK '$(ProjectPath)\projects\epaoall\sections\section1.json', SINGLE_CLOB) 
+				AS qnaData;
 		END
 		IF @sectionNo = 2 
 		BEGIN
 			PRINT 'Load Section '+CONVERT(char,@sectionNo);
-			SELECT @JSON = BulkColumn
-			FROM OPENROWSET 
-			(BULK '$(ProjectPath)\projects\epaoall\sections\section2.json', SINGLE_CLOB) 
-			AS qnaData;
+			IF @LoadBLOB = 1
+				SELECT @JSON = BulkColumn
+				FROM OPENROWSET
+				(BULK 'projects\epaoall\sections\section2.json', DATA_SOURCE = 'MyAzureBlobStorage', SINGLE_CLOB) 
+				AS qnaData;
+			ELSE
+				SELECT @JSON = BulkColumn
+				FROM OPENROWSET 
+				(BULK '$(ProjectPath)\projects\epaoall\sections\section2.json', SINGLE_CLOB) 
+				AS qnaData;
 		END
 		IF @sectionNo = 3 
 		BEGIN
 			PRINT 'Load Section '+CONVERT(char,@sectionNo);
-			SELECT @JSON = BulkColumn
-			FROM OPENROWSET 
-			(BULK '$(ProjectPath)\projects\epaoall\sections\section3.json', SINGLE_CLOB) 
-			AS qnaData;
+			IF @LoadBLOB = 1
+				SELECT @JSON = BulkColumn
+				FROM OPENROWSET
+				(BULK 'projects\epaoall\sections\section3.json', DATA_SOURCE = 'MyAzureBlobStorage', SINGLE_CLOB) 
+				AS qnaData;
+			ELSE
+				SELECT @JSON = BulkColumn
+				FROM OPENROWSET 
+				(BULK '$(ProjectPath)\projects\epaoall\sections\section3.json', SINGLE_CLOB) 
+				AS qnaData;
 		END
 		IF @sectionNo = 4 
 		BEGIN
 			PRINT 'Load Section '+CONVERT(char,@sectionNo);
-			SELECT @JSON = BulkColumn
-			FROM OPENROWSET 
-			(BULK '$(ProjectPath)\projects\epaoall\sections\section4.json', SINGLE_CLOB) 
-			AS qnaData;
+			IF @LoadBLOB = 1
+				SELECT @JSON = BulkColumn
+				FROM OPENROWSET
+				(BULK 'projects\epaoall\sections\section4.json', DATA_SOURCE = 'MyAzureBlobStorage', SINGLE_CLOB) 
+				AS qnaData;
+			ELSE
+				SELECT @JSON = BulkColumn
+				FROM OPENROWSET 
+				(BULK '$(ProjectPath)\projects\epaoall\sections\section4.json', SINGLE_CLOB) 
+				AS qnaData;
 		END
 		
 		-- get the Section details
