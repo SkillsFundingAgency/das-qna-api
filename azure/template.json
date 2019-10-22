@@ -22,7 +22,8 @@
         },
         "appServiceAllowedIPs": {
             "type": "array",
-            "defaultValue": []
+            "defaultValue": [
+            ]
         },
         "loggingRedisConnectionString": {
             "type": "securestring"
@@ -73,7 +74,12 @@
         "resourceNamePrefix": "[toLower(concat('das-', parameters('resourceEnvironmentName'),'-', parameters('serviceName')))]",
         "appServiceName": "[concat(variables('resourceNamePrefix'), '-as')]",
         "databaseName": "[concat(variables('resourceNamePrefix'), '-db')]",
-        "storageAccountName": "[tolower(concat('das', parameters('resourceEnvironmentName'), parameters('serviceName'), 'str' ))]"
+        "storageAccountName": "[tolower(concat('das', parameters('resourceEnvironmentName'), parameters('serviceName'), 'str' ))]",
+        "storageAccountContainerArray": [
+            {
+                "name": "projects"
+            }
+        ]
     },
     "resources": [
         {
@@ -92,6 +98,37 @@
                     }
                 }
             }
+        },
+        {
+            "apiVersion": "2017-05-10",
+            "name": "[concat('storage-container', variables('storageAccountContainerArray')[copyIndex()].name)]",
+            "type": "Microsoft.Resources/deployments",
+            "condition": "[greater(length(variables('storageAccountContainerArray')), 0)]",
+            "properties": {
+                "mode": "Incremental",
+                "templateLink": {
+                    "uri": "[concat(variables('deploymentUrlBase'), 'storage-container.json')]",
+                    "contentVersion": "1.0.0.0"
+                },
+                "parameters": {
+                    "storageAccountName": {
+                        "value": "[variables('storageAccountName')]"
+                    },
+                    "containerName": {
+                        "value": "[variables('storageAccountContainerArray')[copyIndex()].name]"
+                    },
+                    "publicAccess": {
+                        "value": "None"
+                    }
+                }
+            },
+            "copy": {
+                "name": "storagecontainercopy",
+                "count": "[length(variables('storageAccountContainerArray'))]"
+            },
+            "dependsOn": [
+                "storage-account"
+            ]
         },
         {
             "condition": "[greater(length(parameters('customHostName')), 0)]",
@@ -271,6 +308,14 @@
         "DatabaseName": {
             "type": "string",
             "value": "[variables('databaseName')]"
+        },
+        "StorageAccountName": {
+            "type": "string",
+            "value": "[variables('storageAccountName')]"
+        },
+        "ProjectsContainerName": {
+            "type": "string",
+            "value": "[variables('storageAccountContainerArray')[copyIndex(0)].name]"
         }
     }
 }

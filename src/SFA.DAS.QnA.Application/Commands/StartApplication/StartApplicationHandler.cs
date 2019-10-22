@@ -6,6 +6,7 @@ using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using SFA.DAS.QnA.Api.Types;
+using SFA.DAS.QnA.Api.Types.Page;
 using SFA.DAS.QnA.Data;
 using SFA.DAS.QnA.Data.Entities;
 
@@ -122,11 +123,15 @@ namespace SFA.DAS.QnA.Application.Commands.StartApplication
             
             foreach (var applicationSection in newApplicationSections)
             {
-                foreach (var page in applicationSection.QnAData.Pages)
+                var qnaData = new QnAData(applicationSection.QnAData);
+                
+                foreach (var page in qnaData.Pages)
                 {
-                    page.SectionId = applicationSection.Id.ToString();
-                    page.SequenceId = applicationSection.SequenceId.ToString();
+                    page.SectionId = applicationSection.Id;
+                    page.SequenceId = applicationSection.SequenceId;
                 }
+
+                applicationSection.QnAData = qnaData;
             }
 
             await _dataContext.SaveChangesAsync(cancellationToken);
