@@ -28,7 +28,7 @@ namespace SFA.DAS.QnA.Application.Validators
             
             if (question.Input.Validations != null && question.Input.Validations.Any())
             {
-                foreach (var inputValidation in question.Input.Validations)
+                foreach (var inputValidation in question.Input.Validations.Where(v => v.Name != "ClientApiCall"))
                 {
                     var validator = _serviceProvider.GetServices<IValidator>()
                         .FirstOrDefault(v => v.GetType().Name == inputValidation.Name + "Validator");
