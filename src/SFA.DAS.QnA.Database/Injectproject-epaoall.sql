@@ -221,8 +221,8 @@ BEGIN
 	IF @WorkflowExists = 0 
 	-- have created a new workflow
 	BEGIN
-		UPDATE Workflows SET Status = 'Dead' WHERE [WorkflowId] != @WorkflowId
-		UPDATE Workflows SET Status = 'Live' WHERE [WorkflowId] = @WorkflowId
+		UPDATE Workflows SET Status = 'Dead' WHERE [Id] != @WorkflowId
+		UPDATE Workflows SET Status = 'Live' WHERE [Id] = @WorkflowId
 	END
 
 END
