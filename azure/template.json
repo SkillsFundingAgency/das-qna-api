@@ -75,7 +75,11 @@
         "appServiceName": "[concat(variables('resourceNamePrefix'), '-as')]",
         "databaseName": "[concat(variables('resourceNamePrefix'), '-db')]",
         "storageAccountName": "[tolower(concat('das', parameters('resourceEnvironmentName'), parameters('serviceName'), 'str' ))]",
-        "storageAccountContainerArray": [{"name": "projects"}]
+        "storageAccountContainerArray": [
+            {
+                "name": "projects"
+            }
+        ]
     },
     "resources": [
         {
@@ -304,6 +308,10 @@
         "DatabaseName": {
             "type": "string",
             "value": "[variables('databaseName')]"
+        },
+        "StorageAccountName": {
+            "type": "string",
+            "value": "[variables('storageAccountName')]"
         }
     }
 }
