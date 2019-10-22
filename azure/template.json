@@ -312,6 +312,10 @@
         "StorageAccountName": {
             "type": "string",
             "value": "[variables('storageAccountName')]"
+        },
+        "ProjectsContainerName": {
+            "type": "string",
+            "value": "[variables('storageAccountContainerArray')[copyIndex(0)].name]"
         }
     }
 }
