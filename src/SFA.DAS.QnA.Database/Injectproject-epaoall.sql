@@ -33,7 +33,7 @@ DECLARE @LoadBLOB BIT = 0;  -- assume local - set to 1 if $(ProjectLocation) = "
 
 -- START
 BEGIN
-	IF @ProjectLocation = 'azure'
+	--IF @ProjectLocation = 'azure'
 	BEGIN
 		SET @LoadBLOB = 1;
 		PRINT 'Loading from BLOB Storage $(ProjectPath)';
