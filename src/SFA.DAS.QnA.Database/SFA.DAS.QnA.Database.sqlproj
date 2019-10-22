@@ -63,7 +63,7 @@
       <Value>$(SourceRoot)</Value>
     </SqlCmdVariable>
     <SqlCmdVariable  Include="ProjectCredentials">
-      <Value></Value>
+      <Value>n/a</Value>
     </SqlCmdVariable>
   </ItemGroup>
   <ItemGroup>

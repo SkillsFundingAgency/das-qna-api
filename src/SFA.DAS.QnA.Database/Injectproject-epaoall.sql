@@ -5,7 +5,6 @@
 -- $(ProjectPath) = Directory Path for local / Location for Blob Storage
 -- $(ProjectCredentials) = when $(ProjectLocation) = "azure"
 
-
 DECLARE @ProjectExists INT;
 DECLARE @ProjectName VARCHAR(100);
 DECLARE @ProjectDesc VARCHAR(100) ;
@@ -32,16 +31,24 @@ DECLARE @SectionDisplayType VARCHAR(200);
 DECLARE @LoadBLOB BIT = 0;  -- assume local - set to 1 if $(ProjectLocation) = "azure"
 
 -- START
+BEGIN
 	IF '$(ProjectLocation)' = 'azure'
-		SET @LoadBLOB = 1;
-
-
-	IF @LoadBLOB = 1
 	BEGIN
-		---- Create an external data source with CREDENTIAL option.
+		SET @LoadBLOB = 1;
+		PRINT 'Loading from BLOB Storage $(ProjectPath)';
+		
+		-- Create a database master key if one does not already exist, using your own password. This key is used to encrypt the credential secret in next step.
+		CREATE MASTER KEY ENCRYPTION BY PASSWORD = 'MaryHadALittleLAmb';
+		
+		-- Create a database scoped credential with Azure storage account key as the secret.
+		CREATE DATABASE SCOPED CREDENTIAL BlobCredential 
+		WITH IDENTITY = 'SHARED ACCESS SIGNATURE', 
+		SECRET = '$(ProjectCredentials)';
+
+		-- Create an external data source with CREDENTIAL option.
 		CREATE EXTERNAL DATA SOURCE BlobStorage WITH (
 			LOCATION = '$(ProjectPath)',
-			CREDENTIAL = $(ProjectCredentials),
+			CREDENTIAL = BlobCredential,
 			TYPE = BLOB_STORAGE
 		);
 	END
@@ -52,7 +59,7 @@ DECLARE @LoadBLOB BIT = 0;  -- assume local - set to 1 if $(ProjectLocation) = "
 	IF @LoadBLOB = 1
 		SELECT @JSON = BulkColumn
 		FROM OPENROWSET
-		(BULK 'projects\epaoall\project.json', DATA_SOURCE = 'MyAzureBlobStorage', SINGLE_CLOB) 
+		(BULK 'projects\epaoall\project.json', DATA_SOURCE = 'BlobStorage', SINGLE_CLOB) 
 		AS project;
 	ELSE
 		SELECT @JSON = BulkColumn
@@ -75,7 +82,7 @@ DECLARE @LoadBLOB BIT = 0;  -- assume local - set to 1 if $(ProjectLocation) = "
 		IF @LoadBLOB = 1
 			SELECT @ApplicationDataSchema = BulkColumn
 			FROM OPENROWSET
-			(BULK 'projects\epaoall\ApplicationDataSchema.json', DATA_SOURCE = 'MyAzureBlobStorage', SINGLE_CLOB) 
+			(BULK 'projects\epaoall\ApplicationDataSchema.json', DATA_SOURCE = 'BlobStorage', SINGLE_CLOB) 
 			AS ad;
 		ELSE
 			SELECT @ApplicationDataSchema = BulkColumn
@@ -146,7 +153,7 @@ DECLARE @LoadBLOB BIT = 0;  -- assume local - set to 1 if $(ProjectLocation) = "
 			IF @LoadBLOB = 1
 				SELECT @JSON = BulkColumn
 				FROM OPENROWSET
-				(BULK 'projects\epaoall\sections\section1.json', DATA_SOURCE = 'MyAzureBlobStorage', SINGLE_CLOB) 
+				(BULK 'projects\epaoall\sections\section1.json', DATA_SOURCE = 'BlobStorage', SINGLE_CLOB) 
 				AS qnaData;
 			ELSE
 				SELECT @JSON = BulkColumn
@@ -160,7 +167,7 @@ DECLARE @LoadBLOB BIT = 0;  -- assume local - set to 1 if $(ProjectLocation) = "
 			IF @LoadBLOB = 1
 				SELECT @JSON = BulkColumn
 				FROM OPENROWSET
-				(BULK 'projects\epaoall\sections\section2.json', DATA_SOURCE = 'MyAzureBlobStorage', SINGLE_CLOB) 
+				(BULK 'projects\epaoall\sections\section2.json', DATA_SOURCE = 'BlobStorage', SINGLE_CLOB) 
 				AS qnaData;
 			ELSE
 				SELECT @JSON = BulkColumn
@@ -174,7 +181,7 @@ DECLARE @LoadBLOB BIT = 0;  -- assume local - set to 1 if $(ProjectLocation) = "
 			IF @LoadBLOB = 1
 				SELECT @JSON = BulkColumn
 				FROM OPENROWSET
-				(BULK 'projects\epaoall\sections\section3.json', DATA_SOURCE = 'MyAzureBlobStorage', SINGLE_CLOB) 
+				(BULK 'projects\epaoall\sections\section3.json', DATA_SOURCE = 'BlobStorage', SINGLE_CLOB) 
 				AS qnaData;
 			ELSE
 				SELECT @JSON = BulkColumn
@@ -188,7 +195,7 @@ DECLARE @LoadBLOB BIT = 0;  -- assume local - set to 1 if $(ProjectLocation) = "
 			IF @LoadBLOB = 1
 				SELECT @JSON = BulkColumn
 				FROM OPENROWSET
-				(BULK 'projects\epaoall\sections\section4.json', DATA_SOURCE = 'MyAzureBlobStorage', SINGLE_CLOB) 
+				(BULK 'projects\epaoall\sections\section4.json', DATA_SOURCE = 'BlobStorage', SINGLE_CLOB) 
 				AS qnaData;
 			ELSE
 				SELECT @JSON = BulkColumn
@@ -210,7 +217,14 @@ DECLARE @LoadBLOB BIT = 0;  -- assume local - set to 1 if $(ProjectLocation) = "
 			VALUES (@sectionId, @ProjectId, @JSON, @SectionTitle, @SectionLinkTitle, @SectionDisplayType);
 
 		SET @sectionNo = @sectionNo + 1;
-   END
+	END
+	-- tidyup
+	IF @LoadBLOB = 1
+	BEGIN
+		DROP EXTERNAL DATA SOURCE BlobStorage
+		DROP DATABASE SCOPED CREDENTIAL BlobCredential 
+		DROP MASTER KEY
+	END
 
 END
 
