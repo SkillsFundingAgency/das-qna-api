@@ -42,16 +42,10 @@ BEGIN
 		CREATE MASTER KEY ENCRYPTION BY PASSWORD = 'MaryHadALittleLAmb';
 		
 		-- Create a database scoped credential with Azure storage account key as the secret.
-		CREATE DATABASE SCOPED CREDENTIAL BlobCredential 
-		WITH IDENTITY = 'SHARED ACCESS SIGNATURE', 
-		SECRET = '$(ProjectCredentials)';
+		CREATE DATABASE SCOPED CREDENTIAL BlobCredential WITH IDENTITY = 'SHARED ACCESS SIGNATURE', SECRET = '$(ProjectCredentials)';
 
 		-- Create an external data source with CREDENTIAL option.
-		CREATE EXTERNAL DATA SOURCE BlobStorage WITH (
-			LOCATION = '$(ProjectPath)',
-			CREDENTIAL = BlobCredential,
-			TYPE = BLOB_STORAGE
-		);
+		CREATE EXTERNAL DATA SOURCE BlobStorage WITH (LOCATION = '$(ProjectPath)',CREDENTIAL = BlobCredential,TYPE = BLOB_STORAGE);
 	END
 
 	-- inject project
