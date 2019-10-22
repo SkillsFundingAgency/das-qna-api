@@ -5,6 +5,7 @@
 -- $(ProjectPath) = Directory Path for local / Location for Blob Storage
 -- $(ProjectCredentials) = when $(ProjectLocation) = "azure"
 
+DECLARE @ProjectLocation VARCHAR(100) = '$(ProjectLocation)';
 DECLARE @ProjectExists INT;
 DECLARE @ProjectName VARCHAR(100);
 DECLARE @ProjectDesc VARCHAR(100) ;
@@ -32,7 +33,7 @@ DECLARE @LoadBLOB BIT = 0;  -- assume local - set to 1 if $(ProjectLocation) = "
 
 -- START
 BEGIN
-	IF '$(ProjectLocation)' = 'azure'
+	IF @ProjectLocation = 'azure'
 	BEGIN
 		SET @LoadBLOB = 1;
 		PRINT 'Loading from BLOB Storage $(ProjectPath)';
@@ -59,7 +60,7 @@ BEGIN
 	IF @LoadBLOB = 1
 		SELECT @JSON = BulkColumn
 		FROM OPENROWSET
-		(BULK 'projects\epaoall\project.json', DATA_SOURCE = 'BlobStorage', SINGLE_CLOB) 
+		(BULK 'projects/epaoall/project.json', DATA_SOURCE = 'BlobStorage', SINGLE_CLOB) 
 		AS project;
 	ELSE
 		SELECT @JSON = BulkColumn
@@ -82,7 +83,7 @@ BEGIN
 		IF @LoadBLOB = 1
 			SELECT @ApplicationDataSchema = BulkColumn
 			FROM OPENROWSET
-			(BULK 'projects\epaoall\ApplicationDataSchema.json', DATA_SOURCE = 'BlobStorage', SINGLE_CLOB) 
+			(BULK 'projects/epaoall/ApplicationDataSchema.json', DATA_SOURCE = 'BlobStorage', SINGLE_CLOB) 
 			AS ad;
 		ELSE
 			SELECT @ApplicationDataSchema = BulkColumn
@@ -153,7 +154,7 @@ BEGIN
 			IF @LoadBLOB = 1
 				SELECT @JSON = BulkColumn
 				FROM OPENROWSET
-				(BULK 'projects\epaoall\sections\section1.json', DATA_SOURCE = 'BlobStorage', SINGLE_CLOB) 
+				(BULK 'projects/epaoall/sections/section1.json', DATA_SOURCE = 'BlobStorage', SINGLE_CLOB) 
 				AS qnaData;
 			ELSE
 				SELECT @JSON = BulkColumn
@@ -167,7 +168,7 @@ BEGIN
 			IF @LoadBLOB = 1
 				SELECT @JSON = BulkColumn
 				FROM OPENROWSET
-				(BULK 'projects\epaoall\sections\section2.json', DATA_SOURCE = 'BlobStorage', SINGLE_CLOB) 
+				(BULK 'projects/epaoall/sections/section2.json', DATA_SOURCE = 'BlobStorage', SINGLE_CLOB) 
 				AS qnaData;
 			ELSE
 				SELECT @JSON = BulkColumn
@@ -181,7 +182,7 @@ BEGIN
 			IF @LoadBLOB = 1
 				SELECT @JSON = BulkColumn
 				FROM OPENROWSET
-				(BULK 'projects\epaoall\sections\section3.json', DATA_SOURCE = 'BlobStorage', SINGLE_CLOB) 
+				(BULK 'projects/epaoall/sections/section3.json', DATA_SOURCE = 'BlobStorage', SINGLE_CLOB) 
 				AS qnaData;
 			ELSE
 				SELECT @JSON = BulkColumn
@@ -195,7 +196,7 @@ BEGIN
 			IF @LoadBLOB = 1
 				SELECT @JSON = BulkColumn
 				FROM OPENROWSET
-				(BULK 'projects\epaoall\sections\section4.json', DATA_SOURCE = 'BlobStorage', SINGLE_CLOB) 
+				(BULK 'projects/epaoall/sections/section4.json', DATA_SOURCE = 'BlobStorage', SINGLE_CLOB) 
 				AS qnaData;
 			ELSE
 				SELECT @JSON = BulkColumn
