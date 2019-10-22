@@ -217,6 +217,14 @@ BEGIN
 		SET @sectionNo = @sectionNo + 1;
 	END
 
+-- tidyup
+	IF @WorkflowExists = 0 
+	-- have created a new workflow
+	BEGIN
+		UPDATE Workflows SET Status = 'Dead' WHERE [WorkflowId] != @WorkflowId
+		UPDATE Workflows SET Status = 'Live' WHERE [WorkflowId] = @WorkflowId
+	END
+
 END
 
 
