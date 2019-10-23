@@ -14,7 +14,7 @@
 		-- Create an external data source with CREDENTIAL option.
 		CREATE EXTERNAL DATA SOURCE BlobStorage WITH (LOCATION = '<ProjectPath>',CREDENTIAL = BlobCredential,TYPE = BLOB_STORAGE);
 */
--- $(ProjectPath) = Directory Path for local / Location for Blob Storage
+-- $(ProjectPath) = Directory Path for local 
 
 
 DECLARE @ProjectLocation VARCHAR(100) = '$(ProjectPath)';
@@ -41,11 +41,15 @@ DECLARE @SectionTitle VARCHAR(200);
 DECLARE @SectionLinkTitle VARCHAR(200);
 DECLARE @SectionDisplayType VARCHAR(200);
 
-DECLARE @LoadBLOB BIT = 0;  -- assume local - set to 1 if $(ProjectLocation) = "azure"
+DECLARE @LoadBLOB BIT = 0;  -- assume local - set to 1 if $(ProjectPath) starts with http
+
+DECLARE @SQLString NVARCHAR(4000);  
+DECLARE @ParmDefinition NVARCHAR(500);
+
 
 -- START
 BEGIN
-	IF @ProjectLocation = ''
+	IF SUBSTR(@ProjectLocation,1,4) = 'http'
 	BEGIN
 		SET @LoadBLOB = 1;
 		PRINT 'Loading from BLOB Storage';
@@ -55,15 +59,18 @@ BEGIN
 
 	-- get project file
 	IF @LoadBLOB = 1
-		SELECT @JSON = BulkColumn
+		SET @SQLString = 'SELECT @project = BulkColumn
 		FROM OPENROWSET
-		(BULK 'projects/epaoall/project.json', DATA_SOURCE = 'BlobStorage', SINGLE_CLOB) 
-		AS project;
+		(BULK ''projects/epaoall/project.json'', DATA_SOURCE = ''BlobStorage'', SINGLE_CLOB) 
+		AS project';
 	ELSE
-		SELECT @JSON = BulkColumn
-		FROM OPENROWSET 
-		(BULK '$(ProjectPath)\projects\epaoall\project.json', SINGLE_CLOB) 
-		AS project;
+		SET @SQLString = 'SELECT @project = BulkColumn
+		FROM OPENROWSET
+		(BULK ''$(ProjectPath)\projects\epaoall\project.json'', SINGLE_CLOB) 
+		AS project';
+		
+	SET @ParmDefinition = '@project VARCHAR(MAX) OUTPUT';
+	EXECUTE sp_executesql @SQLString, @ParmDefinition, @project = @JSON OUTPUT;
 
 	-- extract project
 	SELECT @ProjectName = JSON_VALUE(@JSON,'$.Name'),  @ProjectDesc = JSON_VALUE(@JSON,'$.Description'), @Workflows = JSON_QUERY(@JSON,'$.Workflows[0]')
@@ -78,15 +85,18 @@ BEGIN
 	-- Need to create the "Project"
 	-- Get the ApplicationDataSchema
 		IF @LoadBLOB = 1
-			SELECT @ApplicationDataSchema = BulkColumn
+			SET @SQLString = 'SELECT @ad = BulkColumn
 			FROM OPENROWSET
-			(BULK 'projects/epaoall/ApplicationDataSchema.json', DATA_SOURCE = 'BlobStorage', SINGLE_CLOB) 
-			AS ad;
+			(BULK ''projects/epaoall/ApplicationDataSchema.json'', DATA_SOURCE = ''BlobStorage'', SINGLE_CLOB) 
+			AS ad';
 		ELSE
-			SELECT @ApplicationDataSchema = BulkColumn
-			FROM OPENROWSET 
-			(BULK '$(ProjectPath)\projects\epaoall\ApplicationDataSchema.json', SINGLE_CLOB) 
-			AS ad;
+			SET @SQLString = 'SELECT @ad = BulkColumn
+			FROM OPENROWSET
+			(BULK ''$(ProjectPath)\projects\epaoall\ApplicationDataSchema.json'', SINGLE_CLOB) 
+			AS ad';
+		
+		SET @ParmDefinition = '@ad VARCHAR(MAX) OUTPUT';
+		EXECUTE sp_executesql @SQLString, @ParmDefinition, @ad = @ApplicationDataSchema OUTPUT;
 		
 		INSERT INTO projects (Name, Description, ApplicationDataSchema, CreatedAt, CreatedBy)
 			VALUES (@ProjectName, @ProjectDesc, @ApplicationDataSchema, GETUTCDATE(), 'Deployment');
@@ -144,63 +154,21 @@ BEGIN
 		SELECT @sectionId = [SectionId] 
 		FROM [WorkflowSequences]
 		WHERE [WorkflowId] = @WorkflowId AND [SequenceNo] = @sequenceNo AND [SectionNo] = @sectionNo;
-	  
-		If @sectionNo = 1 
-		BEGIN
-			PRINT 'Load Section '+CONVERT(char,@sectionNo);
-			IF @LoadBLOB = 1
-				SELECT @JSON = BulkColumn
-				FROM OPENROWSET
-				(BULK 'projects/epaoall/sections/section1.json', DATA_SOURCE = 'BlobStorage', SINGLE_CLOB) 
-				AS qnaData;
-			ELSE
-				SELECT @JSON = BulkColumn
-				FROM OPENROWSET 
-				(BULK '$(ProjectPath)\projects\epaoall\sections\section1.json', SINGLE_CLOB) 
-				AS qnaData;
-		END
-		IF @sectionNo = 2 
-		BEGIN
-			PRINT 'Load Section '+CONVERT(char,@sectionNo);
-			IF @LoadBLOB = 1
-				SELECT @JSON = BulkColumn
-				FROM OPENROWSET
-				(BULK 'projects/epaoall/sections/section2.json', DATA_SOURCE = 'BlobStorage', SINGLE_CLOB) 
-				AS qnaData;
-			ELSE
-				SELECT @JSON = BulkColumn
-				FROM OPENROWSET 
-				(BULK '$(ProjectPath)\projects\epaoall\sections\section2.json', SINGLE_CLOB) 
-				AS qnaData;
-		END
-		IF @sectionNo = 3 
-		BEGIN
-			PRINT 'Load Section '+CONVERT(char,@sectionNo);
-			IF @LoadBLOB = 1
-				SELECT @JSON = BulkColumn
-				FROM OPENROWSET
-				(BULK 'projects/epaoall/sections/section3.json', DATA_SOURCE = 'BlobStorage', SINGLE_CLOB) 
-				AS qnaData;
-			ELSE
-				SELECT @JSON = BulkColumn
-				FROM OPENROWSET 
-				(BULK '$(ProjectPath)\projects\epaoall\sections\section3.json', SINGLE_CLOB) 
-				AS qnaData;
-		END
-		IF @sectionNo = 4 
-		BEGIN
-			PRINT 'Load Section '+CONVERT(char,@sectionNo);
-			IF @LoadBLOB = 1
-				SELECT @JSON = BulkColumn
-				FROM OPENROWSET
-				(BULK 'projects/epaoall/sections/section4.json', DATA_SOURCE = 'BlobStorage', SINGLE_CLOB) 
-				AS qnaData;
-			ELSE
-				SELECT @JSON = BulkColumn
-				FROM OPENROWSET 
-				(BULK '$(ProjectPath)\projects\epaoall\sections\section4.json', SINGLE_CLOB) 
-				AS qnaData;
-		END
+
+		PRINT 'Load Section '+CONVERT(char,@sectionNo);
+		IF @LoadBLOB = 1
+			SET @SQLString = 'SELECT @qnaData = BulkColumn
+			FROM OPENROWSET
+			(BULK ''projects/epaoall/sections/section'+CONVERT(char(1),@sectionNo)+'.json'', DATA_SOURCE = ''BlobStorage'', SINGLE_CLOB) 
+			AS qnaData';
+		ELSE
+			SET @SQLString = 'SELECT @qnaData = BulkColumn
+			FROM OPENROWSET
+			(BULK ''$(ProjectPath)\projects\epaoall\sections\section'+CONVERT(char(1),@sectionNo)+'.json'', SINGLE_CLOB) 
+			AS qnaData';
+
+		SET @ParmDefinition = '@qnaData VARCHAR(MAX) OUTPUT';
+		EXECUTE sp_executesql @SQLString, @ParmDefinition, @qnaData = @JSON OUTPUT;
 		
 		-- get the Section details
 		SELECT @SectionTitle = JSON_VALUE(@JSON,'$.Title'),  @SectionLinkTitle = JSON_VALUE(@JSON,'$.LinkTitle'), @SectionDisplayType = JSON_VALUE(@JSON,'$.DisplayType')
