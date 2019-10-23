@@ -49,7 +49,7 @@ DECLARE @ParmDefinition NVARCHAR(500);
 
 -- START
 BEGIN
-	IF SUBSTR(@ProjectLocation,1,4) = 'http'
+	IF SUBSTRING(@ProjectLocation,1,4) = 'http'
 	BEGIN
 		SET @LoadBLOB = 1;
 		PRINT 'Loading from BLOB Storage';
