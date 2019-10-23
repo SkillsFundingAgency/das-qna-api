@@ -56,14 +56,8 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
-    <SqlCmdVariable  Include="ProjectLocation">
-      <Value>local</Value>
-    </SqlCmdVariable>
     <SqlCmdVariable  Include="ProjectPath">
       <Value>$(SourceRoot)</Value>
-    </SqlCmdVariable>
-    <SqlCmdVariable  Include="ProjectCredentials">
-      <Value>n/a</Value>
     </SqlCmdVariable>
   </ItemGroup>
   <ItemGroup>
