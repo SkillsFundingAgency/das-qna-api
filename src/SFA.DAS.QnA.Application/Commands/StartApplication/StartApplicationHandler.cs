@@ -127,8 +127,8 @@ namespace SFA.DAS.QnA.Application.Commands.StartApplication
                 
                 foreach (var page in qnaData.Pages)
                 {
-                    page.SectionId = applicationSection.Id;
-                    page.SequenceId = applicationSection.SequenceId;
+                    page.SectionId = applicationSection.Id.ToString();
+                    page.SequenceId = applicationSection.SequenceId.ToString();
                 }
 
                 applicationSection.QnAData = qnaData;
