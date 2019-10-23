@@ -1,8 +1,7 @@
 -- Load a project 
 -- needs one for every project setup. (or we need to build Dynamic SQL - one for another day)
 -- uses parameters
--- $(ProjectLocation) = "local" (Default) / "azure" 
--- If "azure" - then Database then External data Source / BlobStorage needs to exist
+-- If using BLOB storage then Database then External data Source / BlobStorage needs to exist
 /*    if working locally you will need a storage account and set the values in the Publish profilecreate
 		create using:
 		-- Create a database master key if one does not already exist, using your own password. This key is used to encrypt the credential secret in next step.
@@ -14,7 +13,7 @@
 		-- Create an external data source with CREDENTIAL option.
 		CREATE EXTERNAL DATA SOURCE BlobStorage WITH (LOCATION = '<ProjectPath>',CREDENTIAL = BlobCredential,TYPE = BLOB_STORAGE);
 */
--- $(ProjectPath) = Directory Path for local 
+-- $(ProjectPath) = Directory Path for local or BLOB
 
 
 DECLARE @ProjectLocation VARCHAR(100) = '$(ProjectPath)';
