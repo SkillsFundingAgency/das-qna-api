@@ -573,7 +573,7 @@
                                                     "ErrorMessage": "Enter your UKPRN (must be 8 digits)"
                                                 },
                                                 {
-                                                    "Name": "ClientAPICall",
+                                                    "Name": "ClientApiCall",
                                                     "Value": "Validations/UkPrn",
                                                     "ErrorMessage": ""
                                                 }
