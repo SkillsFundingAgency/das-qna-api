@@ -571,6 +571,11 @@
                                                     "Name": "Regex",
                                                     "Value": "^[0-9]{8}$",
                                                     "ErrorMessage": "Enter your UKPRN (must be 8 digits)"
+                                                },
+                                                {
+                                                    "Name": "ClientAPICall",
+                                                    "Value": "Validations/UkPrn",
+                                                    "ErrorMessage": ""
                                                 }
                                             ],
                                             "DataEndpoint": null
