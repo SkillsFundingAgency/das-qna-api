@@ -31,10 +31,12 @@ DECLARE @WorkFlowDescription VARCHAR(100);
 DECLARE @WorkFlowVersion VARCHAR(100);
 DECLARE @WorkFlowType VARCHAR(100);
 
+DECLARE @sectionIndex INT;
 DECLARE @sectionNo INT;
 DECLARE @sequenceNo INT = 1;
 DECLARE @sequenceExists INT;
 DECLARE @sectionId UNIQUEIDENTIFIER;
+DECLARE @sections VARCHAR(MAX);
 
 DECLARE @SectionTitle VARCHAR(200);
 DECLARE @SectionLinkTitle VARCHAR(200);
@@ -71,7 +73,7 @@ BEGIN
 	SET @ParmDefinition = '@project VARCHAR(MAX) OUTPUT';
 	EXECUTE sp_executesql @SQLString, @ParmDefinition, @project = @JSON OUTPUT;
 
-	-- extract project
+	-- extract project and workflow  (Note currently only handling ONE Workflow per project)
 	SELECT @ProjectName = JSON_VALUE(@JSON,'$.Name'),  @ProjectDesc = JSON_VALUE(@JSON,'$.Description'), @Workflows = JSON_QUERY(@JSON,'$.Workflows[0]')
 	-- extract workflow(s)
 	SELECT @WorkflowDescription = JSON_VALUE(@Workflows,'$.Description'), @WorkflowVersion = JSON_VALUE(@Workflows,'$.Version'), @WorkflowType = JSON_VALUE(@Workflows,'$.Type')
@@ -128,15 +130,20 @@ BEGIN
 	  AND [Description] = @WorkFlowDescription
 	  AND [Version] = @WorkFlowVersion
 
-    -- load the Sequences and Sections
-
-	SET @sectionNo = 1
-	WHILE @sectionNo <= 4
+	-- load the Sequences and Sections
+	SET @sectionIndex = 0;
+	-- loop  thorugh the sections
+	WHILE @sectionIndex >= 0
 	BEGIN
-		IF @sectionNo = 4
-			SET @sequenceNo = 2;
+	-- get the first/next section from workflow.
+		SELECT @sections = JSON_QUERY(@Workflows,'$.section['+RTRIM(convert(char,@sectionIndex))+']');
+		
+		IF @sections IS NULL
+			BREAK;
+			
+		SELECT @sectionNo = JSON_VALUE(@sections ,'$.SectionNo'), @sequenceNo = JSON_VALUE(@sections ,'$.SequenceNo');
 
-		PRINT 'Configure Sequence '+CONVERT(char,@sequenceNo)+' Section '+CONVERT(char,@sectionNo);
+		PRINT 'Configure Sequence '+RTRIM(CONVERT(char,@sequenceNo))+' Section '+RTRIM(CONVERT(char,@sectionNo));
 
 		SELECT @sequenceExists = COUNT(*) 
 		FROM [WorkflowSequences]
@@ -144,7 +151,7 @@ BEGIN
 
 		IF @sequenceExists = 0
 		BEGIN
-			PRINT 'Insert Workflow for Sequence '+CONVERT(char,@sequenceNo)+' Section '+CONVERT(char,@sectionNo);
+			PRINT 'Insert Workflow for Sequence '+RTRIM(CONVERT(char,@sequenceNo))+' Section '+RTRIM(CONVERT(char,@sectionNo));
 			INSERT INTO [WorkflowSequences] (Workflowid, SequenceNo, SectionNo, SectionId, IsActive)
 			VALUES ( @WorkflowId, @sequenceNo, @sectionNo, NEWID(), 1);
 		END
@@ -154,16 +161,16 @@ BEGIN
 		FROM [WorkflowSequences]
 		WHERE [WorkflowId] = @WorkflowId AND [SequenceNo] = @sequenceNo AND [SectionNo] = @sectionNo;
 
-		PRINT 'Load Section '+CONVERT(char,@sectionNo);
+		PRINT 'Load Sequence '+RTRIM(CONVERT(char,@sequenceNo))+' Section '+RTRIM(CONVERT(char,@sectionNo));
 		IF @LoadBLOB = 1
 			SET @SQLString = 'SELECT @qnaData = BulkColumn
 			FROM OPENROWSET
-			(BULK ''projects/epaoall/sections/section'+CONVERT(char(1),@sectionNo)+'.json'', DATA_SOURCE = ''BlobStorage'', SINGLE_CLOB) 
+			(BULK ''projects/epaoall/sections/section'+RTRIM(CONVERT(char,@sectionNo))+'.json'', DATA_SOURCE = ''BlobStorage'', SINGLE_CLOB) 
 			AS qnaData';
 		ELSE
 			SET @SQLString = 'SELECT @qnaData = BulkColumn
 			FROM OPENROWSET
-			(BULK ''$(ProjectPath)\projects\epaoall\sections\section'+CONVERT(char(1),@sectionNo)+'.json'', SINGLE_CLOB) 
+			(BULK ''$(ProjectPath)\projects\epaoall\sections\section'+RTRIM(CONVERT(char,@sectionNo))+'.json'', SINGLE_CLOB) 
 			AS qnaData';
 
 		SET @ParmDefinition = '@qnaData VARCHAR(MAX) OUTPUT';
@@ -181,7 +188,7 @@ BEGIN
 			INSERT (Id, ProjectId, QnAData, Title, LinkTitle, DisplayType)
 			VALUES (@sectionId, @ProjectId, @JSON, @SectionTitle, @SectionLinkTitle, @SectionDisplayType);
 
-		SET @sectionNo = @sectionNo + 1;
+		SET @sectionIndex = @sectionIndex + 1;
 	END
 
 -- tidyup
