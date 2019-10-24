@@ -1057,7 +1057,7 @@
                             {
                                 "Name": "Required",
                                 "Value": null,
-                                "ErrorMessage": "Provide the number of assessors your organisation has"
+                                "ErrorMessage": "Provide the number of assessors your organisation will have"
                             }
                         ],
                         "DataEndpoint": null
@@ -1113,7 +1113,7 @@
                             {
                                 "Name": "Required",
                                 "Value": null,
-                                "ErrorMessage": "Enter the volume of end-point assessments you will be able to deliver"
+                                "ErrorMessage": "What's the volume of end-point assessments you will be able to deliver"
                             }
                         ],
                         "DataEndpoint": null
@@ -1278,7 +1278,7 @@
                 {
                     "QuestionId": "CC-24",
                     "QuestionTag": null,
-                    "Label": "What experience, skills and qualifications do your assessors have?",
+                    "Label": "What experience, skills and qualifications will your assessors have?",
                     "ShortLabel": "Skills and qualifications",
                     "InputClasses": null,
                     "QuestionBodyText": "<p class='govuk-body'>You need to give examples of how, when and where the assessor have demonstrated their capability. Assessors must have current and relevant occupational and assessment experience. Give details, evidence and context of this experience for all assessors.</p>",
@@ -1291,7 +1291,7 @@
                             {
                                 "Name": "Required",
                                 "Value": null,
-                                "ErrorMessage": "Enter the experience, skills and qualifications your assessors have"
+                                "ErrorMessage": "Enter the experience, skills and qualifications your assessors will have"
                             },
                             {
                                 "Name": "MaxWordCount",
