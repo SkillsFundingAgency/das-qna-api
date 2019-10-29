@@ -10,25 +10,25 @@
             "Type": "EPAO",
             "section": [
                 {
-                    "id": "section-1",
+                    "id": "section1",
                     "SectionNo": 1,
                     "SequenceNo": 1,
                     "name": "Organisation details"
                 },
                 {
-                    "id": "section-2",
+                    "id": "section2",
                     "SectionNo": 2,
                     "SequenceNo": 1,
                     "name": "Declarations"
                 },
                 {
-                    "id": "section-3",
+                    "id": "section3",
                     "SectionNo": 3,
                     "SequenceNo": 1,
                     "name": "Financial health assessment"
                 },
                 {
-                    "id": "section-4",
+                    "id": "section4",
                     "SectionNo": 4,
                     "SequenceNo": 2,
                     "name": "Apply to assess a standard"

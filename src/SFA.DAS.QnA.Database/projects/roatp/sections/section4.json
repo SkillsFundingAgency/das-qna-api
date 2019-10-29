@@ -1,0 +1,172 @@
+{
+    "Title": "Confirm who's in control",
+    "LinkTitle": "Confirm who's in control",
+    "DisplayType": "Pages",
+    "RequestedFeedbackAnswered": null,
+    "Pages": [
+        {
+            "PageId": "70",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "PLACEHOLDER Confirm Directors PSCs",
+            "LinkTitle": "",
+            "InfoText": "",
+            "Questions": [
+                {
+                    "QuestionId": "YO-70",
+                    "QuestionTag": "Confirm-Directors-PSCs",
+                    "Label": "PLACEHOLDER Confirm Directors PSCs",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "Hidden",
+                        "Validations": []
+                    },
+                    "Order": null
+                }
+            ],
+            "PageOfAnswers": [],
+            "Next": [
+                {
+                    "Action": "NextPage",
+                    "ReturnId": "999999",
+                    "Condition": null,
+                    "ConditionMet": false
+                }
+            ],
+            "Complete": false,
+            "AllowMultipleAnswers": false,
+            "Order": null,
+            "Active": true,
+            "Visible": true,
+            "Feedback": null,
+            "HasFeedback": false,
+            "NotRequiredOrgTypes": [],
+            "BodyText": ""
+        },
+        {
+            "PageId": "80",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "PLACEHOLDER Confirm Trustees",
+            "LinkTitle": "",
+            "InfoText": "",
+            "Questions": [
+                {
+                    "QuestionId": "YO-80",
+                    "QuestionTag": "Confirm-Trustees-NoDoB",
+                    "Label": "PLACEHOLDER Confirm Trustees",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "Hidden",
+                        "Validations": []
+                    },
+                    "Order": null
+                }
+            ],
+            "PageOfAnswers": [],
+            "Next": [
+                {
+                    "Action": "NextPage",
+                    "ReturnId": "999999",
+                    "Condition": null,
+                    "ConditionMet": false
+                }
+            ],
+            "Complete": false,
+            "AllowMultipleAnswers": false,
+            "Order": null,
+            "Active": true,
+            "Visible": true,
+            "Feedback": null,
+            "HasFeedback": false,
+            "NotRequiredOrgTypes": [],
+            "BodyText": ""
+        },
+        {
+            "PageId": "90",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "PLACEHOLDER Add Trustees",
+            "LinkTitle": "",
+            "InfoText": "",
+            "Questions": [
+                {
+                    "QuestionId": "YO-90",
+                    "QuestionTag": "Add-Trustees",
+                    "Label": "PLACEHOLDER Add Trustees",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "Hidden",
+                        "Validations": []
+                    },
+                    "Order": null
+                }
+            ],
+            "PageOfAnswers": [],
+            "Next": [
+                {
+                    "Action": "NextPage",
+                    "ReturnId": "999999",
+                    "Condition": null,
+                    "ConditionMet": false
+                }
+            ],
+            "Complete": false,
+            "AllowMultipleAnswers": false,
+            "Order": null,
+            "Active": true,
+            "Visible": true,
+            "Feedback": null,
+            "HasFeedback": false,
+            "NotRequiredOrgTypes": [],
+            "BodyText": ""
+        },
+        {
+            "PageId": "100",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "PLACEHOLDER Sole Trader Partnership",
+            "LinkTitle": "",
+            "InfoText": "",
+            "Questions": [
+                {
+                    "QuestionId": "YO-100",
+                    "QuestionTag": "SoleTrade-or-Partnership",
+                    "Label": "PLACEHOLDER Sole Trader Partnership",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "Hidden",
+                        "Validations": []
+                    },
+                    "Order": null
+                }
+            ],
+            "PageOfAnswers": [],
+            "Next": [
+                {
+                    "Action": "NextPage",
+                    "ReturnId": "999999",
+                    "Condition": null,
+                    "ConditionMet": false
+                }
+            ],
+            "Complete": false,
+            "AllowMultipleAnswers": false,
+            "Order": null,
+            "Active": true,
+            "Visible": true,
+            "Feedback": null,
+            "HasFeedback": false,
+            "NotRequiredOrgTypes": [],
+            "BodyText": ""
+        }
+    ]
+}
