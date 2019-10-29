@@ -11,6 +11,7 @@ using SFA.DAS.QnA.Api.Infrastructure;
 using SFA.DAS.QnA.Api.Types;
 using SFA.DAS.QnA.Api.Types.Page;
 using SFA.DAS.QnA.Application.Commands.AddPageAnswer;
+using SFA.DAS.QnA.Application.Commands.GetNextAction;
 using SFA.DAS.QnA.Application.Commands.RemovePageAnswer;
 using SFA.DAS.QnA.Application.Commands.SetPageAnswers;
 using SFA.DAS.QnA.Application.Queries.Sections.GetPage;
@@ -115,6 +116,25 @@ namespace SFA.DAS.QnA.Api.Controllers
             if (!removePageAnswerResponse.Success) return BadRequest(new BadRequestError(removePageAnswerResponse.Message));
 
             return removePageAnswerResponse.Value.Page;
+        }
+
+        /// <summary>
+        ///     Gets the next steps based on the page specified.
+        /// </summary>
+        /// <returns>An object describing the next steps</returns>
+        /// <response code="200">Returns the response</response>
+        [HttpPost("{applicationId}/sections/{sectionId}/pages/{pageId}/action/next")]
+        [ProducesResponseType(200)]
+        public async Task<ActionResult<GetNextActionResponse>> GetNextAction(Guid applicationId, Guid sectionId, string pageId)
+        {
+            _logger.LogInformation($"Getting the next action...: applicationId = {applicationId} , pageId = {pageId}");
+
+            var getNextActionResponse = await _mediator.Send(new GetNextActionRequest(applicationId, sectionId, pageId), CancellationToken.None);
+            if (!getNextActionResponse.Success) return BadRequest(new BadRequestError(getNextActionResponse.Message));
+
+            _logger.LogInformation($"Response from GetNextAction: {JsonConvert.SerializeObject(getNextActionResponse.Value)}");
+
+            return getNextActionResponse.Value;
         }
     }
 }
