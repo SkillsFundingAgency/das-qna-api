@@ -1,0 +1,134 @@
+{
+    "Title": "Introduction and what you'll need",
+    "LinkTitle": "Introduction and what you'll need",
+    "DisplayType": "Pages",
+    "RequestedFeedbackAnswered": null,
+    "Pages": [
+        {
+            "PageId": "6000",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "Planning apprenticeship training",
+            "LinkTitle": "",
+            "InfoText": "",
+            "Questions": [
+                {
+                    "QuestionId": "PAT-10",
+                    "QuestionTag": "PAT-Introduction-Main",
+                    "Label": "Planning apprenticeship training",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "<p class=\"govuk-body\">Lorem ipsum Planning apprenticeship training introduction page - main provider</p>",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "Hidden",
+                        "Validations": []
+                    },
+                    "Order": null
+                }
+            ],
+            "PageOfAnswers": [],
+            "Next": [
+                {
+                    "Action": "NextPage",
+                    "ReturnId": null,
+                    "Conditions": [],
+                    "ConditionMet": false
+                }
+            ],
+            "Complete": false,
+            "AllowMultipleAnswers": false,
+            "Order": null,
+            "Active": true,
+            "Visible": true,
+            "Feedback": null,
+            "HasFeedback": false,
+            "NotRequiredConditions": [],
+            "ActivatedByPageId": null,
+            "BodyText": ""
+        },
+        {
+            "PageId": "6001",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "Planning apprenticeship training",
+            "LinkTitle": "",
+            "InfoText": "",
+            "Questions": [
+                {
+                    "QuestionId": "PAT-11",
+                    "QuestionTag": "PAT-Introduction-Employer",
+                    "Label": "Planning apprenticeship training",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "<p class=\"govuk-body\">Lorem ipsum Planning apprenticeship training introduction page - employer provider</p>",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "Hidden",
+                        "Validations": []
+                    },
+                    "Order": null
+                }
+            ],
+            "PageOfAnswers": [],
+            "Next": [
+                {
+                    "Action": "NextPage",
+                    "ReturnId": null,
+                    "Conditions": [],
+                    "ConditionMet": false
+                }
+            ],
+            "Complete": false,
+            "AllowMultipleAnswers": false,
+            "Order": null,
+            "Active": true,
+            "Visible": true,
+            "Feedback": null,
+            "HasFeedback": false,
+            "NotRequiredConditions": [],
+            "ActivatedByPageId": null,
+            "BodyText": ""
+        },
+        {
+            "PageId": "6002",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "Planning apprenticeship training",
+            "LinkTitle": "",
+            "InfoText": "",
+            "Questions": [
+                {
+                    "QuestionId": "PAT-12",
+                    "QuestionTag": "PAT-Introduction-Supporting",
+                    "Label": "Planning apprenticeship training",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "<p class=\"govuk-body\">Lorem ipsum Planning apprenticeship training introduction page - supporting provider</p>",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "Hidden",
+                        "Validations": []
+                    },
+                    "Order": null
+                }
+            ],
+            "PageOfAnswers": [],
+            "Next": [
+                {
+                    "Action": "NextPage",
+                    "ReturnId": null,
+                    "Conditions": [],
+                    "ConditionMet": false
+                }
+            ],
+            "Complete": false,
+            "AllowMultipleAnswers": false,
+            "Order": null,
+            "Active": true,
+            "Visible": true,
+            "Feedback": null,
+            "HasFeedback": false,
+            "NotRequiredConditions": [],
+            "ActivatedByPageId": null,
+            "BodyText": ""
+        }
+    ]
+}

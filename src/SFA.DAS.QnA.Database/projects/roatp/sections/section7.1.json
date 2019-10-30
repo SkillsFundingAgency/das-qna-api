@@ -1,0 +1,134 @@
+{
+    "Title": "Introduction and what you'll need",
+    "LinkTitle": "Introduction and what you'll need",
+    "DisplayType": "Pages",
+    "RequestedFeedbackAnswered": null,
+    "Pages": [
+        {
+            "PageId": "7000",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "Delivering apprenticeship training",
+            "LinkTitle": "",
+            "InfoText": "",
+            "Questions": [
+                {
+                    "QuestionId": "DAT-10",
+                    "QuestionTag": "DAT-Introduction-Main",
+                    "Label": "Delivering apprenticeship training",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "<p class=\"govuk-body\">Lorem ipsum Delivering apprenticeship training introduction page - main provider</p>",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "Hidden",
+                        "Validations": []
+                    },
+                    "Order": null
+                }
+            ],
+            "PageOfAnswers": [],
+            "Next": [
+                {
+                    "Action": "NextPage",
+                    "ReturnId": null,
+                    "Conditions": [],
+                    "ConditionMet": false
+                }
+            ],
+            "Complete": false,
+            "AllowMultipleAnswers": false,
+            "Order": null,
+            "Active": true,
+            "Visible": true,
+            "Feedback": null,
+            "HasFeedback": false,
+            "NotRequiredConditions": [],
+            "ActivatedByPageId": null,
+            "BodyText": ""
+        },
+        {
+            "PageId": "7001",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "Delivering apprenticeship training",
+            "LinkTitle": "",
+            "InfoText": "",
+            "Questions": [
+                {
+                    "QuestionId": "DAT-11",
+                    "QuestionTag": "DAT-Introduction-Employer",
+                    "Label": "Delivering apprenticeship training",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "<p class=\"govuk-body\">Lorem ipsum Delivering apprenticeship training introduction page - employer provider</p>",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "Hidden",
+                        "Validations": []
+                    },
+                    "Order": null
+                }
+            ],
+            "PageOfAnswers": [],
+            "Next": [
+                {
+                    "Action": "NextPage",
+                    "ReturnId": null,
+                    "Conditions": [],
+                    "ConditionMet": false
+                }
+            ],
+            "Complete": false,
+            "AllowMultipleAnswers": false,
+            "Order": null,
+            "Active": true,
+            "Visible": true,
+            "Feedback": null,
+            "HasFeedback": false,
+            "NotRequiredConditions": [],
+            "ActivatedByPageId": null,
+            "BodyText": ""
+        },
+        {
+            "PageId": "7002",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "Delivering apprenticeship training",
+            "LinkTitle": "",
+            "InfoText": "",
+            "Questions": [
+                {
+                    "QuestionId": "DAT-12",
+                    "QuestionTag": "DAT-Introduction-Supporting",
+                    "Label": "Delivering apprenticeship training",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "<p class=\"govuk-body\">Lorem ipsum Delivering apprenticeship training introduction page - supporting provider</p>",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "Hidden",
+                        "Validations": []
+                    },
+                    "Order": null
+                }
+            ],
+            "PageOfAnswers": [],
+            "Next": [
+                {
+                    "Action": "NextPage",
+                    "ReturnId": null,
+                    "Conditions": [],
+                    "ConditionMet": false
+                }
+            ],
+            "Complete": false,
+            "AllowMultipleAnswers": false,
+            "Order": null,
+            "Active": true,
+            "Visible": true,
+            "Feedback": null,
+            "HasFeedback": false,
+            "NotRequiredConditions": [],
+            "ActivatedByPageId": null,
+            "BodyText": ""
+        }
+    ]
+}

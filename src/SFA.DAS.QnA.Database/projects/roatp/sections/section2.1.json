@@ -1,0 +1,50 @@
+{
+    "Title": "Introduction and what you'll need",
+    "LinkTitle": "Introduction and what you'll need",
+    "DisplayType": "Pages",
+    "RequestedFeedbackAnswered": null,
+    "Pages": [
+        {
+            "PageId": "2000",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "Financial health assessment",
+            "LinkTitle": "",
+            "InfoText": "",
+            "Questions": [
+                {
+                    "QuestionId": "FHA-10",
+                    "QuestionTag": "Financial-Health-Introduction-All",
+                    "Label": "Financial health assessment",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "<p class=\"govuk-body\">Lorem ipsum FHA introduction page</p>",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "Hidden",
+                        "Validations": []
+                    },
+                    "Order": null
+                }
+            ],
+            "PageOfAnswers": [],
+            "Next": [
+                {
+                    "Action": "NextPage",
+                    "ReturnId": null,
+                    "Conditions": [],
+                    "ConditionMet": false
+                }
+            ],
+            "Complete": false,
+            "AllowMultipleAnswers": false,
+            "Order": null,
+            "Active": true,
+            "Visible": true,
+            "Feedback": null,
+            "HasFeedback": false,
+            "NotRequiredConditions": [],
+            "ActivatedByPageId": null,
+            "BodyText": ""
+        }
+    ]
+}

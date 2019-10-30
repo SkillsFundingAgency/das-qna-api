@@ -57,8 +57,7 @@
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
-            "ActivatedByPageId": null,
-            "NotRequiredOrgTypes": null
+            "ActivatedByPageId": null
         },
         {
             "PageId": "25",
@@ -118,8 +117,7 @@
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
-            "ActivatedByPageId": null,
-            "NotRequiredOrgTypes": null
+            "ActivatedByPageId": null
         },
         {
             "PageId": "26",
@@ -179,8 +177,7 @@
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
-            "ActivatedByPageId": null,
-            "NotRequiredOrgTypes": null
+            "ActivatedByPageId": null
         },
         {
             "PageId": "27",
@@ -240,8 +237,7 @@
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
-            "ActivatedByPageId": null,
-            "NotRequiredOrgTypes": null
+            "ActivatedByPageId": null
         },
         {
             "PageId": "28",
@@ -296,8 +292,7 @@
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
-            "ActivatedByPageId": null,
-            "NotRequiredOrgTypes": null
+            "ActivatedByPageId": null
         },
         {
             "PageId": "29",
@@ -357,8 +352,7 @@
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
-            "ActivatedByPageId": null,
-            "NotRequiredOrgTypes": null
+            "ActivatedByPageId": null
         },
         {
             "PageId": "30",
@@ -418,8 +412,7 @@
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
-            "ActivatedByPageId": null,
-            "NotRequiredOrgTypes": null
+            "ActivatedByPageId": null
         },
         {
             "PageId": "31",
@@ -486,8 +479,7 @@
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
-            "ActivatedByPageId": null,
-            "NotRequiredOrgTypes": null
+            "ActivatedByPageId": null
         },
         {
             "PageId": "32",
@@ -554,8 +546,7 @@
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
-            "ActivatedByPageId": null,
-            "NotRequiredOrgTypes": null
+            "ActivatedByPageId": null
         },
         {
             "PageId": "33",
@@ -622,8 +613,7 @@
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
-            "ActivatedByPageId": null,
-            "NotRequiredOrgTypes": null
+            "ActivatedByPageId": null
         },
         {
             "PageId": "34",
@@ -690,8 +680,7 @@
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
-            "ActivatedByPageId": null,
-            "NotRequiredOrgTypes": null
+            "ActivatedByPageId": null
         },
         {
             "PageId": "340",
@@ -758,8 +747,7 @@
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
-            "ActivatedByPageId": null,
-            "NotRequiredOrgTypes": null
+            "ActivatedByPageId": null
         },
         {
             "PageId": "35",
@@ -826,8 +814,7 @@
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
-            "ActivatedByPageId": null,
-            "NotRequiredOrgTypes": null
+            "ActivatedByPageId": null
         },
         {
             "PageId": "36",
@@ -894,8 +881,7 @@
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
-            "ActivatedByPageId": null,
-            "NotRequiredOrgTypes": null
+            "ActivatedByPageId": null
         },
         {
             "PageId": "37",
@@ -962,8 +948,7 @@
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
-            "ActivatedByPageId": null,
-            "NotRequiredOrgTypes": null
+            "ActivatedByPageId": null
         },
         {
             "PageId": "38",
@@ -1030,8 +1015,7 @@
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
-            "ActivatedByPageId": null,
-            "NotRequiredOrgTypes": null
+            "ActivatedByPageId": null
         },
         {
             "PageId": "39",
@@ -1057,7 +1041,7 @@
                             {
                                 "Name": "Required",
                                 "Value": null,
-                                "ErrorMessage": "Provide the number of assessors your organisation has"
+                                "ErrorMessage": "Provide the number of assessors your organisation will have"
                             }
                         ],
                         "DataEndpoint": null
@@ -1086,8 +1070,7 @@
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
-            "ActivatedByPageId": null,
-            "NotRequiredOrgTypes": null
+            "ActivatedByPageId": null
         },
         {
             "PageId": "40",
@@ -1113,7 +1096,7 @@
                             {
                                 "Name": "Required",
                                 "Value": null,
-                                "ErrorMessage": "Enter the volume of end-point assessments you will be able to deliver"
+                                "ErrorMessage": "What's the volume of end-point assessments you will be able to deliver"
                             }
                         ],
                         "DataEndpoint": null
@@ -1142,8 +1125,7 @@
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
-            "ActivatedByPageId": null,
-            "NotRequiredOrgTypes": null
+            "ActivatedByPageId": null
         },
         {
             "PageId": "41",
@@ -1203,8 +1185,7 @@
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
-            "ActivatedByPageId": null,
-            "NotRequiredOrgTypes": null
+            "ActivatedByPageId": null
         },
         {
             "PageId": "42",
@@ -1264,8 +1245,7 @@
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
-            "ActivatedByPageId": null,
-            "NotRequiredOrgTypes": null
+            "ActivatedByPageId": null
         },
         {
             "PageId": "43",
@@ -1278,7 +1258,7 @@
                 {
                     "QuestionId": "CC-24",
                     "QuestionTag": null,
-                    "Label": "What experience, skills and qualifications do your assessors have?",
+                    "Label": "What experience, skills and qualifications will your assessors have?",
                     "ShortLabel": "Skills and qualifications",
                     "InputClasses": null,
                     "QuestionBodyText": "<p class='govuk-body'>You need to give examples of how, when and where the assessor have demonstrated their capability. Assessors must have current and relevant occupational and assessment experience. Give details, evidence and context of this experience for all assessors.</p>",
@@ -1291,7 +1271,7 @@
                             {
                                 "Name": "Required",
                                 "Value": null,
-                                "ErrorMessage": "Enter the experience, skills and qualifications your assessors have"
+                                "ErrorMessage": "Enter the experience, skills and qualifications your assessors will have"
                             },
                             {
                                 "Name": "MaxWordCount",
@@ -1325,8 +1305,7 @@
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
-            "ActivatedByPageId": null,
-            "NotRequiredOrgTypes": null
+            "ActivatedByPageId": null
         },
         {
             "PageId": "44",
@@ -1386,8 +1365,7 @@
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
-            "ActivatedByPageId": null,
-            "NotRequiredOrgTypes": null
+            "ActivatedByPageId": null
         },
         {
             "PageId": "45",
@@ -1447,8 +1425,7 @@
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
-            "ActivatedByPageId": null,
-            "NotRequiredOrgTypes": null
+            "ActivatedByPageId": null
         },
         {
             "PageId": "46",
@@ -1544,8 +1521,7 @@
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
-            "ActivatedByPageId": null,
-            "NotRequiredOrgTypes": null
+            "ActivatedByPageId": null
         },
         {
             "PageId": "47",
@@ -1605,8 +1581,7 @@
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
-            "ActivatedByPageId": null,
-            "NotRequiredOrgTypes": null
+            "ActivatedByPageId": null
         },
         {
             "PageId": "48",
@@ -1666,8 +1641,7 @@
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
-            "ActivatedByPageId": null,
-            "NotRequiredOrgTypes": null
+            "ActivatedByPageId": null
         },
         {
             "PageId": "49",
@@ -1722,8 +1696,7 @@
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
-            "ActivatedByPageId": null,
-            "NotRequiredOrgTypes": null
+            "ActivatedByPageId": null
         },
         {
             "PageId": "18",
@@ -1824,8 +1797,7 @@
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
-            "ActivatedByPageId": null,
-            "NotRequiredOrgTypes": null
+            "ActivatedByPageId": null
         },
         {
             "PageId": "50",
@@ -1885,8 +1857,7 @@
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
-            "ActivatedByPageId": null,
-            "NotRequiredOrgTypes": null
+            "ActivatedByPageId": null
         },
         {
             "PageId": "51",
@@ -1946,8 +1917,7 @@
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
-            "ActivatedByPageId": null,
-            "NotRequiredOrgTypes": null
+            "ActivatedByPageId": null
         },
         {
             "PageId": "52",
@@ -2007,8 +1977,7 @@
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
-            "ActivatedByPageId": null,
-            "NotRequiredOrgTypes": null
+            "ActivatedByPageId": null
         },
         {
             "PageId": "53",
@@ -2068,8 +2037,7 @@
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
-            "ActivatedByPageId": null,
-            "NotRequiredOrgTypes": null
+            "ActivatedByPageId": null
         },
         {
             "PageId": "54",
@@ -2129,8 +2097,7 @@
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
-            "ActivatedByPageId": null,
-            "NotRequiredOrgTypes": null
+            "ActivatedByPageId": null
         },
         {
             "PageId": "55",
@@ -2190,8 +2157,7 @@
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
-            "ActivatedByPageId": null,
-            "NotRequiredOrgTypes": null
+            "ActivatedByPageId": null
         },
         {
             "PageId": "56",
@@ -2251,8 +2217,7 @@
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
-            "ActivatedByPageId": null,
-            "NotRequiredOrgTypes": null
+            "ActivatedByPageId": null
         },
         {
             "PageId": "57",
@@ -2312,8 +2277,7 @@
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
-            "ActivatedByPageId": null,
-            "NotRequiredOrgTypes": null
+            "ActivatedByPageId": null
         },
         {
             "PageId": "58",
@@ -2362,8 +2326,7 @@
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
-            "ActivatedByPageId": null,
-            "NotRequiredOrgTypes": null
+            "ActivatedByPageId": null
         }
     ]
 }
