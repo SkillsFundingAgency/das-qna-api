@@ -21,7 +21,7 @@
                     "QuestionBodyText": "",
                     "Hint": "Provide your ICO registration number",
                     "Input": {
-                        "Type": "text",
+                        "Type": "Text",
                         "InputClasses": "govuk-input--width-10",
                         "Options": null,
                         "Validations": [
@@ -1034,7 +1034,7 @@
                     "QuestionBodyText": "",
                     "Hint": "This should include invigilators where the end-point assessment is an examination",
                     "Input": {
-                        "Type": "number",
+                        "Type": "Number",
                         "InputClasses": "govuk-input--width-3",
                         "Options": null,
                         "Validations": [
@@ -1089,7 +1089,7 @@
                     "QuestionBodyText": "",
                     "Hint": "",
                     "Input": {
-                        "Type": "number",
+                        "Type": "Number",
                         "InputClasses": "govuk-input--width-5",
                         "Options": null,
                         "Validations": [
@@ -2296,7 +2296,7 @@
                     "QuestionBodyText": "",
                     "Hint": "",
                     "Input": {
-                        "Type": "text",
+                        "Type": "Text",
                         "InputClasses": "govuk-!-width-two-thirds",
                         "Options": null,
                         "Validations": [],
