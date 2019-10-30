@@ -123,7 +123,7 @@ namespace SFA.DAS.QnA.Api.Controllers
         /// </summary>
         /// <returns>An object describing the next steps</returns>
         /// <response code="200">Returns the response</response>
-        [HttpPost("{applicationId}/sections/{sectionId}/pages/{pageId}/action/next")]
+        [HttpGet("{applicationId}/sections/{sectionId}/pages/{pageId}/action/next")]
         [ProducesResponseType(200)]
         public async Task<ActionResult<GetNextActionResponse>> GetNextAction(Guid applicationId, Guid sectionId, string pageId)
         {
