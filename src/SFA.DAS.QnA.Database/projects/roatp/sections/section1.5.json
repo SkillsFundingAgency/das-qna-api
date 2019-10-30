@@ -1402,7 +1402,7 @@
             "InfoText": "",
             "Details": {
                 "Title": "What is a connected company or charity?",
-                "Body": "<p class=\"govuk-body\">A connected company is part of the same group and has the same ultimate parent company as your organisation.</p><p class=\"govuk-body\">A connected charity is part of the same group of charities and has a majority of the same controlling trustees as your organisation.</p>"
+                "Body": "<p class='govuk-body'>A connected company is part of the same group and has the same ultimate parent company as your organisation.</p><p class='govuk-body'>A connected charity is part of the same group of charities and has a majority of the same controlling trustees as your organisation.</p>"
             },
             "Questions": [
                 {
@@ -1472,7 +1472,7 @@
                     "QuestionTag": "Organisation-DescribeOrganisation",
                     "Label": "How would you describe your organisation?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class=\"govuk-body\">Select all that apply.</p>",
+                    "QuestionBodyText": "<p class='govuk-body'>Select all that apply.</p>",
                     "Hint": "",
                     "Input": {
                         "Type": "CheckBoxList",
@@ -1490,7 +1490,7 @@
                             {
                                 "Label": "A small or medium enterprise (SME)",
                                 "Value": "A small or medium enterprise (SME)",
-                                "HintText": "As explained by the <a href=\"https://ec.europa.eu/growth/smes/business-friendly-environment/sme-definition_en\" target=\"blank\">European Commission (opens in a new window or tab).</a>"
+                                "HintText": "As explained by the <a href='https://ec.europa.eu/growth/smes/business-friendly-environment/sme-definition_en' target='blank'>European Commission (opens in a new window or tab).</a>"
                             },
                             {
                                 "Label": "A third sector organisation",
