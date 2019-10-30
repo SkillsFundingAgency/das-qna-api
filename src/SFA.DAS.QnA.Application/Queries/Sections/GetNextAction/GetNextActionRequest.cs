@@ -2,7 +2,7 @@
 using SFA.DAS.QnA.Api.Types;
 using System;
 
-namespace SFA.DAS.QnA.Application.Commands.GetNextAction
+namespace SFA.DAS.QnA.Application.Queries.Sections.GetNextAction
 {
     public class GetNextActionRequest : IRequest<HandlerResponse<GetNextActionResponse>>
     {

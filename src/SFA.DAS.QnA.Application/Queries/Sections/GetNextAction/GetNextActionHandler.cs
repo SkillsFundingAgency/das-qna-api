@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace SFA.DAS.QnA.Application.Commands.GetNextAction
+namespace SFA.DAS.QnA.Application.Queries.Sections.GetNextAction
 {
     public class GetNextPageHandler : SetAnswersBase, IRequestHandler<GetNextActionRequest, HandlerResponse<GetNextActionResponse>>
     {
@@ -20,13 +20,14 @@ namespace SFA.DAS.QnA.Application.Commands.GetNextAction
 
         public async Task<HandlerResponse<GetNextActionResponse>> Handle(GetNextActionRequest request, CancellationToken cancellationToken)
         {
+            var application = await _dataContext.Applications.FirstOrDefaultAsync(app => app.Id == request.ApplicationId, cancellationToken: cancellationToken);
+            if (application is null) return new HandlerResponse<GetNextActionResponse>(false, "Application does not exist");
+
             var section = await _dataContext.ApplicationSections.FirstOrDefaultAsync(sec => sec.Id == request.SectionId && sec.ApplicationId == request.ApplicationId, cancellationToken);
-            var page = section?.QnAData.Pages.FirstOrDefault(p => p.PageId == request.PageId);
-            
-            if(section is null || page is null)
-            {
-                return new HandlerResponse<GetNextActionResponse>(success: false, message: $"Requested page has not been found");
-            }
+            if (section is null) return new HandlerResponse<GetNextActionResponse>(false, "Section does not exist");
+
+            var page = section.QnAData.Pages.FirstOrDefault(p => p.PageId == request.PageId);
+            if (page is null) return new HandlerResponse<GetNextActionResponse>(false, "Page does not exist");
 
             var answers = page.PageOfAnswers.SelectMany(a => a.Answers).ToList();
             var nextAction = GetNextAction(page, answers, section, _dataContext);
