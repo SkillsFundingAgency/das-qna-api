@@ -82,8 +82,7 @@
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
-            "ActivatedByPageId": null,
-            "NotRequiredOrgTypes": null
+            "ActivatedByPageId": null
         },
         {
             "PageId": "193",
@@ -163,8 +162,7 @@
             },
             "DisplayType": null,
             "Feedback": null,
-            "ActivatedByPageId": null,
-            "NotRequiredOrgTypes": null
+            "ActivatedByPageId": null
         },
         {
             "PageId": "194",
@@ -234,8 +232,7 @@
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
-            "ActivatedByPageId": null,
-            "NotRequiredOrgTypes": null
+            "ActivatedByPageId": null
         },
         {
             "PageId": "195",
@@ -312,8 +309,7 @@
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
-            "ActivatedByPageId": null,
-            "NotRequiredOrgTypes": null
+            "ActivatedByPageId": null
         },
         {
             "PageId": "196",
@@ -390,8 +386,7 @@
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
-            "ActivatedByPageId": null,
-            "NotRequiredOrgTypes": null
+            "ActivatedByPageId": null
         },
         {
             "PageId": "20",
@@ -494,8 +489,7 @@
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
-            "ActivatedByPageId": null,
-            "NotRequiredOrgTypes": null
+            "ActivatedByPageId": null
         },
         {
             "PageId": "201",
@@ -585,8 +579,7 @@
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
-            "ActivatedByPageId": null,
-            "NotRequiredOrgTypes": null
+            "ActivatedByPageId": null
         },
         {
             "PageId": "20.1",
@@ -726,8 +719,7 @@
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
-            "ActivatedByPageId": "201",
-            "NotRequiredOrgTypes": null
+            "ActivatedByPageId": "201"
         },
         {
             "PageId": "202",
@@ -830,8 +822,7 @@
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
-            "ActivatedByPageId": null,
-            "NotRequiredOrgTypes": null
+            "ActivatedByPageId": null
         },
         {
             "PageId": "203",
@@ -934,8 +925,7 @@
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
-            "ActivatedByPageId": null,
-            "NotRequiredOrgTypes": null
+            "ActivatedByPageId": null
         },
         {
             "PageId": "204",
@@ -1038,8 +1028,7 @@
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
-            "ActivatedByPageId": null,
-            "NotRequiredOrgTypes": null
+            "ActivatedByPageId": null
         },
         {
             "PageId": "205",
@@ -1142,8 +1131,7 @@
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
-            "ActivatedByPageId": null,
-            "NotRequiredOrgTypes": null
+            "ActivatedByPageId": null
         },
         {
             "PageId": "206",
@@ -1301,8 +1289,7 @@
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
-            "ActivatedByPageId": null,
-            "NotRequiredOrgTypes": null
+            "ActivatedByPageId": null
         },
         {
             "PageId": "207",
@@ -1428,8 +1415,7 @@
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
-            "ActivatedByPageId": null,
-            "NotRequiredOrgTypes": null
+            "ActivatedByPageId": null
         },
         {
             "PageId": "208",
@@ -1562,8 +1548,7 @@
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
-            "ActivatedByPageId": null,
-            "NotRequiredOrgTypes": null
+            "ActivatedByPageId": null
         },
         {
             "PageId": "209",
@@ -1666,8 +1651,7 @@
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
-            "ActivatedByPageId": null,
-            "NotRequiredOrgTypes": null
+            "ActivatedByPageId": null
         },
         {
             "PageId": "210",
@@ -1770,8 +1754,7 @@
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
-            "ActivatedByPageId": null,
-            "NotRequiredOrgTypes": null
+            "ActivatedByPageId": null
         },
         {
             "PageId": "211",
@@ -1929,8 +1912,7 @@
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
-            "ActivatedByPageId": null,
-            "NotRequiredOrgTypes": null
+            "ActivatedByPageId": null
         },
         {
             "PageId": "22",
@@ -2000,8 +1982,7 @@
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
-            "ActivatedByPageId": null,
-            "NotRequiredOrgTypes": null
+            "ActivatedByPageId": null
         },
         {
             "PageId": "221",
@@ -2071,8 +2052,7 @@
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
-            "ActivatedByPageId": null,
-            "NotRequiredOrgTypes": null
+            "ActivatedByPageId": null
         },
         {
             "PageId": "222",
@@ -2142,8 +2122,7 @@
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
-            "ActivatedByPageId": null,
-            "NotRequiredOrgTypes": null
+            "ActivatedByPageId": null
         }
     ]
 }
