@@ -10,6 +10,7 @@ Post-Deployment Script Template
 --------------------------------------------------------------------------------------
 */
 
-:r .\projects\Injectproject-epaoall.sql
+-- deploy QnA Workflow Definitions for all projects
+:r .\projects\Inject-projects.sql
 
 -- END

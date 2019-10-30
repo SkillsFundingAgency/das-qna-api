@@ -1,0 +1,423 @@
+{
+    "Title": "Confirm who's in control",
+    "LinkTitle": "Confirm who's in control",
+    "DisplayType": "Pages",
+    "RequestedFeedbackAnswered": null,
+    "Pages": [
+        {
+            "PageId": "70",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "Confirm who's in control",
+            "LinkTitle": "",
+            "InfoText": "",
+            "Details": {
+                "Title": "What if these details are wrong?",
+                "Body": "<p class=\"govuk-body\">Contact Companies House to <a href=\"https://www.gov.uk/file-changes-to-a-company-with-companies-house\" target=\"_blank\">change these details (opens in a new window or tab)</a>.</p><p class=\"govuk-body\">After your changes have been confirmed, sign back in to continue with this application.</p>"
+            },
+            "Questions": [
+                {
+                    "QuestionId": "YO-70",
+                    "QuestionTag": "Companies-House-Directors",
+                    "Label": "",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "<p class=\"govuk-body\">These are the details we found on Companies House.</p>",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "TabularData",
+                        "Validations": []
+                    },
+                    "Order": null
+                },
+                {
+                    "QuestionId": "YO-71",
+                    "QuestionTag": "Companies-House-PSCs",
+                    "Label": "",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "TabularData",
+                        "Validations": []
+                    },
+                    "Order": null
+                },
+                {
+                    "QuestionId": "YO-75",
+                    "QuestionTag": "Directors-PSCs-Confirmed",
+                    "Label": "",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "Hidden",
+                        "Validations": []
+                    },
+                    "Order": null
+                }
+            ],
+            "PageOfAnswers": [],
+            "Next": [
+                {
+                    "Action": "NextPage",
+                    "ReturnId": "90",
+                    "Conditions": [
+                        {
+                            "QuestionTag": "CC-TrusteeManualEntry",
+                            "MustEqual": "TRUE"
+                        }
+                    ],
+                    "ConditionMet": false
+                },
+                {
+                    "Action": "NextPage",
+                    "ReturnId": "80",
+                    "Conditions": [
+                        {
+                            "QuestionTag": "UKRLP-Verification-Charity",
+                            "MustEqual": "TRUE"
+                        }
+                    ],
+                    "ConditionMet": false
+                },
+                {
+                    "Action": "NextPage",
+                    "ReturnId": "140",
+                    "Conditions": [],
+                    "ConditionMet": false
+                }
+            ],
+            "Complete": false,
+            "AllowMultipleAnswers": false,
+            "Order": null,
+            "Active": true,
+            "Visible": true,
+            "Feedback": null,
+            "HasFeedback": false,
+            "NotRequiredConditions": [],
+            "ActivatedByPageId": null,
+            "BodyText": "",
+            "NotRequired": true
+        },
+        {
+            "PageId": "80",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "Confirm who's in control",
+            "LinkTitle": "",
+            "InfoText": "",
+            "Questions": [
+                {
+                    "QuestionId": "YO-80",
+                    "QuestionTag": "Charity-Trustees",
+                    "Label": "",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "TabularData",
+                        "Validations": []
+                    },
+                    "Order": null
+                },
+                {
+                    "QuestionId": "YO-85",
+                    "QuestionTag": "Confirm-Trustees",
+                    "Label": "",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "Hidden",
+                        "Validations": []
+                    },
+                    "Order": null
+                }
+            ],
+            "PageOfAnswers": [],
+            "Next": [
+                {
+                    "Action": "NextPage",
+                    "ReturnId": "140",
+                    "Conditions": [],
+                    "ConditionMet": false
+                }
+            ],
+            "Complete": false,
+            "AllowMultipleAnswers": false,
+            "Order": null,
+            "Active": true,
+            "Visible": true,
+            "Feedback": null,
+            "HasFeedback": false,
+            "NotRequiredConditions": [],
+            "ActivatedByPageId": null,
+            "BodyText": "",
+            "NotRequired": true
+        },
+        {
+            "PageId": "90",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "Confirm who's in control",
+            "LinkTitle": "",
+            "InfoText": "",
+            "Questions": [
+                {
+                    "QuestionId": "YO-90",
+                    "QuestionTag": "Add-Trustees",
+                    "Label": "Confirm who's in control",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "PLACEHOLDER Add Trustees",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "Hidden",
+                        "Validations": []
+                    },
+                    "Order": null
+                }
+            ],
+            "PageOfAnswers": [],
+            "Next": [
+                {
+                    "Action": "NextPage",
+                    "ReturnId": "140",
+                    "Conditions": [],
+                    "ConditionMet": false
+                }
+            ],
+            "Complete": false,
+            "AllowMultipleAnswers": false,
+            "Order": null,
+            "Active": true,
+            "Visible": true,
+            "Feedback": null,
+            "HasFeedback": false,
+            "NotRequiredConditions": [],
+            "ActivatedByPageId": null,
+            "BodyText": "",
+            "NotRequired": true
+        },
+        {
+            "PageId": "100",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "Tell us your organisation's type",
+            "LinkTitle": "",
+            "InfoText": "",
+            "Details": {
+                "Title": "What is a sole trader or partnership?",
+                "Body": "<p class=\"govuk-body\">A sole trader is someone who's self-employed and is the only owner of their business.</p><p class=\"govuk-body\">A partnership is when two or more people agree to share the profits, costs and risks of running a business.</p>"
+            },
+            "Questions": [
+                {
+                    "QuestionId": "YO-100",
+                    "QuestionTag": "SoleTrade-or-Partnership",
+                    "Label": "Tell us your organisation's type",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "Radio",
+                        "Options": [
+                            {
+                                "Label": "Sole trader",
+                                "Value": "Sole trader",
+                                "FurtherQuestions": null
+                            },
+                            {
+                                "Label": "Partnership",
+                                "Value": "Partnership",
+                                "FurtherQuestions": null
+                            }
+                        ],
+                        "Validations": [
+                            {
+                                "Name": "Required",
+                                "Value": null,
+                                "ErrorMessage": "Tell us what your organisation is"
+                            }
+                        ]
+                    },
+                    "Order": null
+                }
+            ],
+            "PageOfAnswers": [],
+            "Next": [
+                {
+                    "Action": "NextPage",
+                    "ReturnId": "110",
+                    "Conditions": [
+                        {
+                            "QuestionId": "YO-100",
+                            "MustEqual": "Partnership"
+                        }
+                    ],
+                    "ConditionMet": false
+                },
+                {
+                    "Action": "NextPage",
+                    "ReturnId": "120",
+                    "Conditions": [
+                        {
+                            "QuestionId": "YO-100",
+                            "MustEqual": "Sole trader"
+                        }
+                    ],
+                    "ConditionMet": false
+                }
+            ],
+            "Complete": false,
+            "AllowMultipleAnswers": false,
+            "Order": null,
+            "Active": true,
+            "Visible": true,
+            "Feedback": null,
+            "HasFeedback": false,
+            "NotRequiredConditions": [],
+            "ActivatedByPageId": null,
+            "BodyText": "",
+            "NotRequired": true
+        },
+        {
+            "PageId": "110",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "PLACEHOLDER Add Partner",
+            "LinkTitle": "",
+            "InfoText": "",
+            "Questions": [
+                {
+                    "QuestionId": "YO-110",
+                    "QuestionTag": "Add-Partner",
+                    "Label": "PLACEHOLDER Add Partner",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "Hidden",
+                        "Validations": []
+                    },
+                    "Order": null
+                }
+            ],
+            "PageOfAnswers": [],
+            "Next": [
+                {
+                    "Action": "NextPage",
+                    "ReturnId": "140",
+                    "Conditions": [],
+                    "ConditionMet": false
+                }
+            ],
+            "Complete": false,
+            "AllowMultipleAnswers": false,
+            "Order": null,
+            "Active": true,
+            "Visible": true,
+            "Feedback": null,
+            "HasFeedback": false,
+            "NotRequiredConditions": [],
+            "ActivatedByPageId": null,
+            "BodyText": "",
+            "NotRequired": true
+        },
+        {
+            "PageId": "120",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "What is {{UKRLP-LegalName}}'s date of birth?",
+            "LinkTitle": "",
+            "InfoText": "",
+            "Questions": [
+                {
+                    "QuestionId": "YO-120",
+                    "QuestionTag": "Add-SoleTrade-DOB",
+                    "Label": "What is {{UKRLP-LegalName}}'s date of birth?",
+                    "ShortLabel": "Date of birth",
+                    "QuestionBodyText": "",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "MonthAndYear",
+                        "Validations": [
+                            {
+                                "Name": "MonthAndYear",
+                                "Value": null,
+                                "ErrorMessage": "Enter a date of birth using a month and year"
+                            },
+                            {
+                                "Name": "MonthAndYearNotInFuture",
+                                "Value": null,
+                                "ErrorMessage": "Enter a date of birth using a month and year that's in the past"
+                            }
+                        ]
+                    },
+                    "Order": null
+                }
+            ],
+            "PageOfAnswers": [],
+            "Next": [
+                {
+                    "Action": "NextPage",
+                    "ReturnId": null,
+                    "Conditions": [],
+                    "ConditionMet": false
+                }
+            ],
+            "Complete": false,
+            "AllowMultipleAnswers": false,
+            "Order": null,
+            "Active": true,
+            "Visible": true,
+            "Feedback": null,
+            "HasFeedback": false,
+            "NotRequiredConditions": [],
+            "ActivatedByPageId": null,
+            "BodyText": "",
+            "NotRequired": true
+        },
+        {
+            "PageId": "130",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "PLACEHOLDER Add People In Control",
+            "LinkTitle": "",
+            "InfoText": "",
+            "Questions": [
+                {
+                    "QuestionId": "YO-130",
+                    "QuestionTag": "Add-PeopleInControl",
+                    "Label": "PLACEHOLDER Add People In Control",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "Hidden",
+                        "Validations": []
+                    },
+                    "Order": null
+                }
+            ],
+            "PageOfAnswers": [],
+            "Next": [
+                {
+                    "Action": "NextPage",
+                    "ReturnId": "140",
+                    "Conditions": [],
+                    "ConditionMet": false
+                }
+            ],
+            "Complete": false,
+            "AllowMultipleAnswers": false,
+            "Order": null,
+            "Active": true,
+            "Visible": true,
+            "Feedback": null,
+            "HasFeedback": false,
+            "NotRequiredConditions": [],
+            "ActivatedByPageId": null,
+            "BodyText": "",
+            "NotRequired": true
+        }
+    ]
+}

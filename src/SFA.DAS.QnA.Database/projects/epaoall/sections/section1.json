@@ -111,8 +111,7 @@
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
-            "ActivatedByPageId": null,
-            "NotRequiredOrgTypes": null
+            "ActivatedByPageId": null
         },
         {
             "PageId": "2",
@@ -182,8 +181,7 @@
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
-            "ActivatedByPageId": "1",
-            "NotRequiredOrgTypes": null
+            "ActivatedByPageId": "1"
         },
         {
             "PageId": "3",
@@ -353,8 +351,7 @@
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
-            "ActivatedByPageId": null,
-            "NotRequiredOrgTypes": null
+            "ActivatedByPageId": null
         },
         {
             "PageId": "4",
@@ -524,8 +521,7 @@
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
-            "ActivatedByPageId": null,
-            "NotRequiredOrgTypes": null
+            "ActivatedByPageId": null
         },
         {
             "PageId": "5",
@@ -571,6 +567,11 @@
                                                     "Name": "Regex",
                                                     "Value": "^[0-9]{8}$",
                                                     "ErrorMessage": "Enter your UKPRN (must be 8 digits)"
+                                                },
+                                                {
+                                                    "Name": "ClientApiCall",
+                                                    "Value": "Validations/UkPrn",
+                                                    "ErrorMessage": ""
                                                 }
                                             ],
                                             "DataEndpoint": null
@@ -626,8 +627,7 @@
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
-            "ActivatedByPageId": null,
-            "NotRequiredOrgTypes": null
+            "ActivatedByPageId": null
         },
         {
             "PageId": "6",
@@ -748,8 +748,7 @@
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
-            "ActivatedByPageId": null,
-            "NotRequiredOrgTypes": null
+            "ActivatedByPageId": null
         },
         {
             "PageId": "7",
@@ -845,8 +844,7 @@
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
-            "ActivatedByPageId": null,
-            "NotRequiredOrgTypes": null
+            "ActivatedByPageId": null
         },
         {
             "PageId": "8",
@@ -1041,8 +1039,7 @@
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
-            "ActivatedByPageId": null,
-            "NotRequiredOrgTypes": null
+            "ActivatedByPageId": null
         },
         {
             "PageId": "9",
@@ -1162,8 +1159,7 @@
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
-            "ActivatedByPageId": "8",
-            "NotRequiredOrgTypes": null
+            "ActivatedByPageId": "8"
         },
         {
             "PageId": "10",
@@ -1291,8 +1287,7 @@
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
-            "ActivatedByPageId": "9",
-            "NotRequiredOrgTypes": null
+            "ActivatedByPageId": "9"
         },
         {
             "PageId": "11",
@@ -1414,8 +1409,7 @@
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
-            "ActivatedByPageId": null,
-            "NotRequiredOrgTypes": null
+            "ActivatedByPageId": null
         },
         {
             "PageId": "12",
@@ -1505,8 +1499,7 @@
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
-            "ActivatedByPageId": null,
-            "NotRequiredOrgTypes": null
+            "ActivatedByPageId": null
         },
         {
             "PageId": "13",
@@ -1621,8 +1614,7 @@
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
-            "ActivatedByPageId": "12",
-            "NotRequiredOrgTypes": null
+            "ActivatedByPageId": "12"
         },
         {
             "PageId": "14",
@@ -1730,8 +1722,7 @@
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
-            "ActivatedByPageId": null,
-            "NotRequiredOrgTypes": null
+            "ActivatedByPageId": null
         },
         {
             "PageId": "15",
@@ -1808,8 +1799,7 @@
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
-            "ActivatedByPageId": null,
-            "NotRequiredOrgTypes": null
+            "ActivatedByPageId": null
         }
     ]
 }

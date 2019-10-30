@@ -312,6 +312,10 @@
         "StorageAccountName": {
             "type": "string",
             "value": "[variables('storageAccountName')]"
+        },
+        "StoragePrimaryEndpointsBlob": {
+            "type": "string",
+            "value": "[reference('storage-account').outputs.storagePrimaryEndpointsBlob.value]"
         }
     }
 }
