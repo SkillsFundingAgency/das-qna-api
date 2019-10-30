@@ -21,7 +21,7 @@
                     "QuestionBodyText": "",
                     "Hint": "",
                     "Input": {
-                        "Type": "text",
+                        "Type": "Text",
                         "InputClasses": null,
                         "Options": null,
                         "Validations": [
@@ -46,7 +46,7 @@
                     "QuestionBodyText": "",
                     "Hint": "",
                     "Input": {
-                        "Type": "text",
+                        "Type": "Text",
                         "InputClasses": null,
                         "Options": null,
                         "Validations": [
@@ -598,7 +598,7 @@
                     "QuestionBodyText": "",
                     "Hint": "",
                     "Input": {
-                        "Type": "text",
+                        "Type": "Text",
                         "InputClasses": null,
                         "Options": null,
                         "Validations": [

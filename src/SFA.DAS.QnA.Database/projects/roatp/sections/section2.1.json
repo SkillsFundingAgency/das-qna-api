@@ -17,7 +17,7 @@
                     "QuestionTag": "Financial-Health-Introduction-All",
                     "Label": "Financial health assessment",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class=\"govuk-body\">Lorem ipsum FHA introduction page</p>",
+                    "QuestionBodyText": "<p class='govuk-body'>Lorem ipsum FHA introduction page</p>",
                     "Hint": "",
                     "Input": {
                         "Type": "Hidden",

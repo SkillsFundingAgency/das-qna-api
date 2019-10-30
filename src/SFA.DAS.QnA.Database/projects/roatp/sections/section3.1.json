@@ -17,7 +17,7 @@
                     "QuestionTag": "Criminal-Introduction-All",
                     "Label": "Criminal and compliance checks on your organisation",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class=\"govuk-body\">Lorem ipsum criminal compliance checks introduction page</p>",
+                    "QuestionBodyText": "<p class='govuk-body'>Lorem ipsum criminal compliance checks introduction page</p>",
                     "Hint": "",
                     "Input": {
                         "Type": "Hidden",

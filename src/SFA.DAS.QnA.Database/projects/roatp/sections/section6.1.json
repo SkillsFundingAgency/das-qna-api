@@ -17,7 +17,7 @@
                     "QuestionTag": "PAT-Introduction-Main",
                     "Label": "Planning apprenticeship training",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class=\"govuk-body\">Lorem ipsum Planning apprenticeship training introduction page - main provider</p>",
+                    "QuestionBodyText": "<p class='govuk-body'>Lorem ipsum Planning apprenticeship training introduction page - main provider</p>",
                     "Hint": "",
                     "Input": {
                         "Type": "Hidden",
@@ -59,7 +59,7 @@
                     "QuestionTag": "PAT-Introduction-Employer",
                     "Label": "Planning apprenticeship training",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class=\"govuk-body\">Lorem ipsum Planning apprenticeship training introduction page - employer provider</p>",
+                    "QuestionBodyText": "<p class='govuk-body'>Lorem ipsum Planning apprenticeship training introduction page - employer provider</p>",
                     "Hint": "",
                     "Input": {
                         "Type": "Hidden",
@@ -101,7 +101,7 @@
                     "QuestionTag": "PAT-Introduction-Supporting",
                     "Label": "Planning apprenticeship training",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class=\"govuk-body\">Lorem ipsum Planning apprenticeship training introduction page - supporting provider</p>",
+                    "QuestionBodyText": "<p class='govuk-body'>Lorem ipsum Planning apprenticeship training introduction page - supporting provider</p>",
                     "Hint": "",
                     "Input": {
                         "Type": "Hidden",
