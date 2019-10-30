@@ -71,7 +71,8 @@
             "Visible": true,
             "Feedback": null,
             "HasFeedback": false,
-            "NotRequiredOrgTypes": [],
+            "NotRequiredConditions": [],
+            "ActivatedByPageId": null,
             "BodyText": ""
         },
         {
@@ -164,7 +165,8 @@
             "Visible": true,
             "Feedback": null,
             "HasFeedback": false,
-            "NotRequiredOrgTypes": [],
+            "NotRequiredConditions": [],
+            "ActivatedByPageId": null,
             "BodyText": "",
             "NotRequired": true
         },
@@ -265,7 +267,8 @@
             "Visible": true,
             "Feedback": null,
             "HasFeedback": false,
-            "NotRequiredOrgTypes": [],
+            "NotRequiredConditions": [],
+            "ActivatedByPageId": null,
             "BodyText": ""
         },
         {
@@ -379,7 +382,8 @@
             "Visible": true,
             "Feedback": null,
             "HasFeedback": false,
-            "NotRequiredOrgTypes": [],
+            "NotRequiredConditions": [],
+            "ActivatedByPageId": null,
             "BodyText": ""
         },
         {
@@ -514,7 +518,8 @@
             "Visible": true,
             "Feedback": null,
             "HasFeedback": false,
-            "NotRequiredOrgTypes": [],
+            "NotRequiredConditions": [],
+            "ActivatedByPageId": null,
             "BodyText": "",
             "NotRequired": true
         },
@@ -650,7 +655,8 @@
             "Visible": true,
             "Feedback": null,
             "HasFeedback": false,
-            "NotRequiredOrgTypes": [],
+            "NotRequiredConditions": [],
+            "ActivatedByPageId": null,
             "BodyText": "",
             "NotRequired": true
         },
@@ -786,7 +792,8 @@
             "Visible": true,
             "Feedback": null,
             "HasFeedback": false,
-            "NotRequiredOrgTypes": [],
+            "NotRequiredConditions": [],
+            "ActivatedByPageId": null,
             "BodyText": "",
             "NotRequired": true
         },
@@ -821,7 +828,8 @@
             "Visible": true,
             "Feedback": null,
             "HasFeedback": false,
-            "NotRequiredOrgTypes": [],
+            "NotRequiredConditions": [],
+            "ActivatedByPageId": null,
             "BodyText": "",
             "NotRequired": true
         },
@@ -856,7 +864,8 @@
             "Visible": true,
             "Feedback": null,
             "HasFeedback": false,
-            "NotRequiredOrgTypes": [],
+            "NotRequiredConditions": [],
+            "ActivatedByPageId": null,
             "BodyText": "",
             "NotRequired": true
         },
@@ -891,7 +900,8 @@
             "Visible": true,
             "Feedback": null,
             "HasFeedback": false,
-            "NotRequiredOrgTypes": [],
+            "NotRequiredConditions": [],
+            "ActivatedByPageId": null,
             "BodyText": "",
             "NotRequired": true
         }

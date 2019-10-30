@@ -42,7 +42,8 @@
             "Visible": true,
             "Feedback": null,
             "HasFeedback": false,
-            "NotRequiredOrgTypes": [],
+            "NotRequiredConditions": [],
+            "ActivatedByPageId": null,
             "BodyText": ""
         },
         {
@@ -83,7 +84,8 @@
             "Visible": true,
             "Feedback": null,
             "HasFeedback": false,
-            "NotRequiredOrgTypes": [],
+            "NotRequiredConditions": [],
+            "ActivatedByPageId": null,
             "BodyText": ""
         },
         {
@@ -124,7 +126,8 @@
             "Visible": true,
             "Feedback": null,
             "HasFeedback": false,
-            "NotRequiredOrgTypes": [],
+            "NotRequiredConditions": [],
+            "ActivatedByPageId": null,
             "BodyText": ""
         },
         {
@@ -165,7 +168,8 @@
             "Visible": true,
             "Feedback": null,
             "HasFeedback": false,
-            "NotRequiredOrgTypes": [],
+            "NotRequiredConditions": [],
+            "ActivatedByPageId": null,
             "BodyText": ""
         }
     ]
