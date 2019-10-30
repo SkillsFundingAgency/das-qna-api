@@ -1,0 +1,261 @@
+{
+    "Title": "Engaging with employers",
+    "LinkTitle": "Engaging with employers",
+    "DisplayType": "Pages",
+    "RequestedFeedbackAnswered": null,
+    "Pages": [{
+            "PageId": "5100",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "Engaging with employers",
+            "LinkTitle": "Engaging with employers",
+            "InfoText": "",
+            "Questions": [{
+                    "QuestionId": "RTE-20",
+                    "QuestionTag": "ReadinessToEngage-Engaging-Employers",
+                    "Label": "Has your organisation engaged with employers to deliver apprenticeship training to their employees?",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "<p class=\"govuk-body\" id=\"rte-engaging-employers\"></p>",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "Radio",
+                        "Options": [{
+                                "Label": "Yes",
+                                "Value": "Yes",
+                                "FurtherQuestions": null
+                            }, {
+                                "Label": "No",
+                                "Value": "No",
+                                "FurtherQuestions": null
+                            }
+                        ],
+                        "Validations": [{
+                                "Name": "Required",
+                                "Value": null,
+                                "ErrorMessage": "Tell us if your organisation has engaged with employers to deliver apprenticeship training to their employees"
+                            }
+                        ]
+                    },
+                    "Order": null
+                }
+            ],
+            "PageOfAnswers": [],
+            "Next": [{
+                    "Action": "NextPage",
+                    "ReturnId": "5110",
+                    "Conditions": [],
+                    "ConditionMet": false
+                }
+            ],
+            "Complete": false,
+            "AllowMultipleAnswers": false,
+            "Order": null,
+            "Active": true,
+            "Visible": true,
+            "Feedback": null,
+            "HasFeedback": false,
+            "NotRequiredOrgTypes": [],
+            "BodyText": ""
+        }, {
+            "PageId": "5110",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "Engaging with employers",
+            "LinkTitle": "Engaging with employers",
+            "InfoText": "",
+            "Questions": [{
+                    "QuestionId": "RTE-21",
+                    "QuestionTag": "ReadinessToEngage-Managing-Employers",
+                    "Label": "How will your organisation manage its relationships with employers?",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "<p class=\"govuk-body\" id=\"rte-managing-employers\">Your answer should include how your organisation will:</p><ul class=\"govuk-list govuk-list--bullet\"><li>continuously monitor and improve employer engagement</li><li>regularly review feedback from employers</li><li>manage concerns and issues raised by employers</li><li>manage communication with employers</li></ul>",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "Textarea",
+                        "Validations": [{
+                                "Name": "Required",
+                                "Value": null,
+                                "ErrorMessage": "Enter how you continuously improve the quality of your assessment practice"
+                            }, {
+                                "Name": "MaxCharCount",
+                                "Value": 750,
+                                "ErrorMessage": "Your answer must be 750 characters or less"
+                            }
+                        ]
+                    },
+                    "Order": null
+                }
+            ],
+            "PageOfAnswers": [],
+            "Next": [{
+                    "Action": "NextPage",
+                    "ReturnId": "5120",
+                    "Conditions": [],
+                    "ConditionMet": false
+                }
+            ],
+            "Complete": false,
+            "AllowMultipleAnswers": false,
+            "Order": null,
+            "Active": true,
+            "Visible": true,
+            "Feedback": null,
+            "HasFeedback": false,
+            "NotRequiredOrgTypes": [],
+            "BodyText": ""
+        }, {
+            "PageId": "5120",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "Engaging with employers",
+            "LinkTitle": "Engaging with employers",
+            "InfoText": "",
+            "Questions": [{
+                    "QuestionId": "RTE-22.1",
+                    "QuestionTag": "ReadinessToEngage-Managing-Employers-Fullname",
+                    "QuestionBodyText": "",
+                    "Input": {
+                        "Type": "text",
+                        "Validations": [{
+                                "Name": "Required",
+                                "Value": null,
+                                "ErrorMessage": "Enter a full name"
+                            }, {
+                                "Name": "MaxCharCount",
+                                "Value": 255,
+                                "ErrorMessage": "Enter a full name using 255 characters or less"
+                            }
+                        ],
+                        "Options": [],
+                        "InputClasses": null,
+                        "DataEndpoint": null
+                    },
+                    "Order": null,
+                    "Value": null,
+                    "ErrorMessages": null,
+                    "Label": "Full name"
+                }, {
+                    "QuestionId": "RTE-22.2",
+                    "QuestionTag": "ReadinessToEngage-Managing-Employers-Email",
+                    "Label": "Email",
+                    "QuestionBodyText": "",
+                    "Input": {
+                        "Type": "text",
+                        "Validations": [{
+                                "Name": "EmailAddressIsValid",
+                                "Value": null,
+                                "ErrorMessage": "Enter an email in the correct format, like name@example.com"
+                            }, {
+                                "Name": "Required",
+                                "Value": null,
+                                "ErrorMessage": "Enter an email"
+                            }, {
+                                "Name": "MaxCharCount",
+                                "Value": 70,
+                                "ErrorMessage": "Enter an email using 70 characters or less"
+                            }
+                        ],
+                        "Options": [],
+                        "InputClasses": null,
+                        "DataEndpoint": null
+                    },
+                    "Order": null,
+                    "Value": null,
+                    "ErrorMessages": null
+                }, {
+                    "QuestionId": "RTE-22.2",
+                    "QuestionTag": "ReadinessToEngage-Managing-Employers-ContactNumber",
+                    "Label": "Contact number",
+                    "QuestionBodyText": "",
+                    "Input": {
+                        "Type": "text",
+                        "Validations": [{
+                                "Name": "Regex",
+                                "Value": "^[0-9]*$",
+                                "ErrorMessage": "Enter a valid contact number using only numbers"
+                            }, {
+                                "Name": "Required",
+                                "Value": null,
+                                "ErrorMessage": "Enter a contact number using 10 digits or more"
+                            }, {
+                                "Name": "MaxCharCount",
+                                "Value": null,
+                                "ErrorMessage": "Enter a contact number using 20 digits or less"
+                            }
+                        ],
+                        "Options": [],
+                        "InputClasses": null,
+                        "DataEndpoint": null
+                    },
+                    "Order": null,
+                    "Value": null,
+                    "ErrorMessages": null
+                }
+            ],
+            "PageOfAnswers": [],
+            "Next": [{
+                    "Action": "NextPage",
+                    "ReturnId": "5130",
+                    "Condition": null,
+                    "Conditions": [],
+                    "ConditionMet": false
+                }
+            ],
+            "Complete": false,
+            "AllowMultipleAnswers": false,
+            "Active": true,
+            "NotRequiredOrgTypes": null,
+            "NotRequiredConditions": [],
+            "NotRequired": false,
+            "BodyText": "<p class=\"govuk-body\" id=\"rte-managing-employers-who\">This should be someone who has the overall responsibility and can make decisions independently.</p><p class=\"govuk-body\">We'll only contact them if there is a concern.</p>",
+            "ActivatedByPageId": ""
+        }, {
+            "PageId": "5130",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "Engaging with employers",
+            "LinkTitle": "Engaging with employers",
+            "InfoText": "",
+            "Questions": [{
+                    "QuestionId": "RTE-23",
+                    "QuestionTag": "ReadinessToEngage-Promote-Apprenticeships",
+                    "Label": "How will your organisation promote apprenticeships to employers?",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "<p class=\"govuk-body\" id=\"rte-promote-apprenticeships\">For example, through find apprenticeship training, National Careers Services or other national branding.</p>",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "Textarea",
+                        "Validations": [{
+                                "Name": "Required",
+                                "Value": null,
+                                "ErrorMessage": "Enter how you promote apprenticeships to employers"
+                            }, {
+                                "Name": "MaxCharCount",
+                                "Value": 750,
+                                "ErrorMessage": "Your answer must be 750 characters or less"
+                            }
+                        ]
+                    },
+                    "Order": null
+                }
+            ],
+            "PageOfAnswers": [],
+            "Next": [{
+                    "Action": "NextPage",
+                    "ReturnId": "5200",
+                    "Conditions": [],
+                    "ConditionMet": false
+                }
+            ],
+            "Complete": false,
+            "AllowMultipleAnswers": false,
+            "Order": null,
+            "Active": true,
+            "Visible": true,
+            "Feedback": null,
+            "HasFeedback": false,
+            "NotRequiredOrgTypes": [],
+            "BodyText": ""
+        }
+    ]
+}

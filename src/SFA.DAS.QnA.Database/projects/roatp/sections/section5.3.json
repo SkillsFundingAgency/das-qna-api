@@ -1,0 +1,102 @@
+{
+    "Title": "Complaints policy",
+    "LinkTitle": "Complaints policy",
+    "DisplayType": "Pages",
+    "RequestedFeedbackAnswered": null,
+    "Pages": [{
+            "PageId": "5200",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "Complaints policy",
+            "LinkTitle": "Complaints policy",
+            "InfoText": "",
+            "Questions": [{
+                    "QuestionId": "RTE-30",
+                    "QuestionTag": "ReadinessToEngage-Complaints-Policy",
+                    "Label": "Upload your organisation's complaints policy",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "<p class=\"govuk-body\" id=\"rte-complaints-policy\">This must include:</p><ul class=\"govuk-list govuk-list--bullet\"><li>what a complaint is</li><li>how to raise a complaint</li><li>how long it takes for a complaint to be resolved</li></ul><p class=\"govuk-body\">The file must be a PDF and smaller than 5MB.</p>",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "FileUpload",
+                        "Validations": [{
+                                "Name": "Required",
+                                "Value": null,
+                                "ErrorMessage": "Select your organisation's complaints policy"
+                            }, {
+                                "Name": "FileType",
+                                "Value": "pdf",
+                                "ErrorMessage": "The selected file must be a PDF"
+                            }
+                        ]
+                    },
+                    "Order": null
+                }
+            ],
+            "PageOfAnswers": [],
+            "Next": [{
+                    "Action": "NextPage",
+                    "ReturnId": "5210",
+                    "Conditions": [],
+                    "ConditionMet": false
+                }
+            ],
+            "Complete": false,
+            "AllowMultipleAnswers": false,
+            "Order": null,
+            "Active": true,
+            "Visible": true,
+            "Feedback": null,
+            "HasFeedback": false,
+            "NotRequiredOrgTypes": [],
+            "BodyText": ""
+        }, {
+            "PageId": "5210",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "Complaints policy",
+            "LinkTitle": "Complaints policy",
+            "InfoText": "",
+            "Questions": [{
+                    "QuestionId": "RTE-31",
+                    "QuestionTag": "ReadinessToEngage-Complaints-Website",
+                    "Label": "Enter the website link for your organisation's complaints policy",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "<p class=\"govuk-body\" id=\"rte-complaints-policy\">The complaints policy must be published on your organisation's website and be available to apprentices and employers.</p><p class=\"govuk-body\">Website link</p>",
+                    "Hint": "For example, http://www.example.com/complaintspolicy",
+                    "Input": {
+                        "Type": "Text",
+                        "Validations": [{
+                                "Name": "Required",
+                                "Value": null,
+                                "ErrorMessage": "Enter the website link for your organisation's complaints policy"
+                            }, {
+                                "Name": "MaxCharCount",
+                                "Value": 100,
+                                "ErrorMessage": "Enter a website link using 100 characters or less"
+                            }
+                        ]
+                    },
+                    "Order": null
+                }
+            ],
+            "PageOfAnswers": [],
+            "Next": [{
+                    "Action": "NextPage",
+                    "ReturnId": "5300",
+                    "Conditions": [],
+                    "ConditionMet": false
+                }
+            ],
+            "Complete": false,
+            "AllowMultipleAnswers": false,
+            "Order": null,
+            "Active": true,
+            "Visible": true,
+            "Feedback": null,
+            "HasFeedback": false,
+            "NotRequiredOrgTypes": [],
+            "BodyText": ""
+        }
+    ]
+}
