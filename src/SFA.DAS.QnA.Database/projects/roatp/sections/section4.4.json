@@ -15,7 +15,7 @@
         {
           "QuestionId": "PYA-40",
           "QuestionTag": "ProtectApprentice-Safeguarding",
-          "Label": "Upload your organisation''s safeguarding policy",
+          "Label": "Upload your organisation's safeguarding policy",
           "ShortLabel": "",
           "QuestionBodyText": "<p class='govuk-body' id='pya-equality-policy'>This must include how your organisation will:</p><ul class='govuk-list govuk-list--bullet'><li>promote the policy</li><li>get commitment towards the policy</li><li>train its employees in implementing the policy</li><li>protect its apprentices</li><li>prevent abuse towards its apprentices</li><li>have  way of raising, recording and investigating concerns</li><li>have a way of apprentices getting support or guidance</li><li>monitor its IT usage</li></ul><p class='govuk-body'>Find out more about safeguarding in <a href='http://www.legislation.gov.uk/ukpga/2014/23/contents' target='_blank'>the Care Act 2014 (opens in a new windows or tab)</a>.</p><p class='govuk-body'>The file must be a PDF and smaller than 5MB.</p>",
           "Hint": "",
@@ -25,7 +25,7 @@
               {
                 "Name": "Required",
                 "Value": null,
-                "ErrorMessage": "Select your organisation''s safeguarding policy"
+                "ErrorMessage": "Select your organisation's safeguarding policy"
               },
               {
                 "Name": "FileType",
