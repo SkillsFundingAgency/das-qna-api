@@ -8,7 +8,7 @@
       "PageId": "70",
       "SequenceId": null,
       "SectionId": null,
-      "Title": "Confirm who''s in control",
+      "Title": "Confirm who's in control",
       "LinkTitle": "",
       "InfoText": "",
 	  "Details": {
@@ -104,7 +104,7 @@
       "PageId": "80",
       "SequenceId": null,
       "SectionId": null,
-      "Title": "Confirm who''s in control",
+      "Title": "Confirm who's in control",
       "LinkTitle": "",
       "InfoText": "",
       "Questions": [
@@ -160,14 +160,14 @@
       "PageId": "90",
       "SequenceId": null,
       "SectionId": null,
-      "Title": "Confirm who''s in control",
+      "Title": "Confirm who's in control",
       "LinkTitle": "",
       "InfoText": "",
       "Questions": [
         {
           "QuestionId": "YO-90",
           "QuestionTag": "Add-Trustees",
-          "Label": "Confirm who''s in control",
+          "Label": "Confirm who's in control",
           "ShortLabel": "",
           "QuestionBodyText": "PLACEHOLDER Add Trustees",
           "Hint": "",
@@ -203,18 +203,18 @@
       "PageId": "100",
       "SequenceId": null,
       "SectionId": null,
-      "Title": "Tell us your organisation''s type",
+      "Title": "Tell us your organisation's type",
       "LinkTitle": "",
       "InfoText": "",
 	  "Details": {
         "Title": "What is a sole trader or partnership?",
-        "Body": "<p class=\"govuk-body\">A sole trader is someone who''s self-employed and is the only owner of their business.</p><p class=\"govuk-body\">A partnership is when two or more people agree to share the profits, costs and risks of running a business.</p>"
+        "Body": "<p class=\"govuk-body\">A sole trader is someone who's self-employed and is the only owner of their business.</p><p class=\"govuk-body\">A partnership is when two or more people agree to share the profits, costs and risks of running a business.</p>"
       },
       "Questions": [
         {
           "QuestionId": "YO-100",
           "QuestionTag": "SoleTrade-or-Partnership",
-          "Label": "Tell us your organisation''s type",
+          "Label": "Tell us your organisation's type",
           "ShortLabel": "",
           "QuestionBodyText": "",
           "Hint": "",
@@ -247,7 +247,7 @@
       "Next": [      
 		{
           "Action": "NextPage",
-          "ReturnId": "110",
+          "ReturnId": "101",
           "Conditions": [
 		  {
             "QuestionId": "YO-100",
@@ -283,14 +283,14 @@
       "PageId": "101",
       "SequenceId": null,
       "SectionId": null,
-      "Title": "What is your organisation''s partner?",
+      "Title": "What is your organisation's partner?",
       "LinkTitle": "",
       "InfoText": "",
       "Questions": [
         {
           "QuestionId": "YO-101",
           "QuestionTag": "Partnership-Type",
-          "Label": "What is your organisation''s partner?",
+          "Label": "What is your organisation's partner?",
           "ShortLabel": "",
           "QuestionBodyText": "",
           "Hint": "",
@@ -312,7 +312,7 @@
               {
                 "Name": "Required",
                 "Value": null,
-                "ErrorMessage": "Tell us what your organisation''s partner is"
+                "ErrorMessage": "Tell us what your organisation's partner is"
               }
             ]
           },
@@ -359,19 +359,33 @@
       "PageId": "110",
       "SequenceId": null,
       "SectionId": null,
-      "Title": "Enter the individual''s details",
+      "Title": "Enter the individual's details",
       "LinkTitle": "",
       "InfoText": "",
       "Questions": [
         {
           "QuestionId": "YO-110",
-          "QuestionTag": "Add-Partner-Individual",
-          "Label": "Enter the individual''s details",
+          "QuestionTag": "Add-Partner-Individual-Name",
+          "Label": "Full name",
           "ShortLabel": "",
           "QuestionBodyText": "",
           "Hint": "",
           "Input": {
-            "Type": "TabularData",			
+            "Type": "Text",			
+            "Validations": [              
+            ]
+          },
+          "Order": null
+        },
+		{
+          "QuestionId": "YO-111",
+          "QuestionTag": "Add-Partner-Individual-DOB",
+          "Label": "Date of birth",
+          "ShortLabel": "",
+          "QuestionBodyText": "",
+          "Hint": "",
+          "Input": {
+            "Type": "MonthAndYear",			
             "Validations": [              
             ]
           },
@@ -402,22 +416,38 @@
       "PageId": "111",
       "SequenceId": null,
       "SectionId": null,
-      "Title": "PLACEHOLDER Add Partner Organisation",
+      "Title": "Enter the partner organisation's name",
       "LinkTitle": "",
       "InfoText": "",
       "Questions": [
         {
           "QuestionId": "YO-111",
           "QuestionTag": "Add-Partner-Organisation",
-          "Label": "PLACEHOLDER Add Partner Organisation",
-          "ShortLabel": "",
-          "QuestionBodyText": "",
-          "Hint": "",
-          "Input": {
-            "Type": "TabularData",			
-            "Validations": [              
-            ]
-          },
+          "Label": "<span class=\"govuk-label\">Partner organisation's name</span>",
+		  "ShortLabel": "",
+		  "QuestionBodyText": "",
+		  "Hint": "",
+		  "Input": {
+		  	  "Type": "Text",
+			  "InputClasses": "",
+			  "Validations": [
+				{
+					"Name": "Required",
+					"Value": null,
+					"ErrorMessage": "Enter the partner organisation's name"
+				},
+				{
+					"Name": "MinLength",
+					"Value": 8,
+					"ErrorMessage": "Enter a full name"
+				},
+				{
+					"Name": "MaxLength",
+					"Value": 8,
+					"ErrorMessage": "Enter a full name using 255 characters or less"
+				}
+			]
+		},
           "Order": null
         }
       ],
@@ -445,14 +475,14 @@
       "PageId": "120",
       "SequenceId": null,
       "SectionId": null,
-      "Title": "What is {{UKRLP-LegalName}}''s date of birth?",
+      "Title": "What is {{UKRLP-LegalName}}'s date of birth?",
       "LinkTitle": "",
       "InfoText": "",
       "Questions": [
         {
           "QuestionId": "YO-120",
           "QuestionTag": "Add-SoleTrade-DOB",
-          "Label": "What is {{UKRLP-LegalName}}''s date of birth?",
+          "Label": "What is {{UKRLP-LegalName}}'s date of birth?",
           "ShortLabel": "Date of birth",
           "QuestionBodyText": "",
           "Hint": "",
@@ -467,7 +497,7 @@
 			  {
                 "Name": "MonthAndYearNotInFuture",
                 "Value": null,
-                "ErrorMessage": "Enter a date of birth using a month and year that''s in the past"
+                "ErrorMessage": "Enter a date of birth using a month and year that's in the past"
               }
             ]
           },
