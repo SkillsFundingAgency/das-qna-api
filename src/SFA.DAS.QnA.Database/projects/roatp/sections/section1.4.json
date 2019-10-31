@@ -224,12 +224,12 @@
 			{
                 "Label": "Sole trader",
 				"Value": "Sole trader",
-                "FurtherQuestions": null
+                "FurtherQuestions": []
               },
 			  {
                 "Label": "Partnership",
 				"Value": "Partnership",
-                "FurtherQuestions": null
+                "FurtherQuestions": []
               }
 			],
 			"Validations": [
@@ -300,12 +300,12 @@
 			{
                 "Label": "Individual",
 				"Value": "Individual",
-                "FurtherQuestions": null
+                "FurtherQuestions": []
               },
 			  {
                 "Label": "Organisation",
 				"Value": "Organisation",
-                "FurtherQuestions": null
+                "FurtherQuestions": []
               }
 			],
 			"Validations": [
