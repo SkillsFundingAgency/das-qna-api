@@ -1,12 +1,17 @@
-﻿using System;
+using SFA.DAS.QnA.Api.Types.Page;
+using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
-using SFA.DAS.QnA.Api.Types.Page;
 
 namespace SFA.DAS.QnA.Application.Validators
 {
-    public class NumberIsValidValidator : IValidator
+    public class NumberTypeValidator : IValidator
     {
+        public NumberTypeValidator()
+        {
+            ValidationDefinition = new ValidationDefinition() {ErrorMessage = "Answer must be a number"};
+        }
+
         public ValidationDefinition ValidationDefinition { get; set; }
         public List<KeyValuePair<string, string>> Validate(Question question, Answer answer)
         {
