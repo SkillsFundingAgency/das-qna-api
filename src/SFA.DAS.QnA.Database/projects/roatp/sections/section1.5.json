@@ -25,32 +25,32 @@
                             {
                                 "Label": "A Group Training Association",
                                 "Value": "A Group Training Association",
-                                "FurtherQuestions": null
+                                "FurtherQuestions": []
                             },
                             {
                                 "Label": "A public body",
                                 "Value": "A public body",
-                                "FurtherQuestions": null
+                                "FurtherQuestions": []
                             },
                             {
                                 "Label": "An Apprenticeship Training Agency",
                                 "Value": "An Apprenticeship Training Agency",
-                                "FurtherQuestions": null
+                                "FurtherQuestions": []
                             },
                             {
                                 "Label": "An educational institute",
                                 "Value": "An educational institute",
-                                "FurtherQuestions": null
+                                "FurtherQuestions": []
                             },
                             {
                                 "Label": "An employer training apprentices in other organisations",
                                 "Value": "An employer training apprentices in other organisations",
-                                "FurtherQuestions": null
+                                "FurtherQuestions": []
                             },
                             {
                                 "Label": "An Independent Training Provider",
                                 "Value": "An Independent Training Provider",
-                                "FurtherQuestions": null
+                                "FurtherQuestions": []
                             }
                         ],
                         "Validations": [
@@ -165,17 +165,17 @@
                             {
                                 "Label": "A public body",
                                 "Value": "A public body",
-                                "FurtherQuestions": null
+                                "FurtherQuestions": []
                             },
                             {
                                 "Label": "An educational institute",
                                 "Value": "An educational institute",
-                                "FurtherQuestions": null
+                                "FurtherQuestions": []
                             },
                             {
                                 "Label": "None of the above",
                                 "Value": "None of the above",
-                                "FurtherQuestions": null
+                                "FurtherQuestions": []
                             }
                         ],
                         "Validations": [
@@ -296,42 +296,42 @@
                             {
                                 "Label": "Academy",
                                 "Value": "Academy",
-                                "FurtherQuestions": null
+                                "FurtherQuestions": []
                             },
                             {
                                 "Label": "Further Education Institute",
                                 "Value": "Further Education Institute",
-                                "FurtherQuestions": null
+                                "FurtherQuestions": []
                             },
                             {
                                 "Label": "General Further Education College",
                                 "Value": "General Further Education College",
-                                "FurtherQuestions": null
+                                "FurtherQuestions": []
                             },
                             {
                                 "Label": "Higher Education Institute",
                                 "Value": "Higher Education Institute",
-                                "FurtherQuestions": null
+                                "FurtherQuestions": []
                             },
                             {
                                 "Label": "Multi-Academy Trust",
                                 "Value": "Multi-Academy Trust",
-                                "FurtherQuestions": null
+                                "FurtherQuestions": []
                             },
                             {
                                 "Label": "National College",
                                 "Value": "National College",
-                                "FurtherQuestions": null
+                                "FurtherQuestions": []
                             },
                             {
                                 "Label": "School",
                                 "Value": "School",
-                                "FurtherQuestions": null
+                                "FurtherQuestions": []
                             },
                             {
                                 "Label": "Sixth Form College",
                                 "Value": "Sixth Form College",
-                                "FurtherQuestions": null
+                                "FurtherQuestions": []
                             }
                         ],
                         "Validations": [
@@ -468,42 +468,42 @@
                             {
                                 "Label": "Academy",
                                 "Value": "Academy",
-                                "FurtherQuestions": null
+                                "FurtherQuestions": []
                             },
                             {
                                 "Label": "Further Education Institute",
                                 "Value": "Further Education Institute",
-                                "FurtherQuestions": null
+                                "FurtherQuestions": []
                             },
                             {
                                 "Label": "General Further Education College",
                                 "Value": "General Further Education College",
-                                "FurtherQuestions": null
+                                "FurtherQuestions": []
                             },
                             {
                                 "Label": "Higher Education Institute",
                                 "Value": "Higher Education Institute",
-                                "FurtherQuestions": null
+                                "FurtherQuestions": []
                             },
                             {
                                 "Label": "Multi-Academy Trust",
                                 "Value": "Multi-Academy Trust",
-                                "FurtherQuestions": null
+                                "FurtherQuestions": []
                             },
                             {
                                 "Label": "National College",
                                 "Value": "National College",
-                                "FurtherQuestions": null
+                                "FurtherQuestions": []
                             },
                             {
                                 "Label": "School",
                                 "Value": "School",
-                                "FurtherQuestions": null
+                                "FurtherQuestions": []
                             },
                             {
                                 "Label": "Sixth Form College",
                                 "Value": "Sixth Form College",
-                                "FurtherQuestions": null
+                                "FurtherQuestions": []
                             }
                         ],
                         "Validations": [
@@ -640,37 +640,37 @@
                             {
                                 "Label": "Executive agency",
                                 "Value": "Executive agency",
-                                "FurtherQuestions": null
+                                "FurtherQuestions": []
                             },
                             {
                                 "Label": "Fire authority",
                                 "Value": "Fire authority",
-                                "FurtherQuestions": null
+                                "FurtherQuestions": []
                             },
                             {
                                 "Label": "Government department",
                                 "Value": "Government department",
-                                "FurtherQuestions": null
+                                "FurtherQuestions": []
                             },
                             {
                                 "Label": "Local authority",
                                 "Value": "Local authority",
-                                "FurtherQuestions": null
+                                "FurtherQuestions": []
                             },
                             {
                                 "Label": "NHS Trust",
                                 "Value": "NHS Trust",
-                                "FurtherQuestions": null
+                                "FurtherQuestions": []
                             },
                             {
                                 "Label": "Non-departmental public body (NDPB)",
                                 "Value": "Non-departmental public body (NDPB)",
-                                "FurtherQuestions": null
+                                "FurtherQuestions": []
                             },
                             {
                                 "Label": "Police",
                                 "Value": "Police",
-                                "FurtherQuestions": null
+                                "FurtherQuestions": []
                             }
                         ],
                         "Validations": [
@@ -725,37 +725,37 @@
                             {
                                 "Label": "Executive agency",
                                 "Value": "Executive agency",
-                                "FurtherQuestions": null
+                                "FurtherQuestions": []
                             },
                             {
                                 "Label": "Fire authority",
                                 "Value": "Fire authority",
-                                "FurtherQuestions": null
+                                "FurtherQuestions": []
                             },
                             {
                                 "Label": "Government department",
                                 "Value": "Government department",
-                                "FurtherQuestions": null
+                                "FurtherQuestions": []
                             },
                             {
                                 "Label": "Local authority",
                                 "Value": "Local authority",
-                                "FurtherQuestions": null
+                                "FurtherQuestions": []
                             },
                             {
                                 "Label": "NHS Trust",
                                 "Value": "NHS Trust",
-                                "FurtherQuestions": null
+                                "FurtherQuestions": []
                             },
                             {
                                 "Label": "Non-departmental public body (NDPB)",
                                 "Value": "Non-departmental public body (NDPB)",
-                                "FurtherQuestions": null
+                                "FurtherQuestions": []
                             },
                             {
                                 "Label": "Police",
                                 "Value": "Police",
-                                "FurtherQuestions": null
+                                "FurtherQuestions": []
                             }
                         ],
                         "Validations": [

@@ -223,12 +223,12 @@
                             {
                                 "Label": "Sole trader",
                                 "Value": "Sole trader",
-                                "FurtherQuestions": null
+                                "FurtherQuestions": []
                             },
                             {
                                 "Label": "Partnership",
                                 "Value": "Partnership",
-                                "FurtherQuestions": null
+                                "FurtherQuestions": []
                             }
                         ],
                         "Validations": [
