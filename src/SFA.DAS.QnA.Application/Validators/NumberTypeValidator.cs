@@ -9,7 +9,7 @@ namespace SFA.DAS.QnA.Application.Validators
     {
         public NumberTypeValidator()
         {
-            ValidationDefinition = new ValidationDefinition() {ErrorMessage = "Answer must be a number"};
+            ValidationDefinition = new ValidationDefinition() {ErrorMessage = "Answer must be a valid number"};
         }
 
         public ValidationDefinition ValidationDefinition { get; set; }
@@ -29,14 +29,7 @@ namespace SFA.DAS.QnA.Application.Validators
 
         private static bool IsValidNumber(string number)
         {
-            try
-            {
-                return Regex.IsMatch(number, @"^[0-9]*$");
-            }
-            catch (FormatException)
-            {
-                return false;
-            }
+            return long.TryParse(number, out var _);
         }
     }
 }
