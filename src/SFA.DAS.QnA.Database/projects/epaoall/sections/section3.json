@@ -23,7 +23,7 @@
                     "Input": {
                         "Type": "FileUpload",
                         "InputClasses": null,
-                        "Options": null,
+                        "Options": [],
                         "Validations": [
                             {
                                 "Name": "Required",
@@ -53,7 +53,7 @@
                     "Input": {
                         "Type": "FileUpload",
                         "InputClasses": null,
-                        "Options": null,
+                        "Options": [],
                         "Validations": [
                             {
                                 "Name": "FileType",
