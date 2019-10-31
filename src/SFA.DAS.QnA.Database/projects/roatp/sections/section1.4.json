@@ -13,7 +13,7 @@
       "InfoText": "",
 	  "Details": {
         "Title": "What if these details are wrong?",
-        "Body": "<p class=\"govuk-body\">Contact Companies House to <a href=\"https://www.gov.uk/file-changes-to-a-company-with-companies-house\" target=\"_blank\">change these details (opens in a new window or tab)</a>.</p><p class=\"govuk-body\">After your changes have been confirmed, sign back in to continue with this application.</p>"
+        "Body": "<p class='govuk-body'>Contact Companies House to <a href='https://www.gov.uk/file-changes-to-a-company-with-companies-house' target='_blank'>change these details (opens in a new window or tab)</a>.</p><p class='govuk-body'>After your changes have been confirmed, sign back in to continue with this application.</p>"
       },
       "Questions": [
         {
@@ -21,7 +21,7 @@
           "QuestionTag": "Companies-House-Directors",
           "Label": "",
           "ShortLabel": "",
-          "QuestionBodyText": "<p class=\"govuk-body\">These are the details we found on Companies House.</p>",
+          "QuestionBodyText": "<p class='govuk-body'>These are the details we found on Companies House.</p>",
           "Hint": "",
           "Input": {
             "Type": "TabularData",			
@@ -208,7 +208,7 @@
       "InfoText": "",
 	  "Details": {
         "Title": "What is a sole trader or partnership?",
-        "Body": "<p class=\"govuk-body\">A sole trader is someone who's self-employed and is the only owner of their business.</p><p class=\"govuk-body\">A partnership is when two or more people agree to share the profits, costs and risks of running a business.</p>"
+        "Body": "<p class='govuk-body'>A sole trader is someone who's self-employed and is the only owner of their business.</p><p class='govuk-body'>A partnership is when two or more people agree to share the profits, costs and risks of running a business.</p>"
       },
       "Questions": [
         {
@@ -423,7 +423,7 @@
         {
           "QuestionId": "YO-111",
           "QuestionTag": "Add-Partner-Organisation",
-          "Label": "<span class=\"govuk-label\">Partner organisation's name</span>",
+          "Label": "<span class='govuk-label'>Partner organisation's name</span>",
 		  "ShortLabel": "",
 		  "QuestionBodyText": "",
 		  "Hint": "",
