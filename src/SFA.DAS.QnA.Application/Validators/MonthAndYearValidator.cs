@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using SFA.DAS.QnA.Api.Types.Page;
 
 namespace SFA.DAS.QnA.Application.Validators
@@ -9,30 +10,37 @@ namespace SFA.DAS.QnA.Application.Validators
         public ValidationDefinition ValidationDefinition { get; set; }
         public List<KeyValuePair<string, string>> Validate(Question question, Answer answer)
         {
-            var errorMessages = new List<KeyValuePair<string, string>>();
+            var errors = new List<KeyValuePair<string, string>>();
 
-            var dateParts = answer.Value.Split(new[]{","}, StringSplitOptions.RemoveEmptyEntries);
-            if (dateParts.Length != 2)
+            var text = answer?.Value?.Trim();
+            var dateParts = text?.Split(new[] { "," }, StringSplitOptions.RemoveEmptyEntries);
+
+            if (string.IsNullOrEmpty(text) || dateParts is null || dateParts.Length != 2)
             {
-                errorMessages.Add(new KeyValuePair<string, string>(question.QuestionId, ValidationDefinition.ErrorMessage));
-                return errorMessages;
+                errors.Add(new KeyValuePair<string, string>(question.QuestionId, ValidationDefinition.ErrorMessage));
             }
-            
-            var month = dateParts[0];
-            var year = dateParts[1];
-
-            if (string.IsNullOrWhiteSpace(month) || string.IsNullOrWhiteSpace(year) || year.Length != 4)
+            else
             {
-                errorMessages.Add(new KeyValuePair<string, string>(question.QuestionId, ValidationDefinition.ErrorMessage));
-                return errorMessages;
+                var month = dateParts[0];
+                var year = dateParts[1];
+
+                if (string.IsNullOrWhiteSpace(month) || string.IsNullOrWhiteSpace(year))
+                {
+                    errors.Add(new KeyValuePair<string, string>(question.QuestionId, ValidationDefinition.ErrorMessage));
+                }
+                else
+                {
+                    var dateString = $"1/{month}/{year}";
+                    var formatStrings = new string[] { "d/M/yyyy" };
+
+                    if (!DateTime.TryParseExact(dateString, formatStrings, null, DateTimeStyles.None, out _))
+                    {
+                        errors.Add(new KeyValuePair<string, string>(question.QuestionId, ValidationDefinition.ErrorMessage));
+                    }
+                }
             }
 
-            if (int.Parse(month) < 1 || int.Parse(month) > 12)
-            {
-                errorMessages.Add(new KeyValuePair<string, string>(question.QuestionId, ValidationDefinition.ErrorMessage));
-            }
-
-            return errorMessages;
+            return errors;
         }
     }
 }

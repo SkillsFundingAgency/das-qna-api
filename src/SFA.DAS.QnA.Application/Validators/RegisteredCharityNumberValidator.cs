@@ -10,12 +10,16 @@ namespace SFA.DAS.QnA.Application.Validators
         public ValidationDefinition ValidationDefinition { get; set; }
         public List<KeyValuePair<string, string>> Validate(Question question, Answer answer)
         {
-            if (string.IsNullOrEmpty(answer?.Value)) return new List<KeyValuePair<string, string>>();
+            var errors = new List<KeyValuePair<string, string>>();
 
-            return !IsValidRegisteredCharityNumber(answer.Value)
-                ? new List<KeyValuePair<string, string>>
-                    {new KeyValuePair<string, string>(answer.QuestionId, ValidationDefinition.ErrorMessage)}
-                : new List<KeyValuePair<string, string>>();
+            var text = answer?.Value?.Trim();
+
+            if (!string.IsNullOrEmpty(text) && !IsValidRegisteredCharityNumber(text))
+            {
+                errors.Add(new KeyValuePair<string, string>(question.QuestionId, ValidationDefinition.ErrorMessage));
+            }
+
+            return errors;
         }
 
         private static bool IsValidRegisteredCharityNumber(string registeredCharityNumber)
@@ -27,8 +31,7 @@ namespace SFA.DAS.QnA.Application.Validators
                 //if (registeredCharityNumber.Length==8)
                 //    registeredCharityNumber = registeredCharityNumber.Replace("-","");
 
-                var rx = new Regex(@"^[0-9-]{1,}$");
-                return rx.IsMatch(registeredCharityNumber);
+                return Regex.IsMatch(registeredCharityNumber, @"^[0-9-]{1,}$");
             }
             catch (FormatException)
             {
