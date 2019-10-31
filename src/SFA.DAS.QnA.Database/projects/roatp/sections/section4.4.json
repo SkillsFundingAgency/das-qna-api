@@ -60,23 +60,93 @@
 			"PageId": "4035",
 			"SequenceId": null,
 			"SectionId": null,
-			"Title": "Safeguarding responsibility - title",
+			"Title": "Tell us who has overall responsibility for safeguarding in your organisation",
 			"LinkTitle": "Safeguarding responsibility - link title",
 			"InfoText": "Safeguarding responsibility - info text",
 			 "Questions": [
 			  {
           "QuestionId": "PYA-45",
-          "QuestionTag": "ProtectApprentice-Safeguarding-responsibility",
-          "Label": "Tell us who has overall responsibility for safeguarding in your organisation",
+          "QuestionTag": "ProtectApprentice-Safeguarding-responsibility-name",
+          "Label": "<span class='govuk-label'>Full name</span>",
           "ShortLabel": "",
-           "QuestionBodyText": "Holding page for safeguarding responsibility officer",
+           "QuestionBodyText": "",
           "Hint": "",
           "Input": {
-            "Type": "Hidden",
-            "Validations": []
+            "Type": "Text",
+            "Validations": [
+			{
+				"Name": "Required",
+				"Value": null,
+                "ErrorMessage": "Enter a full name using 255 characters or less"
+			  },
+			 {
+				"Name": "MaxLength",
+                "Value": 255,
+                "ErrorMessage": "Enter a full name using 255 characters or less"
+			  }
+			  ]
+			},
+          "Order": null
+        },
+		 {
+          "QuestionId": "PYA-46",
+          "QuestionTag": "ProtectApprentice-Safeguarding-responsibility-email",
+          "Label": "<span class='govuk-label'>Email</span>",
+          "ShortLabel": "",
+           "QuestionBodyText": "",
+          "Hint": "",
+          "Input": {
+            "Type": "Text",
+            "Validations": [
+			{
+				"Name": "Required",
+				"Value": null,
+                "ErrorMessage": "Enter a valid email"
+			  },
+			 {
+				"Name": "MaxLength",
+                "Value": 70,
+                "ErrorMessage": "Enter an email using 70 characters or less"
+			  },
+			 {
+				"Name": "EmailAddressIsValid",
+                "Value": null,
+                "ErrorMessage": "Enter an email in the correct format, like name@example.com"
+			  }
+			  ]
+			},
+          "Order": null
+        },
+		{
+          "QuestionId": "PYA-47",
+          "QuestionTag": "ProtectApprentice-Safeguarding-responsibility-contact-number",
+          "Label": "<span class='govuk-label'>Contact number</span>",
+          "ShortLabel": "",
+           "QuestionBodyText": "",
+          "Hint": "",
+          "Input": {
+            "Type": "Text",
+            "Validations": [
+			{
+				"Name": "Required",
+				"Value": null,
+                "ErrorMessage": "Enter a valid contact number using only numbers"
+			  },
+			  {
+				"Name": "MinLength",
+                "Value": 10,
+                "ErrorMessage": "Enter a contact number using 10 digits or more"
+			  },
+			  {
+				"Name": "MaxLength",
+                "Value": 20,
+                "ErrorMessage": "Enter a contact number using 20 digits or less"
+			  }
+			  ]
 			},
           "Order": null
         }
+
       ],"PageOfAnswers": [],
        "Next": [      
         {
@@ -94,7 +164,35 @@
       "Feedback": null,
       "HasFeedback": false,
       "NotRequiredOrgTypes": [],
-      "BodyText": ""
+      "BodyText": "<p class='govuk-body'>This must be someone who has the overall responsibility, relevant knowledge and skills to manage safeguarding concerns.</p><p class='govuk-body'>We’ll only contact them if there is a safeguarding concern.</p>"
+    },
+	{
+			"PageId": "4040",
+			"SequenceId": null,
+			"SectionId": null,
+			"Title": "Does your organisation's safeguarding policy include its responsibilities towards the Prevent duty?",
+			"LinkTitle": "prevent duty link title",
+			"InfoText": "prevent duty - info text",
+			 "Questions": [
+			  
+      ],"PageOfAnswers": [],
+       "Next": [      
+        {
+          "Action": "NextPage",
+          "ReturnId": "4040",
+          "Conditions": [],
+          "ConditionMet": false
+        }
+      ],
+      "Complete": false,
+      "AllowMultipleAnswers": false,
+      "Order": null,
+      "Active": true,
+      "Visible": true,
+      "Feedback": null,
+      "HasFeedback": false,
+      "NotRequiredOrgTypes": [],
+      "BodyText": "<p class='govuk-body'>This means blah blah</p>"
     }
 	]
 }
