@@ -77,7 +77,7 @@
 			{
 				"Name": "Required",
 				"Value": null,
-                "ErrorMessage": "Enter a full name using 255 characters or less"
+                "ErrorMessage": "Enter a full name"
 			  },
 			 {
 				"Name": "MaxLength",
