@@ -24,7 +24,7 @@
                                 "Value": null,
                                 "ErrorMessage": "Tell us what your organisation's process is for initial assessments to recognise prior learning"
                             }, {
-                                "Name": "MaxCharCount",
+                                "Name": "MaxLength",
                                 "Value": 1500,
                                 "ErrorMessage": "Your answer must be 1500 characters or less"
                             }
@@ -71,7 +71,7 @@
                                 "Value": null,
                                 "ErrorMessage": "Tell us what your organisation's process is to assess English and maths qualifications for apprentices"
                             }, {
-                                "Name": "MaxCharCount",
+                                "Name": "MaxLength",
                                 "Value": 1500,
                                 "ErrorMessage": "Your answer must be 1500 characters or less"
                             }

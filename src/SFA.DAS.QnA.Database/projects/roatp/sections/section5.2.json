@@ -77,7 +77,7 @@
                                 "Value": null,
                                 "ErrorMessage": "Enter how you continuously improve the quality of your assessment practice"
                             }, {
-                                "Name": "MaxCharCount",
+                                "Name": "MaxLength",
                                 "Value": 750,
                                 "ErrorMessage": "Your answer must be 750 characters or less"
                             }
@@ -121,7 +121,7 @@
                                 "Value": null,
                                 "ErrorMessage": "Enter a full name"
                             }, {
-                                "Name": "MaxCharCount",
+                                "Name": "MaxLength",
                                 "Value": 255,
                                 "ErrorMessage": "Enter a full name using 255 characters or less"
                             }
@@ -142,15 +142,15 @@
                     "Input": {
                         "Type": "Email",
                         "Validations": [{
-                                "Name": "EmailAddressIsValid",
-                                "Value": null,
-                                "ErrorMessage": "Enter an email in the correct format, like name@example.com"
-                            }, {
                                 "Name": "Required",
                                 "Value": null,
                                 "ErrorMessage": "Enter an email"
                             }, {
-                                "Name": "MaxCharCount",
+                                "Name": "EmailAddressIsValid",
+                                "Value": null,
+                                "ErrorMessage": "Enter an email in the correct format, like name@example.com"                                
+                            }, {
+                                "Name": "MaxLength",
                                 "Value": 70,
                                 "ErrorMessage": "Enter an email using 70 characters or less"
                             }
@@ -172,14 +172,18 @@
                         "Validations": [{
                                 "Name": "Required",
                                 "Value": null,
-                                "ErrorMessage": "Enter a contact number using 10 digits or more"
+                                "ErrorMessage": "Enter a valid contact number using only numbers"
                             }, {
                                 "Name": "Regex",
                                 "Value": "^[0-9]*$",
                                 "ErrorMessage": "Enter a valid contact number using only numbers"
                             }, {
-                                "Name": "MaxCharCount",
-                                "Value": null,
+                                "Name": "MinLength",
+                                "Value": 10,
+                                "ErrorMessage": "Enter a contact number using 10 digits or less"
+                            }, {
+                                "Name": "MaxLength",
+                                "Value": 20,
                                 "ErrorMessage": "Enter a contact number using 20 digits or less"
                             }
                         ],
@@ -230,7 +234,7 @@
                                 "Value": null,
                                 "ErrorMessage": "Enter how you promote apprenticeships to employers"
                             }, {
-                                "Name": "MaxCharCount",
+                                "Name": "MaxLength",
                                 "Value": 750,
                                 "ErrorMessage": "Your answer must be 750 characters or less"
                             }
