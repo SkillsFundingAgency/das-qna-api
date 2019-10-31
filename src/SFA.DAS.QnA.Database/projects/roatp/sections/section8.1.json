@@ -17,7 +17,7 @@
                     "QuestionTag": "EAT-Introduction-MainEmployer",
                     "Label": "Evaluating apprenticeship training",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class=\"govuk-body\">Lorem ipsum Evaluating apprenticeship training introduction page - main and employer provider</p>",
+                    "QuestionBodyText": "<p class='govuk-body'>Lorem ipsum Evaluating apprenticeship training introduction page - main and employer provider</p>",
                     "Hint": "",
                     "Input": {
                         "Type": "Hidden",
@@ -59,7 +59,7 @@
                     "QuestionTag": "EAT-Introduction-Supporting",
                     "Label": "Evaluating apprenticeship training",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class=\"govuk-body\">Lorem ipsum Evaluating apprenticeship training introduction page - supporting provider</p>",
+                    "QuestionBodyText": "<p class='govuk-body'>Lorem ipsum Evaluating apprenticeship training introduction page - supporting provider</p>",
                     "Hint": "",
                     "Input": {
                         "Type": "Hidden",

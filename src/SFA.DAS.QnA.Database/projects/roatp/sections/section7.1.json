@@ -17,7 +17,7 @@
                     "QuestionTag": "DAT-Introduction-Main",
                     "Label": "Delivering apprenticeship training",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class=\"govuk-body\">Lorem ipsum Delivering apprenticeship training introduction page - main provider</p>",
+                    "QuestionBodyText": "<p class='govuk-body'>Lorem ipsum Delivering apprenticeship training introduction page - main provider</p>",
                     "Hint": "",
                     "Input": {
                         "Type": "Hidden",
@@ -59,7 +59,7 @@
                     "QuestionTag": "DAT-Introduction-Employer",
                     "Label": "Delivering apprenticeship training",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class=\"govuk-body\">Lorem ipsum Delivering apprenticeship training introduction page - employer provider</p>",
+                    "QuestionBodyText": "<p class='govuk-body'>Lorem ipsum Delivering apprenticeship training introduction page - employer provider</p>",
                     "Hint": "",
                     "Input": {
                         "Type": "Hidden",
@@ -101,7 +101,7 @@
                     "QuestionTag": "DAT-Introduction-Supporting",
                     "Label": "Delivering apprenticeship training",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class=\"govuk-body\">Lorem ipsum Delivering apprenticeship training introduction page - supporting provider</p>",
+                    "QuestionBodyText": "<p class='govuk-body'>Lorem ipsum Delivering apprenticeship training introduction page - supporting provider</p>",
                     "Hint": "",
                     "Input": {
                         "Type": "Hidden",

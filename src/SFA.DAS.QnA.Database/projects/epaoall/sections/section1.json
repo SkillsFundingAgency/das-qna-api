@@ -35,7 +35,7 @@
                                         "QuestionBodyText": "",
                                         "Hint": "",
                                         "Input": {
-                                            "Type": "text",
+                                            "Type": "Text",
                                             "InputClasses": null,
                                             "Options": null,
                                             "Validations": [
@@ -200,7 +200,7 @@
                     "QuestionBodyText": "",
                     "Hint": "",
                     "Input": {
-                        "Type": "text",
+                        "Type": "Text",
                         "InputClasses": null,
                         "Options": null,
                         "Validations": [
@@ -225,7 +225,7 @@
                     "QuestionBodyText": "",
                     "Hint": "",
                     "Input": {
-                        "Type": "text",
+                        "Type": "Text",
                         "InputClasses": null,
                         "Options": null,
                         "Validations": [
@@ -315,7 +315,7 @@
                     "QuestionBodyText": "",
                     "Hint": "",
                     "Input": {
-                        "Type": "text",
+                        "Type": "Text",
                         "InputClasses": "govuk-input--width-20",
                         "Options": null,
                         "Validations": [
@@ -370,7 +370,7 @@
                     "QuestionBodyText": "",
                     "Hint": "",
                     "Input": {
-                        "Type": "text",
+                        "Type": "Text",
                         "InputClasses": null,
                         "Options": null,
                         "Validations": [
@@ -395,7 +395,7 @@
                     "QuestionBodyText": "",
                     "Hint": "",
                     "Input": {
-                        "Type": "text",
+                        "Type": "Text",
                         "InputClasses": null,
                         "Options": null,
                         "Validations": [
@@ -485,7 +485,7 @@
                     "QuestionBodyText": "",
                     "Hint": "",
                     "Input": {
-                        "Type": "text",
+                        "Type": "Text",
                         "InputClasses": "govuk-input--width-20",
                         "Options": null,
                         "Validations": [
@@ -554,7 +554,7 @@
                                         "QuestionBodyText": "",
                                         "Hint": "",
                                         "Input": {
-                                            "Type": "number",
+                                            "Type": "Number",
                                             "InputClasses": "govuk-input--width-10",
                                             "Options": null,
                                             "Validations": [
@@ -646,7 +646,7 @@
                     "QuestionBodyText": "",
                     "Hint": "",
                     "Input": {
-                        "Type": "text",
+                        "Type": "Text",
                         "InputClasses": null,
                         "Options": null,
                         "Validations": [
@@ -781,7 +781,7 @@
                                         "QuestionBodyText": "",
                                         "Hint": "",
                                         "Input": {
-                                            "Type": "text",
+                                            "Type": "Text",
                                             "InputClasses": null,
                                             "Options": null,
                                             "Validations": [
@@ -912,7 +912,7 @@
                                         "QuestionBodyText": "",
                                         "Hint": "",
                                         "Input": {
-                                            "Type": "text",
+                                            "Type": "Text",
                                             "InputClasses": null,
                                             "Options": null,
                                             "Validations": [
@@ -1072,7 +1072,7 @@
                                         "QuestionBodyText": "",
                                         "Hint": "",
                                         "Input": {
-                                            "Type": "text",
+                                            "Type": "Text",
                                             "InputClasses": "govuk-input--width-10",
                                             "Options": null,
                                             "Validations": [
@@ -1192,7 +1192,7 @@
                                         "QuestionBodyText": "",
                                         "Hint": "",
                                         "Input": {
-                                            "Type": "text",
+                                            "Type": "Text",
                                             "InputClasses": null,
                                             "Options": null,
                                             "Validations": [
@@ -1217,7 +1217,7 @@
                                         "QuestionBodyText": "",
                                         "Hint": "",
                                         "Input": {
-                                            "Type": "text",
+                                            "Type": "Text",
                                             "InputClasses": "govuk-input--width-10",
                                             "Options": null,
                                             "Validations": [
@@ -1366,7 +1366,7 @@
                     "QuestionBodyText": "",
                     "Hint": "",
                     "Input": {
-                        "Type": "number",
+                        "Type": "Number",
                         "InputClasses": "govuk-input--width-5",
                         "Options": null,
                         "Validations": [
@@ -1553,7 +1553,7 @@
                     "QuestionBodyText": "",
                     "Hint": "",
                     "Input": {
-                        "Type": "text",
+                        "Type": "Text",
                         "InputClasses": null,
                         "Options": null,
                         "Validations": [
@@ -1578,7 +1578,7 @@
                     "QuestionBodyText": "",
                     "Hint": "",
                     "Input": {
-                        "Type": "text",
+                        "Type": "Text",
                         "InputClasses": null,
                         "Options": null,
                         "Validations": [
@@ -1647,7 +1647,7 @@
                                         "QuestionBodyText": "",
                                         "Hint": "",
                                         "Input": {
-                                            "Type": "text",
+                                            "Type": "Text",
                                             "InputClasses": "govuk-input--width-10",
                                             "Options": null,
                                             "Validations": [
