@@ -43,8 +43,8 @@
                                 "FurtherQuestions": null
                             },
                             {
-                                "Label": "An employer training apprentices in other organisations",
-                                "Value": "An employer training apprentices in other organisations",
+                                "Label": "An employer",
+                                "Value": "An employer",
                                 "FurtherQuestions": null
                             },
                             {
@@ -83,7 +83,7 @@
                     "Conditions": [
                         {
                             "QuestionId": "YO-140",
-                            "MustEqual": "An employer training apprentices in other organisations"
+                            "MustEqual": "An employer"
                         }
                     ],
                     "ConditionMet": false
