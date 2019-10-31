@@ -365,27 +365,13 @@
       "Questions": [
         {
           "QuestionId": "YO-110",
-          "QuestionTag": "Add-Partner-Individual-Name",
-          "Label": "Full name",
+          "QuestionTag": "Add-Partner-Individual",
+          "Label": "Enter the individual's details",
           "ShortLabel": "",
           "QuestionBodyText": "",
           "Hint": "",
           "Input": {
-            "Type": "Text",			
-            "Validations": [              
-            ]
-          },
-          "Order": null
-        },
-		{
-          "QuestionId": "YO-111",
-          "QuestionTag": "Add-Partner-Individual-DOB",
-          "Label": "Date of birth",
-          "ShortLabel": "",
-          "QuestionBodyText": "",
-          "Hint": "",
-          "Input": {
-            "Type": "MonthAndYear",			
+            "Type": "TabularData",			
             "Validations": [              
             ]
           },
@@ -423,7 +409,7 @@
         {
           "QuestionId": "YO-111",
           "QuestionTag": "Add-Partner-Organisation",
-          "Label": "<span class='govuk-label'>Partner organisation's name</span>",
+          "Label": "Enter the partner organisation's name",
 		  "ShortLabel": "",
 		  "QuestionBodyText": "",
 		  "Hint": "",
