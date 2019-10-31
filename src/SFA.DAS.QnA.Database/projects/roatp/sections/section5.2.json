@@ -15,7 +15,7 @@
                     "QuestionTag": "ReadinessToEngage-Engaging-Employers",
                     "Label": "Has your organisation engaged with employers to deliver apprenticeship training to their employees?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class=\"govuk-body\" id=\"rte-engaging-employers\"></p>",
+                    "QuestionBodyText": "<p class='govuk-body' id='rte-engaging-employers'></p>",
                     "Hint": "",
                     "Input": {
                         "Type": "Radio",
@@ -68,7 +68,7 @@
                     "QuestionTag": "ReadinessToEngage-Managing-Employers",
                     "Label": "How will your organisation manage its relationships with employers?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class=\"govuk-body\" id=\"rte-managing-employers\">Your answer should include how your organisation will:</p><ul class=\"govuk-list govuk-list--bullet\"><li>continuously monitor and improve employer engagement</li><li>regularly review feedback from employers</li><li>manage concerns and issues raised by employers</li><li>manage communication with employers</li></ul>",
+                    "QuestionBodyText": "<p class='govuk-body' id='rte-managing-employers'>Your answer should include how your organisation will:</p><ul class='govuk-list govuk-list--bullet'><li>continuously monitor and improve employer engagement</li><li>regularly review feedback from employers</li><li>manage concerns and issues raised by employers</li><li>manage communication with employers</li></ul>",
                     "Hint": "",
                     "Input": {
                         "Type": "Textarea",
@@ -115,7 +115,7 @@
                     "QuestionTag": "ReadinessToEngage-Managing-Employers-Fullname",
                     "QuestionBodyText": "",
                     "Input": {
-                        "Type": "text",
+                        "Type": "Text",
                         "Validations": [{
                                 "Name": "Required",
                                 "Value": null,
@@ -140,7 +140,7 @@
                     "Label": "Email",
                     "QuestionBodyText": "",
                     "Input": {
-                        "Type": "text",
+                        "Type": "Email",
                         "Validations": [{
                                 "Name": "EmailAddressIsValid",
                                 "Value": null,
@@ -168,15 +168,15 @@
                     "Label": "Contact number",
                     "QuestionBodyText": "",
                     "Input": {
-                        "Type": "text",
+                        "Type": "Number",
                         "Validations": [{
-                                "Name": "Regex",
-                                "Value": "^[0-9]*$",
-                                "ErrorMessage": "Enter a valid contact number using only numbers"
-                            }, {
                                 "Name": "Required",
                                 "Value": null,
                                 "ErrorMessage": "Enter a contact number using 10 digits or more"
+                            }, {
+                                "Name": "Regex",
+                                "Value": "^[0-9]*$",
+                                "ErrorMessage": "Enter a valid contact number using only numbers"
                             }, {
                                 "Name": "MaxCharCount",
                                 "Value": null,
@@ -184,7 +184,7 @@
                             }
                         ],
                         "Options": [],
-                        "InputClasses": null,
+                        "InputClasses": "govuk-input--width-20",
                         "DataEndpoint": null
                     },
                     "Order": null,
@@ -207,7 +207,7 @@
             "NotRequiredOrgTypes": null,
             "NotRequiredConditions": [],
             "NotRequired": false,
-            "BodyText": "<p class=\"govuk-body\" id=\"rte-managing-employers-who\">This should be someone who has the overall responsibility and can make decisions independently.</p><p class=\"govuk-body\">We'll only contact them if there is a concern.</p>",
+            "BodyText": "<p class='govuk-body' id='rte-managing-employers-who'>This should be someone who has the overall responsibility and can make decisions independently.</p><p class='govuk-body'>We'll only contact them if there is a concern.</p>",
             "ActivatedByPageId": ""
         }, {
             "PageId": "5130",
@@ -221,7 +221,7 @@
                     "QuestionTag": "ReadinessToEngage-Promote-Apprenticeships",
                     "Label": "How will your organisation promote apprenticeships to employers?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class=\"govuk-body\" id=\"rte-promote-apprenticeships\">For example, through find apprenticeship training, National Careers Services or other national branding.</p>",
+                    "QuestionBodyText": "<p class='govuk-body' id='rte-promote-apprenticeships'>For example, through find apprenticeship training, National Careers Services or other national branding.</p>",
                     "Hint": "",
                     "Input": {
                         "Type": "Textarea",

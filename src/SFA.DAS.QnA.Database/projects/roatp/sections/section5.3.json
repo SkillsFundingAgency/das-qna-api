@@ -15,7 +15,7 @@
                     "QuestionTag": "ReadinessToEngage-Complaints-Policy",
                     "Label": "Upload your organisation's complaints policy",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class=\"govuk-body\" id=\"rte-complaints-policy\">This must include:</p><ul class=\"govuk-list govuk-list--bullet\"><li>what a complaint is</li><li>how to raise a complaint</li><li>how long it takes for a complaint to be resolved</li></ul><p class=\"govuk-body\">The file must be a PDF and smaller than 5MB.</p>",
+                    "QuestionBodyText": "<p class='govuk-body' id='rte-complaints-policy'>This must include:</p><ul class='govuk-list govuk-list--bullet'><li>what a complaint is</li><li>how to raise a complaint</li><li>how long it takes for a complaint to be resolved</li></ul><p class='govuk-body'>The file must be a PDF and smaller than 5MB.</p>",
                     "Hint": "",
                     "Input": {
                         "Type": "FileUpload",
@@ -62,7 +62,7 @@
                     "QuestionTag": "ReadinessToEngage-Complaints-Website",
                     "Label": "Enter the website link for your organisation's complaints policy",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class=\"govuk-body\" id=\"rte-complaints-policy\">The complaints policy must be published on your organisation's website and be available to apprentices and employers.</p><p class=\"govuk-body\">Website link</p>",
+                    "QuestionBodyText": "<p class='govuk-body' id='rte-complaints-policy'>The complaints policy must be published on your organisation's website and be available to apprentices and employers.</p><p class='govuk-body'>Website link</p>",
                     "Hint": "For example, http://www.example.com/complaintspolicy",
                     "Input": {
                         "Type": "Text",
