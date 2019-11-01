@@ -365,7 +365,7 @@
       "Questions": [
         {
           "QuestionId": "YO-110",
-          "QuestionTag": "Add-Partner-Individual",
+          "QuestionTag": "Add-Partners",
           "Label": "Enter the individual's details",
           "ShortLabel": "",
           "QuestionBodyText": "",
@@ -407,31 +407,15 @@
       "InfoText": "",
       "Questions": [
         {
-          "QuestionId": "YO-111",
-          "QuestionTag": "Add-Partner-Organisation",
+          "QuestionId": "YO-110",
+          "QuestionTag": "Add-Partners",
           "Label": "Enter the partner organisation's name",
 		  "ShortLabel": "",
 		  "QuestionBodyText": "",
 		  "Hint": "",
 		  "Input": {
-		  	  "Type": "Text",
-			  "InputClasses": "",
+		  	  "Type": "TabularData",
 			  "Validations": [
-				{
-					"Name": "Required",
-					"Value": null,
-					"ErrorMessage": "Enter the partner organisation's name"
-				},
-				{
-					"Name": "MinLength",
-					"Value": 8,
-					"ErrorMessage": "Enter a full name"
-				},
-				{
-					"Name": "MaxLength",
-					"Value": 8,
-					"ErrorMessage": "Enter a full name using 255 characters or less"
-				}
 			]
 		},
           "Order": null
