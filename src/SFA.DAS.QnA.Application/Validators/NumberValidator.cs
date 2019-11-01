@@ -1,11 +1,9 @@
 using SFA.DAS.QnA.Api.Types.Page;
-using System;
 using System.Collections.Generic;
-using System.Text.RegularExpressions;
 
 namespace SFA.DAS.QnA.Application.Validators
 {
-    public class NumberIsValidValidator : IValidator
+    public class NumberValidator : IValidator
     {
         public ValidationDefinition ValidationDefinition { get; set; }
         public List<KeyValuePair<string, string>> Validate(Question question, Answer answer)
