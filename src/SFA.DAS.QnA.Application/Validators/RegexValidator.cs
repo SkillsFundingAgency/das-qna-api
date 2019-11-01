@@ -28,7 +28,7 @@ namespace SFA.DAS.QnA.Application.Validators
             {
                 return Regex.IsMatch(input, pattern);
             }
-            catch (FormatException)
+            catch (ArgumentException)
             {
                 return false;
             }
