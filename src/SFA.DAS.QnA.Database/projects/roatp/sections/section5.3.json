@@ -71,6 +71,10 @@
                                 "Value": null,
                                 "ErrorMessage": "Enter the website link for your organisation's complaints policy"
                             }, {
+                                "Name": "Url",
+                                "Value": null,
+                                "ErrorMessage": "Enter a valid website link"
+                            }, {
                                 "Name": "MaxLength",
                                 "Value": 100,
                                 "ErrorMessage": "Enter a website link using 100 characters or less"
