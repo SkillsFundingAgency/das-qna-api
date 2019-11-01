@@ -3,8 +3,7 @@ using NUnit.Framework;
 using SFA.DAS.QnA.Api.Types.Page;
 using SFA.DAS.QnA.Application.Validators;
 
-
-namespace SFA.DAS.QnA.Application.UnitTests.Validators.EmailAddressIsValidValidatorTests
+namespace SFA.DAS.QnA.Application.UnitTests.Validators.EmailTypeValidatorTests
 {
     [TestFixture]
     public class When_Validate_Called
@@ -21,11 +20,11 @@ namespace SFA.DAS.QnA.Application.UnitTests.Validators.EmailAddressIsValidValida
         [TestCase("test-test@test.co.uk", true)]
         public void Then_correct_errors_are_returned(string input, bool isValid)
         {
-            var validator = new EmailAddressIsValidValidator
+            var validator = new EmailTypeValidator
             {
                 ValidationDefinition = new ValidationDefinition()
                 {
-                    ErrorMessage = "Not a valid Email Address",
+                    ErrorMessage = "Answer must be a valid email",
                     Name = "Email"
                 }
             };
