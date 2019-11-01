@@ -2,6 +2,7 @@
 using NUnit.Framework;
 using SFA.DAS.QnA.Api.Types.Page;
 using SFA.DAS.QnA.Application.Validators;
+
 namespace SFA.DAS.QnA.Application.UnitTests.Validators.MinWordCountValidatorTests
 {
     [TestFixture]
@@ -19,7 +20,7 @@ namespace SFA.DAS.QnA.Application.UnitTests.Validators.MinWordCountValidatorTest
                 ValidationDefinition = new ValidationDefinition()
                 {
                     ErrorMessage = "Word count not achieved",
-                    Name = "WordCount",
+                    Name = "MinWordCount",
                     Value = wordLimit
                 }
             };

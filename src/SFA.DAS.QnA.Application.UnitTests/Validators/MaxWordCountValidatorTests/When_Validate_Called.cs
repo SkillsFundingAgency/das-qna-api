@@ -20,7 +20,7 @@ namespace SFA.DAS.QnA.Application.UnitTests.Validators.MaxWordCountValidatorTest
                 ValidationDefinition = new ValidationDefinition()
                 {
                     ErrorMessage = "Word count exceeded",
-                    Name = "WordCount",
+                    Name = "MaxWordCount",
                     Value = wordLimit
                 }
             };
