@@ -5,8 +5,13 @@ using SFA.DAS.QnA.Api.Types.Page;
 
 namespace SFA.DAS.QnA.Application.Validators
 {
-    public class RegisteredCharityNumberValidator : IValidator
+    public class EmailTypeValidator : IValidator
     {
+        public EmailTypeValidator()
+        {
+            ValidationDefinition = new ValidationDefinition() { ErrorMessage = "Answer must be a valid email" };
+        }
+
         public ValidationDefinition ValidationDefinition { get; set; }
         public List<KeyValuePair<string, string>> Validate(Question question, Answer answer)
         {
@@ -14,7 +19,7 @@ namespace SFA.DAS.QnA.Application.Validators
 
             var text = answer?.Value?.Trim();
 
-            if (!string.IsNullOrEmpty(text) && !IsValidRegisteredCharityNumber(text))
+            if (!string.IsNullOrEmpty(text) && !IsValidEmail(text))
             {
                 errors.Add(new KeyValuePair<string, string>(question.QuestionId, ValidationDefinition.ErrorMessage));
             }
@@ -22,16 +27,12 @@ namespace SFA.DAS.QnA.Application.Validators
             return errors;
         }
 
-        private static bool IsValidRegisteredCharityNumber(string registeredCharityNumber)
+        private static bool IsValidEmail(string email)
         {
             try
             {
-                // MFC 28/01/2019 left in cos specific rules unclear
-                //var rx = new Regex(@"^[0-9]{7}$");
-                //if (registeredCharityNumber.Length==8)
-                //    registeredCharityNumber = registeredCharityNumber.Replace("-","");
-
-                return Regex.IsMatch(registeredCharityNumber, @"^[0-9-]{1,}$");
+                return Regex.IsMatch(email,
+                    @"^[-!#$%&'*+/0-9=?A-Z^_a-z{|}~](\.?[-!#$%&'*+/0-9=?A-Z^_a-z{|}~])*@[a-zA-Z](-?[a-zA-Z0-9])*(\.[a-zA-Z](-?[a-zA-Z0-9])*)+$");
             }
             catch (FormatException)
             {

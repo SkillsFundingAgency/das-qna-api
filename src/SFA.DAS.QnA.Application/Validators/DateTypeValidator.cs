@@ -5,8 +5,13 @@ using SFA.DAS.QnA.Api.Types.Page;
 
 namespace SFA.DAS.QnA.Application.Validators
 {
-    public class DateValidator : IValidator
+    public class DateTypeValidator : IValidator
     {
+        public DateTypeValidator()
+        {
+            ValidationDefinition = new ValidationDefinition() { ErrorMessage = "Answer must be a valid date" };
+        }
+
         public ValidationDefinition ValidationDefinition { get; set; }
         public List<KeyValuePair<string, string>> Validate(Question question, Answer answer)
         {

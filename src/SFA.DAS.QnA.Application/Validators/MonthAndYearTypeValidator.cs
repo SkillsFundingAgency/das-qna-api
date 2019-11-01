@@ -5,8 +5,13 @@ using SFA.DAS.QnA.Api.Types.Page;
 
 namespace SFA.DAS.QnA.Application.Validators
 {
-    public class DateValidator : IValidator
+    public class MonthAndYearTypeValidator : IValidator
     {
+        public MonthAndYearTypeValidator()
+        {
+            ValidationDefinition = new ValidationDefinition() { ErrorMessage = "Answer must be a valid month and year" };
+        }
+
         public ValidationDefinition ValidationDefinition { get; set; }
         public List<KeyValuePair<string, string>> Validate(Question question, Answer answer)
         {
@@ -15,23 +20,22 @@ namespace SFA.DAS.QnA.Application.Validators
             var text = answer?.Value?.Trim();
             var dateParts = text?.Split(new[] { "," }, StringSplitOptions.RemoveEmptyEntries);
 
-            if (string.IsNullOrEmpty(text) || dateParts is null || dateParts.Length != 3)
+            if (string.IsNullOrEmpty(text) || dateParts is null || dateParts.Length != 2)
             {
                 errors.Add(new KeyValuePair<string, string>(question.QuestionId, ValidationDefinition.ErrorMessage));
             }
             else
             {
-                var day = dateParts[0];
-                var month = dateParts[1];
-                var year = dateParts[2];
+                var month = dateParts[0];
+                var year = dateParts[1];
 
-                if (string.IsNullOrWhiteSpace(day) || string.IsNullOrWhiteSpace(month) || string.IsNullOrWhiteSpace(year))
+                if (string.IsNullOrWhiteSpace(month) || string.IsNullOrWhiteSpace(year))
                 {
                     errors.Add(new KeyValuePair<string, string>(question.QuestionId, ValidationDefinition.ErrorMessage));
                 }
                 else
                 {
-                    var dateString = $"{day}/{month}/{year}";
+                    var dateString = $"1/{month}/{year}";
                     var formatStrings = new string[] { "d/M/yyyy" };
 
                     if (!DateTime.TryParseExact(dateString, formatStrings, null, DateTimeStyles.None, out _))
@@ -40,7 +44,7 @@ namespace SFA.DAS.QnA.Application.Validators
                     }
                 }
             }
-            
+
             return errors;
         }
     }

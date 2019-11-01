@@ -1,11 +1,11 @@
-﻿using System;
+using SFA.DAS.QnA.Api.Types.Page;
+using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
-using SFA.DAS.QnA.Api.Types.Page;
 
 namespace SFA.DAS.QnA.Application.Validators
 {
-    public class RegisteredCharityNumberValidator : IValidator
+    public class UrlValidator : IValidator
     {
         public ValidationDefinition ValidationDefinition { get; set; }
         public List<KeyValuePair<string, string>> Validate(Question question, Answer answer)
@@ -14,7 +14,7 @@ namespace SFA.DAS.QnA.Application.Validators
 
             var text = answer?.Value?.Trim();
 
-            if (!string.IsNullOrEmpty(text) && !IsValidRegisteredCharityNumber(text))
+            if (!string.IsNullOrEmpty(text) && !IsValidUrl(text))
             {
                 errors.Add(new KeyValuePair<string, string>(question.QuestionId, ValidationDefinition.ErrorMessage));
             }
@@ -22,21 +22,28 @@ namespace SFA.DAS.QnA.Application.Validators
             return errors;
         }
 
-        private static bool IsValidRegisteredCharityNumber(string registeredCharityNumber)
+        private static bool IsValidUrl(string url)
         {
+            bool isValid;
+
             try
             {
-                // MFC 28/01/2019 left in cos specific rules unclear
-                //var rx = new Regex(@"^[0-9]{7}$");
-                //if (registeredCharityNumber.Length==8)
-                //    registeredCharityNumber = registeredCharityNumber.Replace("-","");
-
-                return Regex.IsMatch(registeredCharityNumber, @"^[0-9-]{1,}$");
+                // This is intended for HTTPS & HTTP protocol only
+                isValid = Regex.IsMatch(url,
+                    @"^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$");
             }
             catch (FormatException)
             {
-                return false;
+                isValid = false;
             }
+
+            if(!isValid)
+            {
+                // This is backup plan, but only validate against an Absolute Uri!
+                isValid = Uri.IsWellFormedUriString(url, UriKind.Absolute);
+            }
+
+            return isValid;
         }
     }
 }
