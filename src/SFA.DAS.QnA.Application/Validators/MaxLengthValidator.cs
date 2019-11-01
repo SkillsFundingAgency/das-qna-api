@@ -9,9 +9,12 @@ namespace SFA.DAS.QnA.Application.Validators
         public List<KeyValuePair<string, string>> Validate(Question question, Answer answer)
         {
             var errors = new List<KeyValuePair<string, string>>();
-            if (answer.Value.Length > (long)ValidationDefinition.Value)
+
+            var text = answer?.Value?.Trim();
+
+            if (!string.IsNullOrEmpty(text) && text.Length > (long)ValidationDefinition.Value)
             {
-                errors.Add(new KeyValuePair<string, string>(answer.QuestionId, ValidationDefinition.ErrorMessage));
+                errors.Add(new KeyValuePair<string, string>(question.QuestionId, ValidationDefinition.ErrorMessage));
             }
 
             return errors;

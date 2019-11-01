@@ -4,7 +4,7 @@ using SFA.DAS.QnA.Api.Types.Page;
 
 namespace SFA.DAS.QnA.Application.Validators
 {
-    public class MaxWordCountValidator : IValidator
+    public class MinWordCountValidator : IValidator
     {
         public ValidationDefinition ValidationDefinition { get; set; }
         public List<KeyValuePair<string, string>> Validate(Question question, Answer answer)
@@ -17,9 +17,9 @@ namespace SFA.DAS.QnA.Application.Validators
             {
                 var wordCount = text.Split(new[] { " " }, StringSplitOptions.RemoveEmptyEntries).Length;
 
-                if (wordCount > (long)ValidationDefinition.Value)
+                if (wordCount < (long)ValidationDefinition.Value)
                 {
-                    errors.Add(new KeyValuePair<string, string>(answer.QuestionId, ValidationDefinition.ErrorMessage));
+                    errors.Add(new KeyValuePair<string, string>(question.QuestionId, ValidationDefinition.ErrorMessage));
                 }
             }
 
