@@ -1329,7 +1329,7 @@
                     "ShortLabel": "",
                     "InputClasses": null,
                     "QuestionBodyText": "",
-                    "Hint": "",
+                    "Hint": "For example, 3 1980",
                     "Input": {
                         "Type": "MonthAndYear",
                         "InputClasses": null,
@@ -1516,7 +1516,7 @@
                     "ShortLabel": "",
                     "InputClasses": null,
                     "QuestionBodyText": "",
-                    "Hint": "",
+                    "Hint": "For example, 31 3 1980",
                     "Input": {
                         "Type": "Date",
                         "InputClasses": null,

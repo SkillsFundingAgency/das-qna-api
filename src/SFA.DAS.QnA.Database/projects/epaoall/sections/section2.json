@@ -621,7 +621,7 @@
                     "ShortLabel": "Date of proceedings",
                     "InputClasses": null,
                     "QuestionBodyText": "",
-                    "Hint": "",
+                    "Hint": "For example, 31 3 1980",
                     "Input": {
                         "Type": "Date",
                         "InputClasses": null,
@@ -676,7 +676,7 @@
                     "ShortLabel": "Date the debt will be cleared",
                     "InputClasses": null,
                     "QuestionBodyText": "",
-                    "Hint": "",
+                    "Hint": "For example, 31 3 1980",
                     "Input": {
                         "Type": "Date",
                         "InputClasses": null,
@@ -1446,7 +1446,7 @@
                                         "ShortLabel": "Date of sanction",
                                         "InputClasses": null,
                                         "QuestionBodyText": "",
-                                        "Hint": "",
+                                        "Hint": "For example, 31 3 1980",
                                         "Input": {
                                             "Type": "Date",
                                             "InputClasses": null,
@@ -1785,7 +1785,7 @@
                                         "ShortLabel": "",
                                         "InputClasses": null,
                                         "QuestionBodyText": "",
-                                        "Hint": "",
+                                        "Hint": "For example, 31 3 1980",
                                         "Input": {
                                             "Type": "Date",
                                             "InputClasses": null,
