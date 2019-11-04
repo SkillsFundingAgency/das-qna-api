@@ -26,10 +26,10 @@ namespace SFA.DAS.QnA.Application.Validators
 
                 if (typeValidator != null)
                 {
-                    if (!string.IsNullOrEmpty(question.Input.ErrorMessage))
+                    if (!string.IsNullOrEmpty(question.Input.TypeErrorMessage))
                     {
                         // Override the default ErrorMessage if one was specified
-                        typeValidator.ValidationDefinition.ErrorMessage = question.Input.ErrorMessage;
+                        typeValidator.ValidationDefinition.ErrorMessage = question.Input.TypeErrorMessage;
                     }
 
                     validators.Add(typeValidator);
