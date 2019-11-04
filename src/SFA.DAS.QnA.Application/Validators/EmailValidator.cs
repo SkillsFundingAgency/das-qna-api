@@ -5,7 +5,7 @@ using SFA.DAS.QnA.Api.Types.Page;
 
 namespace SFA.DAS.QnA.Application.Validators
 {
-    public class EmailAddressIsValidValidator : IValidator
+    public class EmailValidator : IValidator
     {
         public ValidationDefinition ValidationDefinition { get; set; }
         public List<KeyValuePair<string, string>> Validate(Question question, Answer answer)

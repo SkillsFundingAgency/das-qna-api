@@ -5,7 +5,6 @@ namespace SFA.DAS.QnA.Api.Types.Page
     public class Input
     {
         public string Type { get; set; }
-        public string TypeErrorMessage { get; set; }
         public string InputClasses { get; set; }
         public List<Option> Options { get; set; }
         public List<ValidationDefinition> Validations { get; set; }
