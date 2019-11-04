@@ -56,99 +56,100 @@
       "NotRequiredOrgTypes": [],
       "BodyText": ""
     },
-	{
-			"PageId": "4035",
-			"SequenceId": null,
-			"SectionId": null,
-			"Title": "Tell us who has overall responsibility for safeguarding in your organisation",
-			"LinkTitle": "Safeguarding responsibility - link title",
-			"InfoText": "Safeguarding responsibility - info text",
-			 "Questions": [
-			  {
+    {
+      "PageId": "4035",
+      "SequenceId": null,
+      "SectionId": null,
+      "Title": "Tell us who has overall responsibility for safeguarding in your organisation",
+      "LinkTitle": "Safeguarding responsibility - link title",
+      "InfoText": "Safeguarding responsibility - info text",
+      "Questions": [
+        {
           "QuestionId": "PYA-45",
           "QuestionTag": "ProtectApprentice-Safeguarding-responsibility-name",
           "Label": "<span class='govuk-label'>Full name</span>",
           "ShortLabel": "",
-           "QuestionBodyText": "",
+          "QuestionBodyText": "",
           "Hint": "",
           "Input": {
             "Type": "Text",
             "Validations": [
-			{
-				"Name": "Required",
-				"Value": null,
+              {
+                "Name": "Required",
+                "Value": null,
                 "ErrorMessage": "Enter a full name"
-			  },
-			 {
-				"Name": "MaxLength",
+              },
+              {
+                "Name": "MaxLength",
                 "Value": 255,
                 "ErrorMessage": "Enter a full name using 255 characters or less"
-			  }
-			  ]
-			},
+              }
+            ]
+          },
           "Order": null
         },
-		 {
+        {
           "QuestionId": "PYA-46",
           "QuestionTag": "ProtectApprentice-Safeguarding-responsibility-email",
           "Label": "<span class='govuk-label'>Email</span>",
           "ShortLabel": "",
-           "QuestionBodyText": "",
+          "QuestionBodyText": "",
           "Hint": "",
           "Input": {
             "Type": "Text",
             "Validations": [
-			{
-				"Name": "Required",
-				"Value": null,
+              {
+                "Name": "Required",
+                "Value": null,
                 "ErrorMessage": "Enter a valid email"
-			  },
-			 {
-				"Name": "MaxLength",
+              },
+              {
+                "Name": "MaxLength",
                 "Value": 70,
                 "ErrorMessage": "Enter an email using 70 characters or less"
-			  },
-			 {
-				"Name": "EmailAddressIsValid",
+              },
+              {
+                "Name": "EmailAddressIsValid",
                 "Value": null,
                 "ErrorMessage": "Enter an email in the correct format, like name@example.com"
-			  }
-			  ]
-			},
+              }
+            ]
+          },
           "Order": null
         },
-		{
+        {
           "QuestionId": "PYA-47",
           "QuestionTag": "ProtectApprentice-Safeguarding-responsibility-contact-number",
           "Label": "<span class='govuk-label'>Contact number</span>",
           "ShortLabel": "",
-           "QuestionBodyText": "",
+          "QuestionBodyText": "",
           "Hint": "",
           "Input": {
             "Type": "Text",
             "Validations": [
-			{
-				"Name": "Required",
-				"Value": null,
+              {
+                "Name": "Required",
+                "Value": null,
                 "ErrorMessage": "Enter a valid contact number using only numbers"
-			  },
-			  {
-				"Name": "MinLength",
+              },
+              {
+                "Name": "MinLength",
                 "Value": 10,
                 "ErrorMessage": "Enter a contact number using 10 digits or more"
-			  },
-			  {
-				"Name": "MaxLength",
+              },
+              {
+                "Name": "MaxLength",
                 "Value": 20,
                 "ErrorMessage": "Enter a contact number using 20 digits or less"
-			  }
-			  ]
-			},
+              }
+            ]
+          },
           "Order": null
         }
 
-      ],"PageOfAnswers": [],
-       "Next": [      
+      ],
+      "PageOfAnswers": [],
+      "Next": [
         {
           "Action": "NextPage",
           "ReturnId": "4037",
@@ -166,44 +167,101 @@
       "NotRequiredOrgTypes": [],
       "BodyText": "<p class='govuk-body'>This must be someone who has the overall responsibility, relevant knowledge and skills to manage safeguarding concerns.</p><p class='govuk-body'>We'll only contact them if there is a safeguarding concern.</p>"
     },
-	{
-			"PageId": "4037",
-			"SequenceId": null,
-			"SectionId": null,
-			"Title": "Does your organisation's safeguarding policy include its responsibilities towards the Prevent duty?",
-			"LinkTitle": ,
-			"InfoText": "",
-    "Questions": [
-      {
-        "QuestionId": "PYA-47",
-        "QuestionTag": "ProtectApprentice-Safeguarding-prevent-duty",
-        "Label": "",
-        "ShortLabel": "",
-        "QuestionBodyText": "<p class='govuk-body' id='pya-equality-policy'>This means your organisation's safeguarding policy includes how it will:</p><ul class='govuk-list govuk-list--bullet'><li>have a legal responsibility to fulfil the Prevent duty statement</li><li>protect apprentices and employees from radicalising influences</li><li>ensure apprentices and employees are resilient to extreme narratives</li><li>identify changes in behaviour of apprentices and employees</li><li>deal with any issues raised by apprentices or employees</li></ul><p class='govuk-body'>Find out about <a href='https://www.gov.uk/government/publications/prevent-duty-guidance' target='_blank'>the Prevent duty (opens in a new windows or tab)</a></p>",
-        "Hint": "",
-        "Details": {
-          "Title": "What is the Prevent duty statement?",
-          "Body": "<p class='govuk-body'>The Prevent duty statement is 'to have due regard to the need to prevent people from being drawn into terrorism'.</p>"
-        },
-        "Input": {
-          "Type": "Checkbox",
-          "Validations": [
-            {
-              "Name": "Required",
-              "Value": null,
-              "ErrorMessage": "Tell us if your organisation's safeguarding policy include its responsibilities towards the Prevent duty"
-            }
-          ]
-        },
-        "Order": null
-      }
-
-    ],"PageOfAnswers": [],
-       "Next": [      
+    {
+      "PageId": "4037",
+      "SequenceId": null,
+      "SectionId": null,
+      "Title": "Does your organisation's safeguarding policy include its responsibilities towards the Prevent duty?",
+      "LinkTitle": "",
+      "InfoText": "",
+      "Questions": [
+        {
+          "QuestionId": "PYA-48",
+          "QuestionTag": "ProtectApprentice-Safeguarding-prevent-duty",
+          "Label": "Does your organisation's safeguarding policy include its responsibilities towards the Prevent duty?",
+          "ShortLabel": "",
+          "QuestionBodyText": "<p class='govuk-body' id='pya-equality-policy'>This means your organisation's safeguarding policy includes how it will:</p><ul class='govuk-list govuk-list--bullet'><li>have a legal responsibility to fulfil the Prevent duty statement</li><li>protect apprentices and employees from radicalising influences</li><li>ensure apprentices and employees are resilient to extreme narratives</li><li>identify changes in behaviour of apprentices and employees</li><li>deal with any issues raised by apprentices or employees</li></ul><p class='govuk-body'>Find out about <a href='https://www.gov.uk/government/publications/prevent-duty-guidance' target='_blank'>the Prevent duty (opens in a new windows or tab)</a></p>",
+          "Hint": "",
+          "Details": {
+            "Title": "What is the Prevent duty statement?",
+            "Body": "<p class='govuk-body'>The Prevent duty statement is 'to have due regard to the need to prevent people from being drawn into terrorism'.</p>"
+          },
+          "Input": {
+            "Type": "Radio",
+          "Options":  [ {
+            "Label": "Yes",
+            "Value": "Yes",
+            "FurtherQuestions": []
+          },
+          {
+          "Label": "No",
+          "Value": "No",
+          "FurtherQuestions": []
+        }],
+        "Validations": [
+        {
+          "Name": "Required",
+          "Value": null,
+          "ErrorMessage": "Tell us if your organisation's safeguarding policy include its responsibilities towards the Prevent duty"
+        }
+        ]
+    },
+    "Order": null
+}],
+      "PageOfAnswers": [],
+      "Next": [
         {
           "Action": "NextPage",
-          "ReturnId": "4040",
-          "Conditions": [],
+          "ReturnId": "4038",
+          "Conditions": [
+            {
+              "QuestionId": "PYA-48",
+              "MustEqual": "No"
+            }
+          ],
+          "ConditionMet": false
+        },
+          {
+            "Action": "NextPage",
+            "ReturnId": "",
+            "Conditions": [],
+            "ConditionMet": false
+          }
+      ],
+      "Complete": false,
+      "AllowMultipleAnswers": false,
+      "Order": null,
+      "Active": true,
+      "Visible": true,
+      "Feedback": null,
+      "HasFeedback": false,
+      "NotRequiredOrgTypes": [],
+      "BodyText": ""
+    },
+    {
+      "PageId": "4038",
+      "SequenceId": null,
+      "SectionId": null,
+      "Title": "title for 4038",
+      "LinkTitle": "",
+      "InfoText": "",
+      "Questions": [
+        {
+          "QuestionId": "PYA-49",
+          "QuestionTag": "ProtectApprentice-Safeguarding-prevent-duty-policy",
+          "Label": "Upload your organisation’s Prevent duty policy",
+          "ShortLabel": "",
+          "QuestionBodyText": "<p class='govuk-body' id='pya-duty-policy'>4038 body - holding page</p>",
+          "Hint": "",
+          "Input": {
+            "Type": "Hidden"
+          },
+          "Order": null
+        }
+
+      ],
+      "PageOfAnswers": [],
+      "Next": [],
           "ConditionMet": false
         }
       ],
@@ -215,7 +273,5 @@
       "Feedback": null,
       "HasFeedback": false,
       "NotRequiredOrgTypes": [],
-      "BodyText": "<p class='govuk-body'>This means blah blah</p>"
+      "BodyText": "Holding page"
     }
-	]
-}
