@@ -14,35 +14,46 @@ namespace SFA.DAS.QnA.Application.Validators
         {
             _serviceProvider = serviceProvider;
         }
-        
+
         public List<IValidator> Build(Question question)
         {
             var validators = new List<IValidator>();
 
-            var typeValidator = _serviceProvider.GetServices<IValidator>()
-                .FirstOrDefault(v => v.GetType().Name == question.Input.Type + "TypeValidator");
-            if (typeValidator != null)
+            if (question?.Input != null)
             {
-                validators.Add(typeValidator);
-            }
-            
-            if (question.Input.Validations != null && question.Input.Validations.Any())
-            {
-                foreach (var inputValidation in question.Input.Validations.Where(v => v.Name != "ClientApiCall"))
-                {
-                    var validator = _serviceProvider.GetServices<IValidator>()
-                        .FirstOrDefault(v => v.GetType().Name == inputValidation.Name + "Validator");
+                var typeValidator = _serviceProvider.GetServices<IValidator>()
+                    .FirstOrDefault(v => v.GetType().Name == $"{question.Input.Type}TypeValidator");
 
-                    if (validator != null)
+                if (typeValidator != null)
+                {
+                    if (!string.IsNullOrEmpty(question.Input.TypeErrorMessage))
                     {
-                        validator.ValidationDefinition = inputValidation;
-                        validators.Add(validator);
+                        // Override the default ErrorMessage if one was specified
+                        typeValidator.ValidationDefinition.ErrorMessage = question.Input.TypeErrorMessage;
+                    }
+
+                    validators.Add(typeValidator);
+                }
+
+                if (question.Input.Validations != null && question.Input.Validations.Any())
+                {
+                    foreach (var inputValidation in question.Input.Validations.Where(v => v.Name != "ClientApiCall"))
+                    {
+                        var validator = _serviceProvider.GetServices<IValidator>()
+                            .FirstOrDefault(v => v.GetType().Name == $"{inputValidation.Name}Validator");
+
+                        if (validator != null)
+                        {
+                            validator.ValidationDefinition = inputValidation;
+                            validators.Add(validator);
+                        }
                     }
                 }
-            }
-            else
-            {
-                validators.Add(new NullValidator());
+
+                if (validators.Count == 0)
+                {
+                    validators.Add(new NullValidator());
+                }
             }
 
             return validators;
