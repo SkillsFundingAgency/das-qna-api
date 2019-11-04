@@ -150,7 +150,7 @@
                                 "Value": null,
                                 "ErrorMessage": "Enter an email"
                             }, {
-                                "Name": "EmailAddressIsValid",
+                                "Name": "Email",
                                 "Value": null,
                                 "ErrorMessage": "Enter an email in the correct format, like name@example.com"                                
                             }, {
