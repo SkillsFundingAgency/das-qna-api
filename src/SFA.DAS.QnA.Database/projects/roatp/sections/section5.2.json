@@ -113,7 +113,10 @@
             "Questions": [{
                     "QuestionId": "RTE-22.1",
                     "QuestionTag": "ReadinessToEngage-Managing-Employers-Fullname",
+                    "Label": "Full name",
                     "QuestionBodyText": "",
+                    "ShortLabel": "",
+                    "Hint": "",
                     "Input": {
                         "Type": "Text",
                         "Validations": [{
@@ -132,13 +135,14 @@
                     },
                     "Order": null,
                     "Value": null,
-                    "ErrorMessages": null,
-                    "Label": "Full name"
+                    "ErrorMessages": null
                 }, {
                     "QuestionId": "RTE-22.2",
                     "QuestionTag": "ReadinessToEngage-Managing-Employers-Email",
                     "Label": "Email",
                     "QuestionBodyText": "",
+                    "ShortLabel": "",
+                    "Hint": "",
                     "Input": {
                         "Type": "Email",
                         "Validations": [{
@@ -167,6 +171,8 @@
                     "QuestionTag": "ReadinessToEngage-Managing-Employers-ContactNumber",
                     "Label": "Contact number",
                     "QuestionBodyText": "",
+                    "ShortLabel": "",
+                    "Hint": "",
                     "Input": {
                         "Type": "Number",
                         "Validations": [{
