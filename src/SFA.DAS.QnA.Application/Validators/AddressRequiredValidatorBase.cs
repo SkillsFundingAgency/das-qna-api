@@ -1,5 +1,5 @@
-using System;
 using System.Collections.Generic;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
 namespace SFA.DAS.QnA.Application.Validators
@@ -10,31 +10,29 @@ namespace SFA.DAS.QnA.Application.Validators
         {
             var errorMessages = new List<KeyValuePair<string, string>>();
 
-            JObject addressObject;
             try
             {
-                addressObject = JObject.Parse(answer);
-            }
-            catch (Exception e)
-            {
-                errorMessages.Add(new KeyValuePair<string, string>(questionId, "Address data is not JSON"));
-                return errorMessages;
-            }
-            
-            if (addressObject.TryGetValue(property, out var propertyValue))
-            {
-                if (string.IsNullOrWhiteSpace(propertyValue.Value<string>()))
+                var addressObject = JObject.Parse(answer);
+
+                if (addressObject.TryGetValue(property, out var propertyValue))
+                {
+                    if (string.IsNullOrWhiteSpace(propertyValue.Value<string>()))
+                    {
+                        errorMessages.Add(new KeyValuePair<string, string>(questionId, errorMessage));
+                        return errorMessages;
+                    }
+                }
+                else
                 {
                     errorMessages.Add(new KeyValuePair<string, string>(questionId, errorMessage));
-                    return errorMessages;
                 }
             }
-            else
+            catch (JsonReaderException)
             {
-                errorMessages.Add(new KeyValuePair<string, string>(questionId, errorMessage));
-                return errorMessages;
+                errorMessages.Add(new KeyValuePair<string, string>(questionId, "Address data is not JSON"));
+                
             }
-            
+
             return errorMessages;
         }
     }

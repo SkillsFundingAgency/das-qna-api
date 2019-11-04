@@ -10,32 +10,38 @@ namespace SFA.DAS.QnA.Application.Validators
         public ValidationDefinition ValidationDefinition { get; set; }
         public List<KeyValuePair<string, string>> Validate(Question question, Answer answer)
         {
-            var errorMessages = new List<KeyValuePair<string, string>>();
+            var errors = new List<KeyValuePair<string, string>>();
 
-            var dateParts = answer.Value.Split(new[]{","}, StringSplitOptions.RemoveEmptyEntries);
-            if (dateParts.Length != 3)
+            var text = answer?.Value?.Trim();
+            var dateParts = text?.Split(new[] { "," }, StringSplitOptions.RemoveEmptyEntries);
+
+            if (string.IsNullOrEmpty(text) || dateParts is null || dateParts.Length != 3)
             {
-                errorMessages.Add(new KeyValuePair<string, string>(question.QuestionId, ValidationDefinition.ErrorMessage));
-                return errorMessages;
+                errors.Add(new KeyValuePair<string, string>(question.QuestionId, ValidationDefinition.ErrorMessage));
+            }
+            else
+            {
+                var day = dateParts[0];
+                var month = dateParts[1];
+                var year = dateParts[2];
+
+                if (string.IsNullOrWhiteSpace(day) || string.IsNullOrWhiteSpace(month) || string.IsNullOrWhiteSpace(year))
+                {
+                    errors.Add(new KeyValuePair<string, string>(question.QuestionId, ValidationDefinition.ErrorMessage));
+                }
+                else
+                {
+                    var dateString = $"{day}/{month}/{year}";
+                    var formatStrings = new string[] { "d/M/yyyy" };
+
+                    if (!DateTime.TryParseExact(dateString, formatStrings, null, DateTimeStyles.None, out _))
+                    {
+                        errors.Add(new KeyValuePair<string, string>(question.QuestionId, ValidationDefinition.ErrorMessage));
+                    }
+                }
             }
             
-            var day = dateParts[0];
-            var month = dateParts[1];
-            var year = dateParts[2];
-
-            if (string.IsNullOrWhiteSpace(day) || string.IsNullOrWhiteSpace(month) || string.IsNullOrWhiteSpace(year))
-            {
-                errorMessages.Add(new KeyValuePair<string, string>(question.QuestionId, ValidationDefinition.ErrorMessage));
-                return errorMessages;
-            }
-
-            var formatStrings = new string[] { "d/M/yyyy" };
-            if (!DateTime.TryParseExact($"{day}/{month}/{year}", formatStrings, null, DateTimeStyles.None, out _))
-            {
-                errorMessages.Add(new KeyValuePair<string, string>(question.QuestionId, ValidationDefinition.ErrorMessage));
-            }
-
-            return errorMessages;
+            return errors;
         }
     }
 }

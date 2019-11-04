@@ -14,7 +14,7 @@
             "Questions": [
                 {
                     "QuestionId": "CD-30",
-                    "QuestionTag": "trading-name",
+                    "QuestionTag": null,
                     "Label": "Does your organisation have a trading name?",
                     "ShortLabel": "",
                     "InputClasses": null,
@@ -28,7 +28,7 @@
                                 "FurtherQuestions": [
                                     {
                                         "QuestionId": "CD-30.1",
-                                        "QuestionTag": null,
+                                        "QuestionTag": "trading-name",
                                         "Label": "What is your trading name?",
                                         "ShortLabel": "",
                                         "InputClasses": null,
@@ -1329,7 +1329,7 @@
                     "ShortLabel": "",
                     "InputClasses": null,
                     "QuestionBodyText": "",
-                    "Hint": "",
+                    "Hint": "For example, 3 1980",
                     "Input": {
                         "Type": "MonthAndYear",
                         "InputClasses": null,
@@ -1516,7 +1516,7 @@
                     "ShortLabel": "",
                     "InputClasses": null,
                     "QuestionBodyText": "",
-                    "Hint": "",
+                    "Hint": "For example, 31 3 1980",
                     "Input": {
                         "Type": "Date",
                         "InputClasses": null,
