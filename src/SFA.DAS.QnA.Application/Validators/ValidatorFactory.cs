@@ -21,26 +21,25 @@ namespace SFA.DAS.QnA.Application.Validators
 
             if (question?.Input != null)
             {
-                var typeValidator = _serviceProvider.GetServices<IValidator>()
-                    .FirstOrDefault(v => v.GetType().Name == $"{question.Input.Type}TypeValidator");
+                var hasInputValidatorsSpecified = question.Input.Validations != null && question.Input.Validations.Count > 0;
+
+                var typeValidator = _serviceProvider.GetServices<IValidator>().FirstOrDefault(v => v.GetType().Name == $"{question.Input.Type}TypeValidator");
 
                 if (typeValidator != null)
                 {
-                    if (!string.IsNullOrEmpty(question.Input.TypeErrorMessage))
-                    {
-                        // Override the default ErrorMessage if one was specified
-                        typeValidator.ValidationDefinition.ErrorMessage = question.Input.TypeErrorMessage;
-                    }
+                    var isTypeValidatorOverridden = hasInputValidatorsSpecified && question.Input.Validations.Any(v => v.Name == $"{question.Input.Type}Validator");
 
-                    validators.Add(typeValidator);
+                    if(!isTypeValidatorOverridden)
+                    {
+                        validators.Add(typeValidator);
+                    }
                 }
 
-                if (question.Input.Validations != null && question.Input.Validations.Any())
+                if (hasInputValidatorsSpecified)
                 {
                     foreach (var inputValidation in question.Input.Validations.Where(v => v.Name != "ClientApiCall"))
                     {
-                        var validator = _serviceProvider.GetServices<IValidator>()
-                            .FirstOrDefault(v => v.GetType().Name == $"{inputValidation.Name}Validator");
+                        var validator = _serviceProvider.GetServices<IValidator>().FirstOrDefault(v => v.GetType().Name == $"{inputValidation.Name}Validator");
 
                         if (validator != null)
                         {
