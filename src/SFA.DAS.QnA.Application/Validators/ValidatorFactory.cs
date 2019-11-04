@@ -21,8 +21,15 @@ namespace SFA.DAS.QnA.Application.Validators
 
             var typeValidator = _serviceProvider.GetServices<IValidator>()
                 .FirstOrDefault(v => v.GetType().Name == question.Input.Type + "TypeValidator");
+
             if (typeValidator != null)
             {
+                if (!string.IsNullOrEmpty(question.Input.ErrorMessage))
+                {
+                    // Override the default ErrorMessage if one was specified
+                    typeValidator.ValidationDefinition.ErrorMessage = question.Input.ErrorMessage;
+                }
+
                 validators.Add(typeValidator);
             }
             
