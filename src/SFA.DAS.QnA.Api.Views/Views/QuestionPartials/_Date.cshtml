@@ -1,8 +1,5 @@
 @model dynamic
 
-<span class="govuk-hint">
-    For example, 31 3 1980
-</span>
 @{
     var id = string.Format("{0}", Model.QuestionId);
     var dateParts = (string.IsNullOrWhiteSpace(Model.Value) ? new string[] { } : Model.Value.Split(","));

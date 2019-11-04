@@ -8,15 +8,14 @@ namespace SFA.DAS.QnA.Application.Validators
         public ValidationDefinition ValidationDefinition { get; set; }
         public List<KeyValuePair<string, string>> Validate(Question question, Answer answer)
         {
-            if (answer == null)
+            var errors = new List<KeyValuePair<string, string>>();
+
+            if (answer is null)
             {
-                return new List<KeyValuePair<string, string>>()
-                    {new KeyValuePair<string, string>(question.QuestionId, ValidationDefinition.ErrorMessage)};
+                errors.Add(new KeyValuePair<string, string>(question.QuestionId, ValidationDefinition.ErrorMessage));
             }
-            else
-            {
-                return new List<KeyValuePair<string, string>>();
-            }
+
+            return errors;
         }
     }
 }

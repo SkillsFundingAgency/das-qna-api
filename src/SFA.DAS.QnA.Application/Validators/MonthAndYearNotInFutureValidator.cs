@@ -10,34 +10,31 @@ namespace SFA.DAS.QnA.Application.Validators
         public ValidationDefinition ValidationDefinition { get; set; }
         public List<KeyValuePair<string, string>> Validate(Question question, Answer answer)
         {
-            var errorMessages = new List<KeyValuePair<string, string>>();
+            var errors = new List<KeyValuePair<string, string>>();
 
-            var dateParts = answer.Value.Split(new[] { "," }, StringSplitOptions.RemoveEmptyEntries);
-            if (dateParts.Length != 2)
+            var text = answer?.Value?.Trim();
+            var dateParts = answer?.Value.Split(new[] { "," }, StringSplitOptions.RemoveEmptyEntries);
+
+            if (!string.IsNullOrEmpty(text) && dateParts != null && dateParts.Length == 2)
             {
-                return errorMessages;
-            }
+                var month = dateParts[0];
+                var year = dateParts[1];
 
-            var day = "1";
-            var month = dateParts[0];
-            var year = dateParts[1];
-
-            if (string.IsNullOrWhiteSpace(day) || string.IsNullOrWhiteSpace(month) || string.IsNullOrWhiteSpace(year))
-            {
-                return errorMessages;
-            }
-
-            var formatStrings = new string[] { "d/M/yyyy" };
-            if (DateTime.TryParseExact($"{day}/{month}/{year}", formatStrings, null, DateTimeStyles.None, out DateTime dateEntered))
-            {
-                if (dateEntered > DateTime.Today)
+                if (string.IsNullOrWhiteSpace(month) || string.IsNullOrWhiteSpace(year))
                 {
-                    errorMessages.Add(new KeyValuePair<string, string>(question.QuestionId,
-                        ValidationDefinition.ErrorMessage));
+                    return errors;
+                }
+
+                var dateString = $"1/{month}/{year}";
+                var formatStrings = new string[] { "d/M/yyyy" };
+
+                if (DateTime.TryParseExact(dateString, formatStrings, null, DateTimeStyles.None, out var dateEntered) && dateEntered > DateTime.Today)
+                {
+                    errors.Add(new KeyValuePair<string, string>(question.QuestionId, ValidationDefinition.ErrorMessage));
                 }
             }
-
-            return errorMessages;
+            
+            return errors;
         }
     }
 }

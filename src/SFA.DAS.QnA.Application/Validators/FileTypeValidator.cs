@@ -9,21 +9,24 @@ namespace SFA.DAS.QnA.Application.Validators
         public ValidationDefinition ValidationDefinition { get; set; }
         public List<KeyValuePair<string, string>> Validate(Question question, Answer answer)
         {
-            var allowedExtension = ValidationDefinition.Value.ToString().Split(",", StringSplitOptions.RemoveEmptyEntries)[0];
+            var errors = new List<KeyValuePair<string, string>>();
 
-            var fileNameParts = answer.Value.Split(".", StringSplitOptions.RemoveEmptyEntries);
-            var fileNameExtension = fileNameParts[fileNameParts.Length - 1];
-                    
-            if (fileNameExtension != allowedExtension)
+            var text = answer?.Value?.Trim();
+
+            var allowedExtension = ValidationDefinition.Value?.ToString().Split(",", StringSplitOptions.RemoveEmptyEntries)[0];
+
+            if (!string.IsNullOrEmpty(text) && !string.IsNullOrEmpty(allowedExtension))
             {
-                return new List<KeyValuePair<string, string>>
+                var fileNameParts = text.Split(".", StringSplitOptions.RemoveEmptyEntries);
+                var fileNameExtension = fileNameParts[fileNameParts.Length - 1];
+
+                if (fileNameExtension != allowedExtension)
                 {
-                    new KeyValuePair<string, string>(question.QuestionId,
-                        ValidationDefinition.ErrorMessage)
-                };
+                    errors.Add(new KeyValuePair<string, string>(question.QuestionId, ValidationDefinition.ErrorMessage));
+                }
             }
 
-            return new List<KeyValuePair<string, string>>();
+            return errors;
         }
     }
 }

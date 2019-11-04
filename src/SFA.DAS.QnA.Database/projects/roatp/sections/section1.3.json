@@ -25,12 +25,12 @@
                             {
                                 "Label": "Yes",
                                 "Value": "Yes",
-                                "FurtherQuestions": null
+                                "FurtherQuestions": []
                             },
                             {
                                 "Label": "No",
                                 "Value": "No",
-                                "FurtherQuestions": null
+                                "FurtherQuestions": []
                             }
                         ],
                         "Validations": [
@@ -299,7 +299,7 @@
                                         "Label": "Enter main website address",
                                         "Input": {
                                             "Type": "Text",
-                                            "Options": null,
+                                            "Options": [],
                                             "Validations": [
                                                 {
                                                     "Name": "Required",
@@ -325,7 +325,7 @@
                             {
                                 "Label": "No",
                                 "Value": "No",
-                                "FurtherQuestions": null
+                                "FurtherQuestions": []
                             }
                         ],
                         "Validations": [
@@ -407,22 +407,22 @@
                             {
                                 "Label": "Less than 12 months",
                                 "Value": "1",
-                                "FurtherQuestions": null
+                                "FurtherQuestions": []
                             },
                             {
                                 "Label": "12 to 18 months",
                                 "Value": "2",
-                                "FurtherQuestions": null
+                                "FurtherQuestions": []
                             },
                             {
                                 "Label": "19 to 23 months",
                                 "Value": "3",
-                                "FurtherQuestions": null
+                                "FurtherQuestions": []
                             },
                             {
                                 "Label": "More than 23 months",
                                 "Value": "4",
-                                "FurtherQuestions": null
+                                "FurtherQuestions": []
                             }
                         ],
                         "Validations": [
@@ -544,22 +544,22 @@
                             {
                                 "Label": "Less than 12 months",
                                 "Value": "1",
-                                "FurtherQuestions": null
+                                "FurtherQuestions": []
                             },
                             {
                                 "Label": "12 to 18 months",
                                 "Value": "2",
-                                "FurtherQuestions": null
+                                "FurtherQuestions": []
                             },
                             {
                                 "Label": "19 to 23 months",
                                 "Value": "3",
-                                "FurtherQuestions": null
+                                "FurtherQuestions": []
                             },
                             {
                                 "Label": "More than 23 months",
                                 "Value": "4",
-                                "FurtherQuestions": null
+                                "FurtherQuestions": []
                             }
                         ],
                         "Validations": [
@@ -681,22 +681,22 @@
                             {
                                 "Label": "Less than 3 months",
                                 "Value": "1",
-                                "FurtherQuestions": null
+                                "FurtherQuestions": []
                             },
                             {
                                 "Label": "3 to 6 months",
                                 "Value": "2",
-                                "FurtherQuestions": null
+                                "FurtherQuestions": []
                             },
                             {
                                 "Label": "7 to 11 months",
                                 "Value": "3",
-                                "FurtherQuestions": null
+                                "FurtherQuestions": []
                             },
                             {
                                 "Label": "More than 11 months",
                                 "Value": "4",
-                                "FurtherQuestions": null
+                                "FurtherQuestions": []
                             }
                         ],
                         "Validations": [

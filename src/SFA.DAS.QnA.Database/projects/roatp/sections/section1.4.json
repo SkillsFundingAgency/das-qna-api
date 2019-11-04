@@ -223,12 +223,12 @@
                             {
                                 "Label": "Sole trader",
                                 "Value": "Sole trader",
-                                "FurtherQuestions": null
+                                "FurtherQuestions": []
                             },
                             {
                                 "Label": "Partnership",
                                 "Value": "Partnership",
-                                "FurtherQuestions": null
+                                "FurtherQuestions": []
                             }
                         ],
                         "Validations": [
@@ -336,7 +336,7 @@
                     "Label": "What is {{UKRLP-LegalName}}'s date of birth?",
                     "ShortLabel": "Date of birth",
                     "QuestionBodyText": "",
-                    "Hint": "",
+                    "Hint": "For example, 3 1980",
                     "Input": {
                         "Type": "MonthAndYear",
                         "Validations": [

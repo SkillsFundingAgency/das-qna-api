@@ -13,17 +13,21 @@ namespace SFA.DAS.QnA.Application.Validators
         public ValidationDefinition ValidationDefinition { get; set; }
         public List<KeyValuePair<string, string>> Validate(Question question, Answer answer)
         {
-            var validValues = question.Input.Options.Select(o => o.Value).ToList();
-            if (validValues.Any(v => v == answer.Value))
+            var errors = new List<KeyValuePair<string, string>>();
+
+            var text = answer?.Value?.Trim();
+
+            if (!string.IsNullOrEmpty(text))
             {
-                return new List<KeyValuePair<string, string>>();
+                var validValues = question.Input.Options.Select(o => o.Value).ToList();
+
+                if (validValues.All(v => v != text))
+                {
+                    errors.Add(new KeyValuePair<string, string>(question.QuestionId, ValidationDefinition.ErrorMessage));
+                }
             }
-            
-            return new List<KeyValuePair<string, string>>
-            {
-                new KeyValuePair<string, string>(answer.QuestionId,
-                    ValidationDefinition.ErrorMessage)
-            };
+
+            return errors;
         }
     }
 }
