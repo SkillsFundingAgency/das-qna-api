@@ -1,0 +1,58 @@
+{
+  "Title": "Health and safety policy",
+  "LinkTitle": "Health and safety policy",
+  "DisplayType": "Pages",
+  "RequestedFeedbackAnswered": null,
+  "Pages": [
+    {
+      "PageId": "4040",
+      "SequenceId": null,
+      "SectionId": null,
+      "Title": "Health and safety policy",
+      "LinkTitle": "Health and safety policy",
+      "InfoText": "Health and safety policy",
+      "Questions": [
+        {
+          "QuestionId": "PYA-50",
+          "QuestionTag": "ProtectApprentice-Health-And-Safety",
+          "Label": "Upload Health and safety holding page",
+          "ShortLabel": "",
+          "QuestionBodyText": "<p class='govuk-body' id='pya-health-and-safety-policy'>This must include blah blah</p><p class='govuk-body'>The file must be a PDF and smaller than 5MB.</p>",
+          "Hint": "",
+          "Input": {
+            "Type": "Hidden",
+            "Validations": []
+          },
+          "Order": null
+        }
+      ],
+      "PageOfAnswers": [],
+      "Next": [
+        {
+          "Action": "NextPage",
+          "ReturnId": "",
+          "Conditions": [],
+          "ConditionMet": false
+        }
+      ],
+      "Complete": false,
+      "AllowMultipleAnswers": false,
+      "Order": null,
+      "Active": true,
+      "Visible": true,
+      "Feedback": null,
+      "HasFeedback": false,
+      "NotRequiredOrgTypes": [],
+      "BodyText": ""
+    }
+  ],
+  "Complete": false,
+  "AllowMultipleAnswers": false,
+  "Order": null,
+  "Active": true,
+  "Visible": true,
+  "Feedback": null,
+  "HasFeedback": false,
+  "NotRequiredOrgTypes": [],
+  "BodyText": "H AND S Holding page"
+}

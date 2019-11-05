@@ -280,7 +280,7 @@
       "Next": [
         {
           "Action": "NextPage",
-          "ReturnId": "",
+          "ReturnId": null,
           "Conditions": [],
           "ConditionMet": false
         }
