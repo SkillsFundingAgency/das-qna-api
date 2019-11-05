@@ -127,22 +127,27 @@
           "Input": {
             "Type": "Text",
             "Validations": [
-			{
-				"Name": "Required",
-				"Value": null,
+              {
+                "Name": "Required",
+                "Value": null,
                 "ErrorMessage": "Enter a valid contact number using only numbers"
-			  },
-			  {
-				"Name": "MinLength",
+              },
+              {
+                "Name": "Number",
+                "Value": null,
+                "ErrorMessage": "Enter a valid contact number using only numbers"
+              },
+              {
+                "Name": "MinLength",
                 "Value": 10,
                 "ErrorMessage": "Enter a contact number using 10 digits or more"
-			  },
-			  {
-				"Name": "MaxLength",
+              },
+              {
+                "Name": "MaxLength",
                 "Value": 20,
                 "ErrorMessage": "Enter a contact number using 20 digits or less"
-			  }
-			  ]
+              }
+            ]
 			},
           "Order": null
         }
