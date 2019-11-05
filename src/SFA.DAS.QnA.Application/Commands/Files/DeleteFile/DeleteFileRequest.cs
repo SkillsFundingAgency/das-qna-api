@@ -74,7 +74,7 @@ namespace SFA.DAS.QnA.Application.Commands.Files.DeleteFile
             var container = await ContainerHelpers.GetContainer(_fileStorageConfig.Value.StorageConnectionString, _fileStorageConfig.Value.ContainerName);
             var directory = ContainerHelpers.GetDirectory(request.ApplicationId, section.SequenceId, request.SectionId, request.PageId, request.QuestionId, container);
 
-            var answer = page.PageOfAnswers.SingleOrDefault(poa => poa.Answers.Any(a => a.QuestionId == request.QuestionId && a.Value == request.FileName));
+            var answer = page.PageOfAnswers.SingleOrDefault(poa => poa.Answers.Any(a => a.QuestionId == request.QuestionId && a.Value[0] == request.FileName));
             if (answer is null)
             {
                 return new HandlerResponse<bool>(success:false, message:$"Question {request.QuestionId} on Page {request.PageId} in Application {request.ApplicationId} does not contain an upload named {request.FileName}.");
