@@ -15,7 +15,7 @@
         {
           "QuestionId": "PYA-50",
           "QuestionTag": "ProtectApprentice-Health-And-Safety",
-          "Label": "Upload your organisation’s health and safety policy",
+          "Label": "Upload your organisation's health and safety policy",
           "ShortLabel": "",
           "QuestionBodyText": "<p class='govuk-body' id='pya-health-and-safety-policy'>This must include how your organisation will:</p><ul class='govuk-list govuk-list--bullet'><li>promote the policy</li><li>get commitment to the policy</li><li>train its employees in implementing the policy</li><li>cover apprentices in its care</li><li>have people who are responsible for health and safety</li><li>identify and manage health and safety concerns</li><li>have a procedure for accidents or ill health of apprentices</li></ul><p class='govuk-body'>The file must be a PDF and smaller than 5MB.</p>",
           "Hint": "",
