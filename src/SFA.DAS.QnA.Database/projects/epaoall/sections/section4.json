@@ -1083,7 +1083,7 @@
                 {
                     "QuestionId": "CC-21",
                     "QuestionTag": "number-of-assessments",
-                    "Label": "How many end-point assessments do you expect to deliver annually?",
+                    "Label": "How many end-point assessments will you be able to deliver annually?",
                     "ShortLabel": "Assessment capacity",
                     "InputClasses": null,
                     "QuestionBodyText": "",
