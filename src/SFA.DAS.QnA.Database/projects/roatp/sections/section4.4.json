@@ -109,7 +109,7 @@
                 "ErrorMessage": "Enter an email using 70 characters or less"
               },
               {
-                "Name": "EmailAddressIsValid",
+				"Name": "Email",
                 "Value": null,
                 "ErrorMessage": "Enter an email in the correct format, like name@example.com"
               }
