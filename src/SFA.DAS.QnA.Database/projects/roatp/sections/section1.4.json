@@ -455,19 +455,19 @@
       "PageId": "130",
       "SequenceId": null,
       "SectionId": null,
-      "Title": "PLACEHOLDER Add People In Control",
+      "Title": "Confirm who's in control",
       "LinkTitle": "",
       "InfoText": "",
       "Questions": [
         {
           "QuestionId": "YO-130",
           "QuestionTag": "Add-PeopleInControl",
-          "Label": "PLACEHOLDER Add People In Control",
+          "Label": "Confirm who's in control",
           "ShortLabel": "",
           "QuestionBodyText": "",
           "Hint": "",
           "Input": {
-            "Type": "Hidden",			
+            "Type": "TabularData",			
             "Validations": [              
             ]
           },
