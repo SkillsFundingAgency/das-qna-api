@@ -15,9 +15,61 @@
         {
           "QuestionId": "PYA-50",
           "QuestionTag": "ProtectApprentice-Health-And-Safety",
-          "Label": "Upload Health and safety holding page",
+          "Label": "Upload your organisation’s health and safety policy",
           "ShortLabel": "",
-          "QuestionBodyText": "<p class='govuk-body' id='pya-health-and-safety-policy'>This must include blah blah</p><p class='govuk-body'>The file must be a PDF and smaller than 5MB.</p>",
+          "QuestionBodyText": "<p class='govuk-body' id='pya-health-and-safety-policy'>This must include how your organisation will:</p><ul class='govuk-list govuk-list--bullet'><li>promote the policy</li><li>get commitment to the policy</li><li>train its employees in implementing the policy</li><li>cover apprentices in its care</li><li>have people who are responsible for health and safety</li><li>identify and manage health and safety concerns</li><li>have a procedure for accidents or ill health of apprentices</li></ul><p class='govuk-body'>The file must be a PDF and smaller than 5MB.</p>",
+          "Hint": "",
+          "Input": {
+            "Type": "FileUpload",
+            "Validations": [
+              {
+                "Name": "Required",
+                "Value": null,
+                "ErrorMessage": "Select your organisation's health and safety policy"
+              },
+              {
+                "Name": "FileType",
+                "Value": "pdf",
+                "ErrorMessage": "The selected file must be a PDF"
+              }
+            ]
+          },
+          "Order": null
+        }
+      ],
+      "PageOfAnswers": [],
+      "Next": [
+        {
+          "Action": "NextPage",
+          "ReturnId": "4045",
+          "Conditions": [],
+          "ConditionMet": false
+        }
+      ],
+      "Complete": false,
+      "AllowMultipleAnswers": false,
+      "Order": null,
+      "Active": true,
+      "Visible": true,
+      "Feedback": null,
+      "HasFeedback": false,
+      "NotRequiredOrgTypes": [],
+      "BodyText": ""
+    },
+    {
+      "PageId": "4045",
+      "SequenceId": null,
+      "SectionId": null,
+      "Title": "Health and safety officer",
+      "LinkTitle": "Health and safety officer",
+      "InfoText": "Health and safety officer",
+      "Questions": [
+        {
+          "QuestionId": "PYA-55",
+          "QuestionTag": "ProtectApprentice-Health-And-Safety-Officer",
+          "Label": "Upload Health and safety officer holding page",
+          "ShortLabel": "",
+          "QuestionBodyText": "<p class='govuk-body' id='pya-health-and-safety-policy'>This must include stuff about H and S officer</p>",
           "Hint": "",
           "Input": {
             "Type": "Hidden",
