@@ -1,0 +1,85 @@
+{
+    "Title": "Systems and processes to collect apprenticeship data",
+    "LinkTitle": "Systems and processes to collect apprenticeship data",
+    "DisplayType": "Pages",
+    "RequestedFeedbackAnswered": null,
+    "Pages": [
+        {
+            "PageId": "8300",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "Systems and processes to collect apprenticeship data",
+            "LinkTitle": "Systems and processes to collect apprenticeship data",
+            "InfoText": "",
+            "Questions": [
+                {
+                    "QuestionId": "EAT-60",
+                    "QuestionTag": "EAT-Evaluating-Systems",
+                    "Label": "Does your organisation have systems and processes in place to collect apprenticeship data?",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "<p class='govuk-body' id='eat-evaluating-systems'>To be an apprenticeship training provider, your organisation must have systems and processes in place to collect:</p><ul class='govuk-list govuk-list--bullet'><li>retention data of apprentices</li><li>achievement data of apprentices</li><li>destination and progression data for apprentices - for example, permanent employment or getting a promotion at the end of the apprenticeship</li><li>employer and apprentice feedback</li></ul>",
+                    "Hint": "",
+                    "Input":
+                    {
+                        "Type": "Radio",
+                        "Options": [
+                            {
+                                "Label": "Yes",
+                                "Value": "Yes",
+                                "FurtherQuestions": null
+                            },
+                            {
+                                "Label": "No",
+                                "Value": "No",
+                                "FurtherQuestions": [
+                                    {
+                                        "QuestionId": "EAT-60.1",
+                                        "QuestionTag": "",
+                                        "Label": "",
+                                        "ShortLabel": "",
+                                        "InputClasses": null,
+                                        "QuestionBodyText": "<p class='govuk-body'>Before joining the RoATP, your organisation must have systems and processes in place to get this data. We may ask for evidence on this.</p>",
+                                        "Hint": "",
+                                        "Input": {
+                                            "Type": "Hidden",
+                                            "Validations": []
+                                        },
+                                        "Order": null,
+                                        "Value": null,
+                                        "ErrorMessages": null
+                                    }
+                                ],
+                            }
+                        ],
+                        "Validations": [
+                            {
+                                "Name": "Required",
+                                "Value": null,
+                                "ErrorMessage": "Tell us if your organisation has systems and processes in place to collect apprenticeship data"
+                            }
+                        ]
+                    },
+                    "Order": null
+                }
+            ],
+            "PageOfAnswers": [],
+            "Next": [
+                {
+                    "Action": "NextPage",
+                    "ReturnId": "8400",
+                    "Conditions": [],
+                    "ConditionMet": false
+                },
+            ],
+            "Complete": false,
+            "AllowMultipleAnswers": false,
+            "Order": null,
+            "Active": true,
+            "Visible": true,
+            "Feedback": null,
+            "HasFeedback": false,
+            "NotRequiredOrgTypes": [],
+            "BodyText": ""
+        }
+    ]
+}
