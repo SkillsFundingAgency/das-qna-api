@@ -27,14 +27,14 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Enter the name of the person named as authoriser"
                             }
                         ],
                         "DataEndpoint": null
                     },
                     "Order": null,
-                    "Value": null,
+                    "Value": "",
                     "ErrorMessages": null
                 },
                 {
@@ -52,14 +52,14 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Enter the job title of the person named as authoriser"
                             }
                         ],
                         "DataEndpoint": null
                     },
                     "Order": null,
-                    "Value": null,
+                    "Value": "",
                     "ErrorMessages": null
                 }
             ],
@@ -108,28 +108,26 @@
                                 "FurtherQuestions": [],
                                 "Value": "Yes",
                                 "Label": "Yes",
-                                "HintText": null,
-                                "HasHintText": false
+                                "HintText": ""
                             },
                             {
                                 "FurtherQuestions": [],
                                 "Value": "No",
                                 "Label": "No",
-                                "HintText": null,
-                                "HasHintText": false
+                                "HintText": ""
                             }
                         ],
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Select yes if any convictions apply"
                             }
                         ],
                         "DataEndpoint": null
                     },
                     "Order": null,
-                    "Value": null,
+                    "Value": "",
                     "ErrorMessages": null
                 }
             ],
@@ -188,28 +186,26 @@
                                 "FurtherQuestions": [],
                                 "Value": "Yes",
                                 "Label": "Yes",
-                                "HintText": null,
-                                "HasHintText": false
+                                "HintText": ""
                             },
                             {
                                 "FurtherQuestions": [],
                                 "Value": "No",
                                 "Label": "No",
-                                "HintText": null,
-                                "HasHintText": false
+                                "HintText": ""
                             }
                         ],
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Select yes if any convictions apply"
                             }
                         ],
                         "DataEndpoint": null
                     },
                     "Order": null,
-                    "Value": null,
+                    "Value": "",
                     "ErrorMessages": null
                 }
             ],
@@ -258,28 +254,26 @@
                                 "FurtherQuestions": [],
                                 "Value": "Yes",
                                 "Label": "Yes",
-                                "HintText": null,
-                                "HasHintText": false
+                                "HintText": ""
                             },
                             {
                                 "FurtherQuestions": [],
                                 "Value": "No",
                                 "Label": "No",
-                                "HintText": null,
-                                "HasHintText": false
+                                "HintText": ""
                             }
                         ],
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Select yes if any convictions apply"
                             }
                         ],
                         "DataEndpoint": null
                     },
                     "Order": null,
-                    "Value": null,
+                    "Value": "",
                     "ErrorMessages": null
                 }
             ],
@@ -335,28 +329,26 @@
                                 "FurtherQuestions": [],
                                 "Value": "Yes",
                                 "Label": "Yes",
-                                "HintText": null,
-                                "HasHintText": false
+                                "HintText": ""
                             },
                             {
                                 "FurtherQuestions": [],
                                 "Value": "No",
                                 "Label": "No",
-                                "HintText": null,
-                                "HasHintText": false
+                                "HintText": ""
                             }
                         ],
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Select yes if any convictions apply"
                             }
                         ],
                         "DataEndpoint": null
                     },
                     "Order": null,
-                    "Value": null,
+                    "Value": "",
                     "ErrorMessages": null
                 }
             ],
@@ -425,41 +417,39 @@
                                             "Validations": [
                                                 {
                                                     "Name": "Required",
-                                                    "Value": null,
+                                                    "Value": "",
                                                     "ErrorMessage": "Enter details of payments or payment agreements"
                                                 }
                                             ],
                                             "DataEndpoint": null
                                         },
                                         "Order": null,
-                                        "Value": null,
+                                        "Value": "",
                                         "ErrorMessages": null
                                     }
                                 ],
                                 "Value": "Yes",
                                 "Label": "Yes",
-                                "HintText": null,
-                                "HasHintText": false
+                                "HintText": ""
                             },
                             {
                                 "FurtherQuestions": [],
                                 "Value": "No",
                                 "Label": "No",
-                                "HintText": null,
-                                "HasHintText": false
+                                "HintText": ""
                             }
                         ],
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Select yes if any convictions apply"
                             }
                         ],
                         "DataEndpoint": null
                     },
                     "Order": null,
-                    "Value": null,
+                    "Value": "",
                     "ErrorMessages": null
                 }
             ],
@@ -515,28 +505,26 @@
                                 "FurtherQuestions": [],
                                 "Value": "Yes",
                                 "Label": "Yes",
-                                "HintText": null,
-                                "HasHintText": false
+                                "HintText": ""
                             },
                             {
                                 "FurtherQuestions": [],
                                 "Value": "No",
                                 "Label": "No",
-                                "HintText": null,
-                                "HasHintText": false
+                                "HintText": ""
                             }
                         ],
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Select yes if any bankruptcy or insolvency proceedings apply"
                             }
                         ],
                         "DataEndpoint": null
                     },
                     "Order": null,
-                    "Value": null,
+                    "Value": "",
                     "ErrorMessages": null
                 }
             ],
@@ -604,14 +592,14 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Enter the type of proceeding"
                             }
                         ],
                         "DataEndpoint": null
                     },
                     "Order": null,
-                    "Value": null,
+                    "Value": "",
                     "ErrorMessages": null
                 },
                 {
@@ -629,7 +617,7 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Enter a date"
                             },
                             {
@@ -641,7 +629,7 @@
                         "DataEndpoint": null
                     },
                     "Order": null,
-                    "Value": null,
+                    "Value": "",
                     "ErrorMessages": null
                 },
                 {
@@ -659,14 +647,14 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Enter how you are repaying the debts"
                             }
                         ],
                         "DataEndpoint": null
                     },
                     "Order": null,
-                    "Value": null,
+                    "Value": "",
                     "ErrorMessages": null
                 },
                 {
@@ -684,7 +672,7 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Enter a date"
                             },
                             {
@@ -696,7 +684,7 @@
                         "DataEndpoint": null
                     },
                     "Order": null,
-                    "Value": null,
+                    "Value": "",
                     "ErrorMessages": null
                 }
             ],
@@ -758,41 +746,39 @@
                                             "Validations": [
                                                 {
                                                     "Name": "Required",
-                                                    "Value": null,
+                                                    "Value": "",
                                                     "ErrorMessage": "Enter details of any mitigating factors"
                                                 }
                                             ],
                                             "DataEndpoint": null
                                         },
                                         "Order": null,
-                                        "Value": null,
+                                        "Value": "",
                                         "ErrorMessages": null
                                     }
                                 ],
                                 "Value": "Yes",
                                 "Label": "Yes",
-                                "HintText": null,
-                                "HasHintText": false
+                                "HintText": ""
                             },
                             {
                                 "FurtherQuestions": [],
                                 "Value": "No",
                                 "Label": "No",
-                                "HintText": null,
-                                "HasHintText": false
+                                "HintText": ""
                             }
                         ],
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Select yes if any cessation of trading proceedings apply"
                             }
                         ],
                         "DataEndpoint": null
                     },
                     "Order": null,
-                    "Value": null,
+                    "Value": "",
                     "ErrorMessages": null
                 }
             ],
@@ -861,41 +847,39 @@
                                             "Validations": [
                                                 {
                                                     "Name": "Required",
-                                                    "Value": null,
+                                                    "Value": "",
                                                     "ErrorMessage": "Enter details of any mitigating factors"
                                                 }
                                             ],
                                             "DataEndpoint": null
                                         },
                                         "Order": null,
-                                        "Value": null,
+                                        "Value": "",
                                         "ErrorMessages": null
                                     }
                                 ],
                                 "Value": "Yes",
                                 "Label": "Yes",
-                                "HintText": null,
-                                "HasHintText": false
+                                "HintText": ""
                             },
                             {
                                 "FurtherQuestions": [],
                                 "Value": "No",
                                 "Label": "No",
-                                "HintText": null,
-                                "HasHintText": false
+                                "HintText": ""
                             }
                         ],
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Select yes if any tax returns have been found to be incorrect"
                             }
                         ],
                         "DataEndpoint": null
                     },
                     "Order": null,
-                    "Value": null,
+                    "Value": "",
                     "ErrorMessages": null
                 }
             ],
@@ -964,41 +948,39 @@
                                             "Validations": [
                                                 {
                                                     "Name": "Required",
-                                                    "Value": null,
+                                                    "Value": "",
                                                     "ErrorMessage": "Enter details of any mitigating factors"
                                                 }
                                             ],
                                             "DataEndpoint": null
                                         },
                                         "Order": null,
-                                        "Value": null,
+                                        "Value": "",
                                         "ErrorMessages": null
                                     }
                                 ],
                                 "Value": "Yes",
                                 "Label": "Yes",
-                                "HintText": null,
-                                "HasHintText": false
+                                "HintText": ""
                             },
                             {
                                 "FurtherQuestions": [],
                                 "Value": "No",
                                 "Label": "No",
-                                "HintText": null,
-                                "HasHintText": false
+                                "HintText": ""
                             }
                         ],
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Select yes if any tax returns have been found to be incorrect"
                             }
                         ],
                         "DataEndpoint": null
                     },
                     "Order": null,
-                    "Value": null,
+                    "Value": "",
                     "ErrorMessages": null
                 }
             ],
@@ -1067,41 +1049,39 @@
                                             "Validations": [
                                                 {
                                                     "Name": "Required",
-                                                    "Value": null,
+                                                    "Value": "",
                                                     "ErrorMessage": "Enter details of any mitigating factors"
                                                 }
                                             ],
                                             "DataEndpoint": null
                                         },
                                         "Order": null,
-                                        "Value": null,
+                                        "Value": "",
                                         "ErrorMessages": null
                                     }
                                 ],
                                 "Value": "Yes",
                                 "Label": "Yes",
-                                "HintText": null,
-                                "HasHintText": false
+                                "HintText": ""
                             },
                             {
                                 "FurtherQuestions": [],
                                 "Value": "No",
                                 "Label": "No",
-                                "HintText": null,
-                                "HasHintText": false
+                                "HintText": ""
                             }
                         ],
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Select yes if your organisation has had any contracts withdrawn"
                             }
                         ],
                         "DataEndpoint": null
                     },
                     "Order": null,
-                    "Value": null,
+                    "Value": "",
                     "ErrorMessages": null
                 }
             ],
@@ -1170,14 +1150,14 @@
                                             "Validations": [
                                                 {
                                                     "Name": "Required",
-                                                    "Value": null,
+                                                    "Value": "",
                                                     "ErrorMessage": "Enter details of any mitigating factors"
                                                 }
                                             ],
                                             "DataEndpoint": null
                                         },
                                         "Order": null,
-                                        "Value": null,
+                                        "Value": "",
                                         "ErrorMessages": null
                                     },
                                     {
@@ -1195,14 +1175,14 @@
                                             "Validations": [
                                                 {
                                                     "Name": "Required",
-                                                    "Value": null,
+                                                    "Value": "",
                                                     "ErrorMessage": "Enter a full name"
                                                 }
                                             ],
                                             "DataEndpoint": null
                                         },
                                         "Order": null,
-                                        "Value": null,
+                                        "Value": "",
                                         "ErrorMessages": null
                                     },
                                     {
@@ -1220,7 +1200,7 @@
                                             "Validations": [
                                                 {
                                                     "Name": "Required",
-                                                    "Value": null,
+                                                    "Value": "",
                                                     "ErrorMessage": "Enter a date"
                                                 },
                                                 {
@@ -1232,34 +1212,32 @@
                                             "DataEndpoint": null
                                         },
                                         "Order": null,
-                                        "Value": null,
+                                        "Value": "",
                                         "ErrorMessages": null
                                     }
                                 ],
                                 "Value": "Yes",
                                 "Label": "Yes",
-                                "HintText": null,
-                                "HasHintText": false
+                                "HintText": ""
                             },
                             {
                                 "FurtherQuestions": [],
                                 "Value": "No",
                                 "Label": "No",
-                                "HintText": null,
-                                "HasHintText": false
+                                "HintText": ""
                             }
                         ],
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Select yes if your organisation has withdrawn from any contracts"
                             }
                         ],
                         "DataEndpoint": null
                     },
                     "Order": null,
-                    "Value": null,
+                    "Value": "",
                     "ErrorMessages": null
                 }
             ],
@@ -1328,7 +1306,7 @@
                                             "Validations": [
                                                 {
                                                     "Name": "Required",
-                                                    "Value": null,
+                                                    "Value": "",
                                                     "ErrorMessage": "Enter a date"
                                                 },
                                                 {
@@ -1340,7 +1318,7 @@
                                             "DataEndpoint": null
                                         },
                                         "Order": null,
-                                        "Value": null,
+                                        "Value": "",
                                         "ErrorMessages": null
                                     },
                                     {
@@ -1358,41 +1336,39 @@
                                             "Validations": [
                                                 {
                                                     "Name": "Required",
-                                                    "Value": null,
+                                                    "Value": "",
                                                     "ErrorMessage": "Enter the reasons why your organisation was removed from those registers"
                                                 }
                                             ],
                                             "DataEndpoint": null
                                         },
                                         "Order": null,
-                                        "Value": null,
+                                        "Value": "",
                                         "ErrorMessages": null
                                     }
                                 ],
                                 "Value": "Yes",
                                 "Label": "Yes",
-                                "HintText": null,
-                                "HasHintText": false
+                                "HintText": ""
                             },
                             {
                                 "FurtherQuestions": [],
                                 "Value": "No",
                                 "Label": "No",
-                                "HintText": null,
-                                "HasHintText": false
+                                "HintText": ""
                             }
                         ],
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Select yes if your organisation been removed from the listed registers"
                             }
                         ],
                         "DataEndpoint": null
                     },
                     "Order": null,
-                    "Value": null,
+                    "Value": "",
                     "ErrorMessages": null
                 }
             ],
@@ -1454,7 +1430,7 @@
                                             "Validations": [
                                                 {
                                                     "Name": "Required",
-                                                    "Value": null,
+                                                    "Value": "",
                                                     "ErrorMessage": "Enter a date"
                                                 },
                                                 {
@@ -1466,7 +1442,7 @@
                                             "DataEndpoint": null
                                         },
                                         "Order": null,
-                                        "Value": null,
+                                        "Value": "",
                                         "ErrorMessages": null
                                     },
                                     {
@@ -1484,41 +1460,39 @@
                                             "Validations": [
                                                 {
                                                     "Name": "Required",
-                                                    "Value": null,
+                                                    "Value": "",
                                                     "ErrorMessage": "Enter the reasons why your organisation received direction or sanctions"
                                                 }
                                             ],
                                             "DataEndpoint": null
                                         },
                                         "Order": null,
-                                        "Value": null,
+                                        "Value": "",
                                         "ErrorMessages": null
                                     }
                                 ],
                                 "Value": "Yes",
                                 "Label": "Yes",
-                                "HintText": null,
-                                "HasHintText": false
+                                "HintText": ""
                             },
                             {
                                 "FurtherQuestions": [],
                                 "Value": "No",
                                 "Label": "No",
-                                "HintText": null,
-                                "HasHintText": false
+                                "HintText": ""
                             }
                         ],
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Select yes if your organisation has received direction or sanctions"
                             }
                         ],
                         "DataEndpoint": null
                     },
                     "Order": null,
-                    "Value": null,
+                    "Value": "",
                     "ErrorMessages": null
                 }
             ],
@@ -1587,41 +1561,39 @@
                                             "Validations": [
                                                 {
                                                     "Name": "Required",
-                                                    "Value": null,
+                                                    "Value": "",
                                                     "ErrorMessage": "Enter details of any mitigating factors"
                                                 }
                                             ],
                                             "DataEndpoint": null
                                         },
                                         "Order": null,
-                                        "Value": null,
+                                        "Value": "",
                                         "ErrorMessages": null
                                     }
                                 ],
                                 "Value": "Yes",
                                 "Label": "Yes",
-                                "HintText": null,
-                                "HasHintText": false
+                                "HintText": ""
                             },
                             {
                                 "FurtherQuestions": [],
                                 "Value": "No",
                                 "Label": "No",
-                                "HintText": null,
-                                "HasHintText": false
+                                "HintText": ""
                             }
                         ],
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Select yes if your organisation has ever had to repay public money"
                             }
                         ],
                         "DataEndpoint": null
                     },
                     "Order": null,
-                    "Value": null,
+                    "Value": "",
                     "ErrorMessages": null
                 }
             ],
@@ -1690,41 +1662,39 @@
                                             "Validations": [
                                                 {
                                                     "Name": "Required",
-                                                    "Value": null,
+                                                    "Value": "",
                                                     "ErrorMessage": "Enter details of any mitigating factors"
                                                 }
                                             ],
                                             "DataEndpoint": null
                                         },
                                         "Order": null,
-                                        "Value": null,
+                                        "Value": "",
                                         "ErrorMessages": null
                                     }
                                 ],
                                 "Value": "Yes",
                                 "Label": "Yes",
-                                "HintText": null,
-                                "HasHintText": false
+                                "HintText": ""
                             },
                             {
                                 "FurtherQuestions": [],
                                 "Value": "No",
                                 "Label": "No",
-                                "HintText": null,
-                                "HasHintText": false
+                                "HintText": ""
                             }
                         ],
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Select yes if any of the listed apply"
                             }
                         ],
                         "DataEndpoint": null
                     },
                     "Order": null,
-                    "Value": null,
+                    "Value": "",
                     "ErrorMessages": null
                 }
             ],
@@ -1793,7 +1763,7 @@
                                             "Validations": [
                                                 {
                                                     "Name": "Required",
-                                                    "Value": null,
+                                                    "Value": "",
                                                     "ErrorMessage": "Enter a date"
                                                 },
                                                 {
@@ -1805,7 +1775,7 @@
                                             "DataEndpoint": null
                                         },
                                         "Order": null,
-                                        "Value": null,
+                                        "Value": "",
                                         "ErrorMessages": null
                                     },
                                     {
@@ -1823,14 +1793,14 @@
                                             "Validations": [
                                                 {
                                                     "Name": "Required",
-                                                    "Value": null,
+                                                    "Value": "",
                                                     "ErrorMessage": "Enter details of the dispute"
                                                 }
                                             ],
                                             "DataEndpoint": null
                                         },
                                         "Order": null,
-                                        "Value": null,
+                                        "Value": "",
                                         "ErrorMessages": null
                                     },
                                     {
@@ -1848,41 +1818,39 @@
                                             "Validations": [
                                                 {
                                                     "Name": "Required",
-                                                    "Value": null,
+                                                    "Value": "",
                                                     "ErrorMessage": "Enter current status of the dispute"
                                                 }
                                             ],
                                             "DataEndpoint": null
                                         },
                                         "Order": null,
-                                        "Value": null,
+                                        "Value": "",
                                         "ErrorMessages": null
                                     }
                                 ],
                                 "Value": "Yes",
                                 "Label": "Yes",
-                                "HintText": null,
-                                "HasHintText": false
+                                "HintText": ""
                             },
                             {
                                 "FurtherQuestions": [],
                                 "Value": "No",
                                 "Label": "No",
-                                "HintText": null,
-                                "HasHintText": false
+                                "HintText": ""
                             }
                         ],
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Select yes if your organisation has an outstanding or ongoing legal dispute"
                             }
                         ],
                         "DataEndpoint": null
                     },
                     "Order": null,
-                    "Value": null,
+                    "Value": "",
                     "ErrorMessages": null
                 }
             ],
@@ -1938,28 +1906,26 @@
                                 "FurtherQuestions": [],
                                 "Value": "Yes",
                                 "Label": "Yes",
-                                "HintText": null,
-                                "HasHintText": false
+                                "HintText": ""
                             },
                             {
                                 "FurtherQuestions": [],
                                 "Value": "No",
                                 "Label": "No",
-                                "HintText": null,
-                                "HasHintText": false
+                                "HintText": ""
                             }
                         ],
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Select yes if you understand the false declarations statement"
                             }
                         ],
                         "DataEndpoint": null
                     },
                     "Order": null,
-                    "Value": null,
+                    "Value": "",
                     "ErrorMessages": null
                 }
             ],
@@ -2008,28 +1974,26 @@
                                 "FurtherQuestions": [],
                                 "Value": "Yes",
                                 "Label": "Yes",
-                                "HintText": null,
-                                "HasHintText": false
+                                "HintText": ""
                             },
                             {
                                 "FurtherQuestions": [],
                                 "Value": "No",
                                 "Label": "No",
-                                "HintText": null,
-                                "HasHintText": false
+                                "HintText": ""
                             }
                         ],
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Select yes if your applications to deliver end-point assessments will be accurate and true representations"
                             }
                         ],
                         "DataEndpoint": null
                     },
                     "Order": null,
-                    "Value": null,
+                    "Value": "",
                     "ErrorMessages": null
                 }
             ],
@@ -2078,28 +2042,26 @@
                                 "FurtherQuestions": [],
                                 "Value": "Yes",
                                 "Label": "Yes",
-                                "HintText": null,
-                                "HasHintText": false
+                                "HintText": ""
                             },
                             {
                                 "FurtherQuestions": [],
                                 "Value": "No",
                                 "Label": "No",
-                                "HintText": null,
-                                "HasHintText": false
+                                "HintText": ""
                             }
                         ],
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Select yes if you agree for your organisation details to be added to the register"
                             }
                         ],
                         "DataEndpoint": null
                     },
                     "Order": null,
-                    "Value": null,
+                    "Value": "",
                     "ErrorMessages": null
                 }
             ],
