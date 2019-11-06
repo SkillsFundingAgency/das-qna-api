@@ -17,7 +17,7 @@ namespace SFA.DAS.QnA.Application.Validators
             {
                 var wordCount = text.Split(new[] { " " }, StringSplitOptions.RemoveEmptyEntries).Length;
 
-                if (wordCount > (long)ValidationDefinition.Value)
+                if (wordCount > long.Parse(ValidationDefinition.Value))
                 {
                     errors.Add(new KeyValuePair<string, string>(answer.QuestionId, ValidationDefinition.ErrorMessage));
                 }
