@@ -133,6 +133,11 @@
                 "ErrorMessage": "Enter a valid contact number using only numbers"
               },
               {
+                "Name": "Number",
+                "Value": null,
+                "ErrorMessage": "Enter a valid contact number using only numbers"
+              },
+              {
                 "Name": "MinLength",
                 "Value": 10,
                 "ErrorMessage": "Enter a contact number using 10 digits or more"
