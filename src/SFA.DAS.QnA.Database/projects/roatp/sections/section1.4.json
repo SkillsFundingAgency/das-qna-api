@@ -97,8 +97,7 @@
       "Feedback": null,
       "HasFeedback": false,
       "NotRequiredOrgTypes": [],
-      "BodyText": "",
-	  "NotRequired": true
+      "BodyText": ""
     },
 	{
       "PageId": "80",
@@ -153,8 +152,7 @@
       "Feedback": null,
       "HasFeedback": false,
       "NotRequiredOrgTypes": [],
-      "BodyText": "",
-	  "NotRequired": true
+      "BodyText": ""
     },		
 	{
       "PageId": "90",
@@ -196,8 +194,7 @@
       "Feedback": null,
       "HasFeedback": false,
       "NotRequiredOrgTypes": [],
-      "BodyText": "",
-	  "NotRequired": true
+      "BodyText": ""
     },
 	{
       "PageId": "100",
@@ -276,8 +273,7 @@
       "Feedback": null,
       "HasFeedback": false,
       "NotRequiredOrgTypes": [],
-      "BodyText": "",
-	  "NotRequired": true
+      "BodyText": ""
     },	
 	{
       "PageId": "101",
@@ -352,8 +348,7 @@
       "Feedback": null,
       "HasFeedback": false,
       "NotRequiredOrgTypes": [],
-      "BodyText": "",
-	  "NotRequired": true
+      "BodyText": ""
     },	
 	{
       "PageId": "110",
@@ -395,8 +390,7 @@
       "Feedback": null,
       "HasFeedback": false,
       "NotRequiredOrgTypes": [],
-      "BodyText": "",
-	  "NotRequired": true
+      "BodyText": ""
     },
 	{
       "PageId": "120",
@@ -448,8 +442,7 @@
       "Feedback": null,
       "HasFeedback": false,
       "NotRequiredOrgTypes": [],
-      "BodyText": "",
-	  "NotRequired": true
+      "BodyText": ""
     },
 	{
       "PageId": "130",
@@ -491,8 +484,7 @@
       "Feedback": null,
       "HasFeedback": false,
       "NotRequiredOrgTypes": [],
-      "BodyText": "",
-	  "NotRequired": true
+      "BodyText": ""
     }
   ]
 }

@@ -1065,8 +1065,7 @@
             "HasFeedback": false,
             "NotRequiredConditions": [],
             "ActivatedByPageId": null,
-            "BodyText": "",
-            "NotRequired": true
+            "BodyText": ""
         }
     ]
 }
