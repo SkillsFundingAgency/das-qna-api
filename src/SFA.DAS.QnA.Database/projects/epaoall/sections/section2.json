@@ -108,15 +108,13 @@
                                 "FurtherQuestions": [],
                                 "Value": "Yes",
                                 "Label": "Yes",
-                                "HintText": null,
-                                "HasHintText": false
+                                "HintText": ""
                             },
                             {
                                 "FurtherQuestions": [],
                                 "Value": "No",
                                 "Label": "No",
-                                "HintText": null,
-                                "HasHintText": false
+                                "HintText": ""
                             }
                         ],
                         "Validations": [
@@ -188,15 +186,13 @@
                                 "FurtherQuestions": [],
                                 "Value": "Yes",
                                 "Label": "Yes",
-                                "HintText": null,
-                                "HasHintText": false
+                                "HintText": ""
                             },
                             {
                                 "FurtherQuestions": [],
                                 "Value": "No",
                                 "Label": "No",
-                                "HintText": null,
-                                "HasHintText": false
+                                "HintText": ""
                             }
                         ],
                         "Validations": [
@@ -258,15 +254,13 @@
                                 "FurtherQuestions": [],
                                 "Value": "Yes",
                                 "Label": "Yes",
-                                "HintText": null,
-                                "HasHintText": false
+                                "HintText": ""
                             },
                             {
                                 "FurtherQuestions": [],
                                 "Value": "No",
                                 "Label": "No",
-                                "HintText": null,
-                                "HasHintText": false
+                                "HintText": ""
                             }
                         ],
                         "Validations": [
@@ -335,15 +329,13 @@
                                 "FurtherQuestions": [],
                                 "Value": "Yes",
                                 "Label": "Yes",
-                                "HintText": null,
-                                "HasHintText": false
+                                "HintText": ""
                             },
                             {
                                 "FurtherQuestions": [],
                                 "Value": "No",
                                 "Label": "No",
-                                "HintText": null,
-                                "HasHintText": false
+                                "HintText": ""
                             }
                         ],
                         "Validations": [
@@ -438,15 +430,13 @@
                                 ],
                                 "Value": "Yes",
                                 "Label": "Yes",
-                                "HintText": null,
-                                "HasHintText": false
+                                "HintText": ""
                             },
                             {
                                 "FurtherQuestions": [],
                                 "Value": "No",
                                 "Label": "No",
-                                "HintText": null,
-                                "HasHintText": false
+                                "HintText": ""
                             }
                         ],
                         "Validations": [
@@ -515,15 +505,13 @@
                                 "FurtherQuestions": [],
                                 "Value": "Yes",
                                 "Label": "Yes",
-                                "HintText": null,
-                                "HasHintText": false
+                                "HintText": ""
                             },
                             {
                                 "FurtherQuestions": [],
                                 "Value": "No",
                                 "Label": "No",
-                                "HintText": null,
-                                "HasHintText": false
+                                "HintText": ""
                             }
                         ],
                         "Validations": [
@@ -771,15 +759,13 @@
                                 ],
                                 "Value": "Yes",
                                 "Label": "Yes",
-                                "HintText": null,
-                                "HasHintText": false
+                                "HintText": ""
                             },
                             {
                                 "FurtherQuestions": [],
                                 "Value": "No",
                                 "Label": "No",
-                                "HintText": null,
-                                "HasHintText": false
+                                "HintText": ""
                             }
                         ],
                         "Validations": [
@@ -874,15 +860,13 @@
                                 ],
                                 "Value": "Yes",
                                 "Label": "Yes",
-                                "HintText": null,
-                                "HasHintText": false
+                                "HintText": ""
                             },
                             {
                                 "FurtherQuestions": [],
                                 "Value": "No",
                                 "Label": "No",
-                                "HintText": null,
-                                "HasHintText": false
+                                "HintText": ""
                             }
                         ],
                         "Validations": [
@@ -977,15 +961,13 @@
                                 ],
                                 "Value": "Yes",
                                 "Label": "Yes",
-                                "HintText": null,
-                                "HasHintText": false
+                                "HintText": ""
                             },
                             {
                                 "FurtherQuestions": [],
                                 "Value": "No",
                                 "Label": "No",
-                                "HintText": null,
-                                "HasHintText": false
+                                "HintText": ""
                             }
                         ],
                         "Validations": [
@@ -1080,15 +1062,13 @@
                                 ],
                                 "Value": "Yes",
                                 "Label": "Yes",
-                                "HintText": null,
-                                "HasHintText": false
+                                "HintText": ""
                             },
                             {
                                 "FurtherQuestions": [],
                                 "Value": "No",
                                 "Label": "No",
-                                "HintText": null,
-                                "HasHintText": false
+                                "HintText": ""
                             }
                         ],
                         "Validations": [
@@ -1238,15 +1218,13 @@
                                 ],
                                 "Value": "Yes",
                                 "Label": "Yes",
-                                "HintText": null,
-                                "HasHintText": false
+                                "HintText": ""
                             },
                             {
                                 "FurtherQuestions": [],
                                 "Value": "No",
                                 "Label": "No",
-                                "HintText": null,
-                                "HasHintText": false
+                                "HintText": ""
                             }
                         ],
                         "Validations": [
@@ -1371,15 +1349,13 @@
                                 ],
                                 "Value": "Yes",
                                 "Label": "Yes",
-                                "HintText": null,
-                                "HasHintText": false
+                                "HintText": ""
                             },
                             {
                                 "FurtherQuestions": [],
                                 "Value": "No",
                                 "Label": "No",
-                                "HintText": null,
-                                "HasHintText": false
+                                "HintText": ""
                             }
                         ],
                         "Validations": [
@@ -1497,15 +1473,13 @@
                                 ],
                                 "Value": "Yes",
                                 "Label": "Yes",
-                                "HintText": null,
-                                "HasHintText": false
+                                "HintText": ""
                             },
                             {
                                 "FurtherQuestions": [],
                                 "Value": "No",
                                 "Label": "No",
-                                "HintText": null,
-                                "HasHintText": false
+                                "HintText": ""
                             }
                         ],
                         "Validations": [
@@ -1600,15 +1574,13 @@
                                 ],
                                 "Value": "Yes",
                                 "Label": "Yes",
-                                "HintText": null,
-                                "HasHintText": false
+                                "HintText": ""
                             },
                             {
                                 "FurtherQuestions": [],
                                 "Value": "No",
                                 "Label": "No",
-                                "HintText": null,
-                                "HasHintText": false
+                                "HintText": ""
                             }
                         ],
                         "Validations": [
@@ -1703,15 +1675,13 @@
                                 ],
                                 "Value": "Yes",
                                 "Label": "Yes",
-                                "HintText": null,
-                                "HasHintText": false
+                                "HintText": ""
                             },
                             {
                                 "FurtherQuestions": [],
                                 "Value": "No",
                                 "Label": "No",
-                                "HintText": null,
-                                "HasHintText": false
+                                "HintText": ""
                             }
                         ],
                         "Validations": [
@@ -1861,15 +1831,13 @@
                                 ],
                                 "Value": "Yes",
                                 "Label": "Yes",
-                                "HintText": null,
-                                "HasHintText": false
+                                "HintText": ""
                             },
                             {
                                 "FurtherQuestions": [],
                                 "Value": "No",
                                 "Label": "No",
-                                "HintText": null,
-                                "HasHintText": false
+                                "HintText": ""
                             }
                         ],
                         "Validations": [
@@ -1938,15 +1906,13 @@
                                 "FurtherQuestions": [],
                                 "Value": "Yes",
                                 "Label": "Yes",
-                                "HintText": null,
-                                "HasHintText": false
+                                "HintText": ""
                             },
                             {
                                 "FurtherQuestions": [],
                                 "Value": "No",
                                 "Label": "No",
-                                "HintText": null,
-                                "HasHintText": false
+                                "HintText": ""
                             }
                         ],
                         "Validations": [
@@ -2008,15 +1974,13 @@
                                 "FurtherQuestions": [],
                                 "Value": "Yes",
                                 "Label": "Yes",
-                                "HintText": null,
-                                "HasHintText": false
+                                "HintText": ""
                             },
                             {
                                 "FurtherQuestions": [],
                                 "Value": "No",
                                 "Label": "No",
-                                "HintText": null,
-                                "HasHintText": false
+                                "HintText": ""
                             }
                         ],
                         "Validations": [
@@ -2078,15 +2042,13 @@
                                 "FurtherQuestions": [],
                                 "Value": "Yes",
                                 "Label": "Yes",
-                                "HintText": null,
-                                "HasHintText": false
+                                "HintText": ""
                             },
                             {
                                 "FurtherQuestions": [],
                                 "Value": "No",
                                 "Label": "No",
-                                "HintText": null,
-                                "HasHintText": false
+                                "HintText": ""
                             }
                         ],
                         "Validations": [
