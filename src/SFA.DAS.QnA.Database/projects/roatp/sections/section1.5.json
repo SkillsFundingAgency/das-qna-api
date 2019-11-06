@@ -43,8 +43,8 @@
                                 "FurtherQuestions": []
                             },
                             {
-                                "Label": "An employer",
-                                "Value": "An employer",
+                                "Label": "An employer training apprentices in other organisations",
+                                "Value": "An employer training apprentices in other organisations",
                                 "FurtherQuestions": []
                             },
                             {
@@ -56,7 +56,7 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Tell us what your organisation is"
                             }
                         ]
@@ -83,7 +83,7 @@
                     "Conditions": [
                         {
                             "QuestionId": "YO-140",
-                            "MustEqual": "An employer"
+                            "MustEqual": "An employer training apprentices in other organisations"
                         }
                     ],
                     "ConditionMet": false
@@ -181,7 +181,7 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Tell us what your organisation is"
                             }
                         ]
@@ -337,7 +337,7 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Tell us what type of educational institute your organisation is"
                             }
                         ]
@@ -509,7 +509,7 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Tell us what type of educational institute your organisation is"
                             }
                         ]
@@ -676,7 +676,7 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Tell us what type of public body your organisation is"
                             }
                         ]
@@ -761,7 +761,7 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Tell us what type of public body your organisation is"
                             }
                         ]
@@ -845,7 +845,7 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Tell us what type of school your organisation is"
                             }
                         ]
@@ -918,7 +918,7 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Tell us what type of school your organisation is"
                             }
                         ]
@@ -1009,7 +1009,7 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Tell us if your organisation is funded by the Office for Students"
                             }
                         ]
@@ -1067,7 +1067,7 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Tell us if your organisation is funded by the Office for Students"
                             }
                         ]
@@ -1147,7 +1147,7 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Tell us if your organisation is already registered with ESFA"
                             }
                         ]
@@ -1205,7 +1205,7 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Tell us if your organisation is already registered with ESFA"
                             }
                         ]
@@ -1285,7 +1285,7 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Tell us if your organisation is receiving funding from ESFA"
                             }
                         ]
@@ -1343,7 +1343,7 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Tell us if your organisation is receiving funding from ESFA"
                             }
                         ]
@@ -1431,7 +1431,7 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Tell us how your organisation will train its apprentices"
                             }
                         ]
@@ -1505,7 +1505,7 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Tell us how you would describe your organisation"
                             }
                         ]

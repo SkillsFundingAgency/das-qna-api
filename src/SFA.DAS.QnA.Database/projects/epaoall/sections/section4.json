@@ -27,14 +27,14 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Enter your ICO registration number"
                             }
                         ],
                         "DataEndpoint": null
                     },
                     "Order": null,
-                    "Value": null,
+                    "Value": "",
                     "ErrorMessages": null
                 }
             ],
@@ -82,7 +82,7 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Select an internal audit policy document"
                             },
                             {
@@ -94,7 +94,7 @@
                         "DataEndpoint": null
                     },
                     "Order": null,
-                    "Value": null,
+                    "Value": "",
                     "ErrorMessages": null
                 }
             ],
@@ -142,7 +142,7 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Select a public liability certificate of insurance"
                             },
                             {
@@ -154,7 +154,7 @@
                         "DataEndpoint": null
                     },
                     "Order": null,
-                    "Value": null,
+                    "Value": "",
                     "ErrorMessages": null
                 }
             ],
@@ -202,7 +202,7 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Select a professional indemnity certificate of insurance"
                             },
                             {
@@ -214,7 +214,7 @@
                         "DataEndpoint": null
                     },
                     "Order": null,
-                    "Value": null,
+                    "Value": "",
                     "ErrorMessages": null
                 }
             ],
@@ -269,7 +269,7 @@
                         "DataEndpoint": null
                     },
                     "Order": null,
-                    "Value": null,
+                    "Value": "",
                     "ErrorMessages": null
                 }
             ],
@@ -317,7 +317,7 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Select a safeguarding policy document"
                             },
                             {
@@ -329,7 +329,7 @@
                         "DataEndpoint": null
                     },
                     "Order": null,
-                    "Value": null,
+                    "Value": "",
                     "ErrorMessages": null
                 }
             ],
@@ -377,7 +377,7 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Select a prevent agenda policy document"
                             },
                             {
@@ -389,7 +389,7 @@
                         "DataEndpoint": null
                     },
                     "Order": null,
-                    "Value": null,
+                    "Value": "",
                     "ErrorMessages": null
                 }
             ],
@@ -437,7 +437,7 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Select a conflict of interest policy document"
                             },
                             {
@@ -449,7 +449,7 @@
                         "DataEndpoint": null
                     },
                     "Order": null,
-                    "Value": null,
+                    "Value": "",
                     "ErrorMessages": null
                 }
             ],
@@ -504,7 +504,7 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Select a file describing your procedures for monitoring assessor practices and decisions"
                             },
                             {
@@ -516,7 +516,7 @@
                         "DataEndpoint": null
                     },
                     "Order": null,
-                    "Value": null,
+                    "Value": "",
                     "ErrorMessages": null
                 }
             ],
@@ -571,7 +571,7 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Select an file describing your standardisation and moderation activities"
                             },
                             {
@@ -583,7 +583,7 @@
                         "DataEndpoint": null
                     },
                     "Order": null,
-                    "Value": null,
+                    "Value": "",
                     "ErrorMessages": null
                 }
             ],
@@ -638,7 +638,7 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Select a compalints and appeals policy document"
                             },
                             {
@@ -650,7 +650,7 @@
                         "DataEndpoint": null
                     },
                     "Order": null,
-                    "Value": null,
+                    "Value": "",
                     "ErrorMessages": null
                 }
             ],
@@ -705,7 +705,7 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Select a fair access policy document"
                             },
                             {
@@ -717,7 +717,7 @@
                         "DataEndpoint": null
                     },
                     "Order": null,
-                    "Value": null,
+                    "Value": "",
                     "ErrorMessages": null
                 }
             ],
@@ -772,7 +772,7 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Select a file describing your comparability and consistency decisions"
                             },
                             {
@@ -784,7 +784,7 @@
                         "DataEndpoint": null
                     },
                     "Order": null,
-                    "Value": null,
+                    "Value": "",
                     "ErrorMessages": null
                 }
             ],
@@ -839,7 +839,7 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Enter how you continuously improve the quality of your assessment practice"
                             },
                             {
@@ -851,7 +851,7 @@
                         "DataEndpoint": null
                     },
                     "Order": null,
-                    "Value": null,
+                    "Value": "",
                     "ErrorMessages": null
                 }
             ],
@@ -906,7 +906,7 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Enter your evidence of engagement with trailblazers and employers"
                             },
                             {
@@ -918,7 +918,7 @@
                         "DataEndpoint": null
                     },
                     "Order": null,
-                    "Value": null,
+                    "Value": "",
                     "ErrorMessages": null
                 }
             ],
@@ -973,7 +973,7 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Enter details of membership to professional organisations"
                             },
                             {
@@ -985,7 +985,7 @@
                         "DataEndpoint": null
                     },
                     "Order": null,
-                    "Value": null,
+                    "Value": "",
                     "ErrorMessages": null
                 }
             ],
@@ -1040,14 +1040,14 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Provide the number of assessors your organisation will have"
                             }
                         ],
                         "DataEndpoint": null
                     },
                     "Order": null,
-                    "Value": null,
+                    "Value": "",
                     "ErrorMessages": null
                 }
             ],
@@ -1095,14 +1095,14 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "What's the volume of end-point assessments you will be able to deliver"
                             }
                         ],
                         "DataEndpoint": null
                     },
                     "Order": null,
-                    "Value": null,
+                    "Value": "",
                     "ErrorMessages": null
                 }
             ],
@@ -1150,7 +1150,7 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Enter how the volume of end-point assessments will be achieved"
                             },
                             {
@@ -1162,7 +1162,7 @@
                         "DataEndpoint": null
                     },
                     "Order": null,
-                    "Value": null,
+                    "Value": "",
                     "ErrorMessages": null
                 }
             ],
@@ -1210,7 +1210,7 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Enter how you recruit and train assessors"
                             },
                             {
@@ -1222,7 +1222,7 @@
                         "DataEndpoint": null
                     },
                     "Order": null,
-                    "Value": null,
+                    "Value": "",
                     "ErrorMessages": null
                 }
             ],
@@ -1270,7 +1270,7 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Enter the experience, skills and qualifications your assessors will have"
                             },
                             {
@@ -1282,7 +1282,7 @@
                         "DataEndpoint": null
                     },
                     "Order": null,
-                    "Value": null,
+                    "Value": "",
                     "ErrorMessages": null
                 }
             ],
@@ -1330,7 +1330,7 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Enter how you ensure your assessors' occupational expertise is maintained"
                             },
                             {
@@ -1342,7 +1342,7 @@
                         "DataEndpoint": null
                     },
                     "Order": null,
-                    "Value": null,
+                    "Value": "",
                     "ErrorMessages": null
                 }
             ],
@@ -1390,7 +1390,7 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Enter how you will deliver an end-point assessment for this standard"
                             },
                             {
@@ -1402,7 +1402,7 @@
                         "DataEndpoint": null
                     },
                     "Order": null,
-                    "Value": null,
+                    "Value": "",
                     "ErrorMessages": null
                 }
             ],
@@ -1464,41 +1464,39 @@
                                             "Validations": [
                                                 {
                                                     "Name": "Required",
-                                                    "Value": null,
+                                                    "Value": "",
                                                     "ErrorMessage": "Enter the quality assurance of outsourced services"
                                                 }
                                             ],
                                             "DataEndpoint": null
                                         },
                                         "Order": null,
-                                        "Value": null,
+                                        "Value": "",
                                         "ErrorMessages": null
                                     }
                                 ],
                                 "Value": "Yes",
                                 "Label": "Yes",
-                                "HintText": null,
-                                "HasHintText": false
+                                "HintText": ""
                             },
                             {
                                 "FurtherQuestions": [],
                                 "Value": "No",
                                 "Label": "No",
-                                "HintText": null,
-                                "HasHintText": false
+                                "HintText": ""
                             }
                         ],
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Select yes if you intend to outsource any of your end-point assessments"
                             }
                         ],
                         "DataEndpoint": null
                     },
                     "Order": null,
-                    "Value": null,
+                    "Value": "",
                     "ErrorMessages": null
                 }
             ],
@@ -1546,7 +1544,7 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Enter how you will engage with employers and training organisations"
                             },
                             {
@@ -1558,7 +1556,7 @@
                         "DataEndpoint": null
                     },
                     "Order": null,
-                    "Value": null,
+                    "Value": "",
                     "ErrorMessages": null
                 }
             ],
@@ -1606,7 +1604,7 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Enter how you will manage any potential conflict of interest"
                             },
                             {
@@ -1618,7 +1616,7 @@
                         "DataEndpoint": null
                     },
                     "Order": null,
-                    "Value": null,
+                    "Value": "",
                     "ErrorMessages": null
                 }
             ],
@@ -1666,14 +1664,14 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Enter where you will deliver end-point assessments"
                             }
                         ],
                         "DataEndpoint": "DeliveryAreas"
                     },
                     "Order": null,
-                    "Value": null,
+                    "Value": "",
                     "ErrorMessages": null
                 }
             ],
@@ -1722,8 +1720,7 @@
                                 "FurtherQuestions": [],
                                 "Value": "Yes",
                                 "Label": "Yes",
-                                "HintText": null,
-                                "HasHintText": false
+                                "HintText": ""
                             },
                             {
                                 "FurtherQuestions": [
@@ -1742,7 +1739,7 @@
                                             "Validations": [
                                                 {
                                                     "Name": "Required",
-                                                    "Value": null,
+                                                    "Value": "",
                                                     "ErrorMessage": "Enter a date"
                                                 },
                                                 {
@@ -1754,27 +1751,26 @@
                                             "DataEndpoint": null
                                         },
                                         "Order": null,
-                                        "Value": null,
+                                        "Value": "",
                                         "ErrorMessages": null
                                     }
                                 ],
                                 "Value": "No",
                                 "Label": "No",
-                                "HintText": null,
-                                "HasHintText": false
+                                "HintText": ""
                             }
                         ],
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Select yes if you can start an end-point assessment on the day you join the register"
                             }
                         ],
                         "DataEndpoint": null
                     },
                     "Order": null,
-                    "Value": null,
+                    "Value": "",
                     "ErrorMessages": null
                 }
             ],
@@ -1822,7 +1818,7 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Enter how you will undertake the individual elements of the assessment plan"
                             },
                             {
@@ -1834,7 +1830,7 @@
                         "DataEndpoint": null
                     },
                     "Order": null,
-                    "Value": null,
+                    "Value": "",
                     "ErrorMessages": null
                 }
             ],
@@ -1882,7 +1878,7 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Enter how you will continuously review and maintain the required resources and assessment tools"
                             },
                             {
@@ -1894,7 +1890,7 @@
                         "DataEndpoint": null
                     },
                     "Order": null,
-                    "Value": null,
+                    "Value": "",
                     "ErrorMessages": null
                 }
             ],
@@ -1942,7 +1938,7 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Enter details of the secure IT infrastructure you will implement"
                             },
                             {
@@ -1954,7 +1950,7 @@
                         "DataEndpoint": null
                     },
                     "Order": null,
-                    "Value": null,
+                    "Value": "",
                     "ErrorMessages": null
                 }
             ],
@@ -2002,7 +1998,7 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Enter details of processes in place for administration of assessments"
                             },
                             {
@@ -2014,7 +2010,7 @@
                         "DataEndpoint": null
                     },
                     "Order": null,
-                    "Value": null,
+                    "Value": "",
                     "ErrorMessages": null
                 }
             ],
@@ -2062,7 +2058,7 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Enter the strategies in place for development of assessment products and tools"
                             },
                             {
@@ -2074,7 +2070,7 @@
                         "DataEndpoint": null
                     },
                     "Order": null,
-                    "Value": null,
+                    "Value": "",
                     "ErrorMessages": null
                 }
             ],
@@ -2122,7 +2118,7 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Enter the actions you will take and the processes you will implement"
                             },
                             {
@@ -2134,7 +2130,7 @@
                         "DataEndpoint": null
                     },
                     "Order": null,
-                    "Value": null,
+                    "Value": "",
                     "ErrorMessages": null
                 }
             ],
@@ -2182,7 +2178,7 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Enter details of how you collate and confirm assessment outcomes to employers, training providers and apprentices"
                             },
                             {
@@ -2194,7 +2190,7 @@
                         "DataEndpoint": null
                     },
                     "Order": null,
-                    "Value": null,
+                    "Value": "",
                     "ErrorMessages": null
                 }
             ],
@@ -2242,7 +2238,7 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Enter details of the processes in place for recording and issuing assessment results and certificates"
                             },
                             {
@@ -2254,7 +2250,7 @@
                         "DataEndpoint": null
                     },
                     "Order": null,
-                    "Value": null,
+                    "Value": "",
                     "ErrorMessages": null
                 }
             ],
@@ -2303,7 +2299,7 @@
                         "DataEndpoint": null
                     },
                     "Order": null,
-                    "Value": null,
+                    "Value": "",
                     "ErrorMessages": null
                 }
             ],
