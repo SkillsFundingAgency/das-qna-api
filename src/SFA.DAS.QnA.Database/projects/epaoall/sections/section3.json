@@ -27,7 +27,7 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Select a file containing your accounts"
                             },
                             {
@@ -39,7 +39,7 @@
                         "DataEndpoint": null
                     },
                     "Order": null,
-                    "Value": null,
+                    "Value": "",
                     "ErrorMessages": null
                 },
                 {
@@ -64,7 +64,7 @@
                         "DataEndpoint": null
                     },
                     "Order": null,
-                    "Value": null,
+                    "Value": "",
                     "ErrorMessages": null
                 }
             ],
