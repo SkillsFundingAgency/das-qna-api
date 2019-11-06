@@ -228,7 +228,7 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Tell us what your organisation is"
                             }
                         ]
@@ -303,7 +303,7 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Tell us what your organisation's partner is"
                             }
                         ]
@@ -448,12 +448,12 @@
                         "Validations": [
                             {
                                 "Name": "MonthAndYear",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Enter a date of birth using a month and year"
                             },
                             {
                                 "Name": "MonthAndYearNotInFuture",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Enter a date of birth using a month and year that's in the past"
                             }
                         ]

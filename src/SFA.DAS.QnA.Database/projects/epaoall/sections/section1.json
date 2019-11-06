@@ -41,14 +41,14 @@
                                             "Validations": [
                                                 {
                                                     "Name": "Required",
-                                                    "Value": null,
+                                                    "Value": "",
                                                     "ErrorMessage": "Enter a trading name"
                                                 }
                                             ],
                                             "DataEndpoint": null
                                         },
                                         "Order": null,
-                                        "Value": null,
+                                        "Value": "",
                                         "ErrorMessages": null
                                     }
                                 ],
@@ -66,14 +66,14 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Select yes if your organisation has a trading name"
                             }
                         ],
                         "DataEndpoint": null
                     },
                     "Order": null,
-                    "Value": null,
+                    "Value": "",
                     "ErrorMessages": null
                 }
             ],
@@ -147,14 +147,14 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Select yes if you want to use your trading name on the register"
                             }
                         ],
                         "DataEndpoint": null
                     },
                     "Order": null,
-                    "Value": null,
+                    "Value": "",
                     "ErrorMessages": null
                 }
             ],
@@ -202,14 +202,14 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Enter given name"
                             }
                         ],
                         "DataEndpoint": null
                     },
                     "Order": null,
-                    "Value": null,
+                    "Value": "",
                     "ErrorMessages": null
                 },
                 {
@@ -227,14 +227,14 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Enter family name"
                             }
                         ],
                         "DataEndpoint": null
                     },
                     "Order": null,
-                    "Value": null,
+                    "Value": "",
                     "ErrorMessages": null
                 },
                 {
@@ -252,24 +252,24 @@
                         "Validations": [
                             {
                                 "Name": "AddressBuildingAndStreetRequired",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Enter building and street"
                             },
                             {
                                 "Name": "AddressTownOrCityRequired",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Enter town or city"
                             },
                             {
                                 "Name": "AddressPostcodeRequired",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Enter postcode"
                             }
                         ],
                         "DataEndpoint": null
                     },
                     "Order": null,
-                    "Value": null,
+                    "Value": "",
                     "ErrorMessages": null
                 },
                 {
@@ -287,19 +287,19 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Enter email address"
                             },
                             {
                                 "Name": "Email",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Enter a valid email address"
                             }
                         ],
                         "DataEndpoint": null
                     },
                     "Order": null,
-                    "Value": null,
+                    "Value": "",
                     "ErrorMessages": null
                 },
                 {
@@ -317,14 +317,14 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Enter telephone number"
                             }
                         ],
                         "DataEndpoint": null
                     },
                     "Order": null,
-                    "Value": null,
+                    "Value": "",
                     "ErrorMessages": null
                 }
             ],
@@ -372,14 +372,14 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Enter given name"
                             }
                         ],
                         "DataEndpoint": null
                     },
                     "Order": null,
-                    "Value": null,
+                    "Value": "",
                     "ErrorMessages": null
                 },
                 {
@@ -397,14 +397,14 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Enter family name"
                             }
                         ],
                         "DataEndpoint": null
                     },
                     "Order": null,
-                    "Value": null,
+                    "Value": "",
                     "ErrorMessages": null
                 },
                 {
@@ -422,24 +422,24 @@
                         "Validations": [
                             {
                                 "Name": "AddressBuildingAndStreetRequired",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Enter building and street"
                             },
                             {
                                 "Name": "AddressTownOrCityRequired",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Enter town or city"
                             },
                             {
                                 "Name": "AddressPostcodeRequired",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Enter postcode"
                             }
                         ],
                         "DataEndpoint": null
                     },
                     "Order": null,
-                    "Value": null,
+                    "Value": "",
                     "ErrorMessages": null
                 },
                 {
@@ -457,19 +457,19 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Enter email address"
                             },
                             {
                                 "Name": "Email",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Enter a valid email address"
                             }
                         ],
                         "DataEndpoint": null
                     },
                     "Order": null,
-                    "Value": null,
+                    "Value": "",
                     "ErrorMessages": null
                 },
                 {
@@ -487,14 +487,14 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Enter telephone number"
                             }
                         ],
                         "DataEndpoint": null
                     },
                     "Order": null,
-                    "Value": null,
+                    "Value": "",
                     "ErrorMessages": null
                 }
             ],
@@ -556,7 +556,7 @@
                                             "Validations": [
                                                 {
                                                     "Name": "Required",
-                                                    "Value": null,
+                                                    "Value": "",
                                                     "ErrorMessage": "Enter your UKPRN"
                                                 },
                                                 {
@@ -573,7 +573,7 @@
                                             "DataEndpoint": null
                                         },
                                         "Order": null,
-                                        "Value": null,
+                                        "Value": "",
                                         "ErrorMessages": null
                                     }
                                 ],
@@ -591,14 +591,14 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Select yes if you have a UKPRN"
                             }
                         ],
                         "DataEndpoint": null
                     },
                     "Order": null,
-                    "Value": null,
+                    "Value": "",
                     "ErrorMessages": null
                 }
             ],
@@ -646,14 +646,14 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Enter name of person who has overall control"
                             }
                         ],
                         "DataEndpoint": null
                     },
                     "Order": null,
-                    "Value": null,
+                    "Value": "",
                     "ErrorMessages": null
                 },
                 {
@@ -685,14 +685,14 @@
                                             "Validations": [
                                                 {
                                                     "Name": "Required",
-                                                    "Value": null,
+                                                    "Value": "",
                                                     "ErrorMessage": "Enter other organisation details"
                                                 }
                                             ],
                                             "DataEndpoint": null
                                         },
                                         "Order": null,
-                                        "Value": null,
+                                        "Value": "",
                                         "ErrorMessages": null
                                     }
                                 ],
@@ -710,14 +710,14 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Select yes if they hold any other positions or directorships of other organisations"
                             }
                         ],
                         "DataEndpoint": null
                     },
                     "Order": null,
-                    "Value": null,
+                    "Value": "",
                     "ErrorMessages": null
                 }
             ],
@@ -779,14 +779,14 @@
                                             "Validations": [
                                                 {
                                                     "Name": "Required",
-                                                    "Value": null,
+                                                    "Value": "",
                                                     "ErrorMessage": "Enter Ofqual recognition number"
                                                 }
                                             ],
                                             "DataEndpoint": null
                                         },
                                         "Order": null,
-                                        "Value": null,
+                                        "Value": "",
                                         "ErrorMessages": null
                                     }
                                 ],
@@ -804,14 +804,14 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Select yes if you have an Ofqual recognition number"
                             }
                         ],
                         "DataEndpoint": null
                     },
                     "Order": null,
-                    "Value": null,
+                    "Value": "",
                     "ErrorMessages": null
                 }
             ],
@@ -903,14 +903,14 @@
                                             "Validations": [
                                                 {
                                                     "Name": "Required",
-                                                    "Value": null,
+                                                    "Value": "",
                                                     "ErrorMessage": "Enter your trading status"
                                                 }
                                             ],
                                             "DataEndpoint": null
                                         },
                                         "Order": null,
-                                        "Value": null,
+                                        "Value": "",
                                         "ErrorMessages": null
                                     }
                                 ],
@@ -922,14 +922,14 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Select your trading status"
                             }
                         ],
                         "DataEndpoint": null
                     },
                     "Order": null,
-                    "Value": null,
+                    "Value": "",
                     "ErrorMessages": null
                 }
             ],
@@ -1062,7 +1062,7 @@
                                             "Validations": [
                                                 {
                                                     "Name": "Required",
-                                                    "Value": null,
+                                                    "Value": "",
                                                     "ErrorMessage": "Enter your company number"
                                                 },
                                                 {
@@ -1074,7 +1074,7 @@
                                             "DataEndpoint": null
                                         },
                                         "Order": null,
-                                        "Value": null,
+                                        "Value": "",
                                         "ErrorMessages": null
                                     }
                                 ],
@@ -1092,14 +1092,14 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Select yes if you have a company number"
                             }
                         ],
                         "DataEndpoint": null
                     },
                     "Order": null,
-                    "Value": null,
+                    "Value": "",
                     "ErrorMessages": null
                 }
             ],
@@ -1180,14 +1180,14 @@
                                             "Validations": [
                                                 {
                                                     "Name": "Required",
-                                                    "Value": null,
+                                                    "Value": "",
                                                     "ErrorMessage": "Enter the country your parent company is registered"
                                                 }
                                             ],
                                             "DataEndpoint": null
                                         },
                                         "Order": null,
-                                        "Value": null,
+                                        "Value": "",
                                         "ErrorMessages": null
                                     },
                                     {
@@ -1205,14 +1205,14 @@
                                             "Validations": [
                                                 {
                                                     "Name": "Required",
-                                                    "Value": null,
+                                                    "Value": "",
                                                     "ErrorMessage": "Enter the parent company registration number"
                                                 }
                                             ],
                                             "DataEndpoint": null
                                         },
                                         "Order": null,
-                                        "Value": null,
+                                        "Value": "",
                                         "ErrorMessages": null
                                     }
                                 ],
@@ -1230,14 +1230,14 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Select yes if your parent company registered overseas"
                             }
                         ],
                         "DataEndpoint": null
                     },
                     "Order": null,
-                    "Value": null,
+                    "Value": "",
                     "ErrorMessages": null
                 }
             ],
@@ -1292,14 +1292,14 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Enter a name"
                             }
                         ],
                         "DataEndpoint": null
                     },
                     "Order": null,
-                    "Value": null,
+                    "Value": "",
                     "ErrorMessages": null
                 },
                 {
@@ -1317,7 +1317,7 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Enter a date"
                             },
                             {
@@ -1334,7 +1334,7 @@
                         "DataEndpoint": null
                     },
                     "Order": null,
-                    "Value": null,
+                    "Value": "",
                     "ErrorMessages": null
                 },
                 {
@@ -1352,14 +1352,14 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Enter number of shares"
                             }
                         ],
                         "DataEndpoint": null
                     },
                     "Order": null,
-                    "Value": null,
+                    "Value": "",
                     "ErrorMessages": null
                 }
             ],
@@ -1427,14 +1427,14 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Select yes if a director, or any person with significant control of your organisation have had any of the listed issues"
                             }
                         ],
                         "DataEndpoint": null
                     },
                     "Order": null,
-                    "Value": null,
+                    "Value": "",
                     "ErrorMessages": null
                 }
             ],
@@ -1502,7 +1502,7 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Enter a date"
                             },
                             {
@@ -1519,7 +1519,7 @@
                         "DataEndpoint": null
                     },
                     "Order": null,
-                    "Value": null,
+                    "Value": "",
                     "ErrorMessages": null
                 },
                 {
@@ -1537,14 +1537,14 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Field must not be empty"
                             }
                         ],
                         "DataEndpoint": null
                     },
                     "Order": null,
-                    "Value": null,
+                    "Value": "",
                     "ErrorMessages": null
                 },
                 {
@@ -1562,14 +1562,14 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Field must not be empty"
                             }
                         ],
                         "DataEndpoint": null
                     },
                     "Order": null,
-                    "Value": null,
+                    "Value": "",
                     "ErrorMessages": null
                 }
             ],
@@ -1631,19 +1631,19 @@
                                             "Validations": [
                                                 {
                                                     "Name": "Required",
-                                                    "Value": null,
+                                                    "Value": "",
                                                     "ErrorMessage": "Enter registered charity number"
                                                 },
                                                 {
                                                     "Name": "RegisteredCharityNumber",
-                                                    "Value": null,
+                                                    "Value": "",
                                                     "ErrorMessage": "Enter valid registered charity number"
                                                 }
                                             ],
                                             "DataEndpoint": null
                                         },
                                         "Order": null,
-                                        "Value": null,
+                                        "Value": "",
                                         "ErrorMessages": null
                                     }
                                 ],
@@ -1661,14 +1661,14 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Select yes if your organisation is a registered charity"
                             }
                         ],
                         "DataEndpoint": null
                     },
                     "Order": null,
-                    "Value": null,
+                    "Value": "",
                     "ErrorMessages": null
                 }
             ],
@@ -1736,14 +1736,14 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Select yes if any removals apply"
                             }
                         ],
                         "DataEndpoint": null
                     },
                     "Order": null,
-                    "Value": null,
+                    "Value": "",
                     "ErrorMessages": null
                 }
             ],
