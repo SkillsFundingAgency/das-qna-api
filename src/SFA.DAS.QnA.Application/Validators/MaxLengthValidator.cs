@@ -12,7 +12,7 @@ namespace SFA.DAS.QnA.Application.Validators
 
             var text = answer?.Value?.Trim();
 
-            if (!string.IsNullOrEmpty(text) && text.Length > long.Parse(ValidationDefinition.Value)
+            if (!string.IsNullOrEmpty(text) && text.Length > (long)ValidationDefinition.Value)
             {
                 errors.Add(new KeyValuePair<string, string>(question.QuestionId, ValidationDefinition.ErrorMessage));
             }
