@@ -95,7 +95,7 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
             }
             else
             {
-                applicationData.Add(question.QuestionTag, answer.Value.Length == 1 ? new JValue(answer.Value[0]) : new JValue(answer.Value));
+                applicationData.Add(question.QuestionTag, answer.Value.Length == 1 ? new JValue(answer.Value[0]) : JToken.FromObject(answer.Value));
             }
         }
 
