@@ -47,7 +47,7 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
                         else
                         {
                             var answer = answers.FirstOrDefault(a => a.QuestionId == condition.QuestionId);
-                            if (answer == null || answer.QuestionId != condition.QuestionId || answer.Value != condition.MustEqual)
+                            if (answer == null || answer.QuestionId != condition.QuestionId || answer.Value[0] != condition.MustEqual)
                             {
                                 someConditionsNotSatisfied = true;
                             }

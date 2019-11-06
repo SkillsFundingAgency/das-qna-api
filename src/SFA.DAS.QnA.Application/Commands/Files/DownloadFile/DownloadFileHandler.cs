@@ -67,7 +67,7 @@ namespace SFA.DAS.QnA.Application.Commands.Files.DownloadFile
             if (blobs.Count() == 1)
             {
                 var answer = page.PageOfAnswers.SelectMany(poa => poa.Answers).Single(a => a.QuestionId == request.QuestionId);
-                return await IndividualFile(answer.Value, cancellationToken, questionDirectory);
+                return await IndividualFile(answer.Value[0], cancellationToken, questionDirectory);
             }
 
             if (!blobs.Any()) return new HandlerResponse<DownloadFile>(success: false, message: $"Page {request.PageId} in Application {request.ApplicationId} does not contain any uploads.");
@@ -90,9 +90,9 @@ namespace SFA.DAS.QnA.Application.Commands.Files.DownloadFile
                     foreach (var answer in page.PageOfAnswers.SelectMany(poa => poa.Answers))
                     {
                         var questionDirectory = pageDirectory.GetDirectoryReference(answer.QuestionId.ToLower());
-                        var blobStream = await GetFileStream(cancellationToken, questionDirectory, answer.Value);
+                        var blobStream = await GetFileStream(cancellationToken, questionDirectory, answer.Value[0]);
 
-                        var zipEntry = zipArchive.CreateEntry(answer.Value);
+                        var zipEntry = zipArchive.CreateEntry(answer.Value[0]);
                         using (var entryStream = zipEntry.Open())
                         {
                             blobStream.Item1.CopyTo(entryStream);
@@ -127,9 +127,9 @@ namespace SFA.DAS.QnA.Application.Commands.Files.DownloadFile
             {
                 foreach (var answer in page.PageOfAnswers.SelectMany(poa => poa.Answers).Where(a => a.QuestionId == request.QuestionId))
                 {
-                    var blobStream = await GetFileStream(cancellationToken, directory, answer.Value);
+                    var blobStream = await GetFileStream(cancellationToken, directory, answer.Value[0]);
 
-                    var zipEntry = zipArchive.CreateEntry(answer.Value);
+                    var zipEntry = zipArchive.CreateEntry(answer.Value[0]);
                     using (var entryStream = zipEntry.Open())
                     {
                         blobStream.Item1.CopyTo(entryStream);
@@ -140,7 +140,7 @@ namespace SFA.DAS.QnA.Application.Commands.Files.DownloadFile
 
         private async Task<HandlerResponse<DownloadFile>> SpecifiedFile(DownloadFileRequest request, CancellationToken cancellationToken, Page page, CloudBlobDirectory directory)
         {
-            var answer = page.PageOfAnswers.SelectMany(poa => poa.Answers).SingleOrDefault(a => a.Value == request.FileName && a.QuestionId == request.QuestionId);
+            var answer = page.PageOfAnswers.SelectMany(poa => poa.Answers).SingleOrDefault(a => a.Value[0] == request.FileName && a.QuestionId == request.QuestionId);
             if (answer is null)
             {
                 return new HandlerResponse<DownloadFile>(success: false, message: $"Question {request.QuestionId} on Page {request.PageId} in Application {request.ApplicationId} does not contain an upload named {request.FileName}");

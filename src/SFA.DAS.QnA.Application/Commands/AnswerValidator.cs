@@ -26,7 +26,7 @@ namespace SFA.DAS.QnA.Application.Commands
 
                 if (question.Input.Options == null) continue;
 
-                foreach (var option in question.Input.Options.Where(option => answerToThisQuestion?.Value == option.Value && option.FurtherQuestions != null))
+                foreach (var option in question.Input.Options.Where(option => option.FurtherQuestions != null && answerToThisQuestion?.Value[0] == option.Value))
                 {
                     foreach (var furtherQuestion in option.FurtherQuestions)
                     {
@@ -43,7 +43,7 @@ namespace SFA.DAS.QnA.Application.Commands
         {
             var validators = _validatorFactory.Build(question);
             
-            if (answerToThisQuestion is null || answerToThisQuestion.Value == "")
+            if (answerToThisQuestion is null || answerToThisQuestion.Value.Length == 0 || answerToThisQuestion.Value[0] == "")
             {
                 if (!validators.Any(v => v.GetType().Name.EndsWith("RequiredValidator"))) return;
                 
