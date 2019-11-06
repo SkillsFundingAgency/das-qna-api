@@ -36,7 +36,7 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Tell us if your organisation has an ultimate UK parent company"
                             }
                         ]
@@ -96,7 +96,7 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Enter a company number"
                             },
                             {
@@ -131,7 +131,7 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Enter a company name"
                             },
                             {
@@ -194,7 +194,7 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Enter an ICO registration number"
                             },
                             {
@@ -302,7 +302,7 @@
                                             "Validations": [
                                                 {
                                                     "Name": "Required",
-                                                    "Value": null,
+                                                    "Value": "",
                                                     "ErrorMessage": "Enter a website"
                                                 },
                                                 {
@@ -330,7 +330,7 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Tell us if your organisation has a website"
                             }
                         ]
@@ -427,7 +427,7 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Tell us how long your organisation has been trading for"
                             }
                         ]
@@ -563,7 +563,7 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Tell us how long your organisation has been trading for"
                             }
                         ]
@@ -699,7 +699,7 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Tell us how long your organisation has been trading for"
                             }
                         ]
