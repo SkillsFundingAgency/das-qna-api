@@ -11,13 +11,13 @@ namespace SFA.DAS.QnA.Application.Validators
         {
             var errors = new List<KeyValuePair<string, string>>();
 
-            var text = answer?.Value?.Trim();
+            var text = answer?.Value?[0].Trim();
 
             if (!string.IsNullOrEmpty(text))
             {
                 var wordCount = text.Split(new[] { " " }, StringSplitOptions.RemoveEmptyEntries).Length;
 
-                if (wordCount > (long)ValidationDefinition.Value)
+                if (wordCount > long.Parse(ValidationDefinition.Value))
                 {
                     errors.Add(new KeyValuePair<string, string>(answer.QuestionId, ValidationDefinition.ErrorMessage));
                 }

@@ -35,7 +35,7 @@ namespace SFA.DAS.QnA.Application.UnitTests.Validators.NumberTypeValidatorTests
             };
 
             var question = new Question { QuestionId = "Q1" };
-            var errors = validator.Validate(question, new Answer { Value = input?.ToString(), QuestionId = question.QuestionId });
+            var errors = validator.Validate(question, new Answer { Value = new []{ input?.ToString()}, QuestionId = question.QuestionId });
 
             (errors.Count is 0).Should().Be(isValid);
         }
