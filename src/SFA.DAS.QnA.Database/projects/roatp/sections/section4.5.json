@@ -60,23 +60,98 @@
       "PageId": "4045",
       "SequenceId": null,
       "SectionId": null,
-      "Title": "Health and safety officer",
-      "LinkTitle": "Health and safety officer",
-      "InfoText": "Health and safety officer",
+      "Title": "Tell us who has overall responsibility for health and safety in your organisation",
+      "LinkTitle": "",
+      "InfoText": "",
       "Questions": [
         {
           "QuestionId": "PYA-55",
-          "QuestionTag": "ProtectApprentice-Health-And-Safety-Officer",
-          "Label": "Upload Health and safety officer holding page",
+          "QuestionTag": "ProtectApprentice-Health-And-Safety-officer-name",
+          "Label": "<span class='govuk-label'>Full name</span>",
           "ShortLabel": "",
-          "QuestionBodyText": "<p class='govuk-body' id='pya-health-and-safety-policy'>This must include stuff about H and S officer</p>",
+          "QuestionBodyText": "",
           "Hint": "",
           "Input": {
-            "Type": "Hidden",
-            "Validations": []
+            "Type": "Text",
+            "Validations": [
+              {
+                "Name": "Required",
+                "Value": null,
+                "ErrorMessage": "Enter a full name"
+              },
+              {
+                "Name": "MaxLength",
+                "Value": 255,
+                "ErrorMessage": "Enter a full name using 255 characters or less"
+              }
+            ]
+          },
+          "Order": null
+        },
+        {
+          "QuestionId": "PYA-56",
+          "QuestionTag": "ProtectApprentice-Safeguarding-responsibility-email",
+          "Label": "<span class='govuk-label'>Email</span>",
+          "ShortLabel": "",
+          "QuestionBodyText": "",
+          "Hint": "",
+          "Input": {
+            "Type": "Text",
+            "Validations": [
+              {
+                "Name": "Required",
+                "Value": null,
+                "ErrorMessage": "Enter a valid email"
+              },
+              {
+                "Name": "MaxLength",
+                "Value": 70,
+                "ErrorMessage": "Enter an email using 70 characters or less"
+              },
+              {
+                "Name": "Email",
+                "Value": null,
+                "ErrorMessage": "Enter an email in the correct format, like name@example.com"
+              }
+            ]
+          },
+          "Order": null
+        },
+        {
+          "QuestionId": "PYA-57",
+          "QuestionTag": "ProtectApprentice-Health-And-Safety-officer-contact-number",
+          "Label": "<span class='govuk-label'>Contact number</span>",
+          "ShortLabel": "",
+          "QuestionBodyText": "",
+          "Hint": "",
+          "Input": {
+            "Type": "Text",
+            "Validations": [
+              {
+                "Name": "Required",
+                "Value": null,
+                "ErrorMessage": "Enter a valid contact number using only numbers"
+              },
+              {
+                "Name": "Number",
+                "Value": null,
+                "ErrorMessage": "Enter a valid contact number using only numbers"
+              },
+              {
+                "Name": "MinLength",
+                "Value": 10,
+                "ErrorMessage": "Enter a contact number using 10 digits or more"
+              },
+              {
+                "Name": "MaxLength",
+                "Value": 20,
+                "ErrorMessage": "Enter a contact number using 20 digits or less"
+              }
+            ]
           },
           "Order": null
         }
+
       ],
       "PageOfAnswers": [],
       "Next": [
@@ -95,7 +170,7 @@
       "Feedback": null,
       "HasFeedback": false,
       "NotRequiredOrgTypes": [],
-      "BodyText": ""
+      "BodyText": "<p class='govuk-body'>This can be an individual or another organisation who has overall responsibility, relevant knowledge and skills to manage health and safety concerns.</p><p class='govuk-body'>We'll only contact them if there is a health and safety concern.</p>"
     }
   ],
   "Complete": false,
@@ -106,5 +181,5 @@
   "Feedback": null,
   "HasFeedback": false,
   "NotRequiredOrgTypes": [],
-  "BodyText": "H AND S Holding page"
+  "BodyText": ""
 }
