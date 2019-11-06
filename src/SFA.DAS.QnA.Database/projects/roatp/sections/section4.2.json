@@ -28,7 +28,7 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Select your organisation's continuity plan for apprenticeship training"
                             },
                             {
