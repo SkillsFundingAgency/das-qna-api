@@ -31,7 +31,7 @@
                         ],
                         "Validations": [{
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Tell us if your organisation has engaged with employers to deliver apprenticeship training to their employees"
                             }
                         ]
@@ -74,7 +74,7 @@
                         "Type": "Textarea",
                         "Validations": [{
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Enter how you continuously improve the quality of your assessment practice"
                             }, {
                                 "Name": "MaxLength",
@@ -121,7 +121,7 @@
                         "Type": "Text",
                         "Validations": [{
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Enter a full name"
                             }, {
                                 "Name": "MaxLength",
@@ -134,7 +134,7 @@
                         "DataEndpoint": null
                     },
                     "Order": null,
-                    "Value": null,
+                    "Value": "",
                     "ErrorMessages": null
                 }, {
                     "QuestionId": "RTE-22.2",
@@ -147,11 +147,11 @@
                         "Type": "Email",
                         "Validations": [{
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Enter an email"
                             }, {
                                 "Name": "Email",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Enter an email in the correct format, like name@example.com"                                
                             }, {
                                 "Name": "MaxLength",
@@ -164,7 +164,7 @@
                         "DataEndpoint": null
                     },
                     "Order": null,
-                    "Value": null,
+                    "Value": "",
                     "ErrorMessages": null
                 }, {
                     "QuestionId": "RTE-22.3",
@@ -177,7 +177,7 @@
                         "Type": "Number",
                         "Validations": [{
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Enter a valid contact number using only numbers"
                             }, {
                                 "Name": "Regex",
@@ -198,7 +198,7 @@
                         "DataEndpoint": null
                     },
                     "Order": null,
-                    "Value": null,
+                    "Value": "",
                     "ErrorMessages": null
                 }
             ],
@@ -237,7 +237,7 @@
                         "Type": "Textarea",
                         "Validations": [{
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Enter how you promote apprenticeships to employers"
                             }, {
                                 "Name": "MaxLength",

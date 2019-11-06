@@ -31,7 +31,7 @@
                         ],
                         "Validations": [{
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Tell us if your organisation expects to use subcontractors in the first 12 months of joining RoATP"
                             }
                         ]
@@ -74,7 +74,7 @@
                         "Type": "Textarea",
                         "Validations": [{
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Tell us how your organisation will carry out due diligence on its subcontractors"
                             }, {
                                 "Name": "MaxLength",

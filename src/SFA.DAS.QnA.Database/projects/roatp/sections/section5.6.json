@@ -21,7 +21,7 @@
                         "Type": "Textarea",
                         "Validations": [{
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Tell us what your organisation's process is for initial assessments to recognise prior learning"
                             }, {
                                 "Name": "MaxLength",
@@ -68,7 +68,7 @@
                         "Type": "Textarea",
                         "Validations": [{
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Tell us what your organisation's process is to assess English and maths qualifications for apprentices"
                             }, {
                                 "Name": "MaxLength",

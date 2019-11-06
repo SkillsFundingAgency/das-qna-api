@@ -21,7 +21,7 @@
                         "Type": "FileUpload",
                         "Validations": [{
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Select your organisation's commitment statement template"
                             }, {
                                 "Name": "FileType",

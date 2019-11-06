@@ -21,7 +21,7 @@
                         "Type": "FileUpload",
                         "Validations": [{
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Select your organisation's complaints policy"
                             }, {
                                 "Name": "FileType",
@@ -68,11 +68,11 @@
                         "Type": "Text",
                         "Validations": [{
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Enter the website link for your organisation's complaints policy"
                             }, {
                                 "Name": "Url",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Enter a valid website link"
                             }, {
                                 "Name": "MaxLength",
