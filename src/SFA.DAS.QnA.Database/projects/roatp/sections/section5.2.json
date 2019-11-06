@@ -78,7 +78,7 @@
                                 "ErrorMessage": "Enter how you continuously improve the quality of your assessment practice"
                             }, {
                                 "Name": "MaxLength",
-                                "Value": 750,
+                                "Value": "750",
                                 "ErrorMessage": "Your answer must be 750 characters or less"
                             }
                         ]
@@ -125,7 +125,7 @@
                                 "ErrorMessage": "Enter a full name"
                             }, {
                                 "Name": "MaxLength",
-                                "Value": 255,
+                                "Value": "255",
                                 "ErrorMessage": "Enter a full name using 255 characters or less"
                             }
                         ],
@@ -155,7 +155,7 @@
                                 "ErrorMessage": "Enter an email in the correct format, like name@example.com"                                
                             }, {
                                 "Name": "MaxLength",
-                                "Value": 70,
+                                "Value": "70",
                                 "ErrorMessage": "Enter an email using 70 characters or less"
                             }
                         ],
@@ -185,11 +185,11 @@
                                 "ErrorMessage": "Enter a valid contact number using only numbers"
                             }, {
                                 "Name": "MinLength",
-                                "Value": 10,
+                                "Value": "10",
                                 "ErrorMessage": "Enter a contact number using 10 digits or less"
                             }, {
                                 "Name": "MaxLength",
-                                "Value": 20,
+                                "Value": "20",
                                 "ErrorMessage": "Enter a contact number using 20 digits or less"
                             }
                         ],
@@ -241,7 +241,7 @@
                                 "ErrorMessage": "Enter how you promote apprenticeships to employers"
                             }, {
                                 "Name": "MaxLength",
-                                "Value": 750,
+                                "Value": "750",
                                 "ErrorMessage": "Your answer must be 750 characters or less"
                             }
                         ]

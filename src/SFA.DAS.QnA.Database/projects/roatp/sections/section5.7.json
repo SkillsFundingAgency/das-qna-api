@@ -78,7 +78,7 @@
                                 "ErrorMessage": "Tell us how your organisation will carry out due diligence on its subcontractors"
                             }, {
                                 "Name": "MaxLength",
-                                "Value": 1500,
+                                "Value": "1500",
                                 "ErrorMessage": "Your answer must be 1500 characters or less"
                             }
                         ]

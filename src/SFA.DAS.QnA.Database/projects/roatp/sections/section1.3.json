@@ -101,12 +101,12 @@
                             },
                             {
                                 "Name": "MinLength",
-                                "Value": 8,
+                                "Value": "8",
                                 "ErrorMessage": "Enter a company number using 8 characters"
                             },
                             {
                                 "Name": "MaxLength",
-                                "Value": 8,
+                                "Value": "8",
                                 "ErrorMessage": "Enter a company number using 8 characters"
                             },
                             {
@@ -136,12 +136,12 @@
                             },
                             {
                                 "Name": "MinLength",
-                                "Value": 2,
+                                "Value": "2",
                                 "ErrorMessage": "Enter a company name using 2 characters or more"
                             },
                             {
                                 "Name": "MaxLength",
-                                "Value": 200,
+                                "Value": "200",
                                 "ErrorMessage": "Enter a company number using 200 characters or less"
                             }
                         ]
@@ -199,12 +199,12 @@
                             },
                             {
                                 "Name": "MinLength",
-                                "Value": 8,
+                                "Value": "8",
                                 "ErrorMessage": "Enter an ICO registration number using 8 characters"
                             },
                             {
                                 "Name": "MaxLength",
-                                "Value": 8,
+                                "Value": "8",
                                 "ErrorMessage": "Enter an ICO registration number using 8 characters"
                             }
                         ]
@@ -307,7 +307,7 @@
                                                 },
                                                 {
                                                     "Name": "MaxLength",
-                                                    "Value": 100,
+                                                    "Value": "100",
                                                     "ErrorMessage": "Enter a website using 100 characters or less"
                                                 },
                                                 {

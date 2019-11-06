@@ -76,7 +76,7 @@
                                 "ErrorMessage": "Enter a valid website link"
                             }, {
                                 "Name": "MaxLength",
-                                "Value": 100,
+                                "Value": "100",
                                 "ErrorMessage": "Enter a website link using 100 characters or less"
                             }
                         ]
