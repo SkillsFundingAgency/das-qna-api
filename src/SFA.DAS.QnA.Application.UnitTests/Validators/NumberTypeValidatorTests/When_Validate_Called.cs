@@ -23,6 +23,10 @@ namespace SFA.DAS.QnA.Application.UnitTests.Validators.NumberTypeValidatorTests
         [TestCase(int.MaxValue, true)]
         [TestCase(long.MinValue, true)]
         [TestCase(long.MaxValue, true)]
+        [TestCase(ulong.MinValue, true)]
+        [TestCase(ulong.MaxValue, true)]
+        [TestCase("-987654321012345678987654321", true)]
+        [TestCase("987654321012345678987654321", true)]
         public void Then_correct_errors_are_returned(object input, bool isValid)
         {
             var validator = new NumberTypeValidator
