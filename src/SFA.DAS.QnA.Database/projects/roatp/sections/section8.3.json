@@ -1,7 +1,6 @@
-
 {
-    "Title": "Process for evaluating the quality of training delivered",
-    "LinkTitle": "Process for evaluating the quality of training delivered",
+    "Title": "Evaluating the quality of apprenticeship training",
+    "LinkTitle": "Evaluating the quality of apprenticeship training",
     "DisplayType": "Pages",
     "RequestedFeedbackAnswered": null,
     "Pages": [
@@ -9,14 +8,14 @@
             "PageId": "8200",
             "SequenceId": null,
             "SectionId": null,
-            "Title": "Process for evaluating the quality of training delivered",
-            "LinkTitle": "Process for evaluating the quality of training delivered",
+            "Title": "Evaluating the quality of apprenticeship training",
+            "LinkTitle": "Evaluating the quality of apprenticeship training",
             "InfoText": "",
             "Questions": [
                 {
                     "QuestionId": "EAT-30",
                     "QuestionTag": "EAT-Evaluating-ApprenticeshipTraining",
-                    "Label": "Does your organisation's process for evaluating the quality of training delivered include apprenticeship training?",
+                    "Label": "Does your organisation's Evaluating the quality of apprenticeship training include apprenticeship training?",
                     "ShortLabel": "",
                     "QuestionBodyText": "<p class='govuk-body' id='eat-evaluating-apprenticeshiptraining'>This means your existing process includes how your organisation will:</p><ul class='govuk-list govuk-list--bullet'><li>respond and act on feedback from apprentices</li><li>continuously improve apprenticeship training</li><li>identify and address poor apprenticeship training</li></ul>",
                     "Hint": "",
@@ -39,7 +38,7 @@
                             {
                                 "Name": "Required",
                                 "Value": null,
-                                "ErrorMessage": "Tell if your organisation's process for evaluating the quality of training delivered includes apprenticeship training"
+                                "ErrorMessage": "Tell if your organisation's Evaluating the quality of apprenticeship training includes apprenticeship training"
                             }
                         ]
                     },
@@ -50,6 +49,17 @@
             "Next": [
                 {
                     "Action": "NextPage",
+                    "ReturnId": "8230",
+                    "Conditions": [
+                        {
+                            "QuestionId": "EAT-30",
+                            "MustEqual": "Yes"
+                        }
+                    ],
+                    "ConditionMet": false
+                },
+                {
+                    "Action": "NextPage",
                     "ReturnId": "8210",
                     "Conditions": [
                         {
@@ -57,7 +67,7 @@
                             "MustEqual": "No"
                         },
                         {
-                            "QuestionId": "Apply-ProviderRoute",
+                            "QuestionTag": "Apply-ProviderRoute",
                             "MustEqual": "1"
                         }
                     ],
@@ -72,7 +82,7 @@
                             "MustEqual": "No"
                         },
                         {
-                            "QuestionId": "Apply-ProviderRoute",
+                            "QuestionTag": "Apply-ProviderRoute",
                             "MustEqual": "2"
                         }
                     ],
@@ -87,52 +97,7 @@
                             "MustEqual": "No"
                         },
                         {
-                            "QuestionId": "Apply-ProviderRoute",
-                            "MustEqual": "3"
-                        }
-                    ],
-                    "ConditionMet": false
-                },
-                {
-                    "Action": "NextPage",
-                    "ReturnId": "8230",
-                    "Conditions": [
-                        {
-                            "QuestionId": "EAT-30",
-                            "MustEqual": "Yes"
-                        },
-                        {
-                            "QuestionId": "Apply-ProviderRoute",
-                            "MustEqual": "1"
-                        }
-                    ],
-                    "ConditionMet": false
-                },				
-                {
-                    "Action": "NextPage",
-                    "ReturnId": "8230",
-                    "Conditions": [
-                        {
-                            "QuestionId": "EAT-30",
-                            "MustEqual": "Yes"
-                        },
-                        {
-                            "QuestionId": "Apply-ProviderRoute",
-                            "MustEqual": "2"
-                        }
-                    ],
-                    "ConditionMet": false
-                },
-                {
-                    "Action": "NextPage",
-                    "ReturnId": "8240",
-                    "Conditions": [
-                        {
-                            "QuestionId": "EAT-30",
-                            "MustEqual": "Yes"
-                        },
-                        {
-                            "QuestionId": "Apply-ProviderRoute",
+                            "QuestionTag": "Apply-ProviderRoute",
                             "MustEqual": "3"
                         }
                     ],
@@ -153,8 +118,8 @@
             "PageId": "8210",
             "SequenceId": null,
             "SectionId": null,
-            "Title": "Process for evaluating the quality of training delivered",
-            "LinkTitle": "Process for evaluating the quality of training delivered",
+            "Title": "Evaluating the quality of apprenticeship training",
+            "LinkTitle": "Evaluating the quality of apprenticeship training",
             "InfoText": "",
             "Questions": [{
                     "QuestionId": "EAT-40",
@@ -202,8 +167,8 @@
             "PageId": "8220",
             "SequenceId": null,
             "SectionId": null,
-            "Title": "Process for evaluating the quality of training delivered",
-            "LinkTitle": "Process for evaluating the quality of training delivered",
+            "Title": "Evaluating the quality of apprenticeship training",
+            "LinkTitle": "Evaluating the quality of apprenticeship training",
             "InfoText": "",
             "Questions": [{
                     "QuestionId": "EAT-41",
@@ -251,8 +216,8 @@
             "PageId": "8230",
             "SequenceId": null,
             "SectionId": null,
-            "Title": "Process for evaluating the quality of training delivered",
-            "LinkTitle": "Process for evaluating the quality of training delivered",
+            "Title": "Evaluating the quality of apprenticeship training",
+            "LinkTitle": "Evaluating the quality of apprenticeship training",
             "InfoText": "",
             "Questions": [{
                     "QuestionId": "EAT-50",
