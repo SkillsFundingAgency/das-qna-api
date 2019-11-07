@@ -18,12 +18,12 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.SetPageAnswersTests
         {
             await Handler.Handle(new SetPageAnswersRequest(ApplicationId, SectionId, "1", new List<Answer>
             {
-                new Answer() {QuestionId = "Q1", Value = new []{ "Yes" }}
+                new Answer() {QuestionId = "Q1", Value = "Yes"}
             }), CancellationToken.None);
             
             await Handler.Handle(new SetPageAnswersRequest(ApplicationId, SectionId, "1", new List<Answer>
             {
-                new Answer() {QuestionId = "Q1", Value = new []{ "No"}}
+                new Answer() {QuestionId = "Q1", Value = "No"}
             }), CancellationToken.None);
             
             var updatedSection = await DataContext.ApplicationSections.SingleAsync();
@@ -45,19 +45,18 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.SetPageAnswersTests
         {
             await Handler.Handle(new SetPageAnswersRequest(ApplicationId, SectionId, "1", new List<Answer>
             {
-                new Answer() {QuestionId = "Q1", Value = new []{"Yes"}}
+                new Answer() {QuestionId = "Q1", Value = "Yes"}
             }), CancellationToken.None);
             
             await Handler.Handle(new SetPageAnswersRequest(ApplicationId, SectionId, "2", new List<Answer>
             {
-                new Answer() {QuestionId = "Q2", Value =new []{ "No"}}
+                new Answer() {QuestionId = "Q2", Value = "No"}
             }), CancellationToken.None);
             
             await Handler.Handle(new SetPageAnswersRequest(ApplicationId, SectionId, "2", new List<Answer>
             {
-                new Answer() {QuestionId = "Q2", Value = new []{"Yes"}
-            }
-    }), CancellationToken.None);
+                new Answer() {QuestionId = "Q2", Value = "Yes"}
+            }), CancellationToken.None);
             
             var updatedSection = await DataContext.ApplicationSections.SingleAsync();
             

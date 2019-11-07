@@ -17,7 +17,7 @@ namespace SFA.DAS.QnA.Application.Validators
         {
             var errors = new List<KeyValuePair<string, string>>();
 
-            var text = answer?.Value?[0].Trim();
+            var text = answer?.Value?.Trim();
 
             if (!string.IsNullOrEmpty(text) && !IsValidNumber(text))
             {
