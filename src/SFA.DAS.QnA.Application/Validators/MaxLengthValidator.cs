@@ -10,9 +10,9 @@ namespace SFA.DAS.QnA.Application.Validators
         {
             var errors = new List<KeyValuePair<string, string>>();
 
-            var text = answer?.Value?[0].Trim();
+            var text = answer?.Value?.Trim();
 
-            if (!string.IsNullOrEmpty(text) && text.Length > long.Parse(ValidationDefinition.Value))
+            if (!string.IsNullOrEmpty(text) && text.Length > (long)ValidationDefinition.Value)
             {
                 errors.Add(new KeyValuePair<string, string>(question.QuestionId, ValidationDefinition.ErrorMessage));
             }

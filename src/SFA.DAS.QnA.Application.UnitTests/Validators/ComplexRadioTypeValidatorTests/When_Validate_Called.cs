@@ -26,7 +26,7 @@ namespace SFA.DAS.QnA.Application.UnitTests.Validators.ComplexRadioTypeValidator
 
             var options = new List<Option> { new Option { Value = "yes" }, new Option { Value = "no" } };
             var question = new Question { QuestionId = "Q1", Input = new Input { Options = options } };
-            var errors = validator.Validate(question, new Answer { Value = new []{input}, QuestionId = question.QuestionId });
+            var errors = validator.Validate(question, new Answer { Value = input, QuestionId = question.QuestionId });
 
             (errors.Count is 0).Should().Be(isValid);
         }
