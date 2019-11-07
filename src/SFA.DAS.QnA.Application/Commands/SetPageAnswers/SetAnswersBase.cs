@@ -78,7 +78,7 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
 
         public Next FindNextRequiredAction(ApplicationSection section, QnaDataContext qnaDataContext, Next nextAction)
         {
-            if (nextAction.Action != "NextPage") return nextAction;
+            if (nextAction is null || nextAction.Action != "NextPage") return nextAction;
             
             // Check here for any NotRequiredConditions on the next page.
 
