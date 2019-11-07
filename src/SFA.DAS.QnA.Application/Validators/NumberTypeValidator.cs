@@ -29,7 +29,15 @@ namespace SFA.DAS.QnA.Application.Validators
 
         private static bool IsValidNumber(string number)
         {
-            return long.TryParse(number, out var _);
+            var isValid = long.TryParse(number, out var _);
+
+            if (!isValid)
+            {
+                // Fall back to RegEx in case it's a huge positive/negative number
+                isValid = Regex.IsMatch(number, @"^[+-]?[\d]*$");
+            }
+
+            return isValid;
         }
     }
 }
