@@ -1,5 +1,7 @@
 using SFA.DAS.QnA.Api.Types.Page;
+using System;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 
 namespace SFA.DAS.QnA.Application.Validators
 {
@@ -10,7 +12,7 @@ namespace SFA.DAS.QnA.Application.Validators
         {
             var errors = new List<KeyValuePair<string, string>>();
 
-            var text = answer?.Value?.Trim();
+            var text = answer?.Value?[0].Trim();
 
             if (!string.IsNullOrEmpty(text) && !IsValidNumber(text))
             {
@@ -22,7 +24,22 @@ namespace SFA.DAS.QnA.Application.Validators
 
         private static bool IsValidNumber(string number)
         {
-            return long.TryParse(number, out var _);
+            var isValid = long.TryParse(number, out var _);
+
+            if (!isValid)
+            {
+                try
+                {
+                    // Fall back to RegEx in case it's a huge positive/negative number
+                    isValid = Regex.IsMatch(number, @"^[+-]?[\d]*$");
+                }
+                catch (ArgumentException)
+                {
+                    isValid = false;
+                }
+            }
+
+            return isValid;
         }
     }
 }

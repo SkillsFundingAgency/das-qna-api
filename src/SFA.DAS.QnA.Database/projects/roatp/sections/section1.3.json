@@ -1,6 +1,6 @@
 {
-    "Title": "Organisation details",
-    "LinkTitle": "Organisation details",
+    "Title": "Organisation information",
+    "LinkTitle": "Organisation information",
     "DisplayType": "Pages",
     "RequestedFeedbackAnswered": null,
     "Pages": [
@@ -36,7 +36,7 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Tell us if your organisation has an ultimate UK parent company"
                             }
                         ]
@@ -96,7 +96,7 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Enter a company number"
                             },
                             {
@@ -131,7 +131,7 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Enter a company name"
                             },
                             {
@@ -167,8 +167,7 @@
             "HasFeedback": false,
             "NotRequiredConditions": [],
             "ActivatedByPageId": null,
-            "BodyText": "",
-            "NotRequired": true
+            "BodyText": ""
         },
         {
             "PageId": "30",
@@ -195,7 +194,7 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Enter an ICO registration number"
                             },
                             {
@@ -303,7 +302,7 @@
                                             "Validations": [
                                                 {
                                                     "Name": "Required",
-                                                    "Value": null,
+                                                    "Value": "",
                                                     "ErrorMessage": "Enter a website"
                                                 },
                                                 {
@@ -331,7 +330,7 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Tell us if your organisation has a website"
                             }
                         ]
@@ -428,7 +427,7 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Tell us how long your organisation has been trading for"
                             }
                         ]
@@ -520,8 +519,7 @@
             "HasFeedback": false,
             "NotRequiredConditions": [],
             "ActivatedByPageId": null,
-            "BodyText": "",
-            "NotRequired": true
+            "BodyText": ""
         },
         {
             "PageId": "51",
@@ -565,7 +563,7 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Tell us how long your organisation has been trading for"
                             }
                         ]
@@ -657,8 +655,7 @@
             "HasFeedback": false,
             "NotRequiredConditions": [],
             "ActivatedByPageId": null,
-            "BodyText": "",
-            "NotRequired": true
+            "BodyText": ""
         },
         {
             "PageId": "60",
@@ -702,7 +699,7 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Tell us how long your organisation has been trading for"
                             }
                         ]
@@ -794,8 +791,7 @@
             "HasFeedback": false,
             "NotRequiredConditions": [],
             "ActivatedByPageId": null,
-            "BodyText": "",
-            "NotRequired": true
+            "BodyText": ""
         },
         {
             "PageId": "10001",
@@ -830,8 +826,7 @@
             "HasFeedback": false,
             "NotRequiredConditions": [],
             "ActivatedByPageId": null,
-            "BodyText": "",
-            "NotRequired": true
+            "BodyText": ""
         },
         {
             "PageId": "10002",
@@ -866,8 +861,7 @@
             "HasFeedback": false,
             "NotRequiredConditions": [],
             "ActivatedByPageId": null,
-            "BodyText": "",
-            "NotRequired": true
+            "BodyText": ""
         },
         {
             "PageId": "10003",
@@ -902,8 +896,7 @@
             "HasFeedback": false,
             "NotRequiredConditions": [],
             "ActivatedByPageId": null,
-            "BodyText": "",
-            "NotRequired": true
+            "BodyText": ""
         }
     ]
 }

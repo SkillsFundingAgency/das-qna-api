@@ -10,7 +10,7 @@ namespace SFA.DAS.QnA.Application.Validators
         {
             var errors = new List<KeyValuePair<string, string>>();
 
-            var text = answer?.Value?.Trim();
+            var text = answer?.Value?[0].Trim();
 
             if (!string.IsNullOrEmpty(text))
             {

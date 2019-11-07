@@ -1,6 +1,6 @@
 {
-    "Title": "Confirm who's in control",
-    "LinkTitle": "Confirm who's in control",
+    "Title": "Tell us who's in control",
+    "LinkTitle": "Tell us who's in control",
     "DisplayType": "Pages",
     "RequestedFeedbackAnswered": null,
     "Pages": [
@@ -94,10 +94,8 @@
             "Visible": true,
             "Feedback": null,
             "HasFeedback": false,
-            "NotRequiredConditions": [],
-            "ActivatedByPageId": null,
-            "BodyText": "",
-            "NotRequired": true
+            "NotRequiredOrgTypes": [],
+            "BodyText": ""
         },
         {
             "PageId": "80",
@@ -150,10 +148,8 @@
             "Visible": true,
             "Feedback": null,
             "HasFeedback": false,
-            "NotRequiredConditions": [],
-            "ActivatedByPageId": null,
-            "BodyText": "",
-            "NotRequired": true
+            "NotRequiredOrgTypes": [],
+            "BodyText": ""
         },
         {
             "PageId": "90",
@@ -193,10 +189,8 @@
             "Visible": true,
             "Feedback": null,
             "HasFeedback": false,
-            "NotRequiredConditions": [],
-            "ActivatedByPageId": null,
-            "BodyText": "",
-            "NotRequired": true
+            "NotRequiredOrgTypes": [],
+            "BodyText": ""
         },
         {
             "PageId": "100",
@@ -234,7 +228,7 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Tell us what your organisation is"
                             }
                         ]
@@ -246,7 +240,7 @@
             "Next": [
                 {
                     "Action": "NextPage",
-                    "ReturnId": "110",
+                    "ReturnId": "101",
                     "Conditions": [
                         {
                             "QuestionId": "YO-100",
@@ -274,28 +268,101 @@
             "Visible": true,
             "Feedback": null,
             "HasFeedback": false,
-            "NotRequiredConditions": [],
-            "ActivatedByPageId": null,
-            "BodyText": "",
-            "NotRequired": true
+            "NotRequiredOrgTypes": [],
+            "BodyText": ""
+        },
+        {
+            "PageId": "101",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "What is your organisation's partner?",
+            "LinkTitle": "",
+            "InfoText": "",
+            "Questions": [
+                {
+                    "QuestionId": "YO-101",
+                    "QuestionTag": "Partnership-Type",
+                    "Label": "What is your organisation's partner?",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "Radio",
+                        "Options": [
+                            {
+                                "Label": "Individual",
+                                "Value": "Individual",
+                                "FurtherQuestions": []
+                            },
+                            {
+                                "Label": "Organisation",
+                                "Value": "Organisation",
+                                "FurtherQuestions": []
+                            }
+                        ],
+                        "Validations": [
+                            {
+                                "Name": "Required",
+                                "Value": "",
+                                "ErrorMessage": "Tell us what your organisation's partner is"
+                            }
+                        ]
+                    },
+                    "Order": null
+                }
+            ],
+            "PageOfAnswers": [],
+            "Next": [
+                {
+                    "Action": "NextPage",
+                    "ReturnId": "110",
+                    "Conditions": [
+                        {
+                            "QuestionId": "YO-101",
+                            "MustEqual": "Individual"
+                        }
+                    ],
+                    "ConditionMet": false
+                },
+                {
+                    "Action": "NextPage",
+                    "ReturnId": "111",
+                    "Conditions": [
+                        {
+                            "QuestionId": "YO-101",
+                            "MustEqual": "Organisation"
+                        }
+                    ],
+                    "ConditionMet": false
+                }
+            ],
+            "Complete": false,
+            "AllowMultipleAnswers": false,
+            "Order": null,
+            "Active": true,
+            "Visible": true,
+            "Feedback": null,
+            "HasFeedback": false,
+            "NotRequiredOrgTypes": [],
+            "BodyText": ""
         },
         {
             "PageId": "110",
             "SequenceId": null,
             "SectionId": null,
-            "Title": "PLACEHOLDER Add Partner",
+            "Title": "Enter the individual's details",
             "LinkTitle": "",
             "InfoText": "",
             "Questions": [
                 {
                     "QuestionId": "YO-110",
-                    "QuestionTag": "Add-Partner",
-                    "Label": "PLACEHOLDER Add Partner",
+                    "QuestionTag": "Add-Partners",
+                    "Label": "Enter the individual's details",
                     "ShortLabel": "",
                     "QuestionBodyText": "",
                     "Hint": "",
                     "Input": {
-                        "Type": "Hidden",
+                        "Type": "TabularData",
                         "Validations": []
                     },
                     "Order": null
@@ -317,10 +384,49 @@
             "Visible": true,
             "Feedback": null,
             "HasFeedback": false,
-            "NotRequiredConditions": [],
-            "ActivatedByPageId": null,
-            "BodyText": "",
-            "NotRequired": true
+            "NotRequiredOrgTypes": [],
+            "BodyText": ""
+        },
+        {
+            "PageId": "111",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "Enter the partner organisation's name",
+            "LinkTitle": "",
+            "InfoText": "",
+            "Questions": [
+                {
+                    "QuestionId": "YO-110",
+                    "QuestionTag": "Add-Partners",
+                    "Label": "Enter the partner organisation's name",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "TabularData",
+                        "Validations": []
+                    },
+                    "Order": null
+                }
+            ],
+            "PageOfAnswers": [],
+            "Next": [
+                {
+                    "Action": "NextPage",
+                    "ReturnId": "140",
+                    "Conditions": [],
+                    "ConditionMet": false
+                }
+            ],
+            "Complete": false,
+            "AllowMultipleAnswers": false,
+            "Order": null,
+            "Active": true,
+            "Visible": true,
+            "Feedback": null,
+            "HasFeedback": false,
+            "NotRequiredOrgTypes": [],
+            "BodyText": ""
         },
         {
             "PageId": "120",
@@ -336,18 +442,18 @@
                     "Label": "What is {{UKRLP-LegalName}}'s date of birth?",
                     "ShortLabel": "Date of birth",
                     "QuestionBodyText": "",
-                    "Hint": "For example, 3 1980",
+                    "Hint": "",
                     "Input": {
                         "Type": "MonthAndYear",
                         "Validations": [
                             {
                                 "Name": "MonthAndYear",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Enter a date of birth using a month and year"
                             },
                             {
                                 "Name": "MonthAndYearNotInFuture",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Enter a date of birth using a month and year that's in the past"
                             }
                         ]
@@ -371,10 +477,8 @@
             "Visible": true,
             "Feedback": null,
             "HasFeedback": false,
-            "NotRequiredConditions": [],
-            "ActivatedByPageId": null,
-            "BodyText": "",
-            "NotRequired": true
+            "NotRequiredOrgTypes": [],
+            "BodyText": ""
         },
         {
             "PageId": "130",
@@ -414,10 +518,8 @@
             "Visible": true,
             "Feedback": null,
             "HasFeedback": false,
-            "NotRequiredConditions": [],
-            "ActivatedByPageId": null,
-            "BodyText": "",
-            "NotRequired": true
+            "NotRequiredOrgTypes": [],
+            "BodyText": ""
         }
     ]
 }

@@ -1,6 +1,6 @@
 {
-    "Title": "Provider route route",
-    "LinkTitle": "Provider route route",
+    "Title": "Provider route",
+    "LinkTitle": "Provider route",
     "DisplayType": "Pages",
     "RequestedFeedbackAnswered": null,
     "Pages": [
@@ -44,7 +44,7 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Tell us your organisation's provider route"
                             }
                         ]
