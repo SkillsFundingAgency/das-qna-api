@@ -33,15 +33,18 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
 
             if (page.AllowMultipleAnswers) return new HandlerResponse<SetPageAnswersResponse>(success: false, message: "This endpoint cannot be used for Multiple Answers pages. Use AddAnswer / RemoveAnswer instead.");
 
-            if (page.Questions.Count > request.Answers.Count)
+            if (page.Questions.Count > 0)
             {
-                return new HandlerResponse<SetPageAnswersResponse>(success: false, message: $"Number of Answers supplied ({request.Answers.Count}) does not match number of first level Questions on page ({page.Questions.Count}).");
-            }
-            
-            var validationErrors = _answerValidator.Validate(request.Answers, page);
-            if (validationErrors.Any())
-            {
-                return new HandlerResponse<SetPageAnswersResponse>(new SetPageAnswersResponse(validationErrors));
+                if (page.Questions.Count > request.Answers.Count)
+                {
+                    return new HandlerResponse<SetPageAnswersResponse>(success: false, message: $"Number of Answers supplied ({request.Answers.Count}) does not match number of first level Questions on page ({page.Questions.Count}).");
+                }
+                
+                var validationErrors = _answerValidator.Validate(request.Answers, page);
+                if (validationErrors.Any())
+                {
+                    return new HandlerResponse<SetPageAnswersResponse>(new SetPageAnswersResponse(validationErrors));
+                }
             }
 
             page.Complete = true;
