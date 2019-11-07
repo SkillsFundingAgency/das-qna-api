@@ -32,8 +32,15 @@ namespace SFA.DAS.QnA.Application.Validators
 
             if (!isValid)
             {
-                // Fall back to RegEx in case it's a huge positive/negative number
-                isValid = Regex.IsMatch(number, @"^[+-]?[\d]*$");
+                try
+                {
+                    // Fall back to RegEx in case it's a huge positive/negative number
+                    isValid = Regex.IsMatch(number, @"^[+-]?[\d]*$");
+                }
+                catch (ArgumentException)
+                {
+                    isValid = false;
+                }
             }
 
             return isValid;
