@@ -90,15 +90,13 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
         {
             if (string.IsNullOrWhiteSpace(question.QuestionTag)) return;
 
-            var answer = answers.Single(a => a.QuestionId == question.QuestionId);
-            
             if (applicationData.ContainsKey(question.QuestionTag))
             {
-                applicationData[question.QuestionTag] = answer.Value.Length == 1 ? (JToken) answer.Value[0] : new JValue(answer.Value[0]);
+                applicationData[question.QuestionTag] = answers.Single(a => a.QuestionId == question.QuestionId).Value;
             }
             else
             {
-                applicationData.Add(question.QuestionTag, answer.Value.Length == 1 ? new JValue(answer.Value[0]) : JToken.FromObject(answer.Value));
+                applicationData.Add(question.QuestionTag, new JValue(answers.Single(a => a.QuestionId == question.QuestionId).Value));
             }
         }
 

@@ -21,7 +21,7 @@
 
             var response = await Handler.Handle(new SetPageAnswersRequest(applicationId, sectionId, "100", new List<Answer>
             {
-                new Answer() {QuestionId = "Q1", Value = new []{"Yes"}}
+                new Answer() {QuestionId = "Q1", Value = "Yes"}
             }), CancellationToken.None);
 
             response.Value.NextActionId.Should().Be("102");
@@ -36,7 +36,7 @@
 
             var response = await Handler.Handle(new SetPageAnswersRequest(applicationId, sectionId, "100", new List<Answer>
             {
-                new Answer() {QuestionId = "Q1", Value = new []{"Yes"}}
+                new Answer() {QuestionId = "Q1", Value = "Yes"}
             }), CancellationToken.None);
 
             response.Value.NextActionId.Should().Be("101");
