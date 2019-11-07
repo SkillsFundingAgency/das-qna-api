@@ -21,7 +21,7 @@
                     "Hint": "",
                     "Input":
                     {
-                        "Type": "Radio",
+                        "Type": "ComplexRadio",
                         "Options": [
                             {
                                 "Label": "Yes",
@@ -35,10 +35,10 @@
                                     {
                                         "QuestionId": "EAT-60.1",
                                         "QuestionTag": "",
-                                        "Label": "",
+                                        "Label": "Before joining the RoATP, your organisation must have systems and processes in place to get this data. We may ask for evidence on this.",
                                         "ShortLabel": "",
                                         "InputClasses": null,
-                                        "QuestionBodyText": "<p class='govuk-body'>Before joining the RoATP, your organisation must have systems and processes in place to get this data. We may ask for evidence on this.</p>",
+                                        "QuestionBodyText": "",
                                         "Hint": "",
                                         "Input": {
                                             "Type": "Hidden",
