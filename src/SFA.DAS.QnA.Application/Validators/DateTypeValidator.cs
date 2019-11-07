@@ -17,7 +17,7 @@ namespace SFA.DAS.QnA.Application.Validators
         {
             var errors = new List<KeyValuePair<string, string>>();
 
-            var text = answer?.Value?.Trim();
+            var text = answer?.Value?[0].Trim();
             var dateParts = text?.Split(new[] { "," }, StringSplitOptions.RemoveEmptyEntries);
 
             if (string.IsNullOrEmpty(text) || dateParts is null || dateParts.Length != 3)

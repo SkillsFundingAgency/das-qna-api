@@ -33,15 +33,18 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
 
             if (page.AllowMultipleAnswers) return new HandlerResponse<SetPageAnswersResponse>(success: false, message: "This endpoint cannot be used for Multiple Answers pages. Use AddAnswer / RemoveAnswer instead.");
 
-            if (page.Questions.Count > request.Answers.Count)
+            if (page.Questions.Count > 0)
             {
-                return new HandlerResponse<SetPageAnswersResponse>(success: false, message: $"Number of Answers supplied ({request.Answers.Count}) does not match number of first level Questions on page ({page.Questions.Count}).");
-            }
-            
-            var validationErrors = _answerValidator.Validate(request.Answers, page);
-            if (validationErrors.Any())
-            {
-                return new HandlerResponse<SetPageAnswersResponse>(new SetPageAnswersResponse(validationErrors));
+                if (page.Questions.Count > request.Answers.Count)
+                {
+                    return new HandlerResponse<SetPageAnswersResponse>(success: false, message: $"Number of Answers supplied ({request.Answers.Count}) does not match number of first level Questions on page ({page.Questions.Count}).");
+                }
+                
+                var validationErrors = _answerValidator.Validate(request.Answers, page);
+                if (validationErrors.Any())
+                {
+                    return new HandlerResponse<SetPageAnswersResponse>(new SetPageAnswersResponse(validationErrors));
+                }
             }
 
             page.Complete = true;
@@ -87,13 +90,15 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
         {
             if (string.IsNullOrWhiteSpace(question.QuestionTag)) return;
 
+            var answer = answers.Single(a => a.QuestionId == question.QuestionId);
+            
             if (applicationData.ContainsKey(question.QuestionTag))
             {
-                applicationData[question.QuestionTag] = answers.Single(a => a.QuestionId == question.QuestionId).Value;
+                applicationData[question.QuestionTag] = answer.Value.Length == 1 ? (JToken) answer.Value[0] : new JValue(answer.Value[0]);
             }
             else
             {
-                applicationData.Add(question.QuestionTag, new JValue(answers.Single(a => a.QuestionId == question.QuestionId).Value));
+                applicationData.Add(question.QuestionTag, answer.Value.Length == 1 ? new JValue(answer.Value[0]) : JToken.FromObject(answer.Value));
             }
         }
 
