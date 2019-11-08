@@ -1,7 +1,7 @@
 {
     "Title": "Introduction and what you'll need",
     "LinkTitle": "Introduction and what you'll need",
-    "DisplayType": "Pages",
+    "DisplayType": "",
     "RequestedFeedbackAnswered": null,
     "Pages": [
         {
@@ -11,52 +11,13 @@
             "Title": "Your organisation",
             "LinkTitle": "Your organisation",
             "InfoText": "",
-            "Questions": [
-                {
-                    "QuestionId": "YO-10",
-                    "QuestionTag": "Organisation-Introduction-Main",
-                    "Label": "",
-                    "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body'>In this section we'll ask for:</p><ul class='govuk-list govuk-list--bullet'><li>your organisation's Information Commissioner's Office registration number</li><li>who's in control and their date of births</li><li>your organisation's trading history</li><li>details of what your organisation is</li><li>Ofsted or other educational accreditations</li></ul><p class='govuk-body'>Depending on your answers, we may ask further questions.</p> <div class='govuk-warning-text'> <span class='govuk-warning-text__icon' aria-hidden='true'>!</span> <strong class='govuk-warning-text__text'> <span class='govuk-warning-text__assistive'>Warning</span>Your organisation must have at least 12 months trading history and a training manager with at least 9 months experience in developing and delivering training. </strong> </div>",
-                    "Hint": "",
-                    "Input": {
-                        "Type": "Hidden",
-                        "Validations": []
-                    },
-                    "Order": null
-                },
-                {
-                    "QuestionId": "YO-11",
-                    "QuestionTag": "Organisation-Introduction-Employer",
-                    "Label": "",
-                    "ShortLabel": "",
-                    "QuestionBodyText": "",
-                    "Hint": "",
-                    "Input": {
-                        "Type": "Hidden",
-                        "Validations": []
-                    },
-                    "Order": null
-                },
-                {
-                    "QuestionId": "YO-12",
-                    "QuestionTag": "Organisation-Introduction-Supporting",
-                    "Label": "",
-                    "ShortLabel": "",
-                    "QuestionBodyText": "",
-                    "Hint": "",
-                    "Input": {
-                        "Type": "Hidden",
-                        "Validations": []
-                    },
-                    "Order": null
-                }
-            ],
+            "Questions": [],
             "PageOfAnswers": [],
             "Next": [
                 {
                     "Action": "NextPage",
                     "ReturnId": "20",
+                    "Condition": null,
                     "Conditions": [],
                     "ConditionMet": false
                 }
@@ -65,9 +26,6 @@
             "AllowMultipleAnswers": false,
             "Order": null,
             "Active": true,
-            "Visible": true,
-            "Feedback": null,
-            "HasFeedback": false,
             "NotRequiredConditions": [
                 {
                     "Field": "Apply-ProviderRoute",
@@ -77,8 +35,11 @@
                     ]
                 }
             ],
-            "ActivatedByPageId": null,
-            "BodyText": ""
+            "BodyText": "<p class='govuk-body'>In this section we'll ask for:</p><ul class='govuk-list govuk-list--bullet'><li>your organisation's Information Commissioner's Office registration number</li><li>who's in control and their date of births</li><li>your organisation's trading history</li><li>details of what your organisation is</li><li>Ofsted or other educational accreditations</li></ul><p class='govuk-body'>Depending on your answers, we may ask further questions.</p> <div class='govuk-warning-text'> <span class='govuk-warning-text__icon' aria-hidden='true'>!</span> <strong class='govuk-warning-text__text'> <span class='govuk-warning-text__assistive'>Warning</span>Your organisation must have at least 12 months trading history and a training manager with at least 9 months experience in developing and delivering training. </strong> </div>",
+            "Details": null,
+            "DisplayType": null,
+            "Feedback": null,
+            "ActivatedByPageId": null
         },
         {
             "PageId": "11",
@@ -87,52 +48,13 @@
             "Title": "Your organisation",
             "LinkTitle": "Your organisation",
             "InfoText": "",
-            "Questions": [
-                {
-                    "QuestionId": "YO-11",
-                    "QuestionTag": "Organisation-Introduction-Employer",
-                    "Label": "",
-                    "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body'>In this section we'll ask for:</p><ul class='govuk-list govuk-list--bullet'><li>your organisation's Information Commissioner's Office registration number</li><li>who's in control and their date of births</li><li>your organisation's trading history</li><li>details of what your organisation is</li><li>Ofsted or other educational accreditations</li></ul><p class='govuk-body'>Depending on your answers, we may ask further questions.</p> <div class='govuk-warning-text'> <span class='govuk-warning-text__icon' aria-hidden='true'>!</span> <strong class='govuk-warning-text__text'> <span class='govuk-warning-text__assistive'>Warning</span>Your organisation must have at least 12 months trading history and a training manager with at least 9 months experience in developing and delivering training. </strong> </div>",
-                    "Hint": "",
-                    "Input": {
-                        "Type": "Hidden",
-                        "Validations": []
-                    },
-                    "Order": null
-                },
-                {
-                    "QuestionId": "YO-10",
-                    "QuestionTag": "Organisation-Introduction-Main",
-                    "Label": "",
-                    "ShortLabel": "",
-                    "QuestionBodyText": "",
-                    "Hint": "",
-                    "Input": {
-                        "Type": "Hidden",
-                        "Validations": []
-                    },
-                    "Order": null
-                },
-                {
-                    "QuestionId": "YO-12",
-                    "QuestionTag": "Organisation-Introduction-Supporting",
-                    "Label": "",
-                    "ShortLabel": "",
-                    "QuestionBodyText": "",
-                    "Hint": "",
-                    "Input": {
-                        "Type": "Hidden",
-                        "Validations": []
-                    },
-                    "Order": null
-                }
-            ],
+            "Questions": [],
             "PageOfAnswers": [],
             "Next": [
                 {
                     "Action": "NextPage",
                     "ReturnId": "20",
+                    "Condition": null,
                     "Conditions": [],
                     "ConditionMet": false
                 }
@@ -141,9 +63,6 @@
             "AllowMultipleAnswers": false,
             "Order": null,
             "Active": true,
-            "Visible": true,
-            "Feedback": null,
-            "HasFeedback": false,
             "NotRequiredConditions": [
                 {
                     "Field": "Apply-ProviderRoute",
@@ -153,8 +72,11 @@
                     ]
                 }
             ],
-            "ActivatedByPageId": null,
-            "BodyText": ""
+            "BodyText": "<p class='govuk-body'>In this section we'll ask for:</p><ul class='govuk-list govuk-list--bullet'><li>your organisation's Information Commissioner's Office registration number</li><li>who's in control and their date of births</li><li>your organisation's trading history</li><li>details of what your organisation is</li><li>Ofsted or other educational accreditations</li></ul><p class='govuk-body'>Depending on your answers, we may ask further questions.</p> <div class='govuk-warning-text'> <span class='govuk-warning-text__icon' aria-hidden='true'>!</span> <strong class='govuk-warning-text__text'> <span class='govuk-warning-text__assistive'>Warning</span>Your organisation must have at least 12 months trading history and a training manager with at least 9 months experience in developing and delivering training. </strong> </div>",
+            "Details": null,
+            "DisplayType": null,
+            "Feedback": null,
+            "ActivatedByPageId": null
         },
         {
             "PageId": "12",
@@ -163,52 +85,13 @@
             "Title": "Your organisation",
             "LinkTitle": "Your organisation",
             "InfoText": "",
-            "Questions": [
-                {
-                    "QuestionId": "YO-12",
-                    "QuestionTag": "Organisation-Introduction-Supporting",
-                    "Label": "",
-                    "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body'>In this section we'll ask for:</p><ul class='govuk-list govuk-list--bullet'><li>your organisation's Information Commissioner's Office registration number</li><li>who's in control and their date of births</li><li>your organisation's trading history</li><li>details of what your organisation is</li><li>Ofsted or other educational accreditations</li></ul><p class='govuk-body'>Depending on your answers, we may ask further questions.</p> <div class='govuk-warning-text'> <span class='govuk-warning-text__icon' aria-hidden='true'>!</span> <strong class='govuk-warning-text__text'> <span class='govuk-warning-text__assistive'>Warning</span>Your organisation must have at least 3 months trading history and a training manager with at least 3 months experience in developing and delivering training. </strong> </div>",
-                    "Hint": "",
-                    "Input": {
-                        "Type": "Hidden",
-                        "Validations": []
-                    },
-                    "Order": null
-                },
-                {
-                    "QuestionId": "YO-10",
-                    "QuestionTag": "Organisation-Introduction-Main",
-                    "Label": "",
-                    "ShortLabel": "",
-                    "QuestionBodyText": "",
-                    "Hint": "",
-                    "Input": {
-                        "Type": "Hidden",
-                        "Validations": []
-                    },
-                    "Order": null
-                },
-                {
-                    "QuestionId": "YO-11",
-                    "QuestionTag": "Organisation-Introduction-Employer",
-                    "Label": "",
-                    "ShortLabel": "",
-                    "QuestionBodyText": "",
-                    "Hint": "",
-                    "Input": {
-                        "Type": "Hidden",
-                        "Validations": []
-                    },
-                    "Order": null
-                }
-            ],
+            "Questions": [],
             "PageOfAnswers": [],
             "Next": [
                 {
                     "Action": "NextPage",
                     "ReturnId": "20",
+                    "Condition": null,
                     "Conditions": [],
                     "ConditionMet": false
                 }
@@ -217,9 +100,6 @@
             "AllowMultipleAnswers": false,
             "Order": null,
             "Active": true,
-            "Visible": true,
-            "Feedback": null,
-            "HasFeedback": false,
             "NotRequiredConditions": [
                 {
                     "Field": "Apply-ProviderRoute",
@@ -229,8 +109,11 @@
                     ]
                 }
             ],
-            "ActivatedByPageId": null,
-            "BodyText": ""
+            "BodyText": "<p class='govuk-body'>In this section we'll ask for:</p><ul class='govuk-list govuk-list--bullet'><li>your organisation's Information Commissioner's Office registration number</li><li>who's in control and their date of births</li><li>your organisation's trading history</li><li>details of what your organisation is</li><li>Ofsted or other educational accreditations</li></ul><p class='govuk-body'>Depending on your answers, we may ask further questions.</p> <div class='govuk-warning-text'> <span class='govuk-warning-text__icon' aria-hidden='true'>!</span> <strong class='govuk-warning-text__text'> <span class='govuk-warning-text__assistive'>Warning</span>Your organisation must have at least 3 months trading history and a training manager with at least 3 months experience in developing and delivering training. </strong> </div>",
+            "Details": null,
+            "DisplayType": null,
+            "Feedback": null,
+            "ActivatedByPageId": null
         }
     ]
 }
