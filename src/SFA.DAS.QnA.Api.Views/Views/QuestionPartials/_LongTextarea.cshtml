@@ -42,7 +42,7 @@
 @if (maxCharacterCount > 0)
 {
     <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="@maxCharacterCount">
-        <textarea class="govuk-textarea govuk-js-character-count @isError"
+        <textarea class="govuk-textarea js-character-count @isError"
                   id="@Model.QuestionId"
                   name="@Model.QuestionId"
                   rows="12"
@@ -55,7 +55,7 @@
 else if (maxWordCount > 0)
 {
     <div class="govuk-character-count" data-module="govuk-character-count" data-maxwords="@maxWordCount">
-        <textarea class="govuk-textarea govuk-js-character-count @isError"
+        <textarea class="govuk-textarea js-character-count @isError"
                   id="@Model.QuestionId"
                   name="@Model.QuestionId"
                   rows="12"
@@ -68,7 +68,7 @@ else if (maxWordCount > 0)
 else
 {
     <div class="govuk-character-count" data-module="govuk-character-count" data-maxwords="500">
-        <textarea class="govuk-textarea govuk-js-character-count @isError"
+        <textarea class="govuk-textarea js-character-count @isError"
                   id="@Model.QuestionId"
                   name="@Model.QuestionId"
                   rows="12"
