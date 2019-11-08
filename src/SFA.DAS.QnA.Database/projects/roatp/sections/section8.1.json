@@ -42,7 +42,11 @@
             "Visible": true,
             "Feedback": null,
             "HasFeedback": false,
-            "NotRequiredConditions": [],
+            "NotRequiredConditions": [{
+                    "Field": "Apply-ProviderRoute",
+                    "IsOneOf": ["3"],
+                }
+            ],
             "ActivatedByPageId": null,
             "BodyText": ""
         },
@@ -84,7 +88,11 @@
             "Visible": true,
             "Feedback": null,
             "HasFeedback": false,
-            "NotRequiredConditions": [],
+            "NotRequiredConditions": [{
+                    "Field": "Apply-ProviderRoute",
+                    "IsOneOf": ["1", "2"],
+                }
+            ],
             "ActivatedByPageId": null,
             "BodyText": ""
         }

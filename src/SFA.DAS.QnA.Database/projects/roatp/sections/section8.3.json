@@ -160,7 +160,11 @@
             "Visible": true,
             "Feedback": null,
             "HasFeedback": false,
-            "NotRequiredOrgTypes": [],
+            "NotRequiredConditions": [{
+                    "Field": "Apply-ProviderRoute",
+                    "IsOneOf": ["3"],
+                }
+            ],
             "BodyText": ""
         },
         {
@@ -209,7 +213,11 @@
             "Visible": true,
             "Feedback": null,
             "HasFeedback": false,
-            "NotRequiredOrgTypes": [],
+            "NotRequiredConditions": [{
+                    "Field": "Apply-ProviderRoute",
+                    "IsOneOf": ["1", "2"],
+                }
+            ],
             "BodyText": ""
         },
         {
