@@ -49,7 +49,9 @@ namespace SFA.DAS.QnA.Application.Commands.AddPageAnswer
             Page.PageOfAnswers.Add(new PageOfAnswers() {Id = Guid.NewGuid(), Answers = request.Answers});
 
             Page.Complete = true;
-            
+
+            MarkFeedbackComplete(Page);
+
             Section.QnAData = QnaData;
 
             await _dataContext.SaveChangesAsync(CancellationToken.None);
