@@ -23,6 +23,10 @@ namespace SFA.DAS.QnA.Application.UnitTests.Validators.NumberValidatorTests
         [TestCase(int.MaxValue, true)]
         [TestCase(long.MinValue, true)]
         [TestCase(long.MaxValue, true)]
+        [TestCase(ulong.MinValue, true)]
+        [TestCase(ulong.MaxValue, true)]
+        [TestCase("-987654321012345678987654321", true)]
+        [TestCase("987654321012345678987654321", true)]
         public void Then_correct_errors_are_returned(object input, bool isValid)
         {
             var validator = new NumberValidator
@@ -35,7 +39,7 @@ namespace SFA.DAS.QnA.Application.UnitTests.Validators.NumberValidatorTests
             };
 
             var question = new Question { QuestionId = "Q1" };
-            var errors = validator.Validate(question, new Answer { Value = new []{ input?.ToString()}, QuestionId = question.QuestionId });
+            var errors = validator.Validate(question, new Answer { Value = input?.ToString(), QuestionId = question.QuestionId });
 
             (errors.Count is 0).Should().Be(isValid);
         }

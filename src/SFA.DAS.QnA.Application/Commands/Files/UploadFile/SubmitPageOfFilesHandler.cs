@@ -50,7 +50,7 @@ namespace SFA.DAS.QnA.Application.Commands.Files.UploadFile
             var answersToValidate = new List<Answer>();
             foreach (var file in request.Files)
             {
-                var answer = new Answer() {QuestionId = file.Name, Value = new[] {file.FileName}};
+                var answer = new Answer() {QuestionId = file.Name, Value = file.FileName};
                 answersToValidate.Add(answer);
             }
             
@@ -98,7 +98,7 @@ namespace SFA.DAS.QnA.Application.Commands.Files.UploadFile
                     page.PageOfAnswers = new List<PageOfAnswers>();
                 }
 
-                var foundExistingOnPage = page.PageOfAnswers.SelectMany(a => a.Answers).Any(answer => answer.QuestionId == file.Name && answer.Value[0] == file.FileName);
+                var foundExistingOnPage = page.PageOfAnswers.SelectMany(a => a.Answers).Any(answer => answer.QuestionId == file.Name && answer.Value == file.FileName);
                 
                 if (!foundExistingOnPage)
                 {
@@ -107,7 +107,7 @@ namespace SFA.DAS.QnA.Application.Commands.Files.UploadFile
                         new Answer()
                         {
                             QuestionId = file.Name,
-                            Value = new [] { file.FileName }
+                            Value = file.FileName
                         }
                     }});
                 }
@@ -145,15 +145,13 @@ namespace SFA.DAS.QnA.Application.Commands.Files.UploadFile
         {
             if (string.IsNullOrWhiteSpace(question.QuestionTag)) return;
 
-            var answer = answers.Single(a => a.QuestionId == question.QuestionId);
-            
             if (applicationData.ContainsKey(question.QuestionTag))
             {
-                applicationData[question.QuestionTag] = answer.Value.Length == 1 ? (JToken) answer.Value[0] : new JValue(answer.Value[0]);
+                applicationData[question.QuestionTag] = answers.Single(a => a.QuestionId == question.QuestionId).Value;
             }
             else
             {
-                applicationData.Add(question.QuestionTag, answer.Value.Length == 1 ? new JValue(answer.Value[0]) : new JValue(answer.Value));
+                applicationData.Add(question.QuestionTag, new JValue(answers.Single(a => a.QuestionId == question.QuestionId).Value));
             }
         }
     }

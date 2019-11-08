@@ -31,5 +31,13 @@ namespace SFA.DAS.QnA.Application.Commands.AddPageAnswer
                 Page = QnaData.Pages.SingleOrDefault(p => p.PageId == pageId);   
             }
         }
+
+        protected void MarkFeedbackComplete(Page page)
+        {
+            if (page.HasFeedback)
+            {
+                page.Feedback.ForEach(f => f.IsCompleted = true);
+            }
+        }
     }
 }
