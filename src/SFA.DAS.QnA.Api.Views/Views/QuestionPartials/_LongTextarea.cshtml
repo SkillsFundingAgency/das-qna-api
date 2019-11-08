@@ -10,7 +10,7 @@
     {
         foreach (var validator in Model.Validations)
         {
-            if (validator.Name == "MaxLengthCount")
+            if (validator.Name == "MaxLength")
             {
                 if (int.TryParse(validator.Value, out int _maxCharacterCount))
                 {
