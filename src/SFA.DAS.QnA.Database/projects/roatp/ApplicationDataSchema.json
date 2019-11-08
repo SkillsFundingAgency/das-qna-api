@@ -6,7 +6,8 @@
     "additionalProperties": true,
     "required": [
         "OrganisationReferenceId",
-        "OrganisationName"
+        "OrganisationName",
+        "Apply-ProviderRoute"
     ],
     "properties": {
         "OrganisationReferenceId": {
@@ -14,6 +15,10 @@
             "minLength": 1
         },
         "OrganisationName": {
+            "type": "string",
+            "minLength": 1
+        },
+        "Apply-ProviderRoute": {
             "type": "string",
             "minLength": 1
         },
