@@ -41,10 +41,11 @@ DECLARE @sectionIndex INT,
         @sequenceExists INT,
         @sectionId UNIQUEIDENTIFIER,
         @sections VARCHAR(MAX),
-        @sectionFileId VARCHAR(100);
+        @sectionFileId VARCHAR(100),
+        @sectionIsActive BIT;
 
-DECLARE @SectionTitle VARCHAR(200),
-        @SectionLinkTitle VARCHAR(200),
+DECLARE @SectionTitle VARCHAR(250),
+        @SectionLinkTitle VARCHAR(250),
         @SectionDisplayType VARCHAR(200);
 
 DECLARE @LoadBLOB BIT = 0;  -- assume local - set to 1 if $(ProjectPath) starts with http
@@ -165,6 +166,8 @@ BEGIN
 				BREAK;
 			
 			SELECT @sectionNo = JSON_VALUE(@sections ,'$.SectionNo'), @sequenceNo = JSON_VALUE(@sections ,'$.SequenceNo'), @sectionFileId = JSON_VALUE(@sections ,'$.id')+'.json';
+			-- Is section (de)Active - default Active = true
+			SELECT @sectionIsActive = ISNULL(JSON_VALUE(@sections, '$.IsActive'),1);
 
 			PRINT 'Configure Sequence '+RTRIM(CONVERT(char,@sequenceNo))+' Section '+RTRIM(CONVERT(char,@sectionNo));
 
@@ -176,7 +179,7 @@ BEGIN
 			BEGIN
 				PRINT 'Insert Workflow for Sequence '+RTRIM(CONVERT(char,@sequenceNo))+' Section '+RTRIM(CONVERT(char,@sectionNo));
 				INSERT INTO [WorkflowSequences] (Workflowid, SequenceNo, SectionNo, SectionId, IsActive)
-				VALUES ( @WorkflowId, @sequenceNo, @sectionNo, NEWID(), 1);
+				VALUES ( @WorkflowId, @sequenceNo, @sectionNo, NEWID(), @sectionIsActive);
 			END
 		
 			-- get section id 
