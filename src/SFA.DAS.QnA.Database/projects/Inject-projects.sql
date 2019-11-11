@@ -181,7 +181,13 @@ BEGIN
 				INSERT INTO [WorkflowSequences] (Workflowid, SequenceNo, SectionNo, SectionId, IsActive)
 				VALUES ( @WorkflowId, @sequenceNo, @sectionNo, NEWID(), @sectionIsActive);
 			END
-		
+			ELSE
+			BEGIN
+				UPDATE [WorkflowSequences] 
+				SET IsActive = @sectionIsActive
+				WHERE [WorkflowId] = @WorkflowId AND [SequenceNo] = @sequenceNo AND [SectionNo] = @sectionNo;
+			END
+
 			-- get section id 
 			SELECT @sectionId = [SectionId] 
 			FROM [WorkflowSequences]
