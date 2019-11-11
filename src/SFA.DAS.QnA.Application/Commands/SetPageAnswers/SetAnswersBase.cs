@@ -21,7 +21,7 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
             
             if (page.Next.Count == 1)
             {
-                nextAction = page.Next.First();
+                nextAction = page.Next.Single();
             }
 
             foreach (var next in page.Next)
@@ -46,10 +46,31 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
                         }
                         else
                         {
+                            var question = page.Questions.Single(q => q.QuestionId == condition.QuestionId);
                             var answer = answers.FirstOrDefault(a => a.QuestionId == condition.QuestionId);
-                            if (answer == null || answer.QuestionId != condition.QuestionId || answer.Value != condition.MustEqual)
+
+                            if (question.Input.Type == "CheckboxList")
                             {
-                                someConditionsNotSatisfied = true;
+                                if (answer == null)
+                                {
+                                    someConditionsNotSatisfied = true;
+                                }
+                                else
+                                {
+                                    var answerValueList = answer.Value.Split(",", StringSplitOptions.RemoveEmptyEntries);
+                                
+                                    if (answer.QuestionId != condition.QuestionId || !answerValueList.Contains(condition.Contains))
+                                    {
+                                        someConditionsNotSatisfied = true;
+                                    }    
+                                }
+                            }
+                            else
+                            {
+                                if (answer == null || answer.QuestionId != condition.QuestionId || answer.Value != condition.MustEqual)
+                                {
+                                    someConditionsNotSatisfied = true;
+                                }    
                             }
                         }   
                     }
