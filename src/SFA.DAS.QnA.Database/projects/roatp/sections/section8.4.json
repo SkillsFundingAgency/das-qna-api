@@ -21,7 +21,7 @@
                     "Hint": "",
                     "Input":
                     {
-                        "Type": "ComplexRadio",
+                        "Type": "Radio",
                         "Options": [
                             {
                                 "Label": "Yes",
