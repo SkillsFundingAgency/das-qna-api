@@ -31,24 +31,8 @@
                             {
                                 "Label": "No",
                                 "Value": "No",
-                                "FurtherQuestions": [
-                                    {
-                                        "QuestionId": "EAT-60.1",
-                                        "QuestionTag": "",
-                                        "Label": "Before joining the RoATP, your organisation must have systems and processes in place to get this data. We may ask for evidence on this.",
-                                        "ShortLabel": "",
-                                        "InputClasses": null,
-                                        "QuestionBodyText": "",
-                                        "Hint": "",
-                                        "Input": {
-                                            "Type": "Hidden",
-                                            "Validations": []
-                                        },
-                                        "Order": null,
-                                        "Value": null,
-                                        "ErrorMessages": null
-                                    }
-                                ],
+                                "HintText": "Before joining the RoATP, your organisation must have systems and processes in place to get this data. We may ask for evidence on this.",
+                                "FurtherQuestions": null
                             }
                         ],
                         "Validations": [
