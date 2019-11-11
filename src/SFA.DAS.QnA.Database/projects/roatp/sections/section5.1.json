@@ -26,8 +26,8 @@
             ],
             "PageOfAnswers": [],
             "Next": [{
-                    "Action": "NextPage",
-                    "ReturnId": "5100",
+                    "Action": "ReturnToSection",
+                    "ReturnId": "5.2",
                     "Conditions": [],
                     "ConditionMet": false
                 }
@@ -68,8 +68,8 @@
             ],
             "PageOfAnswers": [],
             "Next": [{
-                    "Action": "NextPage",
-                    "ReturnId": "5400",
+                    "Action": "ReturnToSection",
+                    "ReturnId": "5.5",
                     "Conditions": [],
                     "ConditionMet": false
                 }
@@ -110,8 +110,8 @@
             ],
             "PageOfAnswers": [],
             "Next": [{
-                    "Action": "NextPage",
-                    "ReturnId": "6000",
+                    "Action": "ReturnToSection",
+                    "ReturnId": "6.1",
                     "Conditions": [],
                     "ConditionMet": false
                 }

@@ -35,8 +35,8 @@
             ],
             "PageOfAnswers": [],
             "Next": [{
-                    "Action": "NextPage",
-                    "ReturnId": "5400",
+                    "Action": "ReturnToSection",
+                    "ReturnId": "5.5",
                     "Conditions": [],
                     "ConditionMet": false
                 }
