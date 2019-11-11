@@ -11,21 +11,7 @@
             "Title": "Introduction and what you'll need",
             "LinkTitle": "Introduction and what you'll need",
             "InfoText": "",
-            "Questions": [
-                {
-                    "QuestionId": "EAT-10",
-                    "QuestionTag": "EAT-Introduction-MainEmployer",
-                    "Label": "Evaluating apprenticeship training",
-                    "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body' id='eat-intro-mainemp'>For this section, you'll need to know:</p><ul class='govuk-list govuk-list--bullet'><li>your organisation's process for evaluating the quality of training delivered</li><li>how your organisation's made improvements using this process</li><li>if this process includes apprenticeship training</li><li>how your organisation evaluates the quality for apprenticeship training</li><li>how your organisation reviews this process</li><li>if your organisation has systems and processes to collect apprenticeship data</li><li>if your organisation has the resources to submit Individualised Learner Record (ILR)</li></ul>",
-                    "Hint": "",
-                    "Input": {
-                        "Type": "Hidden",
-                        "Validations": []
-                    },
-                    "Order": null
-                }
-            ],
+            "Questions": [],
             "PageOfAnswers": [],
             "Next": [
                 {
@@ -48,7 +34,7 @@
                 }
             ],
             "ActivatedByPageId": null,
-            "BodyText": ""
+            "BodyText": "<p class='govuk-body' id='eat-intro-mainemp'>For this section, you'll need to know:</p><ul class='govuk-list govuk-list--bullet'><li>your organisation's process for evaluating the quality of training delivered</li><li>how your organisation's made improvements using this process</li><li>if this process includes apprenticeship training</li><li>how your organisation evaluates the quality for apprenticeship training</li><li>how your organisation reviews this process</li><li>if your organisation has systems and processes to collect apprenticeship data</li><li>if your organisation has the resources to submit Individualised Learner Record (ILR)</li></ul>"
         },
         {
             "PageId": "8010",
@@ -57,21 +43,7 @@
             "Title": "Delivering apprenticeship training",
             "LinkTitle": "Introduction and what you'll need",
             "InfoText": "",
-            "Questions": [
-                {
-                    "QuestionId": "EAT-11",
-                    "QuestionTag": "EAT-Introduction-Supporting",
-                    "Label": "Evaluating apprenticeship training",
-                    "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body' id='eat-intro-supp'>For this section, you'll need to know:</p><ul class='govuk-list govuk-list--bullet'><li>your organisation's process for evaluating the quality of training delivered</li><li>how your organisation's made improvements using this process</li><li>if this process includes apprenticeship training</li><li>how your organisation evaluates the quality for apprenticeship training</li><li>how your organisation reviews this process</li></ul>",
-                    "Hint": "",
-                    "Input": {
-                        "Type": "Hidden",
-                        "Validations": []
-                    },
-                    "Order": null
-                }
-            ],
+            "Questions": [],
             "PageOfAnswers": [],
             "Next": [
                 {
@@ -94,7 +66,7 @@
                 }
             ],
             "ActivatedByPageId": null,
-            "BodyText": ""
+            "BodyText": "<p class='govuk-body' id='eat-intro-supp'>For this section, you'll need to know:</p><ul class='govuk-list govuk-list--bullet'><li>your organisation's process for evaluating the quality of training delivered</li><li>how your organisation's made improvements using this process</li><li>if this process includes apprenticeship training</li><li>how your organisation evaluates the quality for apprenticeship training</li><li>how your organisation reviews this process</li></ul>"
         }
     ]
 }
