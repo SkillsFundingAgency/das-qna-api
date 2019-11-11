@@ -59,10 +59,9 @@
             "AllowMultipleAnswers": false,
             "Order": null,
             "Active": true,
-            "Visible": true,
             "Feedback": null,
             "HasFeedback": false,
-            "NotRequiredOrgTypes": [],
+            "NotRequiredConditions": [],
             "BodyText": ""
         }
     ]

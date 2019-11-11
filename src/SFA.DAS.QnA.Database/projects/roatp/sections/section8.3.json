@@ -108,10 +108,9 @@
             "AllowMultipleAnswers": false,
             "Order": null,
             "Active": true,
-            "Visible": true,
             "Feedback": null,
             "HasFeedback": false,
-            "NotRequiredOrgTypes": [],
+            "NotRequiredConditions": [],
             "BodyText": ""
         },
         {
@@ -157,7 +156,6 @@
             "Order": null,
             "Active": false,
             "ActivatedByPageId": "8200",
-            "Visible": true,
             "Feedback": null,
             "HasFeedback": false,
             "NotRequiredConditions": [{
@@ -210,7 +208,6 @@
             "Order": null,
             "Active": false,
             "ActivatedByPageId": "8200",
-            "Visible": true,
             "Feedback": null,
             "HasFeedback": false,
             "NotRequiredConditions": [{
@@ -262,10 +259,9 @@
             "AllowMultipleAnswers": false,
             "Order": null,
             "Active": true,
-            "Visible": true,
             "Feedback": null,
             "HasFeedback": false,
-            "NotRequiredOrgTypes": [],
+            "NotRequiredConditions": [],
             "BodyText": ""
         }
     ]
