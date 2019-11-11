@@ -105,6 +105,12 @@
               "SectionNo": 1,
               "name": "Introduction and what you'll need"
             },
+			{
+              "id": "section6.2",
+              "SequenceNo": 6,
+              "SectionNo": 2,
+              "name": "Type of apprenticeship training"
+            },
             {
               "id": "section7.1",
               "SequenceNo": 7,
