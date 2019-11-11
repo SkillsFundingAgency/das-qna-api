@@ -33,7 +33,7 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
                 {
                     var someConditionsNotSatisfied = false;
                     
-                    foreach (var condition in next.Conditions)
+                    foreach (var condition in next.Conditions.Where(c=> c.Contains != null))
                     {
                        
                             var question = page.Questions.Single(q => q.QuestionId == condition.QuestionId);
