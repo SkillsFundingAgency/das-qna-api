@@ -1,17 +1,17 @@
 {
-    "Title": "Confirm who's in control",
-    "LinkTitle": "Confirm who's in control",
-    "DisplayType": "Pages",
-    "RequestedFeedbackAnswered": null,
-    "Pages": [   	
-	{
+  "Title": "Confirm who's in control",
+  "LinkTitle": "Confirm who's in control",
+  "DisplayType": "Pages",
+  "RequestedFeedbackAnswered": null,
+  "Pages": [
+    {
       "PageId": "70",
       "SequenceId": null,
       "SectionId": null,
       "Title": "Confirm who's in control",
       "LinkTitle": "",
       "InfoText": "",
-	  "Details": {
+      "Details": {
         "Title": "What if these details are wrong?",
         "Body": "<p class='govuk-body'>Contact Companies House to <a href='https://www.gov.uk/file-changes-to-a-company-with-companies-house' target='_blank'>change these details (opens in a new window or tab)</a>.</p><p class='govuk-body'>After your changes have been confirmed, sign back in to continue with this application.</p>"
       },
@@ -24,13 +24,12 @@
           "QuestionBodyText": "<p class='govuk-body'>These are the details we found on Companies House.</p>",
           "Hint": "",
           "Input": {
-            "Type": "TabularData",			
-            "Validations": [              
-            ]
+            "Type": "TabularData",
+            "Validations": []
           },
           "Order": null
         },
-		{
+        {
           "QuestionId": "YO-71",
           "QuestionTag": "Companies-House-PSCs",
           "Label": "",
@@ -38,13 +37,12 @@
           "QuestionBodyText": "",
           "Hint": "",
           "Input": {
-            "Type": "TabularData",			
-            "Validations": [              
-            ]
+            "Type": "TabularData",
+            "Validations": []
           },
           "Order": null
         },
-		{
+        {
           "QuestionId": "YO-75",
           "QuestionTag": "Directors-PSCs-Confirmed",
           "Label": "",
@@ -59,30 +57,30 @@
         }
       ],
       "PageOfAnswers": [],
-      "Next": [      
-		{
+      "Next": [
+        {
           "Action": "NextPage",
           "ReturnId": "90",
           "Conditions": [
-		  {
-            "QuestionTag": "CC-TrusteeManualEntry",
-            "MustEqual": "TRUE"
-          }
-		  ],
+            {
+              "QuestionTag": "CC-TrusteeManualEntry",
+              "MustEqual": "TRUE"
+            }
+          ],
           "ConditionMet": false
         },
-		{
+        {
           "Action": "NextPage",
           "ReturnId": "80",
           "Conditions": [
-		  {
-            "QuestionTag": "UKRLP-Verification-Charity",
-            "MustEqual": "TRUE"
-          }
-		  ],
+            {
+              "QuestionTag": "UKRLP-Verification-Charity",
+              "MustEqual": "TRUE"
+            }
+          ],
           "ConditionMet": false
         },
-		{
+        {
           "Action": "NextPage",
           "ReturnId": "140",
           "Conditions": [],
@@ -99,7 +97,7 @@
       "NotRequiredOrgTypes": [],
       "BodyText": ""
     },
-	{
+    {
       "PageId": "80",
       "SequenceId": null,
       "SectionId": null,
@@ -115,13 +113,12 @@
           "QuestionBodyText": "",
           "Hint": "",
           "Input": {
-            "Type": "TabularData",			
-            "Validations": [              
-            ]
+            "Type": "TabularData",
+            "Validations": []
           },
           "Order": null
         },
-		{
+        {
           "QuestionId": "YO-85",
           "QuestionTag": "Confirm-Trustees",
           "Label": "",
@@ -136,50 +133,8 @@
         }
       ],
       "PageOfAnswers": [],
-      "Next": [      
-		{
-          "Action": "NextPage",
-          "ReturnId": "140",
-          "Conditions": [],
-          "ConditionMet": false
-        }
-      ],
-      "Complete": false,
-      "AllowMultipleAnswers": false,
-      "Order": null,
-      "Active": true,
-      "Visible": true,
-      "Feedback": null,
-      "HasFeedback": false,
-      "NotRequiredOrgTypes": [],
-      "BodyText": ""
-    },		
-	{
-      "PageId": "90",
-      "SequenceId": null,
-      "SectionId": null,
-      "Title": "Confirm who's in control",
-      "LinkTitle": "",
-      "InfoText": "",
-      "Questions": [
+      "Next": [
         {
-          "QuestionId": "YO-90",
-          "QuestionTag": "Add-Trustees",
-          "Label": "Confirm who's in control",
-          "ShortLabel": "",
-          "QuestionBodyText": "PLACEHOLDER Add Trustees",
-          "Hint": "",
-          "Input": {
-            "Type": "Hidden",			
-            "Validations": [              
-            ]
-          },
-          "Order": null
-        }
-      ],
-      "PageOfAnswers": [],
-      "Next": [      
-		{
           "Action": "NextPage",
           "ReturnId": "140",
           "Conditions": [],
@@ -196,14 +151,55 @@
       "NotRequiredOrgTypes": [],
       "BodyText": ""
     },
-	{
+    {
+      "PageId": "90",
+      "SequenceId": null,
+      "SectionId": null,
+      "Title": "Confirm who's in control",
+      "LinkTitle": "",
+      "InfoText": "",
+      "Questions": [
+        {
+          "QuestionId": "YO-90",
+          "QuestionTag": "Add-Trustees",
+          "Label": "Confirm who's in control",
+          "ShortLabel": "",
+          "QuestionBodyText": "PLACEHOLDER Add Trustees",
+          "Hint": "",
+          "Input": {
+            "Type": "Hidden",
+            "Validations": []
+          },
+          "Order": null
+        }
+      ],
+      "PageOfAnswers": [],
+      "Next": [
+        {
+          "Action": "NextPage",
+          "ReturnId": "140",
+          "Conditions": [],
+          "ConditionMet": false
+        }
+      ],
+      "Complete": false,
+      "AllowMultipleAnswers": false,
+      "Order": null,
+      "Active": true,
+      "Visible": true,
+      "Feedback": null,
+      "HasFeedback": false,
+      "NotRequiredOrgTypes": [],
+      "BodyText": ""
+    },
+    {
       "PageId": "100",
       "SequenceId": null,
       "SectionId": null,
       "Title": "Tell us your organisation's type",
       "LinkTitle": "",
       "InfoText": "",
-	  "Details": {
+      "Details": {
         "Title": "What is a sole trader or partnership?",
         "Body": "<p class='govuk-body'>A sole trader is someone who's self-employed and is the only owner of their business.</p><p class='govuk-body'>A partnership is when two or more people agree to share the profits, costs and risks of running a business.</p>"
       },
@@ -217,19 +213,19 @@
           "Hint": "",
           "Input": {
             "Type": "Radio",
-			"Options": [
-			{
+            "Options": [
+              {
                 "Label": "Sole trader",
-				"Value": "Sole trader",
+                "Value": "Sole trader",
                 "FurtherQuestions": []
               },
-			  {
+              {
                 "Label": "Partnership",
-				"Value": "Partnership",
+                "Value": "Partnership",
                 "FurtherQuestions": []
               }
-			],
-			"Validations": [
+            ],
+            "Validations": [
               {
                 "Name": "Required",
                 "Value": null,
@@ -241,27 +237,27 @@
         }
       ],
       "PageOfAnswers": [],
-      "Next": [      
-		{
+      "Next": [
+        {
           "Action": "NextPage",
           "ReturnId": "101",
           "Conditions": [
-		  {
-            "QuestionId": "YO-100",
-            "MustEqual": "Partnership"
-          }
-		  ],
+            {
+              "QuestionId": "YO-100",
+              "MustEqual": "Partnership"
+            }
+          ],
           "ConditionMet": false
         },
-		{
+        {
           "Action": "NextPage",
           "ReturnId": "120",
           "Conditions": [
-		  {
-            "QuestionId": "YO-100",
-            "MustEqual": "Sole trader"
-          }
-		  ],
+            {
+              "QuestionId": "YO-100",
+              "MustEqual": "Sole trader"
+            }
+          ],
           "ConditionMet": false
         }
       ],
@@ -274,8 +270,8 @@
       "HasFeedback": false,
       "NotRequiredOrgTypes": [],
       "BodyText": ""
-    },	
-	{
+    },
+    {
       "PageId": "101",
       "SequenceId": null,
       "SectionId": null,
@@ -292,19 +288,19 @@
           "Hint": "",
           "Input": {
             "Type": "Radio",
-			"Options": [
-			{
+            "Options": [
+              {
                 "Label": "Individual",
-				"Value": "Individual",
+                "Value": "Individual",
                 "FurtherQuestions": []
               },
-			  {
+              {
                 "Label": "Organisation",
-				"Value": "Organisation",
+                "Value": "Organisation",
                 "FurtherQuestions": []
               }
-			],
-			"Validations": [
+            ],
+            "Validations": [
               {
                 "Name": "Required",
                 "Value": null,
@@ -316,27 +312,27 @@
         }
       ],
       "PageOfAnswers": [],
-      "Next": [      
-		{
+      "Next": [
+        {
           "Action": "NextPage",
           "ReturnId": "110",
           "Conditions": [
-		  {
-            "QuestionId": "YO-101",
-            "MustEqual": "Individual"
-          }
-		  ],
+            {
+              "QuestionId": "YO-101",
+              "MustEqual": "Individual"
+            }
+          ],
           "ConditionMet": false
         },
-		{
+        {
           "Action": "NextPage",
           "ReturnId": "111",
           "Conditions": [
-		  {
-            "QuestionId": "YO-101",
-            "MustEqual": "Organisation"
-          }
-		  ],
+            {
+              "QuestionId": "YO-101",
+              "MustEqual": "Organisation"
+            }
+          ],
           "ConditionMet": false
         }
       ],
@@ -349,8 +345,8 @@
       "HasFeedback": false,
       "NotRequiredOrgTypes": [],
       "BodyText": ""
-    },	
-	{
+    },
+    {
       "PageId": "110",
       "SequenceId": null,
       "SectionId": null,
@@ -366,16 +362,15 @@
           "QuestionBodyText": "",
           "Hint": "",
           "Input": {
-            "Type": "TabularData",			
-            "Validations": [              
-            ]
+            "Type": "TabularData",
+            "Validations": []
           },
           "Order": null
         }
       ],
       "PageOfAnswers": [],
-      "Next": [      
-		{
+      "Next": [
+        {
           "Action": "NextPage",
           "ReturnId": "140",
           "Conditions": [],
@@ -392,7 +387,7 @@
       "NotRequiredOrgTypes": [],
       "BodyText": ""
     },
-	{
+    {
       "PageId": "120",
       "SequenceId": null,
       "SectionId": null,
@@ -408,14 +403,14 @@
           "QuestionBodyText": "",
           "Hint": "",
           "Input": {
-            "Type": "MonthAndYear",			
+            "Type": "MonthAndYear",
             "Validations": [
               {
                 "Name": "MonthAndYear",
                 "Value": null,
                 "ErrorMessage": "Enter a date of birth using a month and year"
               },
-			  {
+              {
                 "Name": "MonthAndYearNotInFuture",
                 "Value": null,
                 "ErrorMessage": "Enter a date of birth using a month and year that's in the past"
@@ -426,8 +421,8 @@
         }
       ],
       "PageOfAnswers": [],
-      "Next": [      
-		{
+      "Next": [
+        {
           "Action": "NextPage",
           "ReturnId": null,
           "Conditions": [],
@@ -444,7 +439,7 @@
       "NotRequiredOrgTypes": [],
       "BodyText": ""
     },
-	{
+    {
       "PageId": "130",
       "SequenceId": null,
       "SectionId": null,
@@ -460,16 +455,15 @@
           "QuestionBodyText": "",
           "Hint": "",
           "Input": {
-            "Type": "TabularData",			
-            "Validations": [              
-            ]
+            "Type": "TabularData",
+            "Validations": []
           },
           "Order": null
         }
       ],
       "PageOfAnswers": [],
-      "Next": [      
-		{
+      "Next": [
+        {
           "Action": "NextPage",
           "ReturnId": "140",
           "Conditions": [],
