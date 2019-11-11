@@ -4,8 +4,8 @@ CREATE TABLE [dbo].[ApplicationSections](
 	[SequenceNo] [int] NOT NULL,
 	[SectionNo] [int] NOT NULL,
 	[QnAData] [nvarchar](max) NOT NULL,
-	[Title] [nvarchar](50) NOT NULL,
-	[LinkTitle] [nvarchar](50) NOT NULL,
+	[Title] [nvarchar](250) NOT NULL,
+	[LinkTitle] [nvarchar](250) NOT NULL,
 	[DisplayType] [nvarchar](50) NOT NULL,
   [SequenceId] [uniqueidentifier] NOT NULL
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]

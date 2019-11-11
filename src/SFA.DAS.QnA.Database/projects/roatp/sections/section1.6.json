@@ -34,7 +34,7 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Tell us if your organisation is Initial Teacher Training (ITT) accredited"
                             }
                         ]
@@ -108,7 +108,7 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Tell us if your organisation will only deliver post graduate teaching apprenticeships"
                             }
                         ]
@@ -177,7 +177,7 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Tell us if your organisation has had an Ofsted inspection in further education and skills"
                             }
                         ]
@@ -246,7 +246,7 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Tell us if your organisation was awarded a grade for apprenticeships in this Ofsted inspection"
                             }
                         ]
@@ -356,7 +356,7 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Tell us what grade your organisation got"
                             }
                         ]
@@ -436,7 +436,7 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Tell us if your organisation has had a monitoring visit for apprenticeships in further education and skills"
                             }
                         ]
@@ -502,7 +502,7 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Tell us what grade your organisation got"
                             }
                         ]
@@ -590,7 +590,7 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Tell us what grade your organisation got"
                             }
                         ]
@@ -670,7 +670,7 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Tell us if your organisation was awarded this grade within the last 3 years"
                             }
                         ]
@@ -739,7 +739,7 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Tell us if your organisation was awarded this grade within the last 3 years"
                             }
                         ]
@@ -808,7 +808,7 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Tell us if your organisation has maintained funding from an education agency since its full Ofsted inspection"
                             }
                         ]
@@ -866,7 +866,7 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Tell us if your organisation has had a short Ofsted inspection within the last 3 years"
                             }
                         ]
@@ -935,7 +935,7 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Tell us if your organisation has maintained the grade it was awarded in its full Ofsted inspection"
                             }
                         ]
@@ -1004,7 +1004,7 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": null,
+                                "Value": "",
                                 "ErrorMessage": "Tell us if your organisation has delivered apprenticeship training as a subcontractor in the last 12 months"
                             }
                         ]
