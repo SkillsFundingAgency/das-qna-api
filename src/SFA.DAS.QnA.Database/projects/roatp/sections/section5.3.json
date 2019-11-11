@@ -45,10 +45,9 @@
             "AllowMultipleAnswers": false,
             "Order": null,
             "Active": true,
-            "Visible": true,
             "Feedback": null,
             "HasFeedback": false,
-            "NotRequiredOrgTypes": [],
+            "NotRequiredConditions": [],
             "BodyText": ""
         }, {
             "PageId": "5210",
@@ -96,10 +95,9 @@
             "AllowMultipleAnswers": false,
             "Order": null,
             "Active": true,
-            "Visible": true,
             "Feedback": null,
             "HasFeedback": false,
-            "NotRequiredOrgTypes": [],
+            "NotRequiredConditions": [],
             "BodyText": ""
         }
     ]

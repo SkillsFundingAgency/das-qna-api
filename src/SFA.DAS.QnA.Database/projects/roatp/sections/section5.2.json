@@ -51,10 +51,9 @@
             "AllowMultipleAnswers": false,
             "Order": null,
             "Active": true,
-            "Visible": true,
             "Feedback": null,
             "HasFeedback": false,
-            "NotRequiredOrgTypes": [],
+            "NotRequiredConditions": [],
             "BodyText": ""
         }, {
             "PageId": "5110",
@@ -98,10 +97,9 @@
             "AllowMultipleAnswers": false,
             "Order": null,
             "Active": true,
-            "Visible": true,
             "Feedback": null,
             "HasFeedback": false,
-            "NotRequiredOrgTypes": [],
+            "NotRequiredConditions": [],
             "BodyText": ""
         }, {
             "PageId": "5120",
@@ -214,9 +212,7 @@
             "Complete": false,
             "AllowMultipleAnswers": false,
             "Active": true,
-            "NotRequiredOrgTypes": null,
             "NotRequiredConditions": [],
-            "NotRequired": false,
             "BodyText": "<p class='govuk-body' id='rte-managing-employers-who'>This should be someone who has the overall responsibility and can make decisions independently.</p><p class='govuk-body'>We'll only contact them if there is a concern.</p>",
             "ActivatedByPageId": ""
         }, {
@@ -261,10 +257,9 @@
             "AllowMultipleAnswers": false,
             "Order": null,
             "Active": true,
-            "Visible": true,
             "Feedback": null,
             "HasFeedback": false,
-            "NotRequiredOrgTypes": [],
+            "NotRequiredConditions": [],
             "BodyText": ""
         }
     ]
