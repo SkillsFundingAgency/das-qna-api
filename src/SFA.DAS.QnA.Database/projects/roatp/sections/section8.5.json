@@ -31,7 +31,7 @@
                             {
                                 "Label": "No",
                                 "Value": "No",
-                                "FurtherQuestions": null,
+                                "FurtherQuestions": null
                             }
                         ],
                         "Validations": [
@@ -48,11 +48,11 @@
             "PageOfAnswers": [],
             "Next": [
                 {
-                    "Action": "NextPage",
-                    "ReturnId": "9000",
+                    "Action": "ReturnToSection",
+                    "ReturnId": "9.1",
                     "Conditions": [],
                     "ConditionMet": false
-                },
+                }
             ],
             "Complete": false,
             "AllowMultipleAnswers": false,

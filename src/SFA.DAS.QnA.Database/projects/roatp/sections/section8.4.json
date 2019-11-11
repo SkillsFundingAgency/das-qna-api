@@ -49,11 +49,11 @@
             "PageOfAnswers": [],
             "Next": [
                 {
-                    "Action": "NextPage",
-                    "ReturnId": "8400",
+                    "Action": "ReturnToSection",
+                    "ReturnId": "8.5",
                     "Conditions": [],
                     "ConditionMet": false
-                },
+                }
             ],
             "Complete": false,
             "AllowMultipleAnswers": false,

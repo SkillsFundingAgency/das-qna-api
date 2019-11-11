@@ -162,7 +162,7 @@
             "HasFeedback": false,
             "NotRequiredConditions": [{
                     "Field": "Apply-ProviderRoute",
-                    "IsOneOf": ["3"],
+                    "IsOneOf": ["3"]
                 }
             ],
             "BodyText": ""
@@ -215,7 +215,7 @@
             "HasFeedback": false,
             "NotRequiredConditions": [{
                     "Field": "Apply-ProviderRoute",
-                    "IsOneOf": ["1", "2"],
+                    "IsOneOf": ["1", "2"]
                 }
             ],
             "BodyText": ""
@@ -252,8 +252,8 @@
             ],
             "PageOfAnswers": [],
             "Next": [{
-                    "Action": "NextPage",
-                    "ReturnId": "8300",
+                    "Action": "ReturnToSection",
+                    "ReturnId": "8.4",
                     "Conditions": [],
                     "ConditionMet": false
                 }

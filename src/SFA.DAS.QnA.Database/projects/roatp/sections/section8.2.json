@@ -83,8 +83,8 @@
             ],
             "PageOfAnswers": [],
             "Next": [{
-                    "Action": "NextPage",
-                    "ReturnId": "8200",
+                    "Action": "ReturnToSection",
+                    "ReturnId": "8.3",
                     "Conditions": [],
                     "ConditionMet": false
                 }
