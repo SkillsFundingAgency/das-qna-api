@@ -9,7 +9,7 @@
             "SequenceId": null,
             "SectionId": null,
             "Title": "Does your organisation offer initial teacher training?",
-            "LinkTitle": "",
+            "LinkTitle": "Does your organisation offer initial teacher training?",
             "InfoText": "",
             "Questions": [
                 {
@@ -74,7 +74,14 @@
             "Visible": true,
             "Feedback": null,
             "HasFeedback": false,
-            "NotRequiredConditions": [],
+            "NotRequiredConditions": [
+                {
+                    "Field": "Apply-ProviderRoute",
+                    "IsOneOf": [
+                        "3"
+                    ]
+                }
+            ],
             "ActivatedByPageId": null,
             "BodyText": ""
         },
@@ -83,7 +90,7 @@
             "SequenceId": null,
             "SectionId": null,
             "Title": "Is the postgraduate teaching apprenticeship the only apprenticeship your organisation intends to deliver?",
-            "LinkTitle": "",
+            "LinkTitle": "Is the postgraduate teaching apprenticeship the only apprenticeship your organisation intends to deliver?",
             "InfoText": "",
             "Questions": [
                 {
@@ -130,8 +137,8 @@
                     "ConditionMet": false
                 },
                 {
-                    "Action": "NextPage",
-                    "ReturnId": null,
+                    "Action": "ReturnToSection",
+                    "ReturnId": "1.6",
                     "Conditions": [],
                     "ConditionMet": false
                 }
@@ -139,12 +146,12 @@
             "Complete": false,
             "AllowMultipleAnswers": false,
             "Order": null,
-            "Active": true,
+            "Active": false,
             "Visible": true,
             "Feedback": null,
             "HasFeedback": false,
             "NotRequiredConditions": [],
-            "ActivatedByPageId": null,
+            "ActivatedByPageId": "240",
             "BodyText": ""
         },
         {
@@ -152,7 +159,7 @@
             "SequenceId": null,
             "SectionId": null,
             "Title": "Has your organisation had a full Ofsted inspection in further education and skills?",
-            "LinkTitle": "",
+            "LinkTitle": "Has your organisation had a full Ofsted inspection in further education and skills?",
             "InfoText": "",
             "Questions": [
                 {
@@ -208,12 +215,12 @@
             "Complete": false,
             "AllowMultipleAnswers": false,
             "Order": null,
-            "Active": true,
+            "Active": false,
             "Visible": true,
             "Feedback": null,
             "HasFeedback": false,
             "NotRequiredConditions": [],
-            "ActivatedByPageId": null,
+            "ActivatedByPageId": "240,250",
             "BodyText": ""
         },
         {
@@ -221,7 +228,7 @@
             "SequenceId": null,
             "SectionId": null,
             "Title": "Did your organisation get a grade for apprenticeships in this full Ofsted inspection?",
-            "LinkTitle": "",
+            "LinkTitle": "Did your organisation get a grade for apprenticeships in this full Ofsted inspection?",
             "InfoText": "",
             "Questions": [
                 {
@@ -292,17 +299,6 @@
                 {
                     "Action": "NextPage",
                     "ReturnId": "300",
-                    "Conditions": [
-                        {
-                            "QuestionId": "YO-270",
-                            "MustEqual": "Yes"
-                        }
-                    ],
-                    "ConditionMet": false
-                },
-                {
-                    "Action": "NextPage",
-                    "ReturnId": "280",
                     "Conditions": [],
                     "ConditionMet": false
                 }
@@ -310,12 +306,12 @@
             "Complete": false,
             "AllowMultipleAnswers": false,
             "Order": null,
-            "Active": true,
+            "Active": false,
             "Visible": true,
             "Feedback": null,
             "HasFeedback": false,
             "NotRequiredConditions": [],
-            "ActivatedByPageId": null,
+            "ActivatedByPageId": "260",
             "BodyText": ""
         },
         {
@@ -323,7 +319,7 @@
             "SequenceId": null,
             "SectionId": null,
             "Title": "What grade did your organisation get for overall effectiveness in this full Ofsted inspection?",
-            "LinkTitle": "",
+            "LinkTitle": "What grade did your organisation get for overall effectiveness in this full Ofsted inspection?",
             "InfoText": "",
             "Questions": [
                 {
@@ -367,8 +363,8 @@
             "PageOfAnswers": [],
             "Next": [
                 {
-                    "Action": "NextPage",
-                    "ReturnId": null,
+                    "Action": "ReturnToSection",
+                    "ReturnId": "1.6",
                     "Conditions": [
                         {
                             "QuestionId": "YO-280",
@@ -398,12 +394,12 @@
             "Complete": false,
             "AllowMultipleAnswers": false,
             "Order": null,
-            "Active": true,
+            "Active": false,
             "Visible": true,
             "Feedback": null,
             "HasFeedback": false,
             "NotRequiredConditions": [],
-            "ActivatedByPageId": null,
+            "ActivatedByPageId": "270,300",
             "BodyText": ""
         },
         {
@@ -411,7 +407,7 @@
             "SequenceId": null,
             "SectionId": null,
             "Title": "Has your organisation had a monitoring visit for apprenticeships in further education and skills?",
-            "LinkTitle": "",
+            "LinkTitle": "Has your organisation had a monitoring visit for apprenticeships in further education and skills?",
             "InfoText": "",
             "Questions": [
                 {
@@ -447,8 +443,8 @@
             "PageOfAnswers": [],
             "Next": [
                 {
-                    "Action": "NextPage",
-                    "ReturnId": null,
+                    "Action": "ReturnToSection",
+                    "ReturnId": "1.6",
                     "Conditions": [],
                     "ConditionMet": false
                 }
@@ -456,12 +452,12 @@
             "Complete": false,
             "AllowMultipleAnswers": false,
             "Order": null,
-            "Active": true,
+            "Active": false,
             "Visible": true,
             "Feedback": null,
             "HasFeedback": false,
             "NotRequiredConditions": [],
-            "ActivatedByPageId": null,
+            "ActivatedByPageId": "260",
             "BodyText": ""
         },
         {
@@ -469,7 +465,7 @@
             "SequenceId": null,
             "SectionId": null,
             "Title": "What grade did your organisation get for apprenticeships in this full Ofsted inspection?",
-            "LinkTitle": "",
+            "LinkTitle": "What grade did your organisation get for apprenticeships in this full Ofsted inspection?",
             "InfoText": "",
             "Questions": [
                 {
@@ -544,12 +540,12 @@
             "Complete": false,
             "AllowMultipleAnswers": false,
             "Order": null,
-            "Active": true,
+            "Active": false,
             "Visible": true,
             "Feedback": null,
             "HasFeedback": false,
             "NotRequiredConditions": [],
-            "ActivatedByPageId": null,
+            "ActivatedByPageId": "270",
             "BodyText": ""
         },
         {
@@ -557,7 +553,7 @@
             "SequenceId": null,
             "SectionId": null,
             "Title": "What grade did your organisation get for apprenticeships in this full Ofsted inspection?",
-            "LinkTitle": "",
+            "LinkTitle": "What grade did your organisation get for apprenticeships in this full Ofsted inspection?",
             "InfoText": "",
             "Questions": [
                 {
@@ -601,8 +597,8 @@
             "PageOfAnswers": [],
             "Next": [
                 {
-                    "Action": "NextPage",
-                    "ReturnId": null,
+                    "Action": "ReturnToSection",
+                    "ReturnId": "1.6",
                     "Conditions": [
                         {
                             "QuestionId": "YO-301",
@@ -632,12 +628,12 @@
             "Complete": false,
             "AllowMultipleAnswers": false,
             "Order": null,
-            "Active": true,
+            "Active": false,
             "Visible": true,
             "Feedback": null,
             "HasFeedback": false,
             "NotRequiredConditions": [],
-            "ActivatedByPageId": null,
+            "ActivatedByPageId": "270",
             "BodyText": ""
         },
         {
@@ -645,7 +641,7 @@
             "SequenceId": null,
             "SectionId": null,
             "Title": "Did your organisation get this grade within the last 3 years?",
-            "LinkTitle": "",
+            "LinkTitle": "Did your organisation get this grade within the last 3 years?",
             "InfoText": "",
             "Questions": [
                 {
@@ -701,12 +697,12 @@
             "Complete": false,
             "AllowMultipleAnswers": false,
             "Order": null,
-            "Active": true,
+            "Active": false,
             "Visible": true,
             "Feedback": null,
             "HasFeedback": false,
             "NotRequiredConditions": [],
-            "ActivatedByPageId": null,
+            "ActivatedByPageId": "280,300,301",
             "BodyText": ""
         },
         {
@@ -714,7 +710,7 @@
             "SequenceId": null,
             "SectionId": null,
             "Title": "Did your organisation get this grade within the last 3 years?",
-            "LinkTitle": "",
+            "LinkTitle": "Did your organisation get this grade within the last 3 years?",
             "InfoText": "",
             "Questions": [
                 {
@@ -761,8 +757,8 @@
                     "ConditionMet": false
                 },
                 {
-                    "Action": "NextPage",
-                    "ReturnId": null,
+                    "Action": "ReturnToSection",
+                    "ReturnId": "1.6",
                     "Conditions": [],
                     "ConditionMet": false
                 }
@@ -770,12 +766,12 @@
             "Complete": false,
             "AllowMultipleAnswers": false,
             "Order": null,
-            "Active": true,
+            "Active": false,
             "Visible": true,
             "Feedback": null,
             "HasFeedback": false,
             "NotRequiredConditions": [],
-            "ActivatedByPageId": null,
+            "ActivatedByPageId": "280,300,301",
             "BodyText": ""
         },
         {
@@ -783,7 +779,7 @@
             "SequenceId": null,
             "SectionId": null,
             "Title": "Has your organisation maintained funding from an education agency since its full Ofsted inspection?",
-            "LinkTitle": "",
+            "LinkTitle": "Has your organisation maintained funding from an education agency since its full Ofsted inspection?",
             "InfoText": "",
             "Questions": [
                 {
@@ -819,8 +815,9 @@
             "PageOfAnswers": [],
             "Next": [
                 {
-                    "Action": "NextPage",
-                    "ReturnId": null,
+                    "Action": "ReturnToSection",
+                    "ReturnId": "1.6",
+                    "Condition": null,
                     "Conditions": [],
                     "ConditionMet": false
                 }
@@ -828,12 +825,12 @@
             "Complete": false,
             "AllowMultipleAnswers": false,
             "Order": null,
-            "Active": true,
+            "Active": false,
             "Visible": true,
             "Feedback": null,
             "HasFeedback": false,
             "NotRequiredConditions": [],
-            "ActivatedByPageId": null,
+            "ActivatedByPageId": "310,340",
             "BodyText": ""
         },
         {
@@ -841,7 +838,7 @@
             "SequenceId": null,
             "SectionId": null,
             "Title": "Has your organisation had a short Ofsted inspection within the last 3 years?",
-            "LinkTitle": "",
+            "LinkTitle": "Has your organisation had a short Ofsted inspection within the last 3 years?",
             "InfoText": "",
             "Questions": [
                 {
@@ -888,8 +885,8 @@
                     "ConditionMet": false
                 },
                 {
-                    "Action": "NextPage",
-                    "ReturnId": null,
+                    "Action": "ReturnToSection",
+                    "ReturnId": "1.6",
                     "Conditions": [],
                     "ConditionMet": false
                 }
@@ -897,12 +894,12 @@
             "Complete": false,
             "AllowMultipleAnswers": false,
             "Order": null,
-            "Active": true,
+            "Active": false,
             "Visible": true,
             "Feedback": null,
             "HasFeedback": false,
             "NotRequiredConditions": [],
-            "ActivatedByPageId": null,
+            "ActivatedByPageId": "310",
             "BodyText": ""
         },
         {
@@ -910,7 +907,7 @@
             "SequenceId": null,
             "SectionId": null,
             "Title": "Has your organisation maintained the grade it got in its full Ofsted inspection in its short Ofsted inspection?",
-            "LinkTitle": "",
+            "LinkTitle": "Has your organisation maintained the grade it got in its full Ofsted inspection in its short Ofsted inspection?",
             "InfoText": "",
             "Questions": [
                 {
@@ -957,8 +954,8 @@
                     "ConditionMet": false
                 },
                 {
-                    "Action": "NextPage",
-                    "ReturnId": null,
+                    "Action": "ReturnToSection",
+                    "ReturnId": "1.6",
                     "Conditions": [],
                     "ConditionMet": false
                 }
@@ -966,12 +963,12 @@
             "Complete": false,
             "AllowMultipleAnswers": false,
             "Order": null,
-            "Active": true,
+            "Active": false,
             "Visible": true,
             "Feedback": null,
             "HasFeedback": false,
             "NotRequiredConditions": [],
-            "ActivatedByPageId": null,
+            "ActivatedByPageId": "330",
             "BodyText": ""
         },
         {
@@ -979,7 +976,7 @@
             "SequenceId": null,
             "SectionId": null,
             "Title": "Has your organisation delivered apprenticeship training as a subcontractor in the last 12 months?",
-            "LinkTitle": "",
+            "LinkTitle": "Has your organisation delivered apprenticeship training as a subcontractor in the last 12 months?",
             "InfoText": "",
             "Questions": [
                 {
@@ -1015,8 +1012,8 @@
             "PageOfAnswers": [],
             "Next": [
                 {
-                    "Action": "NextPage",
-                    "ReturnId": null,
+                    "Action": "ReturnToSection",
+                    "ReturnId": "1.6",
                     "Conditions": [],
                     "ConditionMet": false
                 }
@@ -1028,7 +1025,15 @@
             "Visible": true,
             "Feedback": null,
             "HasFeedback": false,
-            "NotRequiredConditions": [],
+            "NotRequiredConditions": [
+                {
+                    "Field": "Apply-ProviderRoute",
+                    "IsOneOf": [
+                        "1",
+                        "2"
+                    ]
+                }
+            ],
             "ActivatedByPageId": null,
             "BodyText": ""
         },
@@ -1037,35 +1042,21 @@
             "SequenceId": null,
             "SectionId": null,
             "Title": "Your organisation is not eligible to apply to join RoATP",
-            "LinkTitle": "",
+            "LinkTitle": "Your organisation is not eligible to apply to join RoATP",
             "InfoText": "",
-            "Questions": [
-                {
-                    "QuestionId": "SHUT-004",
-                    "QuestionTag": "Shutter-Inadequate-Grade-3-Years",
-                    "Label": "Your organisation is not eligible to apply to join RoATP",
-                    "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body'>This is because your organisation got an 'inadequate' grade within the last 3 years.</p><p class='govuk-body'><a href='https://www.gov.uk'>Back to GOV.UK</a></p>",
-                    "Hint": "",
-                    "Input": {
-                        "Type": "Hidden",
-                        "Validations": []
-                    },
-                    "Order": null
-                }
-            ],
+            "Questions": [],
             "PageOfAnswers": [],
             "Next": [],
             "Complete": false,
             "AllowMultipleAnswers": false,
             "Order": null,
-            "Active": true,
+            "Active": false,
             "Visible": true,
             "Feedback": null,
             "HasFeedback": false,
             "NotRequiredConditions": [],
-            "ActivatedByPageId": null,
-            "BodyText": ""
+            "ActivatedByPageId": "311",
+            "BodyText": "<p class='govuk-body'>This is because your organisation got an 'inadequate' grade within the last 3 years.</p><p class='govuk-body'><a href='https://www.gov.uk'>Back to GOV.UK</a></p>"
         }
     ]
 }
