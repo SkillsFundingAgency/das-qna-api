@@ -71,7 +71,7 @@ namespace SFA.DAS.QnA.Application.Commands.StartApplication
 
         private async Task CopyWorkflows(CancellationToken cancellationToken, Data.Entities.Application newApplication)
         {
-            var workflowSequences = await _dataContext.WorkflowSequences.Where(seq => seq.WorkflowId == newApplication.WorkflowId && seq.IsActive).ToListAsync(cancellationToken);
+            var workflowSequences = await _dataContext.WorkflowSequences.Where(seq => seq.WorkflowId == newApplication.WorkflowId).ToListAsync(cancellationToken);
 
             var groupedSequences = workflowSequences.GroupBy(seq => new {seq.SequenceNo, seq.IsActive}).ToList();
 
