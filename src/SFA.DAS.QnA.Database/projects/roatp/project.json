@@ -14,14 +14,14 @@
                     "SequenceNo": 0,
                     "SectionNo": 1,
                     "name": "Preamble",
-                    "IsActive": false
+                    "IsActive": true
                 },
                 {
                     "id": "section1.1",
                     "SequenceNo": 1,
                     "SectionNo": 1,
                     "name": "Provider route",
-                    "IsActive": false
+                    "IsActive": true
                 },
                 {
                     "id": "section1.2",
