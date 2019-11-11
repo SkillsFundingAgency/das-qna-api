@@ -131,7 +131,7 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
                 {
                     break;
                 }
-                if (nextPage.ActivatedByPageId == branchingPageId)
+                if (nextPage.ActivatedByPageId != null && nextPage.ActivatedByPageId.Split(",", StringSplitOptions.RemoveEmptyEntries).Contains(branchingPageId))
                 {
                     nextPage.Active = false;
                 }
@@ -152,7 +152,7 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
             {
                 return;
             }
-            if (nextPage.ActivatedByPageId == branchingPageId)
+            if (nextPage.ActivatedByPageId != null && nextPage.ActivatedByPageId.Split(",", StringSplitOptions.RemoveEmptyEntries).Contains(branchingPageId))
             {
                 nextPage.Active = true;
             }
