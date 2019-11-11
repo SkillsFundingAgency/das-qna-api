@@ -179,6 +179,10 @@
       "Title": "Does your organisation's safeguarding policy include its responsibilities towards the Prevent duty?",
       "LinkTitle": "",
       "InfoText": "",
+      "Details": {
+        "Title": "What is the Prevent duty statement?",
+        "Body": "<p class='govuk-body'>The Prevent duty statement is 'to have due regard to the need to prevent people from being drawn into terrorism'.</p>"
+      },
       "Questions": [
         {
           "QuestionId": "PYA-48",
@@ -187,32 +191,31 @@
           "ShortLabel": "",
           "QuestionBodyText": "<p class='govuk-body' id='pya-equality-policy'>This means your organisation's safeguarding policy includes how it will:</p><ul class='govuk-list govuk-list--bullet'><li>have a legal responsibility to fulfil the Prevent duty statement</li><li>protect apprentices and employees from radicalising influences</li><li>ensure apprentices and employees are resilient to extreme narratives</li><li>identify changes in behaviour of apprentices and employees</li><li>deal with any issues raised by apprentices or employees</li></ul><p class='govuk-body'>Find out about <a href='https://www.gov.uk/government/publications/prevent-duty-guidance' target='_blank'>the Prevent duty (opens in a new windows or tab)</a></p>",
           "Hint": "",
-          "Details": {
-            "Title": "What is the Prevent duty statement?",
-            "Body": "<p class='govuk-body'>The Prevent duty statement is 'to have due regard to the need to prevent people from being drawn into terrorism'.</p>"
-          },
           "Input": {
             "Type": "Radio",
-          "Options":  [ {
-            "Label": "Yes",
-            "Value": "Yes",
-            "FurtherQuestions": []
+            "Options": [
+              {
+                "Label": "Yes",
+                "Value": "Yes",
+                "FurtherQuestions": []
+              },
+              {
+                "Label": "No",
+                "Value": "No",
+                "FurtherQuestions": []
+              }
+            ],
+            "Validations": [
+              {
+                "Name": "Required",
+                "Value": null,
+                "ErrorMessage": "Tell us if your organisation's safeguarding policy include its responsibilities towards the Prevent duty"
+              }
+            ]
           },
-          {
-          "Label": "No",
-          "Value": "No",
-          "FurtherQuestions": []
-        }],
-        "Validations": [
-        {
-          "Name": "Required",
-          "Value": null,
-          "ErrorMessage": "Tell us if your organisation's safeguarding policy include its responsibilities towards the Prevent duty"
+          "Order": null
         }
-        ]
-    },
-    "Order": null
-}],
+      ],
       "PageOfAnswers": [],
       "Next": [
         {
@@ -226,12 +229,12 @@
           ],
           "ConditionMet": false
         },
-          {
-            "Action": "NextPage",
-            "ReturnId": "",
-            "Conditions": [],
-            "ConditionMet": false
-          }
+        {
+          "Action": "NextPage",
+          "ReturnId": "",
+          "Conditions": [],
+          "ConditionMet": false
+        }
       ],
       "Complete": false,
       "AllowMultipleAnswers": false,

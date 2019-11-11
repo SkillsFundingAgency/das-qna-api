@@ -15,16 +15,143 @@
         {
           "QuestionId": "PYA-50",
           "QuestionTag": "ProtectApprentice-Health-And-Safety",
-          "Label": "Upload Health and safety holding page",
+          "Label": "Upload your organisation's health and safety policy",
           "ShortLabel": "",
-          "QuestionBodyText": "<p class='govuk-body' id='pya-health-and-safety-policy'>This must include blah blah</p><p class='govuk-body'>The file must be a PDF and smaller than 5MB.</p>",
+          "QuestionBodyText": "<p class='govuk-body' id='pya-health-and-safety-policy'>This must include how your organisation will:</p><ul class='govuk-list govuk-list--bullet'><li>promote the policy</li><li>get commitment to the policy</li><li>train its employees in implementing the policy</li><li>cover apprentices in its care</li><li>have people who are responsible for health and safety</li><li>identify and manage health and safety concerns</li><li>have a procedure for accidents or ill health of apprentices</li></ul><p class='govuk-body'>The file must be a PDF and smaller than 5MB.</p>",
           "Hint": "",
           "Input": {
-            "Type": "Hidden",
-            "Validations": []
+            "Type": "FileUpload",
+            "Validations": [
+              {
+                "Name": "Required",
+                "Value": null,
+                "ErrorMessage": "Select your organisation's health and safety policy"
+              },
+              {
+                "Name": "FileType",
+                "Value": "pdf",
+                "ErrorMessage": "The selected file must be a PDF"
+              }
+            ]
           },
           "Order": null
         }
+      ],
+      "PageOfAnswers": [],
+      "Next": [
+        {
+          "Action": "NextPage",
+          "ReturnId": "4045",
+          "Conditions": [],
+          "ConditionMet": false
+        }
+      ],
+      "Complete": false,
+      "AllowMultipleAnswers": false,
+      "Order": null,
+      "Active": true,
+      "Visible": true,
+      "Feedback": null,
+      "HasFeedback": false,
+      "NotRequiredOrgTypes": [],
+      "BodyText": ""
+    },
+    {
+      "PageId": "4045",
+      "SequenceId": null,
+      "SectionId": null,
+      "Title": "Tell us who has overall responsibility for health and safety in your organisation",
+      "LinkTitle": "",
+      "InfoText": "",
+      "Questions": [
+        {
+          "QuestionId": "PYA-55",
+          "QuestionTag": "ProtectApprentice-Health-And-Safety-officer-name",
+          "Label": "<span class='govuk-label'>Full name</span>",
+          "ShortLabel": "",
+          "QuestionBodyText": "",
+          "Hint": "",
+          "Input": {
+            "Type": "Text",
+            "Validations": [
+              {
+                "Name": "Required",
+                "Value": null,
+                "ErrorMessage": "Enter a full name"
+              },
+              {
+                "Name": "MaxLength",
+                "Value": 255,
+                "ErrorMessage": "Enter a full name using 255 characters or less"
+              }
+            ]
+          },
+          "Order": null
+        },
+        {
+          "QuestionId": "PYA-56",
+          "QuestionTag": "ProtectApprentice-Safeguarding-responsibility-email",
+          "Label": "<span class='govuk-label'>Email</span>",
+          "ShortLabel": "",
+          "QuestionBodyText": "",
+          "Hint": "",
+          "Input": {
+            "Type": "Text",
+            "Validations": [
+              {
+                "Name": "Required",
+                "Value": null,
+                "ErrorMessage": "Enter a valid email"
+              },
+              {
+                "Name": "MaxLength",
+                "Value": 70,
+                "ErrorMessage": "Enter an email using 70 characters or less"
+              },
+              {
+                "Name": "Email",
+                "Value": null,
+                "ErrorMessage": "Enter an email in the correct format, like name@example.com"
+              }
+            ]
+          },
+          "Order": null
+        },
+        {
+          "QuestionId": "PYA-57",
+          "QuestionTag": "ProtectApprentice-Health-And-Safety-officer-contact-number",
+          "Label": "<span class='govuk-label'>Contact number</span>",
+          "ShortLabel": "",
+          "QuestionBodyText": "",
+          "Hint": "",
+          "Input": {
+            "Type": "Text",
+            "Validations": [
+              {
+                "Name": "Required",
+                "Value": null,
+                "ErrorMessage": "Enter a valid contact number using only numbers"
+              },
+              {
+                "Name": "Number",
+                "Value": null,
+                "ErrorMessage": "Enter a valid contact number using only numbers"
+              },
+              {
+                "Name": "MinLength",
+                "Value": 10,
+                "ErrorMessage": "Enter a contact number using 10 digits or more"
+              },
+              {
+                "Name": "MaxLength",
+                "Value": 20,
+                "ErrorMessage": "Enter a contact number using 20 digits or less"
+              }
+            ]
+          },
+          "Order": null
+        }
+
       ],
       "PageOfAnswers": [],
       "Next": [
@@ -43,7 +170,7 @@
       "Feedback": null,
       "HasFeedback": false,
       "NotRequiredOrgTypes": [],
-      "BodyText": ""
+      "BodyText": "<p class='govuk-body'>This can be an individual or another organisation who has overall responsibility, relevant knowledge and skills to manage health and safety concerns.</p><p class='govuk-body'>We'll only contact them if there is a health and safety concern.</p>"
     }
   ],
   "Complete": false,
@@ -54,5 +181,5 @@
   "Feedback": null,
   "HasFeedback": false,
   "NotRequiredOrgTypes": [],
-  "BodyText": "H AND S Holding page"
+  "BodyText": ""
 }
