@@ -9,7 +9,7 @@
             "SequenceId": null,
             "SectionId": null,
             "Title": "Does your organisation have an ultimate parent company in the UK?",
-            "LinkTitle": "",
+            "LinkTitle": "Does your organisation have an ultimate parent company in the UK?",
             "InfoText": "",
             "Questions": [
                 {
@@ -80,19 +80,19 @@
             "SequenceId": null,
             "SectionId": null,
             "Title": "Enter your organisation's ultimate parent company details",
-            "LinkTitle": "",
+            "LinkTitle": "Enter your organisation's ultimate parent company details",
             "InfoText": "",
             "Questions": [
                 {
                     "QuestionId": "YO-21",
                     "QuestionTag": "Add-ParentCompanyNumber",
-                    "Label": "<span class='govuk-label'>Company number</span>",
+                    "Label": "Company number",
                     "ShortLabel": "",
-                    "QuestionBodyText": "",
+                    "QuestionBodyText": "<p class=\"govuk-body\">If you’re not sure, <a href=\"https://beta.companieshouse.gov.uk/\" target=\"_blank\">search for your UK ultimate parent company (opens in a new window or tab)</a>.</p>",
                     "Hint": "",
                     "Input": {
                         "Type": "Text",
-                        "InputClasses": "app-uppercase",
+                        "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
                                 "Name": "Required",
@@ -121,7 +121,7 @@
                 {
                     "QuestionId": "YO-22",
                     "QuestionTag": "Add-ParentCompanyName",
-                    "Label": "<span class='govuk-label'>Company name</span>",
+                    "Label": "Company name",
                     "ShortLabel": "",
                     "QuestionBodyText": "",
                     "Hint": "",
@@ -161,12 +161,12 @@
             "Complete": false,
             "AllowMultipleAnswers": false,
             "Order": null,
-            "Active": true,
+            "Active": false,
             "Visible": true,
             "Feedback": null,
             "HasFeedback": false,
             "NotRequiredConditions": [],
-            "ActivatedByPageId": null,
+            "ActivatedByPageId": "20",
             "BodyText": ""
         },
         {
@@ -174,7 +174,7 @@
             "SequenceId": null,
             "SectionId": null,
             "Title": "What is your organisation's Information Commissioner's Office (ICO) registration number?",
-            "LinkTitle": "",
+            "LinkTitle": "What is your organisation's Information Commissioner's Office (ICO) registration number?",
             "InfoText": "",
             "Details": {
                 "Title": "I do not have an ICO registration number",
@@ -186,11 +186,11 @@
                     "QuestionTag": "ICO-Number",
                     "Label": "What is your organisation's Information Commissioner's Office (ICO) registration number?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body'>This is an 8-digit registration number from the ICO data protection public register. Any organisation that processes personal data must have one.</p><p class='govuk-body'>If you're not sure, <a href='https://ico.org.uk/ESDWebPages/Search' target='_blank'>search for your organisation on the ICO data protection register (opens in a new window or tab)</a></p>",
-                    "Hint": "<span class='govuk-label'>ICO registration number</span>",
+                    "QuestionBodyText": "<p class='govuk-body'>This is an 8-digit registration number from the ICO data protection public register. Any organisation that processes personal data must have one.</p><p class='govuk-body'>If you're not sure, <a href='https://ico.org.uk/ESDWebPages/Search' target='_blank'>search for your organisation on the ICO data protection register (opens in a new window or tab)</a></p>\n<p>ICO registration number</p>",
+                    "Hint": "",
                     "Input": {
                         "Type": "Text",
-                        "InputClasses": "app-uppercase",
+                        "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
                                 "Name": "Required",
@@ -275,7 +275,7 @@
             "SequenceId": null,
             "SectionId": null,
             "Title": "Does your organisation have a website?",
-            "LinkTitle": "",
+            "LinkTitle": "Does your organisation have a website?",
             "InfoText": "",
             "Questions": [
                 {
@@ -315,7 +315,8 @@
                                                     "Value": "^(http:\\/\\/www\\.|https:\\/\\/www\\.|http:\\/\\/|https:\\/\\/)?[a-z0-9]+([\\-\\.]{1}[a-z0-9]+)*\\.[a-z]{2,5}(:[0-9]{1,5})?(\\/.*)?$",
                                                     "ErrorMessage": "Enter a website using the correct format. For example, www.company.co.uk"
                                                 }
-                                            ]
+                                            ],
+                                            "InputClasses": null
                                         },
                                         "Order": null
                                     }
@@ -377,28 +378,28 @@
             "Complete": false,
             "AllowMultipleAnswers": false,
             "Order": null,
-            "Active": true,
+            "Active": false,
             "Visible": true,
             "Feedback": null,
             "HasFeedback": false,
             "NotRequiredConditions": [],
-            "ActivatedByPageId": null,
+            "ActivatedByPageId": "30",
             "BodyText": ""
         },
         {
             "PageId": "50",
             "SequenceId": null,
             "SectionId": null,
-            "Title": "How long has your organisation been trading for?",
-            "LinkTitle": "",
+            "Title": "How long has your organisation been actively trading?",
+            "LinkTitle": "How long has your organisation been actively trading?",
             "InfoText": "",
             "Questions": [
                 {
                     "QuestionId": "YO-50",
                     "QuestionTag": "Confirm-Trading-Main",
-                    "Label": "How long has your organisation been trading for?",
+                    "Label": "How long has your organisation been actively trading?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body'>Trading includes buying, selling, advertising, renting a property or employing someone.</p>",
+                    "QuestionBodyText": "<p>This is when your organisation is:</p><li>carrying on a business activity such as a trade or professional activity</li><li>buying and selling goods or services with a view to making a profit or surplus</li><li>providing chargeable services</li></p><p>It does not include start-up or set-up costs.</p>",
                     "Hint": "",
                     "Input": {
                         "Type": "Radio",
@@ -449,63 +450,8 @@
                     "ConditionMet": false
                 },
                 {
-                    "Action": "NextPage",
-                    "ReturnId": "130",
-                    "Conditions": [
-                        {
-                            "QuestionTag": "CH-ManualEntryRequired",
-                            "MustEqual": "TRUE"
-                        }
-                    ],
-                    "ConditionMet": false
-                },
-                {
-                    "Action": "NextPage",
-                    "ReturnId": "70",
-                    "Conditions": [
-                        {
-                            "QuestionTag": "UKRLP-Verification-Company",
-                            "MustEqual": "TRUE"
-                        }
-                    ],
-                    "ConditionMet": false
-                },
-                {
-                    "Action": "NextPage",
-                    "ReturnId": "90",
-                    "Conditions": [
-                        {
-                            "QuestionTag": "CC-TrusteeManualEntry",
-                            "MustEqual": "TRUE"
-                        }
-                    ],
-                    "ConditionMet": false
-                },
-                {
-                    "Action": "NextPage",
-                    "ReturnId": "80",
-                    "Conditions": [
-                        {
-                            "QuestionTag": "UKRLP-Verification-Charity",
-                            "MustEqual": "TRUE"
-                        }
-                    ],
-                    "ConditionMet": false
-                },
-                {
-                    "Action": "NextPage",
-                    "ReturnId": "100",
-                    "Conditions": [
-                        {
-                            "QuestionTag": "UKRLP-Verification-SoleTradePartnership",
-                            "MustEqual": "TRUE"
-                        }
-                    ],
-                    "ConditionMet": false
-                },
-                {
-                    "Action": "NextPage",
-                    "ReturnId": "140",
+                    "Action": "ReturnToSection",
+                    "ReturnId": "1.3",
                     "Conditions": [],
                     "ConditionMet": false
                 }
@@ -513,12 +459,12 @@
             "Complete": false,
             "AllowMultipleAnswers": false,
             "Order": null,
-            "Active": true,
+            "Active": false,
             "Visible": true,
             "Feedback": null,
             "HasFeedback": false,
             "NotRequiredConditions": [],
-            "ActivatedByPageId": null,
+            "ActivatedByPageId": "30,40",
             "BodyText": ""
         },
         {
@@ -526,7 +472,7 @@
             "SequenceId": null,
             "SectionId": null,
             "Title": "How long has your organisation been trading for?",
-            "LinkTitle": "",
+            "LinkTitle": "How long has your organisation been actively trading?",
             "InfoText": "",
             "Questions": [
                 {
@@ -534,7 +480,7 @@
                     "QuestionTag": "Confirm-Trading-Employer",
                     "Label": "How long has your organisation been trading for?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body'>Trading includes buying, selling, advertising, renting a property or employing someone.</p>",
+                    "QuestionBodyText": "<p>This is when your organisation is:</p><li>carrying on a business activity such as a trade or professional activity</li><li>buying and selling goods or services with a view to making a profit or surplus</li><li>providing chargeable services</li></p><p>It does not include start-up or set-up costs.</p>",
                     "Hint": "",
                     "Input": {
                         "Type": "Radio",
@@ -585,63 +531,8 @@
                     "ConditionMet": false
                 },
                 {
-                    "Action": "NextPage",
-                    "ReturnId": "130",
-                    "Conditions": [
-                        {
-                            "QuestionTag": "CH-ManualEntryRequired",
-                            "MustEqual": "TRUE"
-                        }
-                    ],
-                    "ConditionMet": false
-                },
-                {
-                    "Action": "NextPage",
-                    "ReturnId": "70",
-                    "Conditions": [
-                        {
-                            "QuestionTag": "UKRLP-Verification-Company",
-                            "MustEqual": "TRUE"
-                        }
-                    ],
-                    "ConditionMet": false
-                },
-                {
-                    "Action": "NextPage",
-                    "ReturnId": "90",
-                    "Conditions": [
-                        {
-                            "QuestionTag": "CC-TrusteeManualEntry",
-                            "MustEqual": "TRUE"
-                        }
-                    ],
-                    "ConditionMet": false
-                },
-                {
-                    "Action": "NextPage",
-                    "ReturnId": "80",
-                    "Conditions": [
-                        {
-                            "QuestionTag": "UKRLP-Verification-Charity",
-                            "MustEqual": "TRUE"
-                        }
-                    ],
-                    "ConditionMet": false
-                },
-                {
-                    "Action": "NextPage",
-                    "ReturnId": "100",
-                    "Conditions": [
-                        {
-                            "QuestionTag": "UKRLP-Verification-SoleTradePartnership",
-                            "MustEqual": "TRUE"
-                        }
-                    ],
-                    "ConditionMet": false
-                },
-                {
-                    "Action": "NextPage",
-                    "ReturnId": "140",
+                    "Action": "ReturnToSection",
+                    "ReturnId": "1.3",
                     "Conditions": [],
                     "ConditionMet": false
                 }
@@ -649,12 +540,12 @@
             "Complete": false,
             "AllowMultipleAnswers": false,
             "Order": null,
-            "Active": true,
+            "Active": false,
             "Visible": true,
             "Feedback": null,
             "HasFeedback": false,
             "NotRequiredConditions": [],
-            "ActivatedByPageId": null,
+            "ActivatedByPageId": "30,40",
             "BodyText": ""
         },
         {
@@ -662,7 +553,7 @@
             "SequenceId": null,
             "SectionId": null,
             "Title": "How long has your organisation been trading for?",
-            "LinkTitle": "",
+            "LinkTitle": "How long has your organisation been actively trading?",
             "InfoText": "",
             "Questions": [
                 {
@@ -670,7 +561,7 @@
                     "QuestionTag": "Confirm-Trading-Supporting",
                     "Label": "How long has your organisation been trading for?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body'>Trading includes buying, selling, advertising, renting a property or employing someone.</p>",
+                    "QuestionBodyText": "<p>This is when your organisation is:</p><li>carrying on a business activity such as a trade or professional activity</li><li>buying and selling goods or services with a view to making a profit or surplus</li><li>providing chargeable services</li></p><p>It does not include start-up or set-up costs.</p>",
                     "Hint": "",
                     "Input": {
                         "Type": "Radio",
@@ -721,63 +612,8 @@
                     "ConditionMet": false
                 },
                 {
-                    "Action": "NextPage",
-                    "ReturnId": "130",
-                    "Conditions": [
-                        {
-                            "QuestionTag": "CH-ManualEntryRequired",
-                            "MustEqual": "TRUE"
-                        }
-                    ],
-                    "ConditionMet": false
-                },
-                {
-                    "Action": "NextPage",
-                    "ReturnId": "70",
-                    "Conditions": [
-                        {
-                            "QuestionTag": "UKRLP-Verification-Company",
-                            "MustEqual": "TRUE"
-                        }
-                    ],
-                    "ConditionMet": false
-                },
-                {
-                    "Action": "NextPage",
-                    "ReturnId": "90",
-                    "Conditions": [
-                        {
-                            "QuestionTag": "CC-TrusteeManualEntry",
-                            "MustEqual": "TRUE"
-                        }
-                    ],
-                    "ConditionMet": false
-                },
-                {
-                    "Action": "NextPage",
-                    "ReturnId": "80",
-                    "Conditions": [
-                        {
-                            "QuestionTag": "UKRLP-Verification-Charity",
-                            "MustEqual": "TRUE"
-                        }
-                    ],
-                    "ConditionMet": false
-                },
-                {
-                    "Action": "NextPage",
-                    "ReturnId": "100",
-                    "Conditions": [
-                        {
-                            "QuestionTag": "UKRLP-Verification-SoleTradePartnership",
-                            "MustEqual": "TRUE"
-                        }
-                    ],
-                    "ConditionMet": false
-                },
-                {
-                    "Action": "NextPage",
-                    "ReturnId": "140",
+                    "Action": "ReturnToSection",
+                    "ReturnId": "1.3",
                     "Conditions": [],
                     "ConditionMet": false
                 }
@@ -785,12 +621,12 @@
             "Complete": false,
             "AllowMultipleAnswers": false,
             "Order": null,
-            "Active": true,
+            "Active": false,
             "Visible": true,
             "Feedback": null,
             "HasFeedback": false,
             "NotRequiredConditions": [],
-            "ActivatedByPageId": null,
+            "ActivatedByPageId": "30,40",
             "BodyText": ""
         },
         {
@@ -798,105 +634,87 @@
             "SequenceId": null,
             "SectionId": null,
             "Title": "Your organisation is not eligible to apply to join RoATP",
-            "LinkTitle": "",
+            "LinkTitle": "Your organisation is not eligible to apply to join RoATP",
             "InfoText": "",
-            "Questions": [
+            "Questions": [],
+            "PageOfAnswers": [],
+            "Next": [
                 {
-                    "QuestionId": "SHUT-001",
-                    "QuestionTag": "Shutter-TradingPeriod-Main",
-                    "Label": "Your organisation is not eligible to apply to join RoATP",
-                    "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body'>To apply as a main provider, your organisation must have been trading for at least 12 months.</p><p class='govuk-body'>You can try again once your organisation has enough trading history.</p><p class='govuk-body'><a href='https://www.gov.uk'>Back to GOV.UK</a></p>",
-                    "Hint": "",
-                    "Input": {
-                        "Type": "Hidden",
-                        "Validations": []
-                    },
-                    "Order": null
+                    "Action": "ReturnToSection",
+                    "ReturnId": "1.3",
+                    "Condition": null,
+                    "Conditions": [],
+                    "ConditionMet": false
                 }
             ],
-            "PageOfAnswers": [],
-            "Next": [],
             "Complete": false,
             "AllowMultipleAnswers": false,
             "Order": null,
-            "Active": true,
+            "Active": false,
             "Visible": true,
             "Feedback": null,
             "HasFeedback": false,
             "NotRequiredConditions": [],
-            "ActivatedByPageId": null,
-            "BodyText": ""
+            "ActivatedByPageId": "50",
+            "BodyText": "<p class='govuk-body'>To apply as a main provider, your organisation must have been trading for at least 12 months.</p><p class='govuk-body'>You can try again once your organisation has enough trading history.</p><p class='govuk-body'><a href='https://www.gov.uk'>Back to GOV.UK</a></p>"
         },
         {
             "PageId": "10002",
             "SequenceId": null,
             "SectionId": null,
             "Title": "Your organisation is not eligible to apply to join RoATP",
-            "LinkTitle": "",
+            "LinkTitle": "Your organisation is not eligible to apply to join RoATP",
             "InfoText": "",
-            "Questions": [
+            "Questions": [],
+            "PageOfAnswers": [],
+            "Next": [
                 {
-                    "QuestionId": "SHUT-002",
-                    "QuestionTag": "Shutter-TradingPeriod-Employer",
-                    "Label": "Your organisation is not eligible to apply to join RoATP",
-                    "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body'>To apply as an employer provider, your organisation must have been trading for at least 12 months.</p><p class='govuk-body'>You can try again once your organisation has enough trading history.</p><p class='govuk-body'><a href='https://www.gov.uk'>Back to GOV.UK</a></p>",
-                    "Hint": "",
-                    "Input": {
-                        "Type": "Hidden",
-                        "Validations": []
-                    },
-                    "Order": null
+                    "Action": "ReturnToSection",
+                    "ReturnId": "1.3",
+                    "Condition": null,
+                    "Conditions": [],
+                    "ConditionMet": false
                 }
             ],
-            "PageOfAnswers": [],
-            "Next": [],
             "Complete": false,
             "AllowMultipleAnswers": false,
             "Order": null,
-            "Active": true,
+            "Active": false,
             "Visible": true,
             "Feedback": null,
             "HasFeedback": false,
             "NotRequiredConditions": [],
-            "ActivatedByPageId": null,
-            "BodyText": ""
+            "ActivatedByPageId": "51",
+            "BodyText": "<p class='govuk-body'>To apply as an employer provider, your organisation must have been trading for at least 12 months.</p><p class='govuk-body'>You can try again once your organisation has enough trading history.</p><p class='govuk-body'><a href='https://www.gov.uk'>Back to GOV.UK</a></p>"
         },
         {
             "PageId": "10003",
             "SequenceId": null,
             "SectionId": null,
             "Title": "Your organisation is not eligible to apply to join RoATP",
-            "LinkTitle": "",
+            "LinkTitle": "Your organisation is not eligible to apply to join RoATP",
             "InfoText": "",
-            "Questions": [
+            "Questions": [],
+            "PageOfAnswers": [],
+            "Next": [
                 {
-                    "QuestionId": "SHUT-003",
-                    "QuestionTag": "Shutter-TradingPeriod-Supporting",
-                    "Label": "Your organisation is not eligible to apply to join RoATP",
-                    "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body'>To apply as a supporting provider, your organisation must have been trading for at least 3 months.</p><p class='govuk-body'>You can try again once your organisation has enough trading history.</p><p class='govuk-body'><a href='https://www.gov.uk'>Back to GOV.UK</a></p>",
-                    "Hint": "",
-                    "Input": {
-                        "Type": "Hidden",
-                        "Validations": []
-                    },
-                    "Order": null
+                    "Action": "ReturnToSection",
+                    "ReturnId": "1.3",
+                    "Condition": null,
+                    "Conditions": [],
+                    "ConditionMet": false
                 }
             ],
-            "PageOfAnswers": [],
-            "Next": [],
             "Complete": false,
             "AllowMultipleAnswers": false,
             "Order": null,
-            "Active": true,
+            "Active": false,
             "Visible": true,
             "Feedback": null,
             "HasFeedback": false,
             "NotRequiredConditions": [],
-            "ActivatedByPageId": null,
-            "BodyText": ""
+            "ActivatedByPageId": "60",
+            "BodyText": "<p class='govuk-body'>To apply as a supporting provider, your organisation must have been trading for at least 3 months.</p><p class='govuk-body'>You can try again once your organisation has enough trading history.</p><p class='govuk-body'><a href='https://www.gov.uk'>Back to GOV.UK</a></p>"
         }
     ]
 }
