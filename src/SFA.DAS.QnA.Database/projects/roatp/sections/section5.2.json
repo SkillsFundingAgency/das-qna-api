@@ -77,8 +77,8 @@
                                 "ErrorMessage": "Enter how you continuously improve the quality of your assessment practice"
                             }, {
                                 "Name": "MaxLength",
-                                "Value": "750",
-                                "ErrorMessage": "Your answer must be 750 characters or less"
+                                "Value": "1500",
+                                "ErrorMessage": "Your answer must be 1500 characters or less"
                             }
                         ]
                     },
@@ -237,8 +237,8 @@
                                 "ErrorMessage": "Enter how you promote apprenticeships to employers"
                             }, {
                                 "Name": "MaxLength",
-                                "Value": "750",
-                                "ErrorMessage": "Your answer must be 750 characters or less"
+                                "Value": "1500",
+                                "ErrorMessage": "Your answer must be 1500 characters or less"
                             }
                         ]
                     },
