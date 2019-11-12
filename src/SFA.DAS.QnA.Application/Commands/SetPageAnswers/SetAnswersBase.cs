@@ -18,6 +18,11 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
                 throw new ApplicationException($"Page {page.PageId}, in Sequence {page.SequenceId}, Section {page.SectionId} has no 'Next' instructions.");
             }
 
+            if (page.Questions.All(q => q.Input.Type != "CheckboxList"))
+            {
+                return new List<Next>();
+            }
+
             Next nextAction = null;
             
             if (page.Next.Count == 1)
