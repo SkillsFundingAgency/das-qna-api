@@ -293,9 +293,6 @@
           "ConditionMet": false
         }
       ],
-      "ConditionMet": false
-    }
-      ],
       "Complete": false,
       "AllowMultipleAnswers": false,
       "Order": null,
@@ -305,5 +302,7 @@
       "HasFeedback": false,
       "NotRequiredOrgTypes": [],
 	  "ActivatedByPageId": "4037",
-      "BodyText": "Holding page"
+      "BodyText": "Holding page"      
     }
+  ]
+  }
