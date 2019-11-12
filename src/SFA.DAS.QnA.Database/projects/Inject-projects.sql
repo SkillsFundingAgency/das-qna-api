@@ -30,6 +30,7 @@ DECLARE @ProjectDef VARCHAR(100),
 
 DECLARE @Workflows VARCHAR(MAX),
          @WorkflowExists INT,
+         @WorkflowUpdate INT,
          @WorkflowId UNIQUEIDENTIFIER,
          @WorkFlowDescription VARCHAR(100),
          @WorkFlowVersion VARCHAR(100),
@@ -105,26 +106,33 @@ BEGIN
 		-- check if project exists
 		SELECT @ProjectExists = COUNT(*) FROM projects WHERE Name = @ProjectName
 
+		-- Get the ApplicationDataSchema
+		IF @LoadBLOB = 1
+			SET @SQLString = 'SELECT @ad = BulkColumn
+			FROM OPENROWSET
+			(BULK '''+@ProjectLocation+'ApplicationDataSchema.json'', DATA_SOURCE = ''BlobStorage'', SINGLE_CLOB) 
+			AS ad';
+		ELSE
+			SET @SQLString = 'SELECT @ad = BulkColumn
+			FROM OPENROWSET
+			(BULK '''+@ProjectLocation+'ApplicationDataSchema.json'', SINGLE_CLOB) 
+			AS ad';
+				
+		SET @ParmDefinition = '@ad VARCHAR(MAX) OUTPUT';
+		EXECUTE sp_executesql @SQLString, @ParmDefinition, @ad = @ApplicationDataSchema OUTPUT;
+			
 		IF @ProjectExists = 0 
 		BEGIN
 		-- Need to create the "Project"
-		-- Get the ApplicationDataSchema
-			IF @LoadBLOB = 1
-				SET @SQLString = 'SELECT @ad = BulkColumn
-				FROM OPENROWSET
-				(BULK '''+@ProjectLocation+'ApplicationDataSchema.json'', DATA_SOURCE = ''BlobStorage'', SINGLE_CLOB) 
-				AS ad';
-			ELSE
-				SET @SQLString = 'SELECT @ad = BulkColumn
-				FROM OPENROWSET
-				(BULK '''+@ProjectLocation+'ApplicationDataSchema.json'', SINGLE_CLOB) 
-				AS ad';
-		
-			SET @ParmDefinition = '@ad VARCHAR(MAX) OUTPUT';
-			EXECUTE sp_executesql @SQLString, @ParmDefinition, @ad = @ApplicationDataSchema OUTPUT;
 		
 			INSERT INTO projects (Name, Description, ApplicationDataSchema, CreatedAt, CreatedBy)
 				VALUES (@ProjectName, @ProjectDesc, @ApplicationDataSchema, GETUTCDATE(), 'Deployment');
+		END
+		ELSE
+		BEGIN
+		-- Update the the "Project"
+			UPDATE projects SET ApplicationDataSchema = @ApplicationDataSchema
+			WHERE Name = @ProjectName;
 		END
 		-- get project id (back)
 		SELECT @ProjectId = Id FROM projects WHERE Name = @ProjectName
@@ -132,19 +140,35 @@ BEGIN
 
 		SELECT @WorkflowExists = COUNT(*) 
 		FROM [Workflows]
-		WHERE ProjectId = @ProjectId 
+		WHERE [ProjectId] = @ProjectId 
 		  AND [Description] = @WorkFlowDescription
 		  AND [Version] = @WorkFlowVersion;
 	  
 		IF @WorkflowExists = 0 
 		BEGIN	  
 		-- Need to create the "Workflow"
-	
+		
 			INSERT INTO [Workflows] ([ProjectId], [Description], [Version], [Type], [Status], [CreatedAt] ,[CreatedBy], [ApplicationDataSchema])
 			SELECT p1.Id ProjectId, @WorkFlowDescription, @WorkFlowVersion, @WorkFlowType, 'Draft', [CreatedAt] ,[CreatedBy], [ApplicationDataSchema]
 			FROM projects p1
 			WHERE Name = @ProjectName;
 
+		END
+		BEGIN
+		-- Update the "Workflow" - if needed
+			SELECT @WorkflowUpdate = COUNT(*) 
+			FROM [Workflows]
+			WHERE [ProjectId] = @ProjectId 
+			  AND [Description] = @WorkFlowDescription
+			  AND [Version] = @WorkFlowVersion
+			  AND [ApplicationDataSchema] = @ApplicationDataSchema;
+			  
+			IF @WorkflowUpdate = 0
+			BEGIN
+				UPDATE [Workflows] 
+				SET [ApplicationDataSchema] = @ApplicationDataSchema, UpdatedAt = GETUTCDATE(), UpdatedBy = 'Deployment'
+				WHERE ProjectId = @ProjectId AND [Description] = @WorkFlowDescription AND [Version] = @WorkFlowVersion;
+			END
 		END
 	
 		-- get workflow id (back)
