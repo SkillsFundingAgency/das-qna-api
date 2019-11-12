@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using Microsoft.EntityFrameworkCore;
 using SFA.DAS.QnA.Api.Types;
+using SFA.DAS.QnA.Api.Types.Page;
 using SFA.DAS.QnA.Data;
 using System.Linq;
 using System.Threading;
@@ -30,7 +31,9 @@ namespace SFA.DAS.QnA.Application.Commands.PageFeedback.CompleteFeedbackWithinSe
 
             foreach (var section in sections)
             {
-                foreach (var page in section.QnAData.Pages)
+                var qnaData = new QnAData(section.QnAData);
+
+                foreach (var page in qnaData.Pages)
                 {
                     if (page.HasNewFeedback)
                     {
@@ -38,6 +41,8 @@ namespace SFA.DAS.QnA.Application.Commands.PageFeedback.CompleteFeedbackWithinSe
                         page.Feedback.ForEach(f => f.IsCompleted = true);
                     }
                 }
+
+                section.QnAData = qnaData;
             }
 
             await _dataContext.SaveChangesAsync(cancellationToken);
