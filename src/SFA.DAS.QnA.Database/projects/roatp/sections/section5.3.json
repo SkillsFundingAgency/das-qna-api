@@ -97,7 +97,11 @@
             "Active": true,
             "Feedback": null,
             "HasFeedback": false,
-            "NotRequiredConditions": [],
+            "NotRequiredConditions": [{
+                    "Field": "Has-Website",
+                    "IsOneOf": ["No"]
+                }
+            ],
             "BodyText": ""
         }
     ]
