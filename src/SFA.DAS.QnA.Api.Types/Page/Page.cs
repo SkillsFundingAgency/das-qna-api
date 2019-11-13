@@ -10,6 +10,7 @@ namespace SFA.DAS.QnA.Api.Types.Page
         public string PageId { get; set; }
         public Guid? SequenceId { get; set; }
         public Guid? SectionId { get; set; }
+        public bool ShowTitleAsCaption { get; set; }
         public string Title { get; set; }
         public string LinkTitle { get; set; }
         public string InfoText { get; set; }
