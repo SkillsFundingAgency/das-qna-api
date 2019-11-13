@@ -62,7 +62,7 @@
                     "Label": "Enter the website link for your organisation's complaints policy",
                     "ShortLabel": "",
                     "QuestionBodyText": "<p class='govuk-body' id='rte-complaints-policy'>The complaints policy must be published on your organisation's website and be available to apprentices and employers.</p><p class='govuk-body'>Website link</p>",
-                    "Hint": "For example, http://www.example.com/complaintspolicy",
+                    "Hint": "For example, www.example.com/complaintspolicy",
                     "Input": {
                         "Type": "Text",
                         "Validations": [{
@@ -72,7 +72,7 @@
                             }, {
                                 "Name": "Url",
                                 "Value": "",
-                                "ErrorMessage": "Enter a valid website link"
+                                "ErrorMessage": "Enter a website link in the correct format, like www.example.com/complaintspolicy"
                             }, {
                                 "Name": "MaxLength",
                                 "Value": "100",
