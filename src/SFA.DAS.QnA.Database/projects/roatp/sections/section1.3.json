@@ -92,7 +92,7 @@
                     "Hint": "",
                     "Input": {
                         "Type": "Text",
-                        "InputClasses": "govuk-input--width-10",
+                        "InputClasses": "app-uppercase",
                         "Validations": [
                             {
                                 "Name": "Required",
