@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
@@ -98,7 +99,7 @@ namespace SFA.DAS.QnA.Application.Commands.Files.UploadFile
                     page.PageOfAnswers = new List<PageOfAnswers>();
                 }
 
-                var foundExistingOnPage = page.PageOfAnswers.SelectMany(a => a.Answers).Any(answer => answer.QuestionId == file.Name && answer.Value == file.FileName);
+                var foundExistingOnPage = page.PageOfAnswers.SelectMany(a => a.Answers).Any(answer => answer.QuestionId == file.Name && answer.Value == file.FileName && !string.IsNullOrEmpty(answer.Value));
                 
                 if (!foundExistingOnPage)
                 {

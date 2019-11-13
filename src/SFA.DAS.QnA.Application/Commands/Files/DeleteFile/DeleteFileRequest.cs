@@ -83,6 +83,8 @@ namespace SFA.DAS.QnA.Application.Commands.Files.DeleteFile
             page.PageOfAnswers.Remove(answer);
             if (page.PageOfAnswers.Count == 0)
                 page.Complete = false;
+            
+            MarkFeedbackComplete(page);
 
             section.QnAData = qnaData;
             await _dataContext.SaveChangesAsync(cancellationToken);
@@ -107,6 +109,14 @@ namespace SFA.DAS.QnA.Application.Commands.Files.DeleteFile
             application.ApplicationData = applicationData.ToString(Formatting.None);
 
             await _dataContext.SaveChangesAsync();
+        }
+
+        protected void MarkFeedbackComplete(Page page)
+        {
+            if (page.HasFeedback)
+            {
+                page.Feedback.ForEach(f => f.IsCompleted = true);
+            }
         }
     }
 }
