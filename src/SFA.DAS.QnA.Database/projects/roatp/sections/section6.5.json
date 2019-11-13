@@ -1,22 +1,22 @@
 {
-    "Title": "Type of apprenticeship training",
-    "LinkTitle": "Type of apprenticeship training",
+    "Title": "Off the job training",
+    "LinkTitle": "Off the job training",
     "DisplayType": "Pages",
     "RequestedFeedbackAnswered": null,
     "Pages": [
         {
-            "PageId": "6020",
+            "PageId": "6050",
             "SequenceId": null,
             "SectionId": null,
-            "Title": "Type of apprenticeship training",
-            "LinkTitle": "Type of apprenticeship training",
-            "InfoText": "Type of apprenticeship training",
+            "Title": "Off the job training",
+            "LinkTitle": "Off the job training",
+            "InfoText": "Off the job training",
             "Questions": [ ],
             "PageOfAnswers": [],
             "Next": [
                 {
                     "Action": "NextPage",
-                    "ReturnId": "6030",
+                    "ReturnId": "6060",
                     "Conditions": [],
                     "ConditionMet": false
                 }
@@ -28,9 +28,16 @@
             "Visible": true,
             "Feedback": null,
             "HasFeedback": false,
-            "NotRequiredConditions": [],
+             "NotRequiredConditions": [
+                {
+                    "Field": "Apply-ProviderRoute",
+                    "IsOneOf": [
+                        "2"
+                    ]
+                }
+            ],
             "ActivatedByPageId": null,
-            "BodyText": "<p class='govuk-body'>Type of apprenticeship training Holding page</p>"
+            "BodyText": "<p class='govuk-body'>Off the job training Holding page</p>"
         }
     ]
 }
