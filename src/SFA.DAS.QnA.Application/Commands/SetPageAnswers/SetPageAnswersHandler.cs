@@ -53,7 +53,9 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
 
             var nextAction = GetNextAction(page, request.Answers, section, _dataContext);
 
-            SetStatusOfNextPagesBasedOnAnswer(qnaData, page, request.Answers, nextAction);
+            var checkboxListAllNexts = GetCheckboxListMatchingNextActions(page, request.Answers, section, _dataContext);
+            
+            SetStatusOfNextPagesBasedOnAnswer(qnaData, page, request.Answers, nextAction, checkboxListAllNexts);
 
             await SaveAnswersIntoPage(request, cancellationToken, qnaData, section);
 
@@ -102,27 +104,49 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
 
         
 
-        private void SetStatusOfNextPagesBasedOnAnswer(QnAData qnaData, Page page, List<Answer> answers, Next nextAction)
+        private void SetStatusOfNextPagesBasedOnAnswer(QnAData qnaData, Page page, List<Answer> answers, Next nextAction, List<Next> checkboxListAllNexts)
         {
-            var hasConditionalBranch = page.Next.Any(n => n.Conditions != null && n.Conditions.Any());
-            if (!hasConditionalBranch || nextAction == null || (nextAction.Conditions == null && nextAction.Conditions.Any())) return;
-
-            if (page.PageOfAnswers != null && page.PageOfAnswers.Count > 0)
+            if (checkboxListAllNexts.Any())
             {
-                var existingAnswer = page.PageOfAnswers?[0].Answers.SingleOrDefault(a => a.QuestionId == answers[0].QuestionId);
-
-                if (existingAnswer != null && existingAnswer != answers.Single(a => a.QuestionId == answers[0].QuestionId))
+                foreach (var next in checkboxListAllNexts)
                 {
-                    DeactivateDependentPages(page.PageId, qnaData, page, nextAction);
+                    if (page.PageOfAnswers != null && page.PageOfAnswers.Count > 0)
+                    {
+                        var existingAnswer = page.PageOfAnswers?[0].Answers.SingleOrDefault(a => a.QuestionId == answers[0].QuestionId);
+                        if (existingAnswer != null && existingAnswer != answers.Single(a => a.QuestionId == answers[0].QuestionId))
+                        {
+                            DeactivateDependentPages(page.PageId, qnaData, page, next);
+                        }
+                    }
+                }
+
+                foreach (var next in checkboxListAllNexts)
+                {
+                    ActivateDependentPages(next, page.PageId, qnaData);
                 }
             }
+            else
+            {
+                var hasConditionalBranch = page.Next.Any(n => n.Conditions != null && n.Conditions.Any());
+                if (!hasConditionalBranch || nextAction == null || (nextAction.Conditions == null && nextAction.Conditions.Any())) return;
+
+                if (page.PageOfAnswers != null && page.PageOfAnswers.Count > 0)
+                {
+                    var existingAnswer = page.PageOfAnswers?[0].Answers.SingleOrDefault(a => a.QuestionId == answers[0].QuestionId);
+
+                    if (existingAnswer != null && existingAnswer != answers.Single(a => a.QuestionId == answers[0].QuestionId))
+                    {
+                        DeactivateDependentPages(page.PageId, qnaData, page, nextAction);
+                    }
+                }
             
-            ActivateDependentPages(nextAction, page.PageId, qnaData);
+                ActivateDependentPages(nextAction, page.PageId, qnaData);    
+            }
         }
 
-        private void DeactivateDependentPages(string branchingPageId, QnAData qnaData, Page page, Next chosenAction)
+        private void DeactivateDependentPages(string branchingPageId, QnAData qnaData, Page page, Next chosenAction, bool subPages = false)
         {
-            foreach (var nextAction in page.Next.Where(n => n != chosenAction))
+            foreach (var nextAction in page.Next.Where(n => n != chosenAction || subPages))
             {
                 if (nextAction.Action != "NextPage") continue;
                 
@@ -131,14 +155,14 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
                 {
                     break;
                 }
-                if (nextPage.ActivatedByPageId == branchingPageId)
+                if (nextPage.ActivatedByPageId != null && nextPage.ActivatedByPageId.Split(",", StringSplitOptions.RemoveEmptyEntries).Contains(branchingPageId))
                 {
                     nextPage.Active = false;
                 }
                     
                 foreach (var thisPagesNext in nextPage.Next)
                 {
-                    DeactivateDependentPages(branchingPageId, qnaData, nextPage, thisPagesNext);
+                    DeactivateDependentPages(branchingPageId, qnaData, nextPage, thisPagesNext, true);
                 }
             }
         }
@@ -152,7 +176,7 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
             {
                 return;
             }
-            if (nextPage.ActivatedByPageId == branchingPageId)
+            if (nextPage.ActivatedByPageId != null && nextPage.ActivatedByPageId.Split(",", StringSplitOptions.RemoveEmptyEntries).Contains(branchingPageId))
             {
                 nextPage.Active = true;
             }

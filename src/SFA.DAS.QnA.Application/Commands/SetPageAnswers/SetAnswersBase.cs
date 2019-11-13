@@ -10,6 +10,87 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
 {
     public class SetAnswersBase
     {
+
+        protected List<Next> GetCheckboxListMatchingNextActions(Page page, List<Answer> answers, ApplicationSection section, QnaDataContext qnaDataContext)
+        {
+            if (page.Next is null || !page.Next.Any())
+            {
+                throw new ApplicationException($"Page {page.PageId}, in Sequence {page.SequenceId}, Section {page.SectionId} has no 'Next' instructions.");
+            }
+
+            if (page.Questions.All(q => q.Input.Type != "CheckboxList"))
+            {
+                return new List<Next>();
+            }
+
+            Next nextAction = null;
+            
+            if (page.Next.Count == 1)
+            {
+                nextAction = page.Next.Single();
+            }
+
+            var matchingNexts = new List<Next>();
+            
+            foreach (var next in page.Next)
+            {
+                if (next.Conditions != null && next.Conditions.Any())
+                {
+                    var someConditionsNotSatisfied = false;
+                    
+                    foreach (var condition in next.Conditions.Where(c=> c.Contains != null))
+                    {
+                       
+                            var question = page.Questions.Single(q => q.QuestionId == condition.QuestionId);
+                            var answer = answers.FirstOrDefault(a => a.QuestionId == condition.QuestionId);
+
+                            if (question.Input.Type == "CheckboxList")
+                            {
+                                if (answer == null)
+                                {
+                                    someConditionsNotSatisfied = true;
+                                }
+                                else
+                                {
+                                    var answerValueList = answer.Value.Split(",", StringSplitOptions.RemoveEmptyEntries);
+                                
+                                    if (answer.QuestionId != condition.QuestionId || !answerValueList.Contains(condition.Contains))
+                                    {
+                                        someConditionsNotSatisfied = true;
+                                    }    
+                                }
+                            }
+                            else
+                            {
+                                if (answer == null || answer.QuestionId != condition.QuestionId || answer.Value != condition.MustEqual)
+                                {
+                                    someConditionsNotSatisfied = true;
+                                }    
+                            }
+                    }
+
+                    if (!someConditionsNotSatisfied)
+                    {
+                        matchingNexts.Add(next);
+                    }
+                }
+            }
+
+            var matchingNextsToReturn = new List<Next>();
+
+            foreach (var matchingNext in matchingNexts)
+            {
+                nextAction = FindNextRequiredAction(section, qnaDataContext, matchingNext);
+            
+                if (nextAction != null)
+                {
+                    matchingNextsToReturn.Add(nextAction);
+                }
+            }
+
+            return matchingNextsToReturn;
+        }
+        
         protected Next GetNextAction(Page page, List<Answer> answers, ApplicationSection section, QnaDataContext qnaDataContext)
         {
             if (page.Next is null || !page.Next.Any())
@@ -21,7 +102,7 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
             
             if (page.Next.Count == 1)
             {
-                nextAction = page.Next.First();
+                nextAction = page.Next.Single();
             }
 
             foreach (var next in page.Next)
@@ -46,10 +127,31 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
                         }
                         else
                         {
+                            var question = page.Questions.Single(q => q.QuestionId == condition.QuestionId);
                             var answer = answers.FirstOrDefault(a => a.QuestionId == condition.QuestionId);
-                            if (answer == null || answer.QuestionId != condition.QuestionId || answer.Value != condition.MustEqual)
+
+                            if (question.Input.Type == "CheckboxList")
                             {
-                                someConditionsNotSatisfied = true;
+                                if (answer == null)
+                                {
+                                    someConditionsNotSatisfied = true;
+                                }
+                                else
+                                {
+                                    var answerValueList = answer.Value.Split(",", StringSplitOptions.RemoveEmptyEntries);
+                                
+                                    if (answer.QuestionId != condition.QuestionId || !answerValueList.Contains(condition.Contains))
+                                    {
+                                        someConditionsNotSatisfied = true;
+                                    }    
+                                }
+                            }
+                            else
+                            {
+                                if (answer == null || answer.QuestionId != condition.QuestionId || answer.Value != condition.MustEqual)
+                                {
+                                    someConditionsNotSatisfied = true;
+                                }    
                             }
                         }   
                     }
