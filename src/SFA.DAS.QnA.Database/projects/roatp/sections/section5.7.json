@@ -43,6 +43,15 @@
             "Next": [{
                     "Action": "NextPage",
                     "ReturnId": "5610",
+                    "Conditions": [{
+                            "QuestionId": "RTE-70",
+                            "MustEqual": "Yes"
+                        }],
+                    "ConditionMet": false
+                },
+                {
+                    "Action": "ReturnToSection",
+                    "ReturnId": "6.1",
                     "Conditions": [],
                     "ConditionMet": false
                 }
@@ -96,11 +105,12 @@
             "Complete": false,
             "AllowMultipleAnswers": false,
             "Order": null,
-            "Active": true,
+            "Active": false,
             "Feedback": null,
             "HasFeedback": false,
             "NotRequiredConditions": [],
-            "BodyText": ""
+            "BodyText": "",
+            "ActivatedByPageId": "5600"
         }
     ]
 }
