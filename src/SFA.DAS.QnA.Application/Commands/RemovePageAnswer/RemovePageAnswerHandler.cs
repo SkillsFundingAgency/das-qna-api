@@ -45,9 +45,9 @@ namespace SFA.DAS.QnA.Application.Commands.RemovePageAnswer
                 Page.Complete = false;
                 if (Page.HasFeedback)
                 {
-                    foreach (var page in Page.Feedback.Where(page => page.IsNew).Select(page => page))
+                    foreach (var feedback in Page.Feedback.Where(feedback => feedback.IsNew).Select(feedback => feedback))
                     {
-                        page.IsCompleted = false;
+                        feedback.IsCompleted = false;
                     }
                 }
             }
