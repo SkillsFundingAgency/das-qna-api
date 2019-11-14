@@ -46,6 +46,8 @@ namespace SFA.DAS.QnA.Application.Commands.RemovePageAnswer
             }
 
             Section.QnAData = QnaData;
+            
+            MarkFeedbackComplete(Page);
 
             await _dataContext.SaveChangesAsync(CancellationToken.None);
             
