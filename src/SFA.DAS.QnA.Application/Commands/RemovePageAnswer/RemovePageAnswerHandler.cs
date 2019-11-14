@@ -43,6 +43,13 @@ namespace SFA.DAS.QnA.Application.Commands.RemovePageAnswer
             if (Page.PageOfAnswers.Count == 0)
             {
                 Page.Complete = false;
+                if (Page.HasFeedback)
+                {
+                    foreach (var feedback in Page.Feedback.Where(feedback => feedback.IsNew).Select(feedback => feedback))
+                    {
+                        feedback.IsCompleted = false;
+                    }
+                }
             }
 
             Section.QnAData = QnaData;
