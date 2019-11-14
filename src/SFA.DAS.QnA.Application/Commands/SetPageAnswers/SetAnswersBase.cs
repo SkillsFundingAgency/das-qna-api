@@ -130,7 +130,7 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
                             var question = page.Questions.Single(q => q.QuestionId == condition.QuestionId);
                             var answer = answers.FirstOrDefault(a => a.QuestionId == condition.QuestionId);
 
-                            if (question.Input.Type == "CheckboxList")
+                            if (question.Input.Type.ToLower() == "checkboxlist")
                             {
                                 if (answer == null)
                                 {
