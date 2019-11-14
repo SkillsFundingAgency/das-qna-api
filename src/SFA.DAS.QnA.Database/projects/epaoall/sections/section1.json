@@ -1035,7 +1035,7 @@
             "Questions": [
                 {
                     "QuestionId": "CD-17",
-                    "QuestionTag": "company-number",
+                    "QuestionTag": null,
                     "Label": "Do you have a company number?",
                     "ShortLabel": "",
                     "InputClasses": null,
@@ -1049,7 +1049,7 @@
                                 "FurtherQuestions": [
                                     {
                                         "QuestionId": "CD-17.1",
-                                        "QuestionTag": null,
+                                        "QuestionTag": "company-number",
                                         "Label": "What is your number",
                                         "ShortLabel": "",
                                         "InputClasses": null,
@@ -1604,7 +1604,7 @@
             "Questions": [
                 {
                     "QuestionId": "CD-26",
-                    "QuestionTag": "charity-number",
+                    "QuestionTag": null,
                     "Label": "Is your organisation a registered charity?",
                     "ShortLabel": "",
                     "InputClasses": null,
@@ -1618,7 +1618,7 @@
                                 "FurtherQuestions": [
                                     {
                                         "QuestionId": "CD-26.1",
-                                        "QuestionTag": null,
+                                        "QuestionTag": "charity-number",
                                         "Label": "What is the registered charity number?",
                                         "ShortLabel": "",
                                         "InputClasses": null,
