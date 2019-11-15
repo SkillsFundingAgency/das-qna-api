@@ -3,45 +3,31 @@
 	"LinkTitle": "Introduction and what you'll need",
 	"DisplayType": "Pages",
 	"RequestedFeedbackAnswered": null,
-	"Pages": [
-		{
-			"PageId": "4000",
-			"SequenceId": null,
-			"SectionId": null,
-			"Title": "",
-			"LinkTitle": "link title",
-			"InfoText": "info text",
-			"Questions": [
-				{
-					"QuestionId": "PYA-10",
-					"QuestionTag": "ProtectApprentice-Introduction-Main",
-					"Label": "Protecting your apprentices",
-					"ShortLabel": "",
-					"QuestionBodyText": "<p class='govuk-body' id='pya-intro-main'>For this section you'll need to upload your organisation's:</p><ul class='govuk-list govuk-list--bullet'><li>continuity plan for apprenticeship training</li><li>equality and diversity policy</li><li>safeguarding policy</li><li>prevent duty policy (if needed)</li><li>health and safety policy</li></ul><div class='govuk-warning-text'><span class='govuk-warning-text__icon' aria-hidden='true'>!</span><strong class='govuk-warning-text__text'><span class='govuk-warning-text__assistive'>Warning</span>All policies and processes must be specific to your organisation, apprentices and trainers. They must also be signed by a senior employee. For example, a director or CEO. We will not accept policies or processes that are generic or taken from a third party.</strong></div>",
-					"Hint": "",
-					"Input": {
-						"Type": "Hidden",
-						"Validations": []
-					},
-					"Order": null
-				}
-			],
-			"PageOfAnswers": [],
-			"Next": [
-				{
-					"Action": "NextPage",
-					"ReturnId": "4010",
-					"Conditions": [],
-					"ConditionMet": false
-				}
-			],
-			"Complete": false,
-			"AllowMultipleAnswers": false,
-			"Order": null,
-			"Active": true,
-			"Visible": true,
-			"Feedback": null,
-			"HasFeedback": false,
+    "Pages": [
+        {
+            "PageId": "4000",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "Protecting your apprentices",
+            "LinkTitle": "link title",
+            "InfoText": "info text",
+            "Questions": [],
+            "PageOfAnswers": [],
+            "Next": [
+                {
+                    "Action": "NextPage",
+                    "ReturnId": "4010",
+                    "Conditions": [],
+                    "ConditionMet": false
+                }
+            ],
+            "Complete": false,
+            "AllowMultipleAnswers": false,
+            "Order": null,
+            "Active": true,
+            "Visible": true,
+            "Feedback": null,
+            "HasFeedback": false,
 			"NotRequiredConditions": [
 				{
 					"Field": "Apply-ProviderRoute",
@@ -51,46 +37,32 @@
 					]
 				}
 			],
-			"BodyText": ""
+			"BodyText": "<p class='govuk-body' id='pya-intro-main'>For this section you'll need to upload your organisation's:</p><ul class='govuk-list govuk-list--bullet'><li>continuity plan for apprenticeship training</li><li>equality and diversity policy</li><li>safeguarding policy</li><li>prevent duty policy (if needed)</li><li>health and safety policy</li></ul><div class='govuk-warning-text'><span class='govuk-warning-text__icon' aria-hidden='true'>!</span><strong class='govuk-warning-text__text'><span class='govuk-warning-text__assistive'>Warning</span>All policies and processes must be specific to your organisation, apprentices and trainers. They must also be signed by a senior employee. For example, a director or CEO. We will not accept policies or processes that are generic or taken from a third party.</strong></div>"
 		},
 		{
-			"PageId": "4001",
-			"SequenceId": null,
-			"SectionId": null,
-			"Title": "",
-			"LinkTitle": "link title",
-			"InfoText": "info text",
-			"Questions": [
-				{
-					"QuestionId": "PYA-11",
-					"QuestionTag": "ProtectApprentice-Introduction-Employer",
-					"Label": "Protecting your apprentices",
-					"ShortLabel": "",
-					"QuestionBodyText": "<p class='govuk-body' id='pya-intro-emp'>For this section you'll need to upload your organisation's:</p><ul class='govuk-list govuk-list--bullet'><li>continuity plan for apprenticeship training</li><li>equality and diversity policy</li><li>safeguarding policy</li><li>prevent duty policy (if needed)</li><li>health and safety policy</li></ul><div class='govuk-warning-text'><span class='govuk-warning-text__icon' aria-hidden='true'>!</span><strong class='govuk-warning-text__text'><span class='govuk-warning-text__assistive'>Warning</span>All policies and processes must be specific to your organisation, apprentices and trainers. They must also be signed by a senior employee. For example, a director or CEO. We will not accept policies or processes that are generic or taken from a third party.</strong></div>",
-					"Hint": "",
-					"Input": {
-						"Type": "Hidden",
-						"Validations": []
-					},
-					"Order": null
-				}
-			],
-			"PageOfAnswers": [],
-			"Next": [
-				{
-					"Action": "NextPage",
-					"ReturnId": "4010",
-					"Conditions": [],
-					"ConditionMet": false
-				}
-			],
-			"Complete": false,
-			"AllowMultipleAnswers": false,
-			"Order": null,
-			"Active": true,
-			"Visible": true,
-			"Feedback": null,
-			"HasFeedback": false,
+            "PageId": "4001",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "Protecting your apprentices",
+            "LinkTitle": "link title",
+            "InfoText": "info text",
+            "Questions": [],
+            "PageOfAnswers": [],
+            "Next": [
+                {
+                    "Action": "NextPage",
+                    "ReturnId": "4010",
+                    "Conditions": [],
+                    "ConditionMet": false
+                }
+            ],
+            "Complete": false,
+            "AllowMultipleAnswers": false,
+            "Order": null,
+            "Active": true,
+            "Visible": true,
+            "Feedback": null,
+            "HasFeedback": false,
 			"NotRequiredConditions": [
 				{
 					"Field": "Apply-ProviderRoute",
@@ -100,47 +72,33 @@
 					]
 				}
 			],
-			"BodyText": ""
-		},
-		{
-			"PageId": "4002",
-			"SequenceId": null,
-			"SectionId": null,
-			"Title": "",
-			"LinkTitle": "link title",
-			"InfoText": "info text",
-			"Questions": [
-				{
-					"QuestionId": "PYA-12",
-					"QuestionTag": "ProtectApprentice-Introduction-Supporting",
-					"Label": "Protecting your apprentices",
-					"ShortLabel": "",
-					"QuestionBodyText": "<p class='govuk-body' id='pya-intro-supp'>For this section you'll need to upload your organisation's:</p><ul class='govuk-list govuk-list--bullet'><li>equality and diversity policy</li><li>safeguarding policy</li><li>prevent duty policy (if needed)</li><li>health and safety policy</li></ul><div class='govuk-warning-text'><span class='govuk-warning-text__icon' aria-hidden='true'>!</span><strong class='govuk-warning-text__text'><span class='govuk-warning-text__assistive'>Warning</span>All uploads must be specific to your organisation, apprentices and trainers. They must also be signed by a senior employee. For example, a director or CEO. We will not accept uploads that are generic or taken from a third party.</strong></div>",
-					"Hint": "",
-					"Input": {
-						"Type": "Hidden",
-						"Validations": []
-					},
-					"Order": null
-				}
-			],
-			"PageOfAnswers": [],
-			"Next": [
-				{
-					"Action": "NextPage",
-					"ReturnId": "4010",
-					"Conditions": [],
-					"ConditionMet": false
-				}
-			],
-			"Complete": false,
-			"AllowMultipleAnswers": false,
-			"Order": null,
-			"Active": true,
-			"Visible": true,
-			"Feedback": null,
-			"HasFeedback": false,
-			"NotRequiredConditions": [
+			"BodyText": "<p class='govuk-body' id='pya-intro-emp'>For this section you'll need to upload your organisation's:</p><ul class='govuk-list govuk-list--bullet'><li>continuity plan for apprenticeship training</li><li>equality and diversity policy</li><li>safeguarding policy</li><li>prevent duty policy (if needed)</li><li>health and safety policy</li></ul><div class='govuk-warning-text'><span class='govuk-warning-text__icon' aria-hidden='true'>!</span><strong class='govuk-warning-text__text'><span class='govuk-warning-text__assistive'>Warning</span>All policies and processes must be specific to your organisation, apprentices and trainers. They must also be signed by a senior employee. For example, a director or CEO. We will not accept policies or processes that are generic or taken from a third party.</strong></div>"
+        },
+        {
+            "PageId": "4002",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "Protecting your apprentices",
+            "LinkTitle": "link title",
+            "InfoText": "info text",
+            "Questions": [],
+            "PageOfAnswers": [],
+            "Next": [
+                {
+                    "Action": "NextPage",
+                    "ReturnId": "4010",
+                    "Conditions": [],
+                    "ConditionMet": false
+                }
+            ],
+            "Complete": false,
+            "AllowMultipleAnswers": false,
+            "Order": null,
+            "Active": true,
+            "Visible": true,
+            "Feedback": null,
+            "HasFeedback": false,
+            "NotRequiredConditions": [
 				{
 					"Field": "Apply-ProviderRoute",
 					"IsOneOf": [
@@ -149,7 +107,7 @@
 					]
 				}
 			],
-			"BodyText": ""
+			"BodyText": "<p class='govuk-body' id='pya-intro-supp'>For this section you'll need to upload your organisation's:</p><ul class='govuk-list govuk-list--bullet'><li>equality and diversity policy</li><li>safeguarding policy</li><li>prevent duty policy (if needed)</li><li>health and safety policy</li></ul><div class='govuk-warning-text'><span class='govuk-warning-text__icon' aria-hidden='true'>!</span><strong class='govuk-warning-text__text'><span class='govuk-warning-text__assistive'>Warning</span>All uploads must be specific to your organisation, apprentices and trainers. They must also be signed by a senior employee. For example, a director or CEO. We will not accept uploads that are generic or taken from a third party.</strong></div>"
 		}
-	]
+    ]
 }

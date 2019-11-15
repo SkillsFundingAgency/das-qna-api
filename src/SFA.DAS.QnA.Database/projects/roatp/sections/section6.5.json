@@ -1,0 +1,43 @@
+{
+    "Title": "Off the job training",
+    "LinkTitle": "Off the job training",
+    "DisplayType": "Pages",
+    "RequestedFeedbackAnswered": null,
+    "Pages": [
+        {
+            "PageId": "6050",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "Off the job training",
+            "LinkTitle": "Off the job training",
+            "InfoText": "Off the job training",
+            "Questions": [ ],
+            "PageOfAnswers": [],
+            "Next": [
+                {
+                    "Action": "NextPage",
+                    "ReturnId": "6060",
+                    "Conditions": [],
+                    "ConditionMet": false
+                }
+            ],
+            "Complete": false,
+            "AllowMultipleAnswers": false,
+            "Order": null,
+            "Active": true,
+            "Visible": true,
+            "Feedback": null,
+            "HasFeedback": false,
+             "NotRequiredConditions": [
+                {
+                    "Field": "Apply-ProviderRoute",
+                    "IsOneOf": [
+                        "2"
+                    ]
+                }
+            ],
+            "ActivatedByPageId": null,
+            "BodyText": "<p class='govuk-body'>Off the job training Holding page</p>"
+        }
+    ]
+}
