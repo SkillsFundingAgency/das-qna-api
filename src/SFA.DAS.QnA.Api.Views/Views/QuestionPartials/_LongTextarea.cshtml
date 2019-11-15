@@ -7,10 +7,8 @@
     var maxCharacterCount = 0;
     var maxWordCount = 0;
 
-    var validations = ModelHelpers.PropertyExists(Model, "Validations") 
-        ? Model.Validations 
-        : Model.Input.Validations;
-
+    var validations = ViewHelpers.GetValidations(Model);
+    
     if (validations != null)
     {
         foreach (var validator in validations)
