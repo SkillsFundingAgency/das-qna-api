@@ -1,0 +1,104 @@
+
+{
+    "Title": "Checks on your organisation",
+    "LinkTitle": "Checks on your organisation",
+    "DisplayType": "Pages",
+    "RequestedFeedbackAnswered": null,
+    "Pages": [
+        {
+            "PageId": "3200",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "Checks on your organisation",
+            "LinkTitle": "Checks on your organisation",
+            "InfoText": "",
+            "Questions": [
+                {
+                    "QuestionId": "CC-20",
+                    "QuestionTag": "Criminal-Composition-Creditors",
+                    "Label": "Does your organisation have any composition with creditors?",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "<p class='govuk-body' id='criminal-composition-creditors'>Composition with creditors is an agreement between a debtor and its creditors where all the creditors agree to accept less than the original amount of debt due to them in full satisfaction of their claim.</p>",
+                    "Hint": "",
+                    "Input":
+                    {
+                        "Type": "ComplexRadio",
+                        "InputClasses": null,
+                        "Options": [
+                            {
+                                "FurtherQuestions": [
+                                    {
+                                        "QuestionId": "CC-20.1",
+                                        "QuestionTag": "Criminal-Composition-Creditors-Information",
+                                        "Label": "Give us more information",
+                                        "ShortLabel": "",
+                                        "InputClasses": null,
+                                        "QuestionBodyText": "",
+                                        "Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include:</p><ul class='govuk-list govuk-list--bullet'><li>a brief summary of the agreement</li><li>how your organisation will settle the debt</li><li>the date of when the debt will be fully paid off</li></ul>",
+                                        "Input":
+                                        {
+                                            "Type": "Textarea",
+                                            "InputClasses": "",
+                                            "Options": [],
+                                            "Validations": [
+                                                {
+                                                    "Name": "Required",
+                                                    "Value": "",
+                                                    "ErrorMessage": "Enter more information "
+                                                },
+                                                {
+                                                    "Name": "MaxWordCount",
+                                                    "Value": "1500",
+                                                    "ErrorMessage": "Your answer must be 1500 characters or less"
+                                                }
+                                            ],
+                                            "DataEndpoint": null
+
+                                        },
+                                        "Order": null,
+                                        "Value": "",
+                                        "ErrorMessages": null
+                                    }
+                                ],
+                                "Value": "Yes",
+                                "Label": "Yes",
+                                "HintText": ""
+                            },
+                            {
+                                "FurtherQuestions": [],
+                                "Value": "No",
+                                "Label": "No",
+                                "HintText": ""
+                            }
+                        ],
+                        "Validations": [
+                            {
+                                "Name": "Required",
+                                "Value": "",
+                                "ErrorMessage": "Tell if your organisation has any composition with creditors"
+                            }
+                        ],
+                        "DataEndpoint": null
+                    }
+                }
+            ],
+            "PageOfAnswers": [],
+            "Next": [
+                {
+                    "Action": "ReturnToSection",
+                    "ReturnId": "3.3",
+                    "Conditions": [],
+                    "ConditionMet": false
+                }
+            ],
+            "Complete": false,
+            "AllowMultipleAnswers": false,
+            "Order": null,
+            "Active": true,
+            "Feedback": null,
+            "HasFeedback": false,
+            "NotRequiredConditions": [],
+            "BodyText": ""
+        }
+    ]
+}
