@@ -81,8 +81,18 @@ namespace SFA.DAS.QnA.Application.Commands.Files.DeleteFile
             }
 
             page.PageOfAnswers.Remove(answer);
+
             if (page.PageOfAnswers.Count == 0)
+            {
                 page.Complete = false;
+                if (page.HasFeedback)
+                {
+                    foreach (var feedback in page.Feedback.Where(feedback => feedback.IsNew).Select(feedback => feedback))
+                    {
+                        feedback.IsCompleted = false;
+                    }
+                }
+            }
 
             section.QnAData = qnaData;
             await _dataContext.SaveChangesAsync(cancellationToken);
