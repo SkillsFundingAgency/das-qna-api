@@ -64,7 +64,7 @@
       "Order": null,
       "Active": true,
       "NotRequiredConditions": [],
-      "BodyText": "<p>'Commercial in confidence' information is sensitive to your organisation. If this information is shared, it could result in damage to commercial interests, intellectual property or trade secrets.</p><p>If any of the information in this application is 'commercial in confidence', we will not share it without your permission.</p>",
+      "BodyText": "<p class='govuk-body'>'Commercial in confidence' information is sensitive to your organisation. If this information is shared, it could result in damage to commercial interests, intellectual property or trade secrets.</p><p class='govuk-body'>If any of the information in this application is 'commercial in confidence', we will not share it without your permission.</p>",
       "Details": null,
       "DisplayType": null,
       "Feedback": null,
