@@ -50,7 +50,7 @@ namespace SFA.DAS.QnA.Application.Commands.SkipPage
             {
                 if (page.Next is null || !page.Next.Any())
                 {
-                    return new HandlerResponse<SkipPageResponse>(false, "There are no 'Next' instructions.");
+                    return new HandlerResponse<SkipPageResponse>(new SkipPageResponse());
                 }
                 else
                 {

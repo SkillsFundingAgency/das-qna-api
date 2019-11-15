@@ -44,7 +44,7 @@ namespace SFA.DAS.QnA.Application.Queries.Sections.GetNextAction
             {
                 if (page.Next is null || !page.Next.Any())
                 {
-                    return new HandlerResponse<GetNextActionResponse>(false, "There are no 'Next' instructions.");
+                    return new HandlerResponse<GetNextActionResponse>(new GetNextActionResponse());
                 }
                 else
                 {
