@@ -228,7 +228,7 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
 
         protected void SetStatusOfNextPagesBasedOnAnswer(QnAData qnaData, Page page, List<Answer> answers, Next nextAction, List<Next> checkboxListAllNexts)
         {
-            if (checkboxListAllNexts.Any())
+            if (checkboxListAllNexts != null && checkboxListAllNexts.Any())
             {
                 foreach (var next in checkboxListAllNexts)
                 {
