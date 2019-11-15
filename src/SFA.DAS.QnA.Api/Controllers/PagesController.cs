@@ -144,7 +144,7 @@ namespace SFA.DAS.QnA.Api.Controllers
         /// </summary>
         /// <returns>An object describing the next steps</returns>
         /// <response code="200">>Returns the response</response>
-        /// <response code="400">Cannot determine the next steps, or if ApplicationId, SectionId or PageId does not exist</response>
+        /// <response code="400">Cannot determine the next steps, or if ApplicationId, SequenceNo, SectionNo or PageId does not exist</response>
         [HttpGet("{applicationId}/sequences/{sequenceNo}/sections/{sectionNo}/pages/{pageId}/action/next")]
         [ProducesResponseType(200)]
         [ProducesResponseType(404)]
@@ -185,7 +185,7 @@ namespace SFA.DAS.QnA.Api.Controllers
         /// </summary>
         /// <returns>An object describing the next steps</returns>
         /// <response code="200">>Returns the response</response>
-        /// <response code="400">Cannot determine the next steps, or if ApplicationId, SectionId or PageId does not exist</response>
+        /// <response code="400">Cannot determine the next steps, or if ApplicationId, SequenceNo, SectionNo or PageId does not exist</response>
         [HttpGet("{applicationId}/sequences/{sequenceNo}/sections/{sectionNo}/pages/{pageId}/action/skip")]
         [ProducesResponseType(200)]
         [ProducesResponseType(404)]
