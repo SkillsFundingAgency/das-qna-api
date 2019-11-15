@@ -127,6 +127,7 @@ namespace SFA.DAS.QnA.Api.Controllers
         /// <response code="400">Cannot determine the next steps, or if ApplicationId, SectionId or PageId does not exist</response>
         [HttpGet("{applicationId}/sections/{sectionId}/pages/{pageId}/action/next")]
         [ProducesResponseType(200)]
+        [ProducesResponseType(400)]
         public async Task<ActionResult<GetNextActionResponse>> GetNextAction(Guid applicationId, Guid sectionId, string pageId)
         {
             _logger.LogInformation($"Getting the next action...: applicationId = {applicationId} , pageId = {pageId}");
@@ -147,7 +148,7 @@ namespace SFA.DAS.QnA.Api.Controllers
         /// <response code="400">Cannot determine the next steps, or if ApplicationId, SequenceNo, SectionNo or PageId does not exist</response>
         [HttpGet("{applicationId}/sequences/{sequenceNo}/sections/{sectionNo}/pages/{pageId}/action/next")]
         [ProducesResponseType(200)]
-        [ProducesResponseType(404)]
+        [ProducesResponseType(400)]
         public async Task<ActionResult<GetNextActionResponse>> GetNextActionBySectionNo(Guid applicationId, int sequenceNo, int sectionNo, string pageId)
         {
             _logger.LogInformation($"Getting the next action...: applicationId = {applicationId} , sequenceNo = {sequenceNo} , sectionNo = {sectionNo} , pageId = {pageId}");
@@ -168,6 +169,7 @@ namespace SFA.DAS.QnA.Api.Controllers
         /// <response code="400">Cannot determine the next steps, or if ApplicationId, SectionId or PageId does not exist</response>
         [HttpPut("{applicationId}/sections/{sectionId}/pages/{pageId}/action/skip")]
         [ProducesResponseType(200)]
+        [ProducesResponseType(400)]
         public async Task<ActionResult<SkipPageResponse>> SkipPage(Guid applicationId, Guid sectionId, string pageId)
         {
             _logger.LogInformation($"Getting the next action...: applicationId = {applicationId} , pageId = {pageId}");
@@ -188,7 +190,7 @@ namespace SFA.DAS.QnA.Api.Controllers
         /// <response code="400">Cannot determine the next steps, or if ApplicationId, SequenceNo, SectionNo or PageId does not exist</response>
         [HttpPut("{applicationId}/sequences/{sequenceNo}/sections/{sectionNo}/pages/{pageId}/action/skip")]
         [ProducesResponseType(200)]
-        [ProducesResponseType(404)]
+        [ProducesResponseType(400)]
         public async Task<ActionResult<SkipPageResponse>> SkipPageBySectionNo(Guid applicationId, int sequenceNo, int sectionNo, string pageId)
         {
             _logger.LogInformation($"Getting the next action...: applicationId = {applicationId} , sequenceNo = {sequenceNo} , sectionNo = {sectionNo} , pageId = {pageId}");
