@@ -124,6 +124,12 @@
 					"SequenceNo": 9,
 					"SectionNo": 1,
 					"name": "Application permissions and checks"
+				},
+				{
+					"id": "section9.2",
+					"SequenceNo": 9,
+					"SectionNo": 2,
+					"name": "'Commercial in confidence' information"
 				}
                 {
                     "id": "section99.1",
