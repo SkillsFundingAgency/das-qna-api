@@ -65,7 +65,7 @@
             "Questions": [{
                     "QuestionId": "RTE-21",
                     "QuestionTag": "ReadinessToEngage-Managing-Employers",
-                    "Label": "How will your organisation manage its relationships with employers?",
+                    "Label": "How will your organisation manage its relationship with employers?",
                     "ShortLabel": "",
                     "QuestionBodyText": "<p class='govuk-body' id='rte-managing-employers'>Your answer should include how your organisation will:</p><ul class='govuk-list govuk-list--bullet'><li>continuously monitor and improve employer engagement</li><li>regularly review feedback from employers</li><li>manage concerns and issues raised by employers</li><li>manage communication with employers</li></ul>",
                     "Hint": "",
@@ -74,7 +74,7 @@
                         "Validations": [{
                                 "Name": "Required",
                                 "Value": "",
-                                "ErrorMessage": "Enter how you continuously improve the quality of your assessment practice"
+                                "ErrorMessage": "Tell us how your organisation will manage its relationship with employers"
                             }, {
                                 "Name": "MaxLength",
                                 "Value": "1500",
@@ -234,7 +234,7 @@
                         "Validations": [{
                                 "Name": "Required",
                                 "Value": "",
-                                "ErrorMessage": "Enter how you promote apprenticeships to employers"
+                                "ErrorMessage": "Tell us how your organisation will promote apprenticeships to employers"
                             }, {
                                 "Name": "MaxLength",
                                 "Value": "750",
