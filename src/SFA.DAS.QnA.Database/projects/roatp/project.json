@@ -119,6 +119,12 @@
                     "SectionNo": 1,
                     "name": "Introduction and what you'll need"
                 },
+				{
+					"id": "section9.1",
+					"SequenceNo": 9,
+					"SectionNo": 1,
+					"name": "Application permissions and checks"
+				}
                 {
                     "id": "section99.1",
                     "SequenceNo": 99,

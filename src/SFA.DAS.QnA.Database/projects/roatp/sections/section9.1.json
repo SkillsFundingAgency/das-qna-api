@@ -1,0 +1,268 @@
+{
+  "Title": "Application permissions and checks",
+  "LinkTitle": "Application permissions and checks",
+  "DisplayType": "Pages",
+  "RequestedFeedbackAnswered": null,
+  "Pages": [
+    {
+      "PageId": "9000",
+      "SequenceId": null,
+      "SectionId": null,
+      "Title": "Do you have permission from everyone named in this application to use their details?",
+      "LinkTitle": "Application permissions and checks",
+      "InfoText": "",
+      "Questions": [
+        {
+          "QuestionId": "FIN-10",
+          "QuestionTag": "Finish-Permission-Personal-Details",
+          "Label": "",
+          "ShortLabel": "",
+          "QuestionBodyText": "",
+          "Hint": "",
+          "Input": {
+            "Type": "Radio",
+            "Validations": [
+              {
+                "Name": "Required",
+                "Value": "",
+                "ErrorMessage": "ell us if you have permission from everyone named in this application to use their details"
+              }
+            ],
+            "InputClasses": "govuk-input--width-20",
+            "Options": [
+              {
+                "Value": "Yes",
+                "Label": "Yes",
+                "HintText": ""
+              },
+              {
+                "Value": "No",
+                "Label": "No",
+                "HintText": ""
+              }
+            ]
+          },
+          "Order": null
+        }
+      ],
+      "PageOfAnswers": [],
+      "Next": [
+        {
+          "Action": "NextPage",
+          "ReturnId": "20",
+          "Conditions": [],
+          "ConditionMet": false
+        },
+        {
+          "Action": "NextPage",
+          "ReturnId": "10005",
+          "Condition": null,
+          "Conditions": [
+            {
+              "QuestionId": "FIN-10",
+              "QuestionTag": null,
+              "MustEqual": "No"
+            }
+          ],
+          "ConditionMet": false
+        },
+        {
+          "Action": "NextPage",
+          "ReturnId": "9010",
+          "Condition": null,
+          "Conditions": [],
+          "ConditionMet": false
+        }
+      ],
+      "Complete": false,
+      "AllowMultipleAnswers": false,
+      "Order": null,
+      "Active": true,
+      "Visible": true,
+      "Feedback": null,
+      "HasFeedback": false,
+      "NotRequiredConditions": [],
+      "ActivatedByPageId": null,
+      "BodyText": ""
+    },
+    {
+      "PageId": "10005",
+      "SequenceId": null,
+      "SectionId": null,
+      "Title": "Before you submit this application",
+      "LinkTitle": "Before you submit this application",
+      "InfoText": "",
+      "Questions": [],
+      "PageOfAnswers": [],
+      "Next": [],
+      "Complete": false,
+      "AllowMultipleAnswers": false,
+      "Order": null,
+      "Active": true,
+      "NotRequiredConditions": [],
+      "BodyText": "Before you submit this application, you must have <ul><li>permission from everyone named in this application to use their details</li><li>checked with everyone named in this application that the details provided for them are accurate</li><li>permission from your organisation to submit this application</li>",
+      "Details": null,
+      "DisplayType": null,
+      "Feedback": null,
+      "ActivatedByPageId": null
+    },
+    {
+      "PageId": "9010",
+      "SequenceId": null,
+      "SectionId": null,
+      "Title": "Have you checked with everyone named in this application that the details provided for them are accurate?",
+      "LinkTitle": "Application permissions and checks",
+      "InfoText": "",
+      "Questions": [
+        {
+          "QuestionId": "FIN-20",
+          "QuestionTag": "Finish-Accurate-Personal-Details",
+          "Label": "",
+          "ShortLabel": "",
+          "InputClasses": null,
+          "QuestionBodyText": "",
+          "Hint": "",
+          "Input": {
+            "Type": "Radio",
+            "InputClasses": null,
+            "Options": [
+              {
+                "Value": "Yes",
+                "Label": "Yes",
+                "HintText": ""
+              },
+              {
+                "Value": "No",
+                "Label": "No",
+                "HintText": ""
+              }
+            ],
+            "Validations": [
+              {
+                "Name": "Required",
+                "Value": "",
+                "ErrorMessage": "Tell us if you have checked with everyone named in this application that the details provided for them are accurate"
+              }
+            ],
+            "DataEndpoint": null
+          },
+          "Order": null,
+          "Value": "",
+          "ErrorMessages": null
+        }
+      ],
+      "PageOfAnswers": [],
+      "Next": [
+        {
+          "Action": "NextPage",
+          "ReturnId": "10005",
+          "Condition": null,
+          "Conditions": [
+            {
+              "QuestionId": "FIN-20",
+              "QuestionTag": null,
+              "MustEqual": "No"
+            }
+          ],
+          "ConditionMet": false
+        },
+        {
+          "Action": "NextPage",
+          "ReturnId": "9020",
+          "Condition": null,
+          "Conditions": [],
+          "ConditionMet": false
+        }
+      ],
+      "Complete": false,
+      "AllowMultipleAnswers": false,
+      "Order": null,
+      "Active": false,
+      "NotRequiredConditions": [],
+      "BodyText": "",
+      "Details": null,
+      "DisplayType": null,
+      "Feedback": null,
+      "ActivatedByPageId": "9000"
+    },
+    {
+      "PageId": "9020",
+      "SequenceId": null,
+      "SectionId": null,
+      "Title": "Do you have permission from your organisation to submit this application?",
+      "LinkTitle": null,
+      "InfoText": "",
+      "Questions": [
+        {
+          "QuestionId": "FIN-30",
+          "QuestionTag": "Finish-Permission-SubmitApp",
+          "Label": "",
+          "ShortLabel": "",
+          "InputClasses": null,
+          "QuestionBodyText": "",
+          "Hint": "",
+          "Input": {
+            "Type": "Radio",
+            "InputClasses": null,
+            "Options": [
+              {
+                "Value": "Yes",
+                "Label": "Yes",
+                "HintText": ""
+              },
+              {
+                "Value": "No",
+                "Label": "No",
+                "HintText": ""
+              }
+            ],
+            "Validations": [
+              {
+                "Name": "Required",
+                "Value": "",
+                "ErrorMessage": "Tell us if you have permission from your organisation to submit this application"
+              }
+            ],
+            "DataEndpoint": null
+          },
+          "Order": null,
+          "Value": "",
+          "ErrorMessages": null
+        }
+      ],
+      "PageOfAnswers": [],
+      "Next": [
+        {
+          "Action": "NextPage",
+          "ReturnId": "10005",
+          "Condition": null,
+          "Conditions": [
+            {
+              "QuestionId": "FIN-30",
+              "QuestionTag": null,
+              "MustEqual": "No"
+            }
+          ],
+          "ConditionMet": false
+        },
+        {
+          "Action": "ReturnToSection",
+          "ReturnId": "",
+          "Condition": null,
+          "Conditions": [],
+          "ConditionMet": false
+        }
+      ],
+      "Complete": false,
+      "AllowMultipleAnswers": false,
+      "Order": null,
+      "Active": false,
+      "NotRequiredConditions": [],
+      "BodyText": "",
+      "Details": null,
+      "DisplayType": null,
+      "Feedback": null,
+      "ActivatedByPageId": "9010"
+    }
+  ]
+}
