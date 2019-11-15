@@ -15,7 +15,7 @@
         {
           "QuestionId": "FIN-50",
           "QuestionTag": null,
-          "Label": "",
+          "Label": "Do you agree to the terms and conditions of submitting an application?",
           "ShortLabel": "",
           "InputClasses": null,
           "QuestionBodyText": "",
@@ -101,7 +101,7 @@
         {
           "QuestionId": "FIN-60",
           "QuestionTag": null,
-          "Label": "",
+          "Label": "Do you agree to the terms and conditions of submitting an application?",
           "ShortLabel": "",
           "InputClasses": null,
           "QuestionBodyText": "",
@@ -177,27 +177,6 @@
       "ActivatedByPageId": null
     },
     {
-      "PageId": "10006",
-      "SequenceId": null,
-      "SectionId": null,
-      "Title": "You do not agree to the terms and conditions of submitting an application",
-      "LinkTitle": "You do not agree to the terms and conditions of submitting an application",
-      "InfoText": "",
-      "Questions": [],
-      "PageOfAnswers": [],
-      "Next": [],
-      "Complete": false,
-      "AllowMultipleAnswers": false,
-      "Order": null,
-      "Active": true,
-      "NotRequiredConditions": [],
-      "BodyText": "<p class='govuk-body'>This means your organisation cannot apply to join the RoATP.</p><p class='govuk-body'>If you want to change your answer, you can sign back in and submit your application. We will save it for 30 days - after this, we will delete it and you will need to start again.</p>\n<p class='govuk-body'><a href='https://www.gov.uk'>Back to GOV.UK<a></p>",
-      "Details": null,
-      "DisplayType": null,
-      "Feedback": null,
-      "ActivatedByPageId": null
-    },
-    {
       "PageId": "9300",
       "SequenceId": null,
       "SectionId": null,
@@ -208,7 +187,7 @@
         {
           "QuestionId": "FIN-70",
           "QuestionTag": null,
-          "Label": "",
+          "Label": "Do you agree to the terms and conditions of joining and staying on the RoATP?",
           "ShortLabel": "",
           "InputClasses": null,
           "QuestionBodyText": "",
@@ -294,7 +273,7 @@
         {
           "QuestionId": "FIN-80",
           "QuestionTag": null,
-          "Label": "",
+          "Label": "Do you agree to the terms and conditions of joining the RoATP?",
           "ShortLabel": "",
           "InputClasses": null,
           "QuestionBodyText": "",
@@ -368,6 +347,27 @@
       "DisplayType": null,
       "Feedback": null,
       "ActivatedByPageId": "9210"
+    },
+    {
+      "PageId": "10006",
+      "SequenceId": null,
+      "SectionId": null,
+      "Title": "You do not agree to the terms and conditions of submitting an application",
+      "LinkTitle": "You do not agree to the terms and conditions of submitting an application",
+      "InfoText": "",
+      "Questions": [],
+      "PageOfAnswers": [],
+      "Next": [],
+      "Complete": false,
+      "AllowMultipleAnswers": false,
+      "Order": null,
+      "Active": true,
+      "NotRequiredConditions": [],
+      "BodyText": "<p class='govuk-body'>This means your organisation cannot apply to join the RoATP.</p><p class='govuk-body'>If you want to change your answer, you can sign back in and submit your application. We will save it for 30 days - after this, we will delete it and you will need to start again.</p>\n<p class='govuk-body'><a href='https://www.gov.uk'>Back to GOV.UK<a></p>",
+      "Details": null,
+      "DisplayType": null,
+      "Feedback": null,
+      "ActivatedByPageId": null
     },
     {
       "PageId": "10007",

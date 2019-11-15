@@ -90,7 +90,7 @@
         {
           "QuestionId": "FIN-20",
           "QuestionTag": "Finish-Accurate-Personal-Details",
-          "Label": "",
+          "Label": "Have you checked with everyone named in this application that the details provided for them are accurate?",
           "ShortLabel": "",
           "InputClasses": null,
           "QuestionBodyText": "",
@@ -169,7 +169,7 @@
         {
           "QuestionId": "FIN-30",
           "QuestionTag": "Finish-Permission-SubmitApp",
-          "Label": "",
+          "Label": "Do you have permission from your organisation to submit this application?",
           "ShortLabel": "",
           "InputClasses": null,
           "QuestionBodyText": "",
@@ -252,7 +252,7 @@
       "Order": null,
       "Active": true,
       "NotRequiredConditions": [],
-      "BodyText": "<p class='govuk-body'>Before you submit this application, you must have</p> <ul class='govuk-list govuk-list--bullet'><li>permission from everyone named in this application to use their details</li><li>checked with everyone named in this application that the details provided for them are accurate</li><li>permission from your organisation to submit this application</li>",
+      "BodyText": "<p class='govuk-body'>Before you submit this application, you must have:</p> <p class='govuk-body'> <ul class='govuk-list govuk-list--bullet'><li>permission from everyone named in this application to use their details</li><li>checked with everyone named in this application that the details provided for them are accurate</li><li>permission from your organisation to submit this application</li></ul></p>",
       "Details": null,
       "DisplayType": null,
       "Feedback": null,

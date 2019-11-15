@@ -15,7 +15,7 @@
         {
           "QuestionId": "FIN-40",
           "QuestionTag": null,
-          "Label": "",
+          "Label": "Is any of the information in this application 'commercial in confidence'?",
           "ShortLabel": "",
           "InputClasses": null,
           "QuestionBodyText": "",
