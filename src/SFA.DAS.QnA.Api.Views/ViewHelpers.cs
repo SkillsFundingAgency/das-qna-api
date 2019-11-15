@@ -14,7 +14,7 @@ namespace SFA.DAS.QnA.Api.Views
         }
         
         /// <summary>
-        /// Get's the validations from the dynamic Model.
+        /// Gets the validations from the dynamic Model.
         /// Normally the Model will be a QuestionViewModel and will contain Validations.
         /// If the Question is in FurtherQuestions in a ComplexRadio, then the Model will be a Question and
         /// Validations is a sub-property of Input.
