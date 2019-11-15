@@ -13,6 +13,7 @@ using SFA.DAS.QnA.Api.Types.Page;
 using SFA.DAS.QnA.Application.Commands.AddPageAnswer;
 using SFA.DAS.QnA.Application.Commands.RemovePageAnswer;
 using SFA.DAS.QnA.Application.Commands.SetPageAnswers;
+using SFA.DAS.QnA.Application.Commands.SkipPage;
 using SFA.DAS.QnA.Application.Queries.Sections.GetNextAction;
 using SFA.DAS.QnA.Application.Queries.Sections.GetPage;
 
@@ -123,7 +124,7 @@ namespace SFA.DAS.QnA.Api.Controllers
         /// </summary>
         /// <returns>An object describing the next steps</returns>
         /// <response code="200">Returns the response</response>
-        /// <response code="400">If ApplicationId, SectionId or PageId does not exist</response>
+        /// <response code="400">Cannot determine the next steps, or if ApplicationId, SectionId or PageId does not exist</response>
         [HttpGet("{applicationId}/sections/{sectionId}/pages/{pageId}/action/next")]
         [ProducesResponseType(200)]
         public async Task<ActionResult<GetNextActionResponse>> GetNextAction(Guid applicationId, Guid sectionId, string pageId)
@@ -143,7 +144,7 @@ namespace SFA.DAS.QnA.Api.Controllers
         /// </summary>
         /// <returns>An object describing the next steps</returns>
         /// <response code="200">>Returns the response</response>
-        /// <response code="400">If ApplicationId, SectionId or PageId does not exist</response>
+        /// <response code="400">Cannot determine the next steps, or if ApplicationId, SectionId or PageId does not exist</response>
         [HttpGet("{applicationId}/sequences/{sequenceNo}/sections/{sectionNo}/pages/{pageId}/action/next")]
         [ProducesResponseType(200)]
         [ProducesResponseType(404)]
@@ -155,6 +156,47 @@ namespace SFA.DAS.QnA.Api.Controllers
             if (!getNextActionResponse.Success) return BadRequest(new BadRequestError(getNextActionResponse.Message));
 
             _logger.LogInformation($"Response from GetNextActionBySectionNo: {JsonConvert.SerializeObject(getNextActionResponse.Value)}");
+
+            return getNextActionResponse.Value;
+        }
+
+        /// <summary>
+        ///     Skips the page specified and gets the next steps.
+        /// </summary>
+        /// <returns>An object describing the next steps</returns>
+        /// <response code="200">Returns the response</response>
+        /// <response code="400">Cannot determine the next steps, or if ApplicationId, SectionId or PageId does not exist</response>
+        [HttpGet("{applicationId}/sections/{sectionId}/pages/{pageId}/action/skip")]
+        [ProducesResponseType(200)]
+        public async Task<ActionResult<SkipPageResponse>> SkipPage(Guid applicationId, Guid sectionId, string pageId)
+        {
+            _logger.LogInformation($"Getting the next action...: applicationId = {applicationId} , pageId = {pageId}");
+
+            var getNextActionResponse = await _mediator.Send(new SkipPageRequest(applicationId, sectionId, pageId), CancellationToken.None);
+            if (!getNextActionResponse.Success) return BadRequest(new BadRequestError(getNextActionResponse.Message));
+
+            _logger.LogInformation($"Response from SkipPage: {JsonConvert.SerializeObject(getNextActionResponse.Value)}");
+
+            return getNextActionResponse.Value;
+        }
+
+        /// <summary>
+        ///     Skips the page specified and gets the next steps.
+        /// </summary>
+        /// <returns>An object describing the next steps</returns>
+        /// <response code="200">>Returns the response</response>
+        /// <response code="400">Cannot determine the next steps, or if ApplicationId, SectionId or PageId does not exist</response>
+        [HttpGet("{applicationId}/sequences/{sequenceNo}/sections/{sectionNo}/pages/{pageId}/action/skip")]
+        [ProducesResponseType(200)]
+        [ProducesResponseType(404)]
+        public async Task<ActionResult<SkipPageResponse>> SkipPageBySectionNo(Guid applicationId, int sequenceNo, int sectionNo, string pageId)
+        {
+            _logger.LogInformation($"Getting the next action...: applicationId = {applicationId} , sequenceNo = {sequenceNo} , sectionNo = {sectionNo} , pageId = {pageId}");
+
+            var getNextActionResponse = await _mediator.Send(new SkipPageBySectionNoRequest(applicationId, sequenceNo, sectionNo, pageId), CancellationToken.None);
+            if (!getNextActionResponse.Success) return BadRequest(new BadRequestError(getNextActionResponse.Message));
+
+            _logger.LogInformation($"Response from SkipPageBySectionNo: {JsonConvert.SerializeObject(getNextActionResponse.Value)}");
 
             return getNextActionResponse.Value;
         }

@@ -225,5 +225,88 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
                 page.Feedback.ForEach(f => f.IsCompleted = true);
             }
         }
+
+        protected void SetStatusOfNextPagesBasedOnAnswer(QnAData qnaData, Page page, List<Answer> answers, Next nextAction, List<Next> checkboxListAllNexts)
+        {
+            if (checkboxListAllNexts.Any())
+            {
+                foreach (var next in checkboxListAllNexts)
+                {
+                    if (page.PageOfAnswers != null && page.PageOfAnswers.Count > 0)
+                    {
+                        var existingAnswer = page.PageOfAnswers?[0].Answers.SingleOrDefault(a => a.QuestionId == answers[0].QuestionId);
+                        if (existingAnswer != null && existingAnswer != answers.Single(a => a.QuestionId == answers[0].QuestionId))
+                        {
+                            DeactivateDependentPages(page.PageId, qnaData, page, next);
+                        }
+                    }
+                }
+
+                foreach (var next in checkboxListAllNexts)
+                {
+                    ActivateDependentPages(next, page.PageId, qnaData);
+                }
+            }
+            else
+            {
+                var hasConditionalBranch = page.Next.Any(n => n.Conditions != null && n.Conditions.Any());
+                if (!hasConditionalBranch || nextAction == null || (nextAction.Conditions == null && nextAction.Conditions.Any())) return;
+
+                if (page.PageOfAnswers != null && page.PageOfAnswers.Count > 0)
+                {
+                    var existingAnswer = page.PageOfAnswers?[0].Answers.SingleOrDefault(a => a.QuestionId == answers[0].QuestionId);
+
+                    if (existingAnswer != null && existingAnswer != answers.Single(a => a.QuestionId == answers[0].QuestionId))
+                    {
+                        DeactivateDependentPages(page.PageId, qnaData, page, nextAction);
+                    }
+                }
+
+                ActivateDependentPages(nextAction, page.PageId, qnaData);
+            }
+        }
+
+        private void DeactivateDependentPages(string branchingPageId, QnAData qnaData, Page page, Next chosenAction, bool subPages = false)
+        {
+            foreach (var nextAction in page.Next.Where(n => n != chosenAction || subPages))
+            {
+                if (nextAction.Action != "NextPage") continue;
+
+                var nextPage = qnaData.Pages.FirstOrDefault(p => p.PageId == nextAction.ReturnId);
+                if (nextPage == null)
+                {
+                    break;
+                }
+                if (nextPage.ActivatedByPageId != null && nextPage.ActivatedByPageId.Split(",", StringSplitOptions.RemoveEmptyEntries).Contains(branchingPageId))
+                {
+                    nextPage.Active = false;
+                }
+
+                foreach (var thisPagesNext in nextPage.Next)
+                {
+                    DeactivateDependentPages(branchingPageId, qnaData, nextPage, thisPagesNext, true);
+                }
+            }
+        }
+
+        private void ActivateDependentPages(Next next, string branchingPageId, QnAData qnaData)
+        {
+            if (next.Action != "NextPage") return;
+
+            var nextPage = qnaData.Pages.FirstOrDefault(p => p.PageId == next.ReturnId);
+            if (nextPage == null)
+            {
+                return;
+            }
+            if (nextPage.ActivatedByPageId != null && nextPage.ActivatedByPageId.Split(",", StringSplitOptions.RemoveEmptyEntries).Contains(branchingPageId))
+            {
+                nextPage.Active = true;
+            }
+
+            foreach (var thisPagesNext in nextPage.Next)
+            {
+                ActivateDependentPages(thisPagesNext, branchingPageId, qnaData);
+            }
+        }
     }
 }
