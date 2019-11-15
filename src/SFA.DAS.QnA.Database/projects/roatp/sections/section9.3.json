@@ -1,0 +1,394 @@
+{
+  "Title": "Terms and conditions",
+  "LinkTitle": "Terms and conditions",
+  "DisplayType": "Pages",
+  "RequestedFeedbackAnswered": null,
+  "Pages": [
+    {
+      "PageId": "9200",
+      "SequenceId": null,
+      "SectionId": null,
+      "Title": "Do you agree to the terms and conditions of submitting an application?",
+      "LinkTitle": "Do you agree to the terms and conditions of submitting an application?",
+      "InfoText": "",
+      "Questions": [
+        {
+          "QuestionId": "FIN-50",
+          "QuestionTag": null,
+          "Label": "",
+          "ShortLabel": "",
+          "InputClasses": null,
+          "QuestionBodyText": "",
+          "Hint": "",
+          "Input": {
+            "Type": "Radio",
+            "InputClasses": null,
+            "Options": [
+              {
+                "Value": "Yes",
+                "Label": "Yes",
+                "HintText": ""
+              },
+              {
+                "Value": "No",
+                "Label": "No",
+                "HintText": ""
+              }
+            ],
+            "Validations": [
+              {
+                "Name": "Required",
+                "Value": "",
+                "ErrorMessage": "Tell us if you agree to the terms and conditions of submitting an application"
+              }
+            ],
+            "DataEndpoint": null
+          },
+          "Order": null,
+          "Value": "",
+          "ErrorMessages": null
+        }
+      ],
+      "PageOfAnswers": [],
+      "Next": [
+        {
+          "Action": "NextPage",
+          "ReturnId": "10006",
+          "Condition": null,
+          "Conditions": [
+            {
+              "QuestionId": "FIN-50",
+              "QuestionTag": null,
+              "MustEqual": "No"
+            }
+          ],
+          "ConditionMet": false
+        },
+        {
+          "Action": "NextPage",
+          "ReturnId": "9300",
+          "Condition": null,
+          "Conditions": [],
+          "ConditionMet": false
+        }
+      ],
+      "Complete": false,
+      "AllowMultipleAnswers": false,
+      "Order": null,
+      "Active": true,
+      "NotRequiredConditions": [
+        {
+          "Field": "Apply-ProviderRoute",
+          "IsOneOf": [
+            "3"
+          ]
+        }
+      ],
+      "BodyText": "<p>These terms and conditions are to ensure apprentices and government funding are protected.</p> <p>By submitting an application you agree to:</p> <ul> <li>all application answers being accurate and specific to your organisation</li> <li>ESFA using information in the public domain to verify the assessment of application answers</li> <li>ESFA using information it already has on your organisation to verify the assessment of application questions</li> <li>tell ESFA if any application answers change</li> <li>tell ESFA if the ownership of your organisation changes </li> <li>cooperate within 5 working days if ESFA makes an enquiry about your organisation or this application</li> </ul> <p>By submitting an application, you understand that:</p> <ul> <li>incorrect application answers could lead to civil or criminal proceedings</li> <li>your application may be rejected if there’s evidence of collusion with other apprenticeship training providers or organisations</li> <li>your application may be rejected if your organisation falls under the <a href='https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/324225/Funding_Higher-risk_Providers_and_Subcontractors.pdf' target='_blank'>'funding higher risk organisations and subcontractors'</a> (or any policy that replaces it)</li> <li>your application may be rejected if there's a change in your application answers which in ESFA's judgement does or may impact on your organisation’s ability to deliver apprenticeship training</li>\n<li>your application may be rejected if your organisation does not comply with the requirements of the apprenticeship funding rules or performance management rules</li> <p>ESFA may ask for further information on any application answers - they may fail or reject your application if you do not comply within 5 working days of their request.</p> <p>ESFA reserve the right to change these terms and conditions at any time. Your organisation is obligated to meet the changes made to these terms and conditions.</p> <p>You'll be able to view these terms and conditions and any changes on <a href='https://www.gov.uk/guidance/register-of-apprenticeship-training-providers' target='_blank'>the RoATP GOV.UK page (opens in a new window or tab).</a></p>",
+      "Details": null,
+      "DisplayType": null,
+      "Feedback": null,
+      "ActivatedByPageId": null
+    },
+    {
+      "PageId": "9210",
+      "SequenceId": null,
+      "SectionId": null,
+      "Title": "Do you agree to the terms and conditions of submitting an application?",
+      "LinkTitle": "Do you agree to the terms and conditions of submitting an application?",
+      "InfoText": "",
+      "Questions": [
+        {
+          "QuestionId": "FIN-60",
+          "QuestionTag": null,
+          "Label": "",
+          "ShortLabel": "",
+          "InputClasses": null,
+          "QuestionBodyText": "",
+          "Hint": "",
+          "Input": {
+            "Type": "Radio",
+            "InputClasses": null,
+            "Options": [
+              {
+                "Value": "Yes",
+                "Label": "Yes",
+                "HintText": ""
+              },
+              {
+                "Value": "No",
+                "Label": "No",
+                "HintText": ""
+              }
+            ],
+            "Validations": [
+              {
+                "Name": "Required",
+                "Value": "",
+                "ErrorMessage": "Tell us if you agree to the terms and conditions of submitting an application"
+              }
+            ],
+            "DataEndpoint": null
+          },
+          "Order": null,
+          "Value": "",
+          "ErrorMessages": null
+        }
+      ],
+      "PageOfAnswers": [],
+      "Next": [
+        {
+          "Action": "NextPage",
+          "ReturnId": "10006",
+          "Condition": null,
+          "Conditions": [
+            {
+              "QuestionId": "FIN-60",
+              "QuestionTag": null,
+              "MustEqual": "No"
+            }
+          ],
+          "ConditionMet": false
+        },
+        {
+          "Action": "NextPage",
+          "ReturnId": "9310",
+          "Condition": null,
+          "Conditions": [],
+          "ConditionMet": false
+        }
+      ],
+      "Complete": false,
+      "AllowMultipleAnswers": false,
+      "Order": null,
+      "Active": true,
+      "NotRequiredConditions": [
+        {
+          "Field": "Apply-ProviderRoute",
+          "IsOneOf": [
+            "1,2"
+          ]
+        }
+      ],
+      "BodyText": "<p>These terms and conditions are to ensure government funding and apprentices are protected.</p> <p>By submitting an application you agree to:</p> <ul> <li>all application answers being accurate and specific to your organisation</li> <li>ESFA using information in the public domain to support the assessment of application answers</li> <li>ESFA using information it already has on your organisation to support the assessment of application questions</li> <li>tell ESFA if any application answers change</li> <li>tell ESFA if the ownership of your organisation changes</li> <li>cooperate within 5 working days if ESFA makes an enquiry about your organisation or this application</li> </ul> <p>By submitting an application, you understand that:</p> <ul> <li>incorrect application answers could lead to civil or criminal proceedings</li> <li>your application may be rejected if there’s evidence of collusion with other apprenticeship training providers or organisations</li> <li>your application may be rejected if your organisation falls under the <a href='https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/324225/Funding_Higher-risk_Providers_and_Subcontractors.pdf' target='_blank'>'funding higher risk organisations and subcontractors'</a> (or any policy that replaces it)</li> <li>your application may be rejected if there’s a change in your application answers which in ESFA’s judgement does or may impact on your organisation’s ability to deliver apprenticeship training</li> </ul> <p>ESFA may ask for further information on any application answers - they may fail or reject your application if you do not comply within 5 working days of their request.</p> <p>ESFA reserve the right to change these terms and conditions at any time. Your organisation is obligated to meet the changes made to these terms and conditions.</p> <p>You'll be able to view these terms and conditions and any changes on <a href='https://www.gov.uk/guidance/register-of-apprenticeship-training-providers' target='_blank'>the RoATP GOV.UK page (opens in a new window or tab).</a></p>",
+      "Details": null,
+      "DisplayType": null,
+      "Feedback": null,
+      "ActivatedByPageId": null
+    },
+    {
+      "PageId": "10006",
+      "SequenceId": null,
+      "SectionId": null,
+      "Title": "You do not agree to the terms and conditions of submitting an application",
+      "LinkTitle": "You do not agree to the terms and conditions of submitting an application",
+      "InfoText": "",
+      "Questions": [],
+      "PageOfAnswers": [],
+      "Next": [],
+      "Complete": false,
+      "AllowMultipleAnswers": false,
+      "Order": null,
+      "Active": true,
+      "NotRequiredConditions": [],
+      "BodyText": "<p>This means your organisation cannot apply to join the RoATP.</p><p>If you want to change your answer, you can sign back in and submit your application. We will save it for 30 days - after this, we will delete it and you will need to start again.</p>\n<p><a href='https://www.gov.uk'>Back to GOV.UK<a></p>",
+      "Details": null,
+      "DisplayType": null,
+      "Feedback": null,
+      "ActivatedByPageId": null
+    },
+    {
+      "PageId": "9300",
+      "SequenceId": null,
+      "SectionId": null,
+      "Title": "Do you agree to the terms and conditions of joining and staying on the RoATP?",
+      "LinkTitle": "Do you agree to the terms and conditions of joining and staying on the RoATP?",
+      "InfoText": "",
+      "Questions": [
+        {
+          "QuestionId": "FIN-70",
+          "QuestionTag": null,
+          "Label": "",
+          "ShortLabel": "",
+          "InputClasses": null,
+          "QuestionBodyText": "",
+          "Hint": "",
+          "Input": {
+            "Type": "Radio",
+            "InputClasses": null,
+            "Options": [
+              {
+                "Value": "Yes",
+                "Label": "Yes",
+                "HintText": ""
+              },
+              {
+                "Value": "No",
+                "Label": "No",
+                "HintText": ""
+              }
+            ],
+            "Validations": [
+              {
+                "Name": "Required",
+                "Value": "",
+                "ErrorMessage": "Tell us if you agree to the terms and conditions of joining the RoATP"
+              }
+            ],
+            "DataEndpoint": null
+          },
+          "Order": null,
+          "Value": "",
+          "ErrorMessages": null
+        }
+      ],
+      "PageOfAnswers": [],
+      "Next": [
+        {
+          "Action": "NextPage",
+          "ReturnId": "10007",
+          "Condition": null,
+          "Conditions": [
+            {
+              "QuestionId": "FIN-70",
+              "QuestionTag": null,
+              "MustEqual": "No"
+            }
+          ],
+          "ConditionMet": false
+        },
+        {
+          "Action": "ReturnToSection",
+          "ReturnId": "",
+          "Condition": null,
+          "Conditions": [],
+          "ConditionMet": false
+        }
+      ],
+      "Complete": false,
+      "AllowMultipleAnswers": false,
+      "Order": null,
+      "Active": false,
+      "NotRequiredConditions": [
+        {
+          "Field": "Apply-ProviderRoute",
+          "IsOneOf": [
+            "3"
+          ]
+        }
+      ],
+      "BodyText": "<p>These terms and conditions are to ensure apprentices and government funding are protected.</p> <p>If your application to join the RoATP is successful, your organisation agrees to:</p> <ul> <li>implement the policies and processes mentioned in this application</li> <li>directly deliver apprenticeship training within any 12 month period of joining the RoATP - delivering apprenticeship training as a subcontractor does not count</li> <li>follow the funding agreement it will have with ESFA </li> <li>complete all on-boarding tasks - it will not join the RoATP until all on-boarding tasks are complete </li <li>comply with the requirements of the apprenticeship funding rules or performance management rules</li> </ul> <p>ESFA may ask existing apprenticeship training providers to re-apply to the RoATP. This will be dependant on the rules of joining the RoATP at the time.</p> <p>Once your organisation joins the RoATP, it may be removed if:</p> <ul> <li>it breaches a funding agreement held with ESFA</li> <li>it has an apprenticeship funding agreement terminated by ESFA</li> <li>it has apprenticeship funding withdrawn by ESFA</li> <li>it requests to be withdrawn or terminated from an apprenticeship funding agreement held with ESFA</li> <li>it receives an 'inadequate' Ofsted grade for apprenticeships or overall effectiveness in further education and skills</li> <li>it receives an 'inadequate' financial health grade </li> <li>its ownership or people control control changes and no apprenticeship delivery took place before the change happened </li> <li>it falls under the <a href='https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/324225/Funding_Higher-risk_Providers_and_Subcontractors.pdf' target='_blank'>'funding higher risk organisations and subcontractors'</a> (or any policy that replaces it)</li> <li>it does not comply with the requirements of the apprenticeship funding rules or performance management rules</li> </ul> <p>ESFA reserve the right to change these terms and conditions at any time. Your organisation is obligated to meet the changes made to these terms and conditions. </p> <p>You'll be able to view these terms and conditions and any changes on <a href='https://www.gov.uk/guidance/register-of-apprenticeship-training-providers' target='_blank'>the RoATP GOV.UK page (opens in a new window or tab).</a></p>",
+      "Details": null,
+      "DisplayType": null,
+      "Feedback": null,
+      "ActivatedByPageId": "9200"
+    },
+    {
+      "PageId": "9310",
+      "SequenceId": null,
+      "SectionId": null,
+      "Title": "Do you agree to the terms and conditions of joining the RoATP?",
+      "LinkTitle": "Do you agree to the terms and conditions of joining the RoATP?",
+      "InfoText": "",
+      "Questions": [
+        {
+          "QuestionId": "FIN-80",
+          "QuestionTag": null,
+          "Label": "",
+          "ShortLabel": "",
+          "InputClasses": null,
+          "QuestionBodyText": "",
+          "Hint": "",
+          "Input": {
+            "Type": "Radio",
+            "InputClasses": null,
+            "Options": [
+              {
+                "Value": "Yes",
+                "Label": "Yes",
+                "HintText": ""
+              },
+              {
+                "Value": "No",
+                "Label": "No",
+                "HintText": ""
+              }
+            ],
+            "Validations": [
+              {
+                "Name": "Required",
+                "Value": "",
+                "ErrorMessage": "Tell us if you agree to the terms and conditions of joining the RoATP"
+              }
+            ],
+            "DataEndpoint": null
+          },
+          "Order": null,
+          "Value": "",
+          "ErrorMessages": null
+        }
+      ],
+      "PageOfAnswers": [],
+      "Next": [
+        {
+          "Action": "NextPage",
+          "ReturnId": "10007",
+          "Condition": null,
+          "Conditions": [
+            {
+              "QuestionId": "FIN-80",
+              "QuestionTag": null,
+              "MustEqual": "No"
+            }
+          ],
+          "ConditionMet": false
+        },
+        {
+          "Action": "ReturnToSection",
+          "ReturnId": "",
+          "Condition": null,
+          "Conditions": [],
+          "ConditionMet": false
+        }
+      ],
+      "Complete": false,
+      "AllowMultipleAnswers": false,
+      "Order": null,
+      "Active": false,
+      "NotRequiredConditions": [
+        {
+          "Field": "Apply-ProviderRoute",
+          "IsOneOf": [
+            "1,2"
+          ]
+        }
+      ],
+      "BodyText": "<p>These terms and conditions are to ensure apprentices and government funding are protected.</p> <p>If your application to join the RoATP is successful, your organisation agrees to: </p> <ul><li>implement the policies and processes mentioned in this application</li> <li>follow its lead provider's policies and plans if asked by them</li> </ul> <p>ESFA may ask existing apprenticeship training providers to re-apply to the RoATP. This will be dependant on the rules of joining the RoATP at the time. </p> <p>Once your organisation joins the RoATP, it may be removed if: </p> <ul><li>it breaches a funding agreement held wIth ESFA</li> <li>it breaches an apprenticeship contract held with either a main or employer provider</li> <li>it has an apprenticeship contract terminated by a main or employer provider</li> <li>it receives an 'inadequate' Ofsted grade for apprenticeships or overall effectiveness in further education and skills</li> <li>its ownership or people control control changes and no apprenticeship delivery took place before the change happened </li> <li>it receives an 'inadequate' financial health grade </li> <li>it does not comply with the requirements of the apprenticeship funding rules or performance management rules</li> </ul> <p>ESFA reserve the right to change these terms and conditions at any time. Your organisation is obligated to meet the changes made to these terms and conditions. </p> <p>You'll be able to view these terms and conditions and any changes on <a href='https://www.gov.uk/guidance/register-of-apprenticeship-training-providers' target='_blank'>the RoATP GOV.UK page (opens in a new window or tab).</a></p>",
+      "Details": null,
+      "DisplayType": null,
+      "Feedback": null,
+      "ActivatedByPageId": "9210"
+    },
+    {
+      "PageId": "10007",
+      "SequenceId": null,
+      "SectionId": null,
+      "Title": "You do not agree to the terms and conditions of joining the RoATP",
+      "LinkTitle": "You do not agree to the terms and conditions of joining the RoATP",
+      "InfoText": "",
+      "Questions": [],
+      "PageOfAnswers": [],
+      "Next": [],
+      "Complete": false,
+      "AllowMultipleAnswers": false,
+      "Order": null,
+      "Active": true,
+      "NotRequiredConditions": [],
+      "BodyText": "<p>This means your organisation cannot apply to join the RoATP.</p><p>If you want to change your answer, you can sign back in and submit your application. We will save it for 30 days - after this, we will delete it and you will need to start again.</p><p><a href='https://www.gov.uk'>Back to GOV.UK</a></p>",
+      "Details": null,
+      "DisplayType": null,
+      "Feedback": null,
+      "ActivatedByPageId": null
+    }
+  ]
+}

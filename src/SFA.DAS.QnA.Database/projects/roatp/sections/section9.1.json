@@ -46,13 +46,7 @@
         }
       ],
       "PageOfAnswers": [],
-      "Next": [
-        {
-          "Action": "NextPage",
-          "ReturnId": "20",
-          "Conditions": [],
-          "ConditionMet": false
-        },
+      "Next": [       
         {
           "Action": "NextPage",
           "ReturnId": "10005",
