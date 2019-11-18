@@ -1,15 +1,15 @@
-namespace SFA.DAS.QnA.Api.Types
+﻿namespace SFA.DAS.QnA.Api.Types
 {
-    public class GetNextActionResponse
+    public class SkipPageResponse
     {
         public string NextAction { get; set; }
 
         public string NextActionId { get; set; }
 
-        public GetNextActionResponse()
+        public SkipPageResponse()
         { }
-        
-        public GetNextActionResponse(string nextAction, string nextActionId)
+
+        public SkipPageResponse(string nextAction, string nextActionId)
         {
             NextAction = nextAction;
             NextActionId = nextActionId;

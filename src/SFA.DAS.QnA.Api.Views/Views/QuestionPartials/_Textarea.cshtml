@@ -1,3 +1,4 @@
+@using SFA.DAS.QnA.Api.Views
 @model dynamic
 
 @{
@@ -6,9 +7,11 @@
     var maxCharacterCount = 0;
     var maxWordCount = 0;
 
-    if (Model.Validations != null)
+    var validations = ViewHelpers.GetValidations(Model);
+
+    if (validations != null)
     {
-        foreach (var validator in Model.Validations)
+        foreach (var validator in validations)
         {
             if (validator.Name == "MaxLength")
             {

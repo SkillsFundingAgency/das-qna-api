@@ -53,7 +53,7 @@
       "Visible": true,
       "Feedback": null,
       "HasFeedback": false,
-      "NotRequiredOrgTypes": [],
+      "NotRequiredConditions": [],
       "BodyText": ""
     },
     {
@@ -169,17 +169,8 @@
       "Visible": true,
       "Feedback": null,
       "HasFeedback": false,
-      "NotRequiredOrgTypes": [],
+      "NotRequiredConditions": [],
       "BodyText": "<p class='govuk-body'>This can be an individual or another organisation who has overall responsibility, relevant knowledge and skills to manage health and safety concerns.</p><p class='govuk-body'>We'll only contact them if there is a health and safety concern.</p>"
     }
-  ],
-  "Complete": false,
-  "AllowMultipleAnswers": false,
-  "Order": null,
-  "Active": true,
-  "Visible": true,
-  "Feedback": null,
-  "HasFeedback": false,
-  "NotRequiredOrgTypes": [],
-  "BodyText": ""
+  ]
 }
