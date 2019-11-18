@@ -1,0 +1,36 @@
+{
+    "Title": "Type of apprenticeship training",
+    "LinkTitle": "Type of apprenticeship training",
+    "DisplayType": "Pages",
+    "RequestedFeedbackAnswered": null,
+    "Pages": [
+        {
+            "PageId": "6020",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "Type of apprenticeship training",
+            "LinkTitle": "Type of apprenticeship training",
+            "InfoText": "Type of apprenticeship training",
+            "Questions": [ ],
+            "PageOfAnswers": [],
+            "Next": [
+                {
+                    "Action": "NextPage",
+                    "ReturnId": "6030",
+                    "Conditions": [],
+                    "ConditionMet": false
+                }
+            ],
+            "Complete": false,
+            "AllowMultipleAnswers": false,
+            "Order": null,
+            "Active": true,
+            "Visible": true,
+            "Feedback": null,
+            "HasFeedback": false,
+            "NotRequiredConditions": [],
+            "ActivatedByPageId": null,
+            "BodyText": "<p class='govuk-body'>Type of apprenticeship training Holding page</p>"
+        }
+    ]
+}
