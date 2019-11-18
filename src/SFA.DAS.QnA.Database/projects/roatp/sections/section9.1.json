@@ -78,7 +78,7 @@
       "NotRequiredConditions": [],
       "ActivatedByPageId": null,
       "BodyText": ""
-    },    
+    },
     {
       "PageId": "9010",
       "SequenceId": null,
@@ -237,7 +237,7 @@
       "Feedback": null,
       "ActivatedByPageId": "9010"
     },
-	{
+    {
       "PageId": "10005",
       "SequenceId": null,
       "SectionId": null,
@@ -247,16 +247,16 @@
       "Questions": [],
       "PageOfAnswers": [],
       "Next": [],
-      "Complete": false,
+      "Complete": true,
       "AllowMultipleAnswers": false,
       "Order": null,
-      "Active": true,
+      "Active": false,
       "NotRequiredConditions": [],
       "BodyText": "<p class='govuk-body'>Before you submit this application, you must have:</p> <p class='govuk-body'> <ul class='govuk-list govuk-list--bullet'><li>permission from everyone named in this application to use their details</li><li>checked with everyone named in this application that the details provided for them are accurate</li><li>permission from your organisation to submit this application</li></ul></p>",
       "Details": null,
       "DisplayType": null,
       "Feedback": null,
-      "ActivatedByPageId": null
+      "ActivatedByPageId": "9000,9010,9020"
     }
   ]
 }
