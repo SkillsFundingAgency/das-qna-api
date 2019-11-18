@@ -37,7 +37,7 @@
                             {
                                 "Name": "Required",
                                 "Value": "",
-                                "ErrorMessage": "Tell us what type of apprenticeship training your organisation will offer?"
+                                "ErrorMessage": "Tell us what type of apprenticeship training your organisation will offer"
                             }
                         ]
                     },
@@ -123,7 +123,7 @@
                             {
                                 "Name": "Required",
                                 "Value": "",
-                                "ErrorMessage": "Tell us what type of apprenticeship training your organisation will offer?"
+                                "ErrorMessage": "Tell us what type of apprenticeship training your organisation will offer"
                             }
                         ]
                     },
@@ -224,7 +224,7 @@
                             {
                                 "Name": "Required",
                                 "Value": "",
-                                "ErrorMessage": "Tell us what type of apprenticeship training your organisation will offer?"
+                                "ErrorMessage": "Tell us what type of apprenticeship training your organisation will offer"
                             }
                         ]
                     },
