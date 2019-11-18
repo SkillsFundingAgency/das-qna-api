@@ -124,7 +124,7 @@ namespace SFA.DAS.QnA.Api.Controllers
         /// <returns>An object describing the next steps</returns>
         /// <response code="200">Returns the response</response>
         /// <response code="400">Cannot determine the next steps, or if ApplicationId, SectionId or PageId does not exist</response>
-        [HttpPut("{applicationId}/sections/{sectionId}/pages/{pageId}/action/skip")]
+        [HttpPost("{applicationId}/sections/{sectionId}/pages/{pageId}/skip")]
         [ProducesResponseType(200)]
         [ProducesResponseType(400)]
         public async Task<ActionResult<SkipPageResponse>> SkipPage(Guid applicationId, Guid sectionId, string pageId)
@@ -145,7 +145,7 @@ namespace SFA.DAS.QnA.Api.Controllers
         /// <returns>An object describing the next steps</returns>
         /// <response code="200">>Returns the response</response>
         /// <response code="400">Cannot determine the next steps, or if ApplicationId, SequenceNo, SectionNo or PageId does not exist</response>
-        [HttpPut("{applicationId}/sequences/{sequenceNo}/sections/{sectionNo}/pages/{pageId}/action/skip")]
+        [HttpPost("{applicationId}/sequences/{sequenceNo}/sections/{sectionNo}/pages/{pageId}/skip")]
         [ProducesResponseType(200)]
         [ProducesResponseType(400)]
         public async Task<ActionResult<SkipPageResponse>> SkipPageBySectionNo(Guid applicationId, int sequenceNo, int sectionNo, string pageId)
