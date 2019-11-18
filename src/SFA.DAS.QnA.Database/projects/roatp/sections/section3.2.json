@@ -224,7 +224,7 @@
                                         "ShortLabel": "",
                                         "InputClasses": null,
                                         "QuestionBodyText": "",
-                                        "Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You’ll need to include a brief summary including:</p><ul class='govuk-list govuk-list--bullet'><li>which public body was involved</li><li>if any actions have been taken to resolve this</li></ul>",
+                                        "Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include a brief summary including:</p><ul class='govuk-list govuk-list--bullet'><li>which public body was involved</li><li>if any actions have been taken to resolve this</li></ul>",
                                         "Input":
                                         {
                                             "Type": "Textarea",
@@ -604,7 +604,7 @@
                                         "ShortLabel": "",
                                         "InputClasses": null,
                                         "QuestionBodyText": "",
-                                        "Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You’ll need to include a brief summary of why your organisation was withdrawn involuntarily.</p>",
+                                        "Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include a brief summary of why your organisation was withdrawn involuntarily.</p>",
                                         "Input":
                                         {
                                             "Type": "Textarea",
@@ -657,6 +657,386 @@
                 {
                     "Action": "NextPage",
                     "ReturnId": "3270",
+                    "Conditions": [],
+                    "ConditionMet": false
+                }
+            ],
+            "Complete": false,
+            "AllowMultipleAnswers": false,
+            "Order": null,
+            "Active": true,
+            "Feedback": null,
+            "HasFeedback": false,
+            "NotRequiredConditions": [],
+            "BodyText": ""
+        },
+        {
+            "PageId": "3270",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "Checks on your organisation",
+            "LinkTitle": "Checks on your organisation",
+            "InfoText": "",
+            "Questions": [
+                {
+                    "QuestionId": "CC-27",
+                    "QuestionTag": "Criminal-CharityRegister-Removal",
+                    "Label": "Has your organisation been removed from any charity register?",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "<p class='govuk-body' id='criminal-charityregister-removal'>This includes being removed from:</p><ul class='govuk-list govuk-list--bullet'><li>the Charity Commission for England and Wales</li><li>the Charity Commission for Northern Ireland</li><li>the Office of the Scottish Charity Regulator</li></ul>",
+                    "Hint": "",
+                    "Input":
+                    {
+                        "Type": "ComplexRadio",
+                        "InputClasses": null,
+                        "Options": [
+                            {
+                                "FurtherQuestions": [
+                                    {
+                                        "QuestionId": "CC-27.1",
+                                        "QuestionTag": "Criminal-CharityRegister-Removal-Information",
+                                        "Label": "Give us more information",
+                                        "ShortLabel": "",
+                                        "InputClasses": null,
+                                        "QuestionBodyText": "",
+                                        "Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include a brief summary of why your organisation was removed.</p>",
+                                        "Input":
+                                        {
+                                            "Type": "Textarea",
+                                            "InputClasses": "",
+                                            "Options": [],
+                                            "Validations": [
+                                                {
+                                                    "Name": "Required",
+                                                    "Value": "",
+                                                    "ErrorMessage": "Enter more information "
+                                                },
+                                                {
+                                                    "Name": "MaxWordCount",
+                                                    "Value": "1500",
+                                                    "ErrorMessage": "Your answer must be 1500 characters or less"
+                                                }
+                                            ],
+                                            "DataEndpoint": null
+
+                                        },
+                                        "Order": null,
+                                        "Value": null,
+                                        "ErrorMessages": null
+                                    }
+                                ],
+                                "Value": "Yes",
+                                "Label": "Yes",
+                                "HintText": ""
+                            },
+                            {
+                                "FurtherQuestions": [],
+                                "Value": "No",
+                                "Label": "No",
+                                "HintText": ""
+                            }
+                        ],
+                        "Validations": [
+                            {
+                                "Name": "Required",
+                                "Value": "",
+                                "ErrorMessage": "Tell us if your organisation has been has been removed from any charity register"
+                            }
+                        ],
+                        "DataEndpoint": null
+                    }
+                }
+            ],
+            "PageOfAnswers": [],
+            "Next": [
+                {
+                    "Action": "NextPage",
+                    "ReturnId": "3280",
+                    "Conditions": [],
+                    "ConditionMet": false
+                }
+            ],
+            "Complete": false,
+            "AllowMultipleAnswers": false,
+            "Order": null,
+            "Active": true,
+            "Feedback": null,
+            "HasFeedback": false,
+            "NotRequiredConditions": [],
+            "BodyText": ""
+        },
+        {
+            "PageId": "3280",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "Checks on your organisation",
+            "LinkTitle": "Checks on your organisation",
+            "InfoText": "",
+            "Questions": [
+                {
+                    "QuestionId": "CC-28",
+                    "QuestionTag": "Criminal-Safeguarding-Issues",
+                    "Label": "Has your organisation been investigated due to safeguarding issues in the last 3 months?",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "<p class='govuk-body' id='criminal-safeguarding-issues'></p>",
+                    "Hint": "",
+                    "Input":
+                    {
+                        "Type": "ComplexRadio",
+                        "InputClasses": null,
+                        "Options": [
+                            {
+                                "FurtherQuestions": [
+                                    {
+                                        "QuestionId": "CC-28.1",
+                                        "QuestionTag": "Criminal-Safeguarding-Issues-Information",
+                                        "Label": "Give us more information",
+                                        "ShortLabel": "",
+                                        "InputClasses": null,
+                                        "QuestionBodyText": "",
+                                        "Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include:</p><ul class='govuk-list govuk-list--bullet'><li>what the issues were</li><li>who was involved</li><li>if any actions were taken to resolve this</li></ul>",
+                                        "Input":
+                                        {
+                                            "Type": "Textarea",
+                                            "InputClasses": "",
+                                            "Options": [],
+                                            "Validations": [
+                                                {
+                                                    "Name": "Required",
+                                                    "Value": "",
+                                                    "ErrorMessage": "Enter more information "
+                                                },
+                                                {
+                                                    "Name": "MaxWordCount",
+                                                    "Value": "1500",
+                                                    "ErrorMessage": "Your answer must be 1500 characters or less"
+                                                }
+                                            ],
+                                            "DataEndpoint": null
+
+                                        },
+                                        "Order": null,
+                                        "Value": null,
+                                        "ErrorMessages": null
+                                    }
+                                ],
+                                "Value": "Yes",
+                                "Label": "Yes",
+                                "HintText": ""
+                            },
+                            {
+                                "FurtherQuestions": [],
+                                "Value": "No",
+                                "Label": "No",
+                                "HintText": ""
+                            }
+                        ],
+                        "Validations": [
+                            {
+                                "Name": "Required",
+                                "Value": "",
+                                "ErrorMessage": "Tell us if your organisation has been investigated due to safeguarding issues in the last 3 months"
+                            }
+                        ],
+                        "DataEndpoint": null
+                    }
+                }
+            ],
+            "PageOfAnswers": [],
+            "Next": [
+                {
+                    "Action": "NextPage",
+                    "ReturnId": "3290",
+                    "Conditions": [],
+                    "ConditionMet": false
+                }
+            ],
+            "Complete": false,
+            "AllowMultipleAnswers": false,
+            "Order": null,
+            "Active": true,
+            "Feedback": null,
+            "HasFeedback": false,
+            "NotRequiredConditions": [],
+            "BodyText": ""
+        },
+        {
+            "PageId": "3290",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "Checks on your organisation",
+            "LinkTitle": "Checks on your organisation",
+            "InfoText": "",
+            "Questions": [
+                {
+                    "QuestionId": "CC-29",
+                    "QuestionTag": "Criminal-Whistleblowing-Issues",
+                    "Label": "Has your organisation been investigated due to whistleblowing issues in the last 3 months?",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "<p class='govuk-body' id='criminal-whistleblowing-issues'></p>",
+                    "Hint": "",
+                    "Input":
+                    {
+                        "Type": "ComplexRadio",
+                        "InputClasses": null,
+                        "Options": [
+                            {
+                                "FurtherQuestions": [
+                                    {
+                                        "QuestionId": "CC-29.1",
+                                        "QuestionTag": "Criminal-Whistleblowing-Issues-Information",
+                                        "Label": "Give us more information",
+                                        "ShortLabel": "",
+                                        "InputClasses": null,
+                                        "QuestionBodyText": "",
+                                        "Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include:</p><ul class='govuk-list govuk-list--bullet'><li>what the issues were</li><li>who was involved</li><li>if any actions were taken to resolve this</li></ul>",
+                                        "Input":
+                                        {
+                                            "Type": "Textarea",
+                                            "InputClasses": "",
+                                            "Options": [],
+                                            "Validations": [
+                                                {
+                                                    "Name": "Required",
+                                                    "Value": "",
+                                                    "ErrorMessage": "Enter more information "
+                                                },
+                                                {
+                                                    "Name": "MaxWordCount",
+                                                    "Value": "1500",
+                                                    "ErrorMessage": "Your answer must be 1500 characters or less"
+                                                }
+                                            ],
+                                            "DataEndpoint": null
+
+                                        },
+                                        "Order": null,
+                                        "Value": null,
+                                        "ErrorMessages": null
+                                    }
+                                ],
+                                "Value": "Yes",
+                                "Label": "Yes",
+                                "HintText": ""
+                            },
+                            {
+                                "FurtherQuestions": [],
+                                "Value": "No",
+                                "Label": "No",
+                                "HintText": ""
+                            }
+                        ],
+                        "Validations": [
+                            {
+                                "Name": "Required",
+                                "Value": "",
+                                "ErrorMessage": "Tell us if your organisation has been investigated due to whistleblowing issues in the last 3 months"
+                            }
+                        ],
+                        "DataEndpoint": null
+                    }
+                }
+            ],
+            "PageOfAnswers": [],
+            "Next": [
+                {
+                    "Action": "NextPage",
+                    "ReturnId": "3299",
+                    "Conditions": [],
+                    "ConditionMet": false
+                }
+            ],
+            "Complete": false,
+            "AllowMultipleAnswers": false,
+            "Order": null,
+            "Active": true,
+            "Feedback": null,
+            "HasFeedback": false,
+            "NotRequiredConditions": [],
+            "BodyText": ""
+        },
+        {
+            "PageId": "3299",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "Checks on your organisation",
+            "LinkTitle": "Checks on your organisation",
+            "InfoText": "",
+            "Questions": [
+                {
+                    "QuestionId": "CC-30",
+                    "QuestionTag": "Criminal-Insolvency-Proceedings",
+                    "Label": "Has your organisation or any of its partner organisations been subject to insolvency or winding up proceedings in the last 3 years?",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "<p class='govuk-body' id='criminal-insolvency-proceedings'>A partner organisation is an organisation who either:</p><ul class='govuk-list govuk-list--bullet'><li>shares the same UK ultimate parent company as your organisation - so they are part of the same group</li><li>has a legal contract with your organisation to deliver training</li></ul>",
+                    "Hint": "",
+                    "Input":
+                    {
+                        "Type": "ComplexRadio",
+                        "InputClasses": null,
+                        "Options": [
+                            {
+                                "FurtherQuestions": [
+                                    {
+                                        "QuestionId": "CC-30.1",
+                                        "QuestionTag": "Criminal-Insolvency-Proceedings-Information",
+                                        "Label": "Give us more information",
+                                        "ShortLabel": "",
+                                        "InputClasses": null,
+                                        "QuestionBodyText": "",
+                                        "Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include:</p><ul class='govuk-list govuk-list--bullet'><li>names of the other organisations</li><li>a brief summary of why this happened - including relevant dates</li><li>outstanding judgements or legal proceedings</li></ul>",
+                                        "Input":
+                                        {
+                                            "Type": "Textarea",
+                                            "InputClasses": "",
+                                            "Options": [],
+                                            "Validations": [
+                                                {
+                                                    "Name": "Required",
+                                                    "Value": "",
+                                                    "ErrorMessage": "Enter more information "
+                                                },
+                                                {
+                                                    "Name": "MaxWordCount",
+                                                    "Value": "1500",
+                                                    "ErrorMessage": "Your answer must be 1500 characters or less"
+                                                }
+                                            ],
+                                            "DataEndpoint": null
+
+                                        },
+                                        "Order": null,
+                                        "Value": null,
+                                        "ErrorMessages": null
+                                    }
+                                ],
+                                "Value": "Yes",
+                                "Label": "Yes",
+                                "HintText": ""
+                            },
+                            {
+                                "FurtherQuestions": [],
+                                "Value": "No",
+                                "Label": "No",
+                                "HintText": ""
+                            }
+                        ],
+                        "Validations": [
+                            {
+                                "Name": "Required",
+                                "Value": "",
+                                "ErrorMessage": "Tell us if your organisation has been investigated due to whistleblowing issues in the last 3 months"
+                            }
+                        ],
+                        "DataEndpoint": null
+                    }
+                }
+            ],
+            "PageOfAnswers": [],
+            "Next": [
+                {
+                    "Action": "ReturnToSection",
+                    "ReturnId": "3.3",
                     "Conditions": [],
                     "ConditionMet": false
                 }
