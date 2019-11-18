@@ -14,7 +14,7 @@
       "Questions": [
         {
           "QuestionId": "FIN-40",
-          "QuestionTag": null,
+          "QuestionTag": "Finish-Commercial-Confidence",
           "Label": "Is any of the information in this application 'commercial in confidence'?",
           "ShortLabel": "",
           "InputClasses": null,
@@ -39,7 +39,7 @@
               {
                 "Name": "Required",
                 "Value": "",
-                "ErrorMessage": "Tell us if any of the information in this application is ‘commercial in confidence'"
+                "ErrorMessage": "Tell us if any of the information in this application is 'commercial in confidence'"
               }
             ],
             "DataEndpoint": null
