@@ -1,155 +1,119 @@
 {
-  "Title": "Introduction and what you'll need",
-  "LinkTitle": "Introduction and what you'll need",
-  "DisplayType": "Pages",
-  "RequestedFeedbackAnswered": null,
-  "Pages": [
-    {
-      "PageId": "6000",
-      "SequenceId": null,
-      "SectionId": null,
-      "Title": "Planning apprenticeship training",
-      "LinkTitle": "",
-      "InfoText": "",
-      "Questions": [
+    "Title": "Introduction and what you'll need",
+    "LinkTitle": "Introduction and what you'll need",
+    "DisplayType": "",
+    "RequestedFeedbackAnswered": null,
+    "Pages": [
         {
-          "QuestionId": "PAT-10",
-          "QuestionTag": "PAT-Introduction-Main",
-          "Label": "Planning apprenticeship training",
-          "ShortLabel": "",
-          "QuestionBodyText": "<p class='govuk-body'>Lorem ipsum Planning apprenticeship training introduction page - main provider</p>",
-          "Hint": "",
-          "Input": {
-            "Type": "Hidden",
-            "Validations": []
-          },
-          "Order": null
-        }
-      ],
-      "PageOfAnswers": [],
-      "Next": [
+            "PageId": "6000",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "Planning apprenticeship training",
+            "LinkTitle": "Planning apprenticeship training",
+            "InfoText": "",
+            "Questions": [],
+            "PageOfAnswers": [],
+            "Next": [
+                {
+                    "Action": "ReturnToSection",
+                    "ReturnId": "6.1",
+                    "Condition": null,
+                    "Conditions": [],
+                    "ConditionMet": false
+                }
+            ],
+            "Complete": false,
+            "AllowMultipleAnswers": false,
+            "Order": null,
+            "Active": true,
+            "NotRequiredConditions": [
+                {
+                    "Field": "Apply-ProviderRoute",
+                    "IsOneOf": [
+                        "2",
+                        "3"
+                    ]
+                }
+            ],
+            "BodyText": "<p class='govuk-body'>Lorem ipsum main provider.</p>",
+            "Details": null,
+            "DisplayType": null,
+            "Feedback": null,
+            "ActivatedByPageId": null
+        },
         {
-          "Action": "NextPage",
-          "ReturnId": null,
-          "Conditions": [],
-          "ConditionMet": false
-        }
-      ],
-      "Complete": false,
-      "AllowMultipleAnswers": false,
-      "Order": null,
-      "Active": true,
-      "Visible": true,
-      "Feedback": null,
-      "HasFeedback": false,
-      "NotRequiredConditions": [
+            "PageId": "6001",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "Planning apprenticeship training",
+            "LinkTitle": "Planning apprenticeship training",
+            "InfoText": "",
+            "Questions": [],
+            "PageOfAnswers": [],
+            "Next": [
+                {
+                    "Action": "ReturnToSection",
+                    "ReturnId": "6.1",
+                    "Condition": null,
+                    "Conditions": [],
+                    "ConditionMet": false
+                }
+            ],
+            "Complete": false,
+            "AllowMultipleAnswers": false,
+            "Order": null,
+            "Active": true,
+            "NotRequiredConditions": [
+                {
+                    "Field": "Apply-ProviderRoute",
+                    "IsOneOf": [
+                        "1",
+                        "3"
+                    ]
+                }
+            ],
+            "BodyText": "<p class='govuk-body'>Lorem ipsum employer provider.</p>",
+            "Details": null,
+            "DisplayType": null,
+            "Feedback": null,
+            "ActivatedByPageId": null
+        },
         {
-          "Field": "Apply-ProviderRoute",
-          "IsOneOf": [
-            "2,3"
-          ]
+            "PageId": "6002",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "Planning apprenticeship training",
+            "LinkTitle": "Planning apprenticeship training",
+            "InfoText": "",
+            "Questions": [],
+            "PageOfAnswers": [],
+            "Next": [
+                {
+                    "Action": "ReturnToSection",
+                    "ReturnId": "6.1",
+                    "Condition": null,
+                    "Conditions": [],
+                    "ConditionMet": false
+                }
+            ],
+            "Complete": false,
+            "AllowMultipleAnswers": false,
+            "Order": null,
+            "Active": true,
+            "NotRequiredConditions": [
+                {
+                    "Field": "Apply-ProviderRoute",
+                    "IsOneOf": [
+                        "1",
+                        "2"
+                    ]
+                }
+            ],
+            "BodyText": "<p class='govuk-body'>Lorem ipsum supporting provider.</p>",
+            "Details": null,
+            "DisplayType": null,
+            "Feedback": null,
+            "ActivatedByPageId": null
         }
-      ],
-      "ActivatedByPageId": null,
-      "BodyText": ""
-    },
-    {
-      "PageId": "6001",
-      "SequenceId": null,
-      "SectionId": null,
-      "Title": "Planning apprenticeship training",
-      "LinkTitle": "",
-      "InfoText": "",
-      "Questions": [
-        {
-          "QuestionId": "PAT-11",
-          "QuestionTag": "PAT-Introduction-Employer",
-          "Label": "Planning apprenticeship training",
-          "ShortLabel": "",
-          "QuestionBodyText": "<p class='govuk-body'>Lorem ipsum Planning apprenticeship training introduction page - employer provider</p>",
-          "Hint": "",
-          "Input": {
-            "Type": "Hidden",
-            "Validations": []
-          },
-          "Order": null
-        }
-      ],
-      "PageOfAnswers": [],
-      "Next": [
-        {
-          "Action": "NextPage",
-          "ReturnId": null,
-          "Conditions": [],
-          "ConditionMet": false
-        }
-      ],
-      "Complete": false,
-      "AllowMultipleAnswers": false,
-      "Order": null,
-      "Active": true,
-      "Visible": true,
-      "Feedback": null,
-      "HasFeedback": false,
-      "NotRequiredConditions": [
-        {
-          "Field": "Apply-ProviderRoute",
-          "IsOneOf": [
-            "1,3"
-          ]
-        }
-      ],
-      "ActivatedByPageId": null,
-      "BodyText": ""
-    },
-    {
-      "PageId": "6002",
-      "SequenceId": null,
-      "SectionId": null,
-      "Title": "Planning apprenticeship training",
-      "LinkTitle": "",
-      "InfoText": "",
-      "Questions": [
-        {
-          "QuestionId": "PAT-12",
-          "QuestionTag": "PAT-Introduction-Supporting",
-          "Label": "Planning apprenticeship training",
-          "ShortLabel": "",
-          "QuestionBodyText": "<p class='govuk-body'>Lorem ipsum Planning apprenticeship training introduction page - supporting provider</p>",
-          "Hint": "",
-          "Input": {
-            "Type": "Hidden",
-            "Validations": []
-          },
-          "Order": null
-        }
-      ],
-      "PageOfAnswers": [],
-      "Next": [
-        {
-          "Action": "NextPage",
-          "ReturnId": null,
-          "Conditions": [],
-          "ConditionMet": false
-        }
-      ],
-      "Complete": false,
-      "AllowMultipleAnswers": false,
-      "Order": null,
-      "Active": true,
-      "Visible": true,
-      "Feedback": null,
-      "HasFeedback": false,
-      "NotRequiredConditions": [
-        {
-          "Field": "Apply-ProviderRoute",
-          "IsOneOf": [
-            "1,2"
-          ]
-        }
-      ],
-      "ActivatedByPageId": null,
-      "BodyText": ""
-    }
-  ]
+    ]
 }
