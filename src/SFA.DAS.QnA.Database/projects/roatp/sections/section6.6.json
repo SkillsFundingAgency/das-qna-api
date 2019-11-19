@@ -1,0 +1,43 @@
+{
+    "Title": "Where apprentices will be trained",
+    "LinkTitle": "Where apprentices will be trained",
+    "DisplayType": "Pages",
+    "RequestedFeedbackAnswered": null,
+    "Pages": [
+        {
+            "PageId": "6060",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "Where apprentices will be trained",
+            "LinkTitle": "Where apprentices will be trained",
+            "InfoText": "Where apprentices will be trained",
+            "Questions": [ ],
+            "PageOfAnswers": [],
+            "Next": [
+                {
+                    "Action": "ReturnToSection",
+                    "ReturnId": "6",
+                    "Conditions": [],
+                    "ConditionMet": false
+                }
+            ],
+            "Complete": false,
+            "AllowMultipleAnswers": false,
+            "Order": null,
+            "Active": true,
+            "Visible": true,
+            "Feedback": null,
+            "HasFeedback": false,
+             "NotRequiredConditions": [
+                {
+                    "Field": "Apply-ProviderRoute",
+                    "IsOneOf": [
+                        "2"
+                    ]
+                }
+            ],
+            "ActivatedByPageId": null,
+            "BodyText": "<p class='govuk-body'>Where apprentices will be trained Holding page</p>"
+        }
+    ]
+}
