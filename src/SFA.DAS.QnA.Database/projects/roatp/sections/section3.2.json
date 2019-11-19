@@ -34,7 +34,7 @@
                                         "ShortLabel": "",
                                         "InputClasses": null,
                                         "QuestionBodyText": "",
-                                        "Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include:</p><ul class='govuk-list govuk-list--bullet'><li>a brief summary of the agreement</li><li>how your organisation will settle the debt</li><li>the date of when the debt will be fully paid off</li></ul>",
+                                        "Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include:</p><ul class='govuk-list govuk-list--bullet govuk-hint'><li>a brief summary of the agreement</li><li>how your organisation will settle the debt</li><li>the date of when the debt will be fully paid off</li></ul>",
                                         "Input":
                                         {
                                             "Type": "Textarea",
@@ -129,7 +129,7 @@
                                         "ShortLabel": "",
                                         "InputClasses": null,
                                         "QuestionBodyText": "",
-                                        "Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include:</p><ul class='govuk-list govuk-list--bullet'><li>a brief summary of why your organisation failed to repay funding</li><li>if any actions have been taken to resolve this</li></ul>",
+                                        "Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include:</p><ul class='govuk-list govuk-list--bullet govuk-hint'><li>a brief summary of why your organisation failed to repay funding</li><li>if any actions have been taken to resolve this</li></ul>",
                                         "Input":
                                         {
                                             "Type": "Textarea",
@@ -224,7 +224,7 @@
                                         "ShortLabel": "",
                                         "InputClasses": null,
                                         "QuestionBodyText": "",
-                                        "Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include a brief summary including:</p><ul class='govuk-list govuk-list--bullet'><li>which public body was involved</li><li>if any actions have been taken to resolve this</li></ul>",
+                                        "Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include a brief summary including:</p><ul class='govuk-list govuk-list--bullet govuk-hint'><li>which public body was involved</li><li>if any actions have been taken to resolve this</li></ul>",
                                         "Input":
                                         {
                                             "Type": "Textarea",
@@ -414,7 +414,7 @@
                                         "ShortLabel": "",
                                         "InputClasses": null,
                                         "QuestionBodyText": "",
-                                        "Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include a brief summary including:</p><ul class='govuk-list govuk-list--bullet'><li>why funding was removed</li><li>if any actions have been taken to resolve this</li></ul>",
+                                        "Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include a brief summary including:</p><ul class='govuk-list govuk-list--bullet govuk-hint'><li>why funding was removed</li><li>if any actions have been taken to resolve this</li></ul>",
                                         "Input":
                                         {
                                             "Type": "Textarea",
@@ -509,7 +509,7 @@
                                         "ShortLabel": "",
                                         "InputClasses": null,
                                         "QuestionBodyText": "",
-                                        "Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include a brief summary including:</p><ul class='govuk-list govuk-list--bullet'><li>why your organisation was removed</li><li>if any actions have been taken to resolve this</li></ul>",
+                                        "Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include a brief summary including:</p><ul class='govuk-list govuk-list--bullet govuk-hint'><li>why your organisation was removed</li><li>if any actions have been taken to resolve this</li></ul>",
                                         "Input":
                                         {
                                             "Type": "Textarea",
@@ -794,7 +794,7 @@
                                         "ShortLabel": "",
                                         "InputClasses": null,
                                         "QuestionBodyText": "",
-                                        "Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include:</p><ul class='govuk-list govuk-list--bullet'><li>what the issues were</li><li>who was involved</li><li>if any actions were taken to resolve this</li></ul>",
+                                        "Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include:</p><ul class='govuk-list govuk-list--bullet govuk-hint'><li>what the issues were</li><li>who was involved</li><li>if any actions were taken to resolve this</li></ul>",
                                         "Input":
                                         {
                                             "Type": "Textarea",
@@ -889,7 +889,7 @@
                                         "ShortLabel": "",
                                         "InputClasses": null,
                                         "QuestionBodyText": "",
-                                        "Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include:</p><ul class='govuk-list govuk-list--bullet'><li>what the issues were</li><li>who was involved</li><li>if any actions were taken to resolve this</li></ul>",
+                                        "Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include:</p><ul class='govuk-list govuk-list--bullet govuk-hint'><li>what the issues were</li><li>who was involved</li><li>if any actions were taken to resolve this</li></ul>",
                                         "Input":
                                         {
                                             "Type": "Textarea",
@@ -984,7 +984,7 @@
                                         "ShortLabel": "",
                                         "InputClasses": null,
                                         "QuestionBodyText": "",
-                                        "Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include:</p><ul class='govuk-list govuk-list--bullet'><li>names of the other organisations</li><li>a brief summary of why this happened - including relevant dates</li><li>outstanding judgements or legal proceedings</li></ul>",
+                                        "Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include:</p><ul class='govuk-list govuk-list--bullet govuk-hint'><li>names of the other organisations</li><li>a brief summary of why this happened - including relevant dates</li><li>outstanding judgements or legal proceedings</li></ul>",
                                         "Input":
                                         {
                                             "Type": "Textarea",
