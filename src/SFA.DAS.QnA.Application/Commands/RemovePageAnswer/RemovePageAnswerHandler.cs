@@ -51,10 +51,14 @@ namespace SFA.DAS.QnA.Application.Commands.RemovePageAnswer
                     }
                 }
             }
+            else
+            {
+                MarkFeedbackComplete(Page);
+            }
 
             Section.QnAData = QnaData;
             
-            MarkFeedbackComplete(Page);
+          
 
             await _dataContext.SaveChangesAsync(CancellationToken.None);
             
