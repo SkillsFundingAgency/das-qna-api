@@ -1,119 +1,113 @@
 {
-    "Title": "Introduction and what you'll need",
-    "LinkTitle": "Introduction and what you'll need",
-    "DisplayType": "",
-    "RequestedFeedbackAnswered": null,
-    "Pages": [
+  "Title": "Introduction and what you'll need",
+  "LinkTitle": "Introduction and what you'll need",
+  "DisplayType": "Pages",
+  "RequestedFeedbackAnswered": null,
+  "Pages": [
+    {
+      "PageId": "6000",
+      "SequenceId": null,
+      "SectionId": null,
+      "Title": "Planning apprenticeship training",
+      "LinkTitle": "Introduction and what you'll need",
+      "InfoText": "info text",
+      "Questions": [],
+      "PageOfAnswers": [],
+      "Next": [
         {
-            "PageId": "6000",
-            "SequenceId": null,
-            "SectionId": null,
-            "Title": "Planning apprenticeship training",
-            "LinkTitle": "Planning apprenticeship training",
-            "InfoText": "",
-            "Questions": [],
-            "PageOfAnswers": [],
-            "Next": [
-                {
-                    "Action": "ReturnToSection",
-                    "ReturnId": "6.1",
-                    "Condition": null,
-                    "Conditions": [],
-                    "ConditionMet": false
-                }
-            ],
-            "Complete": false,
-            "AllowMultipleAnswers": false,
-            "Order": null,
-            "Active": true,
-            "NotRequiredConditions": [
-                {
-                    "Field": "Apply-ProviderRoute",
-                    "IsOneOf": [
-                        "2",
-                        "3"
-                    ]
-                }
-            ],
-            "BodyText": "<p class='govuk-body'>Lorem ipsum main provider.</p>",
-            "Details": null,
-            "DisplayType": null,
-            "Feedback": null,
-            "ActivatedByPageId": null
-        },
-        {
-            "PageId": "6001",
-            "SequenceId": null,
-            "SectionId": null,
-            "Title": "Planning apprenticeship training",
-            "LinkTitle": "Planning apprenticeship training",
-            "InfoText": "",
-            "Questions": [],
-            "PageOfAnswers": [],
-            "Next": [
-                {
-                    "Action": "ReturnToSection",
-                    "ReturnId": "6.1",
-                    "Condition": null,
-                    "Conditions": [],
-                    "ConditionMet": false
-                }
-            ],
-            "Complete": false,
-            "AllowMultipleAnswers": false,
-            "Order": null,
-            "Active": true,
-            "NotRequiredConditions": [
-                {
-                    "Field": "Apply-ProviderRoute",
-                    "IsOneOf": [
-                        "1",
-                        "3"
-                    ]
-                }
-            ],
-            "BodyText": "<p class='govuk-body'>Lorem ipsum employer provider.</p>",
-            "Details": null,
-            "DisplayType": null,
-            "Feedback": null,
-            "ActivatedByPageId": null
-        },
-        {
-            "PageId": "6002",
-            "SequenceId": null,
-            "SectionId": null,
-            "Title": "Planning apprenticeship training",
-            "LinkTitle": "Planning apprenticeship training",
-            "InfoText": "",
-            "Questions": [],
-            "PageOfAnswers": [],
-            "Next": [
-                {
-                    "Action": "ReturnToSection",
-                    "ReturnId": "6.1",
-                    "Condition": null,
-                    "Conditions": [],
-                    "ConditionMet": false
-                }
-            ],
-            "Complete": false,
-            "AllowMultipleAnswers": false,
-            "Order": null,
-            "Active": true,
-            "NotRequiredConditions": [
-                {
-                    "Field": "Apply-ProviderRoute",
-                    "IsOneOf": [
-                        "1",
-                        "2"
-                    ]
-                }
-            ],
-            "BodyText": "<p class='govuk-body'>Lorem ipsum supporting provider.</p>",
-            "Details": null,
-            "DisplayType": null,
-            "Feedback": null,
-            "ActivatedByPageId": null
+          "Action": "NextPage",
+          "ReturnId": "6010",
+          "Conditions": [],
+          "ConditionMet": false
         }
-    ]
+      ],
+      "Complete": false,
+      "AllowMultipleAnswers": false,
+      "Order": null,
+      "Active": true,
+      "Visible": true,
+      "Feedback": null,
+      "HasFeedback": false,
+      "NotRequiredConditions": [
+        {
+          "Field": "Apply-ProviderRoute",
+          "IsOneOf": [
+            "2",
+            "3"
+          ]
+        }
+      ],
+      "BodyText": "<p class='govuk-body' id='pat-intro-main'>For this section you'll need to know:</p><ul class='govuk-list govuk-list--bullet'><li>what apprenticeship training your organisation will offer</li><li>how your organisation will engage with end-point assessment organisations (EPAO's) or awarding bodies</li><li>who we can contact about those apprenticeships</li><li>how many starts your organisation forecasts for the next 12 months</li><li>if your organisation is ready to deliver against these forecasts</li><li>if your organisation will recruit new staff against these forecasts</li><li>the typical ratio of staff and learners</li><li>how your organisation will deliver off the job training</li><li>where apprentices will be trained</li></ul></p>"
+    },
+    {
+      "PageId": "6001",
+      "SequenceId": null,
+      "SectionId": null,
+      "Title": "Planning apprenticeship training",
+      "LinkTitle": "Introduction and what you'll need",
+      "InfoText": "info text",
+      "Questions": [],
+      "PageOfAnswers": [],
+      "Next": [
+        {
+          "Action": "NextPage",
+          "ReturnId": "6010",
+          "Conditions": [],
+          "ConditionMet": false
+        }
+      ],
+      "Complete": false,
+      "AllowMultipleAnswers": false,
+      "Order": null,
+      "Active": true,
+      "Visible": true,
+      "Feedback": null,
+      "HasFeedback": false,
+      "NotRequiredConditions": [
+        {
+          "Field": "Apply-ProviderRoute",
+          "IsOneOf": [
+            "1",
+            "3"
+          ]
+        }
+      ],
+      "BodyText": "<p class='govuk-body' id='pat-intro-emp'>For this section you'll need to know:</p><ul class='govuk-list govuk-list--bullet'><li>what apprenticeship training your organisation will offer</li><li>how your organisation will engage with end-point assessment organisations (EPAO's) or awarding bodies</li><li>how your organisation will support apprentices</li><li>how many starts your organisation forecasts for the next 12 months</li><li>if your organisation is ready to deliver against these forecasts</li><li>if your organisation will recruit new staff against these forecasts</li><li>the typical ratio of staff and learners</li><li>how your organisation will deliver off the job training</li><li>where apprentices will be trained</li></ul></p>"
+    },
+    {
+      "PageId": "6002",
+      "SequenceId": null,
+      "SectionId": null,
+      "Title": "Planning apprenticeship training",
+      "LinkTitle": "Introduction and what you'll need",
+      "InfoText": "info text",
+      "Questions": [],
+      "PageOfAnswers": [],
+      "Next": [
+        {
+          "Action": "NextPage",
+          "ReturnId": "6010",
+          "Conditions": [],
+          "ConditionMet": false
+        }
+      ],
+      "Complete": false,
+      "AllowMultipleAnswers": false,
+      "Order": null,
+      "Active": true,
+      "Visible": true,
+      "Feedback": null,
+      "HasFeedback": false,
+      "NotRequiredConditions": [
+        {
+          "Field": "Apply-ProviderRoute",
+          "IsOneOf": [
+            "1",
+            "2"
+          ]
+        }
+      ],
+      "BodyText": "<p class='govuk-body' id='pat-intro-supp'>For this section, you�ll need to know what apprenticeship training your organisation will offer.</p>"
+    }
+  ]
 }
