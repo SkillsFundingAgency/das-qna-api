@@ -320,9 +320,46 @@
             "Title": "application standards",
             "LinkTitle": "application standards",
             "InfoText": "application standards",
-            "Questions": [],
+            "Questions": [
+                {
+                    "QuestionId": "PAT-25",
+                    "QuestionTag": "PAT-Type-Of-Training-Apprenticeship-Standards",
+                    "Label": "How is your organisation ensuring its ready to deliver training in apprenticeship standards?",
+                    "ShortLabel": "",
+                    "InputClasses": null,
+                    "QuestionBodyText": "<p class='govuk-body' id='pya-equality-policy'>Your answer should include how your organisation has:</p><ul class='govuk-list govuk-list--bullet'><li>commitment and approval from senior managers to deliver apprenticeship standards</li><li>a governance group in place to monitor delivery of training</li><li>an implementation plan specific to apprenticeship training </li></ul>",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "Textarea",
+                        "InputClasses": null,
+                        "Options": [],
+                        "Validations": [
+						
+                            {
+                                "Name": "Required",
+                                "Value": "",
+                                "ErrorMessage": "Tell us how your organisation is ensuring its ready to deliver training in apprenticeship standards"
+                            },
+                            {
+                                "Name": "MaxLength",
+                                "Value": "1500",
+                                "ErrorMessage": "Your answer must be 1500 characters or less"
+                            }
+                        ],
+                        "DataEndpoint": null
+                    },
+                    "Order": null,
+                    "Value": "",
+                    "ErrorMessages": null
+                }
+            ],
             "PageOfAnswers": [],
-            "Next": [],
+            "Next": [{
+                    "Action": "NextPage",
+                    "ReturnId": "6026",
+                    "Conditions": [],
+                    "ConditionMet": false
+                }],
             "Complete": false,
             "AllowMultipleAnswers": false,
             "Order": null,
@@ -331,7 +368,27 @@
             "Feedback": null,
             "HasFeedback": false,
             "ActivatedByPageId": "6020,6022",
-            "BodyText": "<p class='govuk-body'>Apprenticeship standards Holding page</p>"
+            "BodyText": ""
+        },
+        {
+            "PageId": "6026",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "engage with EPAO",
+            "LinkTitle": "engage with EPAO",
+            "InfoText": "engage with EPAO",
+            "Questions": [],
+            "PageOfAnswers": [],
+            "Next": [],
+            "Complete": false,
+            "AllowMultipleAnswers": false,
+            "Order": null,
+            "Active": false,
+            "Details": null,
+            "DisplayType": null,
+            "Feedback": null,
+            "ActivatedByPageId": "6020.6022",
+            "BodyText": "<p class='govuk-body'>engage with EPAO Holding page</p>"
         },
         {
             "PageId": "6027",
