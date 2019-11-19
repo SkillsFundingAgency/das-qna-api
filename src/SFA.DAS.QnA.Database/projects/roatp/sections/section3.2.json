@@ -1025,7 +1025,7 @@
                             {
                                 "Name": "Required",
                                 "Value": "",
-                                "ErrorMessage": "Tell us if your organisation has been investigated due to whistleblowing issues in the last 3 months"
+                                "ErrorMessage": "Tell us if your organisation or any of its partner organisations have been subject to insolvency or winding up proceedings in the last 3 years"
                             }
                         ],
                         "DataEndpoint": null
