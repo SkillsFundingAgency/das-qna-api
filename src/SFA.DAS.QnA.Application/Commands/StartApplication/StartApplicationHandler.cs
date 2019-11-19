@@ -4,6 +4,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using SFA.DAS.QnA.Api.Types;
 using SFA.DAS.QnA.Api.Types.Page;
@@ -16,39 +17,52 @@ namespace SFA.DAS.QnA.Application.Commands.StartApplication
     {
         private readonly QnaDataContext _dataContext;
         private readonly IApplicationDataValidator _applicationDataValidator;
+        private readonly ILogger<StartApplicationHandler> _logger;
         private bool _applicationDataIsInvalid;
 
-        public StartApplicationHandler(QnaDataContext dataContext, IApplicationDataValidator applicationDataValidator)
+        public StartApplicationHandler(QnaDataContext dataContext, IApplicationDataValidator applicationDataValidator, ILogger<StartApplicationHandler> logger)
         {
             _dataContext = dataContext;
             _applicationDataValidator = applicationDataValidator;
+            _logger = logger;
         }
 
         public async Task<HandlerResponse<StartApplicationResponse>> Handle(StartApplicationRequest request, CancellationToken cancellationToken)
         {
             var latestWorkflow = await _dataContext.Workflows.SingleOrDefaultAsync(w => w.Type == request.WorkflowType && w.Status == "Live", cancellationToken);
-            if (latestWorkflow is null) return new HandlerResponse<StartApplicationResponse>(false, $"Workflow Type does not exist.");;
-
+            if (latestWorkflow is null)
+            {
+                _logger.LogError($"Workflow type {request.WorkflowType} does not exist");
+                return new HandlerResponse<StartApplicationResponse>(false, $"Workflow Type does not exist."); 
+            }
+            
             try
             {
                 _applicationDataIsInvalid = !_applicationDataValidator.IsValid(latestWorkflow.ApplicationDataSchema, request.ApplicationData);
             }
             catch (JsonReaderException)
             {
+                _logger.LogError("Supplied ApplicationData is not valid JSON");
                 return new HandlerResponse<StartApplicationResponse>(false, $"Supplied ApplicationData is not valid JSON.");
             }
             
             if (_applicationDataIsInvalid)
             {
+                _logger.LogError("Supplied ApplicationData is not valid using Project's Schema");
                 return new HandlerResponse<StartApplicationResponse>(false, $"Supplied ApplicationData is not valid using Project's Schema.");
             }
             
             var newApplication = await CreateNewApplication(request, latestWorkflow, cancellationToken, request.ApplicationData);
 
-            if (newApplication is null) return new HandlerResponse<StartApplicationResponse>(false, $"WorkflowType '{request.WorkflowType}' does not exist.");
+            if (newApplication is null) 
+            {
+                _logger.LogError($"Workflow type {request.WorkflowType} does not exist");
+                return new HandlerResponse<StartApplicationResponse>(false, $"WorkflowType '{request.WorkflowType}' does not exist.");
+            }
 
             await CopyWorkflows(cancellationToken, newApplication);
 
+            _logger.LogInformation($"Created application Id = {newApplication.Id}");
             return new HandlerResponse<StartApplicationResponse>(new StartApplicationResponse {ApplicationId = newApplication.Id});
         }
 
