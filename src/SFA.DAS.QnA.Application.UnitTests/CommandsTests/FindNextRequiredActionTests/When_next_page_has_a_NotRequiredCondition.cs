@@ -162,7 +162,9 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.FindNextRequiredAction
         [TestCase(null, "TEST", null, "HEI", "3")]
         [TestCase(null, "TEST", null, "TEST", "4")]
         [TestCase("HEI", "TEST", "HEI", "TEST", "4")]
+        [TestCase("HEI", "TEST", "TEST", "HEI", "3")]
         [TestCase("TEST", "HEI", "TEST", "HEI", "2")]
+        [TestCase("TEST", "HEI", "HEI", "TEST", "2")]
         [TestCase("HEI", "HEI", "HEI", "HEI", "4")]
         [TestCase("TEST", "TEST", "TEST", "TEST", "4")]
         public void Subsequent_nextAction_further_down_the_branch_is_returned(string page2OneOf, string page2NotOneOf, string page3OneOf, string page3NotOneOf, string expectedReturnId)
