@@ -27,7 +27,7 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.FindNextRequiredAction
             
             await QnaDataContext.Applications.AddAsync(new Data.Entities.Application {Id = ApplicationId, ApplicationData = JsonConvert.SerializeObject(new
             {
-                OrgType = "OrgType1"
+                OrgType = "HEI"
             })});
 
             await QnaDataContext.SaveChangesAsync();
