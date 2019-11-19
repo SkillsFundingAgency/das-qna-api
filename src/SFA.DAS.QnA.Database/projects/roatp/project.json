@@ -66,6 +66,18 @@
                "name":"Introduction and what you'll need"
             },
             { 
+               "id":"section3.2",
+               "SequenceNo":3,
+               "SectionNo":2,
+               "name":"Checks on your organisation"
+            },
+            { 
+               "id":"section3.3",
+               "SequenceNo":3,
+               "SectionNo":3,
+               "name":"Introduction and what you'll need"
+            },
+            { 
                "id":"section4.1",
                "SequenceNo":4,
                "SectionNo":1,
