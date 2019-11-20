@@ -1,0 +1,406 @@
+{
+    "Title": "Checks on who's in control of your organisation",
+    "LinkTitle": "Checks on who's in control of your organisation",
+    "DisplayType": "Pages",
+    "RequestedFeedbackAnswered": null,
+    "Pages": [
+        {
+            "PageId": "3300",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "Checks on who's in control of your organisation",
+            "LinkTitle": "Checks on who's in control of your organisation",
+            "InfoText": "",
+            "Questions": [
+                {
+                    "QuestionId": "CC-40",
+                    "QuestionTag": "Criminal-Control-Convictions",
+                    "Label": "Does anyone who's in control of your organisation have any unspent criminal convictions?",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "<p class='govuk-body' id='criminal-control-convictions'>An unspent criminal conviction has an outstanding sentence and is shown on a criminal record check.</p><p class='govuk-body'>Find out more about unspent criminal convictions in the <a href='http://www.legislation.gov.uk/ukpga/1974/53' target='_blank'>Rehabilitation of Offenders Act 1974</a>.</p><p class='govuk-body'>Criminal convictions include:</p><ul class='govuk-list govuk-list--bullet'><li>serious crimes</li><li>criminal conduct</li><li>conspiracy</li><li>money laundering</li><li>asylum and immigrants offences</li><li>sexual offences</li><li>drug trafficking</li><li>terrorism</li><li>fraud</li><li>theft</li><li>corruption</li><li>bribery</li></ul>",
+                    "Hint": "",
+                    "Input":
+                    {
+                        "Type": "ComplexRadio",
+                        "InputClasses": null,
+                        "Options": [
+                            {
+                                "FurtherQuestions": [
+                                    {
+                                        "QuestionId": "CC-40.1",
+                                        "QuestionTag": "Criminal-Control-Convictions-Information",
+                                        "Label": "Give us more information",
+                                        "ShortLabel": "",
+                                        "InputClasses": null,
+                                        "QuestionBodyText": "",
+                                        "Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include:</p><ul class='govuk-list govuk-list--bullet govuk-hint'><li>a brief summary of the conviction</li><li>full names of who the conviction is for</li><li>conviction dates including any time spent</li><li>outstanding judgements or legal proceedings</li><li>any actions your organisation has taken in relation to the conviction</li></ul>",
+                                        "Input":
+                                        {
+                                            "Type": "Textarea",
+                                            "InputClasses": "",
+                                            "Options": [],
+                                            "Validations": [
+                                                {
+                                                    "Name": "Required",
+                                                    "Value": "",
+                                                    "ErrorMessage": "Enter more information "
+                                                },
+                                                {
+                                                    "Name": "MaxWordCount",
+                                                    "Value": "1500",
+                                                    "ErrorMessage": "Your answer must be 1500 characters or less"
+                                                }
+                                            ],
+                                            "DataEndpoint": null
+
+                                        },
+                                        "Order": null,
+                                        "Value": null,
+                                        "ErrorMessages": null
+                                    }
+                                ],
+                                "Value": "Yes",
+                                "Label": "Yes",
+                                "HintText": ""
+                            },
+                            {
+                                "FurtherQuestions": [],
+                                "Value": "No",
+                                "Label": "No",
+                                "HintText": ""
+                            }
+                        ],
+                        "Validations": [
+                            {
+                                "Name": "Required",
+                                "Value": "",
+                                "ErrorMessage": "Tell us if anyone who's in control of your organisation has any unspent criminal convictions"
+                            }
+                        ],
+                        "DataEndpoint": null
+                    }
+                }
+            ],
+            "PageOfAnswers": [],
+            "Next": [
+                {
+                    "Action": "NextPage",
+                    "ReturnId": "3310",
+                    "Conditions": [],
+                    "ConditionMet": false
+                }
+            ],
+            "Complete": false,
+            "AllowMultipleAnswers": false,
+            "Order": null,
+            "Active": true,
+            "Feedback": null,
+            "HasFeedback": false,
+            "NotRequiredConditions": [{
+                    "Field": "SoleTrade-or-Partnership",
+                    "IsOneOf": ["Sole trader"]
+                }
+            ],
+            "BodyText": ""
+        },
+        {
+            "PageId": "3301",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "Checks on who's in control of your organisation",
+            "LinkTitle": "Checks on who's in control of your organisation",
+            "InfoText": "",
+            "Questions": [
+                {
+                    "QuestionId": "CC-41",
+                    "QuestionTag": "Criminal-Control-Convictions-SoleTrader",
+                    "Label": "Do you have any unspent criminal convictions?",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "<p class='govuk-body' id='criminal-control-convictions-soletrader'>An unspent criminal conviction has an outstanding sentence and is shown on a criminal record check.</p><p class='govuk-body'>Find out more about unspent criminal convictions in the <a href='http://www.legislation.gov.uk/ukpga/1974/53' target='_blank'>Rehabilitation of Offenders Act 1974</a>.</p><p class='govuk-body'>Criminal convictions include:</p><ul class='govuk-list govuk-list--bullet'><li>serious crimes</li><li>criminal conduct</li><li>conspiracy</li><li>money laundering</li><li>asylum and immigrants offences</li><li>sexual offences</li><li>drug trafficking</li><li>terrorism</li><li>fraud</li><li>theft</li><li>corruption</li><li>bribery</li></ul>",
+                    "Hint": "",
+                    "Input":
+                    {
+                        "Type": "ComplexRadio",
+                        "InputClasses": null,
+                        "Options": [
+                            {
+                                "FurtherQuestions": [
+                                    {
+                                        "QuestionId": "CC-41.1",
+                                        "QuestionTag": "Criminal-Control-Convictions-SoleTrader-Information",
+                                        "Label": "Give us more information",
+                                        "ShortLabel": "",
+                                        "InputClasses": null,
+                                        "QuestionBodyText": "",
+                                        "Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include:</p><ul class='govuk-list govuk-list--bullet govuk-hint'><li>a brief summary of the conviction</li><li>conviction dates including any time spent</li><li>outstanding judgements or legal proceedings</li><li>any actions your organisation has taken in relation to the conviction</li></ul>",
+                                        "Input":
+                                        {
+                                            "Type": "Textarea",
+                                            "InputClasses": "",
+                                            "Options": [],
+                                            "Validations": [
+                                                {
+                                                    "Name": "Required",
+                                                    "Value": "",
+                                                    "ErrorMessage": "Enter more information "
+                                                },
+                                                {
+                                                    "Name": "MaxWordCount",
+                                                    "Value": "1500",
+                                                    "ErrorMessage": "Your answer must be 1500 characters or less"
+                                                }
+                                            ],
+                                            "DataEndpoint": null
+
+                                        },
+                                        "Order": null,
+                                        "Value": null,
+                                        "ErrorMessages": null
+                                    }
+                                ],
+                                "Value": "Yes",
+                                "Label": "Yes",
+                                "HintText": ""
+                            },
+                            {
+                                "FurtherQuestions": [],
+                                "Value": "No",
+                                "Label": "No",
+                                "HintText": ""
+                            }
+                        ],
+                        "Validations": [
+                            {
+                                "Name": "Required",
+                                "Value": "",
+                                "ErrorMessage": "Tell us if you have any unspent criminal convictions"
+                            }
+                        ],
+                        "DataEndpoint": null
+                    }
+                }
+            ],
+            "PageOfAnswers": [],
+            "Next": [
+                {
+                    "Action": "NextPage",
+                    "ReturnId": "3311",
+                    "Conditions": [],
+                    "ConditionMet": false
+                }
+            ],
+            "Complete": false,
+            "AllowMultipleAnswers": false,
+            "Order": null,
+            "Active": true,
+            "Feedback": null,
+            "HasFeedback": false,
+            "RequiredConditions": [{
+                    "Field": "SoleTrade-or-Partnership",
+                    "IsNotOneOf": ["Sole trader"]
+                }
+            ],
+            "BodyText": ""
+        },
+        {
+            "PageId": "3310",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "Checks on who's in control of your organisation",
+            "LinkTitle": "Checks on who's in control of your organisation",
+            "InfoText": "",
+            "Questions": [
+                {
+                    "QuestionId": "CC-50",
+                    "QuestionTag": "Criminal-Control-Funds",
+                    "Label": "Has anyone who's in control of your organisation failed to pay back funds in the last 3 years?",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "<p class='govuk-body' id='criminal-control-funds'>Tell us if anyone who's in control has failed to:</p><ul class='govuk-list govuk-list--bullet'><li>repay £50,000 or more to ESFA or any other public body</li><li>follow the conditions of funding under ESFA funding agreements or sub-contracts</li></ul>",
+                    "Hint": "",
+                    "Input":
+                    {
+                        "Type": "ComplexRadio",
+                        "InputClasses": null,
+                        "Options": [
+                            {
+                                "FurtherQuestions": [
+                                    {
+                                        "QuestionId": "CC-50.1",
+                                        "QuestionTag": "Criminal-Control-Funds-Information",
+                                        "Label": "Give us more information",
+                                        "ShortLabel": "",
+                                        "InputClasses": null,
+                                        "QuestionBodyText": "",
+                                        "Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include a brief summary including:</p><ul class='govuk-list govuk-list--bullet govuk-hint'><li>full names of who this was</li><li>which public body was involved</li><li>if any actions were taken to resolve this</li></ul>",
+                                        "Input":
+                                        {
+                                            "Type": "Textarea",
+                                            "InputClasses": "",
+                                            "Options": [],
+                                            "Validations": [
+                                                {
+                                                    "Name": "Required",
+                                                    "Value": "",
+                                                    "ErrorMessage": "Enter more information "
+                                                },
+                                                {
+                                                    "Name": "MaxWordCount",
+                                                    "Value": "1500",
+                                                    "ErrorMessage": "Your answer must be 1500 characters or less"
+                                                }
+                                            ],
+                                            "DataEndpoint": null
+
+                                        },
+                                        "Order": null,
+                                        "Value": null,
+                                        "ErrorMessages": null
+                                    }
+                                ],
+                                "Value": "Yes",
+                                "Label": "Yes",
+                                "HintText": ""
+                            },
+                            {
+                                "FurtherQuestions": [],
+                                "Value": "No",
+                                "Label": "No",
+                                "HintText": ""
+                            }
+                        ],
+                        "Validations": [
+                            {
+                                "Name": "Required",
+                                "Value": "",
+                                "ErrorMessage": "Tell us if anyone who's in control of your organisation has failed to pay back funds in the last 3 years"
+                            }
+                        ],
+                        "DataEndpoint": null
+                    }
+                }
+            ],
+            "PageOfAnswers": [],
+            "Next": [
+                {
+                    "Action": "NextPage",
+                    "ReturnId": "3320",
+                    "Conditions": [],
+                    "ConditionMet": false
+                }
+            ],
+            "Complete": false,
+            "AllowMultipleAnswers": false,
+            "Order": null,
+            "Active": false,
+            "ActivatedByPageId": "3300",
+            "Feedback": null,
+            "HasFeedback": false,
+            "NotRequiredConditions": [{
+                    "Field": "SoleTrade-or-Partnership",
+                    "IsOneOf": ["Sole trader"]
+                }
+            ],
+            "BodyText": ""
+        },
+        {
+            "PageId": "3311",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "Checks on who's in control of your organisation",
+            "LinkTitle": "Checks on who's in control of your organisation",
+            "InfoText": "",
+            "Questions": [
+                {
+                    "QuestionId": "CC-51",
+                    "QuestionTag": "Criminal-Control-Funds-SoleTrader",
+                    "Label": "Have you failed to pay back funds in the last 3 years?",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "<p class='govuk-body' id='criminal-control-funds-soletrader'>Tell us if anyone who's in control has failed to:</p><ul class='govuk-list govuk-list--bullet'><li>serious crimes</li><li>repay £50,000 or more to ESFA or any other public body</li><li>follow the conditions of funding under ESFA funding agreements or sub-contracts</li></ul>",
+                    "Hint": "",
+                    "Input":
+                    {
+                        "Type": "ComplexRadio",
+                        "InputClasses": null,
+                        "Options": [
+                            {
+                                "FurtherQuestions": [
+                                    {
+                                        "QuestionId": "CC-51.1",
+                                        "QuestionTag": "Criminal-Control-Funds-SoleTrader-Information",
+                                        "Label": "Give us more information",
+                                        "ShortLabel": "",
+                                        "InputClasses": null,
+                                        "QuestionBodyText": "",
+                                        "Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include a brief summary including:</p><ul class='govuk-list govuk-list--bullet govuk-hint'><li>which public body was involved</li><li>if any actions were taken to resolve this</li></ul>",
+                                        "Input":
+                                        {
+                                            "Type": "Textarea",
+                                            "InputClasses": "",
+                                            "Options": [],
+                                            "Validations": [
+                                                {
+                                                    "Name": "Required",
+                                                    "Value": "",
+                                                    "ErrorMessage": "Enter more information "
+                                                },
+                                                {
+                                                    "Name": "MaxWordCount",
+                                                    "Value": "1500",
+                                                    "ErrorMessage": "Your answer must be 1500 characters or less"
+                                                }
+                                            ],
+                                            "DataEndpoint": null
+
+                                        },
+                                        "Order": null,
+                                        "Value": null,
+                                        "ErrorMessages": null
+                                    }
+                                ],
+                                "Value": "Yes",
+                                "Label": "Yes",
+                                "HintText": ""
+                            },
+                            {
+                                "FurtherQuestions": [],
+                                "Value": "No",
+                                "Label": "No",
+                                "HintText": ""
+                            }
+                        ],
+                        "Validations": [
+                            {
+                                "Name": "Required",
+                                "Value": "",
+                                "ErrorMessage": "Tell us if you have failed to pay back funds in the last 3 years"
+                            }
+                        ],
+                        "DataEndpoint": null
+                    }
+                }
+            ],
+            "PageOfAnswers": [],
+            "Next": [
+                {
+                    "Action": "NextPage",
+                    "ReturnId": "3321",
+                    "Conditions": [],
+                    "ConditionMet": false
+                }
+            ],
+            "Complete": false,
+            "AllowMultipleAnswers": false,
+            "Order": null,
+            "Active": false,
+            "ActivatedByPageId": "3301",
+            "Feedback": null,
+            "HasFeedback": false,
+            "RequiredConditions": [{
+                    "Field": "SoleTrade-or-Partnership",
+                    "IsOneOf": ["Sole trader"]
+                }
+            ],
+            "BodyText": ""
+        }
+    ]
+}
