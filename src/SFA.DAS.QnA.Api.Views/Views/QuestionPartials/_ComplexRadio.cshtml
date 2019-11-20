@@ -72,10 +72,16 @@
                                 }
                             }
                         }
-                        <div class="govuk-form-group">
-                            <label class="govuk-label" for="@Model.Options[i].FurtherQuestions[furtherQuestionIndex].QuestionId">@Model.Options[i].FurtherQuestions[furtherQuestionIndex].Label</label>
-                            @HtmlHelperPartialExtensions.Partial(Html, $"~/Views/QuestionPartials/_{Model.Options[i].FurtherQuestions[furtherQuestionIndex].Input.Type}.cshtml", Model.Options[i].FurtherQuestions[furtherQuestionIndex])
-                        </div>
+                    <div class="govuk-form-group">
+                        <label class="govuk-label" for="@Model.Options[i].FurtherQuestions[furtherQuestionIndex].QuestionId">@Model.Options[i].FurtherQuestions[furtherQuestionIndex].Label</label>
+                        @if (Model.Options[i].FurtherQuestions[furtherQuestionIndex].Hint != null)
+                        {
+                            <span id="@Model.Options[i].FurtherQuestions[furtherQuestionIndex].QuestionId-hint" class="govuk-hint govuk-radios__hint">
+                                @Html.Raw(Model.Options[i].FurtherQuestions[furtherQuestionIndex].Hint)
+                            </span>
+                        }
+                        @HtmlHelperPartialExtensions.Partial(Html, $"~/Views/QuestionPartials/_{Model.Options[i].FurtherQuestions[furtherQuestionIndex].Input.Type}.cshtml", Model.Options[i].FurtherQuestions[furtherQuestionIndex])
+                    </div>
                     }
                 </div>
             }
