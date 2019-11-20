@@ -78,6 +78,12 @@
                "name":"Introduction and what you'll need"
             },
             { 
+               "id":"section3.4",
+               "SequenceNo":3,
+               "SectionNo":4,
+               "name":"Checks on who's in control of your organisation"
+            },
+            { 
                "id":"section4.1",
                "SequenceNo":4,
                "SectionNo":1,
