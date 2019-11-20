@@ -36,7 +36,7 @@
                             },
                             {
                                 "Label": "Supporting provider",
-                                "HintText": "Your organisation will act as a subcontractor for main and employer providers to train apprentices up to a maximum of £500,000 per year. If your organisation is new on the register, this will be limited to £100,000 in its first year.",
+                                "HintText": "Your organisation will act as a subcontractor for main and employer providers to train apprentices up to a maximum of &pound;500,000 per year. If your organisation is new on the register, this will be limited to &pound;100,000 in its first year.",
                                 "Value": "3",
                                 "FurtherQuestions": []
                             }
