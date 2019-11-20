@@ -181,19 +181,24 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
         public Next FindNextRequiredAction(ApplicationSection section, QnaDataContext qnaDataContext, Next nextAction)
         {
             if (nextAction.Action != "NextPage") return nextAction;
-            
-            // Check here for any NotRequiredConditions on the next page.
+
+            // Check here for any NotRequiredConditions and RequiredConditions on the next page.
 
             var application = qnaDataContext.Applications.Single(app => app.Id == section.ApplicationId);
             var applicationData = JObject.Parse(application.ApplicationData);
 
             var nextPage = section.QnAData.Pages.FirstOrDefault(p => p.PageId == nextAction.ReturnId);
             var isRequired = true;
-            if (nextPage != null && nextPage.NotRequiredConditions != null && nextPage.NotRequiredConditions.Any())
+            if (nextPage != null)
             {
-                if (nextPage.NotRequiredConditions.Any(nrc => nrc.IsOneOf.Contains(applicationData[nrc.Field]?.Value<string>())))
+                if (nextPage.NotRequiredConditions != null && nextPage.NotRequiredConditions.Any(nrc => nrc.IsOneOf.Contains(applicationData[nrc.Field]?.Value<string>())))
                 {
                     isRequired = false;
+                }
+
+                if (nextPage.RequiredConditions != null && nextPage.RequiredConditions.Any(rc => rc.IsOneOf.Contains(applicationData[rc.Field]?.Value<string>())))
+                {
+                    isRequired = true;
                 }
             }
 

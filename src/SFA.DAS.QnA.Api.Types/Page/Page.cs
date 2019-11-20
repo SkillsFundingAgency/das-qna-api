@@ -23,7 +23,8 @@ namespace SFA.DAS.QnA.Api.Types.Page
         public bool Active { get; set; }
 
         public List<NotRequiredCondition> NotRequiredConditions { get; set; }
-        
+        public List<RequiredCondition> RequiredConditions { get; set; }
+
         public string BodyText { get; set; }
 
         public PageDetails Details { get; set; }
