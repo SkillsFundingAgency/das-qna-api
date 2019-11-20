@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Logging;
 using NSubstitute;
 using NUnit.Framework;
 using SFA.DAS.QnA.Api.Types;
@@ -25,7 +26,8 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.StartApplicationTests
 
             var applicationDataValidator = Substitute.For<IApplicationDataValidator>();
             applicationDataValidator.IsValid("","").ReturnsForAnyArgs(true);
-            Handler = new StartApplicationHandler(DataContext, applicationDataValidator);
+            var logger = Substitute.For<ILogger<StartApplicationHandler>>();
+            Handler = new StartApplicationHandler(DataContext, applicationDataValidator, logger);
 
             WorkflowId = Guid.NewGuid();
 
