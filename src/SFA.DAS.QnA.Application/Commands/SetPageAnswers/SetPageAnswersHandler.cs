@@ -39,7 +39,23 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
                 {
                     return new HandlerResponse<SetPageAnswersResponse>(success: false, message: $"Number of Answers supplied ({request.Answers.Count}) does not match number of first level Questions on page ({page.Questions.Count}).");
                 }
-                
+
+                // Re-inject current FileUpload answer if one wasn't specified (Note that calling application should be using the Upload endpoint and not SetPageAnswers!)
+                foreach (var question in page.Questions.Where(q => q.Input.Type == "FileUpload"))
+                {
+                    var answerToThisQuestion = request.Answers.SingleOrDefault(a => a.QuestionId == question.QuestionId);
+
+                    if (answerToThisQuestion != null && string.IsNullOrEmpty(answerToThisQuestion?.Value))
+                    {
+                        var currentAnswerToThisQuestion = page.PageOfAnswers?.SelectMany(p => p.Answers).SingleOrDefault(a => a.QuestionId == question.QuestionId);
+                        if (!string.IsNullOrEmpty(currentAnswerToThisQuestion?.Value))
+                        {
+                            answerToThisQuestion.QuestionId = currentAnswerToThisQuestion.QuestionId;
+                            answerToThisQuestion.Value = currentAnswerToThisQuestion.Value;
+                        }
+                    }
+                }
+
                 var validationErrors = _answerValidator.Validate(request.Answers, page);
                 if (validationErrors.Any())
                 {
