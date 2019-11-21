@@ -20,7 +20,7 @@ namespace SFA.DAS.QnA.Application.Validators
                 var fileNameParts = text.Split(".", StringSplitOptions.RemoveEmptyEntries);
                 var fileNameExtension = fileNameParts[fileNameParts.Length - 1];
 
-                if (fileNameExtension != allowedExtension)
+                if (!fileNameExtension.Equals(allowedExtension,StringComparison.OrdinalIgnoreCase))
                 {
                     errors.Add(new KeyValuePair<string, string>(question.QuestionId, ValidationDefinition.ErrorMessage));
                 }
