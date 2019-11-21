@@ -266,7 +266,7 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
             }
         }
 
-        private void DeactivateDependentPages(string branchingPageId, QnAData qnaData, Page page, Next chosenAction, bool subPages = false)
+        protected void DeactivateDependentPages(string branchingPageId, QnAData qnaData, Page page, Next chosenAction, bool subPages = false)
         {
             foreach (var nextAction in page.Next.Where(n => n != chosenAction || subPages))
             {
@@ -289,7 +289,7 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
             }
         }
 
-        private void ActivateDependentPages(Next next, string branchingPageId, QnAData qnaData)
+        protected void ActivateDependentPages(Next next, string branchingPageId, QnAData qnaData)
         {
             if (next.Action != "NextPage") return;
 
