@@ -36,11 +36,13 @@ namespace SFA.DAS.QnA.Application.Commands.Files.DeleteFile
     {
         private readonly QnaDataContext _dataContext;
         private readonly IOptions<FileStorageConfig> _fileStorageConfig;
+        private readonly IAnswerValidator _answerValidator;
 
-        public DeleteFileHandler(QnaDataContext dataContext, IOptions<FileStorageConfig> fileStorageConfig)
+        public DeleteFileHandler(QnaDataContext dataContext, IAnswerValidator answerValidator, IOptions<FileStorageConfig> fileStorageConfig)
         {
             _dataContext = dataContext;
             _fileStorageConfig = fileStorageConfig;
+            _answerValidator = answerValidator;
         }
         
         public async Task<HandlerResponse<bool>> Handle(DeleteFileRequest request, CancellationToken cancellationToken)
@@ -91,6 +93,16 @@ namespace SFA.DAS.QnA.Application.Commands.Files.DeleteFile
                     {
                         feedback.IsCompleted = false;
                     }
+                }
+            }
+            else
+            {
+                var answers = page.PageOfAnswers?.SelectMany(p => p.Answers);
+                if (answers != null)
+                {
+                    var validationErrors = _answerValidator.Validate(answers.ToList(), page);
+                    if (validationErrors != null && validationErrors.Any())
+                        page.Complete = false;
                 }
             }
 
