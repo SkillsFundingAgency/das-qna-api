@@ -463,7 +463,7 @@
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
-			"NotRequiredConditions": [
+            "NotRequiredConditions": [
                 {
                     "Field": "Apply-ProviderRoute",
                     "IsOneOf": [
@@ -478,10 +478,30 @@
             "PageId": "6052",
             "SequenceId": null,
             "SectionId": null,
-            "Title": "organisation transition",
+            "Title": "How will your organisation transition from apprenticeship frameworks to apprenticeship standards?",
             "LinkTitle": "organisation transition",
             "InfoText": "organisation transition",
-            "Questions": [],
+            "Questions": [
+                {
+                    "QuestionId": "PAT-52",
+                    "QuestionTag": "PAT-Organisation-Transition-main-and-employer",
+                    "Label": "",
+                    "ShortLabel": "",
+                    "InputClasses": null,
+                    "QuestionBodyText": "",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "Textarea",
+                        "InputClasses": null,
+                        "Options": [],
+                        "Validations": [],
+                        "DataEndpoint": null
+                    },
+                    "Order": null,
+                    "Value": "",
+                    "ErrorMessages": null
+                }
+            ],
             "PageOfAnswers": [],
             "Next": [],
             "Complete": false,
@@ -491,7 +511,7 @@
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
-			"NotRequiredConditions": [
+            "NotRequiredConditions": [
                 {
                     "Field": "Apply-ProviderRoute",
                     "IsOneOf": [
@@ -500,7 +520,7 @@
                 }
             ],
             "ActivatedByPageId": "6050",
-            "BodyText": "<p class='govuk-body'>organisation transition Holding page</p>"
+            "BodyText": "<p class='govuk-body' id='pat-organisation-transition'>Your answer should include how your organisation has:</p><ul class='govuk-list govuk-list--bullet'><li>get commitment and approval from senior managers to deliver apprenticeship standards</li><li>have a governance group in place to monitor delivery of training</li><li>have an implementation plan specific to apprenticeship training</li><li>have resources that support the delivery of apprenticeship standards</li></ul></p>\n<p class='govuk-body'>Your answer should also include when your organisation will do this.</p>"
         },
         {
             "PageId": "6054",
@@ -582,7 +602,7 @@
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
-			"NotRequiredConditions": [
+            "NotRequiredConditions": [
                 {
                     "Field": "Apply-ProviderRoute",
                     "IsOneOf": [
@@ -665,12 +685,12 @@
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
-			"NotRequiredConditions": [
+            "NotRequiredConditions": [
                 {
                     "Field": "Apply-ProviderRoute",
                     "IsOneOf": [
                         "1",
-						"2"
+                        "2"
                     ]
                 }
             ],
@@ -694,12 +714,12 @@
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
-			"NotRequiredConditions": [
+            "NotRequiredConditions": [
                 {
                     "Field": "Apply-ProviderRoute",
                     "IsOneOf": [
                         "1",
-						"2"
+                        "2"
                     ]
                 }
             ],
@@ -762,12 +782,12 @@
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
-			"NotRequiredConditions": [
+            "NotRequiredConditions": [
                 {
                     "Field": "Apply-ProviderRoute",
                     "IsOneOf": [
                         "1",
-						"2"
+                        "2"
                     ]
                 }
             ],
@@ -831,7 +851,7 @@
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
-			"NotRequiredConditions": [
+            "NotRequiredConditions": [
                 {
                     "Field": "Apply-ProviderRoute",
                     "IsOneOf": [
