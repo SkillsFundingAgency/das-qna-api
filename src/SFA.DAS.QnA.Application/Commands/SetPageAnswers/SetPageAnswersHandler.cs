@@ -68,9 +68,12 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
         {
             var application = await _dataContext.Applications.SingleOrDefaultAsync(app => app.Id == applicationId);
             var applicationData = JObject.Parse(application.ApplicationData);
+            var questionTags = new List<string>();
+
             foreach (var question in page.Questions)
             {
                 SetApplicationDataField(answers, applicationData, question);
+                if (!string.IsNullOrWhiteSpace(question.QuestionTag)) questionTags.Add(question.QuestionTag);
 
                 if (question.Input.Options == null) continue;
 
@@ -79,11 +82,51 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
                     foreach (var furtherQuestion in option.FurtherQuestions)
                     {
                         SetApplicationDataField(answers, applicationData, furtherQuestion);
+                        if (!string.IsNullOrWhiteSpace(question.QuestionTag)) questionTags.Add(question.QuestionTag);
                     }
                 }
             }
 
             application.ApplicationData = applicationData.ToString(Formatting.None);
+
+            await _dataContext.SaveChangesAsync();
+
+            await SetStatusOfAllPagesBasedOnUpdatedQuestionTags(applicationId, questionTags);
+        }
+
+        private async Task SetStatusOfAllPagesBasedOnUpdatedQuestionTags(Guid applicationId, List<string> questionTags)
+        {
+            if (questionTags == null || questionTags.Count < 1) return;
+
+            var sections = await _dataContext.ApplicationSections.Where(sec => sec.ApplicationId == applicationId).ToListAsync();
+
+            // Go through each section in the application
+            foreach (var section in sections)
+            {
+                var qnaData = new QnAData(section.QnAData);
+
+                // Get the list of pages that contain one of QuestionTags in the next condition
+                var pages = new List<Page>();
+                foreach (var questionTag in questionTags.Distinct())
+                {
+                   var questionTagPages = qnaData.Pages.Where(p => !p.AllowMultipleAnswers && p.Next.SelectMany(n => n.Conditions).Select(c => c.QuestionTag).Contains(questionTag));
+                   pages.AddRange(questionTagPages);
+                }
+
+                // Deactivate & Activate affected pages accordingly
+                foreach (var page in pages)
+                {
+                    var nextAction = GetNextAction(page, new List<Answer>(), section, _dataContext);
+                    if(nextAction?.Conditions != null)
+                    {
+                        DeactivateDependentPages(page.PageId, qnaData, page, nextAction);
+                        ActivateDependentPages(nextAction, page.PageId, qnaData);
+                    }
+                }
+
+                // Assign the updated QnAData back to the section
+                section.QnAData = qnaData;
+            }
 
             await _dataContext.SaveChangesAsync();
         }
