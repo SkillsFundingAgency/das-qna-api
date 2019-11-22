@@ -398,7 +398,7 @@
                     "QuestionTag": "Confirm-Trading-Main",
                     "Label": "How long has your organisation been trading for?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body'>Trading includes buying, selling, advertising, renting a property or employing someone.</p>",
+                    "QuestionBodyText": "<p class='govuk-body'>This is when your organisation has done at least one of the following things:</p> <ul class='govuk-list govuk-list--bullet'> <li>carried out a business activity - such as a trade or professional activity</li>\n<li>bought or sold goods or services with a view to making a profit or surplus</li> <li>provided chargeable services</li> </ul> <p class='govuk-body'>Actively trading does not include start-up or set-up costs.</p>",
                     "Hint": "",
                     "Input": {
                         "Type": "Radio",
@@ -534,7 +534,7 @@
                     "QuestionTag": "Confirm-Trading-Employer",
                     "Label": "How long has your organisation been trading for?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body'>Trading includes buying, selling, advertising, renting a property or employing someone.</p>",
+                    "QuestionBodyText": "<p class='govuk-body'>This is when your organisation has done at least one of the following things:</p> <ul class='govuk-list govuk-list--bullet'> <li>carried out a business activity - such as a trade or professional activity</li>\n<li>bought or sold goods or services with a view to making a profit or surplus</li> <li>provided chargeable services</li> </ul> <p class='govuk-body'>Actively trading does not include start-up or set-up costs.</p>",
                     "Hint": "",
                     "Input": {
                         "Type": "Radio",
@@ -670,7 +670,7 @@
                     "QuestionTag": "Confirm-Trading-Supporting",
                     "Label": "How long has your organisation been trading for?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body'>Trading includes buying, selling, advertising, renting a property or employing someone.</p>",
+                    "QuestionBodyText": "<p class='govuk-body'>This is when your organisation has done at least one of the following things:</p> <ul class='govuk-list govuk-list--bullet'> <li>carried out a business activity - such as a trade or professional activity</li>\n<li>bought or sold goods or services with a view to making a profit or surplus</li> <li>provided chargeable services</li> </ul> <p class='govuk-body'>Actively trading does not include start-up or set-up costs.</p>",
                     "Hint": "",
                     "Input": {
                         "Type": "Radio",
