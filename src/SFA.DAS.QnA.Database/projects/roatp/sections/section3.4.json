@@ -195,9 +195,9 @@
             "Active": true,
             "Feedback": null,
             "HasFeedback": false,
-            "RequiredConditions": [{
+            "NotRequiredConditions": [{
                     "Field": "SoleTrade-or-Partnership",
-                    "IsNotOneOf": ["Sole trader"]
+                    "IsOneOf": [null]
                 }
             ],
             "BodyText": ""
@@ -395,9 +395,9 @@
             "ActivatedByPageId": "3301",
             "Feedback": null,
             "HasFeedback": false,
-            "RequiredConditions": [{
+            "NotRequiredConditions": [{
                     "Field": "SoleTrade-or-Partnership",
-                    "IsOneOf": ["Sole trader"]
+                    "IsOneOf": [null]
                 }
             ],
             "BodyText": ""
