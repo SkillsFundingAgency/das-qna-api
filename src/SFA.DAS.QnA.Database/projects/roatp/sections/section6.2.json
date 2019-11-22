@@ -478,23 +478,34 @@
             "PageId": "6052",
             "SequenceId": null,
             "SectionId": null,
-            "Title": "How will your organisation transition from apprenticeship frameworks to apprenticeship standards?",
+            "Title": "",
             "LinkTitle": "organisation transition",
             "InfoText": "organisation transition",
             "Questions": [
                 {
                     "QuestionId": "PAT-52",
                     "QuestionTag": "PAT-Organisation-Transition-main-and-employer",
-                    "Label": "",
+                    "Label": "How will your organisation transition from apprenticeship frameworks to apprenticeship standards?",
                     "ShortLabel": "",
                     "InputClasses": null,
-                    "QuestionBodyText": "",
+                    "QuestionBodyText": "<p class='govuk-body' id='pat-organisation-transition'>Your answer should include how your organisation has:</p><ul class='govuk-list govuk-list--bullet'><li>get commitment and approval from senior managers to deliver apprenticeship standards</li><li>have a governance group in place to monitor delivery of training</li><li>have an implementation plan specific to apprenticeship training</li><li>have resources that support the delivery of apprenticeship standards</li></ul></p>\n<p class='govuk-body'>Your answer should also include when your organisation will do this.</p>",
                     "Hint": "",
                     "Input": {
                         "Type": "Textarea",
                         "InputClasses": null,
                         "Options": [],
-                        "Validations": [],
+                        "Validations": [
+                            {
+                                "Name": "Required",
+                                "Value": "",
+                                "ErrorMessage": "Tell us how your organisation will transition from apprenticeship frameworks to apprenticeship standards"
+                            },
+                            {
+                                "Name": "MaxLength",
+                                "Value": "1500",
+                                "ErrorMessage": "Your answer must be 1500 characters or less"
+                            }
+                        ],
                         "DataEndpoint": null
                     },
                     "Order": null,
@@ -519,8 +530,16 @@
                     ]
                 }
             ],
+			"Next": [
+                {
+                    "Action": "NextPage",
+                    "ReturnId": "6900",
+                    "Conditions": [],
+                    "ConditionMet": false
+                }
+            ],
             "ActivatedByPageId": "6050",
-            "BodyText": "<p class='govuk-body' id='pat-organisation-transition'>Your answer should include how your organisation has:</p><ul class='govuk-list govuk-list--bullet'><li>get commitment and approval from senior managers to deliver apprenticeship standards</li><li>have a governance group in place to monitor delivery of training</li><li>have an implementation plan specific to apprenticeship training</li><li>have resources that support the delivery of apprenticeship standards</li></ul></p>\n<p class='govuk-body'>Your answer should also include when your organisation will do this.</p>"
+            "BodyText": ""
         },
         {
             "PageId": "6054",
@@ -701,10 +720,41 @@
             "PageId": "6062",
             "SequenceId": null,
             "SectionId": null,
-            "Title": "organisation transition",
+            "Title": "",
             "LinkTitle": "organisation transition",
             "InfoText": "organisation transition",
-            "Questions": [],
+            "Questions": [
+                {
+                    "QuestionId": "PAT-62",
+                    "QuestionTag": "PAT-Organisation-Transition-supporting",
+                    "Label": "How will your organisation transition from apprenticeship frameworks to apprenticeship standards?",
+                    "ShortLabel": "",
+                    "InputClasses": null,
+                    "QuestionBodyText": "<p class='govuk-body' id='pat-organisation-transition'>Your answer should include how your organisation has:</p><ul class='govuk-list govuk-list--bullet'><li>get commitment and approval from senior managers to deliver apprenticeship standards</li><li>have a governance group in place to monitor delivery of training</li><li>have an implementation plan specific to apprenticeship training</li><li>have resources that support the delivery of apprenticeship standards</li></ul></p>\n<p class='govuk-body'>Your answer should also include when your organisation will do this.</p>",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "Textarea",
+                        "InputClasses": null,
+                        "Options": [],
+                        "Validations": [
+                            {
+                                "Name": "Required",
+                                "Value": "",
+                                "ErrorMessage": "Tell us how your organisation will transition from apprenticeship frameworks to apprenticeship standards"
+                            },
+                            {
+                                "Name": "MaxLength",
+                                "Value": "1500",
+                                "ErrorMessage": "Your answer must be 1500 characters or less"
+                            }
+                        ],
+                        "DataEndpoint": null
+                    },
+                    "Order": null,
+                    "Value": "",
+                    "ErrorMessages": null
+                }
+            ],
             "PageOfAnswers": [],
             "Next": [],
             "Complete": false,
@@ -718,13 +768,29 @@
                 {
                     "Field": "Apply-ProviderRoute",
                     "IsOneOf": [
+                        "3"
+                    ]
+                }
+            ],
+			 "NotRequiredConditions": [
+                {
+                    "Field": "Apply-ProviderRoute",
+                    "IsOneOf": [
                         "1",
                         "2"
                     ]
                 }
             ],
+			"Next": [
+                {
+                    "Action": "NextPage",
+                    "ReturnId": "6900",
+                    "Conditions": [],
+                    "ConditionMet": false
+                }
+            ],
             "ActivatedByPageId": "6060",
-            "BodyText": "<p class='govuk-body'>organisation transition Holding page</p>"
+            "BodyText": ""
         },
         {
             "PageId": "6064",
@@ -861,6 +927,34 @@
             ],
             "ActivatedByPageId": "6054",
             "BodyText": "<p class='govuk-body'>awarding bodies Holding page</p>"
+        },
+        {
+            "PageId": "6900",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "EPAO",
+            "LinkTitle": "EPAO",
+            "InfoText": "EPAO",
+            "Questions": [],
+            "PageOfAnswers": [],
+            "Next": [],
+            "Complete": false,
+            "AllowMultipleAnswers": false,
+            "Order": null,
+            "Active": false,
+            "Details": null,
+            "DisplayType": null,
+            "Feedback": null,
+            "NotRequiredConditions": [
+                {
+                    "Field": "Apply-ProviderRoute",
+                    "IsOneOf": [
+                        "3"
+                    ]
+                }
+            ],
+            "ActivatedByPageId": "6052,6062",
+            "BodyText": "<p class='govuk-body'>EPAO Holding page</p>"
         }
     ]
 }
