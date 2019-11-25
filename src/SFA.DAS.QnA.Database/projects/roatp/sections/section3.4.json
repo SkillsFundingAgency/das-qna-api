@@ -101,7 +101,11 @@
                     "IsOneOf": ["Sole trader"]
                 }
             ],
-            "BodyText": ""
+            "BodyText": "",
+            "Details": {
+                    "Title": "What acts are covered under criminal convictions?",
+                    "Body": "<h2 class='govuk-heading-m'>Serious crimes</h2><p class='govuk-body'>This is covered under section 44 to 46 of the Serious Crime Act 2007 and section 71 of the Coroners and Justice Act 2009.</p><h2 class='govuk-heading-m'>Criminal conduct</h2><p class='govuk-body'>This is covered under section 93A, 93B or 93C of the Criminal Justice Act 1988 and article 45, 46 or 47 of the Proceeds of Crime (Northern Ireland) Order 1996.</p><p class='govuk-body'>Offences in connection with taxation are covered under section 71 of the Criminal Justice Act 1993.</p><h2 class='govuk-heading-m'>Conspiracy</h2><p class='govuk-body'>This is covered under section 1 or 1A of the Criminal Law Act 1977 and article 9 or 9A of the Criminal Attempts and Conspiracy (Northern Ireland) Order 1983.</p><h2 class='govuk-heading-m'>Money laundering</h2><p class='govuk-body'>This is covered under section 340(11) and 415 of the Proceeds of Crime Act 2002</p><h2 class='govuk-heading-m'>Asylum and immigrants offences</h2><p class='govuk-body'>This is covered under section 4 of the Asylum and Immigration Act 2004.</p><h2 class='govuk-heading-m'>Sexual offences</h2><p class='govuk-body'>This is covered under section 59A of the Sexual Offences Act 2003.</p>"
+            },
         },
         {
             "PageId": "3301",
@@ -200,7 +204,11 @@
                     "IsOneOf": [null]
                 }
             ],
-            "BodyText": ""
+            "BodyText": "",
+            "Details": {
+                    "Title": "What acts are covered under criminal convictions?",
+                    "Body": "<h2 class='govuk-heading-m'>Serious crimes</h2><p class='govuk-body'>This is covered under section 44 to 46 of the Serious Crime Act 2007 and section 71 of the Coroners and Justice Act 2009.</p><h2 class='govuk-heading-m'>Criminal conduct</h2><p class='govuk-body'>This is covered under section 93A, 93B or 93C of the Criminal Justice Act 1988 and article 45, 46 or 47 of the Proceeds of Crime (Northern Ireland) Order 1996.</p><p class='govuk-body'>Offences in connection with taxation are covered under section 71 of the Criminal Justice Act 1993.</p><h2 class='govuk-heading-m'>Conspiracy</h2><p class='govuk-body'>This is covered under section 1 or 1A of the Criminal Law Act 1977 and article 9 or 9A of the Criminal Attempts and Conspiracy (Northern Ireland) Order 1983.</p><h2 class='govuk-heading-m'>Money laundering</h2><p class='govuk-body'>This is covered under section 340(11) and 415 of the Proceeds of Crime Act 2002</p><h2 class='govuk-heading-m'>Asylum and immigrants offences</h2><p class='govuk-body'>This is covered under section 4 of the Asylum and Immigration Act 2004.</p><h2 class='govuk-heading-m'>Sexual offences</h2><p class='govuk-body'>This is covered under section 59A of the Sexual Offences Act 2003.</p>"
+            },
         },
         {
             "PageId": "3310",
@@ -215,7 +223,7 @@
                     "QuestionTag": "Criminal-Control-Funds",
                     "Label": "Has anyone who's in control of your organisation failed to pay back funds in the last 3 years?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body' id='criminal-control-funds'>Tell us if anyone who's in control has failed to:</p><ul class='govuk-list govuk-list--bullet'><li>repay £50,000 or more to ESFA or any other public body</li><li>follow the conditions of funding under ESFA funding agreements or sub-contracts</li></ul>",
+                    "QuestionBodyText": "<p class='govuk-body' id='criminal-control-funds'>Tell us if anyone who's in control has failed to:</p><ul class='govuk-list govuk-list--bullet'><li>repay &pound;50,000 or more to ESFA or any other public body</li><li>follow the conditions of funding under ESFA funding agreements or sub-contracts</li></ul>",
                     "Hint": "",
                     "Input":
                     {
@@ -315,7 +323,7 @@
                     "QuestionTag": "Criminal-Control-Funds-SoleTrader",
                     "Label": "Have you failed to pay back funds in the last 3 years?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body' id='criminal-control-funds-soletrader'>Tell us if anyone who's in control has failed to:</p><ul class='govuk-list govuk-list--bullet'><li>serious crimes</li><li>repay £50,000 or more to ESFA or any other public body</li><li>follow the conditions of funding under ESFA funding agreements or sub-contracts</li></ul>",
+                    "QuestionBodyText": "<p class='govuk-body' id='criminal-control-funds-soletrader'>Tell us if anyone who's in control has failed to:</p><ul class='govuk-list govuk-list--bullet'><li>serious crimes</li><li>repay &pound;50,000 or more to ESFA or any other public body</li><li>follow the conditions of funding under ESFA funding agreements or sub-contracts</li></ul>",
                     "Hint": "",
                     "Input":
                     {
