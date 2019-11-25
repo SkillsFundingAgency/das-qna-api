@@ -764,14 +764,6 @@
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
-            "NotRequiredConditions": [
-                {
-                    "Field": "Apply-ProviderRoute",
-                    "IsOneOf": [
-                        "3"
-                    ]
-                }
-            ],
 			 "NotRequiredConditions": [
                 {
                     "Field": "Apply-ProviderRoute",
@@ -945,14 +937,6 @@
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
-            "NotRequiredConditions": [
-                {
-                    "Field": "Apply-ProviderRoute",
-                    "IsOneOf": [
-                        "3"
-                    ]
-                }
-            ],
             "ActivatedByPageId": "6052,6062",
             "BodyText": "<p class='govuk-body'>EPAO Holding page</p>"
         }
