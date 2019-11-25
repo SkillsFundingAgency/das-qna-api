@@ -146,7 +146,7 @@
                         "Validations": [{
                                 "Name": "Required",
                                 "Value": "",
-                                "ErrorMessage": "Enter an email"
+                                "ErrorMessage": "Enter a valid email"
                             }, {
                                 "Name": "Email",
                                 "Value": "",
