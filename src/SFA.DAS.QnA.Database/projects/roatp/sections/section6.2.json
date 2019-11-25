@@ -356,7 +356,7 @@
             "Next": [
                 {
                     "Action": "NextPage",
-                    "ReturnId": "6040",
+                    "ReturnId": "6900",
                     "Conditions": [],
                     "ConditionMet": false
                 }
@@ -370,26 +370,6 @@
             "HasFeedback": false,
             "ActivatedByPageId": "6020,6022",
             "BodyText": ""
-        },
-        {
-            "PageId": "6040",
-            "SequenceId": null,
-            "SectionId": null,
-            "Title": "engage with EPAO",
-            "LinkTitle": "engage with EPAO",
-            "InfoText": "engage with EPAO",
-            "Questions": [],
-            "PageOfAnswers": [],
-            "Next": [],
-            "Complete": false,
-            "AllowMultipleAnswers": false,
-            "Order": null,
-            "Active": false,
-            "Details": null,
-            "DisplayType": null,
-            "Feedback": null,
-            "ActivatedByPageId": "6020,6022",
-            "BodyText": "<p class='govuk-body'>engage with EPAO Holding page</p>"
         },
         {
             "PageId": "6050",
@@ -514,7 +494,6 @@
                 }
             ],
             "PageOfAnswers": [],
-            "Next": [],
             "Complete": false,
             "AllowMultipleAnswers": false,
             "Order": null,
@@ -756,7 +735,6 @@
                 }
             ],
             "PageOfAnswers": [],
-            "Next": [],
             "Complete": false,
             "AllowMultipleAnswers": false,
             "Order": null,
@@ -924,12 +902,111 @@
             "PageId": "6900",
             "SequenceId": null,
             "SectionId": null,
-            "Title": "EPAO",
-            "LinkTitle": "EPAO",
-            "InfoText": "EPAO",
-            "Questions": [],
+            "Title": "How will your organisation engage with end-point assessment organisations (EPAO's)?",
+            "LinkTitle": "epao",
+            "InfoText": "epao",
+            "Questions": [
+                {
+                    "QuestionId": "PAT-900",
+                    "QuestionTag": "PAT-epao",
+                    "Label": "How will your organisation engage with end-point assessment organisations (EPAO's)?",
+                    "ShortLabel": "",
+                    "InputClasses": null,
+                    "QuestionBodyText": "<p class='govuk-body' id='pat-organisation-transition'>Your answer should include how your organisation will:</p><ul class='govuk-list govuk-list--bullet'><li>find EPAO's for relevant apprenticeship standards contact EPAO's</li><li>engage employers in the process of choosing an EPAO</li><li>confirm a contract or service agreement with EPAO's</li></ul></p>\n<p class='govuk-body'>You'll also need to include what information your organisation will ask from an EPAO to ensure they are suitable.</p>",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "Textarea",
+                        "InputClasses": null,
+                        "Options": [],
+                        "Validations": [
+                            {
+                                "Name": "Required",
+                                "Value": "",
+                                "ErrorMessage": "Tell us how your organisation will engage with end-point assessment organisations (EPAO's)"
+                            },
+                            {
+                                "Name": "MaxLength",
+                                "Value": "1500",
+                                "ErrorMessage": "Your answer must be 1500 characters or less"
+                            }
+                        ],
+                        "DataEndpoint": null
+                    },
+                    "Order": null,
+                    "Value": "",
+                    "ErrorMessages": null
+                }
+            ],
             "PageOfAnswers": [],
-            "Next": [],
+            "Next": [
+                {
+                    "Action": "NextPage",
+                    "ReturnId": "6800",
+                    "Conditions": [		
+						{
+                            "QuestionId": null,
+                            "QuestionTag": "Apply-ProviderRoute",
+                            "MustEqual": "2"
+                        },					
+						{
+                            "QuestionId": null,
+                            "QuestionTag": "PAT-Type-Of-Training-employer",
+                            "Contains": "Apprenticeship standards"
+                        },
+						{
+                            "QuestionId": null,
+                            "QuestionTag": "PAT-Type-Of-Training-employer",
+                            "Contains": "Apprenticeship frameworks"
+                        }
+                    ],
+                    "ConditionMet": false
+                },
+				{
+                    "Action": "NextPage",
+                    "ReturnId": "6800",
+                    "Conditions": [                    
+						{
+                            "QuestionId": null,
+                            "QuestionTag": "Apply-ProviderRoute",
+                            "MustEqual": "1"
+                        },
+						{
+                            "QuestionId": null,
+                            "QuestionTag": "PAT-Type-Of-Training-main",
+                            "Contains": "Apprenticeship standards"
+                        },
+						{
+                            "QuestionId": null,
+                            "QuestionTag": "PAT-Type-Of-Training-main",
+                            "Contains": "Apprenticeship frameworks"
+                        }
+                    ],
+                    "ConditionMet": false
+                },
+                {
+                    "Action": "NextPage",
+                    "ReturnId": "6700",
+                    "Conditions": [   
+						{
+                            "QuestionId": null,
+                            "QuestionTag": "Apply-ProviderRoute",
+                            "MustEqual": "1"
+                        },					
+						{
+                            "QuestionId": null,
+                            "QuestionTag": "PAT-Type-Of-Training-main",
+                            "Contains": "Apprenticeship standards"
+                        }
+                    ],
+                    "ConditionMet": false
+                },
+                {
+                    "Action": "ReturnToSection",
+                    "ReturnId": "",
+                    "Conditions": [],
+                    "ConditionMet": false
+                }
+            ],
             "Complete": false,
             "AllowMultipleAnswers": false,
             "Order": null,
@@ -937,8 +1014,16 @@
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
-            "ActivatedByPageId": "6052,6062",
-            "BodyText": "<p class='govuk-body'>EPAO Holding page</p>"
+            "NotRequiredConditions": [
+                {
+                    "Field": "Apply-ProviderRoute",
+                    "IsOneOf": [
+                        "3"
+                    ]
+                }
+            ],
+            "ActivatedByPageId": "6060",
+            "BodyText": ""
         }
     ]
 }

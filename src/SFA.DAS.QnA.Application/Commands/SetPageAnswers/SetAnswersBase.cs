@@ -120,9 +120,27 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
                             var applicationData = JObject.Parse(application.ApplicationData);
                             var questionTag = applicationData[condition.QuestionTag];
 
-                            if (questionTag == null || questionTag.Value<string>() != condition.MustEqual)
+
+                            if (questionTag == null)
                             {
                                 someConditionsNotSatisfied = true;
+                            }
+                            else
+                            {
+                                if (!string.IsNullOrEmpty(condition.MustEqual) && questionTag.Value<string>() != condition.MustEqual)
+                                {
+                                    someConditionsNotSatisfied = true;
+                                }
+
+                                if (!string.IsNullOrEmpty(condition.Contains))
+                                {
+                                    var listOfAnswers = questionTag.Value<string>()
+                                        .Split(",", StringSplitOptions.RemoveEmptyEntries);
+                                    if (!listOfAnswers.Contains(condition.Contains))
+                                    {
+                                        someConditionsNotSatisfied = true;
+                                    }
+                                }
                             }
                         }
                         else
