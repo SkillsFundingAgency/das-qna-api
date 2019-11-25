@@ -184,7 +184,7 @@
                             }, {
                                 "Name": "MinLength",
                                 "Value": "10",
-                                "ErrorMessage": "Enter a contact number using 10 digits or less"
+                                "ErrorMessage": "Enter a contact number using 10 digits or more"
                             }, {
                                 "Name": "MaxLength",
                                 "Value": "20",
