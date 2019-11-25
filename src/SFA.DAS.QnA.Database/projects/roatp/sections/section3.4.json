@@ -420,10 +420,10 @@
             "Questions": [
                 {
                     "QuestionId": "CC-60",
-                    "QuestionTag": "Criminal-Contract-Investigated",
+                    "QuestionTag": "Criminal-Control-Investigated",
                     "Label": "Has anyone who's in control of your organisation been investigated for fraud or irregularities in the last 3 years?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body' id='criminal-contract-investigated'></p>",
+                    "QuestionBodyText": "<p class='govuk-body' id='criminal-control-investigated'></p>",
                     "Hint": "",
                     "Input":
                     {
@@ -434,7 +434,7 @@
                                 "FurtherQuestions": [
                                     {
                                         "QuestionId": "CC-60.1",
-                                        "QuestionTag": "Criminal-Contract-Investigated-Information",
+                                        "QuestionTag": "Criminal-Control-Investigated-Information",
                                         "Label": "Give us more information",
                                         "ShortLabel": "",
                                         "InputClasses": null,
@@ -520,10 +520,10 @@
             "Questions": [
                 {
                     "QuestionId": "CC-61",
-                    "QuestionTag": "Criminal-Contract-Investigated-SoleTrader",
+                    "QuestionTag": "Criminal-Control-Investigated-SoleTrader",
                     "Label": "Have you been investigated for fraud or irregularities in the last 3 years?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body' id='criminal-contract-investigated-soletrader'></p>",
+                    "QuestionBodyText": "<p class='govuk-body' id='criminal-control-investigated-soletrader'></p>",
                     "Hint": "",
                     "Input":
                     {
@@ -534,7 +534,7 @@
                                 "FurtherQuestions": [
                                     {
                                         "QuestionId": "CC-61.1",
-                                        "QuestionTag": "Criminal-Contract-Investigated-SoleTrader-Information",
+                                        "QuestionTag": "Criminal-Control-Investigated-SoleTrader-Information",
                                         "Label": "Give us more information",
                                         "ShortLabel": "",
                                         "InputClasses": null,
@@ -601,6 +601,206 @@
             "Order": null,
             "Active": false,
             "ActivatedByPageId": "3311",
+            "Feedback": null,
+            "HasFeedback": false,
+            "NotRequiredConditions": [{
+                    "Field": "SoleTrade-or-Partnership",
+                    "IsOneOf": [null]
+                }
+            ],
+            "BodyText": ""
+        },
+        {
+            "PageId": "3330",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "Checks on who's in control of your organisation",
+            "LinkTitle": "Checks on who's in control of your organisation",
+            "InfoText": "",
+            "Questions": [
+                {
+                    "QuestionId": "CC-70",
+                    "QuestionTag": "Criminal-Control-Ongoing",
+                    "Label": "Does anyone who's in control of your organisation have any ongoing investigations for fraud or irregularities?",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "<p class='govuk-body' id='criminal-control-ongoing'></p>",
+                    "Hint": "",
+                    "Input":
+                    {
+                        "Type": "ComplexRadio",
+                        "InputClasses": null,
+                        "Options": [
+                            {
+                                "FurtherQuestions": [
+                                    {
+                                        "QuestionId": "CC-70.1",
+                                        "QuestionTag": "Criminal-Control-Ongoing-Information",
+                                        "Label": "Give us more information",
+                                        "ShortLabel": "",
+                                        "InputClasses": null,
+                                        "QuestionBodyText": "",
+                                        "Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include a brief summary including:</p><ul class='govuk-list govuk-list--bullet govuk-hint'><li>full names of who this is</li><li>what the investigation is</li><li>any relevant dates</li></ul>",
+                                        "Input":
+                                        {
+                                            "Type": "Textarea",
+                                            "InputClasses": "",
+                                            "Options": [],
+                                            "Validations": [
+                                                {
+                                                    "Name": "Required",
+                                                    "Value": "",
+                                                    "ErrorMessage": "Enter more information "
+                                                },
+                                                {
+                                                    "Name": "MaxWordCount",
+                                                    "Value": "1500",
+                                                    "ErrorMessage": "Your answer must be 1500 characters or less"
+                                                }
+                                            ],
+                                            "DataEndpoint": null
+
+                                        },
+                                        "Order": null,
+                                        "Value": null,
+                                        "ErrorMessages": null
+                                    }
+                                ],
+                                "Value": "Yes",
+                                "Label": "Yes",
+                                "HintText": ""
+                            },
+                            {
+                                "FurtherQuestions": [],
+                                "Value": "No",
+                                "Label": "No",
+                                "HintText": ""
+                            }
+                        ],
+                        "Validations": [
+                            {
+                                "Name": "Required",
+                                "Value": "",
+                                "ErrorMessage": "Tell us if anyone who's in control of your organisation has any ongoing investigations for fraud or irregularities"
+                            }
+                        ],
+                        "DataEndpoint": null
+                    }
+                }
+            ],
+            "PageOfAnswers": [],
+            "Next": [
+                {
+                    "Action": "NextPage",
+                    "ReturnId": "3340",
+                    "Conditions": [],
+                    "ConditionMet": false
+                }				
+            ],
+            "Complete": false,
+            "AllowMultipleAnswers": false,
+            "Order": null,
+            "Active": false,
+            "ActivatedByPageId": "3320",
+            "Feedback": null,
+            "HasFeedback": false,
+            "NotRequiredConditions": [{
+                    "Field": "SoleTrade-or-Partnership",
+                    "IsOneOf": ["Sole trader"]
+                }
+            ],
+            "BodyText": ""
+        },
+        {
+            "PageId": "3331",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "Checks on who's in control of your organisation",
+            "LinkTitle": "Checks on who's in control of your organisation",
+            "InfoText": "",
+            "Questions": [
+                {
+                    "QuestionId": "CC-71",
+                    "QuestionTag": "Criminal-Control-Ongoing-SoleTrader",
+                    "Label": "Do you have any ongoing investigations for fraud or irregularities?",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "<p class='govuk-body' id='criminal-control-ongoing-soletrader'></p>",
+                    "Hint": "",
+                    "Input":
+                    {
+                        "Type": "ComplexRadio",
+                        "InputClasses": null,
+                        "Options": [
+                            {
+                                "FurtherQuestions": [
+                                    {
+                                        "QuestionId": "CC-71.1",
+                                        "QuestionTag": "Criminal-Control-Ongoing-SoleTrader-Information",
+                                        "Label": "Give us more information",
+                                        "ShortLabel": "",
+                                        "InputClasses": null,
+                                        "QuestionBodyText": "",
+                                        "Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include a brief summary including:</p><ul class='govuk-list govuk-list--bullet govuk-hint'><li>what the investigation is</li><li>any relevant dates</li></ul>",
+                                        "Input":
+                                        {
+                                            "Type": "Textarea",
+                                            "InputClasses": "",
+                                            "Options": [],
+                                            "Validations": [
+                                                {
+                                                    "Name": "Required",
+                                                    "Value": "",
+                                                    "ErrorMessage": "Enter more information "
+                                                },
+                                                {
+                                                    "Name": "MaxWordCount",
+                                                    "Value": "1500",
+                                                    "ErrorMessage": "Your answer must be 1500 characters or less"
+                                                }
+                                            ],
+                                            "DataEndpoint": null
+
+                                        },
+                                        "Order": null,
+                                        "Value": null,
+                                        "ErrorMessages": null
+                                    }
+                                ],
+                                "Value": "Yes",
+                                "Label": "Yes",
+                                "HintText": ""
+                            },
+                            {
+                                "FurtherQuestions": [],
+                                "Value": "No",
+                                "Label": "No",
+                                "HintText": ""
+                            }
+                        ],
+                        "Validations": [
+                            {
+                                "Name": "Required",
+                                "Value": "",
+                                "ErrorMessage": "Tell us if you have any ongoing investigations for fraud or irregularities"
+                            }
+                        ],
+                        "DataEndpoint": null
+                    }
+                }
+            ],
+            "PageOfAnswers": [],
+            "Next": [
+                {
+                    "Action": "NextPage",
+                    "ReturnId": "3341",
+                    "Conditions": [],
+                    "ConditionMet": false
+                }				
+            ],
+            "Complete": false,
+            "AllowMultipleAnswers": false,
+            "Order": null,
+            "Active": false,
+            "ActivatedByPageId": "3321",
             "Feedback": null,
             "HasFeedback": false,
             "NotRequiredConditions": [{
