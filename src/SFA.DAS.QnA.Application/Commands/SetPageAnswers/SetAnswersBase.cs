@@ -44,7 +44,7 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
                             var question = page.Questions.Single(q => q.QuestionId == condition.QuestionId);
                             var answer = answers.FirstOrDefault(a => a.QuestionId == condition.QuestionId);
 
-                            if (question.Input.Type == "CheckboxList")
+                            if (question.Input.Type.ToLower() == "checkboxlist")
                             {
                                 if (answer == null)
                                 {
@@ -62,10 +62,14 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
                             }
                             else
                             {
-                                if (answer == null || answer.QuestionId != condition.QuestionId || answer.Value != condition.MustEqual)
+                                if (answer == null || answer.QuestionId != condition.QuestionId) 
                                 {
                                     someConditionsNotSatisfied = true;
-                                }    
+                                }
+                                else if (answer.Value != condition.MustEqual && answer.Value !=condition.Contains)
+                                {
+                                    someConditionsNotSatisfied = true;
+                                }
                             }
                     }
 
@@ -113,65 +117,65 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
                     
                     foreach (var condition in next.Conditions)
                     {
-                        if (!String.IsNullOrWhiteSpace(condition.QuestionTag))
+                        if (!string.IsNullOrWhiteSpace(condition.QuestionId))
+                        {
+                                var question = page.Questions.Single(q => q.QuestionId == condition.QuestionId);
+                                var answer = answers.FirstOrDefault(a => a.QuestionId == condition.QuestionId);
+
+                                if (question.Input.Type.ToLower() == "checkboxlist")
+                                {
+                                    if (answer == null)
+                                    {
+                                        someConditionsNotSatisfied = true;
+                                    }
+                                    else
+                                    {
+                                        var answerValueList = answer.Value.Split(",", StringSplitOptions.RemoveEmptyEntries);
+
+                                        if (answer.QuestionId != condition.QuestionId || !answerValueList.Contains(condition.Contains))
+                                        {
+                                            someConditionsNotSatisfied = true;
+                                        }
+                                    }
+                                }
+                                else
+                                {
+                                    if (answer == null || answer.QuestionId != condition.QuestionId)
+                                    {
+                                        someConditionsNotSatisfied = true;
+                                    }
+                                    else if (answer.Value != condition.MustEqual && answer.Value != condition.Contains)
+                                    {
+                                        someConditionsNotSatisfied = true;
+                                    }
+                                }
+                        }
+                        else if (!String.IsNullOrWhiteSpace(condition.QuestionTag))
                         {
                             var application =
                                 qnaDataContext.Applications.FirstOrDefault(app => app.Id == section.ApplicationId);
                             var applicationData = JObject.Parse(application.ApplicationData);
                             var questionTag = applicationData[condition.QuestionTag];
 
-
-                            if (questionTag == null)
+                            if (!string.IsNullOrEmpty(condition.MustEqual) && questionTag.Value<string>() != condition.MustEqual)
                             {
                                 someConditionsNotSatisfied = true;
                             }
-                            else
+                            else if (!string.IsNullOrEmpty(condition.Contains))
                             {
-                                if (!string.IsNullOrEmpty(condition.MustEqual) && questionTag.Value<string>() != condition.MustEqual)
+                                var listOfAnswers = questionTag.Value<string>()
+                                    .Split(",", StringSplitOptions.RemoveEmptyEntries);
+                                if (!listOfAnswers.Contains(condition.Contains))
                                 {
                                     someConditionsNotSatisfied = true;
                                 }
-
-                                if (!string.IsNullOrEmpty(condition.Contains))
-                                {
-                                    var listOfAnswers = questionTag.Value<string>()
-                                        .Split(",", StringSplitOptions.RemoveEmptyEntries);
-                                    if (!listOfAnswers.Contains(condition.Contains))
-                                    {
-                                        someConditionsNotSatisfied = true;
-                                    }
-                                }
                             }
+                            
                         }
                         else
                         {
-                            var question = page.Questions.Single(q => q.QuestionId == condition.QuestionId);
-                            var answer = answers.FirstOrDefault(a => a.QuestionId == condition.QuestionId);
-
-                            if (question.Input.Type.ToLower() == "checkboxlist")
-                            {
-                                if (answer == null)
-                                {
-                                    someConditionsNotSatisfied = true;
-                                }
-                                else
-                                {
-                                    var answerValueList = answer.Value.Split(",", StringSplitOptions.RemoveEmptyEntries);
-                                
-                                    if (answer.QuestionId != condition.QuestionId || !answerValueList.Contains(condition.Contains))
-                                    {
-                                        someConditionsNotSatisfied = true;
-                                    }    
-                                }
-                            }
-                            else
-                            {
-                                if (answer == null || answer.QuestionId != condition.QuestionId || answer.Value != condition.MustEqual)
-                                {
-                                    someConditionsNotSatisfied = true;
-                                }    
-                            }
-                        }   
+                            someConditionsNotSatisfied = true;
+                        }
                     }
 
                     if (!someConditionsNotSatisfied)
