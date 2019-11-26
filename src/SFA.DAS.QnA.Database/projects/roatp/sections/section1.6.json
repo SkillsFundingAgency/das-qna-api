@@ -1078,11 +1078,23 @@
             "PageOfAnswers": [],
             "Next": [
                 {
+                    "Action": "NextPage",
+                    "ReturnId": "360",
+                    "Condition": null,
+                    "Conditions": [
+                        {
+                            "QuestionId": "YO-350",
+                            "MustEqual": "Yes"
+                        }
+                    ],
+                    "ConditionMet": false
+                },
+                {
                     "Action": "ReturnToSection",
                     "ReturnId": "1.6",
                     "Conditions": [],
                     "ConditionMet": false
-                }
+                }                
             ],
             "Complete": false,
             "AllowMultipleAnswers": false,
@@ -1123,6 +1135,73 @@
             "NotRequiredConditions": [],
             "ActivatedByPageId": "311",
             "BodyText": "<p class='govuk-body'>This is because your organisation got an 'inadequate' grade within the last 3 years.</p><p class='govuk-body'><a href='https://www.gov.uk'>Back to GOV.UK</a></p>"
+        },
+        {
+            "PageId": "360",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "Upload a copy of a legally binding contract between your organisation and a main or employer provider",
+            "LinkTitle": "Upload a copy of a legally binding contract between your organisation and a main or employer provider",
+            "InfoText": "",
+            "Questions": [
+                {
+                    "QuestionId": "YO-360",
+                    "QuestionTag": null,
+                    "Label": "Upload a copy of a legally binding contract between your organisation and a main or employer provider",
+                    "ShortLabel": "",
+                    "InputClasses": null,
+                    "QuestionBodyText": "<p class='govuk-body'>The contract must be:</p><ul class='govuk-list govuk-list--bullet'><li>signed and dated by your organisation and a main or employer provider</li><li>from the last 12 months</li></ul><p class='govuk-body'>The file must be a PDF and smaller than 5MB.</p>",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "FileUpload",
+                        "InputClasses": null,
+                        "Options": [],
+                        "Validations": [
+                            {
+                                "Name": "Required",
+                                "Value": "",
+                                "ErrorMessage": "Select a copy of a legally binding contract between your organisation and a main or employer provider"
+                            },
+                            {
+                                "Name": "FileType",
+                                "Value": "pdf",
+                                "ErrorMessage": "The selected file must be a PDF"
+                            }
+                        ],
+                        "DataEndpoint": null
+                    },
+                    "Order": null,
+                    "Value": "",
+                    "ErrorMessages": null
+                }
+            ],
+            "PageOfAnswers": [],
+            "Next": [
+                {
+                    "Action": "ReturnToSection",
+                    "ReturnId": "1.6",
+                    "Conditions": [],
+                    "ConditionMet": false
+                }    
+            ],
+            "Complete": false,
+            "AllowMultipleAnswers": false,
+            "Order": null,
+            "Active": false,
+            "NotRequiredConditions": [
+                {
+                    "Field": "Apply-ProviderRoute",
+                    "IsOneOf": [
+                        "1",
+                        "2"
+                    ]
+                }
+            ],
+            "BodyText": "",
+            "Details": null,
+            "DisplayType": null,
+            "Feedback": null,
+            "ActivatedByPageId": "350"
         }
     ]
 }
