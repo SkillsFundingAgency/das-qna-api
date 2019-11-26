@@ -198,7 +198,7 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
 
         public Next FindNextRequiredAction(ApplicationSection section, QnaDataContext qnaDataContext, Next nextAction)
         {
-            if (nextAction.Action != "NextPage") return nextAction;
+            if (nextAction is null || nextAction.Action != "NextPage") return nextAction;
             
             // Check here for any NotRequiredConditions on the next page.
 
@@ -265,11 +265,8 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
                     ActivateDependentPages(next, page.PageId, qnaData);
                 }
             }
-            else
+            else if(nextAction != null)
             {
-                var hasConditionalBranch = page.Next.Any(n => n.Conditions != null && n.Conditions.Any());
-                if (!hasConditionalBranch || nextAction == null || (nextAction.Conditions == null && nextAction.Conditions.Any())) return;
-
                 if (page.PageOfAnswers != null && page.PageOfAnswers.Count > 0)
                 {
                     var existingAnswer = page.PageOfAnswers?[0].Answers.SingleOrDefault(a => a.QuestionId == answers[0].QuestionId);
