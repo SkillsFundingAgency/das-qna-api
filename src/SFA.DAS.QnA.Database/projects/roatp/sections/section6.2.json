@@ -867,19 +867,65 @@
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
-            "ActivatedByPageId": "6020,6022",
+            "ActivatedByPageId": "6020,6022,6800",
             "BodyText": "<p class='govuk-body'>course directory contact Holding page</p>"
         },
         {
             "PageId": "6800",
             "SequenceId": null,
             "SectionId": null,
-            "Title": "awarding bodies",
+            "Title": "How does your organisation plan to engage and work with awarding bodies?",
             "LinkTitle": "awarding bodies",
             "InfoText": "awarding bodies",
-            "Questions": [],
+            "Questions": [{
+                    "QuestionId": "PAT-800",
+                    "QuestionTag": "PAT-awarding-bodies",
+                    "Label": "How does your organisation plan to engage and work with awarding bodies?",
+                    "ShortLabel": "",
+                    "InputClasses": null,
+                    "QuestionBodyText": "<p class='govuk-body' id='pat-organisation-transition'>Your answer should include how your organisation will:</p><ul class='govuk-list govuk-list--bullet'><li>find awarding bodies for relevant apprenticeship frameworks</li><li>contact awarding bodies</li><li>get relevant information from awarding bodies</li><li>engage employers in the process of choosing an awarding body</li><li>confirm a contract or service agreement with awarding bodies</li></ul></p>\n<p class='govuk-body'>You'll also need to include what information your organisation will ask from an awarding body to ensure they are suitable.</p>",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "Textarea",
+                        "InputClasses": null,
+                        "Options": [],
+                        "Validations": [
+                            {
+                                "Name": "Required",
+                                "Value": "",
+                                "ErrorMessage": "Tell us how your organisation plans to engage and work with awarding bodies"
+                            },
+                            {
+                                "Name": "MaxLength",
+                                "Value": "1500",
+                                "ErrorMessage": "Your answer must be 1500 characters or less"
+                            }
+                        ],
+                        "DataEndpoint": null
+                    },
+                    "Order": null,
+                    "Value": "",
+                    "ErrorMessages": null
+                }],
             "PageOfAnswers": [],
-            "Next": [],
+            "Next": [{
+                    "Action": "NextPage",
+                    "ReturnId": "6700",
+                    "Conditions": [		
+						{
+                            "QuestionId": null,
+                            "QuestionTag": "Apply-ProviderRoute",
+                            "MustEqual": "1"
+                        }
+                    ],
+                    "ConditionMet": false
+                },
+				{
+                    "Action": "ReturnToSection",
+                    "ReturnId": "",
+                    "Conditions": [],
+                    "ConditionMet": false
+                }],
             "Complete": false,
             "AllowMultipleAnswers": false,
             "Order": null,
@@ -895,8 +941,8 @@
                     ]
                 }
             ],
-            "ActivatedByPageId": "6054",
-            "BodyText": "<p class='govuk-body'>awarding bodies Holding page</p>"
+            "ActivatedByPageId": "6054,6900",
+            "BodyText": ""
         },
         {
             "PageId": "6900",
