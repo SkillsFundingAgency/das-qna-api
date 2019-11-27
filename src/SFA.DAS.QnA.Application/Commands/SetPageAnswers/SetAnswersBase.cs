@@ -157,7 +157,7 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
                             var applicationData = JObject.Parse(application.ApplicationData);
                             var questionTag = applicationData[condition.QuestionTag];
 
-                            if (!string.IsNullOrEmpty(condition.MustEqual) && questionTag.Value<string>() != condition.MustEqual)
+                            if (questionTag== null || (!string.IsNullOrEmpty(condition.MustEqual) && questionTag.Value<string>() != condition.MustEqual))
                             {
                                 someConditionsNotSatisfied = true;
                             }
