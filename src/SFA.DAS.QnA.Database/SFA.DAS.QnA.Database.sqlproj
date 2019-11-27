@@ -56,7 +56,7 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
-    <SqlCmdVariable  Include="ProjectPath">
+    <SqlCmdVariable Include="ProjectPath">
       <Value>$(SourceRoot)</Value>
     </SqlCmdVariable>
   </ItemGroup>
@@ -67,6 +67,8 @@
     <Folder Include="projects\" />
     <Folder Include="projects\epaoall\" />
     <Folder Include="projects\epaoall\sections" />
+    <Folder Include="projects\roatp" />
+    <Folder Include="projects\roatp\sections" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Tables\Applications.sql" />
