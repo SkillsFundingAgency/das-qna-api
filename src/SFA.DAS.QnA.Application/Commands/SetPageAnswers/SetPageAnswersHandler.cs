@@ -50,16 +50,16 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
             page.Complete = true;
 
             MarkFeedbackComplete(page);
+            
+            await SaveAnswersIntoPage(request, cancellationToken, qnaData, section);
+
+            await UpdateApplicationData(request.ApplicationId, page, request.Answers);
 
             var nextAction = GetNextAction(page, request.Answers, section, _dataContext);
 
             var checkboxListAllNexts = GetCheckboxListMatchingNextActions(page, request.Answers, section, _dataContext);
             
             SetStatusOfNextPagesBasedOnAnswer(qnaData, page, request.Answers, nextAction, checkboxListAllNexts);
-
-            await SaveAnswersIntoPage(request, cancellationToken, qnaData, section);
-
-            await UpdateApplicationData(request.ApplicationId, page, request.Answers);
             
             return new HandlerResponse<SetPageAnswersResponse>(new SetPageAnswersResponse(nextAction.Action, nextAction.ReturnId));
         }
