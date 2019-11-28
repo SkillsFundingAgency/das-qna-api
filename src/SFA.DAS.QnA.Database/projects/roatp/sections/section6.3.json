@@ -8,15 +8,44 @@
             "PageId": "6300",
             "SequenceId": null,
             "SectionId": null,
-            "Title": "Supporting apprentices",
+            "Title": "How will your organisation ensure apprentices are supported during their apprenticeship training?",
             "LinkTitle": "Supporting apprentices",
             "InfoText": "Supporting apprentices",
-            "Questions": [ ],
+            "Questions": [{
+                    "QuestionId": "PAT-630",
+                    "QuestionTag": "",
+                    "Label": "How will your organisation ensure apprentices are supported during their apprenticeship training?",
+                    "ShortLabel": "",
+                    "InputClasses": null,
+                    "QuestionBodyText": "<p class='govuk-body' id='pat-organisation-transition'>Your answer must include how your organisation will:</p><ul class='govuk-list govuk-list--bullet'><li>have the right people in place to support apprentices</li><li>financially support apprentices - for example, arranging funding for equipment</li></ul></p>",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "Textarea",
+                        "InputClasses": null,
+                        "Options": [],
+                        "Validations": [
+                            {
+                                "Name": "Required",
+                                "Value": "",
+                                "ErrorMessage": "Tell us how your organisation will ensure apprentices are supported during their apprenticeship training"
+                            },
+                            {
+                                "Name": "MaxLength",
+                                "Value": "750",
+                                "ErrorMessage": "Your answer must be 750 characters or less"
+                            }
+                        ],
+                        "DataEndpoint": null
+                    },
+                    "Order": null,
+                    "Value": "",
+                    "ErrorMessages": null
+                }],
             "PageOfAnswers": [],
             "Next": [
                 {
                     "Action": "NextPage",
-                    "ReturnId": "6040",
+                    "ReturnId": "6310",
                     "Conditions": [],
                     "ConditionMet": false
                 }
@@ -38,7 +67,34 @@
                 }
             ],
             "ActivatedByPageId": null,
-            "BodyText": "<p class='govuk-body'>Supporting apprentices Holding page</p>"
+            "BodyText": "<p class='govuk-body'></p>"
+        },
+		   {
+            "PageId": "6310",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "how apprentices suported",
+            "LinkTitle": "how apprentices suported",
+            "InfoText": "how apprentices suported",
+            "Questions": [],
+            "PageOfAnswers": [],
+            "Next": [
+                {
+                    "Action": "ReturnToSection",
+                    "ReturnId": "",
+                    "Conditions": [],
+                    "ConditionMet": false
+                }
+            ],
+            "Complete": false,
+            "AllowMultipleAnswers": false,
+            "Order": null,
+            "Active": false,
+            "Visible": true,
+            "Feedback": null,
+            "HasFeedback": false,
+            "ActivatedByPageId": "6300",
+            "BodyText": "how apprentices suported holding page"
         }
     ]
 }
