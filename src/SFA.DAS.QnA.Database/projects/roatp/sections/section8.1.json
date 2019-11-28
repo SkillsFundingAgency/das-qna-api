@@ -1,7 +1,7 @@
 {
     "Title": "Introduction and what you'll need",
     "LinkTitle": "Introduction and what you'll need",
-    "DisplayType": "Pages",
+    "DisplayType": "",
     "RequestedFeedbackAnswered": null,
     "Pages": [
         {
@@ -9,28 +9,15 @@
             "SequenceId": null,
             "SectionId": null,
             "Title": "Evaluating apprenticeship training",
-            "LinkTitle": "",
+            "LinkTitle": "Evaluating apprenticeship training",
             "InfoText": "",
-            "Questions": [
-                {
-                    "QuestionId": "EAT-10",
-                    "QuestionTag": "EAT-Introduction-MainEmployer",
-                    "Label": "Evaluating apprenticeship training",
-                    "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body'>Lorem ipsum Evaluating apprenticeship training introduction page - main and employer provider</p>",
-                    "Hint": "",
-                    "Input": {
-                        "Type": "Hidden",
-                        "Validations": []
-                    },
-                    "Order": null
-                }
-            ],
+            "Questions": [],
             "PageOfAnswers": [],
             "Next": [
                 {
-                    "Action": "NextPage",
-                    "ReturnId": null,
+                    "Action": "ReturnToSection",
+                    "ReturnId": "8.1",
+                    "Condition": null,
                     "Conditions": [],
                     "ConditionMet": false
                 }
@@ -39,40 +26,35 @@
             "AllowMultipleAnswers": false,
             "Order": null,
             "Active": true,
-            "Visible": true,
+            "NotRequiredConditions": [
+                {
+                    "Field": "Apply-ProviderRoute",
+                    "IsOneOf": [
+                        "2",
+                        "3"
+                    ]
+                }
+            ],
+            "BodyText": "<p class='govuk-body'>Lorem ipsum main provider.</p>",
+            "Details": null,
+            "DisplayType": null,
             "Feedback": null,
-            "HasFeedback": false,
-            "NotRequiredConditions": [],
-            "ActivatedByPageId": null,
-            "BodyText": ""
+            "ActivatedByPageId": null
         },
         {
             "PageId": "8001",
             "SequenceId": null,
             "SectionId": null,
-            "Title": "Delivering apprenticeship training",
-            "LinkTitle": "",
+            "Title": "Evaluating apprenticeship training",
+            "LinkTitle": "Evaluating apprenticeship training",
             "InfoText": "",
-            "Questions": [
-                {
-                    "QuestionId": "EAT-11",
-                    "QuestionTag": "EAT-Introduction-Supporting",
-                    "Label": "Evaluating apprenticeship training",
-                    "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body'>Lorem ipsum Evaluating apprenticeship training introduction page - supporting provider</p>",
-                    "Hint": "",
-                    "Input": {
-                        "Type": "Hidden",
-                        "Validations": []
-                    },
-                    "Order": null
-                }
-            ],
+            "Questions": [],
             "PageOfAnswers": [],
             "Next": [
                 {
-                    "Action": "NextPage",
-                    "ReturnId": null,
+                    "Action": "ReturnToSection",
+                    "ReturnId": "8.1",
+                    "Condition": null,
                     "Conditions": [],
                     "ConditionMet": false
                 }
@@ -81,12 +63,57 @@
             "AllowMultipleAnswers": false,
             "Order": null,
             "Active": true,
-            "Visible": true,
+            "NotRequiredConditions": [
+                {
+                    "Field": "Apply-ProviderRoute",
+                    "IsOneOf": [
+                        "1",
+                        "3"
+                    ]
+                }
+            ],
+            "BodyText": "<p class='govuk-body'>Lorem ipsum employer provider.</p>",
+            "Details": null,
+            "DisplayType": null,
             "Feedback": null,
-            "HasFeedback": false,
-            "NotRequiredConditions": [],
-            "ActivatedByPageId": null,
-            "BodyText": ""
+            "ActivatedByPageId": null
+        },
+        {
+            "PageId": "8002",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "Evaluating apprenticeship training",
+            "LinkTitle": "Evaluating apprenticeship training",
+            "InfoText": "",
+            "Questions": [],
+            "PageOfAnswers": [],
+            "Next": [
+                {
+                    "Action": "ReturnToSection",
+                    "ReturnId": "8.1",
+                    "Condition": null,
+                    "Conditions": [],
+                    "ConditionMet": false
+                }
+            ],
+            "Complete": false,
+            "AllowMultipleAnswers": false,
+            "Order": null,
+            "Active": true,
+            "NotRequiredConditions": [
+                {
+                    "Field": "Apply-ProviderRoute",
+                    "IsOneOf": [
+                        "1",
+                        "2"
+                    ]
+                }
+            ],
+            "BodyText": "<p class='govuk-body'>Lorem ipsum supporting provider.</p>",
+            "Details": null,
+            "DisplayType": null,
+            "Feedback": null,
+            "ActivatedByPageId": null
         }
     ]
 }
