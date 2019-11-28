@@ -1,7 +1,7 @@
 {
     "Title": "Introduction and what you'll need",
     "LinkTitle": "Introduction and what you'll need",
-    "DisplayType": "Pages",
+    "DisplayType": "",
     "RequestedFeedbackAnswered": null,
     "Pages": [
         {
@@ -9,28 +9,15 @@
             "SequenceId": null,
             "SectionId": null,
             "Title": "Delivering apprenticeship training",
-            "LinkTitle": "",
+            "LinkTitle": "Delivering apprenticeship training",
             "InfoText": "",
-            "Questions": [
-                {
-                    "QuestionId": "DAT-10",
-                    "QuestionTag": "DAT-Introduction-Main",
-                    "Label": "Delivering apprenticeship training",
-                    "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body'>Lorem ipsum Delivering apprenticeship training introduction page - main provider</p>",
-                    "Hint": "",
-                    "Input": {
-                        "Type": "Hidden",
-                        "Validations": []
-                    },
-                    "Order": null
-                }
-            ],
+            "Questions": [],
             "PageOfAnswers": [],
             "Next": [
                 {
-                    "Action": "NextPage",
-                    "ReturnId": null,
+                    "Action": "ReturnToSection",
+                    "ReturnId": "7.1",
+                    "Condition": null,
                     "Conditions": [],
                     "ConditionMet": false
                 }
@@ -39,40 +26,35 @@
             "AllowMultipleAnswers": false,
             "Order": null,
             "Active": true,
-            "Visible": true,
+            "NotRequiredConditions": [
+                {
+                    "Field": "Apply-ProviderRoute",
+                    "IsOneOf": [
+                        "2",
+                        "3"
+                    ]
+                }
+            ],
+            "BodyText": "<p class='govuk-body'>Lorem ipsum main provider.</p>",
+            "Details": null,
+            "DisplayType": null,
             "Feedback": null,
-            "HasFeedback": false,
-            "NotRequiredConditions": [],
-            "ActivatedByPageId": null,
-            "BodyText": ""
+            "ActivatedByPageId": null
         },
         {
             "PageId": "7001",
             "SequenceId": null,
             "SectionId": null,
             "Title": "Delivering apprenticeship training",
-            "LinkTitle": "",
+            "LinkTitle": "Delivering apprenticeship training",
             "InfoText": "",
-            "Questions": [
-                {
-                    "QuestionId": "DAT-11",
-                    "QuestionTag": "DAT-Introduction-Employer",
-                    "Label": "Delivering apprenticeship training",
-                    "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body'>Lorem ipsum Delivering apprenticeship training introduction page - employer provider</p>",
-                    "Hint": "",
-                    "Input": {
-                        "Type": "Hidden",
-                        "Validations": []
-                    },
-                    "Order": null
-                }
-            ],
+            "Questions": [],
             "PageOfAnswers": [],
             "Next": [
                 {
-                    "Action": "NextPage",
-                    "ReturnId": null,
+                    "Action": "ReturnToSection",
+                    "ReturnId": "7.1",
+                    "Condition": null,
                     "Conditions": [],
                     "ConditionMet": false
                 }
@@ -81,40 +63,35 @@
             "AllowMultipleAnswers": false,
             "Order": null,
             "Active": true,
-            "Visible": true,
+            "NotRequiredConditions": [
+                {
+                    "Field": "Apply-ProviderRoute",
+                    "IsOneOf": [
+                        "1",
+                        "3"
+                    ]
+                }
+            ],
+            "BodyText": "<p class='govuk-body'>Lorem ipsum employer provider.</p>",
+            "Details": null,
+            "DisplayType": null,
             "Feedback": null,
-            "HasFeedback": false,
-            "NotRequiredConditions": [],
-            "ActivatedByPageId": null,
-            "BodyText": ""
+            "ActivatedByPageId": null
         },
         {
             "PageId": "7002",
             "SequenceId": null,
             "SectionId": null,
             "Title": "Delivering apprenticeship training",
-            "LinkTitle": "",
+            "LinkTitle": "Delivering apprenticeship training",
             "InfoText": "",
-            "Questions": [
-                {
-                    "QuestionId": "DAT-12",
-                    "QuestionTag": "DAT-Introduction-Supporting",
-                    "Label": "Delivering apprenticeship training",
-                    "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body'>Lorem ipsum Delivering apprenticeship training introduction page - supporting provider</p>",
-                    "Hint": "",
-                    "Input": {
-                        "Type": "Hidden",
-                        "Validations": []
-                    },
-                    "Order": null
-                }
-            ],
+            "Questions": [],
             "PageOfAnswers": [],
             "Next": [
                 {
-                    "Action": "NextPage",
-                    "ReturnId": null,
+                    "Action": "ReturnToSection",
+                    "ReturnId": "7.1",
+                    "Condition": null,
                     "Conditions": [],
                     "ConditionMet": false
                 }
@@ -123,12 +100,20 @@
             "AllowMultipleAnswers": false,
             "Order": null,
             "Active": true,
-            "Visible": true,
+            "NotRequiredConditions": [
+                {
+                    "Field": "Apply-ProviderRoute",
+                    "IsOneOf": [
+                        "1",
+                        "2"
+                    ]
+                }
+            ],
+            "BodyText": "<p class='govuk-body'>Lorem ipsum supporting provider.</p>",
+            "Details": null,
+            "DisplayType": null,
             "Feedback": null,
-            "HasFeedback": false,
-            "NotRequiredConditions": [],
-            "ActivatedByPageId": null,
-            "BodyText": ""
+            "ActivatedByPageId": null
         }
     ]
 }
