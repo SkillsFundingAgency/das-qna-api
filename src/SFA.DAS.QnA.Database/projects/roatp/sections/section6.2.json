@@ -854,12 +854,71 @@
             "PageId": "6700",
             "SequenceId": null,
             "SectionId": null,
-            "Title": "course directory contact",
-            "LinkTitle": "course directory contact",
-            "InfoText": "course directory contact",
-            "Questions": [],
+            "Title": "Who can we contact about the apprenticeships your organisation will deliver?",
+            "LinkTitle": "",
+            "InfoText": "",
+            "Questions": [{
+          "QuestionId": "PAT-671",
+          "QuestionTag": "Pat-contact-directory-name",
+          "Label": "<span class='govuk-label'>Full name</span>",
+          "ShortLabel": "",
+          "QuestionBodyText": "",
+          "Hint": "",
+          "Input": {
+            "Type": "Text",
+            "Validations": [
+              {
+                "Name": "Required",
+                "Value": null,
+                "ErrorMessage": "Enter a full name"
+              },
+              {
+                "Name": "MaxLength",
+                "Value": 255,
+                "ErrorMessage": "Enter a full name using 255 characters or less"
+              }
+            ]
+          },
+          "Order": null
+        },
+        {
+          "QuestionId": "PAT-672",
+          "QuestionTag": "Pat-contact-directory-email",
+          "Label": "<span class='govuk-label'>Email</span>",
+          "ShortLabel": "",
+          "QuestionBodyText": "",
+          "Hint": "",
+          "Input": {
+            "Type": "Text",
+            "Validations": [
+              {
+                "Name": "Required",
+                "Value": null,
+                "ErrorMessage": "Enter a valid email"
+              },
+              {
+                "Name": "MaxLength",
+                "Value": 70,
+                "ErrorMessage": "Enter an email using 70 characters or less"
+              },
+              {
+                "Name": "Email",
+                "Value": null,
+                "ErrorMessage": "Enter an email in the correct format, like name@example.com"
+              }
+            ]
+          },
+          "Order": null
+        }],
             "PageOfAnswers": [],
-            "Next": [],
+            "Next": [
+                {
+                    "Action": "ReturnToSection",
+                    "ReturnId": "",
+                    "Conditions": [],
+                    "ConditionMet": false
+                }
+            ],
             "Complete": false,
             "AllowMultipleAnswers": false,
             "Order": null,
@@ -868,7 +927,7 @@
             "DisplayType": null,
             "Feedback": null,
             "ActivatedByPageId": "6020,6022,6800",
-            "BodyText": "<p class='govuk-body'>course directory contact Holding page</p>"
+            "BodyText": "<p class='govuk-body'>This must be the person who will use the 'Publish to Course Directory' service to enter your organisation's apprenticeships.</p>"
         },
         {
             "PageId": "6800",
