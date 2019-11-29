@@ -11,7 +11,8 @@
             "Title": "How will your organisation ensure apprentices are supported during their apprenticeship training?",
             "LinkTitle": "Supporting apprentices",
             "InfoText": "Supporting apprentices",
-            "Questions": [{
+            "Questions": [
+                {
                     "QuestionId": "PAT-630",
                     "QuestionTag": "",
                     "Label": "How will your organisation ensure apprentices are supported during their apprenticeship training?",
@@ -40,7 +41,8 @@
                     "Order": null,
                     "Value": "",
                     "ErrorMessages": null
-                }],
+                }
+            ],
             "PageOfAnswers": [],
             "Next": [
                 {
@@ -69,19 +71,83 @@
             "ActivatedByPageId": null,
             "BodyText": "<p class='govuk-body'></p>"
         },
-		   {
+        {
             "PageId": "6310",
             "SequenceId": null,
             "SectionId": null,
-            "Title": "how apprentices suported",
+            "Title": "How will your organisation support its apprentices?",
             "LinkTitle": "how apprentices suported",
             "InfoText": "how apprentices suported",
-            "Questions": [],
+            "Questions": [
+                {
+                    "QuestionId": "PAT-631",
+                    "QuestionTag": null,
+                    "Label": "How will your organisation support its apprentices?",
+                    "ShortLabel": "",
+                    "InputClasses": null,
+                    "QuestionBodyText": "<p class='govuk-body'>Select all that apply.</p>",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "CheckboxList",
+                        "InputClasses": null,
+                        "Options": [
+                            {
+                                "Value": "Though a mentor",
+                                "Label": "Though a mentor",
+                                "HintText": ""
+                            },
+                            {
+                                "Value": "Through coaching",
+                                "Label": "Through coaching",
+                                "HintText": ""
+                            },
+                            {
+                                "Value": "Access to a support network",
+                                "Label": "Access to a support network",
+                                "HintText": ""
+                            },
+                            {
+                                "Value": "Access to a support group",
+                                "Label": "Access to a support group",
+                                "HintText": ""
+                            },
+                            {
+                                "Value": "Other",
+                                "Label": "Other",
+                                "HintText": ""
+                            }
+                        ],
+                        "Validations": [
+                            {
+                                "Name": "Required",
+                                "Value": "",
+                                "ErrorMessage": "Tell us how your organisation will support its apprentices"
+                            }
+                        ],
+                        "DataEndpoint": null
+                    },
+                    "Order": null,
+                    "Value": "",
+                    "ErrorMessages": null
+                }
+            ],
             "PageOfAnswers": [],
             "Next": [
                 {
+                    "Action": "NextPage",
+                    "ReturnId": "6320",
+                    "Conditions": [
+                        {
+                            "QuestionId": "PAT-631",
+                            "Contains": "Other"
+                        }
+                    ],
+                    "ConditionMet": false
+                },
+                {
                     "Action": "ReturnToSection",
                     "ReturnId": "",
+                    "Condition": null,
                     "Conditions": [],
                     "ConditionMet": false
                 }
@@ -94,7 +160,60 @@
             "Feedback": null,
             "HasFeedback": false,
             "ActivatedByPageId": "6300",
-            "BodyText": "how apprentices suported holding page"
+            "BodyText": "",
+            "Details": null
+        },
+        {
+            "PageId": "6320",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "",
+            "LinkTitle": "how apprentices supported - other details",
+            "InfoText": "",
+            "Questions": [
+                {
+                    "QuestionId": "PAT-632",
+                    "QuestionTag": null,
+                    "Label": "What other ways will your organisation use to support its apprentices?",
+                    "ShortLabel": "",
+                    "InputClasses": null,
+                    "QuestionBodyText": "",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "Textarea",
+                        "InputClasses": null,
+                        "Options": [],
+                        "Validations": [
+                            {
+                                "Name": "Required",
+                                "Value": "",
+                                "ErrorMessage": "Tell us what other ways your organisation will use to support its apprentices"
+                            },
+                            {
+                                "Name": "MaxLength",
+                                "Value": "750",
+                                "ErrorMessage": "Your answer must be 750 characters or less"
+                            }
+                        ],
+                        "DataEndpoint": null
+                    },
+                    "Order": null,
+                    "Value": "",
+                    "ErrorMessages": null
+                }
+            ],
+            "PageOfAnswers": [],
+            "Next": [],
+            "Complete": false,
+            "AllowMultipleAnswers": false,
+            "Order": null,
+            "Active": false,
+            "NotRequiredConditions": [],
+            "BodyText": "",
+            "Details": null,
+            "DisplayType": null,
+            "Feedback": null,
+            "ActivatedByPageId": "6310"
         }
     ]
 }
