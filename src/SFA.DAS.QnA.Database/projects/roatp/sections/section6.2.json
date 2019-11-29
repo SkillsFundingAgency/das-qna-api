@@ -804,7 +804,7 @@
             "PageOfAnswers": [],
             "Next": [
                 {
-                    "Action": "Return To Section",
+                    "Action": "ReturnToSection",
                     "ReturnId": "",
                     "Condition": null,
                     "Conditions": [],
@@ -870,7 +870,13 @@
                 }
             ],
             "PageOfAnswers": [],
-            "Next": [],
+            "Next": [{
+                    "Action": "ReturnToSection",
+                    "ReturnId": "",
+                    "Condition": null,
+                    "Conditions": [],
+                    "ConditionMet": false
+                }],
             "Complete": false,
             "AllowMultipleAnswers": false,
             "Order": null,
