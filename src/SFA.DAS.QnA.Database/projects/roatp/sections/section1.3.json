@@ -168,7 +168,7 @@
             "Complete": false,
             "AllowMultipleAnswers": false,
             "Order": null,
-            "Active": true,
+            "Active": false,
             "Visible": true,
             "Feedback": null,
             "HasFeedback": false,
@@ -176,7 +176,8 @@
                 {
                     "Field": "Has-ParentCompany",
                     "IsOneOf": [
-                        "No"
+                        "No",
+                        ""
                     ]
                 }
             ],
