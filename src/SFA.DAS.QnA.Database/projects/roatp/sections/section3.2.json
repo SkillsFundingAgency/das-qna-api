@@ -15,10 +15,10 @@
             "Questions": [
                 {
                     "QuestionId": "CC-20",
-                    "QuestionTag": "Criminal-Composition-Creditors",
+                    "QuestionTag": "CC-Organisation-Composition",
                     "Label": "Does your organisation have any composition with creditors?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body' id='criminal-composition-creditors'>Composition with creditors is an agreement between a debtor and its creditors where all the creditors agree to accept less than the original amount of debt due to them in full satisfaction of their claim.</p>",
+                    "QuestionBodyText": "<p class='govuk-body' id='cc-organisation-composition'>Composition with creditors is an agreement between a debtor and its creditors where all the creditors agree to accept less than the original amount of debt due to them in full satisfaction of their claim.</p>",
                     "Hint": "",
                     "Input":
                     {
@@ -29,7 +29,7 @@
                                 "FurtherQuestions": [
                                     {
                                         "QuestionId": "CC-20.1",
-                                        "QuestionTag": "Criminal-Composition-Creditors-Information",
+                                        "QuestionTag": "CC-Organisation-Composition-Information",
                                         "Label": "Give us more information",
                                         "ShortLabel": "",
                                         "InputClasses": null,
@@ -110,10 +110,10 @@
             "Questions": [
                 {
                     "QuestionId": "CC-21",
-                    "QuestionTag": "Criminal-Repay-Funds",
+                    "QuestionTag": "CC-Organisation-RepayFunding",
                     "Label": "Has your organisation failed to pay back funds in the last 3 years?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body' id='criminal-repay-funds'>Tell us if your organisation has failed to repay £50,000 or more:</p><ul class='govuk-list govuk-list--bullet'><li>to ESFA or any other public body</li><li>under a subcontract to deliver education and training services funded by ESFA</li></ul>",
+                    "QuestionBodyText": "<p class='govuk-body' id='cc-organisation-repayfunding'>Tell us if your organisation has failed to repay £50,000 or more:</p><ul class='govuk-list govuk-list--bullet'><li>to ESFA or any other public body</li><li>under a subcontract to deliver education and training services funded by ESFA</li></ul>",
                     "Hint": "",
                     "Input":
                     {
@@ -124,7 +124,7 @@
                                 "FurtherQuestions": [
                                     {
                                         "QuestionId": "CC-21.1",
-                                        "QuestionTag": "Criminal-Repay-Funds-Information",
+                                        "QuestionTag": "CC-Organisation-RepayFunding-Information",
                                         "Label": "Give us more information",
                                         "ShortLabel": "",
                                         "InputClasses": null,
@@ -205,10 +205,10 @@
             "Questions": [
                 {
                     "QuestionId": "CC-22",
-                    "QuestionTag": "Criminal-Contract-Termination",
-                    "Label": "Has your organisation failed to pay back funds in the last 3 years?",
+                    "QuestionTag": "CC-Organisation-ContractTerminated",
+                    "Label": "Has your organisation had a contract terminated early by a public body in the last 3 years?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body' id='criminal-contract-termination'></p>",
+                    "QuestionBodyText": "<p class='govuk-body' id='cc-organisation-contractterminated'></p>",
                     "Hint": "",
                     "Input":
                     {
@@ -219,7 +219,7 @@
                                 "FurtherQuestions": [
                                     {
                                         "QuestionId": "CC-22.1",
-                                        "QuestionTag": "Criminal-Contract-Termination-Information",
+                                        "QuestionTag": "CC-Organisation-ContractTerminated-Information",
                                         "Label": "Give us more information",
                                         "ShortLabel": "",
                                         "InputClasses": null,
@@ -300,10 +300,10 @@
             "Questions": [
                 {
                     "QuestionId": "CC-23",
-                    "QuestionTag": "Criminal-Contract-Withdrawal",
+                    "QuestionTag": "CC-Organisation-ContractWithdrawal",
                     "Label": "Has your organisation had early withdrawal from a contract with a public body in the last 3 years?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body' id='criminal-contract-withdrawal'></p>",
+                    "QuestionBodyText": "<p class='govuk-body' id='cc-organisation-contractwithdrawal'></p>",
                     "Hint": "",
                     "Input":
                     {
@@ -314,7 +314,7 @@
                                 "FurtherQuestions": [
                                     {
                                         "QuestionId": "CC-23.1",
-                                        "QuestionTag": "Criminal-Contract-Withdrawal-Information",
+                                        "QuestionTag": "CC-Organisation-ContractWithdrawal-Information",
                                         "Label": "Give us more information",
                                         "ShortLabel": "",
                                         "InputClasses": null,
@@ -395,10 +395,10 @@
             "Questions": [
                 {
                     "QuestionId": "CC-24",
-                    "QuestionTag": "Criminal-Funding-Removal",
+                    "QuestionTag": "CC-Organisation-FundingRemoval",
                     "Label": "Has your organisation had funding removed from any education bodies in the last 3 years?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body' id='criminal-funding-removal'>This only includes funds removed by:</p><ul class='govuk-list govuk-list--bullet'><li>the Higher Education Funding Council for England (HEFCE)</li><li>the Office for Students (OfS)</li></ul>",
+                    "QuestionBodyText": "<p class='govuk-body' id='cc-organisation-fundingremoval'>This only includes funds removed by:</p><ul class='govuk-list govuk-list--bullet'><li>the Higher Education Funding Council for England (HEFCE)</li><li>the Office for Students (OfS)</li></ul>",
                     "Hint": "",
                     "Input":
                     {
@@ -409,7 +409,7 @@
                                 "FurtherQuestions": [
                                     {
                                         "QuestionId": "CC-24.1",
-                                        "QuestionTag": "Criminal-Funding-Removal-Information",
+                                        "QuestionTag": "CC-Organisation-FundingRemoval-Information",
                                         "Label": "Give us more information",
                                         "ShortLabel": "",
                                         "InputClasses": null,
@@ -490,10 +490,10 @@
             "Questions": [
                 {
                     "QuestionId": "CC-25",
-                    "QuestionTag": "Criminal-Register-Removal",
+                    "QuestionTag": "CC-Organisation-TradeRegisterRemoval",
                     "Label": "Has your organisation been removed from any professional or trade registers in the last 3 years?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body' id='criminal-register-removal'></p>",
+                    "QuestionBodyText": "<p class='govuk-body' id='cc-organisation-traderegisterremoval'></p>",
                     "Hint": "",
                     "Input":
                     {
@@ -504,7 +504,7 @@
                                 "FurtherQuestions": [
                                     {
                                         "QuestionId": "CC-25.1",
-                                        "QuestionTag": "Criminal-Register-Removal-Information",
+                                        "QuestionTag": "CC-Organisation-TradeRegisterRemoval-Information",
                                         "Label": "Give us more information",
                                         "ShortLabel": "",
                                         "InputClasses": null,
@@ -585,10 +585,10 @@
             "Questions": [
                 {
                     "QuestionId": "CC-26",
-                    "QuestionTag": "Criminal-ITT-Removal",
+                    "QuestionTag": "CC-Organisation-IttWithdrawal",
                     "Label": "Has your organisation had involuntary withdrawal from Initial Teacher Training accreditation in the last 3 years?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body' id='criminal-itt-removal'></p>",
+                    "QuestionBodyText": "<p class='govuk-body' id='cc-organisation-ittwithdrawal'></p>",
                     "Hint": "",
                     "Input":
                     {
@@ -599,7 +599,7 @@
                                 "FurtherQuestions": [
                                     {
                                         "QuestionId": "CC-26.1",
-                                        "QuestionTag": "Criminal-ITT-Removal-Information",
+                                        "QuestionTag": "CC-Organisation-IttWithdrawal-Information",
                                         "Label": "Give us more information",
                                         "ShortLabel": "",
                                         "InputClasses": null,
@@ -680,10 +680,10 @@
             "Questions": [
                 {
                     "QuestionId": "CC-27",
-                    "QuestionTag": "Criminal-CharityRegister-Removal",
+                    "QuestionTag": "CC-Organisation-CharityRegisterRemoval",
                     "Label": "Has your organisation been removed from any charity register?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body' id='criminal-charityregister-removal'>This includes being removed from:</p><ul class='govuk-list govuk-list--bullet'><li>the Charity Commission for England and Wales</li><li>the Charity Commission for Northern Ireland</li><li>the Office of the Scottish Charity Regulator</li></ul>",
+                    "QuestionBodyText": "<p class='govuk-body' id='cc-organisation-charityregisterremoval'>This includes being removed from:</p><ul class='govuk-list govuk-list--bullet'><li>the Charity Commission for England and Wales</li><li>the Charity Commission for Northern Ireland</li><li>the Office of the Scottish Charity Regulator</li></ul>",
                     "Hint": "",
                     "Input":
                     {
@@ -694,7 +694,7 @@
                                 "FurtherQuestions": [
                                     {
                                         "QuestionId": "CC-27.1",
-                                        "QuestionTag": "Criminal-CharityRegister-Removal-Information",
+                                        "QuestionTag": "CC-Organisation-CharityRegisterRemoval-Information",
                                         "Label": "Give us more information",
                                         "ShortLabel": "",
                                         "InputClasses": null,
@@ -775,10 +775,10 @@
             "Questions": [
                 {
                     "QuestionId": "CC-28",
-                    "QuestionTag": "Criminal-Safeguarding-Issues",
+                    "QuestionTag": "CC-Organisation-Safeguarding",
                     "Label": "Has your organisation been investigated due to safeguarding issues in the last 3 months?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body' id='criminal-safeguarding-issues'></p>",
+                    "QuestionBodyText": "<p class='govuk-body' id='cc-organisation-safeguarding'></p>",
                     "Hint": "",
                     "Input":
                     {
@@ -789,7 +789,7 @@
                                 "FurtherQuestions": [
                                     {
                                         "QuestionId": "CC-28.1",
-                                        "QuestionTag": "Criminal-Safeguarding-Issues-Information",
+                                        "QuestionTag": "CC-Organisation-Safeguarding-Information",
                                         "Label": "Give us more information",
                                         "ShortLabel": "",
                                         "InputClasses": null,
@@ -870,10 +870,10 @@
             "Questions": [
                 {
                     "QuestionId": "CC-29",
-                    "QuestionTag": "Criminal-Whistleblowing-Issues",
+                    "QuestionTag": "CC-Organisation-Whistleblowing",
                     "Label": "Has your organisation been investigated due to whistleblowing issues in the last 3 months?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body' id='criminal-whistleblowing-issues'></p>",
+                    "QuestionBodyText": "<p class='govuk-body' id='cc-organisation-whistleblowing'></p>",
                     "Hint": "",
                     "Input":
                     {
@@ -884,7 +884,7 @@
                                 "FurtherQuestions": [
                                     {
                                         "QuestionId": "CC-29.1",
-                                        "QuestionTag": "Criminal-Whistleblowing-Issues-Information",
+                                        "QuestionTag": "CC-Organisation-Whistleblowing-Information",
                                         "Label": "Give us more information",
                                         "ShortLabel": "",
                                         "InputClasses": null,
@@ -965,10 +965,10 @@
             "Questions": [
                 {
                     "QuestionId": "CC-30",
-                    "QuestionTag": "Criminal-Insolvency-Proceedings",
+                    "QuestionTag": "CC-Organisation-Insolvency",
                     "Label": "Has your organisation or any of its partner organisations been subject to insolvency or winding up proceedings in the last 3 years?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body' id='criminal-insolvency-proceedings'>A partner organisation is an organisation who either:</p><ul class='govuk-list govuk-list--bullet'><li>shares the same UK ultimate parent company as your organisation - so they are part of the same group</li><li>has a legal contract with your organisation to deliver training</li></ul>",
+                    "QuestionBodyText": "<p class='govuk-body' id='cc-organisation-insolvency'>A partner organisation is an organisation who either:</p><ul class='govuk-list govuk-list--bullet'><li>shares the same UK ultimate parent company as your organisation - so they are part of the same group</li><li>has a legal contract with your organisation to deliver training</li></ul>",
                     "Hint": "",
                     "Input":
                     {
@@ -979,7 +979,7 @@
                                 "FurtherQuestions": [
                                     {
                                         "QuestionId": "CC-30.1",
-                                        "QuestionTag": "Criminal-Insolvency-Proceedings-Information",
+                                        "QuestionTag": "CC-Organisation-Insolvency-Information",
                                         "Label": "Give us more information",
                                         "ShortLabel": "",
                                         "InputClasses": null,

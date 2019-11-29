@@ -14,10 +14,10 @@
             "Questions": [
                 {
                     "QuestionId": "CC-40",
-                    "QuestionTag": "Criminal-Control-Convictions",
+                    "QuestionTag": "CC-People-Convictions",
                     "Label": "Does anyone who's in control of your organisation have any unspent criminal convictions?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body' id='criminal-control-convictions'>An unspent criminal conviction has an outstanding sentence and is shown on a criminal record check.</p><p class='govuk-body'>Find out more about unspent criminal convictions in the <a href='http://www.legislation.gov.uk/ukpga/1974/53' target='_blank'>Rehabilitation of Offenders Act 1974</a>.</p><p class='govuk-body'>Criminal convictions include:</p><ul class='govuk-list govuk-list--bullet'><li>serious crimes</li><li>criminal conduct</li><li>conspiracy</li><li>money laundering</li><li>asylum and immigrants offences</li><li>sexual offences</li><li>drug trafficking</li><li>terrorism</li><li>fraud</li><li>theft</li><li>corruption</li><li>bribery</li></ul>",
+                    "QuestionBodyText": "<p class='govuk-body' id='cc-people-convictions'>An unspent criminal conviction has an outstanding sentence and is shown on a criminal record check.</p><p class='govuk-body'>Find out more about unspent criminal convictions in the <a href='http://www.legislation.gov.uk/ukpga/1974/53' target='_blank'>Rehabilitation of Offenders Act 1974</a>.</p><p class='govuk-body'>Criminal convictions include:</p><ul class='govuk-list govuk-list--bullet'><li>serious crimes</li><li>criminal conduct</li><li>conspiracy</li><li>money laundering</li><li>asylum and immigrants offences</li><li>sexual offences</li><li>drug trafficking</li><li>terrorism</li><li>fraud</li><li>theft</li><li>corruption</li><li>bribery</li></ul>",
                     "Hint": "",
                     "Input":
                     {
@@ -28,7 +28,7 @@
                                 "FurtherQuestions": [
                                     {
                                         "QuestionId": "CC-40.1",
-                                        "QuestionTag": "Criminal-Control-Convictions-Information",
+                                        "QuestionTag": "CC-People-Convictions-Information",
                                         "Label": "Give us more information",
                                         "ShortLabel": "",
                                         "InputClasses": null,
@@ -117,10 +117,10 @@
             "Questions": [
                 {
                     "QuestionId": "CC-41",
-                    "QuestionTag": "Criminal-Control-Convictions-SoleTrader",
+                    "QuestionTag": "CC-People-Convictions-SoleTrader",
                     "Label": "Do you have any unspent criminal convictions?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body' id='criminal-control-convictions-soletrader'>An unspent criminal conviction has an outstanding sentence and is shown on a criminal record check.</p><p class='govuk-body'>Find out more about unspent criminal convictions in the <a href='http://www.legislation.gov.uk/ukpga/1974/53' target='_blank'>Rehabilitation of Offenders Act 1974</a>.</p><p class='govuk-body'>Criminal convictions include:</p><ul class='govuk-list govuk-list--bullet'><li>serious crimes</li><li>criminal conduct</li><li>conspiracy</li><li>money laundering</li><li>asylum and immigrants offences</li><li>sexual offences</li><li>drug trafficking</li><li>terrorism</li><li>fraud</li><li>theft</li><li>corruption</li><li>bribery</li></ul>",
+                    "QuestionBodyText": "<p class='govuk-body' id='cc-people-convictions-soletrader'>An unspent criminal conviction has an outstanding sentence and is shown on a criminal record check.</p><p class='govuk-body'>Find out more about unspent criminal convictions in the <a href='http://www.legislation.gov.uk/ukpga/1974/53' target='_blank'>Rehabilitation of Offenders Act 1974</a>.</p><p class='govuk-body'>Criminal convictions include:</p><ul class='govuk-list govuk-list--bullet'><li>serious crimes</li><li>criminal conduct</li><li>conspiracy</li><li>money laundering</li><li>asylum and immigrants offences</li><li>sexual offences</li><li>drug trafficking</li><li>terrorism</li><li>fraud</li><li>theft</li><li>corruption</li><li>bribery</li></ul>",
                     "Hint": "",
                     "Input":
                     {
@@ -131,7 +131,7 @@
                                 "FurtherQuestions": [
                                     {
                                         "QuestionId": "CC-41.1",
-                                        "QuestionTag": "Criminal-Control-Convictions-SoleTrader-Information",
+                                        "QuestionTag": "CC-People-Convictions-SoleTrader-Information",
                                         "Label": "Give us more information",
                                         "ShortLabel": "",
                                         "InputClasses": null,
@@ -201,7 +201,7 @@
             "HasFeedback": false,
             "NotRequiredConditions": [{
                     "Field": "SoleTrade-or-Partnership",
-                    "IsOneOf": [null]
+                    "IsOneOf": [null, "Partnership"]
                 }
             ],
             "BodyText": "",
@@ -220,10 +220,10 @@
             "Questions": [
                 {
                     "QuestionId": "CC-50",
-                    "QuestionTag": "Criminal-Control-Funds",
+                    "QuestionTag": "CC-People-RepayFunding",
                     "Label": "Has anyone who's in control of your organisation failed to pay back funds in the last 3 years?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body' id='criminal-control-funds'>Tell us if anyone who's in control has failed to:</p><ul class='govuk-list govuk-list--bullet'><li>repay &pound;50,000 or more to ESFA or any other public body</li><li>follow the conditions of funding under ESFA funding agreements or sub-contracts</li></ul>",
+                    "QuestionBodyText": "<p class='govuk-body' id='cc-people-repayfunding'>Tell us if anyone who's in control has failed to:</p><ul class='govuk-list govuk-list--bullet'><li>repay &pound;50,000 or more to ESFA or any other public body</li><li>follow the conditions of funding under ESFA funding agreements or sub-contracts</li></ul>",
                     "Hint": "",
                     "Input":
                     {
@@ -234,7 +234,7 @@
                                 "FurtherQuestions": [
                                     {
                                         "QuestionId": "CC-50.1",
-                                        "QuestionTag": "Criminal-Control-Funds-Information",
+                                        "QuestionTag": "CC-People-RepayFunding-Information",
                                         "Label": "Give us more information",
                                         "ShortLabel": "",
                                         "InputClasses": null,
@@ -320,10 +320,10 @@
             "Questions": [
                 {
                     "QuestionId": "CC-51",
-                    "QuestionTag": "Criminal-Control-Funds-SoleTrader",
+                    "QuestionTag": "CC-People-RepayFunding-SoleTrader",
                     "Label": "Have you failed to pay back funds in the last 3 years?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body' id='criminal-control-funds-soletrader'>Tell us if anyone who's in control has failed to:</p><ul class='govuk-list govuk-list--bullet'><li>serious crimes</li><li>repay &pound;50,000 or more to ESFA or any other public body</li><li>follow the conditions of funding under ESFA funding agreements or sub-contracts</li></ul>",
+                    "QuestionBodyText": "<p class='govuk-body' id='cc-people-repayfunding-soletrader'>Tell us if anyone who's in control has failed to:</p><ul class='govuk-list govuk-list--bullet'><li>serious crimes</li><li>repay &pound;50,000 or more to ESFA or any other public body</li><li>follow the conditions of funding under ESFA funding agreements or sub-contracts</li></ul>",
                     "Hint": "",
                     "Input":
                     {
@@ -334,7 +334,7 @@
                                 "FurtherQuestions": [
                                     {
                                         "QuestionId": "CC-51.1",
-                                        "QuestionTag": "Criminal-Control-Funds-SoleTrader-Information",
+                                        "QuestionTag": "CC-People-RepayFunding-SoleTrader-Information",
                                         "Label": "Give us more information",
                                         "ShortLabel": "",
                                         "InputClasses": null,
@@ -405,7 +405,7 @@
             "HasFeedback": false,
             "NotRequiredConditions": [{
                     "Field": "SoleTrade-or-Partnership",
-                    "IsOneOf": [null]
+                    "IsOneOf": [null, "Partnership"]
                 }
             ],
             "BodyText": ""
@@ -420,10 +420,10 @@
             "Questions": [
                 {
                     "QuestionId": "CC-60",
-                    "QuestionTag": "Criminal-Control-Investigated",
+                    "QuestionTag": "CC-People-InvestigatedFraud",
                     "Label": "Has anyone who's in control of your organisation been investigated for fraud or irregularities in the last 3 years?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body' id='criminal-control-investigated'></p>",
+                    "QuestionBodyText": "<p class='govuk-body' id='cc-people-investigatedfraud'></p>",
                     "Hint": "",
                     "Input":
                     {
@@ -434,7 +434,7 @@
                                 "FurtherQuestions": [
                                     {
                                         "QuestionId": "CC-60.1",
-                                        "QuestionTag": "Criminal-Control-Investigated-Information",
+                                        "QuestionTag": "CC-People-InvestigatedFraud-Information",
                                         "Label": "Give us more information",
                                         "ShortLabel": "",
                                         "InputClasses": null,
@@ -520,10 +520,10 @@
             "Questions": [
                 {
                     "QuestionId": "CC-61",
-                    "QuestionTag": "Criminal-Control-Investigated-SoleTrader",
+                    "QuestionTag": "CC-People-InvestigatedFraud-SoleTrader",
                     "Label": "Have you been investigated for fraud or irregularities in the last 3 years?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body' id='criminal-control-investigated-soletrader'></p>",
+                    "QuestionBodyText": "<p class='govuk-body' id='cc-people-investigatedfraud-soletrader'></p>",
                     "Hint": "",
                     "Input":
                     {
@@ -534,7 +534,7 @@
                                 "FurtherQuestions": [
                                     {
                                         "QuestionId": "CC-61.1",
-                                        "QuestionTag": "Criminal-Control-Investigated-SoleTrader-Information",
+                                        "QuestionTag": "CC-People-InvestigatedFraud-SoleTrader-Information",
                                         "Label": "Give us more information",
                                         "ShortLabel": "",
                                         "InputClasses": null,
@@ -605,7 +605,7 @@
             "HasFeedback": false,
             "NotRequiredConditions": [{
                     "Field": "SoleTrade-or-Partnership",
-                    "IsOneOf": [null]
+                    "IsOneOf": [null, "Partnership"]
                 }
             ],
             "BodyText": ""
@@ -620,10 +620,10 @@
             "Questions": [
                 {
                     "QuestionId": "CC-70",
-                    "QuestionTag": "Criminal-Control-Ongoing",
+                    "QuestionTag": "CC-People-OngoingFraud",
                     "Label": "Does anyone who's in control of your organisation have any ongoing investigations for fraud or irregularities?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body' id='criminal-control-ongoing'></p>",
+                    "QuestionBodyText": "<p class='govuk-body' id='cc-people-ongoingfraud'></p>",
                     "Hint": "",
                     "Input":
                     {
@@ -634,7 +634,7 @@
                                 "FurtherQuestions": [
                                     {
                                         "QuestionId": "CC-70.1",
-                                        "QuestionTag": "Criminal-Control-Ongoing-Information",
+                                        "QuestionTag": "CC-People-OngoingFraud-Information",
                                         "Label": "Give us more information",
                                         "ShortLabel": "",
                                         "InputClasses": null,
@@ -720,10 +720,10 @@
             "Questions": [
                 {
                     "QuestionId": "CC-71",
-                    "QuestionTag": "Criminal-Control-Ongoing-SoleTrader",
+                    "QuestionTag": "CC-People-OngoingFraud-SoleTrader",
                     "Label": "Do you have any ongoing investigations for fraud or irregularities?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body' id='criminal-control-ongoing-soletrader'></p>",
+                    "QuestionBodyText": "<p class='govuk-body' id='cc-people-ongoingfraud-soletrader'></p>",
                     "Hint": "",
                     "Input":
                     {
@@ -734,7 +734,7 @@
                                 "FurtherQuestions": [
                                     {
                                         "QuestionId": "CC-71.1",
-                                        "QuestionTag": "Criminal-Control-Ongoing-SoleTrader-Information",
+                                        "QuestionTag": "CC-People-OngoingFraud-SoleTrader-Information",
                                         "Label": "Give us more information",
                                         "ShortLabel": "",
                                         "InputClasses": null,
@@ -805,7 +805,7 @@
             "HasFeedback": false,
             "NotRequiredConditions": [{
                     "Field": "SoleTrade-or-Partnership",
-                    "IsOneOf": [null]
+                    "IsOneOf": [null, "Partnership"]
                 }
             ],
             "BodyText": ""
@@ -820,10 +820,10 @@
             "Questions": [
                 {
                     "QuestionId": "CC-80",
-                    "QuestionTag": "Criminal-Control-Termination",
+                    "QuestionTag": "CC-People-ContractTerminated",
                     "Label": "Has anyone who's in control of your organisation had a contract terminated by a public body in the last 3 years?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body' id='criminal-control-termination'></p>",
+                    "QuestionBodyText": "<p class='govuk-body' id='cc-people-contractterminated'></p>",
                     "Hint": "",
                     "Input":
                     {
@@ -834,7 +834,7 @@
                                 "FurtherQuestions": [
                                     {
                                         "QuestionId": "CC-80.1",
-                                        "QuestionTag": "Criminal-Control-Termination-Information",
+                                        "QuestionTag": "CC-People-ContractTerminated-Information",
                                         "Label": "Give us more information",
                                         "ShortLabel": "",
                                         "InputClasses": null,
@@ -920,10 +920,10 @@
             "Questions": [
                 {
                     "QuestionId": "CC-81",
-                    "QuestionTag": "Criminal-Control-Termination-SoleTrader",
+                    "QuestionTag": "CC-People-ContractTerminated-SoleTrader",
                     "Label": "Have you had a contract terminated by a public body in the last 3 years?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body' id='criminal-control-termination-soletrader'></p>",
+                    "QuestionBodyText": "<p class='govuk-body' id='cc-people-contractterminated-soletrader'></p>",
                     "Hint": "",
                     "Input":
                     {
@@ -934,7 +934,7 @@
                                 "FurtherQuestions": [
                                     {
                                         "QuestionId": "CC-81.1",
-                                        "QuestionTag": "Criminal-Control-Termination-SoleTrader-Information",
+                                        "QuestionTag": "CC-People-ContractTerminated-SoleTrader-Information",
                                         "Label": "Give us more information",
                                         "ShortLabel": "",
                                         "InputClasses": null,
@@ -1005,7 +1005,7 @@
             "HasFeedback": false,
             "NotRequiredConditions": [{
                     "Field": "SoleTrade-or-Partnership",
-                    "IsOneOf": [null]
+                    "IsOneOf": [null, "Partnership"]
                 }
             ],
             "BodyText": ""
@@ -1020,10 +1020,10 @@
             "Questions": [
                 {
                     "QuestionId": "CC-90",
-                    "QuestionTag": "Criminal-Control-Withdrawal",
+                    "QuestionTag": "CC-People-ContractWithdrawal",
                     "Label": "Has anyone who's in control of your organisation withdrawn from a contract with a public body in the last 3 years?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body' id='criminal-control-withdrawal'></p>",
+                    "QuestionBodyText": "<p class='govuk-body' id='cc-people-contractwithdrawal'></p>",
                     "Hint": "",
                     "Input":
                     {
@@ -1034,7 +1034,7 @@
                                 "FurtherQuestions": [
                                     {
                                         "QuestionId": "CC-90.1",
-                                        "QuestionTag": "Criminal-Control-Withdrawal-Information",
+                                        "QuestionTag": "CC-People-ContractWithdrawal-Information",
                                         "Label": "Give us more information",
                                         "ShortLabel": "",
                                         "InputClasses": null,
@@ -1120,10 +1120,10 @@
             "Questions": [
                 {
                     "QuestionId": "CC-91",
-                    "QuestionTag": "Criminal-Control-Withdrawal-SoleTrader",
+                    "QuestionTag": "CC-People-ContractWithdrawal-SoleTrader",
                     "Label": "Have you withdrawn from a contract with a public body in the last 3 years?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body' id='criminal-control-withdrawal-soletrader'></p>",
+                    "QuestionBodyText": "<p class='govuk-body' id='cc-people-contractwithdrawal-soletrader'></p>",
                     "Hint": "",
                     "Input":
                     {
@@ -1134,7 +1134,7 @@
                                 "FurtherQuestions": [
                                     {
                                         "QuestionId": "CC-91.1",
-                                        "QuestionTag": "Criminal-Control-Withdrawal-SoleTrader-Information",
+                                        "QuestionTag": "CC-People-ContractWithdrawal-SoleTrader-Information",
                                         "Label": "Give us more information",
                                         "ShortLabel": "",
                                         "InputClasses": null,
@@ -1205,7 +1205,7 @@
             "HasFeedback": false,
             "NotRequiredConditions": [{
                     "Field": "SoleTrade-or-Partnership",
-                    "IsOneOf": [null]
+                    "IsOneOf": [null, "Partnership"]
                 }
             ],
             "BodyText": ""
@@ -1220,10 +1220,10 @@
             "Questions": [
                 {
                     "QuestionId": "CC-100",
-                    "QuestionTag": "Criminal-Control-Payments",
+                    "QuestionTag": "CC-People-PaymentBreaches",
                     "Label": "Has anyone who's in control of your organisation breached tax payments or social security contributions in the last 3 years?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body' id='criminal-control-payments'></p>",
+                    "QuestionBodyText": "<p class='govuk-body' id='cc-people-paymentbreaches'></p>",
                     "Hint": "",
                     "Input":
                     {
@@ -1234,7 +1234,7 @@
                                 "FurtherQuestions": [
                                     {
                                         "QuestionId": "CC-100.1",
-                                        "QuestionTag": "Criminal-Control-Payments-Information",
+                                        "QuestionTag": "CC-People-PaymentBreaches-Information",
                                         "Label": "Give us more information",
                                         "ShortLabel": "",
                                         "InputClasses": null,
@@ -1320,10 +1320,10 @@
             "Questions": [
                 {
                     "QuestionId": "CC-101",
-                    "QuestionTag": "Criminal-Control-Payments-SoleTrader",
+                    "QuestionTag": "CC-People-PaymentBreaches-SoleTrader",
                     "Label": "Have you breached tax payments or social security contributions in the last 3 years?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body' id='criminal-control-payments-soletrader'></p>",
+                    "QuestionBodyText": "<p class='govuk-body' id='cc-people-paymentbreaches-soletrader'></p>",
                     "Hint": "",
                     "Input":
                     {
@@ -1334,7 +1334,7 @@
                                 "FurtherQuestions": [
                                     {
                                         "QuestionId": "CC-101.1",
-                                        "QuestionTag": "Criminal-Control-Payments-SoleTrader-Information",
+                                        "QuestionTag": "CC-People-PaymentBreaches-SoleTrader-Information",
                                         "Label": "Give us more information",
                                         "ShortLabel": "",
                                         "InputClasses": null,
@@ -1405,7 +1405,7 @@
             "HasFeedback": false,
             "NotRequiredConditions": [{
                     "Field": "SoleTrade-or-Partnership",
-                    "IsOneOf": [null]
+                    "IsOneOf": [null, "Partnership"]
                 }
             ],
             "BodyText": ""
@@ -1420,10 +1420,10 @@
             "Questions": [
                 {
                     "QuestionId": "CC-110",
-                    "QuestionTag": "Criminal-Control-Bankruptcy",
+                    "QuestionTag": "CC-People-Bankruptcy",
                     "Label": "Has anyone who's in control of your organisation or any of its partner organisations been made bankrupt in the last 3 years?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body' id='criminal-control-bankruptcy'>A partner organisation is an organisation who either:</p><ul class='govuk-list govuk-list--bullet'><li>shares the same UK ultimate parent company as your organisation - so they are part of the same group</li><li>has a legal contract with your organisation to deliver training</li></ul>",
+                    "QuestionBodyText": "<p class='govuk-body' id='cc-people-bankruptcy'>A partner organisation is an organisation who either:</p><ul class='govuk-list govuk-list--bullet'><li>shares the same UK ultimate parent company as your organisation - so they are part of the same group</li><li>has a legal contract with your organisation to deliver training</li></ul>",
                     "Hint": "",
                     "Input":
                     {
@@ -1434,7 +1434,7 @@
                                 "FurtherQuestions": [
                                     {
                                         "QuestionId": "CC-110.1",
-                                        "QuestionTag": "Criminal-Control-Bankruptcy-Information",
+                                        "QuestionTag": "CC-People-Bankruptcy-Information",
                                         "Label": "Give us more information",
                                         "ShortLabel": "",
                                         "InputClasses": null,
@@ -1520,10 +1520,10 @@
             "Questions": [
                 {
                     "QuestionId": "CC-111",
-                    "QuestionTag": "Criminal-Control-Bankruptcy-SoleTrader",
+                    "QuestionTag": "CC-People-Bankruptcy-SoleTrader",
                     "Label": "Have you or anyone who's in control of your partner organisations been made bankrupt in the last 3 years?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body' id='criminal-control-bankruptcy-soletrader'>A partner organisation is an organisation who either:</p><ul class='govuk-list govuk-list--bullet'><li>shares the same UK ultimate parent company as your organisation - so they are part of the same group</li><li>has a legal contract with your organisation to deliver training</li></ul>",
+                    "QuestionBodyText": "<p class='govuk-body' id='cc-people-bankruptcy-soletrader'>A partner organisation is an organisation who either:</p><ul class='govuk-list govuk-list--bullet'><li>shares the same UK ultimate parent company as your organisation - so they are part of the same group</li><li>has a legal contract with your organisation to deliver training</li></ul>",
                     "Hint": "",
                     "Input":
                     {
@@ -1534,7 +1534,7 @@
                                 "FurtherQuestions": [
                                     {
                                         "QuestionId": "CC-111.1",
-                                        "QuestionTag": "Criminal-Control-Bankruptcy-SoleTrader-Information",
+                                        "QuestionTag": "CC-People-Bankruptcy-SoleTrader-Information",
                                         "Label": "Give us more information",
                                         "ShortLabel": "",
                                         "InputClasses": null,
@@ -1605,7 +1605,7 @@
             "HasFeedback": false,
             "NotRequiredConditions": [{
                     "Field": "SoleTrade-or-Partnership",
-                    "IsOneOf": [null]
+                    "IsOneOf": [null, "Partnership"]
                 }
             ],
             "BodyText": ""
