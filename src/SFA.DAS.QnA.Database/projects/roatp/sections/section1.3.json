@@ -168,7 +168,7 @@
             "Complete": false,
             "AllowMultipleAnswers": false,
             "Order": null,
-            "Active": false,
+            "Active": true,
             "Visible": true,
             "Feedback": null,
             "HasFeedback": false,
