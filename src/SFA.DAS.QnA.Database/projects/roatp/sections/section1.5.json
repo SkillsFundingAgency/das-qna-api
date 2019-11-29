@@ -927,7 +927,20 @@
             "Visible": true,
             "Feedback": null,
             "HasFeedback": false,
-            "NotRequiredConditions": [],
+            "NotRequiredConditions": [
+                {
+                    "Field": "Organisation-EducationInstitute-MainSupporting",
+                    "IsOneOf": [
+                        "Academy",
+                        "Further Education Institute",
+                        "General Further Education College",
+                        "Higher Education Institute",
+                        "Multi-Academy Trust",
+                        "National College",
+                        "Sixth Form College"
+                    ]
+                }
+            ],
             "ActivatedByPageId": "160",
             "BodyText": ""
         },
@@ -1025,7 +1038,20 @@
             "Visible": true,
             "Feedback": null,
             "HasFeedback": false,
-            "NotRequiredConditions": [],
+            "NotRequiredConditions": [
+                {
+                    "Field": "Organisation-EducationInstitute-Employer",
+                    "IsOneOf": [
+                        "Academy",
+                        "Further Education Institute",
+                        "General Further Education College",
+                        "Higher Education Institute",
+                        "Multi-Academy Trust",
+                        "National College",
+                        "Sixth Form College"
+                    ]
+                }
+            ],
             "ActivatedByPageId": "161",
             "BodyText": ""
         },
@@ -1079,12 +1105,23 @@
             "Complete": false,
             "AllowMultipleAnswers": false,
             "Order": null,
-            "Active": true,
+            "Active": false,
             "Visible": true,
             "Feedback": null,
             "HasFeedback": false,
-            "NotRequiredConditions": [],
-            "ActivatedByPageId": null,
+            "NotRequiredConditions": [
+                {
+                    "Field": "Organisation-EducationInstitute-MainSupporting",
+                    "IsOneOf": [
+                        "General Further Education College",
+                        "Higher Education Institute",
+                        "National College",
+                        "School",
+                        "Sixth Form College"
+                    ]
+                }
+            ],
+            "ActivatedByPageId": "160",
             "BodyText": ""
         },
         {
@@ -1165,8 +1202,19 @@
             "Visible": true,
             "Feedback": null,
             "HasFeedback": false,
-            "NotRequiredConditions": [],
-            "ActivatedByPageId": null,
+            "NotRequiredConditions": [
+                {
+                    "Field": "Organisation-EducationInstitute-Employer",
+                    "IsOneOf": [
+                        "General Further Education College",
+                        "Higher Education Institute",
+                        "National College",
+                        "School",
+                        "Sixth Form College"
+                    ]
+                }
+            ],
+            "ActivatedByPageId": "161",
             "BodyText": ""
         },
         {
@@ -1223,8 +1271,19 @@
             "Visible": true,
             "Feedback": null,
             "HasFeedback": false,
-            "NotRequiredConditions": [],
-            "ActivatedByPageId": null,
+            "NotRequiredConditions": [
+                {
+                    "Field": "Organisation-EducationInstitute-MainSupporting",
+                    "IsOneOf": [
+                        "Academy",
+                        "Further Education Institute",
+                        "Higher Education Institute",
+                        "Multi-Academy Trust",
+                        "School"
+                    ]
+                }
+            ],
+            "ActivatedByPageId": "160",
             "BodyText": ""
         },
         {
@@ -1305,8 +1364,19 @@
             "Visible": true,
             "Feedback": null,
             "HasFeedback": false,
-            "NotRequiredConditions": [],
-            "ActivatedByPageId": null,
+            "NotRequiredConditions": [
+                {
+                    "Field": "Organisation-EducationInstitute-Employer",
+                    "IsOneOf": [
+                        "Academy",
+                        "Further Education Institute",
+                        "Higher Education Institute",
+                        "Multi-Academy Trust",
+                        "School"
+                    ]
+                }
+            ],
+            "ActivatedByPageId": "161",
             "BodyText": ""
         },
         {
@@ -1371,8 +1441,20 @@
             "Visible": true,
             "Feedback": null,
             "HasFeedback": false,
-            "NotRequiredConditions": [],
-            "ActivatedByPageId": null,
+            "NotRequiredConditions": [
+                {
+                    "Field": "Organisation-Type-MainSupporting",
+                    "IsOneOf": [
+                        "A Group Training Association",
+                        "A public body",
+                        "An Apprenticeship Training Agency",
+                        "An educational institute",
+                        "An employer training apprentices in other organisations",
+                        "An Independent Training Provider"
+                    ]
+                }
+            ],
+            "ActivatedByPageId": "150,170,171,181,201,211",
             "BodyText": ""
         },
         {
@@ -1446,7 +1528,7 @@
             "Feedback": null,
             "HasFeedback": false,
             "NotRequiredConditions": [],
-            "ActivatedByPageId": null,
+            "ActivatedByPageId": "180,181,200,201,210,211,220",
             "BodyText": ""
         }
     ]
