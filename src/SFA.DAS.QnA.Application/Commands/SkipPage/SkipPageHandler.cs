@@ -39,7 +39,7 @@ namespace SFA.DAS.QnA.Application.Commands.SkipPage
                 var nextAction = GetNextAction(page, answers, section, _dataContext);
                 var checkboxListAllNexts = GetCheckboxListMatchingNextActions(page, answers, section, _dataContext);
 
-                SetStatusOfNextPagesBasedOnAnswer(qnaData, page, answers, nextAction, checkboxListAllNexts);
+                SetStatusOfNextPagesBasedOnAnswer(section.Id, page.PageId, answers, nextAction, checkboxListAllNexts, _dataContext);
 
                 section.QnAData = qnaData;
                 await _dataContext.SaveChangesAsync(cancellationToken);

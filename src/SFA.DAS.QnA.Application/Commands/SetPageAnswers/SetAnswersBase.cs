@@ -226,8 +226,12 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
             }
         }
 
-        protected void SetStatusOfNextPagesBasedOnAnswer(QnAData qnaData, Page page, List<Answer> answers, Next nextAction, List<Next> checkboxListAllNexts)
+        protected void SetStatusOfNextPagesBasedOnAnswer(Guid sectionId, string pageId, List<Answer> answers, Next nextAction, List<Next> checkboxListAllNexts, QnaDataContext qnaDataContext)
         {
+            var section = qnaDataContext.ApplicationSections.FirstOrDefault(sec => sec.Id == sectionId);
+            var qnaData = new QnAData(section.QnAData);
+            var page = qnaData.Pages.FirstOrDefault(p => p.PageId == pageId);
+
             if (checkboxListAllNexts != null && checkboxListAllNexts.Any())
             {
                 foreach (var next in checkboxListAllNexts)
@@ -261,6 +265,8 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
 
                 ActivateDependentPages(nextAction, page.PageId, qnaData);
             }
+
+            qnaDataContext.SaveChangesAsync();
         }
 
         protected void DeactivateDependentPages(string branchingPageId, QnAData qnaData, Page page, Next chosenAction, bool subPages = false)
