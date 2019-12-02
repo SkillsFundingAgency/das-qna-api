@@ -266,6 +266,7 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
                 ActivateDependentPages(nextAction, page.PageId, qnaData);
             }
 
+            section.QnAData = qnaData;
             qnaDataContext.SaveChangesAsync();
         }
 
