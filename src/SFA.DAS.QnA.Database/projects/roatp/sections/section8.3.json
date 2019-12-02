@@ -15,7 +15,7 @@
                 {
                     "QuestionId": "EAT-30",
                     "QuestionTag": "EAT-Evaluating-ApprenticeshipTraining",
-                    "Label": "Does your organisation's Evaluating the quality of apprenticeship training include apprenticeship training?",
+                    "Label": "Does your organisation's process for evaluating the quality of apprenticeship training include apprenticeship training?",
                     "ShortLabel": "",
                     "QuestionBodyText": "<p class='govuk-body' id='eat-evaluating-apprenticeshiptraining'>This means your existing process includes how your organisation will:</p><ul class='govuk-list govuk-list--bullet'><li>respond and act on feedback from apprentices</li><li>continuously improve apprenticeship training</li><li>identify and address poor apprenticeship training</li></ul>",
                     "Hint": "",

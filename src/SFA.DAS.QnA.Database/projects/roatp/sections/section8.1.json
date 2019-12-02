@@ -1,6 +1,6 @@
 {
-    "Title": "Introduction and what you'll need",
-    "LinkTitle": "Introduction and what you'll need",
+    "Title": "Evaluating apprenticeship training",
+    "LinkTitle": "Evaluating apprenticeship training",
     "DisplayType": "Pages",
     "RequestedFeedbackAnswered": null,
     "Pages": [
@@ -8,8 +8,8 @@
             "PageId": "8000",
             "SequenceId": null,
             "SectionId": null,
-            "Title": "Introduction and what you'll need",
-            "LinkTitle": "Introduction and what you'll need",
+            "Title": "Evaluating apprenticeship training",
+            "LinkTitle": "Evaluating apprenticeship training",
             "InfoText": "",
             "Questions": [],
             "PageOfAnswers": [],
@@ -39,8 +39,8 @@
             "PageId": "8010",
             "SequenceId": null,
             "SectionId": null,
-            "Title": "Delivering apprenticeship training",
-            "LinkTitle": "Introduction and what you'll need",
+            "Title": "Evaluating apprenticeship training",
+            "LinkTitle": "Evaluating apprenticeship training",
             "InfoText": "",
             "Questions": [],
             "PageOfAnswers": [],
@@ -64,7 +64,7 @@
                 }
             ],
             "ActivatedByPageId": null,
-            "BodyText": "<p class='govuk-body' id='eat-intro-supp'>For this section, you'll need to know:</p><ul class='govuk-list govuk-list--bullet'><li>your organisation's process for evaluating the quality of training delivered</li><li>how your organisation's made improvements using this process</li><li>if this process includes apprenticeship training</li><li>how your organisation evaluates the quality for apprenticeship training</li><li>how your organisation reviews this process</li></ul>"
+            "BodyText": "<p class='govuk-body' id='eat-intro-supp'>For this section, you'll need to know:</p><ul class='govuk-list govuk-list--bullet'><li>your organisation's process for evaluating the quality of training delivered</li><li>how your organisation's made improvements using this process</li><li>if this process includes apprenticeship training</li><li>how your organisation evaluates the quality for apprenticeship training</li><li>how your organisation reviews this process</li><li>if your organisation has the resources to submit</li></ul>"
         }
     ]
 }
