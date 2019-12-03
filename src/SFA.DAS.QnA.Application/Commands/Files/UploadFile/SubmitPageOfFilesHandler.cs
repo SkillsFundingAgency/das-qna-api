@@ -18,14 +18,12 @@ namespace SFA.DAS.QnA.Application.Commands.Files.UploadFile
 {
     public class SubmitPageOfFilesHandler : SetAnswersBase, IRequestHandler<SubmitPageOfFilesRequest, HandlerResponse<SetPageAnswersResponse>>
     {
-        private readonly QnaDataContext _dataContext;
         private readonly IOptions<FileStorageConfig> _fileStorageConfig;
         private readonly IEncryptionService _encryptionService;
         private readonly IAnswerValidator _answerValidator;
 
-        public SubmitPageOfFilesHandler(QnaDataContext dataContext, IOptions<FileStorageConfig> fileStorageConfig, IEncryptionService encryptionService, IAnswerValidator answerValidator)
+        public SubmitPageOfFilesHandler(QnaDataContext dataContext, IOptions<FileStorageConfig> fileStorageConfig, IEncryptionService encryptionService, IAnswerValidator answerValidator) : base(dataContext)
         {
-            _dataContext = dataContext;
             _fileStorageConfig = fileStorageConfig;
             _encryptionService = encryptionService;
             _answerValidator = answerValidator;
@@ -122,7 +120,7 @@ namespace SFA.DAS.QnA.Application.Commands.Files.UploadFile
 
             await UpdateApplicationData(request.ApplicationId, page, page.PageOfAnswers.SelectMany(poa => poa.Answers).ToList());
             
-            var nextAction = GetNextAction(page, answersToValidate, section, _dataContext);
+            var nextAction = GetNextAction(page, answersToValidate, section);
             
             return new HandlerResponse<SetPageAnswersResponse>(new SetPageAnswersResponse(nextAction.Action, nextAction.ReturnId));
         }

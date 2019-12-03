@@ -13,11 +13,9 @@ namespace SFA.DAS.QnA.Application.Commands.SkipPage
 {
     public class SkipPageHandler : SetAnswersBase, IRequestHandler<SkipPageRequest, HandlerResponse<SkipPageResponse>>
     {
-        private readonly QnaDataContext _dataContext;
 
-        public SkipPageHandler(QnaDataContext dataContext)
+        public SkipPageHandler(QnaDataContext dataContext) : base(dataContext)
         {
-            _dataContext = dataContext;
         }
 
         public async Task<HandlerResponse<SkipPageResponse>> Handle(SkipPageRequest request, CancellationToken cancellationToken)
@@ -36,13 +34,10 @@ namespace SFA.DAS.QnA.Application.Commands.SkipPage
 
             try
             {
-                var nextAction = GetNextAction(page, answers, section, _dataContext);
-                var checkboxListAllNexts = GetCheckboxListMatchingNextActions(page, answers, section, _dataContext);
+                var nextAction = GetNextAction(page, answers, section);
+                var checkboxListAllNexts = GetCheckboxListMatchingNextActions(page, answers, section);
 
-                section.QnAData = qnaData;
-                await _dataContext.SaveChangesAsync(cancellationToken);
-
-                SetStatusOfNextPagesBasedOnAnswer(section.Id, page.PageId, answers, nextAction, checkboxListAllNexts, _dataContext);
+                SetStatusOfNextPagesBasedOnAnswer(section.Id, page.PageId, answers, nextAction, checkboxListAllNexts);
 
                 return new HandlerResponse<SkipPageResponse>(new SkipPageResponse(nextAction.Action, nextAction.ReturnId));
             }

@@ -25,7 +25,7 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.FindNextRequiredAction
                 }}
             };
 
-            var nextActionAfterFindingNextAction = SetAnswersBase.FindNextRequiredAction(section, QnaDataContext, NextAction);
+            var nextActionAfterFindingNextAction = SetAnswersBase.FindNextRequiredAction(section, NextAction);
             nextActionAfterFindingNextAction.Should().BeEquivalentTo(NextAction);
         }
         
@@ -45,7 +45,7 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.FindNextRequiredAction
                 }}
             };
 
-            var nextActionAfterFindingNextAction = SetAnswersBase.FindNextRequiredAction(section, QnaDataContext, NextAction);
+            var nextActionAfterFindingNextAction = SetAnswersBase.FindNextRequiredAction(section, NextAction);
             nextActionAfterFindingNextAction.Should().BeEquivalentTo(NextAction);
         }
     }

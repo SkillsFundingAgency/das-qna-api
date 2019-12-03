@@ -10,8 +10,14 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
 {
     public class SetAnswersBase
     {
+        protected readonly QnaDataContext _dataContext;
 
-        protected List<Next> GetCheckboxListMatchingNextActions(Page page, List<Answer> answers, ApplicationSection section, QnaDataContext qnaDataContext)
+        public SetAnswersBase(QnaDataContext dataContext)
+        {
+            _dataContext = dataContext;
+        }
+
+        protected List<Next> GetCheckboxListMatchingNextActions(Page page, List<Answer> answers, ApplicationSection section)
         {
             if (page.Next is null || !page.Next.Any())
             {
@@ -80,7 +86,7 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
 
             foreach (var matchingNext in matchingNexts)
             {
-                nextAction = FindNextRequiredAction(section, qnaDataContext, matchingNext);
+                nextAction = FindNextRequiredAction(section, matchingNext);
             
                 if (nextAction != null)
                 {
@@ -91,7 +97,7 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
             return matchingNextsToReturn;
         }
         
-        protected Next GetNextAction(Page page, List<Answer> answers, ApplicationSection section, QnaDataContext qnaDataContext)
+        protected Next GetNextAction(Page page, List<Answer> answers, ApplicationSection section)
         {
             if (page.Next is null || !page.Next.Any())
             {
@@ -115,8 +121,7 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
                     {
                         if (!String.IsNullOrWhiteSpace(condition.QuestionTag))
                         {
-                            var application =
-                                qnaDataContext.Applications.FirstOrDefault(app => app.Id == section.ApplicationId);
+                            var application = _dataContext.Applications.FirstOrDefault(app => app.Id == section.ApplicationId);
                             var applicationData = JObject.Parse(application.ApplicationData);
                             var questionTag = applicationData[condition.QuestionTag];
 
@@ -168,7 +173,7 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
                 }
             }
 
-            nextAction = FindNextRequiredAction(section, qnaDataContext, nextAction);
+            nextAction = FindNextRequiredAction(section, nextAction);
             
             if (nextAction != null)
             {
@@ -178,13 +183,13 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
             throw new ApplicationException($"Page {page.PageId}, in Sequence {page.SequenceId}, Section {page.SectionId} is missing a matching 'Next' instruction for Application {section.ApplicationId}");
         }
 
-        public Next FindNextRequiredAction(ApplicationSection section, QnaDataContext qnaDataContext, Next nextAction)
+        public Next FindNextRequiredAction(ApplicationSection section, Next nextAction)
         {
             if (nextAction is null || nextAction.Action != "NextPage") return nextAction;
             
             // Check here for any NotRequiredConditions on the next page.
 
-            var application = qnaDataContext.Applications.Single(app => app.Id == section.ApplicationId);
+            var application = _dataContext.Applications.Single(app => app.Id == section.ApplicationId);
             var applicationData = JObject.Parse(application.ApplicationData);
 
             var nextPage = section.QnAData.Pages.FirstOrDefault(p => p.PageId == nextAction.ReturnId);
@@ -213,7 +218,7 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
                 nextAction = nextPage.Next.Last();
             }
 
-            nextAction = FindNextRequiredAction(section, qnaDataContext, nextAction);
+            nextAction = FindNextRequiredAction(section, nextAction);
 
             return nextAction;
         }
@@ -226,9 +231,9 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
             }
         }
 
-        protected void SetStatusOfNextPagesBasedOnAnswer(Guid sectionId, string pageId, List<Answer> answers, Next nextAction, List<Next> checkboxListAllNexts, QnaDataContext qnaDataContext)
+        protected void SetStatusOfNextPagesBasedOnAnswer(Guid sectionId, string pageId, List<Answer> answers, Next nextAction, List<Next> checkboxListAllNexts)
         {
-            var section = qnaDataContext.ApplicationSections.FirstOrDefault(sec => sec.Id == sectionId);
+            var section = _dataContext.ApplicationSections.FirstOrDefault(sec => sec.Id == sectionId);
             var qnaData = new QnAData(section.QnAData);
             var page = qnaData.Pages.FirstOrDefault(p => p.PageId == pageId);
 
@@ -267,7 +272,7 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
             }
 
             section.QnAData = qnaData;
-            qnaDataContext.SaveChangesAsync();
+            _dataContext.SaveChangesAsync();
         }
 
         protected void DeactivateDependentPages(string branchingPageId, QnAData qnaData, Page page, Next chosenAction, bool subPages = false)

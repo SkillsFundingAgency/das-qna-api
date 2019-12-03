@@ -19,9 +19,9 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.FindNextRequiredAction
         [SetUp]
         public async Task SetUp()
         {
-            SetAnswersBase = new SetAnswersBase();
-
             QnaDataContext = DataContextHelpers.GetInMemoryDataContext();
+
+            SetAnswersBase = new SetAnswersBase(QnaDataContext);
 
             ApplicationId = Guid.NewGuid();
             

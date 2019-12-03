@@ -16,12 +16,10 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
 {
     public class SetPageAnswersHandler : SetAnswersBase, IRequestHandler<SetPageAnswersRequest, HandlerResponse<SetPageAnswersResponse>>
     {
-        private readonly QnaDataContext _dataContext;
         private readonly IAnswerValidator _answerValidator;
 
-        public SetPageAnswersHandler(QnaDataContext dataContext, IAnswerValidator answerValidator)
+        public SetPageAnswersHandler(QnaDataContext dataContext, IAnswerValidator answerValidator) : base(dataContext)
         {
-            _dataContext = dataContext;
             _answerValidator = answerValidator;
         }
 
@@ -55,11 +53,11 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
 
             await UpdateApplicationData(request.ApplicationId, page, request.Answers);
 
-            var nextAction = GetNextAction(page, request.Answers, section, _dataContext);
+            var nextAction = GetNextAction(page, request.Answers, section);
 
-            var checkboxListAllNexts = GetCheckboxListMatchingNextActions(page, request.Answers, section, _dataContext);
+            var checkboxListAllNexts = GetCheckboxListMatchingNextActions(page, request.Answers, section);
             
-            SetStatusOfNextPagesBasedOnAnswer(section.Id, page.PageId, request.Answers, nextAction, checkboxListAllNexts, _dataContext);
+            SetStatusOfNextPagesBasedOnAnswer(section.Id, page.PageId, request.Answers, nextAction, checkboxListAllNexts);
             
             return new HandlerResponse<SetPageAnswersResponse>(new SetPageAnswersResponse(nextAction.Action, nextAction.ReturnId));
         }
@@ -116,7 +114,7 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
                 // Deactivate & Activate affected pages accordingly
                 foreach (var page in pages)
                 {
-                    var nextAction = GetNextAction(page, new List<Answer>(), section, _dataContext);
+                    var nextAction = GetNextAction(page, new List<Answer>(), section);
                     if(nextAction?.Conditions != null)
                     {
                         DeactivateDependentPages(page.PageId, qnaData, page, nextAction);

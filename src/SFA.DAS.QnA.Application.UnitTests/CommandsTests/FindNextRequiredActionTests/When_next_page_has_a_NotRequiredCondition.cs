@@ -54,7 +54,7 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.FindNextRequiredAction
                 }}
             };
             
-            var nextActionAfterFindingNextAction = SetAnswersBase.FindNextRequiredAction(section, QnaDataContext, NextAction);
+            var nextActionAfterFindingNextAction = SetAnswersBase.FindNextRequiredAction(section, NextAction);
             nextActionAfterFindingNextAction.Should().BeEquivalentTo(expectedNextAction);
         }
         
@@ -102,7 +102,7 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.FindNextRequiredAction
                 }}
             };
             
-            var nextActionAfterFindingNextAction = SetAnswersBase.FindNextRequiredAction(section, QnaDataContext, NextAction);
+            var nextActionAfterFindingNextAction = SetAnswersBase.FindNextRequiredAction(section, NextAction);
             nextActionAfterFindingNextAction.Should().BeEquivalentTo(actionWithNoCondition);
         }
     }
@@ -139,7 +139,7 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.FindNextRequiredAction
                 }}
             };
             
-            var nextActionAfterFindingNextAction = SetAnswersBase.FindNextRequiredAction(section, QnaDataContext, NextAction);
+            var nextActionAfterFindingNextAction = SetAnswersBase.FindNextRequiredAction(section, NextAction);
             nextActionAfterFindingNextAction.Should().BeEquivalentTo(pageTwoNextAction);
         }
         
@@ -178,7 +178,7 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.FindNextRequiredAction
                 }}
             };
             
-            var nextActionAfterFindingNextAction = SetAnswersBase.FindNextRequiredAction(section, QnaDataContext, NextAction);
+            var nextActionAfterFindingNextAction = SetAnswersBase.FindNextRequiredAction(section, NextAction);
             nextActionAfterFindingNextAction.Should().BeEquivalentTo(pageThreeNextAction);
         }
     }
