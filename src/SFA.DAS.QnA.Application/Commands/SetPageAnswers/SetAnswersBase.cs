@@ -267,7 +267,7 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
             }
 
             section.QnAData = qnaData;
-            qnaDataContext.SaveChangesAsync();
+            qnaDataContext.SaveChanges();
         }
 
         protected void DeactivateDependentPages(string branchingPageId, QnAData qnaData, Page page, Next chosenAction, bool subPages = false)
