@@ -73,9 +73,6 @@ namespace SFA.DAS.QnA.Application.Commands.Files.UploadFile
                 return new HandlerResponse<SetPageAnswersResponse>(new SetPageAnswersResponse(validationErrors));
             }
 
-            page.Complete = true;
-            MarkFeedbackComplete(page);
-
             var container = await ContainerHelpers.GetContainer(_fileStorageConfig.Value.StorageConnectionString, _fileStorageConfig.Value.ContainerName);
 
             foreach (var file in request.Files)
@@ -112,15 +109,16 @@ namespace SFA.DAS.QnA.Application.Commands.Files.UploadFile
 
             }
 
+            MarkPageAsComplete(page);
+            MarkPageFeedbackAsComplete(page);
+
             section.QnAData = qnaData;
             await _dataContext.SaveChangesAsync(cancellationToken);
 
-            
-            MarkFeedbackComplete(page);
 
             await UpdateApplicationData(request.ApplicationId, page, page.PageOfAnswers.SelectMany(poa => poa.Answers).ToList());
             
-            var nextAction = GetNextAction(page, answersToValidate, section);
+            var nextAction = GetNextActionForPage(section.Id, page.PageId);
             
             return new HandlerResponse<SetPageAnswersResponse>(new SetPageAnswersResponse(nextAction.Action, nextAction.ReturnId));
         }

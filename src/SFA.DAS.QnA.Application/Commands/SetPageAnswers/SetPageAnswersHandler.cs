@@ -25,133 +25,186 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
 
         public async Task<HandlerResponse<SetPageAnswersResponse>> Handle(SetPageAnswersRequest request, CancellationToken cancellationToken)
         {
-            var section = await _dataContext.ApplicationSections.FirstOrDefaultAsync(sec => sec.Id == request.SectionId && sec.ApplicationId == request.ApplicationId, cancellationToken);
-            var qnaData = new QnAData(section.QnAData);
-            var page = qnaData.Pages.FirstOrDefault(p => p.PageId == request.PageId);
+            var validationResult = ValidateRequest(request);
 
-            if (page.AllowMultipleAnswers) return new HandlerResponse<SetPageAnswersResponse>(success: false, message: "This endpoint cannot be used for Multiple Answers pages. Use AddAnswer / RemoveAnswer instead.");
-
-            if (page.Questions.Count > 0)
+            if(validationResult?.Success is false)
             {
-                if (page.Questions.Count > request.Answers.Count)
+                return validationResult;
+            }
+ 
+            SaveAnswersIntoPage(request);
+            UpdateApplicationDataBasedOnAnswers(request);
+
+            var nextAction = GetNextActionForPage(request.SectionId, request.PageId);
+            var checkboxListAllNexts = GetCheckboxListMatchingNextActionsForPage(request.SectionId, request.PageId);
+            
+            SetStatusOfNextPagesBasedOnAnswer(request.SectionId, request.PageId, request.Answers, nextAction, checkboxListAllNexts);
+            
+            return new HandlerResponse<SetPageAnswersResponse>(new SetPageAnswersResponse(nextAction.Action, nextAction.ReturnId));
+        }
+
+        private HandlerResponse<SetPageAnswersResponse> ValidateRequest(SetPageAnswersRequest request)
+        {
+            var section =  _dataContext.ApplicationSections.AsNoTracking().SingleOrDefault(sec => sec.Id == request.SectionId && sec.ApplicationId == request.ApplicationId);
+            var page = section?.QnAData?.Pages.SingleOrDefault(p => p.PageId == request.PageId);
+
+            var answers = request.Answers;
+
+            if (page is null)
+            {
+                return new HandlerResponse<SetPageAnswersResponse>(success: false, message: "Cannot find requested page.");
+            }
+            else if(answers is null)
+            {
+                return new HandlerResponse<SetPageAnswersResponse>(success: false, message: "No answers specified.");
+            }
+            else if (page.AllowMultipleAnswers)
+            {
+                return new HandlerResponse<SetPageAnswersResponse>(success: false, message: "This endpoint cannot be used for Multiple Answers pages. Use AddAnswer / RemoveAnswer instead.");
+            }
+            else if (page.Questions.Count > 0)
+            {
+                if (page.Questions.Count > answers.Count)
                 {
-                    return new HandlerResponse<SetPageAnswersResponse>(success: false, message: $"Number of Answers supplied ({request.Answers.Count}) does not match number of first level Questions on page ({page.Questions.Count}).");
+                    return new HandlerResponse<SetPageAnswersResponse>(success: false, message: $"Number of Answers supplied ({answers.Count}) does not match number of first level Questions on page ({page.Questions.Count}).");
                 }
-                
-                var validationErrors = _answerValidator.Validate(request.Answers, page);
+
+                var validationErrors = _answerValidator.Validate(answers, page);
                 if (validationErrors.Any())
                 {
                     return new HandlerResponse<SetPageAnswersResponse>(new SetPageAnswersResponse(validationErrors));
                 }
             }
 
-            page.Complete = true;
-
-            MarkFeedbackComplete(page);
-            
-            await SaveAnswersIntoPage(request, cancellationToken, qnaData, section);
-
-            await UpdateApplicationData(request.ApplicationId, page, request.Answers);
-
-            var nextAction = GetNextAction(page, request.Answers, section);
-
-            var checkboxListAllNexts = GetCheckboxListMatchingNextActions(page, request.Answers, section);
-            
-            SetStatusOfNextPagesBasedOnAnswer(section.Id, page.PageId, request.Answers, nextAction, checkboxListAllNexts);
-            
-            return new HandlerResponse<SetPageAnswersResponse>(new SetPageAnswersResponse(nextAction.Action, nextAction.ReturnId));
+            return null;
         }
 
-        private async Task UpdateApplicationData(Guid applicationId, Page page, List<Answer> answers)
+        private void SaveAnswersIntoPage(SetPageAnswersRequest request)
         {
-            var application = await _dataContext.Applications.SingleOrDefaultAsync(app => app.Id == applicationId);
-            var applicationData = JObject.Parse(application.ApplicationData);
-            var questionTags = new List<string>();
+            var section = _dataContext.ApplicationSections.SingleOrDefault(sec => sec.Id == request.SectionId && sec.ApplicationId == request.ApplicationId);
 
-            foreach (var question in page.Questions)
+            if (section != null)
             {
-                SetApplicationDataField(answers, applicationData, question);
-                if (!string.IsNullOrWhiteSpace(question.QuestionTag)) questionTags.Add(question.QuestionTag);
-
-                if (question.Input.Options == null) continue;
-
-                foreach (var option in question.Input.Options.Where(o => o.FurtherQuestions != null))
-                {
-                    foreach (var furtherQuestion in option.FurtherQuestions)
-                    {
-                        SetApplicationDataField(answers, applicationData, furtherQuestion);
-                        if (!string.IsNullOrWhiteSpace(question.QuestionTag)) questionTags.Add(question.QuestionTag);
-                    }
-                }
-            }
-
-            application.ApplicationData = applicationData.ToString(Formatting.None);
-
-            await _dataContext.SaveChangesAsync();
-
-            await SetStatusOfAllPagesBasedOnUpdatedQuestionTags(applicationId, questionTags);
-        }
-
-        private async Task SetStatusOfAllPagesBasedOnUpdatedQuestionTags(Guid applicationId, List<string> questionTags)
-        {
-            if (questionTags == null || questionTags.Count < 1) return;
-
-            var sections = await _dataContext.ApplicationSections.Where(sec => sec.ApplicationId == applicationId).ToListAsync();
-
-            // Go through each section in the application
-            foreach (var section in sections)
-            {
+                // Have to force QnAData a new object and reassign for Entity Framework to pick up changes
                 var qnaData = new QnAData(section.QnAData);
+                var page = qnaData?.Pages.SingleOrDefault(p => p.PageId == request.PageId);
 
-                // Get the list of pages that contain one of QuestionTags in the next condition
-                var pages = new List<Page>();
-                foreach (var questionTag in questionTags.Distinct())
+                if (page != null)
                 {
-                   var questionTagPages = qnaData.Pages.Where(p => !p.AllowMultipleAnswers && p.Next.SelectMany(n => n.Conditions).Select(c => c.QuestionTag).Contains(questionTag));
-                   pages.AddRange(questionTagPages);
+                    page.PageOfAnswers = new List<PageOfAnswers>(new[] { new PageOfAnswers() { Answers = request.Answers } });
+
+                    MarkPageAsComplete(page);
+                    MarkPageFeedbackAsComplete(page);
+
+                    // Assign QnAData back so Entity Framework will pick up changes
+                    section.QnAData = qnaData;
+                    _dataContext.SaveChanges();
+                }
+            }
+        }
+
+        private void UpdateApplicationDataBasedOnAnswers(SetPageAnswersRequest request)
+        {
+            var application = _dataContext.Applications.SingleOrDefault(app => app.Id == request.ApplicationId);
+
+            if (application != null)
+            {
+                var applicationData = JObject.Parse(application.ApplicationData ?? "{}");
+
+                var section = _dataContext.ApplicationSections.AsNoTracking().SingleOrDefault(sec => sec.Id == request.SectionId && sec.ApplicationId == application.Id);
+                var page = section?.QnAData?.Pages.SingleOrDefault(p => p.PageId == request.PageId);
+
+                if (page != null)
+                {
+                    var questionTagsWhichHaveBeenUpdated = new List<string>();
+
+                    foreach (var question in page.Questions)
+                    {
+                        UpdateApplicationData(question, request.Answers, applicationData);
+                        if (!string.IsNullOrWhiteSpace(question.QuestionTag)) questionTagsWhichHaveBeenUpdated.Add(question.QuestionTag);
+
+                        if (question.Input.Options != null)
+                        {
+                            foreach (var option in question.Input.Options.Where(o => o.FurtherQuestions != null))
+                            {
+                                foreach (var furtherQuestion in option.FurtherQuestions)
+                                {
+                                    UpdateApplicationData(furtherQuestion, request.Answers, applicationData);
+                                    if (!string.IsNullOrWhiteSpace(furtherQuestion.QuestionTag)) questionTagsWhichHaveBeenUpdated.Add(furtherQuestion.QuestionTag);
+                                }
+                            }
+                        }
+                    }
+
+                    application.ApplicationData = applicationData.ToString(Formatting.None);
+                    _dataContext.SaveChanges();
+
+                    SetStatusOfAllPagesBasedOnUpdatedQuestionTags(application.Id, questionTagsWhichHaveBeenUpdated);
+                }
+            }
+        }
+
+        private void SetStatusOfAllPagesBasedOnUpdatedQuestionTags(Guid applicationId, List<string> questionTags)
+        {
+            if (questionTags != null && questionTags.Count > 0)
+            {
+                var sections = _dataContext.ApplicationSections.Where(sec => sec.ApplicationId == applicationId);
+
+                // Go through each section in the application
+                foreach (var section in sections)
+                {
+                    // Have to force QnAData a new object and reassign for Entity Framework to pick up changes
+                    var qnaData = new QnAData(section.QnAData);
+
+                    // Get the list of pages that contain one of QuestionTags in the next condition
+                    var pagesToProcess = new List<Page>();
+                    foreach (var questionTag in questionTags.Distinct())
+                    {
+                        var questionTagPages = qnaData.Pages.Where(p => !p.AllowMultipleAnswers && p.Next.SelectMany(n => n.Conditions).Select(c => c.QuestionTag).Contains(questionTag));
+                        pagesToProcess.AddRange(questionTagPages);
+                    }
+
+                    // Deactivate & Activate affected pages accordingly
+                    foreach (var page in pagesToProcess)
+                    {
+                        if (page.PageOfAnswers != null && page.PageOfAnswers.Count > 0)
+                        {
+                            var nextAction = GetNextActionForPage(section.Id, page.PageId);
+                            if (nextAction?.Conditions != null)
+                            {
+                                DeactivateDependentPages(nextAction, page.PageId, qnaData, page);
+                                ActivateDependentPages(nextAction, page.PageId, qnaData);
+                            }
+                        }
+                    }
+
+                    // Assign QnAData back so Entity Framework will pick up changes
+                    section.QnAData = qnaData;
                 }
 
-                // Deactivate & Activate affected pages accordingly
-                foreach (var page in pages)
+                _dataContext.SaveChanges();
+            }
+        }
+
+        private static void UpdateApplicationData(Question question, List<Answer> answers, JObject applicationData)
+        {
+            if (question != null && applicationData != null)
+            {
+                var questionTag = question.QuestionTag;
+                var questionTagAnswer = answers?.SingleOrDefault(a => a.QuestionId == question.QuestionId)?.Value;
+
+                if (!string.IsNullOrWhiteSpace(questionTag))
                 {
-                    var nextAction = GetNextAction(page, new List<Answer>(), section);
-                    if(nextAction?.Conditions != null)
+                    if (applicationData.ContainsKey(question.QuestionTag))
                     {
-                        DeactivateDependentPages(page.PageId, qnaData, page, nextAction);
-                        ActivateDependentPages(nextAction, page.PageId, qnaData);
+                        applicationData[question.QuestionTag] = questionTagAnswer;
+                    }
+                    else
+                    {
+                        applicationData.Add(question.QuestionTag, new JValue(questionTagAnswer));
                     }
                 }
-
-                // Assign the updated QnAData back to the section
-                section.QnAData = qnaData;
-            }
-
-            await _dataContext.SaveChangesAsync();
-        }
-
-        private static void SetApplicationDataField(List<Answer> answers, JObject applicationData, Question question)
-        {
-            if (string.IsNullOrWhiteSpace(question.QuestionTag)) return;
-
-            if (applicationData.ContainsKey(question.QuestionTag))
-            {
-                applicationData[question.QuestionTag] = answers.Single(a => a.QuestionId == question.QuestionId).Value;
-            }
-            else
-            {
-                applicationData.Add(question.QuestionTag, new JValue(answers.Single(a => a.QuestionId == question.QuestionId).Value));
             }
         }
-
-
-        private async Task SaveAnswersIntoPage(SetPageAnswersRequest request, CancellationToken cancellationToken, QnAData qnaData, ApplicationSection section)
-        {
-            qnaData.Pages.Single(p => p.PageId == request.PageId).PageOfAnswers = new List<PageOfAnswers>(new[] {new PageOfAnswers() {Answers = request.Answers}});
-            section.QnAData = qnaData;
-
-            await _dataContext.SaveChangesAsync(cancellationToken);
-        }
-
-        
     }
 }

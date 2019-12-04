@@ -15,6 +15,7 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.FindNextRequiredAction
         protected QnaDataContext QnaDataContext;
         protected Guid ApplicationId;
         protected Next NextAction;
+        protected string ApplicationDataJson;
 
         [SetUp]
         public async Task SetUp()
@@ -24,11 +25,13 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.FindNextRequiredAction
             SetAnswersBase = new SetAnswersBase(QnaDataContext);
 
             ApplicationId = Guid.NewGuid();
-            
-            await QnaDataContext.Applications.AddAsync(new Data.Entities.Application {Id = ApplicationId, ApplicationData = JsonConvert.SerializeObject(new
+
+            ApplicationDataJson = JsonConvert.SerializeObject(new
             {
                 OrgType = "OrgType1"
-            })});
+            });
+
+            await QnaDataContext.Applications.AddAsync(new Data.Entities.Application { Id = ApplicationId, ApplicationData = ApplicationDataJson });
 
             await QnaDataContext.SaveChangesAsync();
 
