@@ -84,7 +84,7 @@
                 {
                     "Field": "Apply-ProviderRoute",
                     "IsOneOf": [
-                        "2"
+                        "3"
                     ]
                 }
             ],
@@ -178,7 +178,6 @@
                 {
                     "Action": "ReturnToSection",
                     "ReturnId": "",
-                    "Condition": null,
                     "Conditions": [],
                     "ConditionMet": false
                 }
