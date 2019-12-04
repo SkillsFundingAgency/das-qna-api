@@ -275,15 +275,7 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
                     {
                         foreach (var checkboxNextAction in checkboxListAllNexts)
                         {
-                            if (page.PageOfAnswers != null && page.PageOfAnswers.Count > 0)
-                            {
-                                // is this correct?
-                                var existingAnswer = page.PageOfAnswers?[0].Answers.SingleOrDefault(a => a.QuestionId == answers[0].QuestionId);
-                                if (existingAnswer != null && existingAnswer != answers.Single(a => a.QuestionId == answers[0].QuestionId))
-                                {
-                                    DeactivateDependentPages(checkboxNextAction, page.PageId, qnaData, page);
-                                }
-                            }
+                            DeactivateDependentPages(checkboxNextAction, page.PageId, qnaData, page);
                         }
 
                         foreach (var next in checkboxListAllNexts)
@@ -293,16 +285,7 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
                     }
                     else if(nextAction != null)
                     {
-                        if (page.PageOfAnswers != null && page.PageOfAnswers.Count > 0)
-                        {
-                            var existingAnswer = page.PageOfAnswers?[0].Answers.SingleOrDefault(a => a.QuestionId == answers[0].QuestionId);
-
-                            if (existingAnswer != null && existingAnswer != answers.Single(a => a.QuestionId == answers[0].QuestionId))
-                            {
-                                DeactivateDependentPages(nextAction, page.PageId, qnaData, page);
-                            }
-                        }
-
+                        DeactivateDependentPages(nextAction, page.PageId, qnaData, page);
                         ActivateDependentPages(nextAction, page.PageId, qnaData);
                     }
 
@@ -318,7 +301,7 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
             if (page != null)
             {
                 // process all sub pages or those which are not the chosen action
-                foreach (var nextAction in page.Next.Where(n => subPages || (n.Action != chosenAction.Action && n.ReturnId != chosenAction.ReturnId)))
+                foreach (var nextAction in page.Next.Where(n => subPages || !(n.Action == chosenAction.Action && n.ReturnId == chosenAction.ReturnId)))
                 {
                     if ("NextPage".Equals(nextAction.Action, StringComparison.InvariantCultureIgnoreCase))
                     {
