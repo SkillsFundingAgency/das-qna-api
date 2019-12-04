@@ -203,7 +203,14 @@
                 }
             ],
             "PageOfAnswers": [],
-            "Next": [],
+            "Next": [
+			{
+                    "Action": "ReturnToSection",
+                    "ReturnId": "",
+                    "Conditions": [],
+                    "ConditionMet": false
+                }
+				],
             "Complete": false,
             "AllowMultipleAnswers": false,
             "Order": null,
