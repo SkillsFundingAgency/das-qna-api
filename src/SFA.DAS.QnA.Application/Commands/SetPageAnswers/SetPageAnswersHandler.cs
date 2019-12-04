@@ -33,7 +33,7 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
             }
  
             SaveAnswersIntoPage(request);
-            UpdateApplicationDataBasedOnAnswers(request);
+            UpdateApplicationData(request);
 
             var nextAction = GetNextActionForPage(request.SectionId, request.PageId);
             var checkboxListAllNexts = GetCheckboxListMatchingNextActionsForPage(request.SectionId, request.PageId);
@@ -103,7 +103,7 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
             }
         }
 
-        private void UpdateApplicationDataBasedOnAnswers(SetPageAnswersRequest request)
+        private void UpdateApplicationData(SetPageAnswersRequest request)
         {
             var application = _dataContext.Applications.SingleOrDefault(app => app.Id == request.ApplicationId);
 
