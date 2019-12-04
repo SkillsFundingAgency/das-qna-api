@@ -8,15 +8,67 @@
             "PageId": "6400",
             "SequenceId": null,
             "SectionId": null,
-            "Title": "Forecasting starts",
+            "Title": "How many starts does your organisation forecast in the first 12 months of joining the RoATP?",
             "LinkTitle": "Forecasting starts",
             "InfoText": "Forecasting starts",
-            "Questions": [ ],
+            "Questions": [
+                {
+                    "QuestionId": "PAT-640",
+                    "QuestionTag": null,
+                    "Label": "",
+                    "ShortLabel": "",
+                    "InputClasses": null,
+                    "QuestionBodyText": "",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "Radio",
+                        "InputClasses": null,
+                        "Options": [
+                            {
+                                "Value": "One to 49",
+                                "Label": "One to 49",
+                                "HintText": ""
+                            },
+                            {
+                                "Value": "50 to 99",
+                                "Label": "50 to 99",
+                                "HintText": ""
+                            },
+                            {
+                                "Value": "100 to 149",
+                                "Label": "100 to 149",
+                                "HintText": ""
+                            },
+                            {
+                                "Value": "150 to 249",
+                                "Label": "150 to 249",
+                                "HintText": ""
+                            },
+                            {
+                                "Value": "250 or more",
+                                "Label": "250 or more",
+                                "HintText": ""
+                            }
+                        ],
+                        "Validations": [
+                            {
+                                "Name": "Required",
+                                "Value": "",
+                                "ErrorMessage": "Tell us how many starts your organisation forecasts in the first 12 months of joining RoATP"
+                            }
+                        ],
+                        "DataEndpoint": null
+                    },
+                    "Order": null,
+                    "Value": "",
+                    "ErrorMessages": null
+                }
+            ],
             "PageOfAnswers": [],
             "Next": [
                 {
                     "Action": "NextPage",
-                    "ReturnId": "6500",
+                    "ReturnId": "6410",
                     "Conditions": [],
                     "ConditionMet": false
                 }
@@ -37,7 +89,39 @@
                 }
             ],
             "ActivatedByPageId": null,
-            "BodyText": "<p class='govuk-body'>Forecasting starts Holding page</p>"
+            "BodyText": "<p class='govuk-body govuk-!-font-weight-bold'>How many starts does your organisation forecast in the first 12 months of joining the RoATP?</p>",
+            "Details": {
+                "Title": "What is a 'start'?",
+                "Body": "A 'start' is an apprentice who will start their apprenticeship after your organisation joins the RoATP."
+            }
+        },
+        {
+            "PageId": "6410",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "Ready to Deliver holding page",
+            "LinkTitle": "Ready to deliver against starts",
+            "InfoText": "",
+            "Questions": [],
+            "PageOfAnswers": [],
+             "Next": [
+                {
+                    "Action": "ReturnToSection",
+                    "ReturnId": "",
+                    "Conditions": [],
+                    "ConditionMet": false
+                }
+            ],
+            "Complete": false,
+            "AllowMultipleAnswers": false,
+            "Order": null,
+            "Active": false,
+            "NotRequiredConditions": [],
+            "BodyText": "",
+            "Details": null,
+            "DisplayType": null,
+            "Feedback": null,
+            "ActivatedByPageId": "6400"
         }
     ]
 }
