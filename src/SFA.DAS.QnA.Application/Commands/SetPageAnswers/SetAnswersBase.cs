@@ -259,7 +259,7 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
             }
         }
 
-        protected void SetStatusOfNextPagesBasedOnAnswer(Guid sectionId, string pageId, List<Answer> answers, Next nextAction, List<Next> checkboxListAllNexts)
+        protected void SetStatusOfNextPagesBasedOnDeemedNextActions(Guid sectionId, string pageId, Next deemedNextAction, List<Next> deemedCheckboxListNextActions)
         {
             var section = _dataContext.ApplicationSections.FirstOrDefault(sec => sec.Id == sectionId);
 
@@ -271,22 +271,22 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
 
                 if (page != null)
                 {
-                    if (checkboxListAllNexts != null && checkboxListAllNexts.Any())
+                    if (deemedCheckboxListNextActions != null && deemedCheckboxListNextActions.Any())
                     {
-                        foreach (var checkboxNextAction in checkboxListAllNexts)
+                        foreach (var checkboxNextAction in deemedCheckboxListNextActions)
                         {
                             DeactivateDependentPages(checkboxNextAction, page.PageId, qnaData, page);
                         }
 
-                        foreach (var next in checkboxListAllNexts)
+                        foreach (var checkboxNextAction in deemedCheckboxListNextActions)
                         {
-                            ActivateDependentPages(next, page.PageId, qnaData);
+                            ActivateDependentPages(checkboxNextAction, page.PageId, qnaData);
                         }
                     }
-                    else if(nextAction != null)
+                    else if(deemedNextAction != null)
                     {
-                        DeactivateDependentPages(nextAction, page.PageId, qnaData, page);
-                        ActivateDependentPages(nextAction, page.PageId, qnaData);
+                        DeactivateDependentPages(deemedNextAction, page.PageId, qnaData, page);
+                        ActivateDependentPages(deemedNextAction, page.PageId, qnaData);
                     }
 
                     // Assign QnAData back so Entity Framework will pick up changes

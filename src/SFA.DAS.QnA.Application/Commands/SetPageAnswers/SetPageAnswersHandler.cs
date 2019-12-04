@@ -38,7 +38,7 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
             var nextAction = GetNextActionForPage(request.SectionId, request.PageId);
             var checkboxListAllNexts = GetCheckboxListMatchingNextActionsForPage(request.SectionId, request.PageId);
             
-            SetStatusOfNextPagesBasedOnAnswer(request.SectionId, request.PageId, request.Answers, nextAction, checkboxListAllNexts);
+            SetStatusOfNextPagesBasedOnDeemedNextActions(request.SectionId, request.PageId, nextAction, checkboxListAllNexts);
             
             return new HandlerResponse<SetPageAnswersResponse>(new SetPageAnswersResponse(nextAction.Action, nextAction.ReturnId));
         }

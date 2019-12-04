@@ -34,9 +34,8 @@ namespace SFA.DAS.QnA.Application.Commands.SkipPage
             {
                 var nextAction = GetNextActionForPage(section.Id, page.PageId);
                 var checkboxListAllNexts = GetCheckboxListMatchingNextActionsForPage(section.Id, page.PageId);
-                var answers = page.PageOfAnswers?[0].Answers;
 
-                SetStatusOfNextPagesBasedOnAnswer(section.Id, page.PageId, answers, nextAction, checkboxListAllNexts);
+                SetStatusOfNextPagesBasedOnDeemedNextActions(section.Id, page.PageId, nextAction, checkboxListAllNexts);
 
                 return new HandlerResponse<SkipPageResponse>(new SkipPageResponse(nextAction.Action, nextAction.ReturnId));
             }
