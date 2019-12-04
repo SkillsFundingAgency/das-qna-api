@@ -25,11 +25,11 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
 
         public async Task<HandlerResponse<SetPageAnswersResponse>> Handle(SetPageAnswersRequest request, CancellationToken cancellationToken)
         {
-            var validationResult = ValidateRequest(request);
+            var validationErrorResponse = ValidateRequest(request);
 
-            if(validationResult?.Success is false)
+            if(validationErrorResponse != null)
             {
-                return validationResult;
+                return validationErrorResponse;
             }
  
             SaveAnswersIntoPage(request);
