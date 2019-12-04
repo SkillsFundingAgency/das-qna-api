@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Linq;
     using System.Threading;
     using System.Threading.Tasks;
     using FluentAssertions;
@@ -42,6 +43,27 @@
             response.Value.NextActionId.Should().Be("101");
         }
 
+        [Test]
+        public async Task Then_all_pages_are_set_to_active_if_the_condition_passes_and_answer_matches()
+        {
+            var applicationId = Guid.NewGuid();
+            var sectionId = Guid.NewGuid();
+            await SetupQuestionData(applicationId, sectionId, "Yes", "Yes");
+
+            await Handler.Handle(new SetPageAnswersRequest(applicationId, sectionId, "100", new List<Answer>
+            {
+                new Answer() {QuestionId = "Q1", Value = "Yes"}
+            }), CancellationToken.None);
+
+            var section = GetSection(applicationId, sectionId);
+            section.QnAData.Pages.TrueForAll(p => p.Active).Should().BeTrue();
+        }
+
+        private ApplicationSection GetSection(Guid applicationId, Guid sectionId)
+        {
+            return DataContext.ApplicationSections.FirstOrDefault(sec => sec.ApplicationId == applicationId && sec.Id == sectionId);
+        }
+
         private async Task SetupQuestionData(Guid applicationId, Guid sectionId, string questionValue, string conditionValue)
         {
             
@@ -64,6 +86,27 @@
                                 new Next(){Action = "NextPage", ReturnId = "102", Conditions = new List<Condition>()}
                             },
                             Active = true
+                        },
+                        new Page()
+                        {
+                            PageId = "101",
+                            Questions = new List<Question>{new Question(){QuestionId = "Q2", QuestionTag = "TagName2", Input = new Input()}},
+                            PageOfAnswers = new List<PageOfAnswers>(),
+                            Next = new List<Next>
+                            {
+                                new Next(){Action = "NextPage", ReturnId = "102", Conditions = new List<Condition>()}
+                            },
+                            Active = false,
+                            ActivatedByPageId = "100"
+                        },
+                        new Page()
+                        {
+                            PageId = "102",
+                            Questions = new List<Question>{new Question(){QuestionId = "Q3", QuestionTag = "TagName3", Input = new Input()}},
+                            PageOfAnswers = new List<PageOfAnswers>(),
+                            Next = new List<Next>(),
+                            Active = false,
+                            ActivatedByPageId = "100"
                         }
                     }
                 }
