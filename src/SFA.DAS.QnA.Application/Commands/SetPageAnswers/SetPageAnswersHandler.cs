@@ -58,6 +58,10 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
             {
                 return new HandlerResponse<SetPageAnswersResponse>(success: false, message: "No answers specified.");
             }
+            else if(answers.Any(a => a.QuestionId is null))
+            {
+                return new HandlerResponse<SetPageAnswersResponse>(success: false, message: "All answers must specify which question they are related to.");
+            }
             else if (page.AllowMultipleAnswers)
             {
                 return new HandlerResponse<SetPageAnswersResponse>(success: false, message: "This endpoint cannot be used for Multiple Answers pages. Use AddAnswer / RemoveAnswer instead.");
