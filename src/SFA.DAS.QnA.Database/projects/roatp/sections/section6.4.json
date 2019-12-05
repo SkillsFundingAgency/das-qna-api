@@ -169,8 +169,73 @@
             "PageId": "6420",
             "SequenceId": null,
             "SectionId": null,
-            "Title": "Recruit staff to deliver holding page",
+            "Title": "Will your organisation recruit new staff to deliver training against these forecasts?",
             "LinkTitle": "Recruit staff to deliver",
+            "InfoText": "",
+            "Questions": [
+                {
+                    "QuestionId": "PAT-642",
+                    "QuestionTag": null,
+                    "Label": "",
+                    "ShortLabel": "",
+                    "InputClasses": null,
+                    "QuestionBodyText": "",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "Radio",
+                        "InputClasses": null,
+                        "Options": [
+                            {
+                                "Value": "Yes",
+                                "Label": "Yes",
+                                "HintText": ""
+                            },
+                            {
+                                "Value": "No",
+                                "Label": "No",
+                                "HintText": ""
+                            }
+                        ],
+                        "Validations": [
+                            {
+                                "Name": "Required",
+                                "Value": "",
+                                "ErrorMessage": "Tell us how your organisation will recruit new staff to deliver training against these forecasts"
+                            }
+                        ],
+                        "DataEndpoint": null
+                    },
+                    "Order": null,
+                    "Value": "",
+                    "ErrorMessages": null
+                }
+            ],
+            "PageOfAnswers": [],
+            "Next": [
+                {
+                    "Action": "NextPage",
+                    "ReturnId": "6430",
+                    "Conditions": [],
+                    "ConditionMet": false
+                }
+            ],
+            "Complete": false,
+            "AllowMultipleAnswers": false,
+            "Order": null,
+            "Active": false,
+            "NotRequiredConditions": [],
+            "BodyText": "<p class='govuk-body govuk-!-font-weight-bold'>Will your organisation recruit new staff to deliver training against these forecasts?</p>",
+            "Details": null,
+            "DisplayType": null,
+            "Feedback": null,
+            "ActivatedByPageId": "6410"
+        },
+        {
+            "PageId": "6430",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "Staff Apprentice Ratio Holding Page",
+            "LinkTitle": "Staff Apprentice Ratio",
             "InfoText": "",
             "Questions": [],
             "PageOfAnswers": [],
@@ -178,6 +243,7 @@
                 {
                     "Action": "ReturnToSection",
                     "ReturnId": "",
+                    "Condition": null,
                     "Conditions": [],
                     "ConditionMet": false
                 }
@@ -191,7 +257,7 @@
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
-            "ActivatedByPageId": "6410"
+            "ActivatedByPageId": "6420"
         }
     ]
 }
