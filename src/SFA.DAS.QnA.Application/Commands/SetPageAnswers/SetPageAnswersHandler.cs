@@ -120,7 +120,7 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
 
                     foreach (var question in page.Questions)
                     {
-                        UpdateApplicationData(question, request.Answers, applicationData);
+                        SetApplicationDataField(question, request.Answers, applicationData);
                         if (!string.IsNullOrWhiteSpace(question.QuestionTag)) questionTagsWhichHaveBeenUpdated.Add(question.QuestionTag);
 
                         if (question.Input.Options != null)
@@ -129,7 +129,7 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
                             {
                                 foreach (var furtherQuestion in option.FurtherQuestions)
                                 {
-                                    UpdateApplicationData(furtherQuestion, request.Answers, applicationData);
+                                    SetApplicationDataField(furtherQuestion, request.Answers, applicationData);
                                     if (!string.IsNullOrWhiteSpace(furtherQuestion.QuestionTag)) questionTagsWhichHaveBeenUpdated.Add(furtherQuestion.QuestionTag);
                                 }
                             }
@@ -186,7 +186,7 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
             }
         }
 
-        private static void UpdateApplicationData(Question question, List<Answer> answers, JObject applicationData)
+        private static void SetApplicationDataField(Question question, List<Answer> answers, JObject applicationData)
         {
             if (question != null && applicationData != null)
             {
