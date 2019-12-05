@@ -64,7 +64,15 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
             }
             else if (page.Questions.Count > 0)
             {
-                if (page.Questions.Count > answers.Count)
+                if (page.Questions.All(q => "FileUpload".Equals(q.Input?.Type, StringComparison.InvariantCultureIgnoreCase)))
+                {
+                    return new HandlerResponse<SetPageAnswersResponse>(success: false, message: "This endpoint cannot be used for FileUpload questions. Use Upload / DeleteFile instead.");
+                }
+                else if (page.Questions.Any(q => "FileUpload".Equals(q.Input?.Type, StringComparison.InvariantCultureIgnoreCase)))
+                {
+                    return new HandlerResponse<SetPageAnswersResponse>(success: false, message: "Pages cannot contain a mixture of FileUploads and other Question Types.");
+                }
+                else if (page.Questions.Count > answers.Count)
                 {
                     return new HandlerResponse<SetPageAnswersResponse>(success: false, message: $"Number of Answers supplied ({answers.Count}) does not match number of first level Questions on page ({page.Questions.Count}).");
                 }
