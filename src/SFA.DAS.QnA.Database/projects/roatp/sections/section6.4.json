@@ -234,10 +234,50 @@
             "PageId": "6430",
             "SequenceId": null,
             "SectionId": null,
-            "Title": "Staff Apprentice Ratio Holding Page",
+            "Title": "What is the typical ratio of the staff who deliver training to the apprentices?",
             "LinkTitle": "Staff Apprentice Ratio",
             "InfoText": "",
-            "Questions": [],
+            "Questions": [{
+                    "QuestionId": "PAT-643",
+                    "QuestionTag": null,
+                    "Label": "",
+                    "ShortLabel": "",
+                    "InputClasses": null,
+                    "QuestionBodyText": "",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "Radio",
+                        "InputClasses": null,
+                        "Options": [
+                            {
+                                "Value": "One trainer between 10 or less apprentices",
+                                "Label": "One trainer between 10 or less apprentices",
+                                "HintText": ""
+                            },
+                            {
+                                "Value": "One trainer between 11 to 29 apprentices",
+                                "Label": "One trainer between 11 to 29 apprentices",
+                                "HintText": ""
+                            },
+                            {
+                                "Value": "One trainer between 30 or more apprentices",
+                                "Label": "One trainer between 30 or more apprentices",
+                                "HintText": ""
+                            }
+                        ],
+                        "Validations": [
+                            {
+                                "Name": "Required",
+                                "Value": "",
+                                "ErrorMessage": "Tell us what the typical ratio is of the staff who deliver training to the learners"
+                            }
+                        ],
+                        "DataEndpoint": null
+                    },
+                    "Order": null,
+                    "Value": "",
+                    "ErrorMessages": null
+                }],
             "PageOfAnswers": [],
             "Next": [
                 {
@@ -253,7 +293,7 @@
             "Order": null,
             "Active": false,
             "NotRequiredConditions": [],
-            "BodyText": "",
+            "BodyText": "<p class='govuk-body govuk-!-font-weight-bold'>What is the typical ratio of the staff who deliver training to the apprentices?</p>",
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
