@@ -8,26 +8,73 @@
             "PageId": "6500",
             "SequenceId": null,
             "SectionId": null,
-            "Title": "Off the job training",
-            "LinkTitle": "Off the job training",
-            "InfoText": "Off the job training",
-            "Questions": [ ],
-            "PageOfAnswers": [],
-            "Next": [
+            "Title": "What teaching methods will your organisation use to deliver 20% off the job training?",
+            "LinkTitle": "Deliver 20% OTJ",
+            "InfoText": "",
+            "Questions": [
                 {
-                    "Action": "NextPage",
-                    "ReturnId": "6060",
-                    "Conditions": [],
-                    "ConditionMet": false
+                    "QuestionId": "PAT-650",
+                    "QuestionTag": null,
+                    "Label": "",
+                    "ShortLabel": "",
+                    "InputClasses": null,
+                    "QuestionBodyText": "<p class='govuk-body'>Select all that apply.</p>\n<p class='govuk-body'>Find out more about <a href=\"https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/792228/OTJ_training_guidancev2_reissued_.pdf\" target=\"_blank\">apprenticeship off the job training (opens in a new window or tab)</a>.</p>",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "CheckboxList",
+                        "InputClasses": null,
+                        "Options": [
+                            {
+                                "Value": "Distance learning - training delivered remotely for example, e-learning or webinars",
+                                "Label": "Distance learning - training delivered remotely for example, e-learning or webinars",
+                                "HintText": ""
+                            },
+                            {
+                                "Value": "Self-directed distance learning - where the apprentice works alone with online material",
+                                "Label": "Self-directed distance learning - where the apprentice works alone with online material",
+                                "HintText": ""
+                            },
+                            {
+                                "Value": "Learning support and written assignments",
+                                "Label": "Learning support and written assignments",
+                                "HintText": ""
+                            },
+                            {
+                                "Value": "Practical training - for example, shadowing, mentoring or industry visits",
+                                "Label": "Practical training - for example, shadowing, mentoring or industry visits",
+                                "HintText": ""
+                            },
+                            {
+                                "Value": "Teaching of theory - for example, lectures, role-play or simulation exercises",
+                                "Label": "Teaching of theory - for example, lectures, role-play or simulation exercises",
+                                "HintText": ""
+                            }
+                        ],
+                        "Validations": [
+                            {
+                                "Name": "Required",
+                                "Value": "",
+                                "ErrorMessage": "Tell us what teaching methods your organisation will use to deliver 20% off the job training"
+                            }
+                        ],
+                        "DataEndpoint": null
+                    },
+                    "Order": null,
+                    "Value": "",
+                    "ErrorMessages": null
                 }
             ],
+            "PageOfAnswers": [],
+            "Next": [ {
+                    "Action": "NextPage",
+                    "ReturnId": "6510",
+                    "Conditions": [],
+                    "ConditionMet": false
+                }],
             "Complete": false,
             "AllowMultipleAnswers": false,
             "Order": null,
             "Active": true,
-            "Visible": true,
-            "Feedback": null,
-            "HasFeedback": false,
              "NotRequiredConditions": [
                 {
                     "Field": "Apply-ProviderRoute",
@@ -36,8 +83,39 @@
                     ]
                 }
             ],
-            "ActivatedByPageId": null,
-            "BodyText": "<p class='govuk-body'>Off the job training Holding page</p>"
+            "BodyText": "<p class='govuk-body govuk-!-font-weight-bold'>What teaching methods will your organisation use to deliver 20% off the job training?</p>",
+            "Details": null,
+            "DisplayType": null,
+            "Feedback": null,
+            "ActivatedByPageId": "6510"
+        },
+        {
+            "PageId": "6510",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "Ensure OTJ relevant holding page",
+            "LinkTitle": "Ensure OTJ Relevant",
+            "InfoText": "",
+            "Questions": [],
+            "PageOfAnswers": [],
+            "Next": [
+                {
+                    "Action": "ReturnToSection",
+                    "ReturnId": "",
+                    "Conditions": [],
+                    "ConditionMet": false
+                }
+            ],
+            "Complete": false,
+            "AllowMultipleAnswers": false,
+            "Order": null,
+            "Active": false,
+            "NotRequiredConditions": [],
+            "BodyText": "",
+            "Details": null,
+            "DisplayType": null,
+            "Feedback": null,
+            "ActivatedByPageId": "6500"
         }
     ]
 }
