@@ -609,7 +609,7 @@
                     "Label": "Why will your organisation only deliver apprenticeship frameworks?",
                     "ShortLabel": "",
                     "InputClasses": null,
-                    "QuestionBodyText": "<p class='govuk-body'>Your answer must include a brief summary of why your organisation has no plan to transition to apprenticeship standards.\n</p>",
+                    "QuestionBodyText": "<p class='govuk-body'>Your answer must include a brief summary of why your organisation does not have a plan to transition to apprenticeship standards.</p>",
                     "Hint": "",
                     "Input": {
                         "Type": "Textarea",
@@ -1131,7 +1131,7 @@
                     "Label": "How will your organisation engage with end-point assessment organisations (EPAO's)?",
                     "ShortLabel": "",
                     "InputClasses": null,
-                    "QuestionBodyText": "<p class='govuk-body' id='pat-organisation-transition'>Your answer must include how your organisation will:</p><ul class='govuk-list govuk-list--bullet'><li>find EPAO's for relevant apprenticeship standards contact EPAO's</li><li>engage employers in the process of choosing an EPAO</li><li>confirm a contract or service agreement with EPAO's</li></ul></p>\n<p class='govuk-body'>You'll also need to include what information your organisation will ask from an EPAO to ensure they are suitable.</p>",
+                    "QuestionBodyText": "<p class='govuk-body' id='pat-organisation-transition'>Your answer must include how your organisation will:</p><ul class='govuk-list govuk-list--bullet'><li>find EPAO's for relevant apprenticeship standards</li><li>contact EPAO's</li><li>engage employers in the process of choosing an EPAO</li><li>confirm a contract or service agreement with EPAO's</li></ul></p>\n<p class='govuk-body'>You'll also need to include what information your organisation will ask from an EPAO to ensure they are suitable.</p>",
                     "Hint": "",
                     "Input": {
                         "Type": "Textarea",
