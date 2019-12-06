@@ -15,7 +15,7 @@
                 {
                     "QuestionId": "PAT-650",
                     "QuestionTag": null,
-                    "Label": "",
+                    "Label": "What teaching methods will your organisation use to deliver 20% off the job training?",
                     "ShortLabel": "",
                     "InputClasses": null,
                     "QuestionBodyText": "<p class='govuk-body'>Select all that apply.</p>\n<p class='govuk-body'>Find out more about <a href=\"https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/792228/OTJ_training_guidancev2_reissued_.pdf\" target=\"_blank\">apprenticeship off the job training (opens in a new window or tab)</a>.</p>",
@@ -65,17 +65,19 @@
                 }
             ],
             "PageOfAnswers": [],
-            "Next": [ {
+            "Next": [
+                {
                     "Action": "NextPage",
                     "ReturnId": "6510",
                     "Conditions": [],
                     "ConditionMet": false
-                }],
+                }
+            ],
             "Complete": false,
             "AllowMultipleAnswers": false,
             "Order": null,
             "Active": true,
-             "NotRequiredConditions": [
+            "NotRequiredConditions": [
                 {
                     "Field": "Apply-ProviderRoute",
                     "IsOneOf": [
@@ -83,7 +85,7 @@
                     ]
                 }
             ],
-            "BodyText": "<p class='govuk-body govuk-!-font-weight-bold'>What teaching methods will your organisation use to deliver 20% off the job training?</p>",
+            "BodyText": "",
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
@@ -93,10 +95,41 @@
             "PageId": "6510",
             "SequenceId": null,
             "SectionId": null,
-            "Title": "Ensure OTJ relevant holding page",
+            "Title": "How will your organisation ensure 20% off the job training is relevant to the specific apprenticeship being delivered?",
             "LinkTitle": "Ensure OTJ Relevant",
             "InfoText": "",
-            "Questions": [],
+            "Questions": [
+                {
+                    "QuestionId": "PAT-651",
+                    "QuestionTag": null,
+                    "Label": "How will your organisation ensure 20% off the job training is relevant to the specific apprenticeship being delivered?",
+                    "ShortLabel": "",
+                    "InputClasses": null,
+                    "QuestionBodyText": "<p class='govuk-body' id='pya-equality-policy'>Your answer must include how your organisation has:</p><ul class='govuk-list govuk-list--bullet'><li>use technical and theoretical elements of the apprenticeship to decide the best training method</li><li>ensure training methods suit the employers and apprentices circumstances</li><li>work with employers to define a delivery plan</li><li>ensure its delivery plan is flexible and meets employers and apprentices needs</li><li>choose the right time for off the job training - the apprentice must have had sufficient time to gain the right knowledge and skills before starting off the job training</li></ul>",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "Textarea",
+                        "InputClasses": null,
+                        "Options": [],
+                        "Validations": [
+                            {
+                                "Name": "Required",
+                                "Value": "",
+                                "ErrorMessage": "Tell us how your organisation will ensure 20% off the job training is relevant to the specific apprenticeship being delivered"
+                            },
+                            {
+                                "Name": "MaxLength",
+                                "Value": "1500",
+                                "ErrorMessage": "Your answer must be 1500 characters or less"
+                            }
+                        ],
+                        "DataEndpoint": null
+                    },
+                    "Order": null,
+                    "Value": "",
+                    "ErrorMessages": null
+                }
+            ],
             "PageOfAnswers": [],
             "Next": [
                 {
@@ -111,7 +144,7 @@
             "Order": null,
             "Active": false,
             "NotRequiredConditions": [],
-            "BodyText": "",
+            "BodyText": "\n",
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
