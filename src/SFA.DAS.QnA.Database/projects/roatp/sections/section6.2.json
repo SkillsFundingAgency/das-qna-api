@@ -922,7 +922,7 @@
                     "Label": "How is your organisation ensuring it's ready to deliver training in apprenticeship standards?",
                     "ShortLabel": "",
                     "InputClasses": null,
-                    "QuestionBodyText": "<p class='govuk-body' id='pya-equality-policy'>Your answer must include how your organisation has:</p><ul class='govuk-list govuk-list--bullet'><li>commitment and approval from senior managers to deliver apprenticeship standards</li><li>a governance group in place to monitor delivery of training</li><li>an implementation plan specific to apprenticeship training </li></ul>",
+                    "QuestionBodyText": "<p class='govuk-body' id='pya-equality-policy'>Your answer must include how your organisation has:</p><ul class='govuk-list govuk-list--bullet'><li>commitment and approval from senior managers to deliver apprenticeship standards</li><li>a governance group in place to monitor delivery of training</li><li>an implementation plan specific to apprenticeship training </li><li>resources that support the delivery of apprenticeship standards</li></ul>",
                     "Hint": "",
                     "Input": {
                         "Type": "Textarea",
