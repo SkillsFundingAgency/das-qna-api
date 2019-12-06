@@ -18,14 +18,12 @@ namespace SFA.DAS.QnA.Application.Commands.Files.UploadFile
 {
     public class SubmitPageOfFilesHandler : SetAnswersBase, IRequestHandler<SubmitPageOfFilesRequest, HandlerResponse<SetPageAnswersResponse>>
     {
-        private readonly QnaDataContext _dataContext;
         private readonly IOptions<FileStorageConfig> _fileStorageConfig;
         private readonly IEncryptionService _encryptionService;
         private readonly IAnswerValidator _answerValidator;
 
-        public SubmitPageOfFilesHandler(QnaDataContext dataContext, IOptions<FileStorageConfig> fileStorageConfig, IEncryptionService encryptionService, IAnswerValidator answerValidator)
+        public SubmitPageOfFilesHandler(QnaDataContext dataContext, IOptions<FileStorageConfig> fileStorageConfig, IEncryptionService encryptionService, IAnswerValidator answerValidator) : base(dataContext)
         {
-            _dataContext = dataContext;
             _fileStorageConfig = fileStorageConfig;
             _encryptionService = encryptionService;
             _answerValidator = answerValidator;
@@ -75,9 +73,6 @@ namespace SFA.DAS.QnA.Application.Commands.Files.UploadFile
                 return new HandlerResponse<SetPageAnswersResponse>(new SetPageAnswersResponse(validationErrors));
             }
 
-            page.Complete = true;
-            MarkFeedbackComplete(page);
-
             var container = await ContainerHelpers.GetContainer(_fileStorageConfig.Value.StorageConnectionString, _fileStorageConfig.Value.ContainerName);
 
             foreach (var file in request.Files)
@@ -114,15 +109,16 @@ namespace SFA.DAS.QnA.Application.Commands.Files.UploadFile
 
             }
 
+            MarkPageAsComplete(page);
+            MarkPageFeedbackAsComplete(page);
+
             section.QnAData = qnaData;
             await _dataContext.SaveChangesAsync(cancellationToken);
 
-            
-            MarkFeedbackComplete(page);
 
             await UpdateApplicationData(request.ApplicationId, page, page.PageOfAnswers.SelectMany(poa => poa.Answers).ToList());
             
-            var nextAction = GetNextAction(page, answersToValidate, section, _dataContext);
+            var nextAction = GetNextActionForPage(section.Id, page.PageId);
             
             return new HandlerResponse<SetPageAnswersResponse>(new SetPageAnswersResponse(nextAction.Action, nextAction.ReturnId));
         }
