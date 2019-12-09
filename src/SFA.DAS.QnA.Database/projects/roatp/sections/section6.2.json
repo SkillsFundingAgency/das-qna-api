@@ -522,13 +522,13 @@
 				{
                     "Field": "PAT-Type-Of-Training-main",
                     "IsOneOf": [
-                        "Apprenticeship standards"
+                        "Apprenticeship standards,Apprenticeship frameworks"
                     ]
                 },
 				{
                     "Field": "PAT-Type-Of-Training-employer",
                     "IsOneOf": [
-                        "Apprenticeship standards"
+                        "Apprenticeship standards,Apprenticeship frameworks"
                     ]
                 }
             ],
