@@ -64,7 +64,7 @@
                 }
             ],
             "ActivatedByPageId": null,
-            "BodyText": "<p class='govuk-body' id='eat-intro-supp'>For this section, you'll need to know:</p><ul class='govuk-list govuk-list--bullet'><li>your organisation's process for evaluating the quality of training delivered</li><li>how your organisation's made improvements using this process</li><li>if this process includes apprenticeship training</li><li>how your organisation evaluates the quality for apprenticeship training</li><li>how your organisation reviews this process</li><li>if your organisation has the resources to submit</li></ul>"
+            "BodyText": "<p class='govuk-body' id='eat-intro-supp'>For this section, you'll need to know:</p><ul class='govuk-list govuk-list--bullet'><li>your organisation's process for evaluating the quality of training delivered</li><li>how your organisation's made improvements using this process</li><li>if this process includes apprenticeship training</li><li>how your organisation evaluates the quality for apprenticeship training</li><li>how your organisation reviews this process</li></ul>"
         }
     ]
 }
