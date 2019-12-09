@@ -230,9 +230,26 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
             }
             else if (nextPage.NotRequiredConditions != null && nextPage.NotRequiredConditions.Any())
             {
-                if (nextPage.NotRequiredConditions.Any(nrc => nrc.IsOneOf != null && nrc.IsOneOf.Contains(applicationData[nrc.Field]?.Value<string>())))
+                foreach (var notRequiredCondition in nextPage.NotRequiredConditions.Where(nrc => nrc.IsOneOf != null))
                 {
-                    isRequiredNextAction = false;
+                    var applicationDataValue = applicationData[notRequiredCondition.Field]?.Value<string>();
+                    if (notRequiredCondition.IsOneOf.Contains(applicationDataValue))
+                    {
+                        isRequiredNextAction = false;
+                        break;
+                    }
+
+                    if (applicationDataValue!=null && applicationDataValue.Contains(","))
+                    {
+                        var applicationDataValues =
+                            applicationDataValue.Split(",", StringSplitOptions.RemoveEmptyEntries);
+                        if (applicationDataValues.Any(adv => notRequiredCondition.IsOneOf.Contains(adv)))
+                        {
+                            isRequiredNextAction = false;
+                            break;
+                        }
+                    }
+                    
                 }
             }
 

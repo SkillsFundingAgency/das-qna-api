@@ -518,6 +518,18 @@
                     "IsOneOf": [
                         "3"
                     ]
+                },
+				{
+                    "Field": "PAT-Type-Of-Training-main",
+                    "IsOneOf": [
+                        "Apprenticeship standards"
+                    ]
+                },
+				{
+                    "Field": "PAT-Type-Of-Training-employer",
+                    "IsOneOf": [
+                        "Apprenticeship standards"
+                    ]
                 }
             ],
             "ActivatedByPageId": "6020,6022",
