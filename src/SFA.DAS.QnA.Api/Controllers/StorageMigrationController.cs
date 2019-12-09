@@ -66,18 +66,20 @@ namespace SFA.DAS.QnA.Api.Controllers
 
                                     var questionFolder = pageFolder.GetDirectoryReference(answer.QuestionId.ToLower());
 
-                                    var blobReference = questionFolder.GetBlobReference(answer.Value);
+                                    var blobReference = questionFolder.GetBlockBlobReference(answer.Value);
 
                                     if (blobReference.Exists())
                                     {
-                                        var ms = new MemoryStream();
-                                        await blobReference.DownloadToStreamAsync(ms);
-                                        ms.Position = 0;
+//                                        var ms = new MemoryStream();
+//                                        await blobReference.DownloadToStreamAsync(ms);
+//                                        ms.Position = 0;
 
                                         var newfileurl = $"{section.ApplicationId.ToString().ToLower()}/{sequenceId.ToString().ToLower()}/{sectionId.ToString().ToLower()}/23/{answer.QuestionId.ToLower()}/{answer.Value}";
                                         var newFileLocation = container.GetBlockBlobReference(newfileurl);
 
-                                        await newFileLocation.UploadFromStreamAsync(ms);
+                                        await newFileLocation.StartCopyAsync(blobReference);
+                                        
+                                        //await newFileLocation.UploadFromStreamAsync(ms);
 
                                         result.MigratedFiles.Add(new MigratedFile {From = blobReference.Name, To = newfileurl});
                                     }
