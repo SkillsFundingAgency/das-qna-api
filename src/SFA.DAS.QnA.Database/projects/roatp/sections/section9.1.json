@@ -53,9 +53,8 @@
                     "Condition": null,
                     "Conditions": [
                         {
-                            "QuestionId": "FIN-10",
-                            "QuestionTag": null,
-                            "MustEqual": "No"
+                            "MustEqual": "No",
+                            "QuestionId": "FIN-10"
                         }
                     ],
                     "ConditionMet": false
@@ -132,9 +131,8 @@
                     "Condition": null,
                     "Conditions": [
                         {
-                            "QuestionId": "FIN-20",
-                            "QuestionTag": null,
-                            "MustEqual": "No"
+                            "MustEqual": "No",
+                            "QuestionId": "FIN-20"
                         }
                     ],
                     "ConditionMet": false
@@ -150,13 +148,13 @@
             "Complete": false,
             "AllowMultipleAnswers": false,
             "Order": null,
-            "Active": false,
+            "Active": true,
             "NotRequiredConditions": [],
             "BodyText": "",
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
-            "ActivatedByPageId": "9000"
+            "ActivatedByPageId": null
         },
         {
             "PageId": "9020",
@@ -220,7 +218,7 @@
                 },
                 {
                     "Action": "ReturnToSection",
-                    "ReturnId": "",
+                    "ReturnId": "9.1",
                     "Condition": null,
                     "Conditions": [],
                     "ConditionMet": false
@@ -229,13 +227,13 @@
             "Complete": false,
             "AllowMultipleAnswers": false,
             "Order": null,
-            "Active": false,
+            "Active": true,
             "NotRequiredConditions": [],
             "BodyText": "",
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
-            "ActivatedByPageId": "9010"
+            "ActivatedByPageId": null
         },
         {
             "PageId": "10005",
@@ -251,26 +249,7 @@
             "AllowMultipleAnswers": false,
             "Order": null,
             "Active": false,
-            "NotRequiredConditions": [
-                {
-                    "Field": "Finish-Permission-Personal-Details",
-                    "IsOneOf": [
-                        "Yes"
-                    ]
-                },
-                {
-                    "Field": "Finish-Accurate-Personal-Details",
-                    "IsOneOf": [
-                        "Yes"
-                    ]
-                },
-                {
-                    "Field": "Finish-Permission-SubmitApp",
-                    "IsOneOf": [
-                        "Yes"
-                    ]
-                }
-            ],
+            "NotRequiredConditions": [],
             "BodyText": "<p class='govuk-body'>Before you submit this application, you must have:</p> <p class='govuk-body'> <ul class='govuk-list govuk-list--bullet'><li>permission from everyone named in this application to use their details</li><li>checked with everyone named in this application that the details provided for them are accurate</li><li>permission from your organisation to submit this application</li></ul></p>",
             "Details": null,
             "DisplayType": null,
