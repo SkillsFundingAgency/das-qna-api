@@ -38,7 +38,7 @@ namespace SFA.DAS.QnA.Api.Controllers
             try
             {
                 // get all sections where SectionNo = 3
-                var sections = await _dataContext.ApplicationSections.Where(sec => sec.SectionNo == 3).ToListAsync();
+                var sections = await _dataContext.ApplicationSections.Where(sec => (sec.SectionNo == 3 && sec.SequenceNo == 1) || sec.SequenceNo == 2).ToListAsync();
 
                 foreach (var section in sections)
                 {
@@ -47,41 +47,38 @@ namespace SFA.DAS.QnA.Api.Controllers
 
                     foreach (var page in section.QnAData.Pages)
                     {
-                        var sequenceId = page.SequenceId.Value;
-                        foreach (var pageOfAnswer in page.PageOfAnswers)
+                        if (page.Questions.Any(q => q.Input.Type == "FileUpload"))
                         {
-                            foreach (var answer in pageOfAnswer.Answers)
+                            var sequenceId = page.SequenceId.Value;
+                            foreach (var pageOfAnswer in page.PageOfAnswers)
                             {
-                                if (!string.IsNullOrWhiteSpace(answer.Value))
+                                foreach (var answer in pageOfAnswer.Answers)
                                 {
-                                    // get original file...
-                                    var account = CloudStorageAccount.Parse(_fileStorageConfig.Value.StorageConnectionString);
-                                    var client = account.CreateCloudBlobClient();
-                                    var container = client.GetContainerReference(_fileStorageConfig.Value.ContainerName);
-
-                                    var applicationFolder = container.GetDirectoryReference(section.ApplicationId.ToString());
-                                    var sequenceFolder = applicationFolder.GetDirectoryReference("1");
-                                    var sectionFolder = sequenceFolder.GetDirectoryReference("3");
-                                    var pageFolder = sectionFolder.GetDirectoryReference(page.PageId.ToLower());
-
-                                    var questionFolder = pageFolder.GetDirectoryReference(answer.QuestionId.ToLower());
-
-                                    var blobReference = questionFolder.GetBlockBlobReference(answer.Value);
-
-                                    if (blobReference.Exists())
+                                    if (!string.IsNullOrWhiteSpace(answer.Value))
                                     {
-//                                        var ms = new MemoryStream();
-//                                        await blobReference.DownloadToStreamAsync(ms);
-//                                        ms.Position = 0;
+                                        // get original file...
+                                        var account = CloudStorageAccount.Parse(_fileStorageConfig.Value.StorageConnectionString);
+                                        var client = account.CreateCloudBlobClient();
+                                        var container = client.GetContainerReference(_fileStorageConfig.Value.ContainerName);
 
-                                        var newfileurl = $"{section.ApplicationId.ToString().ToLower()}/{sequenceId.ToString().ToLower()}/{sectionId.ToString().ToLower()}/23/{answer.QuestionId.ToLower()}/{answer.Value}";
-                                        var newFileLocation = container.GetBlockBlobReference(newfileurl);
+                                        var applicationFolder = container.GetDirectoryReference(section.ApplicationId.ToString());
+                                        var sequenceFolder = applicationFolder.GetDirectoryReference("1");
+                                        var sectionFolder = sequenceFolder.GetDirectoryReference("3");
+                                        var pageFolder = sectionFolder.GetDirectoryReference(page.PageId.ToLower());
 
-                                        await newFileLocation.StartCopyAsync(blobReference);
-                                        
-                                        //await newFileLocation.UploadFromStreamAsync(ms);
+                                        var questionFolder = pageFolder.GetDirectoryReference(answer.QuestionId.ToLower());
 
-                                        result.MigratedFiles.Add(new MigratedFile {From = blobReference.Name, To = newfileurl});
+                                        var blobReference = questionFolder.GetBlockBlobReference(answer.Value);
+
+                                        if (blobReference.Exists())
+                                        {
+                                            var newfileurl = $"{section.ApplicationId.ToString().ToLower()}/{sequenceId.ToString().ToLower()}/{sectionId.ToString().ToLower()}/23/{answer.QuestionId.ToLower()}/{answer.Value}";
+                                            var newFileLocation = container.GetBlockBlobReference(newfileurl);
+
+                                            await newFileLocation.StartCopyAsync(blobReference);
+
+                                            result.MigratedFiles.Add(new MigratedFile {From = blobReference.Name, To = newfileurl});
+                                        }
                                     }
                                 }
                             }
@@ -89,7 +86,7 @@ namespace SFA.DAS.QnA.Api.Controllers
                     }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 _log.LogInformation($"Error running file migration: {ex.Message}. Stack trace: {ex.StackTrace}");
                 return new FileMigrationResult() {Error = ex.Message, ErrorStackTrace = ex.StackTrace};
@@ -97,7 +94,6 @@ namespace SFA.DAS.QnA.Api.Controllers
 
             return result;
         }
-        
     }
 
     public class FileMigrationResult
