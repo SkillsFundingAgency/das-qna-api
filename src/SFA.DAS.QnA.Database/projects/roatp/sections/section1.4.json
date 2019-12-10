@@ -378,14 +378,7 @@
           "HasFeedback": false,
           "NotRequiredOrgTypes": [],
           "BodyText": "",
-          "NotRequiredConditions": [
-              {
-                  "Field": "",
-                  "IsOneOf": [
-                      ""
-                  ]
-              }
-          ],
+          "NotRequiredConditions": [],
           "ActivatedByPageId": "100"
       },
       {
