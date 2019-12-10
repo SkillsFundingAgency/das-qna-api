@@ -62,8 +62,8 @@ namespace SFA.DAS.QnA.Api.Controllers
                                         var container = client.GetContainerReference(_fileStorageConfig.Value.ContainerName);
 
                                         var applicationFolder = container.GetDirectoryReference(section.ApplicationId.ToString());
-                                        var sequenceFolder = applicationFolder.GetDirectoryReference("1");
-                                        var sectionFolder = sequenceFolder.GetDirectoryReference("3");
+                                        var sequenceFolder = applicationFolder.GetDirectoryReference(section.SequenceNo.ToString());
+                                        var sectionFolder = sequenceFolder.GetDirectoryReference(section.SectionNo.ToString());
                                         var pageFolder = sectionFolder.GetDirectoryReference(page.PageId.ToLower());
 
                                         var questionFolder = pageFolder.GetDirectoryReference(answer.QuestionId.ToLower());
@@ -72,7 +72,7 @@ namespace SFA.DAS.QnA.Api.Controllers
 
                                         if (blobReference.Exists())
                                         {
-                                            var newfileurl = $"{section.ApplicationId.ToString().ToLower()}/{sequenceId.ToString().ToLower()}/{sectionId.ToString().ToLower()}/23/{answer.QuestionId.ToLower()}/{answer.Value}";
+                                            var newfileurl = $"{section.ApplicationId.ToString().ToLower()}/{sequenceId.ToString().ToLower()}/{sectionId.ToString().ToLower()}/{page.PageId}/{answer.QuestionId.ToLower()}/{answer.Value}";
                                             var newFileLocation = container.GetBlockBlobReference(newfileurl);
 
                                             await newFileLocation.StartCopyAsync(blobReference);
