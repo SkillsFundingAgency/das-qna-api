@@ -1,6 +1,6 @@
 {
-    "Title": "Where apprentices will be trained",
-    "LinkTitle": "Where apprentices will be trained",
+    "Title": "Where will your apprentices be trained?",
+    "LinkTitle": "Where will your apprentices be trained?",
     "DisplayType": "Pages",
     "RequestedFeedbackAnswered": null,
     "Pages": [
@@ -9,9 +9,49 @@
             "SequenceId": null,
             "SectionId": null,
             "Title": "Where apprentices will be trained",
-            "LinkTitle": "Where apprentices will be trained",
+            "LinkTitle": "Where will your apprentices be trained?",
             "InfoText": "Where apprentices will be trained",
-            "Questions": [ ],
+            "Questions": [
+                {
+                    "QuestionId": "PAT-660",
+                    "QuestionTag": null,
+                    "Label": "Where will your apprentices be trained?",
+                    "ShortLabel": "",
+                    "InputClasses": null,
+                    "QuestionBodyText": "<p class='govuk-body' id='pat-where-apprentices-trained'>This must be your organisation's main training location.</p>\n<p class='govuk-body' id='pat-where-apprentices-trained-2'>We will use this address for visits including an early monitoring visit.</p>\n",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "Address",
+                        "InputClasses": null,
+                        "Validations": [
+                            {
+                                "Name": "AddressPostcodeRequired",
+                                "Value": "",
+                                "ErrorMessage": "Enter a real postcode"
+                            },
+                            {
+                                "Name": "AddressBuildingAndStreetRequired",
+                                "Value": "",
+                                "ErrorMessage": "Enter a building and street"
+                            },
+                            {
+                                "Name": "AddressRequired",
+                                "Value": "",
+                                "ErrorMessage": "Tell us where your apprentices will be trained"
+                            },
+                            {
+                                "Name": "AddressTownOrCityRequired",
+                                "Value": "",
+                                "ErrorMessage": "Enter a town or city"
+                            }
+                        ],
+                        "DataEndpoint": null
+                    },
+                    "Order": null,
+                    "Value": "",
+                    "ErrorMessages": null
+                }
+            ],
             "PageOfAnswers": [],
             "Next": [
                 {
@@ -28,7 +68,7 @@
             "Visible": true,
             "Feedback": null,
             "HasFeedback": false,
-             "NotRequiredConditions": [
+            "NotRequiredConditions": [
                 {
                     "Field": "Apply-ProviderRoute",
                     "IsOneOf": [
@@ -37,7 +77,7 @@
                 }
             ],
             "ActivatedByPageId": null,
-            "BodyText": "<p class='govuk-body'>Where apprentices will be trained Holding page</p>"
+            "BodyText": ""
         }
     ]
 }
