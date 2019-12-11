@@ -180,6 +180,12 @@
                "name":"Introduction and what you'll need"
             },
             { 
+               "id":"section7.2",
+               "SequenceNo":7,
+               "SectionNo":2,
+               "name":"Team responsible for developing and delivering training"
+            },
+            { 
                "id":"section8.1",
                "SequenceNo":8,
                "SectionNo":1,
