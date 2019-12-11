@@ -58,7 +58,8 @@
                     "Field": "Has-ParentCompany",
                     "IsOneOf": [
                         "No",
-                        ""
+                        "",
+                        null
                     ]
                 }
             ],
