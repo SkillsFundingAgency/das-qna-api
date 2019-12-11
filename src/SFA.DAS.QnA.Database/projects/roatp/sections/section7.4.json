@@ -3,7 +3,8 @@
     "LinkTitle": "Quality and high standards in apprenticeship training",
     "DisplayType": "Pages",
     "RequestedFeedbackAnswered": null,
-    "Pages": [{
+    "Pages": [
+        {
             "PageId": "7300",
             "SequenceId": null,
             "SectionId": null,
@@ -115,7 +116,7 @@
                     "ErrorMessages": null
                 }, {
                     "QuestionId": "DAT-41.3",
-                    "QuestionTag": ",
+                    "QuestionTag": "",
                     "Label": "Contact number",
                     "QuestionBodyText": "",
                     "ShortLabel": "",
