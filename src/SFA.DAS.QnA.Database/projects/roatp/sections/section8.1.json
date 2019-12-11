@@ -1,7 +1,7 @@
 {
     "Title": "Introduction and what you'll need",
     "LinkTitle": "Introduction and what you'll need",
-    "DisplayType": "",
+    "DisplayType": "Pages",
     "RequestedFeedbackAnswered": null,
     "Pages": [
         {
@@ -16,8 +16,7 @@
             "Next": [
                 {
                     "Action": "ReturnToSection",
-                    "ReturnId": "8.1",
-                    "Condition": null,
+                    "ReturnId": "8.2",
                     "Conditions": [],
                     "ConditionMet": false
                 }
@@ -26,23 +25,18 @@
             "AllowMultipleAnswers": false,
             "Order": null,
             "Active": true,
-            "NotRequiredConditions": [
-                {
+            "Feedback": null,
+            "HasFeedback": false,
+            "NotRequiredConditions": [{
                     "Field": "Apply-ProviderRoute",
-                    "IsOneOf": [
-                        "2",
-                        "3"
-                    ]
+                    "IsOneOf": ["3"]
                 }
             ],
-            "BodyText": "<p class='govuk-body'>Lorem ipsum main provider.</p>",
-            "Details": null,
-            "DisplayType": null,
-            "Feedback": null,
-            "ActivatedByPageId": null
+            "ActivatedByPageId": null,
+            "BodyText": "<p class='govuk-body' id='eat-intro-mainemp'>For this section, you'll need to know:</p><ul class='govuk-list govuk-list--bullet'><li>your organisation's process for evaluating the quality of training delivered</li><li>how your organisation's made improvements using this process</li><li>if this process includes apprenticeship training</li><li>how your organisation evaluates the quality for apprenticeship training</li><li>how your organisation reviews this process</li><li>if your organisation has systems and processes to collect apprenticeship data</li><li>if your organisation has the resources to submit Individualised Learner Record (ILR)</li></ul>"
         },
         {
-            "PageId": "8001",
+            "PageId": "8010",
             "SequenceId": null,
             "SectionId": null,
             "Title": "Evaluating apprenticeship training",
@@ -53,8 +47,7 @@
             "Next": [
                 {
                     "Action": "ReturnToSection",
-                    "ReturnId": "8.1",
-                    "Condition": null,
+                    "ReturnId": "8.2",
                     "Conditions": [],
                     "ConditionMet": false
                 }
@@ -63,57 +56,15 @@
             "AllowMultipleAnswers": false,
             "Order": null,
             "Active": true,
-            "NotRequiredConditions": [
-                {
-                    "Field": "Apply-ProviderRoute",
-                    "IsOneOf": [
-                        "1",
-                        "3"
-                    ]
-                }
-            ],
-            "BodyText": "<p class='govuk-body'>Lorem ipsum employer provider.</p>",
-            "Details": null,
-            "DisplayType": null,
             "Feedback": null,
-            "ActivatedByPageId": null
-        },
-        {
-            "PageId": "8002",
-            "SequenceId": null,
-            "SectionId": null,
-            "Title": "Evaluating apprenticeship training",
-            "LinkTitle": "Evaluating apprenticeship training",
-            "InfoText": "",
-            "Questions": [],
-            "PageOfAnswers": [],
-            "Next": [
-                {
-                    "Action": "ReturnToSection",
-                    "ReturnId": "8.1",
-                    "Condition": null,
-                    "Conditions": [],
-                    "ConditionMet": false
-                }
-            ],
-            "Complete": false,
-            "AllowMultipleAnswers": false,
-            "Order": null,
-            "Active": true,
-            "NotRequiredConditions": [
-                {
+            "HasFeedback": false,
+            "NotRequiredConditions": [{
                     "Field": "Apply-ProviderRoute",
-                    "IsOneOf": [
-                        "1",
-                        "2"
-                    ]
+                    "IsOneOf": ["1", "2"]
                 }
             ],
-            "BodyText": "<p class='govuk-body'>Lorem ipsum supporting provider.</p>",
-            "Details": null,
-            "DisplayType": null,
-            "Feedback": null,
-            "ActivatedByPageId": null
+            "ActivatedByPageId": null,
+            "BodyText": "<p class='govuk-body' id='eat-intro-supp'>For this section, you'll need to know:</p><ul class='govuk-list govuk-list--bullet'><li>your organisation's process for evaluating the quality of training delivered</li><li>how your organisation's made improvements using this process</li><li>if this process includes apprenticeship training</li><li>how your organisation evaluates the quality for apprenticeship training</li><li>how your organisation reviews this process</li></ul>"
         }
     ]
 }
