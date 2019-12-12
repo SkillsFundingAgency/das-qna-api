@@ -12,7 +12,7 @@ Licensed under the [MIT license](https://github.com/SkillsFundingAgency/das-asse
 - Install [Visual Studio 2017 or 2019](https://www.visualstudio.com/downloads) with these workloads:
     - ASP.NET and web development
     - .NET desktop development
-	- .NET Core 2.1 SDK
+	- .NET Core 2.2 SDK
 - Install [SQL Management Studio](https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms)
 - Install [Azure Storage Emulator](https://go.microsoft.com/fwlink/?linkid=717179&clcid=0x409)
 - Install [Azure Storage Explorer](http://storageexplorer.com/)
