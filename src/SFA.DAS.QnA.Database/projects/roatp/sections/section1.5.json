@@ -9,7 +9,7 @@
             "SequenceId": null,
             "SectionId": null,
             "Title": "What is your organisation?",
-            "LinkTitle": "Main - What is your organisation?",
+            "LinkTitle": "Main/Supporting - What is your organisation?",
             "InfoText": "",
             "Questions": [
                 {
@@ -150,8 +150,7 @@
                 {
                     "Field": "Apply-ProviderRoute",
                     "IsOneOf": [
-                        "2",
-                        "3"
+                        "2"
                     ]
                 }
             ],
