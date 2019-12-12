@@ -1,6 +1,6 @@
 # ![crest](https://assets.publishing.service.gov.uk/government/assets/crests/org_crest_27px-916806dcf065e7273830577de490d5c7c42f36ddec83e907efe62086785f24fb.png) Digital Apprenticeships Service
 
-##  Question and Answer API (das-qna_api)
+##  Question and Answer API (das-qna-api)
 ![Build Status](https://sfa-gov-uk.visualstudio.com/Digital%20Apprenticeship%20Service/_apis/build/status/Endpoint%20Assessment%20Organisation/das-qna-api)
 
 ## License
@@ -96,9 +96,9 @@ Database project containing setup in order to the create the QnA Database
 - projects/{subfolder}/sections
 	- Holds QnAData for each WorkflowSection
 	
-*NOTE:* To publish the database to your local SQL Server, you need to ensure that `ProjectPath` contains the full path.
+_NOTE:_ To publish the database to your local SQL Server, you need to ensure that `ProjectPath` contains the full path.
 - {drive}:\{project-folders}\das-qna-api\src\SFA.DAS.QnA.Database\
-- For example: C:\projects\efsa\das-qna-api\src\SFA.DAS.QnA.Database\
+- For example: *C:\projects\efsa\das-qna-api\src\SFA.DAS.QnA.Database\*
 
 #### SFA.DAS.QnA.Api.UnitTests
 Contains a collection of nUnit tests to verify functionality of QnA API HTTP REST end points
