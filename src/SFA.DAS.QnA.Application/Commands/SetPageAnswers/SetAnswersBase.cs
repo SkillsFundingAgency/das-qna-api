@@ -137,12 +137,27 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
                     {
                         if (!String.IsNullOrWhiteSpace(condition.QuestionTag))
                         {
-                            var questionTag = applicationData[condition.QuestionTag];
+                            var questionTagValue = applicationData[condition.QuestionTag];
 
-                            if (questionTag == null || questionTag.Value<string>() != condition.MustEqual)
+                            if (questionTagValue == null )
                             {
                                 allConditionsSatisfied = false;
                                 break;
+                            }
+                            else if (!string.IsNullOrEmpty(condition.MustEqual) && questionTagValue.Value<string>() != condition.MustEqual)
+                            {
+                                allConditionsSatisfied = false;
+                                break;
+                            }
+                            else if (!string.IsNullOrEmpty(condition.Contains))
+                            {
+                                var listOfAnswers = questionTagValue.Value<string>()
+                                    .Split(",", StringSplitOptions.RemoveEmptyEntries);
+                                if (!listOfAnswers.Contains(condition.Contains))
+                                {
+                                    allConditionsSatisfied = false;
+                                    break;
+                                }
                             }
                         }
                         else

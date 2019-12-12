@@ -83,7 +83,9 @@
                             Next = new List<Next>
                             {
                                 new Next(){Action = "NextPage", ReturnId = "101", Conditions = new List<Condition>(){  new Condition{QuestionTag = "TagName", MustEqual = conditionValue}}},
-                                new Next(){Action = "NextPage", ReturnId = "102", Conditions = new List<Condition>()}
+                                new Next(){Action = "NextPage", ReturnId = "102", Conditions = new List<Condition>()},
+                                new Next(){Action = "NextPage", ReturnId = "103", Conditions = new List<Condition>(){  new Condition{QuestionTag = "TagName", Contains = conditionValue}}},
+
                             },
                             Active = true
                         },
@@ -103,6 +105,17 @@
                         {
                             PageId = "102",
                             Questions = new List<Question>{new Question(){QuestionId = "Q3", QuestionTag = "TagName3", Input = new Input()}},
+                            PageOfAnswers = new List<PageOfAnswers>(),
+                            Next = new List<Next>(){
+                                new Next(){Action = "NextPage", ReturnId = "103", Conditions = new List<Condition>()}
+                            },
+                            Active = false,
+                            ActivatedByPageId = "100"
+                        },
+                        new Page()
+                        {
+                            PageId = "103",
+                            Questions = new List<Question>{new Question(){QuestionId = "Q4", QuestionTag = "TagName103", Input = new Input()}},
                             PageOfAnswers = new List<PageOfAnswers>(),
                             Next = new List<Next>(),
                             Active = false,
