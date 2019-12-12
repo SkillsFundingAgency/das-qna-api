@@ -74,8 +74,7 @@ namespace SFA.DAS.QnA.Api.Controllers
         [ProducesResponseType(200)]
         public async Task<ActionResult<SetPageAnswersResponse>> SetPageAnswers(Guid applicationId, Guid sectionId, string pageId, [FromBody] List<Answer> answers)
         {
-            //var answers = (List<Answer>)answersRaw;
-            _logger.LogInformation($"Answers sent to SetPageAnswers: {JsonConvert.SerializeObject(answers)}");
+              _logger.LogInformation($"Answers sent to SetPageAnswers: {JsonConvert.SerializeObject(answers)}");
             
             var savePageAnswersResponse = await _mediator.Send(new SetPageAnswersRequest(applicationId, sectionId, pageId, answers), CancellationToken.None);
             if (!savePageAnswersResponse.Success) return BadRequest(new BadRequestError(savePageAnswersResponse.Message));
