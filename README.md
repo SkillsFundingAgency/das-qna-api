@@ -34,8 +34,11 @@ Licensed under the [MIT license](https://github.com/SkillsFundingAgency/das-asse
 - run `dotnet restore`
 - run `dotnet run`
 
-##### Swagger Documentation
+#### Swagger Documentation
 - https://localhost:5555/swagger/index.html
+
+#### QnA Config Tool
+- https://qna-config.apprenticeships.education.gov.uk/
 
 ####  SFA.DAS.AssessorService.QnA
 Web API project exposing HTTP REST end points
