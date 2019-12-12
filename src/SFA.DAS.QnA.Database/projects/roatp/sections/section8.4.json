@@ -39,8 +39,8 @@
                                         "Label": "",
                                         "ShortLabel": "",
                                         "InputClasses": null,
-                                        "QuestionBodyText": "",
-                                        "Hint": "Before joining the RoATP, your organisation must have systems and processes in place to get this data. We may ask for evidence on this.",
+                                        "QuestionBodyText": "<p class='govuk-body'>QuestionBodyText Before joining the RoATP, your organisation must have systems and processes in place to get this data. We may ask for evidence on this.</p>",
+                                        "Hint": "",
                                         "Input":
                                         {
                                             "Type": "Hidden",
