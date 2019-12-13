@@ -21,7 +21,7 @@
                     "Hint": "",
                     "Input":
                     {
-                        "Type": "ComplexRadio",
+                        "Type": "Radio",
                         "Options": [
                             {
                                 "Label": "Yes",
@@ -31,30 +31,8 @@
                             {
                                 "Label": "No",
                                 "Value": "No",
-                                "HintText": "",
-                                "FurtherQuestions": [
-                                    {
-                                        "QuestionId": "EAT-60.1",
-                                        "QuestionTag": "",
-                                        "Label": "",
-                                        "ShortLabel": "",
-                                        "InputClasses": null,
-                                        "QuestionBodyText": "<p class='govuk-body'>QuestionBodyText Before joining the RoATP, your organisation must have systems and processes in place to get this data. We may ask for evidence on this.</p>",
-                                        "Hint": "",
-                                        "Input":
-                                        {
-                                            "Type": "Hidden",
-                                            "InputClasses": "",
-                                            "Options": [],
-                                            "Validations": [],
-                                            "DataEndpoint": null
-
-                                        },
-                                        "Order": null,
-                                        "Value": null,
-                                        "ErrorMessages": null
-                                    }
-                                ]
+                                "FurtherQuestions": null,
+								"ConditionalContentText": "<p class='govuk-body'>This should be conditional text</p>"
                             }
                         ],
                         "Validations": [
