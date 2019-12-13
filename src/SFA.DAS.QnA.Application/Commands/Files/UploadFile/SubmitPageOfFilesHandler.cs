@@ -36,13 +36,20 @@ namespace SFA.DAS.QnA.Application.Commands.Files.UploadFile
             var qnaData = new QnAData(section.QnAData);
             var page = qnaData.Pages.FirstOrDefault(p => p.PageId == request.PageId);
 
-            if (page is null) return new HandlerResponse<SetPageAnswersResponse>(success: false, message: $"The page {request.PageId} in section {request.SectionId} does not exist.");
-            
-            if (page.AllowMultipleAnswers) return new HandlerResponse<SetPageAnswersResponse>(success: false, message: "This endpoint cannot be used for Multiple Answers pages.");
-
-            if (page.Questions.Any(q => q.Input.Type != "FileUpload"))
+            if (page is null)
             {
-                return new HandlerResponse<SetPageAnswersResponse>(success: false, message: "Pages cannot contain a mixture of FileUploads and other Question Types.");
+                return new HandlerResponse<SetPageAnswersResponse>(success: false, message: $"The page {request.PageId} in section {request.SectionId} does not exist.");
+            }
+            else if (page.AllowMultipleAnswers)
+            {
+                return new HandlerResponse<SetPageAnswersResponse>(success: false, message: "This endpoint cannot be used for Multiple Answers pages.");
+            }
+            else if (page.Questions.Count > 0)
+            {
+                if (page.Questions.Any(q => !"FileUpload".Equals(q.Input?.Type, StringComparison.InvariantCultureIgnoreCase)))
+                {
+                    return new HandlerResponse<SetPageAnswersResponse>(success: false, message: "Pages cannot contain a mixture of FileUploads and other Question Types.");
+                }
             }
 
             var answersToValidate = new List<Answer>();
