@@ -15,7 +15,7 @@
                 {
                     "QuestionId": "FH-30",
                     "QuestionTag": "FHA-Turnover-Over75m",
-                    "Label": "",
+                    "Label": "Was your organisation's total annual turnover over &pound;75 million for the last financial year?",
                     "ShortLabel": "",
                     "InputClasses": null,
                     "QuestionBodyText": "",
@@ -135,7 +135,7 @@
                 {
                     "QuestionId": "FH-40",
                     "QuestionTag": "FHA-Funding-Turnover-5pc",
-                    "Label": "",
+                    "Label": "Does your organisation expect its funding from ESFA to be less than 5% of its total annual turnover?",
                     "ShortLabel": "",
                     "InputClasses": null,
                     "QuestionBodyText": "",
