@@ -125,7 +125,7 @@
                     "QuestionTag": "EAT-Evaluating-Quality-MainEmployer",
                     "Label": "How will your organisation evaluate the quality of apprenticeship training?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body' id='eat-evaluating-quality-mainemp'>Your answer should include how your organisation will:</p><ul class='govuk-list govuk-list--bullet'><li>respond and act on feedback from employers and apprentices</li><li>continuously improve apprenticeship training</li><li>identify and address poor apprenticeship training</li></ul><p class='govuk-body'>You'll also need to include any systems or processes your organisation will use to assess the quality of apprenticeship training.</p>",
+                    "QuestionBodyText": "<p class='govuk-body' id='eat-evaluating-quality-mainemp'>Your answer must include how your organisation will:</p><ul class='govuk-list govuk-list--bullet'><li>respond and act on feedback from employers and apprentices</li><li>continuously improve apprenticeship training</li><li>identify and address poor apprenticeship training</li></ul><p class='govuk-body'>You'll also need to include any systems or processes your organisation will use to assess the quality of apprenticeship training.</p>",
                     "Hint": "",
                     "Input": {
                         "Type": "Textarea",
@@ -177,7 +177,7 @@
                     "QuestionTag": "EAT-Evaluating-Quality-Supporting",
                     "Label": "How will your organisation evaluate the quality of apprenticeship training?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body' id='eat-evaluating-quality-supp'>Your answer should include how your organisation will:</p><ul class='govuk-list govuk-list--bullet'><li>respond and act on feedback from employers, lead providers and apprentices</li><li>continuously improve apprenticeship training</li><li>identify and address poor apprenticeship training</li></ul><p class='govuk-body'>You'll also need to include any systems or processes your organisation will use to assess the quality of apprenticeship training.</p>",
+                    "QuestionBodyText": "<p class='govuk-body' id='eat-evaluating-quality-supp'>Your answer must include how your organisation will:</p><ul class='govuk-list govuk-list--bullet'><li>respond and act on feedback from employers, lead providers and apprentices</li><li>continuously improve apprenticeship training</li><li>identify and address poor apprenticeship training</li></ul><p class='govuk-body'>You'll also need to include any systems or processes your organisation will use to assess the quality of apprenticeship training.</p>",
                     "Hint": "",
                     "Input": {
                         "Type": "Textarea",
@@ -229,7 +229,7 @@
                     "QuestionTag": "EAT-Evaluating-ReviewQuality",
                     "Label": "How will your organisation review its process for evaluating the quality of training delivered?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body' id='eat-evaluating-reviewquality'>Your answer should include how your organisation will:</p><ul class='govuk-list govuk-list--bullet'><li>regularly review the process - for example, quarterly or yearly</li><li>identify gaps and make improvements to the process</li><li>ensure quality is maintained throughout the process</li></ul>",
+                    "QuestionBodyText": "<p class='govuk-body' id='eat-evaluating-reviewquality'>Your answer must include how your organisation will:</p><ul class='govuk-list govuk-list--bullet'><li>regularly review the process - for example, quarterly or yearly</li><li>identify gaps and make improvements to the process</li><li>ensure quality is maintained throughout the process</li></ul>",
                     "Hint": "",
                     "Input": {
                         "Type": "Textarea",
