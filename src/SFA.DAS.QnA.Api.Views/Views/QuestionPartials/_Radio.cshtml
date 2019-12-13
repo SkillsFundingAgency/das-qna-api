@@ -17,17 +17,13 @@
 
 <div class="govuk-form-group">
 
-    // ** MARTIN **
-    // This line needs to be modified to add additional logic so that the govuk-radios--inline
-    // css class is only added if "HasConditionalContentText" is false
-    @{ var isInline = Model.Options.Count <= 2 ? "govuk-radios--inline" : ""; }
+    @{ 
+        var hasConditionalText = ((IEnumerable<dynamic>)Model.Options).Any(opt => opt.HasConditionalContentText);
+        var shouldInlineOptions = Model.Options.Count <= 2;
+        var cssClass = hasConditionalText ? "govuk-radios--conditional" : shouldInlineOptions ? "govuk-radios--inline" : "";
+    }
 
-    // ** MARTIN **
-    // This variable needs to add the css class govuk-radios--conditional (to the div below)
-    // when the radios contain some conditional content
-    @{ var isConditional = Model.Options.HasConditionalContentText ? "govuk-radios--conditional" : ""; }
-
-    <div class="govuk-radios @isInline @isConditional" data-module="govuk-radios">
+    <div class="govuk-radios @cssClass" data-module="radios">
         @for (int i = 0; i < Model.Options.Count; i++)
         {
             var radioChecked = Model.Value == Model.Options[i].Value.ToString() ? "checked" : "";
