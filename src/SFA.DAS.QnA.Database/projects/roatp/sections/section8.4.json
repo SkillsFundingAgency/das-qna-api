@@ -32,7 +32,7 @@
                                 "Label": "No",
                                 "Value": "No",
                                 "FurtherQuestions": null,
-								"ConditionalContentText": "<p class='govuk-body'>This should be conditional text</p>"
+                                "ConditionalContentText": "<p class='govuk-body'>Before joining the RoATP, your organisation must have systems and processes in place to get this data. We may ask for evidence on this.</p>"
                             }
                         ],
                         "Validations": [
