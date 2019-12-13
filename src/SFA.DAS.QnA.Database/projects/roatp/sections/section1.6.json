@@ -521,6 +521,12 @@
                     "IsOneOf": [
                         "3"
                     ]
+                },
+                {
+                    "Field": "Ofsted-FE-Skills",
+                    "IsOneOf": [
+                        "No"
+                    ]
                 }
             ],
             "ActivatedByPageId": "270,300",
@@ -693,6 +699,12 @@
                     "IsOneOf": [
                         "3"
                     ]
+                },
+                {
+                    "Field": "Ofsted-FE-Skills",
+                    "IsOneOf": [
+                        "No"
+                    ]
                 }
             ],
             "ActivatedByPageId": "270",
@@ -794,6 +806,12 @@
                     "IsOneOf": [
                         "3"
                     ]
+                },
+                {
+                    "Field": "Ofsted-FE-Skills",
+                    "IsOneOf": [
+                        "No"
+                    ]
                 }
             ],
             "ActivatedByPageId": "270",
@@ -875,6 +893,12 @@
                     "Field": "Apply-ProviderRoute",
                     "IsOneOf": [
                         "3"
+                    ]
+                },
+                {
+                    "Field": "Ofsted-FE-Skills",
+                    "IsOneOf": [
+                        "No"
                     ]
                 }
             ],
@@ -958,6 +982,12 @@
                     "IsOneOf": [
                         "3"
                     ]
+                },
+                {
+                    "Field": "Ofsted-FE-Skills",
+                    "IsOneOf": [
+                        "No"
+                    ]
                 }
             ],
             "ActivatedByPageId": "280,300,301",
@@ -1029,6 +1059,12 @@
                     "Field": "Apply-ProviderRoute",
                     "IsOneOf": [
                         "3"
+                    ]
+                },
+                {
+                    "Field": "Ofsted-FE-Skills",
+                    "IsOneOf": [
+                        "No"
                     ]
                 }
             ],
@@ -1112,6 +1148,12 @@
                     "IsOneOf": [
                         "3"
                     ]
+                },
+                {
+                    "Field": "Ofsted-FE-Skills",
+                    "IsOneOf": [
+                        "No"
+                    ]
                 }
             ],
             "ActivatedByPageId": "310",
@@ -1193,6 +1235,12 @@
                     "Field": "Apply-ProviderRoute",
                     "IsOneOf": [
                         "3"
+                    ]
+                },
+                {
+                    "Field": "Ofsted-FE-Skills",
+                    "IsOneOf": [
+                        "No"
                     ]
                 }
             ],
