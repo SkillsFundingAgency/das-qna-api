@@ -123,6 +123,136 @@
             "DisplayType": null,
             "Feedback": null,
             "ActivatedByPageId": null
+        },
+        {
+            "PageId": "2110",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "Does your organisation expect its funding from ESFA to be less than 5% of its total annual turnover?",
+            "LinkTitle": "Does your organisation expect its funding from ESFA to be less than 5% of its total annual turnover?",
+            "InfoText": "",
+            "Questions": [
+                {
+                    "QuestionId": "FH-40",
+                    "QuestionTag": "FHA-Funding-Turnover-5pc",
+                    "Label": "",
+                    "ShortLabel": "",
+                    "InputClasses": null,
+                    "QuestionBodyText": "",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "Radio",
+                        "InputClasses": null,
+                        "Options": [
+                            {
+                                "Value": "Yes",
+                                "Label": "Yes",
+                                "HintText": ""
+                            },
+                            {
+                                "Value": "No",
+                                "Label": "No",
+                                "HintText": ""
+                            }
+                        ],
+                        "Validations": [],
+                        "DataEndpoint": null
+                    },
+                    "Order": null,
+                    "Value": "",
+                    "ErrorMessages": null
+                }
+            ],
+            "PageOfAnswers": [],
+            "Next": [
+                {
+                    "Action": "NextPage",
+                    "ReturnId": "2150",
+                    "Conditions": [
+                        {
+                            "QuestionId": "FH-40",
+                            "MustEqual": "Yes"
+                        }
+                    ],
+                    "ConditionMet": false
+                },
+                {
+                    "Action": "NextPage",
+                    "ReturnId": "2130",
+                    "Conditions": [
+                        {
+                            "QuestionId": "FH-40",
+                            "MustEqual": "No"
+                        },
+                        {
+                            "QuestionTag": "UKRLP-Verification-Company",
+                            "MustEqual": "TRUE"
+                        }
+                    ],
+                    "ConditionMet": false
+                },
+                {
+                    "Action": "NextPage",
+                    "ReturnId": "2130",
+                    "Conditions": [
+                        {
+                            "QuestionId": "FH-40",
+                            "MustEqual": "No"
+                        },
+                        {
+                            "QuestionTag": "UKRLP-Verification-CharityRegNumber",
+                            "MustEqual": "TRUE"
+                        }
+                    ],
+                    "ConditionMet": false
+                },
+                {
+                    "Action": "NextPage",
+                    "ReturnId": "2140",
+                    "Conditions": [
+                        {
+                            "QuestionId": "FH-40",
+                            "MustEqual": "No"
+                        },
+                        {
+                            "QuestionTag": "UKRLP-Verification-SoleTraderPartnership",
+                            "MustEqual": "TRUE"
+                        }
+                    ],
+                    "ConditionMet": false
+                },
+                {
+                    "Action": "NextPage",
+                    "ReturnId": "2120",
+                    "Conditions": [
+                        {
+                            "QuestionId": "FH-40",
+                            "MustEqual": "No"
+                        }
+                    ],
+                    "ConditionMet": false
+                }
+            ],
+            "Complete": false,
+            "AllowMultipleAnswers": false,
+            "Order": null,
+            "Active": false,
+            "NotRequiredConditions": [
+                {
+                    "Field": "FHA-Turnover-Over75m",
+                    "IsOneOf": [
+                        "No"
+                    ]
+                }
+            ],
+            "BodyText": "<p class='govuk-body'>We'll check your organisation's financial statements to confirm your answer.</p><p class='govuk-body'>If your answer is incorrect, we may ask you to provider further financial information for your organisation.</p>",
+            "Details": {
+                "Title": "Show me an example",
+                "Body": "<p class='govuk-body'>Your organisation's total annual turnover is &pound;80 million and it expects to receive &pound;3 million of funding from the ESFA.</p><p class='govuk-body'>This is less than 5% of its total annual turnover, so the answer is yes.</p>"
+            },
+            "DisplayType": null,
+            "Feedback": null,
+            "ActivatedByPageId": "2100"
         }
     ]
 }
