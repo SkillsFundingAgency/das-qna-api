@@ -1027,7 +1027,7 @@
             "Questions": [
                 {
                     "QuestionId": "CC-20",
-                    "QuestionTag": "number-of-assessors",
+                    "QuestionTag": "number_of_assessors",
                     "Label": "How many assessors will you have?",
                     "ShortLabel": "Number of assessors",
                     "InputClasses": null,
@@ -1082,7 +1082,7 @@
             "Questions": [
                 {
                     "QuestionId": "CC-21",
-                    "QuestionTag": "number-of-assessments",
+                    "QuestionTag": "number_of_assessments",
                     "Label": "How many end-point assessments will you be able to deliver annually?",
                     "ShortLabel": "Assessment capacity",
                     "InputClasses": null,
@@ -1651,7 +1651,7 @@
             "Questions": [
                 {
                     "QuestionId": "CC-31",
-                    "QuestionTag": "delivery-areas",
+                    "QuestionTag": "delivery_areas",
                     "Label": "Where will you deliver end-point assessments?",
                     "ShortLabel": "Assessment locations",
                     "InputClasses": null,
@@ -1706,7 +1706,7 @@
             "Questions": [
                 {
                     "QuestionId": "W_DEL-04",
-                    "QuestionTag": "effective-from",
+                    "QuestionTag": "effective_from",
                     "Label": "If your application is successful, can you start an end-point assessment on the day you join the register?",
                     "ShortLabel": "Providing services straight away",
                     "InputClasses": null,
@@ -2285,7 +2285,7 @@
             "Questions": [
                 {
                     "QuestionId": "CC-40",
-                    "QuestionTag": "standard-website",
+                    "QuestionTag": "standard_website",
                     "Label": "Enter your web address",
                     "ShortLabel": "Web address",
                     "InputClasses": null,

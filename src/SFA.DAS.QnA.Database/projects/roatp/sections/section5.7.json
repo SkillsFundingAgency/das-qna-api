@@ -76,7 +76,7 @@
                     "QuestionTag": "ReadinessToEngage-Subcontractors-Diligence",
                     "Label": "How will your organisation carry out due diligence on its subcontractors?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body' id='rte-subcontractors-diligence'>Your answer should include how your organisation will:</p><ul class='govuk-list govuk-list--bullet'><li>ensure extremist organisations are not funded</li><li>ensure its commitments to ESFA are maintained through subcontractor delivery</li><li>manage and monitor subcontractors to ensure they deliver high quality training</li><li>manage subcontracting agreements including capacity and capability risks</li></ul>",
+                    "QuestionBodyText": "<p class='govuk-body' id='rte-subcontractors-diligence'>Your answer must include how your organisation will:</p><ul class='govuk-list govuk-list--bullet'><li>ensure extremist organisations are not funded</li><li>ensure its commitments to ESFA are maintained through subcontractor delivery</li><li>manage and monitor subcontractors to ensure they deliver high quality training</li><li>manage subcontracting agreements including capacity and capability risks</li></ul>",
                     "Hint": "",
                     "Input": {
                         "Type": "Textarea",
