@@ -1064,7 +1064,14 @@
 						"IsOneOf": [
 							"Apprenticeship frameworks"
 						]
+					},
+					{
+						"Field": "Apply-ProviderRoute",
+						"IsOneOf": [
+							"2"
+						]
 					}
+					
             ],
             "ActivatedByPageId": "6020,6022,6800",
             "BodyText": "<p class='govuk-body'>This must be the person who will use the 'Publish to Course Directory' service to enter your organisation's apprenticeships.</p>"

@@ -200,7 +200,7 @@
                             {
                                 "Name": "Required",
                                 "Value": "",
-                                "ErrorMessage": "Tell us how your organisation will recruit new staff to deliver training against these forecasts"
+                                "ErrorMessage": "Tell us if your organisation will recruit new staff to deliver training against these forecasts"
                             }
                         ],
                         "DataEndpoint": null
