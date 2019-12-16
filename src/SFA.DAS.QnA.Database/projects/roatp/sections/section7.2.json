@@ -13,7 +13,7 @@
             "InfoText": "",
             "Questions": [{
                     "QuestionId": "DAT-10.1",
-                    "QuestionTag": "DAT-Overall-Accountability-Fullname",
+                    "QuestionTag": "",
                     "Label": "Full name",
                     "QuestionBodyText": "",
                     "ShortLabel": "",
@@ -39,7 +39,7 @@
                     "ErrorMessages": null
                 }, {
                     "QuestionId": "DAT-10.2",
-                    "QuestionTag": "DAT-Overall-Accountability-Email",
+                    "QuestionTag": "",
                     "Label": "Email",
                     "QuestionBodyText": "",
                     "ShortLabel": "",
@@ -69,7 +69,7 @@
                     "ErrorMessages": null
                 }, {
                     "QuestionId": "DAT-10.3",
-                    "QuestionTag": "DAT-Overall-Accountability-ContactNumber",
+                    "QuestionTag": "",
                     "Label": "Contact number",
                     "QuestionBodyText": "",
                     "ShortLabel": "",
