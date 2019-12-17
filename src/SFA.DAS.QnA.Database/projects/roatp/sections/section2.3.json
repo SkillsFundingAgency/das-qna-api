@@ -13,7 +13,14 @@
             "InfoText": "",
             "Questions": [],
             "PageOfAnswers": [],
-            "Next": [],
+            "Next": [
+                {
+                    "Action": "NextPage",
+                    "ReturnId": null,
+                    "Conditions": [],
+                    "ConditionMet": false
+                }
+            ],
             "Complete": false,
             "AllowMultipleAnswers": false,
             "Order": null,
