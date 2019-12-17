@@ -28,7 +28,7 @@
                                 "FurtherQuestions": [
                                     {
                                         "QuestionId": "CD-30.1",
-                                        "QuestionTag": "trading-name",
+                                        "QuestionTag": "trading_name",
                                         "Label": "What is your trading name?",
                                         "ShortLabel": "",
                                         "InputClasses": null,
@@ -121,7 +121,7 @@
             "Questions": [
                 {
                     "QuestionId": "CD-01",
-                    "QuestionTag": "use-trading-name",
+                    "QuestionTag": "use_trading_name",
                     "Label": "Do you want to use your trading name on the register?",
                     "ShortLabel": "",
                     "InputClasses": null,
@@ -189,7 +189,7 @@
             "Questions": [
                 {
                     "QuestionId": "CD-02",
-                    "QuestionTag": "contact-given-name",
+                    "QuestionTag": "contact_given_name",
                     "Label": "Given name",
                     "ShortLabel": "",
                     "InputClasses": null,
@@ -214,7 +214,7 @@
                 },
                 {
                     "QuestionId": "CD-02_1",
-                    "QuestionTag": "contact-family-name",
+                    "QuestionTag": "contact_family_name",
                     "Label": "Family name",
                     "ShortLabel": "",
                     "InputClasses": null,
@@ -239,7 +239,7 @@
                 },
                 {
                     "QuestionId": "CD-03",
-                    "QuestionTag": "contact-address",
+                    "QuestionTag": "contact_address",
                     "Label": "Address",
                     "ShortLabel": "",
                     "InputClasses": null,
@@ -274,7 +274,7 @@
                 },
                 {
                     "QuestionId": "CD-05",
-                    "QuestionTag": "contact-email",
+                    "QuestionTag": "contact_email",
                     "Label": "Email address",
                     "ShortLabel": "",
                     "InputClasses": null,
@@ -304,7 +304,7 @@
                 },
                 {
                     "QuestionId": "CD-06",
-                    "QuestionTag": "contact-phone-number",
+                    "QuestionTag": "contact_phone_number",
                     "Label": "Telephone",
                     "ShortLabel": "",
                     "InputClasses": null,
@@ -529,7 +529,7 @@
             "Questions": [
                 {
                     "QuestionId": "CD-12",
-                    "QuestionTag": "company-ukprn",
+                    "QuestionTag": null,
                     "Label": "Do you have a UK provider registration number (UKPRN)?",
                     "ShortLabel": "",
                     "InputClasses": null,
@@ -543,7 +543,7 @@
                                 "FurtherQuestions": [
                                     {
                                         "QuestionId": "CD-12.1",
-                                        "QuestionTag": null,
+                                        "QuestionTag": "company_ukprn",
                                         "Label": "Provide your UKPRN",
                                         "ShortLabel": "",
                                         "InputClasses": null,
@@ -1049,7 +1049,7 @@
                                 "FurtherQuestions": [
                                     {
                                         "QuestionId": "CD-17.1",
-                                        "QuestionTag": "company-number",
+                                        "QuestionTag": "company_number",
                                         "Label": "What is your number",
                                         "ShortLabel": "",
                                         "InputClasses": null,
@@ -1618,7 +1618,7 @@
                                 "FurtherQuestions": [
                                     {
                                         "QuestionId": "CD-26.1",
-                                        "QuestionTag": "charity-number",
+                                        "QuestionTag": "charity_number",
                                         "Label": "What is the registered charity number?",
                                         "ShortLabel": "",
                                         "InputClasses": null,
