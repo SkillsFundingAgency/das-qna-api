@@ -1053,18 +1053,6 @@
             "DisplayType": null,
             "Feedback": null,
 			"NotRequiredConditions": [
-                    {
-                    "Field": "PAT-Type-Of-Training-main",
-                    "IsOneOf": [
-                        "Apprenticeship frameworks"
-                    ]
-					},
-					{
-						"Field": "PAT-Type-Of-Training-employer",
-						"IsOneOf": [
-							"Apprenticeship frameworks"
-						]
-					},
 					{
 						"Field": "Apply-ProviderRoute",
 						"IsOneOf": [
@@ -1203,11 +1191,6 @@
 						{
                             "QuestionId": null,
                             "QuestionTag": "PAT-Type-Of-Training-employer",
-                            "Contains": "Apprenticeship standards"
-                        },
-						{
-                            "QuestionId": null,
-                            "QuestionTag": "PAT-Type-Of-Training-employer",
                             "Contains": "Apprenticeship frameworks"
                         }
                     ],
@@ -1221,11 +1204,6 @@
                             "QuestionId": null,
                             "QuestionTag": "Apply-ProviderRoute",
                             "MustEqual": "1"
-                        },
-						{
-                            "QuestionId": null,
-                            "QuestionTag": "PAT-Type-Of-Training-main",
-                            "Contains": "Apprenticeship standards"
                         },
 						{
                             "QuestionId": null,
