@@ -15,7 +15,7 @@
                     "QuestionTag": "ReadinessToEngage-Prior-Learning",
                     "Label": "What is your organisation's process for initial assessments to recognise prior learning?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body' id='rte-prior-learning'>Your answer should include how your organisation will:</p><ul class='govuk-list govuk-list--bullet'><li>review personal learning records</li><li>review relevant education (including training, qualifications and work experience already achieved)</li><li>identify and analyse skill gaps</li><li>use apprenticeships to address any skill gaps</li></ul><p class='govuk-body'>Find out more about <a href='https://www.gov.uk/government/publications/apprenticeships-recognition-of-prior-learning/apprenticeships-initial-assessment-to-recognise-prior-learning' target='_blank'>initial assessments (opens in a new window or tab)</a>.</p>",
+                    "QuestionBodyText": "<p class='govuk-body' id='rte-prior-learning'>Your answer must include how your organisation will:</p><ul class='govuk-list govuk-list--bullet'><li>review personal learning records</li><li>review relevant education (including training, qualifications and work experience already achieved)</li><li>identify and analyse skill gaps</li><li>use apprenticeships to address any skill gaps</li></ul><p class='govuk-body'>Find out more about <a href='https://www.gov.uk/government/publications/apprenticeships-recognition-of-prior-learning/apprenticeships-initial-assessment-to-recognise-prior-learning' target='_blank'>initial assessments (opens in a new window or tab)</a>.</p>",
                     "Hint": "",
                     "Input": {
                         "Type": "Textarea",
@@ -61,7 +61,7 @@
                     "QuestionTag": "ReadinessToEngage-Assess-Qualifications",
                     "Label": "What is your organisation's process to assess English and maths qualifications for apprentices?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body' id='rte-assess-qualifications'>Your answer should include how your organisation will:</p><ul class='govuk-list govuk-list--bullet'><li>review existing English and maths qualifications</li><li>measure these qualifications against entry level requirements for apprenticeships</li><li>identify and analyse any learning gaps</li><li>identify no further learning requirements for English and maths</li></ul>",
+                    "QuestionBodyText": "<p class='govuk-body' id='rte-assess-qualifications'>Your answer must include how your organisation will:</p><ul class='govuk-list govuk-list--bullet'><li>review existing English and maths qualifications</li><li>measure these qualifications against entry level requirements for apprenticeships</li><li>identify and analyse any learning gaps</li><li>identify no further learning requirements for English and maths</li></ul>",
                     "Hint": "",
                     "Input": {
                         "Type": "Textarea",
