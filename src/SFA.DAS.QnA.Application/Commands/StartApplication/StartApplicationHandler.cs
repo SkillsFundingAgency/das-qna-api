@@ -145,7 +145,7 @@ namespace SFA.DAS.QnA.Application.Commands.StartApplication
 
             await _dataContext.ApplicationSections.AddRangeAsync(newApplicationSections, cancellationToken);
             await _dataContext.SaveChangesAsync(cancellationToken);
-            _logger.LogInformation($"Created ApplicationSection entity for Application: {newApplication.Id}");
+            _logger.LogInformation($"Created ApplicationSection entities for Application: {newApplication.Id}");
         }
     }
 }
