@@ -24,7 +24,6 @@ namespace SFA.DAS.QnA.Application.Commands.Files
             var originalBytes = memoryStream.ToArray();
 
             var encryptedBytes = AES_Encrypt(originalBytes, Encoding.ASCII.GetBytes(key));
-            encryptedBytes = AES_Encrypt(encryptedBytes, Encoding.ASCII.GetBytes(key.Reverse().ToString()));
             
             return new MemoryStream(encryptedBytes);
         }
@@ -38,8 +37,7 @@ namespace SFA.DAS.QnA.Application.Commands.Files
 
             var encryptedBytes = memoryStream.ToArray();
             
-            var firstDecryptPass = AES_Decrypt(encryptedBytes, Encoding.ASCII.GetBytes(key.Reverse().ToString()));
-            var originalBytes = AES_Decrypt(firstDecryptPass, Encoding.ASCII.GetBytes(key));
+            var originalBytes = AES_Decrypt(encryptedBytes, Encoding.ASCII.GetBytes(key));
             
             return new MemoryStream(originalBytes);
         }
