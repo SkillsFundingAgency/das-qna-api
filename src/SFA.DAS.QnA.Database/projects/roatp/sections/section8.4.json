@@ -31,8 +31,8 @@
                             {
                                 "Label": "No",
                                 "Value": "No",
-                                "HintText": "Before joining the RoATP, your organisation must have systems and processes in place to get this data. We may ask for evidence on this.",
-                                "FurtherQuestions": null
+                                "FurtherQuestions": null,
+                                "ConditionalContentText": "<p class='govuk-body'>Before joining the RoATP, your organisation must have systems and processes in place to get this data. We may ask for evidence on this.</p>"
                             }
                         ],
                         "Validations": [
@@ -68,8 +68,8 @@
             "PageId": "8310",
             "SequenceId": null,
             "SectionId": null,
-            "Title": "Using Individualised Learner Record",
-            "LinkTitle": "Using Individualised Learner Record",
+            "Title": "Systems and processes to collect apprenticeship data",
+            "LinkTitle": "Systems and processes to collect apprenticeship data",
             "InfoText": "",
             "Questions": [
                 {

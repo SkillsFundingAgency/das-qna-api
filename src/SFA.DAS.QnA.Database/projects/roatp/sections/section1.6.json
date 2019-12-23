@@ -228,7 +228,14 @@
             "Visible": true,
             "Feedback": null,
             "HasFeedback": false,
-            "NotRequiredConditions": [],
+            "NotRequiredConditions": [
+                {
+                    "Field": "Apply-ProviderRoute",
+                    "IsOneOf": [
+                        "3"
+                    ]
+                }
+            ],
             "ActivatedByPageId": "240",
             "BodyText": ""
         },
@@ -297,7 +304,20 @@
             "Visible": true,
             "Feedback": null,
             "HasFeedback": false,
-            "NotRequiredConditions": [],
+            "NotRequiredConditions": [
+                {
+                    "Field": "ITT-PGTA",
+                    "IsOneOf": [
+                        "Yes"
+                    ]
+                },
+                {
+                    "Field": "Apply-ProviderRoute",
+                    "IsOneOf": [
+                        "3"
+                    ]
+                }
+            ],
             "ActivatedByPageId": "240,250",
             "BodyText": ""
         },
@@ -384,11 +404,24 @@
             "Complete": false,
             "AllowMultipleAnswers": false,
             "Order": null,
-            "Active": false,
+            "Active": true,
             "Visible": true,
             "Feedback": null,
             "HasFeedback": false,
-            "NotRequiredConditions": [],
+            "NotRequiredConditions": [
+                {
+                    "Field": "ITT-PGTA",
+                    "IsOneOf": [
+                        "Yes"
+                    ]
+                },
+                {
+                    "Field": "Apply-ProviderRoute",
+                    "IsOneOf": [
+                        "3"
+                    ]
+                }
+            ],
             "ActivatedByPageId": "260",
             "BodyText": ""
         },
@@ -472,11 +505,30 @@
             "Complete": false,
             "AllowMultipleAnswers": false,
             "Order": null,
-            "Active": false,
+            "Active": true,
             "Visible": true,
             "Feedback": null,
             "HasFeedback": false,
-            "NotRequiredConditions": [],
+            "NotRequiredConditions": [
+                {
+                    "Field": "ITT-PGTA",
+                    "IsOneOf": [
+                        "Yes"
+                    ]
+                },
+                {
+                    "Field": "Apply-ProviderRoute",
+                    "IsOneOf": [
+                        "3"
+                    ]
+                },
+                {
+                    "Field": "Ofsted-FE-Skills",
+                    "IsOneOf": [
+                        "No"
+                    ]
+                }
+            ],
             "ActivatedByPageId": "270,300",
             "BodyText": ""
         },
@@ -530,11 +582,24 @@
             "Complete": false,
             "AllowMultipleAnswers": false,
             "Order": null,
-            "Active": false,
+            "Active": true,
             "Visible": true,
             "Feedback": null,
             "HasFeedback": false,
-            "NotRequiredConditions": [],
+            "NotRequiredConditions": [
+                {
+                    "Field": "ITT-PGTA",
+                    "IsOneOf": [
+                        "Yes"
+                    ]
+                },
+                {
+                    "Field": "Apply-ProviderRoute",
+                    "IsOneOf": [
+                        "3"
+                    ]
+                }
+            ],
             "ActivatedByPageId": "260",
             "BodyText": ""
         },
@@ -618,11 +683,30 @@
             "Complete": false,
             "AllowMultipleAnswers": false,
             "Order": null,
-            "Active": false,
+            "Active": true,
             "Visible": true,
             "Feedback": null,
             "HasFeedback": false,
-            "NotRequiredConditions": [],
+            "NotRequiredConditions": [
+                {
+                    "Field": "ITT-PGTA",
+                    "IsOneOf": [
+                        "Yes"
+                    ]
+                },
+                {
+                    "Field": "Apply-ProviderRoute",
+                    "IsOneOf": [
+                        "3"
+                    ]
+                },
+                {
+                    "Field": "Ofsted-FE-Skills",
+                    "IsOneOf": [
+                        "No"
+                    ]
+                }
+            ],
             "ActivatedByPageId": "270",
             "BodyText": ""
         },
@@ -706,11 +790,30 @@
             "Complete": false,
             "AllowMultipleAnswers": false,
             "Order": null,
-            "Active": false,
+            "Active": true,
             "Visible": true,
             "Feedback": null,
             "HasFeedback": false,
-            "NotRequiredConditions": [],
+            "NotRequiredConditions": [
+                {
+                    "Field": "ITT-PGTA",
+                    "IsOneOf": [
+                        "Yes"
+                    ]
+                },
+                {
+                    "Field": "Apply-ProviderRoute",
+                    "IsOneOf": [
+                        "3"
+                    ]
+                },
+                {
+                    "Field": "Ofsted-FE-Skills",
+                    "IsOneOf": [
+                        "No"
+                    ]
+                }
+            ],
             "ActivatedByPageId": "270",
             "BodyText": ""
         },
@@ -775,11 +878,30 @@
             "Complete": false,
             "AllowMultipleAnswers": false,
             "Order": null,
-            "Active": false,
+            "Active": true,
             "Visible": true,
             "Feedback": null,
             "HasFeedback": false,
-            "NotRequiredConditions": [],
+            "NotRequiredConditions": [
+                {
+                    "Field": "ITT-PGTA",
+                    "IsOneOf": [
+                        "Yes"
+                    ]
+                },
+                {
+                    "Field": "Apply-ProviderRoute",
+                    "IsOneOf": [
+                        "3"
+                    ]
+                },
+                {
+                    "Field": "Ofsted-FE-Skills",
+                    "IsOneOf": [
+                        "No"
+                    ]
+                }
+            ],
             "ActivatedByPageId": "280,300,301",
             "BodyText": ""
         },
@@ -844,11 +966,30 @@
             "Complete": false,
             "AllowMultipleAnswers": false,
             "Order": null,
-            "Active": false,
+            "Active": true,
             "Visible": true,
             "Feedback": null,
             "HasFeedback": false,
-            "NotRequiredConditions": [],
+            "NotRequiredConditions": [
+                {
+                    "Field": "ITT-PGTA",
+                    "IsOneOf": [
+                        "Yes"
+                    ]
+                },
+                {
+                    "Field": "Apply-ProviderRoute",
+                    "IsOneOf": [
+                        "3"
+                    ]
+                },
+                {
+                    "Field": "Ofsted-FE-Skills",
+                    "IsOneOf": [
+                        "No"
+                    ]
+                }
+            ],
             "ActivatedByPageId": "280,300,301",
             "BodyText": ""
         },
@@ -907,7 +1048,26 @@
             "Visible": true,
             "Feedback": null,
             "HasFeedback": false,
-            "NotRequiredConditions": [],
+            "NotRequiredConditions": [
+                {
+                    "Field": "ITT-PGTA",
+                    "IsOneOf": [
+                        "Yes"
+                    ]
+                },
+                {
+                    "Field": "Apply-ProviderRoute",
+                    "IsOneOf": [
+                        "3"
+                    ]
+                },
+                {
+                    "Field": "Ofsted-FE-Skills",
+                    "IsOneOf": [
+                        "No"
+                    ]
+                }
+            ],
             "ActivatedByPageId": "310,340",
             "BodyText": ""
         },
@@ -976,7 +1136,26 @@
             "Visible": true,
             "Feedback": null,
             "HasFeedback": false,
-            "NotRequiredConditions": [],
+            "NotRequiredConditions": [
+                {
+                    "Field": "ITT-PGTA",
+                    "IsOneOf": [
+                        "Yes"
+                    ]
+                },
+                {
+                    "Field": "Apply-ProviderRoute",
+                    "IsOneOf": [
+                        "3"
+                    ]
+                },
+                {
+                    "Field": "Ofsted-FE-Skills",
+                    "IsOneOf": [
+                        "No"
+                    ]
+                }
+            ],
             "ActivatedByPageId": "310",
             "BodyText": ""
         },
@@ -1045,7 +1224,26 @@
             "Visible": true,
             "Feedback": null,
             "HasFeedback": false,
-            "NotRequiredConditions": [],
+            "NotRequiredConditions": [
+                {
+                    "Field": "ITT-PGTA",
+                    "IsOneOf": [
+                        "Yes"
+                    ]
+                },
+                {
+                    "Field": "Apply-ProviderRoute",
+                    "IsOneOf": [
+                        "3"
+                    ]
+                },
+                {
+                    "Field": "Ofsted-FE-Skills",
+                    "IsOneOf": [
+                        "No"
+                    ]
+                }
+            ],
             "ActivatedByPageId": "330",
             "BodyText": ""
         },
@@ -1106,7 +1304,7 @@
                     "ReturnId": "1.6",
                     "Conditions": [],
                     "ConditionMet": false
-                }                
+                }
             ],
             "Complete": false,
             "AllowMultipleAnswers": false,
@@ -1144,7 +1342,14 @@
             "Visible": true,
             "Feedback": null,
             "HasFeedback": false,
-            "NotRequiredConditions": [],
+            "NotRequiredConditions": [
+                {
+                    "Field": "Apply-ProviderRoute",
+                    "IsOneOf": [
+                        "3"
+                    ]
+                }
+            ],
             "ActivatedByPageId": "311",
             "BodyText": "<p class='govuk-body'>This is because your organisation got an 'inadequate' grade within the last 3 years.</p><p class='govuk-body'><a href='https://www.gov.uk'>Back to GOV.UK</a></p>"
         },
@@ -1194,12 +1399,12 @@
                     "ReturnId": "1.6",
                     "Conditions": [],
                     "ConditionMet": false
-                }    
+                }
             ],
             "Complete": false,
             "AllowMultipleAnswers": false,
             "Order": null,
-            "Active": false,
+            "Active": true,
             "NotRequiredConditions": [
                 {
                     "Field": "Apply-ProviderRoute",

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
@@ -29,7 +30,9 @@ namespace SFA.DAS.QnA.Application.Commands.StartApplication
 
         public async Task<HandlerResponse<StartApplicationResponse>> Handle(StartApplicationRequest request, CancellationToken cancellationToken)
         {
-            var latestWorkflow = await _dataContext.Workflows.SingleOrDefaultAsync(w => w.Type == request.WorkflowType && w.Status == "Live", cancellationToken);
+            var latestWorkflow = await _dataContext.Workflows.AsNoTracking()
+                .SingleOrDefaultAsync(w => w.Type == request.WorkflowType && w.Status == "Live", cancellationToken);
+
             if (latestWorkflow is null)
             {
                 _logger.LogError($"Workflow type {request.WorkflowType} does not exist");
@@ -62,7 +65,7 @@ namespace SFA.DAS.QnA.Application.Commands.StartApplication
 
             await CopyWorkflows(cancellationToken, newApplication);
 
-            _logger.LogInformation($"Created application Id = {newApplication.Id}");
+            _logger.LogInformation($"Successfully created new Application. Application Id = {newApplication.Id} | Workflow = {request.WorkflowType}");
             return new HandlerResponse<StartApplicationResponse>(new StartApplicationResponse {ApplicationId = newApplication.Id});
         }
 
@@ -78,14 +81,17 @@ namespace SFA.DAS.QnA.Application.Commands.StartApplication
             };
 
             _dataContext.Applications.Add(newApplication);
-
             await _dataContext.SaveChangesAsync(cancellationToken);
+            _logger.LogInformation($"Created Application entity: {newApplication.Id}");
+
             return newApplication;
         }
 
         private async Task CopyWorkflows(CancellationToken cancellationToken, Data.Entities.Application newApplication)
         {
-            var workflowSequences = await _dataContext.WorkflowSequences.Where(seq => seq.WorkflowId == newApplication.WorkflowId).ToListAsync(cancellationToken);
+
+            var workflowSequences = await _dataContext.WorkflowSequences.AsNoTracking()
+                .Where(seq => seq.WorkflowId == newApplication.WorkflowId).ToListAsync(cancellationToken);
 
             var groupedSequences = workflowSequences.GroupBy(seq => new {seq.SequenceNo, seq.IsActive}).ToList();
 
@@ -97,13 +103,12 @@ namespace SFA.DAS.QnA.Application.Commands.StartApplication
             }).ToList();
 
             await _dataContext.ApplicationSequences.AddRangeAsync(newApplicationSequences, cancellationToken);
-
-
             await _dataContext.SaveChangesAsync(cancellationToken);
+            _logger.LogInformation($"Created ApplicationSequence entities for Application: {newApplication.Id}");
 
             var sectionIds = groupedSequences.SelectMany(seq => seq).Select(seq => seq.SectionId).ToList();
 
-            var workflowSections = await _dataContext.WorkflowSections
+            var workflowSections = await _dataContext.WorkflowSections.AsNoTracking()
                 .Where(sec => sectionIds.Contains(sec.Id)).ToListAsync(cancellationToken: cancellationToken);
 
             var newApplicationSections = new List<ApplicationSection>();
@@ -117,6 +122,7 @@ namespace SFA.DAS.QnA.Application.Commands.StartApplication
 
                     var newSection = new ApplicationSection
                     {
+                        Id = Guid.NewGuid(),
                         SequenceId = applicationSequence.Id,
                         Title = workflowSection.Title,
                         LinkTitle = workflowSection.LinkTitle,
@@ -127,28 +133,19 @@ namespace SFA.DAS.QnA.Application.Commands.StartApplication
                         SequenceNo = sectionDetails.SequenceNo
                     };
 
+                    foreach (var page in newSection.QnAData.Pages)
+                    {
+                        page.SectionId = newSection.Id;
+                        page.SequenceId = newSection.SequenceId;
+                    }
+
                     newApplicationSections.Add(newSection);
                 }
             }
 
             await _dataContext.ApplicationSections.AddRangeAsync(newApplicationSections, cancellationToken);
-
             await _dataContext.SaveChangesAsync(cancellationToken);
-            
-            foreach (var applicationSection in newApplicationSections)
-            {
-                var qnaData = new QnAData(applicationSection.QnAData);
-                
-                foreach (var page in qnaData.Pages)
-                {
-                    page.SectionId = applicationSection.Id;
-                    page.SequenceId = applicationSection.SequenceId;
-                }
-
-                applicationSection.QnAData = qnaData;
-            }
-
-            await _dataContext.SaveChangesAsync(cancellationToken);
+            _logger.LogInformation($"Created ApplicationSection entities for Application: {newApplication.Id}");
         }
     }
 }
