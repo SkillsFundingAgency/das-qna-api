@@ -67,7 +67,7 @@
                     "QuestionTag": "ReadinessToEngage-Managing-Employers",
                     "Label": "How will your organisation manage its relationship with employers?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body' id='rte-managing-employers'>Your answer should include how your organisation will:</p><ul class='govuk-list govuk-list--bullet'><li>continuously monitor and improve employer engagement</li><li>regularly review feedback from employers</li><li>manage concerns and issues raised by employers</li><li>manage communication with employers</li></ul>",
+                    "QuestionBodyText": "<p class='govuk-body' id='rte-managing-employers'>Your answer must include how your organisation will:</p><ul class='govuk-list govuk-list--bullet'><li>continuously monitor and improve employer engagement</li><li>regularly review feedback from employers</li><li>manage concerns and issues raised by employers</li><li>manage communication with employers</li></ul>",
                     "Hint": "",
                     "Input": {
                         "Type": "Textarea",

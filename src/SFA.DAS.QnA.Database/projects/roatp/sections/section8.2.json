@@ -15,7 +15,7 @@
                     "QuestionTag": "EAT-Evaluating-Training",
                     "Label": "What is your organisation's process for evaluating the quality of training delivered?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body' id='eat-evaluating-training'>Your answer should include how your organisation:</p><ul class='govuk-list govuk-list--bullet'><li>responds and acts on feedback from employers and learners</li><li>continuously improves training</li><li>identifies and addresses poor training outcomes</li><li>uses key performance indicators to measure the quality of training</li></ul>",
+                    "QuestionBodyText": "<p class='govuk-body' id='eat-evaluating-training'>Your answer must include how your organisation:</p><ul class='govuk-list govuk-list--bullet'><li>responds and acts on feedback from employers and learners</li><li>continuously improves training</li><li>identifies and addresses poor training outcomes</li><li>uses key performance indicators to measure the quality of training</li></ul>",
                     "Hint": "",
                     "Input": {
                         "Type": "Textarea",
