@@ -143,7 +143,6 @@
                     "Conditions": [
                         {
                             "QuestionId": "FIN-60",
-                            "QuestionTag": null,
                             "MustEqual": "No"
                         }
                     ],
@@ -331,7 +330,7 @@
             "Complete": false,
             "AllowMultipleAnswers": false,
             "Order": null,
-            "Active": false,
+            "Active": true,
             "NotRequiredConditions": [
                 {
                     "Field": "Apply-ProviderRoute",
@@ -361,24 +360,7 @@
             "AllowMultipleAnswers": false,
             "Order": null,
             "Active": false,
-            "NotRequiredConditions": [
-                {
-                    "Field": "",
-                    "IsOneOf": []
-                },
-                {
-                    "Field": "COA-Part2-MainEmployer",
-                    "IsOneOf": [
-                        "Yes"
-                    ]
-                },
-                {
-                    "Field": "COA-Part2-Supporting",
-                    "IsOneOf": [
-                        "Yes"
-                    ]
-                }
-            ],
+            "NotRequiredConditions": [],
             "BodyText": "<p class='govuk-body'>This means your organisation cannot apply to join the RoATP.</p><p class='govuk-body'>If you want to change your answer, you can sign back in and submit your application.</p>\n<p class='govuk-body'><a href='https://www.gov.uk'>Back to GOV.UK<a></p>",
             "Details": null,
             "DisplayType": null,
@@ -399,20 +381,7 @@
             "AllowMultipleAnswers": false,
             "Order": null,
             "Active": false,
-            "NotRequiredConditions": [
-                {
-                    "Field": "COA-Part3-MainEmployer",
-                    "IsOneOf": [
-                        "Yes"
-                    ]
-                },
-                {
-                    "Field": "COA-Part3-Supporting",
-                    "IsOneOf": [
-                        "Yes"
-                    ]
-                }
-            ],
+            "NotRequiredConditions": [],
             "BodyText": "<p class='govuk-body'>This means your organisation cannot apply to join the RoATP.</p><p class='govuk-body'>If you want to change your answer, you can sign back in and submit your application.</p><p class='govuk-body'><a href='https://www.gov.uk'>Back to GOV.UK</a></p>",
             "Details": null,
             "DisplayType": null,

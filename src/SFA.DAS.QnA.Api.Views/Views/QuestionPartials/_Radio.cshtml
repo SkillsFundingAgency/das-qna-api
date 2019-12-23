@@ -17,28 +17,56 @@
 
 <div class="govuk-form-group">
 
-    @{ var isInline = Model.Options.Count <= 2 ? "govuk-radios--inline" : ""; }
+    @{ 
+        var hasConditionalText = ((IEnumerable<dynamic>)Model.Options).Any(opt => opt.HasConditionalContentText);
+        var shouldInlineOptions = Model.Options.Count <= 2;
+        var cssClass = hasConditionalText ? "govuk-radios--conditional" : shouldInlineOptions ? "govuk-radios--inline" : "";
+    }
 
-    <div class="govuk-radios @isInline">
+    <div class="govuk-radios @cssClass" data-module="radios">
         @for (int i = 0; i < Model.Options.Count; i++)
         {
             var radioChecked = Model.Value == Model.Options[i].Value.ToString() ? "checked" : "";
             var optionId = Model.QuestionId + (i == 0 ? "" : "_" + i);
-        <div class="govuk-radios__item">
-            @if (Model.Options[i].HasHintText)
+
+            <div class="govuk-radios__item">
+                @if (Model.Options[i].HasHintText)
+                {
+                    <input
+                        class="govuk-radios__input"
+                        type="radio"
+                        id="@optionId"
+                        name="@Model.QuestionId"
+                        value="@Model.Options[i].Value"
+                        data-aria-controls="conditional-@optionId"
+                        aria-describedby="@optionId-hint"
+                        @radioChecked
+                    />
+                }
+                else
+                {
+                    <input
+                        class="govuk-radios__input"
+                        type="radio"
+                        id="@optionId"
+                        name="@Model.QuestionId"
+                        value="@Model.Options[i].Value"
+                        data-aria-controls="conditional-@optionId"
+                        @radioChecked
+                    />
+                }
+                <label class="govuk-label govuk-radios__label" for="@(Model.QuestionId + (i == 0 ? "" : "_" + i))">@Model.Options[i].Label</label>
+                <span id="@optionId-hint" class="govuk-hint govuk-radios__hint">
+                    @Html.Raw(Model.Options[i].HintText)
+                </span>
+            </div>
+
+            if(@Model.Options[i].HasConditionalContentText)
             {
-                <input class="govuk-radios__input" type="radio" id="@optionId" name="@Model.QuestionId" value="@Model.Options[i].Value" @radioChecked aria-describedby="@optionId-hint">
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-@optionId">
+                    @Html.Raw(Model.Options[i].ConditionalContentText)
+                </div>
             }
-            else
-            {
-                <input class="govuk-radios__input" type="radio" id="@optionId" name="@Model.QuestionId" value="@Model.Options[i].Value" @radioChecked>
-            }
-            <label class="govuk-label govuk-radios__label" for="@(Model.QuestionId + (i == 0 ? "" : "_" + i))">@Model.Options[i].Label</label>
-            <span id="@optionId-hint" class="govuk-hint govuk-radios__hint">
-                @Html.Raw(Model.Options[i].HintText)
-            </span>
-        </div>
         }
     </div>
-
 </div>
