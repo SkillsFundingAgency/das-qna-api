@@ -28,7 +28,8 @@
                         class="govuk-radios__input"
                         type="radio"
                         id="@optionId"
-                        name="@Model.QuestionId" value="@Model.Options[i].Label"
+                        name="@Model.QuestionId"
+                        value="@Model.Options[i].Label"
                         data-aria-controls="conditional-@optionId"
                         aria-describedby="@optionId-hint"
                         @radioChecked 
@@ -40,9 +41,11 @@
                         class="govuk-radios__input"
                         type="radio"
                         id="@optionId"
-                        name="@Model.QuestionId" value="@Model.Options[i].Label"
+                        name="@Model.QuestionId"
+                        value="@Model.Options[i].Label"
                         data-aria-controls="conditional-@optionId"
-                        @radioChecked/>
+                        @radioChecked
+                    />
                 }
                 <label class="govuk-label govuk-radios__label" for="@(Model.QuestionId + (i == 0 ? "" : "_" + i))">@Model.Options[i].Label</label>
                 @if (Model.Options[i].HasHintText)
