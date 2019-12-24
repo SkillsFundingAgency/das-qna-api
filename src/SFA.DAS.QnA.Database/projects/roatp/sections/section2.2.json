@@ -73,21 +73,50 @@
                         {
                             "QuestionTag": "UKRLP-Verification-Company",
                             "MustEqual": "TRUE"
+                        },
+                        {
+                            "QuestionTag": "UKRLP-Verification-Charity",
+                            "MustEqual": "TRUE"
                         }
                     ],
                     "ConditionMet": false
                 },
                 {
                     "Action": "NextPage",
-                    "ReturnId": "2130",
+                    "ReturnId": "2131",
                     "Conditions": [
                         {
                             "QuestionId": "FH-30",
                             "MustEqual": "No"
                         },
                         {
-                            "QuestionTag": "UKRLP-Verification-CharityRegNumber",
+                            "QuestionTag": "UKRLP-Verification-Charity",
+                            "MustEqual": "",
+                            "Contains": ""
+                        },
+                        {
+                            "QuestionTag": "UKRLP-Verification-Company",
                             "MustEqual": "TRUE"
+                        }
+                    ],
+                    "ConditionMet": false
+                },
+                {
+                    "Action": "NextPage",
+                    "ReturnId": "2132",
+                    "Conditions": [
+                        {
+                            "QuestionId": "FH-30",
+                            "MustEqual": "No"
+                        },
+                        {
+                            "QuestionTag": "UKRLP-Verification-Charity",
+                            "MustEqual": "TRUE"
+                        },
+                        {
+                            "QuestionTag": "UKRLP-Verification-Company",
+                            "MustEqual": "",
+                            "Contains": ""
                         }
                     ],
                     "ConditionMet": false
@@ -199,21 +228,50 @@
                         {
                             "QuestionTag": "UKRLP-Verification-Company",
                             "MustEqual": "TRUE"
+                        },
+                        {
+                            "QuestionTag": "UKRLP-Verification-Charity",
+                            "MustEqual": "TRUE"
                         }
                     ],
                     "ConditionMet": false
                 },
                 {
                     "Action": "NextPage",
-                    "ReturnId": "2130",
+                    "ReturnId": "2131",
                     "Conditions": [
                         {
                             "QuestionId": "FH-40",
                             "MustEqual": "No"
                         },
                         {
-                            "QuestionTag": "UKRLP-Verification-CharityRegNumber",
+                            "QuestionTag": "UKRLP-Verification-Charity",
+                            "MustEqual": "",
+                            "Contains": ""
+                        },
+                        {
+                            "QuestionTag": "UKRLP-Verification-Company",
                             "MustEqual": "TRUE"
+                        }
+                    ],
+                    "ConditionMet": false
+                },
+                {
+                    "Action": "NextPage",
+                    "ReturnId": "2132",
+                    "Conditions": [
+                        {
+                            "QuestionId": "FH-40",
+                            "MustEqual": "No"
+                        },
+                        {
+                            "QuestionTag": "UKRLP-Verification-Charity",
+                            "MustEqual": "TRUE"
+                        },
+                        {
+                            "QuestionTag": "UKRLP-Verification-Company",
+                            "MustEqual": "",
+                            "Contains": ""
                         }
                     ],
                     "ConditionMet": false
@@ -476,7 +534,7 @@
                     "Hint": "You can find this on your organisation's 'balance sheet'",
                     "Input": {
                         "Type": "Number",
-                        "InputClasses": null,
+                        "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
                                 "Name": "Required",
@@ -518,9 +576,819 @@
                     ]
                 },
                 {
-                    "Field": "UKRLP-Verification-CharityRegNumber",
+                    "Field": "UKRLP-Verification-Charity",
                     "IsOneOf": [
                         "TRUE"
+                    ]
+                },
+                {
+                    "Field": "UKRLP-Verification-SoleTraderPartnership",
+                    "IsOneOf": [
+                        "TRUE"
+                    ]
+                }
+            ],
+            "BodyText": "",
+            "Details": null,
+            "DisplayType": null,
+            "Feedback": null,
+            "ActivatedByPageId": "2100,2110"
+        },
+        {
+            "PageId": "2130",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "Financial evidence",
+            "LinkTitle": "Financial evidence",
+            "InfoText": "",
+            "Questions": [
+                {
+                    "QuestionId": "FH-140",
+                    "QuestionTag": "FHA-CC-Annual-Turnover",
+                    "Label": "Enter your organisation's total annual turnover for the last year",
+                    "ShortLabel": "",
+                    "InputClasses": null,
+                    "QuestionBodyText": "",
+                    "Hint": "You can find this on your organisation's 'profit and loss statement', 'income and expenditure account' or 'statement of financial activities'.",
+                    "Input": {
+                        "Type": "Number",
+                        "InputClasses": "govuk-input--width-10",
+                        "Validations": [
+                            {
+                                "Name": "Required",
+                                "Value": "",
+                                "ErrorMessage": "Enter your organisation's total annual turnover for the last financial year"
+                            }
+                        ],
+                        "DataEndpoint": null
+                    },
+                    "Order": null,
+                    "Value": "",
+                    "ErrorMessages": null
+                },
+                {
+                    "QuestionId": "FH-150",
+                    "QuestionTag": "FHA-CC-Depreciation-Amortisation",
+                    "Label": "Enter your organisation's total depreciation and amortisation figures for the last financial year",
+                    "ShortLabel": "",
+                    "InputClasses": null,
+                    "QuestionBodyText": "",
+                    "Hint": "You can find this on your organisation's 'operating profit note to the accounts'. You’ll need to add up all the items under 'note 2' and enter the total figure.",
+                    "Input": {
+                        "Type": "Number",
+                        "InputClasses": "govuk-input--width-10",
+                        "Validations": [
+                            {
+                                "Name": "Required",
+                                "Value": "",
+                                "ErrorMessage": "Enter your organisation's total depreciation and amortisation charges for the last financial year"
+                            }
+                        ],
+                        "DataEndpoint": null
+                    },
+                    "Order": null,
+                    "Value": "",
+                    "ErrorMessages": null
+                },
+                {
+                    "QuestionId": "FH-160",
+                    "QuestionTag": "FHA-CC-Profit-Loss",
+                    "Label": "Enter your organisation's profit or loss for the last financial year",
+                    "ShortLabel": "",
+                    "InputClasses": null,
+                    "QuestionBodyText": "",
+                    "Hint": "Profit or loss is the net amount earned after tax.You can find this under your organisation's 'profit and loss statement' or under 'net profit' or 'net movement in funds' in its accounts.",
+                    "Input": {
+                        "Type": "Number",
+                        "InputClasses": "govuk-input--width-10",
+                        "Validations": [
+                            {
+                                "Name": "Required",
+                                "Value": "",
+                                "ErrorMessage": "Enter your organisation's profit or loss for the last financial year"
+                            }
+                        ],
+                        "DataEndpoint": null
+                    },
+                    "Order": null,
+                    "Value": "",
+                    "ErrorMessages": null
+                },
+                {
+                    "QuestionId": "FH-170",
+                    "QuestionTag": "FHA-CC-Dividends",
+                    "Label": "Enter your organisation's total dividends for the last financial year",
+                    "ShortLabel": "",
+                    "InputClasses": null,
+                    "QuestionBodyText": "",
+                    "Hint": "You can find this on your organisation's 'notes to the accounts'.",
+                    "Input": {
+                        "Type": "Number",
+                        "InputClasses": "govuk-input--width-10",
+                        "Validations": [
+                            {
+                                "Name": "Required",
+                                "Value": "",
+                                "ErrorMessage": "Enter your organisation's total dividends for the last financial year"
+                            }
+                        ],
+                        "DataEndpoint": null
+                    },
+                    "Order": null,
+                    "Value": "",
+                    "ErrorMessages": null
+                },
+                {
+                    "QuestionId": "FH-180",
+                    "QuestionTag": "FHA-CC-Total-Assets",
+                    "Label": "Enter your organisation's total current assets for the last financial year",
+                    "ShortLabel": "",
+                    "InputClasses": null,
+                    "QuestionBodyText": "",
+                    "Hint": "You can find this on your organisation's 'balance sheet'.",
+                    "Input": {
+                        "Type": "Number",
+                        "InputClasses": "govuk-input--width-10",
+                        "Validations": [
+                            {
+                                "Name": "Required",
+                                "Value": "",
+                                "ErrorMessage": "Enter your organisation's total current assets for the last financial year"
+                            }
+                        ],
+                        "DataEndpoint": null
+                    },
+                    "Order": null,
+                    "Value": "",
+                    "ErrorMessages": null
+                },
+                {
+                    "QuestionId": "FH-190",
+                    "QuestionTag": "FHA-CC-Total-Liabilities",
+                    "Label": "Enter your organisation's total current liabilities for the last financial year",
+                    "ShortLabel": "",
+                    "InputClasses": null,
+                    "QuestionBodyText": "",
+                    "Hint": "You can find this on your organisation's 'balance sheet' under 'creditors: amount falling due within one year'.",
+                    "Input": {
+                        "Type": "Number",
+                        "InputClasses": "govuk-input--width-10",
+                        "Validations": [
+                            {
+                                "Name": "Required",
+                                "Value": "",
+                                "ErrorMessage": "Enter your organisation's total current liabilities for the last financial year"
+                            }
+                        ],
+                        "DataEndpoint": null
+                    },
+                    "Order": null,
+                    "Value": "",
+                    "ErrorMessages": null
+                },
+                {
+                    "QuestionId": "FH-200",
+                    "QuestionTag": "FHA-CC-Total-Borrowings",
+                    "Label": "Enter your organisation's total borrowings for the last financial year",
+                    "ShortLabel": "",
+                    "InputClasses": null,
+                    "QuestionBodyText": "",
+                    "Hint": "You will need to add up a total of: <ul class='govuk-list govuk-list--bullet'><li>bank overdraft</li><li>loans</li><li>amounts owed to directors - including director loans and director accounts</li><li>amounts owed to subsidiaries - if your organisation is part of a group</li><li>amounts due under finance leases or hire purchase contracts</li></ul>",
+                    "Input": {
+                        "Type": "Number",
+                        "InputClasses": "govuk-input--width-10",
+                        "Validations": [
+                            {
+                                "Name": "Required",
+                                "Value": "",
+                                "ErrorMessage": "Enter your organisation's total borrowings for the last financial year"
+                            }
+                        ],
+                        "DataEndpoint": null
+                    },
+                    "Order": null,
+                    "Value": "",
+                    "ErrorMessages": null
+                },
+                {
+                    "QuestionId": "FH-210",
+                    "QuestionTag": "FHA-CC-Net-Assets",
+                    "Label": "Enter your organisation's net assets for the last financial year",
+                    "ShortLabel": "",
+                    "InputClasses": null,
+                    "QuestionBodyText": "",
+                    "Hint": "You can find this on your organisation's 'balance sheet' under 'the sum of all assets less all liabilities'.",
+                    "Input": {
+                        "Type": "Number",
+                        "InputClasses": "govuk-input--width-10",
+                        "Validations": [
+                            {
+                                "Name": "Required",
+                                "Value": "",
+                                "ErrorMessage": "Enter your organisation's net assets for the last financial year"
+                            }
+                        ],
+                        "DataEndpoint": null
+                    },
+                    "Order": null,
+                    "Value": "",
+                    "ErrorMessages": null
+                },
+                {
+                    "QuestionId": "FH-220",
+                    "QuestionTag": "FHA-CC-Intangible-Assets",
+                    "Label": "Enter your organisation's total intangible assets for the last financial year",
+                    "ShortLabel": "",
+                    "InputClasses": "govuk-input--width-10",
+                    "QuestionBodyText": "",
+                    "Hint": "You can find this on your organisation's 'balance sheet' under 'fixed assets' or 'goodwill'.",
+                    "Input": {
+                        "Type": "Number",
+                        "InputClasses": "govuk-input--width-10",
+                        "Validations": [
+                            {
+                                "Name": "Required",
+                                "Value": "",
+                                "ErrorMessage": "Enter your organisation's total intangible assets for the last financial year"
+                            }
+                        ],
+                        "DataEndpoint": null
+                    },
+                    "Order": null,
+                    "Value": "",
+                    "ErrorMessages": null
+                }
+            ],
+            "PageOfAnswers": [],
+            "Next": [
+                {
+                    "Action": "NextPage",
+                    "ReturnId": "2150",
+                    "Conditions": [],
+                    "ConditionMet": false
+                }
+            ],
+            "Complete": false,
+            "AllowMultipleAnswers": false,
+            "Order": null,
+            "Active": false,
+            "NotRequiredConditions": [
+                {
+                    "Field": "FHA-Funding-Turnover-5pc",
+                    "IsOneOf": [
+                        "Yes"
+                    ]
+                },
+                {
+                    "Field": "UKRLP-Verification-Company",
+                    "IsOneOf": [
+                        null
+                    ]
+                },
+                {
+                    "Field": "UKRLP-Verification-Charity",
+                    "IsOneOf": [
+                        null
+                    ]
+                },
+                {
+                    "Field": "UKRLP-Verification-SoleTraderPartnership",
+                    "IsOneOf": [
+                        "TRUE"
+                    ]
+                }
+            ],
+            "BodyText": "",
+            "Details": null,
+            "DisplayType": null,
+            "Feedback": null,
+            "ActivatedByPageId": "2100,2110"
+        },
+        {
+            "PageId": "2131",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "Financial evidence",
+            "LinkTitle": "Financial evidence",
+            "InfoText": "",
+            "Questions": [
+                {
+                    "QuestionId": "FH-140",
+                    "QuestionTag": "FHA-CC-Annual-Turnover",
+                    "Label": "Enter your organisation's total annual turnover for the last year",
+                    "ShortLabel": "",
+                    "InputClasses": null,
+                    "QuestionBodyText": "",
+                    "Hint": "You can find this on your organisation's 'profit and loss statement', 'income and expenditure account' or 'statement of financial activities'.",
+                    "Input": {
+                        "Type": "Number",
+                        "InputClasses": "govuk-input--width-10",
+                        "Validations": [
+                            {
+                                "Name": "Required",
+                                "Value": "",
+                                "ErrorMessage": "Enter your organisation's total annual turnover for the last financial year"
+                            }
+                        ],
+                        "DataEndpoint": null
+                    },
+                    "Order": null,
+                    "Value": "",
+                    "ErrorMessages": null
+                },
+                {
+                    "QuestionId": "FH-150",
+                    "QuestionTag": "FHA-CC-Depreciation-Amortisation",
+                    "Label": "Enter your organisation's total depreciation and amortisation figures for the last financial year",
+                    "ShortLabel": "",
+                    "InputClasses": null,
+                    "QuestionBodyText": "",
+                    "Hint": "You can find this on your organisation's 'operating profit note to the accounts'. You’ll need to add up all the items under 'note 2' and enter the total figure.",
+                    "Input": {
+                        "Type": "Number",
+                        "InputClasses": "govuk-input--width-10",
+                        "Validations": [
+                            {
+                                "Name": "Required",
+                                "Value": "",
+                                "ErrorMessage": "Enter your organisation's total depreciation and amortisation charges for the last financial year"
+                            }
+                        ],
+                        "DataEndpoint": null
+                    },
+                    "Order": null,
+                    "Value": "",
+                    "ErrorMessages": null
+                },
+                {
+                    "QuestionId": "FH-160",
+                    "QuestionTag": "FHA-CC-Profit-Loss",
+                    "Label": "Enter your organisation's profit or loss for the last financial year",
+                    "ShortLabel": "",
+                    "InputClasses": null,
+                    "QuestionBodyText": "",
+                    "Hint": "Profit or loss is the net amount earned after tax.You can find this on your organisation's 'profit and loss statement'.",
+                    "Input": {
+                        "Type": "Number",
+                        "InputClasses": "govuk-input--width-10",
+                        "Validations": [
+                            {
+                                "Name": "Required",
+                                "Value": "",
+                                "ErrorMessage": "Enter your organisation's profit or loss for the last financial year"
+                            }
+                        ],
+                        "DataEndpoint": null
+                    },
+                    "Order": null,
+                    "Value": "",
+                    "ErrorMessages": null
+                },
+                {
+                    "QuestionId": "FH-170",
+                    "QuestionTag": "FHA-CC-Dividends",
+                    "Label": "Enter your organisation's total dividends for the last financial year",
+                    "ShortLabel": "",
+                    "InputClasses": null,
+                    "QuestionBodyText": "",
+                    "Hint": "You can find this on your organisation's 'notes to the accounts'.",
+                    "Input": {
+                        "Type": "Number",
+                        "InputClasses": "govuk-input--width-10",
+                        "Validations": [
+                            {
+                                "Name": "Required",
+                                "Value": "",
+                                "ErrorMessage": "Enter your organisation's total dividends for the last financial year"
+                            }
+                        ],
+                        "DataEndpoint": null
+                    },
+                    "Order": null,
+                    "Value": "",
+                    "ErrorMessages": null
+                },
+                {
+                    "QuestionId": "FH-180",
+                    "QuestionTag": "FHA-CC-Total-Assets",
+                    "Label": "Enter your organisation's total current assets for the last financial year",
+                    "ShortLabel": "",
+                    "InputClasses": null,
+                    "QuestionBodyText": "",
+                    "Hint": "You can find this on your organisation's 'balance sheet'.",
+                    "Input": {
+                        "Type": "Number",
+                        "InputClasses": "govuk-input--width-10",
+                        "Validations": [
+                            {
+                                "Name": "Required",
+                                "Value": "",
+                                "ErrorMessage": "Enter your organisation's total current assets for the last financial year"
+                            }
+                        ],
+                        "DataEndpoint": null
+                    },
+                    "Order": null,
+                    "Value": "",
+                    "ErrorMessages": null
+                },
+                {
+                    "QuestionId": "FH-190",
+                    "QuestionTag": "FHA-CC-Total-Liabilities",
+                    "Label": "Enter your organisation's total current liabilities for the last financial year",
+                    "ShortLabel": "",
+                    "InputClasses": null,
+                    "QuestionBodyText": "",
+                    "Hint": "You can find this on your organisation's 'balance sheet' under 'creditors: amount falling due within one year'.",
+                    "Input": {
+                        "Type": "Number",
+                        "InputClasses": "govuk-input--width-10",
+                        "Validations": [
+                            {
+                                "Name": "Required",
+                                "Value": "",
+                                "ErrorMessage": "Enter your organisation's total current liabilities for the last financial year"
+                            }
+                        ],
+                        "DataEndpoint": null
+                    },
+                    "Order": null,
+                    "Value": "",
+                    "ErrorMessages": null
+                },
+                {
+                    "QuestionId": "FH-200",
+                    "QuestionTag": "FHA-CC-Total-Borrowings",
+                    "Label": "Enter your organisation's total borrowings for the last financial year",
+                    "ShortLabel": "",
+                    "InputClasses": null,
+                    "QuestionBodyText": "",
+                    "Hint": "You will need to add up a total of: <ul class='govuk-list govuk-list--bullet'><li>bank overdraft</li><li>loans</li><li>amounts owed to directors - including director loans and director accounts</li><li>amounts owed to subsidiaries - if your organisation is part of a group</li><li>amounts due under finance leases or hire purchase contracts</li></ul>",
+                    "Input": {
+                        "Type": "Number",
+                        "InputClasses": "govuk-input--width-10",
+                        "Validations": [
+                            {
+                                "Name": "Required",
+                                "Value": "",
+                                "ErrorMessage": "Enter your organisation's total borrowings for the last financial year"
+                            }
+                        ],
+                        "DataEndpoint": null
+                    },
+                    "Order": null,
+                    "Value": "",
+                    "ErrorMessages": null
+                },
+                {
+                    "QuestionId": "FH-210",
+                    "QuestionTag": "FHA-CC-Net-Assets",
+                    "Label": "Enter your organisation's net assets for the last financial year",
+                    "ShortLabel": "",
+                    "InputClasses": null,
+                    "QuestionBodyText": "",
+                    "Hint": "You can find this on your organisation's 'balance sheet' under 'the sum of all assets less all liabilities'.",
+                    "Input": {
+                        "Type": "Number",
+                        "InputClasses": "govuk-input--width-10",
+                        "Validations": [
+                            {
+                                "Name": "Required",
+                                "Value": "",
+                                "ErrorMessage": "Enter your organisation's net assets for the last financial year"
+                            }
+                        ],
+                        "DataEndpoint": null
+                    },
+                    "Order": null,
+                    "Value": "",
+                    "ErrorMessages": null
+                },
+                {
+                    "QuestionId": "FH-220",
+                    "QuestionTag": "FHA-CC-Intangible-Assets",
+                    "Label": "Enter your organisation's total intangible assets for the last financial year",
+                    "ShortLabel": "",
+                    "InputClasses": "govuk-input--width-10",
+                    "QuestionBodyText": "",
+                    "Hint": "You can find this on your organisation's 'balance sheet' under 'fixed assets' or 'goodwill'.",
+                    "Input": {
+                        "Type": "Number",
+                        "InputClasses": "govuk-input--width-10",
+                        "Validations": [
+                            {
+                                "Name": "Required",
+                                "Value": "",
+                                "ErrorMessage": "Enter your organisation's total intangible assets for the last financial year"
+                            }
+                        ],
+                        "DataEndpoint": null
+                    },
+                    "Order": null,
+                    "Value": "",
+                    "ErrorMessages": null
+                }
+            ],
+            "PageOfAnswers": [],
+            "Next": [
+                {
+                    "Action": "NextPage",
+                    "ReturnId": "2150",
+                    "Conditions": [],
+                    "ConditionMet": false
+                }
+            ],
+            "Complete": false,
+            "AllowMultipleAnswers": false,
+            "Order": null,
+            "Active": false,
+            "NotRequiredConditions": [
+                {
+                    "Field": "FHA-Funding-Turnover-5pc",
+                    "IsOneOf": [
+                        "Yes"
+                    ]
+                },
+                {
+                    "Field": "UKRLP-Verification-Company",
+                    "IsOneOf": [
+                        ""
+                    ]
+                },
+                {
+                    "Field": "UKRLP-Verification-Charity",
+                    "IsOneOf": [
+                        "TRUE"
+                    ]
+                },
+                {
+                    "Field": "UKRLP-Verification-SoleTraderPartnership",
+                    "IsOneOf": [
+                        "TRUE"
+                    ]
+                }
+            ],
+            "BodyText": "",
+            "Details": null,
+            "DisplayType": null,
+            "Feedback": null,
+            "ActivatedByPageId": "2100,2110"
+        },
+        {
+            "PageId": "2132",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "Financial evidence",
+            "LinkTitle": "Financial evidence",
+            "InfoText": "",
+            "Questions": [
+                {
+                    "QuestionId": "FH-140",
+                    "QuestionTag": "FHA-CC-Annual-Turnover",
+                    "Label": "Enter your organisation's total annual turnover for the last year",
+                    "ShortLabel": "",
+                    "InputClasses": null,
+                    "QuestionBodyText": "",
+                    "Hint": "You can find this on your organisation's 'profit and loss statement', 'income and expenditure account' or 'statement of financial activities'.",
+                    "Input": {
+                        "Type": "Number",
+                        "InputClasses": "govuk-input--width-10",
+                        "Validations": [
+                            {
+                                "Name": "Required",
+                                "Value": "",
+                                "ErrorMessage": "Enter your organisation's total annual turnover for the last financial year"
+                            }
+                        ],
+                        "DataEndpoint": null
+                    },
+                    "Order": null,
+                    "Value": "",
+                    "ErrorMessages": null
+                },
+                {
+                    "QuestionId": "FH-150",
+                    "QuestionTag": "FHA-CC-Depreciation-Amortisation",
+                    "Label": "Enter your organisation's total depreciation and amortisation figures for the last financial year",
+                    "ShortLabel": "",
+                    "InputClasses": null,
+                    "QuestionBodyText": "",
+                    "Hint": "You can find this on your organisation's 'operating profit note to the accounts'. You'll need to add up all the items under 'note 2' and enter the total figure.",
+                    "Input": {
+                        "Type": "Number",
+                        "InputClasses": "govuk-input--width-10",
+                        "Validations": [
+                            {
+                                "Name": "Required",
+                                "Value": "",
+                                "ErrorMessage": "Enter your organisation's total depreciation and amortisation charges for the last financial year"
+                            }
+                        ],
+                        "DataEndpoint": null
+                    },
+                    "Order": null,
+                    "Value": "",
+                    "ErrorMessages": null
+                },
+                {
+                    "QuestionId": "FH-160",
+                    "QuestionTag": "FHA-CC-Profit-Loss",
+                    "Label": "Enter your organisation's profit or loss for the last financial year",
+                    "ShortLabel": "",
+                    "InputClasses": null,
+                    "QuestionBodyText": "",
+                    "Hint": "Profit or loss is the net amount earned after tax.You can find this under 'net profit' or 'net movement in funds' in its accounts.",
+                    "Input": {
+                        "Type": "Number",
+                        "InputClasses": "govuk-input--width-10",
+                        "Validations": [
+                            {
+                                "Name": "Required",
+                                "Value": "",
+                                "ErrorMessage": "Enter your organisation's profit or loss for the last financial year"
+                            }
+                        ],
+                        "DataEndpoint": null
+                    },
+                    "Order": null,
+                    "Value": "",
+                    "ErrorMessages": null
+                },
+                {
+                    "QuestionId": "FH-170",
+                    "QuestionTag": "FHA-CC-Dividends",
+                    "Label": "Enter your organisation's total dividends for the last financial year",
+                    "ShortLabel": "",
+                    "InputClasses": null,
+                    "QuestionBodyText": "",
+                    "Hint": "You can find this on your organisation's 'notes to the accounts'.",
+                    "Input": {
+                        "Type": "Number",
+                        "InputClasses": "govuk-input--width-10",
+                        "Validations": [
+                            {
+                                "Name": "Required",
+                                "Value": "",
+                                "ErrorMessage": "Enter your organisation's total dividends for the last financial year"
+                            }
+                        ],
+                        "DataEndpoint": null
+                    },
+                    "Order": null,
+                    "Value": "",
+                    "ErrorMessages": null
+                },
+                {
+                    "QuestionId": "FH-180",
+                    "QuestionTag": "FHA-CC-Total-Assets",
+                    "Label": "Enter your organisation's total current assets for the last financial year",
+                    "ShortLabel": "",
+                    "InputClasses": null,
+                    "QuestionBodyText": "",
+                    "Hint": "You can find this on your organisation's 'balance sheet'.",
+                    "Input": {
+                        "Type": "Number",
+                        "InputClasses": "govuk-input--width-10",
+                        "Validations": [
+                            {
+                                "Name": "Required",
+                                "Value": "",
+                                "ErrorMessage": "Enter your organisation's total current assets for the last financial year"
+                            }
+                        ],
+                        "DataEndpoint": null
+                    },
+                    "Order": null,
+                    "Value": "",
+                    "ErrorMessages": null
+                },
+                {
+                    "QuestionId": "FH-190",
+                    "QuestionTag": "FHA-CC-Total-Liabilities",
+                    "Label": "Enter your organisation's total current liabilities for the last financial year",
+                    "ShortLabel": "",
+                    "InputClasses": null,
+                    "QuestionBodyText": "",
+                    "Hint": "You can find this on your organisation's 'balance sheet' under 'creditors: amount falling due within one year'.",
+                    "Input": {
+                        "Type": "Number",
+                        "InputClasses": "govuk-input--width-10",
+                        "Validations": [
+                            {
+                                "Name": "Required",
+                                "Value": "",
+                                "ErrorMessage": "Enter your organisation's total current liabilities for the last financial year"
+                            }
+                        ],
+                        "DataEndpoint": null
+                    },
+                    "Order": null,
+                    "Value": "",
+                    "ErrorMessages": null
+                },
+                {
+                    "QuestionId": "FH-200",
+                    "QuestionTag": "FHA-CC-Total-Borrowings",
+                    "Label": "Enter your organisation's total borrowings for the last financial year",
+                    "ShortLabel": "",
+                    "InputClasses": null,
+                    "QuestionBodyText": "",
+                    "Hint": "You will need to add up a total of: <ul class='govuk-list govuk-list--bullet'><li>bank overdraft</li><li>loans</li><li>amounts owed to directors - including director loans and director accounts</li><li>amounts owed to subsidiaries - if your organisation is part of a group</li><li>amounts due under finance leases or hire purchase contracts</li></ul>",
+                    "Input": {
+                        "Type": "Number",
+                        "InputClasses": "govuk-input--width-10",
+                        "Validations": [
+                            {
+                                "Name": "Required",
+                                "Value": "",
+                                "ErrorMessage": "Enter your organisation's total borrowings for the last financial year"
+                            }
+                        ],
+                        "DataEndpoint": null
+                    },
+                    "Order": null,
+                    "Value": "",
+                    "ErrorMessages": null
+                },
+                {
+                    "QuestionId": "FH-210",
+                    "QuestionTag": "FHA-CC-Net-Assets",
+                    "Label": "Enter your organisation's net assets for the last financial year",
+                    "ShortLabel": "",
+                    "InputClasses": null,
+                    "QuestionBodyText": "",
+                    "Hint": "You can find this on your organisation's 'balance sheet' under 'the sum of all assets less all liabilities'.",
+                    "Input": {
+                        "Type": "Number",
+                        "InputClasses": "govuk-input--width-10",
+                        "Validations": [
+                            {
+                                "Name": "Required",
+                                "Value": "",
+                                "ErrorMessage": "Enter your organisation's net assets for the last financial year"
+                            }
+                        ],
+                        "DataEndpoint": null
+                    },
+                    "Order": null,
+                    "Value": "",
+                    "ErrorMessages": null
+                },
+                {
+                    "QuestionId": "FH-220",
+                    "QuestionTag": "FHA-CC-Intangible-Assets",
+                    "Label": "Enter your organisation's total intangible assets for the last financial year",
+                    "ShortLabel": "",
+                    "InputClasses": "govuk-input--width-10",
+                    "QuestionBodyText": "",
+                    "Hint": "You can find this on your organisation's 'balance sheet' under 'fixed assets' or 'goodwill'.",
+                    "Input": {
+                        "Type": "Number",
+                        "InputClasses": "govuk-input--width-10",
+                        "Validations": [
+                            {
+                                "Name": "Required",
+                                "Value": "",
+                                "ErrorMessage": "Enter your organisation's total intangible assets for the last financial year"
+                            }
+                        ],
+                        "DataEndpoint": null
+                    },
+                    "Order": null,
+                    "Value": "",
+                    "ErrorMessages": null
+                }
+            ],
+            "PageOfAnswers": [],
+            "Next": [
+                {
+                    "Action": "NextPage",
+                    "ReturnId": "2150",
+                    "Conditions": [],
+                    "ConditionMet": false
+                }
+            ],
+            "Complete": false,
+            "AllowMultipleAnswers": false,
+            "Order": null,
+            "Active": false,
+            "NotRequiredConditions": [
+                {
+                    "Field": "FHA-Funding-Turnover-5pc",
+                    "IsOneOf": [
+                        "Yes"
+                    ]
+                },
+                {
+                    "Field": "UKRLP-Verification-Company",
+                    "IsOneOf": [
+                        "TRUE"
+                    ]
+                },
+                {
+                    "Field": "UKRLP-Verification-Charity",
+                    "IsOneOf": [
+                        ""
                     ]
                 },
                 {
