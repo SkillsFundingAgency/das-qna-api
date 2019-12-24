@@ -47,8 +47,8 @@
                                                 },
                                                 {
                                                     "Name": "MaxWordCount",
-                                                    "Value": "1500",
-                                                    "ErrorMessage": "Your answer must be 1500 characters or less"
+                                                    "Value": "275",
+                                                    "ErrorMessage": "Your answer must be 275 words or less"
                                                 }
                                             ],
                                             "DataEndpoint": null
@@ -104,7 +104,7 @@
             "BodyText": "",
             "Details": {
                     "Title": "What acts are covered under criminal convictions?",
-                    "Body": "<h2 class='govuk-heading-m'>Serious crimes</h2><p class='govuk-body'>This is covered under section 44 to 46 of the Serious Crime Act 2007 and section 71 of the Coroners and Justice Act 2009.</p><h2 class='govuk-heading-m'>Criminal conduct</h2><p class='govuk-body'>This is covered under section 93A, 93B or 93C of the Criminal Justice Act 1988 and article 45, 46 or 47 of the Proceeds of Crime (Northern Ireland) Order 1996.</p><p class='govuk-body'>Offences in connection with taxation are covered under section 71 of the Criminal Justice Act 1993.</p><h2 class='govuk-heading-m'>Conspiracy</h2><p class='govuk-body'>This is covered under section 1 or 1A of the Criminal Law Act 1977 and article 9 or 9A of the Criminal Attempts and Conspiracy (Northern Ireland) Order 1983.</p><h2 class='govuk-heading-m'>Money laundering</h2><p class='govuk-body'>This is covered under section 340(11) and 415 of the Proceeds of Crime Act 2002</p><h2 class='govuk-heading-m'>Asylum and immigrants offences</h2><p class='govuk-body'>This is covered under section 4 of the Asylum and Immigration Act 2004.</p><h2 class='govuk-heading-m'>Sexual offences</h2><p class='govuk-body'>This is covered under section 59A of the Sexual Offences Act 2003.</p>"
+                    "Body": "<h2 class='govuk-heading-m'>Serious crimes</h2><p class='govuk-body'>This is covered under section 44 to 46 of the Serious Crime Act 2007 and section 71 of the Coroners and Justice Act 2009.</p><h2 class='govuk-heading-m'>Criminal conduct</h2><p class='govuk-body'>This is covered under section 93A, 93B or 93C of the Criminal Justice Act 1988 and article 45, 46 or 47 of the Proceeds of Crime (Northern Ireland) Order 1996.</p><p class='govuk-body'>Offences in connection with taxation are covered under section 71 of the Criminal Justice Act 1993.</p><h2 class='govuk-heading-m'>Conspiracy</h2><p class='govuk-body'>This is covered under section 1 or 1A of the Criminal Law Act 1977 and article 9 or 9A of the Criminal Attempts and Conspiracy (Northern Ireland) Order 1983.</p><h2 class='govuk-heading-m'>Money laundering</h2><p class='govuk-body'>This is covered under section 340(11) and 415 of the Proceeds of Crime Act 2002</p><h2 class='govuk-heading-m'>Asylum and immigrants offences</h2><p class='govuk-body'>This is covered under section 4 of the Asylum and Immigration Act 2004.</p><h2 class='govuk-heading-m'>Sexual offences</h2><p class='govuk-body'>This is covered under section 59A of the Sexual Offences Act 2003.</p><h2 class='govuk-heading-m'>Drug trafficking</h2><p class='govuk-body'>This is covered under drug trafficking in section 49 to 51 of the Drug Trafficking Act 1994.</p><h2 class='govuk-heading-m'>Terrorism</h2><p class='govuk-body'>This is covered under section 41 and schedule 2 of the Counter Terrorism Act 2008.</p><h2 class='govuk-heading-m'>Fraud</h2><p class='govuk-body'>This is covered under the common law offence of conspiracy to defraud and section 2, 3, 4, 6 and 7 of the Fraud Act 2006.</p><p class='govuk-body'>Fraudulent trading is covered under section 458 of the Companies Act 1985, article 451 of the Companies (Northern Ireland) Order 1986 or section 993 of the Companies Act 2006.</p><p class='govuk-body'>Fraudulent evasion is covered under section 170 of the Customs and Excise Management Act 1979 or section 72 of the Value Added Tax Act 1994.</p><h2 class='govuk-heading-m'>Fraud</h2><p class='govuk-body'>This is covered under the common law offence of conspiracy to defraud and section 2, 3, 4, 6 and 7 of the Fraud Act 2006.</p><h2 class='govuk-heading-m'>Theft</h2><p class='govuk-body'>This is covered under the Theft Act 1968, the Theft Act (Northern Ireland) 1969, the Theft Act 1978 or the Theft (Northern Ireland) Order 1978.</p><h2 class='govuk-heading-m'>Corruption</h2><p class='govuk-body'>This is covered under section 1(2) of the Public Bodies Corrupt Practices Act 1889 and section 1 of the Prevention of Corruption Act 1906.</p><h2 class='govuk-heading-m'>Bribery</h2><p class='govuk-body'>This is covered under the common law offence of bribery and section 1, 2, or 6 of the Bribery Act 2010.</p>"
             },
         },
         {
@@ -150,8 +150,8 @@
                                                 },
                                                 {
                                                     "Name": "MaxWordCount",
-                                                    "Value": "1500",
-                                                    "ErrorMessage": "Your answer must be 1500 characters or less"
+                                                    "Value": "275",
+                                                    "ErrorMessage": "Your answer must be 275 words or less"
                                                 }
                                             ],
                                             "DataEndpoint": null
@@ -207,7 +207,7 @@
             "BodyText": "",
             "Details": {
                     "Title": "What acts are covered under criminal convictions?",
-                    "Body": "<h2 class='govuk-heading-m'>Serious crimes</h2><p class='govuk-body'>This is covered under section 44 to 46 of the Serious Crime Act 2007 and section 71 of the Coroners and Justice Act 2009.</p><h2 class='govuk-heading-m'>Criminal conduct</h2><p class='govuk-body'>This is covered under section 93A, 93B or 93C of the Criminal Justice Act 1988 and article 45, 46 or 47 of the Proceeds of Crime (Northern Ireland) Order 1996.</p><p class='govuk-body'>Offences in connection with taxation are covered under section 71 of the Criminal Justice Act 1993.</p><h2 class='govuk-heading-m'>Conspiracy</h2><p class='govuk-body'>This is covered under section 1 or 1A of the Criminal Law Act 1977 and article 9 or 9A of the Criminal Attempts and Conspiracy (Northern Ireland) Order 1983.</p><h2 class='govuk-heading-m'>Money laundering</h2><p class='govuk-body'>This is covered under section 340(11) and 415 of the Proceeds of Crime Act 2002</p><h2 class='govuk-heading-m'>Asylum and immigrants offences</h2><p class='govuk-body'>This is covered under section 4 of the Asylum and Immigration Act 2004.</p><h2 class='govuk-heading-m'>Sexual offences</h2><p class='govuk-body'>This is covered under section 59A of the Sexual Offences Act 2003.</p>"
+                    "Body": "<h2 class='govuk-heading-m'>Serious crimes</h2><p class='govuk-body'>This is covered under section 44 to 46 of the Serious Crime Act 2007 and section 71 of the Coroners and Justice Act 2009.</p><h2 class='govuk-heading-m'>Criminal conduct</h2><p class='govuk-body'>This is covered under section 93A, 93B or 93C of the Criminal Justice Act 1988 and article 45, 46 or 47 of the Proceeds of Crime (Northern Ireland) Order 1996.</p><p class='govuk-body'>Offences in connection with taxation are covered under section 71 of the Criminal Justice Act 1993.</p><h2 class='govuk-heading-m'>Conspiracy</h2><p class='govuk-body'>This is covered under section 1 or 1A of the Criminal Law Act 1977 and article 9 or 9A of the Criminal Attempts and Conspiracy (Northern Ireland) Order 1983.</p><h2 class='govuk-heading-m'>Money laundering</h2><p class='govuk-body'>This is covered under section 340(11) and 415 of the Proceeds of Crime Act 2002</p><h2 class='govuk-heading-m'>Asylum and immigrants offences</h2><p class='govuk-body'>This is covered under section 4 of the Asylum and Immigration Act 2004.</p><h2 class='govuk-heading-m'>Sexual offences</h2><p class='govuk-body'>This is covered under section 59A of the Sexual Offences Act 2003.</p><h2 class='govuk-heading-m'>Drug trafficking</h2><p class='govuk-body'>This is covered under drug trafficking in section 49 to 51 of the Drug Trafficking Act 1994.</p><h2 class='govuk-heading-m'>Terrorism</h2><p class='govuk-body'>This is covered under section 41 and schedule 2 of the Counter Terrorism Act 2008.</p><h2 class='govuk-heading-m'>Fraud</h2><p class='govuk-body'>This is covered under the common law offence of conspiracy to defraud and section 2, 3, 4, 6 and 7 of the Fraud Act 2006.</p><p class='govuk-body'>Fraudulent trading is covered under section 458 of the Companies Act 1985, article 451 of the Companies (Northern Ireland) Order 1986 or section 993 of the Companies Act 2006.</p><p class='govuk-body'>Fraudulent evasion is covered under section 170 of the Customs and Excise Management Act 1979 or section 72 of the Value Added Tax Act 1994.</p><h2 class='govuk-heading-m'>Fraud</h2><p class='govuk-body'>This is covered under the common law offence of conspiracy to defraud and section 2, 3, 4, 6 and 7 of the Fraud Act 2006.</p><h2 class='govuk-heading-m'>Theft</h2><p class='govuk-body'>This is covered under the Theft Act 1968, the Theft Act (Northern Ireland) 1969, the Theft Act 1978 or the Theft (Northern Ireland) Order 1978.</p><h2 class='govuk-heading-m'>Corruption</h2><p class='govuk-body'>This is covered under section 1(2) of the Public Bodies Corrupt Practices Act 1889 and section 1 of the Prevention of Corruption Act 1906.</p><h2 class='govuk-heading-m'>Bribery</h2><p class='govuk-body'>This is covered under the common law offence of bribery and section 1, 2, or 6 of the Bribery Act 2010.</p>"
             },
         },
         {
@@ -239,7 +239,7 @@
                                         "ShortLabel": "",
                                         "InputClasses": null,
                                         "QuestionBodyText": "",
-                                        "Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include a brief summary including:</p><ul class='govuk-list govuk-list--bullet govuk-hint'><li>full names of who this was</li><li>which public body was involved</li><li>if any actions were taken to resolve this</li></ul>",
+                                        "Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include:</p><ul class='govuk-list govuk-list--bullet govuk-hint'><li>full names of who this was</li><li>which public body was involved</li><li>if any actions were taken to resolve this</li></ul>",
                                         "Input":
                                         {
                                             "Type": "Textarea",
@@ -253,8 +253,8 @@
                                                 },
                                                 {
                                                     "Name": "MaxWordCount",
-                                                    "Value": "1500",
-                                                    "ErrorMessage": "Your answer must be 1500 characters or less"
+                                                    "Value": "275",
+                                                    "ErrorMessage": "Your answer must be 275 words or less"
                                                 }
                                             ],
                                             "DataEndpoint": null
@@ -323,7 +323,7 @@
                     "QuestionTag": "CC-People-RepayFunding-SoleTrader",
                     "Label": "Have you failed to pay back funds in the last 3 years?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body' id='cc-people-repayfunding-soletrader'>Tell us if anyone who's in control has failed to:</p><ul class='govuk-list govuk-list--bullet'><li>serious crimes</li><li>repay &pound;50,000 or more to ESFA or any other public body</li><li>follow the conditions of funding under ESFA funding agreements or sub-contracts</li></ul>",
+                    "QuestionBodyText": "<p class='govuk-body' id='cc-people-repayfunding-soletrader'>Tell us if anyone who's in control has failed to:</p><ul class='govuk-list govuk-list--bullet'><li>repay &pound;50,000 or more to ESFA or any other public body</li><li>follow the conditions of funding under ESFA funding agreements or sub-contracts</li></ul>",
                     "Hint": "",
                     "Input":
                     {
@@ -339,7 +339,7 @@
                                         "ShortLabel": "",
                                         "InputClasses": null,
                                         "QuestionBodyText": "",
-                                        "Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include a brief summary including:</p><ul class='govuk-list govuk-list--bullet govuk-hint'><li>which public body was involved</li><li>if any actions were taken to resolve this</li></ul>",
+                                        "Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include:</p><ul class='govuk-list govuk-list--bullet govuk-hint'><li>which public body was involved</li><li>if any actions were taken to resolve this</li></ul>",
                                         "Input":
                                         {
                                             "Type": "Textarea",
@@ -353,8 +353,8 @@
                                                 },
                                                 {
                                                     "Name": "MaxWordCount",
-                                                    "Value": "1500",
-                                                    "ErrorMessage": "Your answer must be 1500 characters or less"
+                                                    "Value": "275",
+                                                    "ErrorMessage": "Your answer must be 275 words or less"
                                                 }
                                             ],
                                             "DataEndpoint": null
@@ -439,7 +439,7 @@
                                         "ShortLabel": "",
                                         "InputClasses": null,
                                         "QuestionBodyText": "",
-                                        "Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include a brief summary including:</p><ul class='govuk-list govuk-list--bullet govuk-hint'><li>full names of who this was</li><li>what the investigation was</li><li>the outcome of the investigation</li><li>if any actions were taken to resolve this</li></ul>",
+                                        "Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include:</p><ul class='govuk-list govuk-list--bullet govuk-hint'><li>full names of who this was</li><li>what the investigation was</li><li>the outcome of the investigation</li><li>if any actions were taken to resolve this</li></ul>",
                                         "Input":
                                         {
                                             "Type": "Textarea",
@@ -453,8 +453,8 @@
                                                 },
                                                 {
                                                     "Name": "MaxWordCount",
-                                                    "Value": "1500",
-                                                    "ErrorMessage": "Your answer must be 1500 characters or less"
+                                                    "Value": "275",
+                                                    "ErrorMessage": "Your answer must be 275 words or less"
                                                 }
                                             ],
                                             "DataEndpoint": null
@@ -539,7 +539,7 @@
                                         "ShortLabel": "",
                                         "InputClasses": null,
                                         "QuestionBodyText": "",
-                                        "Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include a brief summary including:</p><ul class='govuk-list govuk-list--bullet govuk-hint'><li>what the investigation was</li><li>the outcome of the investigation</li><li>if any actions were taken to resolve this</li></ul>",
+                                        "Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include:</p><ul class='govuk-list govuk-list--bullet govuk-hint'><li>what the investigation was</li><li>the outcome of the investigation</li><li>if any actions were taken to resolve this</li></ul>",
                                         "Input":
                                         {
                                             "Type": "Textarea",
@@ -553,8 +553,8 @@
                                                 },
                                                 {
                                                     "Name": "MaxWordCount",
-                                                    "Value": "1500",
-                                                    "ErrorMessage": "Your answer must be 1500 characters or less"
+                                                    "Value": "275",
+                                                    "ErrorMessage": "Your answer must be 275 words or less"
                                                 }
                                             ],
                                             "DataEndpoint": null
@@ -639,7 +639,7 @@
                                         "ShortLabel": "",
                                         "InputClasses": null,
                                         "QuestionBodyText": "",
-                                        "Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include a brief summary including:</p><ul class='govuk-list govuk-list--bullet govuk-hint'><li>full names of who this is</li><li>what the investigation is</li><li>any relevant dates</li></ul>",
+                                        "Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include:</p><ul class='govuk-list govuk-list--bullet govuk-hint'><li>full names of who this is</li><li>what the investigation is</li><li>any relevant dates</li></ul>",
                                         "Input":
                                         {
                                             "Type": "Textarea",
@@ -653,8 +653,8 @@
                                                 },
                                                 {
                                                     "Name": "MaxWordCount",
-                                                    "Value": "1500",
-                                                    "ErrorMessage": "Your answer must be 1500 characters or less"
+                                                    "Value": "275",
+                                                    "ErrorMessage": "Your answer must be 275 words or less"
                                                 }
                                             ],
                                             "DataEndpoint": null
@@ -739,7 +739,7 @@
                                         "ShortLabel": "",
                                         "InputClasses": null,
                                         "QuestionBodyText": "",
-                                        "Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include a brief summary including:</p><ul class='govuk-list govuk-list--bullet govuk-hint'><li>what the investigation is</li><li>any relevant dates</li></ul>",
+                                        "Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include:</p><ul class='govuk-list govuk-list--bullet govuk-hint'><li>what the investigation is</li><li>any relevant dates</li></ul>",
                                         "Input":
                                         {
                                             "Type": "Textarea",
@@ -753,8 +753,8 @@
                                                 },
                                                 {
                                                     "Name": "MaxWordCount",
-                                                    "Value": "1500",
-                                                    "ErrorMessage": "Your answer must be 1500 characters or less"
+                                                    "Value": "275",
+                                                    "ErrorMessage": "Your answer must be 275 words or less"
                                                 }
                                             ],
                                             "DataEndpoint": null
@@ -839,7 +839,7 @@
                                         "ShortLabel": "",
                                         "InputClasses": null,
                                         "QuestionBodyText": "",
-                                        "Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include a brief summary including:</p><ul class='govuk-list govuk-list--bullet govuk-hint'><li>full names of who this was</li><li>which public body was involved</li><li>if any actions were taken to resolve this</li></ul>",
+                                        "Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include:</p><ul class='govuk-list govuk-list--bullet govuk-hint'><li>full names of who this was</li><li>which public body was involved</li><li>if any actions were taken to resolve this</li></ul>",
                                         "Input":
                                         {
                                             "Type": "Textarea",
@@ -853,8 +853,8 @@
                                                 },
                                                 {
                                                     "Name": "MaxWordCount",
-                                                    "Value": "1500",
-                                                    "ErrorMessage": "Your answer must be 1500 characters or less"
+                                                    "Value": "275",
+                                                    "ErrorMessage": "Your answer must be 275 words or less"
                                                 }
                                             ],
                                             "DataEndpoint": null
@@ -939,7 +939,7 @@
                                         "ShortLabel": "",
                                         "InputClasses": null,
                                         "QuestionBodyText": "",
-                                        "Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include a brief summary including:</p><ul class='govuk-list govuk-list--bullet govuk-hint'><li>which public body was involved</li><li>if any actions were taken to resolve this</li></ul>",
+                                        "Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include:</p><ul class='govuk-list govuk-list--bullet govuk-hint'><li>which public body was involved</li><li>if any actions were taken to resolve this</li></ul>",
                                         "Input":
                                         {
                                             "Type": "Textarea",
@@ -953,8 +953,8 @@
                                                 },
                                                 {
                                                     "Name": "MaxWordCount",
-                                                    "Value": "1500",
-                                                    "ErrorMessage": "Your answer must be 1500 characters or less"
+                                                    "Value": "275",
+                                                    "ErrorMessage": "Your answer must be 275 words or less"
                                                 }
                                             ],
                                             "DataEndpoint": null
@@ -1039,7 +1039,7 @@
                                         "ShortLabel": "",
                                         "InputClasses": null,
                                         "QuestionBodyText": "",
-                                        "Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include a brief summary including:</p><ul class='govuk-list govuk-list--bullet govuk-hint'><li>full names of who this was</li><li>which public body was involved</li><li>if any actions were taken to resolve this</li></ul>",
+                                        "Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include:</p><ul class='govuk-list govuk-list--bullet govuk-hint'><li>full names of who this was</li><li>which public body was involved</li><li>if any actions were taken to resolve this</li></ul>",
                                         "Input":
                                         {
                                             "Type": "Textarea",
@@ -1053,8 +1053,8 @@
                                                 },
                                                 {
                                                     "Name": "MaxWordCount",
-                                                    "Value": "1500",
-                                                    "ErrorMessage": "Your answer must be 1500 characters or less"
+                                                    "Value": "275",
+                                                    "ErrorMessage": "Your answer must be 275 words or less"
                                                 }
                                             ],
                                             "DataEndpoint": null
@@ -1139,7 +1139,7 @@
                                         "ShortLabel": "",
                                         "InputClasses": null,
                                         "QuestionBodyText": "",
-                                        "Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include a brief summary including:</p><ul class='govuk-list govuk-list--bullet govuk-hint'><li>which public body was involved</li><li>if any actions were taken to resolve this</li></ul>",
+                                        "Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include:</p><ul class='govuk-list govuk-list--bullet govuk-hint'><li>which public body was involved</li><li>if any actions were taken to resolve this</li></ul>",
                                         "Input":
                                         {
                                             "Type": "Textarea",
@@ -1153,8 +1153,8 @@
                                                 },
                                                 {
                                                     "Name": "MaxWordCount",
-                                                    "Value": "1500",
-                                                    "ErrorMessage": "Your answer must be 1500 characters or less"
+                                                    "Value": "275",
+                                                    "ErrorMessage": "Your answer must be 275 words or less"
                                                 }
                                             ],
                                             "DataEndpoint": null
@@ -1239,7 +1239,7 @@
                                         "ShortLabel": "",
                                         "InputClasses": null,
                                         "QuestionBodyText": "",
-                                        "Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include a brief summary including:</p><ul class='govuk-list govuk-list--bullet govuk-hint'><li>full names of who this was</li><li>which public body was involved</li><li>if any actions were taken to resolve this</li></ul>",
+                                        "Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include:</p><ul class='govuk-list govuk-list--bullet govuk-hint'><li>full names of who this was</li><li>what the breach related to</li><li>if any actions were taken to resolve this</li></ul>",
                                         "Input":
                                         {
                                             "Type": "Textarea",
@@ -1253,8 +1253,8 @@
                                                 },
                                                 {
                                                     "Name": "MaxWordCount",
-                                                    "Value": "1500",
-                                                    "ErrorMessage": "Your answer must be 1500 characters or less"
+                                                    "Value": "275",
+                                                    "ErrorMessage": "Your answer must be 275 words or less"
                                                 }
                                             ],
                                             "DataEndpoint": null
@@ -1339,7 +1339,7 @@
                                         "ShortLabel": "",
                                         "InputClasses": null,
                                         "QuestionBodyText": "",
-                                        "Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include a brief summary including:</p><ul class='govuk-list govuk-list--bullet govuk-hint'><li>which public body was involved</li><li>if any actions were taken to resolve this</li></ul>",
+                                        "Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include:</p><ul class='govuk-list govuk-list--bullet govuk-hint'><li>what the breach related to</li><li>if any actions were taken to resolve this</li></ul>",
                                         "Input":
                                         {
                                             "Type": "Textarea",
@@ -1353,8 +1353,8 @@
                                                 },
                                                 {
                                                     "Name": "MaxWordCount",
-                                                    "Value": "1500",
-                                                    "ErrorMessage": "Your answer must be 1500 characters or less"
+                                                    "Value": "275",
+                                                    "ErrorMessage": "Your answer must be 275 words or less"
                                                 }
                                             ],
                                             "DataEndpoint": null
@@ -1439,7 +1439,7 @@
                                         "ShortLabel": "",
                                         "InputClasses": null,
                                         "QuestionBodyText": "",
-                                        "Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include a brief summary including:</p><ul class='govuk-list govuk-list--bullet govuk-hint'><li>full names of who this was and the organisations involved</li><li>why they were made bankrupt</li><li>if any actions were taken to resolve this</li></ul>",
+                                        "Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include:</p><ul class='govuk-list govuk-list--bullet govuk-hint'><li>full names of who this was and the organisations involved</li><li>why they were made bankrupt</li><li>if any actions were taken to resolve this</li></ul>",
                                         "Input":
                                         {
                                             "Type": "Textarea",
@@ -1453,8 +1453,8 @@
                                                 },
                                                 {
                                                     "Name": "MaxWordCount",
-                                                    "Value": "1500",
-                                                    "ErrorMessage": "Your answer must be 1500 characters or less"
+                                                    "Value": "275",
+                                                    "ErrorMessage": "Your answer must be 275 words or less"
                                                 }
                                             ],
                                             "DataEndpoint": null
@@ -1480,7 +1480,7 @@
                             {
                                 "Name": "Required",
                                 "Value": "",
-                                "ErrorMessage": "Tell us if anyone who's in control of your organisation has been made bankrupt in the last 3 years"
+                                "ErrorMessage": "Tell us if you or anyone who's in control of your partner organisations been made bankrupt in the last 3 years"
                             }
                         ],
                         "DataEndpoint": null
@@ -1539,7 +1539,7 @@
                                         "ShortLabel": "",
                                         "InputClasses": null,
                                         "QuestionBodyText": "",
-                                        "Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include a brief summary including:</p><ul class='govuk-list govuk-list--bullet govuk-hint'><li>full names of who this was and the organisations involved</li><li>why they were made bankrupt</li><li>if any actions were taken to resolve this</li></ul>",
+                                        "Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include:</p><ul class='govuk-list govuk-list--bullet govuk-hint'><li>full names of who this was and the organisations involved</li><li>why they were made bankrupt</li><li>if any actions were taken to resolve this</li></ul>",
                                         "Input":
                                         {
                                             "Type": "Textarea",
@@ -1553,8 +1553,8 @@
                                                 },
                                                 {
                                                     "Name": "MaxWordCount",
-                                                    "Value": "1500",
-                                                    "ErrorMessage": "Your answer must be 1500 characters or less"
+                                                    "Value": "275",
+                                                    "ErrorMessage": "Your answer must be 275 words or less"
                                                 }
                                             ],
                                             "DataEndpoint": null
@@ -1580,7 +1580,7 @@
                             {
                                 "Name": "Required",
                                 "Value": "",
-                                "ErrorMessage": "Tell us if anyone who’s in control of your organisation has been made bankrupt in the last 3 years"
+                                "ErrorMessage": "Tell us if anyone who's in control of your organisation or any of its partner organisations been made bankrupt in the last 3 years"
                             }
                         ],
                         "DataEndpoint": null

@@ -48,8 +48,8 @@
                                                 },
                                                 {
                                                     "Name": "MaxWordCount",
-                                                    "Value": "1500",
-                                                    "ErrorMessage": "Your answer must be 1500 characters or less"
+                                                    "Value": "275",
+                                                    "ErrorMessage": "Your answer must be 275 words or less"
                                                 }
                                             ],
                                             "DataEndpoint": null
@@ -143,8 +143,8 @@
                                                 },
                                                 {
                                                     "Name": "MaxWordCount",
-                                                    "Value": "1500",
-                                                    "ErrorMessage": "Your answer must be 1500 characters or less"
+                                                    "Value": "275",
+                                                    "ErrorMessage": "Your answer must be 275 words or less"
                                                 }
                                             ],
                                             "DataEndpoint": null
@@ -238,8 +238,8 @@
                                                 },
                                                 {
                                                     "Name": "MaxWordCount",
-                                                    "Value": "1500",
-                                                    "ErrorMessage": "Your answer must be 1500 characters or less"
+                                                    "Value": "275",
+                                                    "ErrorMessage": "Your answer must be 275 words or less"
                                                 }
                                             ],
                                             "DataEndpoint": null
@@ -334,7 +334,7 @@
                                                 {
                                                     "Name": "MaxWordCount",
                                                     "Value": "1500",
-                                                    "ErrorMessage": "Your answer must be 1500 characters or less"
+                                                    "ErrorMessage": "Your answer must be 275 words or less"
                                                 }
                                             ],
                                             "DataEndpoint": null
@@ -428,8 +428,8 @@
                                                 },
                                                 {
                                                     "Name": "MaxWordCount",
-                                                    "Value": "1500",
-                                                    "ErrorMessage": "Your answer must be 1500 characters or less"
+                                                    "Value": "275",
+                                                    "ErrorMessage": "Your answer must be 275 words or less"
                                                 }
                                             ],
                                             "DataEndpoint": null
@@ -523,8 +523,8 @@
                                                 },
                                                 {
                                                     "Name": "MaxWordCount",
-                                                    "Value": "1500",
-                                                    "ErrorMessage": "Your answer must be 1500 characters or less"
+                                                    "Value": "275",
+                                                    "ErrorMessage": "Your answer must be 275 words or less"
                                                 }
                                             ],
                                             "DataEndpoint": null
@@ -618,8 +618,8 @@
                                                 },
                                                 {
                                                     "Name": "MaxWordCount",
-                                                    "Value": "1500",
-                                                    "ErrorMessage": "Your answer must be 1500 characters or less"
+                                                    "Value": "275",
+                                                    "ErrorMessage": "Your answer must be 275 words or less"
                                                 }
                                             ],
                                             "DataEndpoint": null
@@ -713,8 +713,8 @@
                                                 },
                                                 {
                                                     "Name": "MaxWordCount",
-                                                    "Value": "1500",
-                                                    "ErrorMessage": "Your answer must be 1500 characters or less"
+                                                    "Value": "275",
+                                                    "ErrorMessage": "Your answer must be 275 words or less"
                                                 }
                                             ],
                                             "DataEndpoint": null
@@ -808,8 +808,8 @@
                                                 },
                                                 {
                                                     "Name": "MaxWordCount",
-                                                    "Value": "1500",
-                                                    "ErrorMessage": "Your answer must be 1500 characters or less"
+                                                    "Value": "275",
+                                                    "ErrorMessage": "Your answer must be 275 words or less"
                                                 }
                                             ],
                                             "DataEndpoint": null
@@ -903,8 +903,8 @@
                                                 },
                                                 {
                                                     "Name": "MaxWordCount",
-                                                    "Value": "1500",
-                                                    "ErrorMessage": "Your answer must be 1500 characters or less"
+                                                    "Value": "275",
+                                                    "ErrorMessage": "Your answer must be 275 words or less"
                                                 }
                                             ],
                                             "DataEndpoint": null
@@ -998,8 +998,8 @@
                                                 },
                                                 {
                                                     "Name": "MaxWordCount",
-                                                    "Value": "1500",
-                                                    "ErrorMessage": "Your answer must be 1500 characters or less"
+                                                    "Value": "275",
+                                                    "ErrorMessage": "Your answer must be 275 words or less"
                                                 }
                                             ],
                                             "DataEndpoint": null
