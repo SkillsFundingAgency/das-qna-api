@@ -9,29 +9,19 @@ Licensed under the [MIT license](https://github.com/SkillsFundingAgency/das-asse
 ### Developer Setup
 
 #### Requirements
-- Install [Visual Studio 2017 or 2019](https://www.visualstudio.com/downloads) with these workloads:
-    - ASP.NET and web development
-    - .NET desktop development
-	- .NET Core 2.2 SDK
-- Install [SQL Management Studio](https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms)
-- Install [Azure Storage Emulator](https://go.microsoft.com/fwlink/?linkid=717179&clcid=0x409)
-- Install [Azure Storage Explorer](http://storageexplorer.com/)
-- Administrator Access
+- [.NET Core 2.2 SDK](https://dotnet.microsoft.com/download/dotnet-core/2.2)
+- An Azure Storage account (or the [Storage Emulator](https://go.microsoft.com/fwlink/?linkid=717179&clcid=0x409))
+- [Azure Storage Explorer](http://storageexplorer.com/)
 
 #### Setup
-- Create a Configuration table in your (Development) local storage account.
-- Add a row to the Configuration table with fields: PartitionKey: LOCAL, RowKey: SFA.DAS.QnA.Api_1.0, Data: {The contents of the local config json file}.
+- Obtain the appropriate JSON configuration file for this application.
+- Create a Configuration table in your storage account.
+- Add a row to the Configuration table with fields: PartitionKey: LOCAL, RowKey: SFA.DAS.QnA.Api_1.0, Data: {The contents of the JSON Configuration file}.
 
 ##### Open the solution
-- Open Visual studio as an administrator
-- Open the solution
-- Set SFA.DAS.QnA.Api as startup project
-- Running the solution will launch the API
-
--or-
-
 - Navigate to src/SFA.DAS.QnA.Api/
-- run `dotnet restore`
+- run `dotnet build`
+- run `dotnet test`
 - run `dotnet run`
 
 #### Swagger Documentation
