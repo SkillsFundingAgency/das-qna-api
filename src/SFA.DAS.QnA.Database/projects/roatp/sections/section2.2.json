@@ -2108,6 +2108,94 @@
             "DisplayType": null,
             "Feedback": null,
             "ActivatedByPageId": "2150"
+        },
+        {
+            "PageId": "2170",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "Has your organisation produced financial statements covering any period within the last 12 months?",
+            "LinkTitle": "Has your organisation produced financial statements covering any period within the last 12 months?",
+            "InfoText": "",
+            "Questions": [
+                {
+                    "QuestionId": "FH-340",
+                    "QuestionTag": "FHA-Partial-Financial-Statements",
+                    "Label": "Has your organisation produced financial statements covering any period within the last 12 months?",
+                    "ShortLabel": "",
+                    "InputClasses": null,
+                    "QuestionBodyText": "",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "Radio",
+                        "InputClasses": null,
+                        "Options": [
+                            {
+                                "Value": "Yes",
+                                "Label": "Yes",
+                                "HintText": ""
+                            },
+                            {
+                                "Value": "No",
+                                "Label": "No",
+                                "HintText": ""
+                            }
+                        ],
+                        "Validations": [
+                            {
+                                "Name": "Required",
+                                "Value": "",
+                                "ErrorMessage": "Tell us if your organisation has produced financial statements covering any period within the last 12 months"
+                            }
+                        ],
+                        "DataEndpoint": null
+                    },
+                    "Order": null,
+                    "Value": "",
+                    "ErrorMessages": null
+                }
+            ],
+            "PageOfAnswers": [],
+            "Next": [
+                {
+                    "Action": "NextPage",
+                    "ReturnId": "2180",
+                    "Conditions": [
+                        {
+                            "QuestionId": "FH-340",
+                            "MustEqual": "Yes"
+                        }
+                    ],
+                    "ConditionMet": false
+                },
+                {
+                    "Action": "NextPage",
+                    "ReturnId": "2200",
+                    "Conditions": [
+                        {
+                            "QuestionId": "FH-340",
+                            "MustEqual": "No"
+                        }
+                    ],
+                    "ConditionMet": false
+                }
+            ],
+            "Complete": false,
+            "AllowMultipleAnswers": false,
+            "Order": null,
+            "Active": false,
+            "NotRequiredConditions": [
+                {
+                    "Field": "FHA-Has-12Months-Statements",
+                    "IsOneOf": [
+                        "Yes"
+                    ]
+                }
+            ],
+            "BodyText": "",
+            "Details": null,
+            "DisplayType": null,
+            "Feedback": null,
+            "ActivatedByPageId": "2150"
         }
     ]
 }
