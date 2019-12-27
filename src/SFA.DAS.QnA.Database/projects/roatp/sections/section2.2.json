@@ -2177,7 +2177,22 @@
                         },
                         {
                             "QuestionTag": "Apply-ProviderRoute",
-                            "Contains": "1,2"
+                            "MustEqual": "1"
+                        }
+                    ],
+                    "ConditionMet": false
+                },
+                {
+                    "Action": "NextPage",
+                    "ReturnId": "2200",
+                    "Conditions": [
+                        {
+                            "QuestionId": "FH-340",
+                            "MustEqual": "No"
+                        },
+                        {
+                            "QuestionTag": "Apply-ProviderRoute",
+                            "MustEqual": "2"
                         }
                     ],
                     "ConditionMet": false
@@ -2302,6 +2317,65 @@
             "DisplayType": null,
             "Feedback": null,
             "ActivatedByPageId": "2180"
+        },
+        {
+            "PageId": "2200",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "Upload your organisation's management accounts covering the remaining period to date",
+            "LinkTitle": "Upload your organisation's management accounts covering the remaining period to date",
+            "InfoText": "",
+            "Questions": [
+                {
+                    "QuestionId": "FH-360",
+                    "QuestionTag": "FHA-Management-Accounts",
+                    "Label": "Upload your organisation's management accounts covering the remaining period to date",
+                    "ShortLabel": "",
+                    "InputClasses": null,
+                    "QuestionBodyText": "<p class='govuk-body'>Management accounts must include:</p><ul class='govuk-list govuk-list--bullet'><li>a balance sheet - showing the value of everything your organisation owns, owes and is owed to date</li><li>a cash flow statement</li><li>profit and loss account - showing your organisation's sales, running costs and profit and loss it's made</li><li>detailed notes about any assumptions made</li></ul><p class='govuk-body'>Your management accounts must start from the date your financial statements end.</p><p class='govuk-body'>Each file must be a PDF and smaller than 5MB.</p>",
+                    "Hint": "Upload management accounts",
+                    "Input": {
+                        "Type": "FileUpload",
+                        "InputClasses": null,
+                        "Options": [],
+                        "Validations": [
+                            {
+                                "Name": "Required",
+                                "Value": "",
+                                "ErrorMessage": "Select your organisation's management accounts covering the remaining period to date"
+                            },
+                            {
+                                "Name": "FileType",
+                                "Value": "pdf",
+                                "ErrorMessage": "The selected file must be a PDF"
+                            }
+                        ],
+                        "DataEndpoint": null
+                    },
+                    "Order": null,
+                    "Value": "",
+                    "ErrorMessages": null
+                }
+            ],
+            "PageOfAnswers": [],
+            "Next": [
+                {
+                    "Action": "NextPage",
+                    "ReturnId": "2260",
+                    "Conditions": [],
+                    "ConditionMet": false
+                }
+            ],
+            "Complete": false,
+            "AllowMultipleAnswers": false,
+            "Order": null,
+            "Active": false,
+            "NotRequiredConditions": [],
+            "BodyText": "",
+            "Details": null,
+            "DisplayType": null,
+            "Feedback": null,
+            "ActivatedByPageId": "2170,2190"
         }
     ]
 }
