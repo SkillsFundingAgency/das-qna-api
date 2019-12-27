@@ -2174,6 +2174,25 @@
                         {
                             "QuestionId": "FH-340",
                             "MustEqual": "No"
+                        },
+                        {
+                            "QuestionTag": "Apply-ProviderRoute",
+                            "Contains": "1,2"
+                        }
+                    ],
+                    "ConditionMet": false
+                },
+                {
+                    "Action": "NextPage",
+                    "ReturnId": "2210",
+                    "Conditions": [
+                        {
+                            "QuestionId": "FH-340",
+                            "MustEqual": "No"
+                        },
+                        {
+                            "QuestionTag": "Apply-ProviderRoute",
+                            "MustEqual": "3"
                         }
                     ],
                     "ConditionMet": false
@@ -2224,6 +2243,65 @@
             "DisplayType": null,
             "Feedback": null,
             "ActivatedByPageId": "2170"
+        },
+        {
+            "PageId": "2190",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "Upload your organisation's financial statements covering any period within the last 12 months",
+            "LinkTitle": "Upload your organisation's financial statements covering any period within the last 12 months",
+            "InfoText": "",
+            "Questions": [
+                {
+                    "QuestionId": "FH-350",
+                    "QuestionTag": "FHA-Partial-Financial-Statements",
+                    "Label": "Upload your organisation's financial statements covering any period within the last 12 months",
+                    "ShortLabel": "",
+                    "InputClasses": null,
+                    "QuestionBodyText": "<p class='govuk-body'>Financial statements must include a:</p><ul class='govuk-list govuk-list--bullet'><li>balance sheet - showing the value of everything your organisation owns, owes and is owed</li><li>profit and loss account - showing your organisation's sales, running costs and profit and loss it's made</li><li>detailed notes about the accounts</li><li>breakdown of creditors and borrowings</li></ul><p class='govuk-body'>If applicable, financial statements should be signed and filed with Companies House or the Charity Commission of England and Wales.</p><p class='govuk-body'>Each file must be a PDF and smaller than 5MB.</p><div class='govuk-warning-text'> <span class='govuk-warning-text__icon' aria-hidden='true'>!</span> <strong class='govuk-warning-text__text'> <span class='govuk-warning-text__assistive'>Warning</span>Financial statements must not be abbreviated, filleted or for a micro entity.</strong> </div>",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "FileUpload",
+                        "InputClasses": null,
+                        "Options": [],
+                        "Validations": [
+                            {
+                                "Name": "Required",
+                                "Value": "",
+                                "ErrorMessage": "Select your organisation's financial statements covering any period within the last 12 months"
+                            },
+                            {
+                                "Name": "FileType",
+                                "Value": "pdf",
+                                "ErrorMessage": "The selected file must be a PDF"
+                            }
+                        ],
+                        "DataEndpoint": null
+                    },
+                    "Order": null,
+                    "Value": "",
+                    "ErrorMessages": null
+                }
+            ],
+            "PageOfAnswers": [],
+            "Next": [
+                {
+                    "Action": "NextPage",
+                    "ReturnId": "2200",
+                    "Conditions": [],
+                    "ConditionMet": false
+                }
+            ],
+            "Complete": false,
+            "AllowMultipleAnswers": false,
+            "Order": null,
+            "Active": false,
+            "NotRequiredConditions": [],
+            "BodyText": "",
+            "Details": null,
+            "DisplayType": null,
+            "Feedback": null,
+            "ActivatedByPageId": "2180"
         }
     ]
 }
