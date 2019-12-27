@@ -2196,6 +2196,34 @@
             "DisplayType": null,
             "Feedback": null,
             "ActivatedByPageId": "2150"
+        },
+        {
+            "PageId": "2180",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "What you need to upload",
+            "LinkTitle": "What you need to upload",
+            "InfoText": "",
+            "Questions": [],
+            "PageOfAnswers": [],
+            "Next": [
+                {
+                    "Action": "NextPage",
+                    "ReturnId": "2190",
+                    "Conditions": [],
+                    "ConditionMet": false
+                }
+            ],
+            "Complete": false,
+            "AllowMultipleAnswers": false,
+            "Order": null,
+            "Active": false,
+            "NotRequiredConditions": [],
+            "BodyText": "<p class='govuk-body'>You'll need to upload your organisation's:</p><ul class='govuk-list govuk-list--bullet'><li>financial statements covering any period within the last 12 months</li><li>management accounts covering the remaining period to date</li></ul><p class='govuk-body'>Your management accounts must start from the date your financial statements end.</p><p class='govuk-body'>For example, if your financial statements end on 31 January, your management accounts must start on 1 February.</p>",
+            "Details": null,
+            "DisplayType": null,
+            "Feedback": null,
+            "ActivatedByPageId": "2170"
         }
     ]
 }
