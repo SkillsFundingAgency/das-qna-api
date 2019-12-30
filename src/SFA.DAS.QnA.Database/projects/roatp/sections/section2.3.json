@@ -92,6 +92,72 @@
             "DisplayType": null,
             "Feedback": null,
             "ActivatedByPageId": null
+        },
+        {
+            "PageId": "2510",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "Upload your UK ultimate parent company's consolidated financial statements",
+            "LinkTitle": "Upload your UK ultimate parent company's consolidated financial statements",
+            "InfoText": "",
+            "Questions": [
+                {
+                    "QuestionId": "FH-510",
+                    "QuestionTag": "FHA-Parent-Financial-Statements",
+                    "Label": "Upload your UK ultimate parent company's consolidated financial statements",
+                    "ShortLabel": "",
+                    "InputClasses": null,
+                    "QuestionBodyText": "<p class='govuk-body'>Consolidated financial statements must include:</p><ul class='govuk-list govuk-list--bullet'><li>a balance sheet - showing the value of everything your organisation owns, owes and is owed on the last day of the financial year</li><li>a cash flow statement</li><li>an income statement</li></ul><p class='govuk-body'>The file must be a PDF and smaller than 5MB.</p>",
+                    "Hint": "Upload a file",
+                    "Input": {
+                        "Type": "FileUpload",
+                        "InputClasses": null,
+                        "Options": [],
+                        "Validations": [
+                            {
+                                "Name": "Required",
+                                "Value": "",
+                                "ErrorMessage": "Select your UK ultimate parent company's consolidated financial statements"
+                            },
+                            {
+                                "Name": "FileType",
+                                "Value": "pdf",
+                                "ErrorMessage": "The selected file must be a PDF"
+                            }
+                        ],
+                        "DataEndpoint": null
+                    },
+                    "Order": null,
+                    "Value": "",
+                    "ErrorMessages": null
+                }
+            ],
+            "PageOfAnswers": [],
+            "Next": [
+                {
+                    "Action": "ReturnToSection",
+                    "ReturnId": "2.3",
+                    "Conditions": [],
+                    "ConditionMet": false
+                }
+            ],
+            "Complete": false,
+            "AllowMultipleAnswers": false,
+            "Order": null,
+            "Active": false,
+            "NotRequiredConditions": [
+                {
+                    "Field": "FHA-Parent-Has-Consolidated-Statements",
+                    "IsOneOf": [
+                        "No"
+                    ]
+                }
+            ],
+            "BodyText": "",
+            "Details": null,
+            "DisplayType": null,
+            "Feedback": null,
+            "ActivatedByPageId": "2500"
         }
     ]
 }
