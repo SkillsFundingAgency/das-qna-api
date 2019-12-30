@@ -365,7 +365,7 @@
                 {
                     "QuestionId": "FH-50",
                     "QuestionTag": "FHA-Other-Annual-Turnover",
-                    "Label": "Enter your organisation's total annual turnover for the last year",
+                    "Label": "Enter your organisation's total annual turnover for the last financial year",
                     "ShortLabel": "",
                     "InputClasses": null,
                     "QuestionBodyText": "",
@@ -389,7 +389,7 @@
                 {
                     "QuestionId": "FH-60",
                     "QuestionTag": "FHA-Other-Depreciation-Amortisation",
-                    "Label": "Enter your organisation's total depreciation and amortisation figures for the last financial year",
+                    "Label": "Enter your organisation's total depreciation and amortisation charges for the last financial year",
                     "ShortLabel": "",
                     "InputClasses": null,
                     "QuestionBodyText": "",
@@ -635,7 +635,7 @@
                 {
                     "QuestionId": "FH-140",
                     "QuestionTag": "FHA-CC-Annual-Turnover",
-                    "Label": "Enter your organisation's total annual turnover for the last year",
+                    "Label": "Enter your organisation's total annual turnover for the last financial year",
                     "ShortLabel": "",
                     "InputClasses": null,
                     "QuestionBodyText": "",
@@ -659,11 +659,11 @@
                 {
                     "QuestionId": "FH-150",
                     "QuestionTag": "FHA-CC-Depreciation-Amortisation",
-                    "Label": "Enter your organisation's total depreciation and amortisation figures for the last financial year",
+                    "Label": "Enter your organisation's total depreciation and amortisation charges for the last financial year",
                     "ShortLabel": "",
                     "InputClasses": null,
                     "QuestionBodyText": "",
-                    "Hint": "You can find this on your organisation's 'operating profit note to the accounts'. You’ll need to add up all the items under 'note 2' and enter the total figure.",
+                    "Hint": "You can find this on your organisation's 'operating profit note to the accounts'. You'll need to add up all the items under 'note 2' and enter the total figure.",
                     "Input": {
                         "Type": "Number",
                         "InputClasses": "govuk-input--width-10",
@@ -905,7 +905,7 @@
                 {
                     "QuestionId": "FH-140",
                     "QuestionTag": "FHA-CC-Annual-Turnover",
-                    "Label": "Enter your organisation's total annual turnover for the last year",
+                    "Label": "Enter your organisation's total annual turnover for the last financial year",
                     "ShortLabel": "",
                     "InputClasses": null,
                     "QuestionBodyText": "",
@@ -929,11 +929,11 @@
                 {
                     "QuestionId": "FH-150",
                     "QuestionTag": "FHA-CC-Depreciation-Amortisation",
-                    "Label": "Enter your organisation's total depreciation and amortisation figures for the last financial year",
+                    "Label": "Enter your organisation's total depreciation and amortisation charges for the last financial year",
                     "ShortLabel": "",
                     "InputClasses": null,
                     "QuestionBodyText": "",
-                    "Hint": "You can find this on your organisation's 'operating profit note to the accounts'. You’ll need to add up all the items under 'note 2' and enter the total figure.",
+                    "Hint": "You can find this on your organisation's 'operating profit note to the accounts'. You'll need to add up all the items under 'note 2' and enter the total figure.",
                     "Input": {
                         "Type": "Number",
                         "InputClasses": "govuk-input--width-10",
@@ -1175,7 +1175,7 @@
                 {
                     "QuestionId": "FH-140",
                     "QuestionTag": "FHA-CC-Annual-Turnover",
-                    "Label": "Enter your organisation's total annual turnover for the last year",
+                    "Label": "Enter your organisation's total annual turnover for the last financial year",
                     "ShortLabel": "",
                     "InputClasses": null,
                     "QuestionBodyText": "",
@@ -1199,7 +1199,7 @@
                 {
                     "QuestionId": "FH-150",
                     "QuestionTag": "FHA-CC-Depreciation-Amortisation",
-                    "Label": "Enter your organisation's total depreciation and amortisation figures for the last financial year",
+                    "Label": "Enter your organisation's total depreciation and amortisation charges for the last financial year",
                     "ShortLabel": "",
                     "InputClasses": null,
                     "QuestionBodyText": "",
@@ -1445,7 +1445,7 @@
                 {
                     "QuestionId": "FH-230",
                     "QuestionTag": "FHA-STP-Annual-Turnover",
-                    "Label": "Enter your organisation's total annual turnover for the last year",
+                    "Label": "Enter your organisation's total annual turnover for the last financial year",
                     "ShortLabel": "",
                     "InputClasses": null,
                     "QuestionBodyText": "",
@@ -1469,7 +1469,7 @@
                 {
                     "QuestionId": "FH-240",
                     "QuestionTag": "FHA-STP-Depreciation-Amortisation",
-                    "Label": "Enter your organisation's total depreciation and amortisation figures for the last financial year",
+                    "Label": "Enter your organisation's total depreciation and amortisation charges for the last financial year",
                     "ShortLabel": "",
                     "InputClasses": null,
                     "QuestionBodyText": "",
@@ -1709,7 +1709,7 @@
                 {
                     "QuestionId": "FH-230",
                     "QuestionTag": "FHA-STP-Annual-Turnover",
-                    "Label": "Enter your organisation's total annual turnover for the last year",
+                    "Label": "Enter your organisation's total annual turnover for the last financial year",
                     "ShortLabel": "",
                     "InputClasses": null,
                     "QuestionBodyText": "",
@@ -1733,7 +1733,7 @@
                 {
                     "QuestionId": "FH-240",
                     "QuestionTag": "FHA-STP-Depreciation-Amortisation",
-                    "Label": "Enter your organisation's total depreciation and amortisation figures for the last financial year",
+                    "Label": "Enter your organisation's total depreciation and amortisation charges for the last financial year",
                     "ShortLabel": "",
                     "InputClasses": null,
                     "QuestionBodyText": "",
