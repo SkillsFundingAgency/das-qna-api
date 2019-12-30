@@ -2451,6 +2451,95 @@
             "DisplayType": null,
             "Feedback": null,
             "ActivatedByPageId": "2160,2200,2220,2250"
+        },
+        {
+            "PageId": "2210",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "Has your organisation produced full management accounts covering the last 12 months?",
+            "LinkTitle": "Has your organisation produced full management accounts covering the last 12 months?",
+            "InfoText": "",
+            "Questions": [
+                {
+                    "QuestionId": "FH-370",
+                    "QuestionTag": "FHA-Has-12Months-Management-Accs",
+                    "Label": "Has your organisation produced full management accounts covering the last 12 months?",
+                    "ShortLabel": "",
+                    "InputClasses": null,
+                    "QuestionBodyText": "",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "Radio",
+                        "InputClasses": null,
+                        "Options": [
+                            {
+                                "Value": "Yes",
+                                "Label": "Yes",
+                                "HintText": ""
+                            },
+                            {
+                                "Value": "No",
+                                "Label": "No",
+                                "HintText": ""
+                            }
+                        ],
+                        "Validations": [
+                            {
+                                "Name": "Required",
+                                "Value": "",
+                                "ErrorMessage": "Tell us if your organisation has produced full management accounts covering the last 12 months"
+                            }
+                        ],
+                        "DataEndpoint": null
+                    },
+                    "Order": null,
+                    "Value": "",
+                    "ErrorMessages": null
+                }
+            ],
+            "PageOfAnswers": [],
+            "Next": [
+                {
+                    "Action": "NextPage",
+                    "ReturnId": "2220",
+                    "Conditions": [
+                        {
+                            "QuestionId": "FH-370",
+                            "MustEqual": "Yes"
+                        }
+                    ],
+                    "ConditionMet": false
+                },
+                {
+                    "Action": "NextPage",
+                    "ReturnId": "2230",
+                    "Conditions": [
+                        {
+                            "QuestionId": "FH-370",
+                            "MustEqual": "No"
+                        }
+                    ],
+                    "ConditionMet": false
+                }
+            ],
+            "Complete": false,
+            "AllowMultipleAnswers": false,
+            "Order": null,
+            "Active": false,
+            "NotRequiredConditions": [
+                {
+                    "Field": "Apply-ProviderRoute",
+                    "IsOneOf": [
+                        "1",
+                        "2"
+                    ]
+                }
+            ],
+            "BodyText": "",
+            "Details": null,
+            "DisplayType": null,
+            "Feedback": null,
+            "ActivatedByPageId": "2170"
         }
     ]
 }
