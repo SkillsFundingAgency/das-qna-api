@@ -319,7 +319,7 @@
                                         "ShortLabel": "",
                                         "InputClasses": null,
                                         "QuestionBodyText": "",
-                                        "Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include</p><ul class='govuk-list govuk-list--bullet govuk-hint'><li>a brief summary of why your organisation withdrew from a contract</li><li>which public body was involved</li><li>if any actions have been taken to resolve this</li></ul>",
+                                        "Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include:</p><ul class='govuk-list govuk-list--bullet govuk-hint'><li>a brief summary of why your organisation withdrew from a contract</li><li>which public body was involved</li><li>if any actions have been taken to resolve this</li></ul>",
                                         "Input":
                                         {
                                             "Type": "Textarea",
@@ -333,7 +333,7 @@
                                                 },
                                                 {
                                                     "Name": "MaxWordCount",
-                                                    "Value": "1500",
+                                                    "Value": "275",
                                                     "ErrorMessage": "Your answer must be 275 words or less"
                                                 }
                                             ],
