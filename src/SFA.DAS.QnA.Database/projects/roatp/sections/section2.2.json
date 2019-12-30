@@ -2568,6 +2568,73 @@
             "DisplayType": null,
             "Feedback": null,
             "ActivatedByPageId": "2210"
+        },
+        {
+            "PageId": "2225",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "Upload your organisation's full management accounts for the last 12 months",
+            "LinkTitle": "Upload your organisation's full management accounts for the last 12 months",
+            "InfoText": "",
+            "Questions": [
+                {
+                    "QuestionId": "FH-380",
+                    "QuestionTag": "FHA-12Months-Management-Accs",
+                    "Label": "Upload your organisation's full management accounts for the last 12 months",
+                    "ShortLabel": "",
+                    "InputClasses": null,
+                    "QuestionBodyText": "<p class='govuk-body'>Management accounts must include:</p><ul class='govuk-list govuk-list--bullet'><li>a balance sheet - showing the value of everything your organisation owns, owes and is owed for the last 12 months</li><li>a cash flow statement</li><li>profit and loss account - showing your organisation's sales, running costs and profit and loss it's made</li><li>detailed notes about any assumptions made</li></ul><p class='govuk-body'>Each must be a PDF and smaller than 5MB.</p>",
+                    "Hint": "Upload management accounts",
+                    "Input": {
+                        "Type": "FileUpload",
+                        "InputClasses": null,
+                        "Options": [],
+                        "Validations": [
+                            {
+                                "Name": "Required",
+                                "Value": "",
+                                "ErrorMessage": "Select your organisation's full management accounts for the last 12 months"
+                            },
+                            {
+                                "Name": "FileType",
+                                "Value": "pdf",
+                                "ErrorMessage": "The selected file must be a PDF"
+                            }
+                        ],
+                        "DataEndpoint": null
+                    },
+                    "Order": null,
+                    "Value": "",
+                    "ErrorMessages": null
+                }
+            ],
+            "PageOfAnswers": [],
+            "Next": [
+                {
+                    "Action": "NextPage",
+                    "ReturnId": "2260",
+                    "Conditions": [],
+                    "ConditionMet": false
+                }
+            ],
+            "Complete": false,
+            "AllowMultipleAnswers": false,
+            "Order": null,
+            "Active": false,
+            "NotRequiredConditions": [
+                {
+                    "Field": "Apply-ProviderRoute",
+                    "IsOneOf": [
+                        "1",
+                        "2"
+                    ]
+                }
+            ],
+            "BodyText": "",
+            "Details": null,
+            "DisplayType": null,
+            "Feedback": null,
+            "ActivatedByPageId": "2220"
         }
     ]
 }
