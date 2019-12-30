@@ -113,7 +113,7 @@
                     "QuestionTag": "CC-Organisation-RepayFunding",
                     "Label": "Has your organisation failed to pay back funds in the last 3 years?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body' id='cc-organisation-repayfunding'>Tell us if your organisation has failed to repay £50,000 or more:</p><ul class='govuk-list govuk-list--bullet'><li>to ESFA or any other public body</li><li>under a subcontract to deliver education and training services funded by ESFA</li></ul>",
+                    "QuestionBodyText": "<p class='govuk-body' id='cc-organisation-repayfunding'>Tell us if your organisation has failed to repay &pound;50,000 or more:</p><ul class='govuk-list govuk-list--bullet'><li>to ESFA or any other public body</li><li>under a subcontract to deliver education and training services funded by ESFA</li></ul>",
                     "Hint": "",
                     "Input":
                     {
@@ -129,7 +129,7 @@
                                         "ShortLabel": "",
                                         "InputClasses": null,
                                         "QuestionBodyText": "",
-                                        "Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include:</p><ul class='govuk-list govuk-list--bullet govuk-hint'><li>a brief summary of why your organisation failed to repay funding</li><li>if any actions have been taken to resolve this</li></ul>",
+                                        "Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include:</p><ul class='govuk-list govuk-list--bullet govuk-hint'><li>why your organisation failed to repay funding</li><li>which public body was involved</li><li>if any actions have been taken to resolve this</li></ul>",
                                         "Input":
                                         {
                                             "Type": "Textarea",
@@ -224,7 +224,7 @@
                                         "ShortLabel": "",
                                         "InputClasses": null,
                                         "QuestionBodyText": "",
-                                        "Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include a brief summary including:</p><ul class='govuk-list govuk-list--bullet govuk-hint'><li>which public body was involved</li><li>if any actions have been taken to resolve this</li></ul>",
+                                        "Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include:</p><ul class='govuk-list govuk-list--bullet govuk-hint'><li>a brief summary of why the contract was terminated</li><li>which public body was involved</li><li>if any actions have been taken to resolve this</li></ul>",
                                         "Input":
                                         {
                                             "Type": "Textarea",
@@ -301,7 +301,7 @@
                 {
                     "QuestionId": "CC-23",
                     "QuestionTag": "CC-Organisation-ContractWithdrawal",
-                    "Label": "Has your organisation had early withdrawal from a contract with a public body in the last 3 years?",
+                    "Label": "Has your organisation withdrawn from a contract with a public body in the last 3 years?",
                     "ShortLabel": "",
                     "QuestionBodyText": "<p class='govuk-body' id='cc-organisation-contractwithdrawal'></p>",
                     "Hint": "",
@@ -319,7 +319,7 @@
                                         "ShortLabel": "",
                                         "InputClasses": null,
                                         "QuestionBodyText": "",
-                                        "Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include a brief summary of who this was with and why.</p>",
+                                        "Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include</p><ul class='govuk-list govuk-list--bullet govuk-hint'><li>a brief summary of why your organisation withdrew from a contract</li><li>which public body was involved</li><li>if any actions have been taken to resolve this</li></ul>",
                                         "Input":
                                         {
                                             "Type": "Textarea",
@@ -414,7 +414,7 @@
                                         "ShortLabel": "",
                                         "InputClasses": null,
                                         "QuestionBodyText": "",
-                                        "Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include a brief summary including:</p><ul class='govuk-list govuk-list--bullet govuk-hint'><li>why funding was removed</li><li>if any actions have been taken to resolve this</li></ul>",
+                                        "Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include:</p><ul class='govuk-list govuk-list--bullet govuk-hint'><li>a brief summary of why funding was removed</li><li>if any actions have been taken to resolve this</li></ul>",
                                         "Input":
                                         {
                                             "Type": "Textarea",
@@ -509,7 +509,7 @@
                                         "ShortLabel": "",
                                         "InputClasses": null,
                                         "QuestionBodyText": "",
-                                        "Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include a brief summary including:</p><ul class='govuk-list govuk-list--bullet govuk-hint'><li>why your organisation was removed</li><li>if any actions have been taken to resolve this</li></ul>",
+                                        "Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include:</p><ul class='govuk-list govuk-list--bullet govuk-hint'><li>a brief summary of why your organisation was removed</li><li>if any actions have been taken to resolve this</li></ul>",
                                         "Input":
                                         {
                                             "Type": "Textarea",
@@ -740,7 +740,7 @@
                             {
                                 "Name": "Required",
                                 "Value": "",
-                                "ErrorMessage": "Tell us if your organisation has been has been removed from any charity register"
+                                "ErrorMessage": "Tell us if your organisation has been removed from any charity register"
                             }
                         ],
                         "DataEndpoint": null
@@ -1025,7 +1025,7 @@
                             {
                                 "Name": "Required",
                                 "Value": "",
-                                "ErrorMessage": "Tell us if your organisation or any of its partner organisations have been subject to insolvency or winding up proceedings in the last 3 years"
+                                "ErrorMessage": "Tell us if your organisation or any of its partner organisations has been subject to insolvency or winding up proceedings in the last 3 years"
                             }
                         ],
                         "DataEndpoint": null
