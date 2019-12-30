@@ -2722,6 +2722,65 @@
             "DisplayType": null,
             "Feedback": null,
             "ActivatedByPageId": "2230"
+        },
+        {
+            "PageId": "2250",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "Upload your organisation's financial projections covering the remaining period",
+            "LinkTitle": "Upload your organisation's financial projections covering the remaining period",
+            "InfoText": "",
+            "Questions": [
+                {
+                    "QuestionId": "FH-400",
+                    "QuestionTag": "FHA-Projections",
+                    "Label": "Upload your organisation's financial projections covering the remaining period",
+                    "ShortLabel": "",
+                    "InputClasses": null,
+                    "QuestionBodyText": "<p class='govuk-body'>Financial projections must include:</p><ul class='govuk-list govuk-list--bullet'><li>a balance sheet - showing a forecast of everything your organisation will own, owe and be owed</li><li>a profit and loss account - showing a forecast of your organisation's sales, running costs and the profit and loss</li><li>detailed notes about the accounts</li><li>a breakdown of creditors and borrowings</li></ul><p class='govuk-body'>Each file must be a PDF and smaller than 5MB.</p>",
+                    "Hint": "Upload financial projections",
+                    "Input": {
+                        "Type": "FileUpload",
+                        "InputClasses": null,
+                        "Options": [],
+                        "Validations": [
+                            {
+                                "Name": "Required",
+                                "Value": "",
+                                "ErrorMessage": "Select your organisation's financial projections covering the remaining period"
+                            },
+                            {
+                                "Name": "FileType",
+                                "Value": "pdf",
+                                "ErrorMessage": "The selected file must be a PDF"
+                            }
+                        ],
+                        "DataEndpoint": null
+                    },
+                    "Order": null,
+                    "Value": "",
+                    "ErrorMessages": null
+                }
+            ],
+            "PageOfAnswers": [],
+            "Next": [
+                {
+                    "Action": "NextPage",
+                    "ReturnId": "2260",
+                    "Conditions": [],
+                    "ConditionMet": false
+                }
+            ],
+            "Complete": false,
+            "AllowMultipleAnswers": false,
+            "Order": null,
+            "Active": false,
+            "NotRequiredConditions": [],
+            "BodyText": "",
+            "Details": null,
+            "DisplayType": null,
+            "Feedback": null,
+            "ActivatedByPageId": "2240"
         }
     ]
 }
