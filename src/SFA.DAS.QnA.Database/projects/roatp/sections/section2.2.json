@@ -39,7 +39,7 @@
                             {
                                 "Name": "Required",
                                 "Value": "",
-                                "ErrorMessage": "Tell us if your organisation's total annual turnover was over £75 million for the last financial year"
+                                "ErrorMessage": "Tell us if your organisation's total annual turnover was over &pound;75 million for the last financial year"
                             }
                         ],
                         "DataEndpoint": null
