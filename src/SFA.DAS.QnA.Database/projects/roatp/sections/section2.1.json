@@ -9,23 +9,9 @@
             "SequenceId": null,
             "SectionId": null,
             "Title": "Financial health assessment",
-            "LinkTitle": "",
+            "LinkTitle": "Financial health assessment",
             "InfoText": "",
-            "Questions": [
-                {
-                    "QuestionId": "FHA-10",
-                    "QuestionTag": "Financial-Health-Introduction-All",
-                    "Label": "Financial health assessment",
-                    "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body'>Lorem ipsum FHA introduction page</p>",
-                    "Hint": "",
-                    "Input": {
-                        "Type": "Hidden",
-                        "Validations": []
-                    },
-                    "Order": null
-                }
-            ],
+            "Questions": [],
             "PageOfAnswers": [],
             "Next": [
                 {
@@ -42,9 +28,53 @@
             "Visible": true,
             "Feedback": null,
             "HasFeedback": false,
-            "NotRequiredConditions": [],
+            "NotRequiredConditions": [
+                {
+                    "Field": "Has-ParentCompany",
+                    "IsOneOf": [
+                        "Yes"
+                    ]
+                }
+            ],
             "ActivatedByPageId": null,
-            "BodyText": ""
+            "BodyText": "<p class='govuk-body'>This section is to ensure your organisation's financial performance and ability to meet ongoing financial commitments meet ESFA's expectations.</p><p class='govuk-body'>You may need to provider your organisation's:</p><ul class='govuk-list govuk-list--bullet'><li>financial figures</li><li>full financial statements or management accounts</li></ul><p class='govuk-body'>Based on your answers and uploads, your organisation will receive a financial health grade.</p><p class='govuk-body'>Find out more in <a href='https://www.gov.uk/government/publications/esfa-financial-health-assessment' target='_blank'>ESFA's financial health policy (opens in a new window or tab)</a>.</p><div class='govuk-warning-text'> <span class='govuk-warning-text__icon' aria-hidden='true'>!</span> <strong class='govuk-warning-text__text'> <span class='govuk-warning-text__assistive'>Warning</span>Financial uploads must not be abbreviated, filleted or for a micro entity.</strong> </div>"
+        },
+        {
+            "PageId": "2010",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "Financial health assessment",
+            "LinkTitle": "Financial health assessment",
+            "InfoText": "",
+            "Questions": [],
+            "PageOfAnswers": [],
+            "Next": [
+                {
+                    "Action": "NextPage",
+                    "ReturnId": null,
+                    "Conditions": [],
+                    "ConditionMet": false
+                }
+            ],
+            "Complete": false,
+            "AllowMultipleAnswers": false,
+            "Order": null,
+            "Active": true,
+            "NotRequiredConditions": [
+                {
+                    "Field": "Has-ParentCompany",
+                    "IsOneOf": [
+                        "No",
+                        "",
+                        null
+                    ]
+                }
+            ],
+            "BodyText": "<p class='govuk-body'>This section is to ensure your organisation's financial performance and ability to meet ongoing financial commitments meet ESFA's expectations.</p><p class='govuk-body'>You may need to:</p><ul class='govuk-list govuk-list--bullet'><li>provide your organisation's financial figures</li><li>upload your organisation's full financial statements or management accounts</li><li>upload your UK ultimate parent company's consolidated financial statements for its subsidiary companies</li></ul><p class='govuk-body'>Based on your answers and uploads, your organisation will receive a financial health grade.</p><p class='govuk-body'>Find out more in <a href='https://www.gov.uk/government/publications/esfa-financial-health-assessment' target='_blank'>ESFA's financial health policy (opens in a new window or tab)</a>.</p><div class='govuk-warning-text'> <span class='govuk-warning-text__icon' aria-hidden='true'>!</span> <strong class='govuk-warning-text__text'> <span class='govuk-warning-text__assistive'>Warning</span>Financial uploads must not be abbreviated, filleted or for a micro entity.</strong> </div>",
+            "Details": null,
+            "DisplayType": null,
+            "Feedback": null,
+            "ActivatedByPageId": null
         }
     ]
 }
