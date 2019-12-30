@@ -158,6 +158,97 @@
             "DisplayType": null,
             "Feedback": null,
             "ActivatedByPageId": "2500"
+        },
+        {
+            "PageId": "2520",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "Does your UK ultimate parent company have other subsidiary companies?",
+            "LinkTitle": "Does your UK ultimate parent company have other subsidiary companies?",
+            "InfoText": "",
+            "Questions": [
+                {
+                    "QuestionId": "FH-520",
+                    "QuestionTag": "FHA-Parent-Has-Other-Subsidiaries",
+                    "Label": "Does your UK ultimate parent company have other subsidiary companies?",
+                    "ShortLabel": "",
+                    "InputClasses": null,
+                    "QuestionBodyText": "<p class='govuk-body'>Subsidiary companies must not be dormant.</p>",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "Radio",
+                        "InputClasses": null,
+                        "Options": [
+                            {
+                                "Value": "Yes",
+                                "Label": "Yes",
+                                "HintText": ""
+                            },
+                            {
+                                "Value": "No",
+                                "Label": "No",
+                                "HintText": ""
+                            }
+                        ],
+                        "Validations": [
+                            {
+                                "Name": "Required",
+                                "Value": "",
+                                "ErrorMessage": "Tell us if your UK ultimate parent company has other subsidiary companies"
+                            }
+                        ],
+                        "DataEndpoint": null
+                    },
+                    "Order": null,
+                    "Value": "",
+                    "ErrorMessages": null
+                }
+            ],
+            "PageOfAnswers": [],
+            "Next": [
+                {
+                    "Action": "NextPage",
+                    "ReturnId": "2530",
+                    "Conditions": [
+                        {
+                            "QuestionId": "FH-520",
+                            "MustEqual": "Yes"
+                        }
+                    ],
+                    "ConditionMet": false
+                },
+                {
+                    "Action": "NextPage",
+                    "ReturnId": "2540",
+                    "Conditions": [
+                        {
+                            "QuestionId": "FH-520",
+                            "MustEqual": "No"
+                        }
+                    ],
+                    "ConditionMet": false
+                }
+            ],
+            "Complete": false,
+            "AllowMultipleAnswers": false,
+            "Order": null,
+            "Active": false,
+            "NotRequiredConditions": [
+                {
+                    "Field": "FHA-Parent-Has-Consolidated-Statements",
+                    "IsOneOf": [
+                        "Yes"
+                    ]
+                }
+            ],
+            "BodyText": "",
+            "Details": {
+                "Title": "What is a subsidiary company?",
+                "Body": "It's a company controlled by your ultimate parent company."
+            },
+            "DisplayType": null,
+            "Feedback": null,
+            "ActivatedByPageId": "2500"
         }
     ]
 }
