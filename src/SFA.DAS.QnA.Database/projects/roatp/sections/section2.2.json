@@ -39,7 +39,7 @@
                             {
                                 "Name": "Required",
                                 "Value": "",
-                                "ErrorMessage": "Tell us if your organisation's total annual turnover was over £75 million for the last financial year"
+                                "ErrorMessage": "Tell us if your organisation's total annual turnover was over &pound;75 million for the last financial year"
                             }
                         ],
                         "DataEndpoint": null
@@ -365,19 +365,24 @@
                 {
                     "QuestionId": "FH-50",
                     "QuestionTag": "FHA-Other-Annual-Turnover",
-                    "Label": "Enter your organisation's total annual turnover for the last year",
+                    "Label": "Enter your organisation's total annual turnover for the last financial year",
                     "ShortLabel": "",
                     "InputClasses": null,
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'profit and loss statement', 'income and expenditure account' or 'statement of financial activities'.",
                     "Input": {
-                        "Type": "Number",
+                        "Type": "Text",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
                                 "Name": "Required",
                                 "Value": "",
                                 "ErrorMessage": "Enter your organisation's total annual turnover for the last financial year"
+                            },
+                            {
+                                "Name": "Regex",
+                                "Value": "^-?[0-9]+$",
+                                "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
                         "DataEndpoint": null
@@ -389,19 +394,24 @@
                 {
                     "QuestionId": "FH-60",
                     "QuestionTag": "FHA-Other-Depreciation-Amortisation",
-                    "Label": "Enter your organisation's total depreciation and amortisation figures for the last financial year",
+                    "Label": "Enter your organisation's total depreciation and amortisation charges for the last financial year",
                     "ShortLabel": "",
                     "InputClasses": null,
                     "QuestionBodyText": "",
                     "Hint": "",
                     "Input": {
-                        "Type": "Number",
+                        "Type": "Text",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
                                 "Name": "Required",
                                 "Value": "",
                                 "ErrorMessage": "Enter your organisation's total depreciation and amortisation charges for the last financial year"
+                            },
+                            {
+                                "Name": "Regex",
+                                "Value": "^-?[0-9]+$",
+                                "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
                         "DataEndpoint": null
@@ -419,13 +429,18 @@
                     "QuestionBodyText": "",
                     "Hint": "Profit or loss is the net amount earned after tax.",
                     "Input": {
-                        "Type": "Number",
+                        "Type": "Text",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
                                 "Name": "Required",
                                 "Value": "",
                                 "ErrorMessage": "Enter your organisation's profit or loss for the last financial year"
+                            },
+                            {
+                                "Name": "Regex",
+                                "Value": "^-?[0-9]+$",
+                                "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
                         "DataEndpoint": null
@@ -443,13 +458,18 @@
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'notes to the accounts'.",
                     "Input": {
-                        "Type": "Number",
+                        "Type": "Text",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
                                 "Name": "Required",
                                 "Value": "",
                                 "ErrorMessage": "Enter your organisation's total dividends for the last financial year"
+                            },
+                            {
+                                "Name": "Regex",
+                                "Value": "^-?[0-9]+$",
+                                "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
                         "DataEndpoint": null
@@ -467,13 +487,18 @@
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'balance sheet'.",
                     "Input": {
-                        "Type": "Number",
+                        "Type": "Text",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
                                 "Name": "Required",
                                 "Value": "",
                                 "ErrorMessage": "Enter your organisation's total current assets for the last financial year"
+                            },
+                            {
+                                "Name": "Regex",
+                                "Value": "^-?[0-9]+$",
+                                "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
                         "DataEndpoint": null
@@ -491,13 +516,18 @@
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'balance sheet'",
                     "Input": {
-                        "Type": "Number",
+                        "Type": "Text",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
                                 "Name": "Required",
                                 "Value": "",
                                 "ErrorMessage": "Enter your organisation's total current liabilities for the last financial year"
+                            },
+                            {
+                                "Name": "Regex",
+                                "Value": "^-?[0-9]+$",
+                                "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
                         "DataEndpoint": null
@@ -515,13 +545,18 @@
                     "QuestionBodyText": "",
                     "Hint": "You will need to add up a total of: <ul class='govuk-list govuk-list--bullet'><li>bank overdraft</li><li>loans</li><li>amounts owed to directors - including director loans and director accounts</li><li>amounts owed to subsidiaries - if your organisation is part of a group</li><li>amounts due under finance leases or hire purchase contracts</li></ul>",
                     "Input": {
-                        "Type": "Number",
+                        "Type": "Text",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
                                 "Name": "Required",
                                 "Value": "",
                                 "ErrorMessage": "Enter your organisation's total borrowings for the last financial year"
+                            },
+                            {
+                                "Name": "Regex",
+                                "Value": "^-?[0-9]+$",
+                                "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
                         "DataEndpoint": null
@@ -539,13 +574,18 @@
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'balance sheet'",
                     "Input": {
-                        "Type": "Number",
+                        "Type": "Text",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
                                 "Name": "Required",
                                 "Value": "",
                                 "ErrorMessage": "Enter your organisation's net assets for the last financial year"
+                            },
+                            {
+                                "Name": "Regex",
+                                "Value": "^-?[0-9]+$",
+                                "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
                         "DataEndpoint": null
@@ -563,13 +603,18 @@
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'balance sheet' under 'fixed assets' or 'goodwill'.",
                     "Input": {
-                        "Type": "Number",
+                        "Type": "Text",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
                                 "Name": "Required",
                                 "Value": "",
                                 "ErrorMessage": "Enter your organisation's total intangible assets for the last financial year"
+                            },
+                            {
+                                "Name": "Regex",
+                                "Value": "^-?[0-9]+$",
+                                "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
                         "DataEndpoint": null
@@ -618,7 +663,7 @@
                     ]
                 }
             ],
-            "BodyText": "",
+            "BodyText": "<p class='govuk-body'>For negative numbers, use a negative value. For example, '-1000'.</p>",
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
@@ -635,19 +680,24 @@
                 {
                     "QuestionId": "FH-140",
                     "QuestionTag": "FHA-CC-Annual-Turnover",
-                    "Label": "Enter your organisation's total annual turnover for the last year",
+                    "Label": "Enter your organisation's total annual turnover for the last financial year",
                     "ShortLabel": "",
                     "InputClasses": null,
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'profit and loss statement', 'income and expenditure account' or 'statement of financial activities'.",
                     "Input": {
-                        "Type": "Number",
+                        "Type": "Text",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
                                 "Name": "Required",
                                 "Value": "",
                                 "ErrorMessage": "Enter your organisation's total annual turnover for the last financial year"
+                            },
+                            {
+                                "Name": "Regex",
+                                "Value": "^-?[0-9]+$",
+                                "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
                         "DataEndpoint": null
@@ -659,19 +709,24 @@
                 {
                     "QuestionId": "FH-150",
                     "QuestionTag": "FHA-CC-Depreciation-Amortisation",
-                    "Label": "Enter your organisation's total depreciation and amortisation figures for the last financial year",
+                    "Label": "Enter your organisation's total depreciation and amortisation charges for the last financial year",
                     "ShortLabel": "",
                     "InputClasses": null,
                     "QuestionBodyText": "",
-                    "Hint": "You can find this on your organisation's 'operating profit note to the accounts'. You’ll need to add up all the items under 'note 2' and enter the total figure.",
+                    "Hint": "You can find this on your organisation's 'operating profit note to the accounts'. You'll need to add up all the items under 'note 2' and enter the total figure.",
                     "Input": {
-                        "Type": "Number",
+                        "Type": "Text",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
                                 "Name": "Required",
                                 "Value": "",
                                 "ErrorMessage": "Enter your organisation's total depreciation and amortisation charges for the last financial year"
+                            },
+                            {
+                                "Name": "Regex",
+                                "Value": "^-?[0-9]+$",
+                                "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
                         "DataEndpoint": null
@@ -689,13 +744,18 @@
                     "QuestionBodyText": "",
                     "Hint": "Profit or loss is the net amount earned after tax. You can find this under your organisation's 'profit and loss statement' or under 'net profit' or 'net movement in funds' in its accounts.",
                     "Input": {
-                        "Type": "Number",
+                        "Type": "Text",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
                                 "Name": "Required",
                                 "Value": "",
                                 "ErrorMessage": "Enter your organisation's profit or loss for the last financial year"
+                            },
+                            {
+                                "Name": "Regex",
+                                "Value": "^-?[0-9]+$",
+                                "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
                         "DataEndpoint": null
@@ -713,13 +773,18 @@
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'notes to the accounts'.",
                     "Input": {
-                        "Type": "Number",
+                        "Type": "Text",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
                                 "Name": "Required",
                                 "Value": "",
                                 "ErrorMessage": "Enter your organisation's total dividends for the last financial year"
+                            },
+                            {
+                                "Name": "Regex",
+                                "Value": "^-?[0-9]+$",
+                                "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
                         "DataEndpoint": null
@@ -737,13 +802,18 @@
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'balance sheet'.",
                     "Input": {
-                        "Type": "Number",
+                        "Type": "Text",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
                                 "Name": "Required",
                                 "Value": "",
                                 "ErrorMessage": "Enter your organisation's total current assets for the last financial year"
+                            },
+                            {
+                                "Name": "Regex",
+                                "Value": "^-?[0-9]+$",
+                                "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
                         "DataEndpoint": null
@@ -761,13 +831,18 @@
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'balance sheet' under 'creditors: amount falling due within one year'.",
                     "Input": {
-                        "Type": "Number",
+                        "Type": "Text",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
                                 "Name": "Required",
                                 "Value": "",
                                 "ErrorMessage": "Enter your organisation's total current liabilities for the last financial year"
+                            },
+                            {
+                                "Name": "Regex",
+                                "Value": "^-?[0-9]+$",
+                                "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
                         "DataEndpoint": null
@@ -785,13 +860,18 @@
                     "QuestionBodyText": "",
                     "Hint": "You will need to add up a total of: <ul class='govuk-list govuk-list--bullet'><li>bank overdraft</li><li>loans</li><li>amounts owed to directors - including director loans and director accounts</li><li>amounts owed to subsidiaries - if your organisation is part of a group</li><li>amounts due under finance leases or hire purchase contracts</li></ul>",
                     "Input": {
-                        "Type": "Number",
+                        "Type": "Text",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
                                 "Name": "Required",
                                 "Value": "",
                                 "ErrorMessage": "Enter your organisation's total borrowings for the last financial year"
+                            },
+                            {
+                                "Name": "Regex",
+                                "Value": "^-?[0-9]+$",
+                                "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
                         "DataEndpoint": null
@@ -809,13 +889,18 @@
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'balance sheet' under 'the sum of all assets less all liabilities'.",
                     "Input": {
-                        "Type": "Number",
+                        "Type": "Text",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
                                 "Name": "Required",
                                 "Value": "",
                                 "ErrorMessage": "Enter your organisation's net assets for the last financial year"
+                            },
+                            {
+                                "Name": "Regex",
+                                "Value": "^-?[0-9]+$",
+                                "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
                         "DataEndpoint": null
@@ -833,13 +918,18 @@
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'balance sheet' under 'fixed assets' or 'goodwill'.",
                     "Input": {
-                        "Type": "Number",
+                        "Type": "Text",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
                                 "Name": "Required",
                                 "Value": "",
                                 "ErrorMessage": "Enter your organisation's total intangible assets for the last financial year"
+                            },
+                            {
+                                "Name": "Regex",
+                                "Value": "^-?[0-9]+$",
+                                "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
                         "DataEndpoint": null
@@ -888,7 +978,7 @@
                     ]
                 }
             ],
-            "BodyText": "",
+            "BodyText": "<p class='govuk-body'>For negative numbers, use a negative value. For example, '-1000'.</p>",
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
@@ -905,19 +995,24 @@
                 {
                     "QuestionId": "FH-140",
                     "QuestionTag": "FHA-CC-Annual-Turnover",
-                    "Label": "Enter your organisation's total annual turnover for the last year",
+                    "Label": "Enter your organisation's total annual turnover for the last financial year",
                     "ShortLabel": "",
                     "InputClasses": null,
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'profit and loss statement', 'income and expenditure account' or 'statement of financial activities'.",
                     "Input": {
-                        "Type": "Number",
+                        "Type": "Text",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
                                 "Name": "Required",
                                 "Value": "",
                                 "ErrorMessage": "Enter your organisation's total annual turnover for the last financial year"
+                            },
+                            {
+                                "Name": "Regex",
+                                "Value": "^-?[0-9]+$",
+                                "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
                         "DataEndpoint": null
@@ -929,19 +1024,24 @@
                 {
                     "QuestionId": "FH-150",
                     "QuestionTag": "FHA-CC-Depreciation-Amortisation",
-                    "Label": "Enter your organisation's total depreciation and amortisation figures for the last financial year",
+                    "Label": "Enter your organisation's total depreciation and amortisation charges for the last financial year",
                     "ShortLabel": "",
                     "InputClasses": null,
                     "QuestionBodyText": "",
-                    "Hint": "You can find this on your organisation's 'operating profit note to the accounts'. You’ll need to add up all the items under 'note 2' and enter the total figure.",
+                    "Hint": "You can find this on your organisation's 'operating profit note to the accounts'. You'll need to add up all the items under 'note 2' and enter the total figure.",
                     "Input": {
-                        "Type": "Number",
+                        "Type": "Text",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
                                 "Name": "Required",
                                 "Value": "",
                                 "ErrorMessage": "Enter your organisation's total depreciation and amortisation charges for the last financial year"
+                            },
+                            {
+                                "Name": "Regex",
+                                "Value": "^-?[0-9]+$",
+                                "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
                         "DataEndpoint": null
@@ -959,13 +1059,18 @@
                     "QuestionBodyText": "",
                     "Hint": "Profit or loss is the net amount earned after tax. You can find this on your organisation's 'profit and loss statement'.",
                     "Input": {
-                        "Type": "Number",
+                        "Type": "Text",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
                                 "Name": "Required",
                                 "Value": "",
                                 "ErrorMessage": "Enter your organisation's profit or loss for the last financial year"
+                            },
+                            {
+                                "Name": "Regex",
+                                "Value": "^-?[0-9]+$",
+                                "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
                         "DataEndpoint": null
@@ -983,13 +1088,18 @@
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'notes to the accounts'.",
                     "Input": {
-                        "Type": "Number",
+                        "Type": "Text",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
                                 "Name": "Required",
                                 "Value": "",
                                 "ErrorMessage": "Enter your organisation's total dividends for the last financial year"
+                            },
+                            {
+                                "Name": "Regex",
+                                "Value": "^-?[0-9]+$",
+                                "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
                         "DataEndpoint": null
@@ -1007,13 +1117,18 @@
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'balance sheet'.",
                     "Input": {
-                        "Type": "Number",
+                        "Type": "Text",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
                                 "Name": "Required",
                                 "Value": "",
                                 "ErrorMessage": "Enter your organisation's total current assets for the last financial year"
+                            },
+                            {
+                                "Name": "Regex",
+                                "Value": "^-?[0-9]+$",
+                                "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
                         "DataEndpoint": null
@@ -1031,13 +1146,18 @@
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'balance sheet' under 'creditors: amount falling due within one year'.",
                     "Input": {
-                        "Type": "Number",
+                        "Type": "Text",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
                                 "Name": "Required",
                                 "Value": "",
                                 "ErrorMessage": "Enter your organisation's total current liabilities for the last financial year"
+                            },
+                            {
+                                "Name": "Regex",
+                                "Value": "^-?[0-9]+$",
+                                "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
                         "DataEndpoint": null
@@ -1055,13 +1175,18 @@
                     "QuestionBodyText": "",
                     "Hint": "You will need to add up a total of: <ul class='govuk-list govuk-list--bullet'><li>bank overdraft</li><li>loans</li><li>amounts owed to directors - including director loans and director accounts</li><li>amounts owed to subsidiaries - if your organisation is part of a group</li><li>amounts due under finance leases or hire purchase contracts</li></ul>",
                     "Input": {
-                        "Type": "Number",
+                        "Type": "Text",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
                                 "Name": "Required",
                                 "Value": "",
                                 "ErrorMessage": "Enter your organisation's total borrowings for the last financial year"
+                            },
+                            {
+                                "Name": "Regex",
+                                "Value": "^-?[0-9]+$",
+                                "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
                         "DataEndpoint": null
@@ -1079,13 +1204,18 @@
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'balance sheet' under 'the sum of all assets less all liabilities'.",
                     "Input": {
-                        "Type": "Number",
+                        "Type": "Text",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
                                 "Name": "Required",
                                 "Value": "",
                                 "ErrorMessage": "Enter your organisation's net assets for the last financial year"
+                            },
+                            {
+                                "Name": "Regex",
+                                "Value": "^-?[0-9]+$",
+                                "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
                         "DataEndpoint": null
@@ -1103,13 +1233,18 @@
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'balance sheet' under 'fixed assets' or 'goodwill'.",
                     "Input": {
-                        "Type": "Number",
+                        "Type": "Text",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
                                 "Name": "Required",
                                 "Value": "",
                                 "ErrorMessage": "Enter your organisation's total intangible assets for the last financial year"
+                            },
+                            {
+                                "Name": "Regex",
+                                "Value": "^-?[0-9]+$",
+                                "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
                         "DataEndpoint": null
@@ -1158,7 +1293,7 @@
                     ]
                 }
             ],
-            "BodyText": "",
+            "BodyText": "<p class='govuk-body'>For negative numbers, use a negative value. For example, '-1000'.</p>",
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
@@ -1175,19 +1310,24 @@
                 {
                     "QuestionId": "FH-140",
                     "QuestionTag": "FHA-CC-Annual-Turnover",
-                    "Label": "Enter your organisation's total annual turnover for the last year",
+                    "Label": "Enter your organisation's total annual turnover for the last financial year",
                     "ShortLabel": "",
                     "InputClasses": null,
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'profit and loss statement', 'income and expenditure account' or 'statement of financial activities'.",
                     "Input": {
-                        "Type": "Number",
+                        "Type": "Text",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
                                 "Name": "Required",
                                 "Value": "",
                                 "ErrorMessage": "Enter your organisation's total annual turnover for the last financial year"
+                            },
+                            {
+                                "Name": "Regex",
+                                "Value": "^-?[0-9]+$",
+                                "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
                         "DataEndpoint": null
@@ -1199,19 +1339,24 @@
                 {
                     "QuestionId": "FH-150",
                     "QuestionTag": "FHA-CC-Depreciation-Amortisation",
-                    "Label": "Enter your organisation's total depreciation and amortisation figures for the last financial year",
+                    "Label": "Enter your organisation's total depreciation and amortisation charges for the last financial year",
                     "ShortLabel": "",
                     "InputClasses": null,
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'operating profit note to the accounts'. You'll need to add up all the items under 'note 2' and enter the total figure.",
                     "Input": {
-                        "Type": "Number",
+                        "Type": "Text",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
                                 "Name": "Required",
                                 "Value": "",
                                 "ErrorMessage": "Enter your organisation's total depreciation and amortisation charges for the last financial year"
+                            },
+                            {
+                                "Name": "Regex",
+                                "Value": "^-?[0-9]+$",
+                                "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
                         "DataEndpoint": null
@@ -1229,13 +1374,18 @@
                     "QuestionBodyText": "",
                     "Hint": "Profit or loss is the net amount earned after tax. You can find this under 'net profit' or 'net movement in funds' in its accounts.",
                     "Input": {
-                        "Type": "Number",
+                        "Type": "Text",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
                                 "Name": "Required",
                                 "Value": "",
                                 "ErrorMessage": "Enter your organisation's profit or loss for the last financial year"
+                            },
+                            {
+                                "Name": "Regex",
+                                "Value": "^-?[0-9]+$",
+                                "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
                         "DataEndpoint": null
@@ -1253,13 +1403,18 @@
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'notes to the accounts'.",
                     "Input": {
-                        "Type": "Number",
+                        "Type": "Text",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
                                 "Name": "Required",
                                 "Value": "",
                                 "ErrorMessage": "Enter your organisation's total dividends for the last financial year"
+                            },
+                            {
+                                "Name": "Regex",
+                                "Value": "^-?[0-9]+$",
+                                "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
                         "DataEndpoint": null
@@ -1277,13 +1432,18 @@
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'balance sheet'.",
                     "Input": {
-                        "Type": "Number",
+                        "Type": "Text",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
                                 "Name": "Required",
                                 "Value": "",
                                 "ErrorMessage": "Enter your organisation's total current assets for the last financial year"
+                            },
+                            {
+                                "Name": "Regex",
+                                "Value": "^-?[0-9]+$",
+                                "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
                         "DataEndpoint": null
@@ -1301,13 +1461,18 @@
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'balance sheet' under 'creditors: amount falling due within one year'.",
                     "Input": {
-                        "Type": "Number",
+                        "Type": "Text",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
                                 "Name": "Required",
                                 "Value": "",
                                 "ErrorMessage": "Enter your organisation's total current liabilities for the last financial year"
+                            },
+                            {
+                                "Name": "Regex",
+                                "Value": "^-?[0-9]+$",
+                                "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
                         "DataEndpoint": null
@@ -1325,13 +1490,18 @@
                     "QuestionBodyText": "",
                     "Hint": "You will need to add up a total of: <ul class='govuk-list govuk-list--bullet'><li>bank overdraft</li><li>loans</li><li>amounts owed to directors - including director loans and director accounts</li><li>amounts owed to subsidiaries - if your organisation is part of a group</li><li>amounts due under finance leases or hire purchase contracts</li></ul>",
                     "Input": {
-                        "Type": "Number",
+                        "Type": "Text",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
                                 "Name": "Required",
                                 "Value": "",
                                 "ErrorMessage": "Enter your organisation's total borrowings for the last financial year"
+                            },
+                            {
+                                "Name": "Regex",
+                                "Value": "^-?[0-9]+$",
+                                "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
                         "DataEndpoint": null
@@ -1349,13 +1519,18 @@
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'balance sheet' under 'the sum of all assets less all liabilities'.",
                     "Input": {
-                        "Type": "Number",
+                        "Type": "Text",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
                                 "Name": "Required",
                                 "Value": "",
                                 "ErrorMessage": "Enter your organisation's net assets for the last financial year"
+                            },
+                            {
+                                "Name": "Regex",
+                                "Value": "^-?[0-9]+$",
+                                "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
                         "DataEndpoint": null
@@ -1373,13 +1548,18 @@
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'balance sheet' under 'fixed assets' or 'goodwill'.",
                     "Input": {
-                        "Type": "Number",
+                        "Type": "Text",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
                                 "Name": "Required",
                                 "Value": "",
                                 "ErrorMessage": "Enter your organisation's total intangible assets for the last financial year"
+                            },
+                            {
+                                "Name": "Regex",
+                                "Value": "^-?[0-9]+$",
+                                "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
                         "DataEndpoint": null
@@ -1428,7 +1608,7 @@
                     ]
                 }
             ],
-            "BodyText": "",
+            "BodyText": "<p class='govuk-body'>For negative numbers, use a negative value. For example, '-1000'.</p>",
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
@@ -1445,19 +1625,24 @@
                 {
                     "QuestionId": "FH-230",
                     "QuestionTag": "FHA-STP-Annual-Turnover",
-                    "Label": "Enter your organisation's total annual turnover for the last year",
+                    "Label": "Enter your organisation's total annual turnover for the last financial year",
                     "ShortLabel": "",
                     "InputClasses": null,
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'profit and loss statement', 'income and expenditure account' or 'statement of financial activities'.",
                     "Input": {
-                        "Type": "Number",
+                        "Type": "Text",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
                                 "Name": "Required",
                                 "Value": "",
                                 "ErrorMessage": "Enter your organisation's total annual turnover for the last financial year"
+                            },
+                            {
+                                "Name": "Regex",
+                                "Value": "^-?[0-9]+$",
+                                "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
                         "DataEndpoint": null
@@ -1469,19 +1654,24 @@
                 {
                     "QuestionId": "FH-240",
                     "QuestionTag": "FHA-STP-Depreciation-Amortisation",
-                    "Label": "Enter your organisation's total depreciation and amortisation figures for the last financial year",
+                    "Label": "Enter your organisation's total depreciation and amortisation charges for the last financial year",
                     "ShortLabel": "",
                     "InputClasses": null,
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'operating profit note to the accounts'. You'll need to add up all the items under 'expenditure' and enter the total figure.",
                     "Input": {
-                        "Type": "Number",
+                        "Type": "Text",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
                                 "Name": "Required",
                                 "Value": "",
                                 "ErrorMessage": "Enter your organisation's total depreciation and amortisation charges for the last financial year"
+                            },
+                            {
+                                "Name": "Regex",
+                                "Value": "^-?[0-9]+$",
+                                "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
                         "DataEndpoint": null
@@ -1499,13 +1689,18 @@
                     "QuestionBodyText": "",
                     "Hint": "Profit or loss is the net amount earned after tax. You can find this under 'net profit' in your organisation accounts.",
                     "Input": {
-                        "Type": "Number",
+                        "Type": "Text",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
                                 "Name": "Required",
                                 "Value": "",
                                 "ErrorMessage": "Enter your organisation's profit or loss for the last financial year"
+                            },
+                            {
+                                "Name": "Regex",
+                                "Value": "^-?[0-9]+$",
+                                "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
                         "DataEndpoint": null
@@ -1523,13 +1718,18 @@
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'notes to the accounts'.",
                     "Input": {
-                        "Type": "Number",
+                        "Type": "Text",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
                                 "Name": "Required",
                                 "Value": "",
                                 "ErrorMessage": "Enter your organisation's total dividends for the last financial year"
+                            },
+                            {
+                                "Name": "Regex",
+                                "Value": "^-?[0-9]+$",
+                                "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
                         "DataEndpoint": null
@@ -1547,13 +1747,18 @@
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'balance sheet'.",
                     "Input": {
-                        "Type": "Number",
+                        "Type": "Text",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
                                 "Name": "Required",
                                 "Value": "",
                                 "ErrorMessage": "Enter your organisation's total current assets for the last financial year"
+                            },
+                            {
+                                "Name": "Regex",
+                                "Value": "^-?[0-9]+$",
+                                "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
                         "DataEndpoint": null
@@ -1571,13 +1776,18 @@
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'balance sheet'.",
                     "Input": {
-                        "Type": "Number",
+                        "Type": "Text",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
                                 "Name": "Required",
                                 "Value": "",
                                 "ErrorMessage": "Enter your organisation's total current liabilities for the last financial year"
+                            },
+                            {
+                                "Name": "Regex",
+                                "Value": "^-?[0-9]+$",
+                                "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
                         "DataEndpoint": null
@@ -1595,13 +1805,18 @@
                     "QuestionBodyText": "",
                     "Hint": "You will need to add up a total of: <ul class='govuk-list govuk-list--bullet'><li>bank overdraft</li><li>loans</li><li>amounts owed to directors - including director loans and director accounts</li><li>amounts owed to subsidiaries - if your organisation is part of a group</li><li>amounts due under finance leases or hire purchase contracts</li></ul>",
                     "Input": {
-                        "Type": "Number",
+                        "Type": "Text",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
                                 "Name": "Required",
                                 "Value": "",
                                 "ErrorMessage": "Enter your organisation's total borrowings for the last financial year"
+                            },
+                            {
+                                "Name": "Regex",
+                                "Value": "^-?[0-9]+$",
+                                "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
                         "DataEndpoint": null
@@ -1619,13 +1834,18 @@
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'balance sheet' under the 'capital account balance'.",
                     "Input": {
-                        "Type": "Number",
+                        "Type": "Text",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
                                 "Name": "Required",
                                 "Value": "",
                                 "ErrorMessage": "Enter your organisation's net assets for the last financial year"
+                            },
+                            {
+                                "Name": "Regex",
+                                "Value": "^-?[0-9]+$",
+                                "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
                         "DataEndpoint": null
@@ -1643,13 +1863,18 @@
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'balance sheet' under 'fixed assets' or 'goodwill'.",
                     "Input": {
-                        "Type": "Number",
+                        "Type": "Text",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
                                 "Name": "Required",
                                 "Value": "",
                                 "ErrorMessage": "Enter your organisation's total intangible assets for the last financial year"
+                            },
+                            {
+                                "Name": "Regex",
+                                "Value": "^-?[0-9]+$",
+                                "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
                         "DataEndpoint": null
@@ -1692,7 +1917,7 @@
                     ]
                 }
             ],
-            "BodyText": "",
+            "BodyText": "<p class='govuk-body'>For negative numbers, use a negative value. For example, '-1000'.</p>",
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
@@ -1709,19 +1934,24 @@
                 {
                     "QuestionId": "FH-230",
                     "QuestionTag": "FHA-STP-Annual-Turnover",
-                    "Label": "Enter your organisation's total annual turnover for the last year",
+                    "Label": "Enter your organisation's total annual turnover for the last financial year",
                     "ShortLabel": "",
                     "InputClasses": null,
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'profit and loss statement', 'income and expenditure account' or 'statement of financial activities'.",
                     "Input": {
-                        "Type": "Number",
+                        "Type": "Text",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
                                 "Name": "Required",
                                 "Value": "",
                                 "ErrorMessage": "Enter your organisation's total annual turnover for the last financial year"
+                            },
+                            {
+                                "Name": "Regex",
+                                "Value": "^-?[0-9]+$",
+                                "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
                         "DataEndpoint": null
@@ -1733,19 +1963,24 @@
                 {
                     "QuestionId": "FH-240",
                     "QuestionTag": "FHA-STP-Depreciation-Amortisation",
-                    "Label": "Enter your organisation's total depreciation and amortisation figures for the last financial year",
+                    "Label": "Enter your organisation's total depreciation and amortisation charges for the last financial year",
                     "ShortLabel": "",
                     "InputClasses": null,
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'operating profit note to the accounts'. You'll need to add up all the items under 'expenditure' and enter the total figure.",
                     "Input": {
-                        "Type": "Number",
+                        "Type": "Text",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
                                 "Name": "Required",
                                 "Value": "",
                                 "ErrorMessage": "Enter your organisation's total depreciation and amortisation charges for the last financial year"
+                            },
+                            {
+                                "Name": "Regex",
+                                "Value": "^-?[0-9]+$",
+                                "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
                         "DataEndpoint": null
@@ -1763,13 +1998,18 @@
                     "QuestionBodyText": "",
                     "Hint": "Profit or loss is the net amount earned after tax.",
                     "Input": {
-                        "Type": "Number",
+                        "Type": "Text",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
                                 "Name": "Required",
                                 "Value": "",
                                 "ErrorMessage": "Enter your organisation's profit or loss for the last financial year"
+                            },
+                            {
+                                "Name": "Regex",
+                                "Value": "^-?[0-9]+$",
+                                "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
                         "DataEndpoint": null
@@ -1787,13 +2027,18 @@
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'notes to the accounts'.",
                     "Input": {
-                        "Type": "Number",
+                        "Type": "Text",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
                                 "Name": "Required",
                                 "Value": "",
                                 "ErrorMessage": "Enter your organisation's total dividends for the last financial year"
+                            },
+                            {
+                                "Name": "Regex",
+                                "Value": "^-?[0-9]+$",
+                                "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
                         "DataEndpoint": null
@@ -1811,13 +2056,18 @@
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'balance sheet'.",
                     "Input": {
-                        "Type": "Number",
+                        "Type": "Text",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
                                 "Name": "Required",
                                 "Value": "",
                                 "ErrorMessage": "Enter your organisation's total current assets for the last financial year"
+                            },
+                            {
+                                "Name": "Regex",
+                                "Value": "^-?[0-9]+$",
+                                "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
                         "DataEndpoint": null
@@ -1835,13 +2085,18 @@
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'balance sheet'.",
                     "Input": {
-                        "Type": "Number",
+                        "Type": "Text",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
                                 "Name": "Required",
                                 "Value": "",
                                 "ErrorMessage": "Enter your organisation's total current liabilities for the last financial year"
+                            },
+                            {
+                                "Name": "Regex",
+                                "Value": "^-?[0-9]+$",
+                                "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
                         "DataEndpoint": null
@@ -1859,13 +2114,18 @@
                     "QuestionBodyText": "",
                     "Hint": "You will need to add up a total of: <ul class='govuk-list govuk-list--bullet'><li>bank overdraft</li><li>loans</li><li>amounts owed to directors - including director loans and director accounts</li><li>amounts owed to subsidiaries - if your organisation is part of a group</li><li>amounts due under finance leases or hire purchase contracts</li></ul>",
                     "Input": {
-                        "Type": "Number",
+                        "Type": "Text",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
                                 "Name": "Required",
                                 "Value": "",
                                 "ErrorMessage": "Enter your organisation's total borrowings for the last financial year"
+                            },
+                            {
+                                "Name": "Regex",
+                                "Value": "^-?[0-9]+$",
+                                "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
                         "DataEndpoint": null
@@ -1883,13 +2143,18 @@
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'balance sheet' under the 'capital account balance'.",
                     "Input": {
-                        "Type": "Number",
+                        "Type": "Text",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
                                 "Name": "Required",
                                 "Value": "",
                                 "ErrorMessage": "Enter your organisation's net assets for the last financial year"
+                            },
+                            {
+                                "Name": "Regex",
+                                "Value": "^-?[0-9]+$",
+                                "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
                         "DataEndpoint": null
@@ -1907,13 +2172,18 @@
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'balance sheet' under 'fixed assets' or 'goodwill'.",
                     "Input": {
-                        "Type": "Number",
+                        "Type": "Text",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
                                 "Name": "Required",
                                 "Value": "",
                                 "ErrorMessage": "Enter your organisation's total intangible assets for the last financial year"
+                            },
+                            {
+                                "Name": "Regex",
+                                "Value": "^-?[0-9]+$",
+                                "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
                         "DataEndpoint": null
@@ -1956,7 +2226,7 @@
                     ]
                 }
             ],
-            "BodyText": "",
+            "BodyText": "<p class='govuk-body'>For negative numbers, use a negative value. For example, '-1000'.</p>",
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
