@@ -9,28 +9,13 @@
             "SequenceId": null,
             "SectionId": null,
             "Title": "Criminal and compliance checks on your organisation",
-            "LinkTitle": "",
+            "LinkTitle": "Criminal and compliance checks on your organisation",
             "InfoText": "",
-            "Questions": [
-                {
-                    "QuestionId": "CC-10",
-                    "QuestionTag": "Criminal-Introduction-All",
-                    "Label": "Criminal and compliance checks on your organisation",
-                    "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body'>Lorem ipsum criminal compliance checks introduction page</p>",
-                    "Hint": "",
-                    "Input": {
-                        "Type": "Hidden",
-                        "Validations": []
-                    },
-                    "Order": null
-                }
-            ],
+            "Questions": [],
             "PageOfAnswers": [],
-            "Next": [
-                {
-                    "Action": "NextPage",
-                    "ReturnId": null,
+            "Next": [{
+                    "Action": "ReturnToSection",
+                    "ReturnId": "3.2",
                     "Conditions": [],
                     "ConditionMet": false
                 }
@@ -39,12 +24,11 @@
             "AllowMultipleAnswers": false,
             "Order": null,
             "Active": true,
-            "Visible": true,
             "Feedback": null,
             "HasFeedback": false,
             "NotRequiredConditions": [],
             "ActivatedByPageId": null,
-            "BodyText": ""
+            "BodyText": "<p class='govuk-body' id='crim-intro-all'>This section is to ensure public funds, employers and apprentices are protected.</p><p class='govuk-body'>You'll need to provide a brief summary if your organisation has:</p><ul class='govuk-list govuk-list--bullet'><li>composition with creditors</li><li>failed to pay back funds to ESFA or any other public body</li><li>had a contract terminated by a public body</li><li>had early withdrawal from a contract with a public body</li><li>been removed from the Register of Training Organisations (RoTO)</li><li>had funds removed from any education bodies</li><li>been removed from any professional or trade registers</li><li>had involuntary withdrawal from Initial Teacher Training accreditation</li><li>been removed from any charity register</li><li>been investigated due to safeguarding issues</li><li>been investigated due to whistleblowing issues</li><li>been made bankrupt</li></ul>"
         }
     ]
 }

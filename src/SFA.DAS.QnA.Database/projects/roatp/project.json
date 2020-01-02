@@ -60,10 +60,40 @@
                "name":"Introduction and what you'll need"
             },
             { 
+               "id":"section2.2",
+               "SequenceNo":2,
+               "SectionNo":2,
+               "name":"Your organisation's financial evidence"
+            },
+            { 
+               "id":"section2.3",
+               "SequenceNo":2,
+               "SectionNo":3,
+               "name":"Your UK ultimate parent company's financial evidence"
+            },
+            { 
                "id":"section3.1",
                "SequenceNo":3,
                "SectionNo":1,
                "name":"Introduction and what you'll need"
+            },
+            { 
+               "id":"section3.2",
+               "SequenceNo":3,
+               "SectionNo":2,
+               "name":"Checks on your organisation"
+            },
+            { 
+               "id":"section3.3",
+               "SequenceNo":3,
+               "SectionNo":3,
+               "name":"Introduction and what you'll need"
+            },
+            { 
+               "id":"section3.4",
+               "SequenceNo":3,
+               "SectionNo":4,
+               "name":"Checks on who's in control of your organisation"
             },
             { 
                "id":"section4.1",

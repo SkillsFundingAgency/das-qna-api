@@ -10,7 +10,7 @@
     {
         if (errorMessage.Field == Model.QuestionId)
         {
-            <span class="govuk-error-message">@errorMessage.ErrorMessage</span>
+            <span class="govuk-error-message">@Html.Raw(errorMessage.ErrorMessage)</span>
         }
     }
 }
