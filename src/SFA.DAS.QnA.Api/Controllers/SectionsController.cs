@@ -4,8 +4,10 @@ using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using SFA.DAS.QnA.Api.Infrastructure;
 using SFA.DAS.QnA.Api.Types;
 using SFA.DAS.QnA.Application.Queries.Sections.GetSection;
+using SFA.DAS.QnA.Application.Queries.Sections.GetSections;
 using SFA.DAS.QnA.Application.Queries.Sections.GetSequenceSections;
 
 namespace SFA.DAS.QnA.Api.Controllers
@@ -19,6 +21,26 @@ namespace SFA.DAS.QnA.Api.Controllers
         public SectionsController(IMediator mediator)
         {
             _mediator = mediator;
+        }
+
+        /// <summary>
+        ///     Returns all of the Sections for the Application
+        /// </summary>
+        /// <returns>An array of Sections</returns>
+        /// <response code="200">Returns the Application's Sections</response>
+        /// <response code="204">If there are no Sections for the given Application Id</response>
+        /// <response code="404">If there is no Application for the given Application Id</response>
+        [HttpGet("{applicationId}/sections")]
+        [ProducesResponseType(200)]
+        [ProducesResponseType(204)]
+        [ProducesResponseType(404)]
+        public async Task<ActionResult<List<Section>>> GetSections(Guid applicationId)
+        {
+            var sections = await _mediator.Send(new GetSectionsRequest(applicationId), CancellationToken.None);
+            if (!sections.Success) return NotFound(new NotFoundError(sections.Message));
+            if (sections.Value.Count == 0) return NoContent();
+
+            return sections.Value;
         }
 
         /// <summary>
