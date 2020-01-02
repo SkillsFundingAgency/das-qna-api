@@ -118,9 +118,9 @@
                                 "ErrorMessage": "Tell us how your organisation will ensure 20% off the job training is relevant to the specific apprenticeship being delivered"
                             },
                             {
-                                "Name": "MaxLength",
-                                "Value": "1500",
-                                "ErrorMessage": "Your answer must be 1500 characters or less"
+                                "Name": "MaxWordCount",
+								"Value": "275",
+								"ErrorMessage": "Your answer must be 275 words or less"	
                             }
                         ],
                         "DataEndpoint": null
