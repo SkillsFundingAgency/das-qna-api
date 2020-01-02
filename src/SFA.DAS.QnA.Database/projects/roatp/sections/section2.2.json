@@ -954,12 +954,6 @@
             "Active": false,
             "NotRequiredConditions": [
                 {
-                    "Field": "FHA-Funding-Turnover-5pc",
-                    "IsOneOf": [
-                        "Yes"
-                    ]
-                },
-                {
                     "Field": "UKRLP-Verification-Company",
                     "IsOneOf": [
                         null
@@ -1268,12 +1262,6 @@
             "Order": null,
             "Active": false,
             "NotRequiredConditions": [
-                {
-                    "Field": "FHA-Funding-Turnover-5pc",
-                    "IsOneOf": [
-                        "Yes"
-                    ]
-                },
                 {
                     "Field": "UKRLP-Verification-Company",
                     "IsOneOf": [
@@ -1584,12 +1572,6 @@
             "Active": false,
             "NotRequiredConditions": [
                 {
-                    "Field": "FHA-Funding-Turnover-5pc",
-                    "IsOneOf": [
-                        "Yes"
-                    ]
-                },
-                {
                     "Field": "UKRLP-Verification-Company",
                     "IsOneOf": [
                         "TRUE"
@@ -1899,12 +1881,6 @@
             "Active": false,
             "NotRequiredConditions": [
                 {
-                    "Field": "FHA-Funding-Turnover-5pc",
-                    "IsOneOf": [
-                        "Yes"
-                    ]
-                },
-                {
                     "Field": "UKRLP-Verification-Company",
                     "IsOneOf": [
                         "TRUE"
@@ -2207,12 +2183,6 @@
             "Order": null,
             "Active": false,
             "NotRequiredConditions": [
-                {
-                    "Field": "FHA-Funding-Turnover-5pc",
-                    "IsOneOf": [
-                        "Yes"
-                    ]
-                },
                 {
                     "Field": "UKRLP-Verification-Company",
                     "IsOneOf": [
