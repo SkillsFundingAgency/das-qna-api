@@ -780,7 +780,30 @@
                         "1",
                         "2"
                     ]
-                }
+                },
+				{
+				"Field": "PAT-Type-Of-Training-supporting",
+                    "IsOneOf": [
+                        "Full apprenticeship standards,Full apprenticeship frameworks,Part apprenticeship standards,Part apprenticeship frameworks,Functional skills",
+						"Full apprenticeship frameworks,Part apprenticeship standards,Part apprenticeship frameworks,Functional skills",
+						"Full apprenticeship standards,Part apprenticeship standards,Part apprenticeship frameworks,Functional skills",
+						"Full apprenticeship standards,Full apprenticeship frameworks,Part apprenticeship frameworks,Functional skills",
+						"Full apprenticeship standards,Full apprenticeship frameworks,Part apprenticeship standards,Functional skills",
+						"Full apprenticeship standards,Full apprenticeship frameworks,Functional skills",
+						"Full apprenticeship standards,Part apprenticeship frameworks,Functional skills",
+						"Full apprenticeship frameworks,Part apprenticeship standards,Functional skills",
+						"Part apprenticeship standards,Part apprenticeship frameworks,Functional skills",
+						"Full apprenticeship standards,Full apprenticeship frameworks,Part apprenticeship standards,Part apprenticeship frameworks",
+						"Full apprenticeship frameworks,Part apprenticeship standards,Part apprenticeship frameworks",
+						"Full apprenticeship standards,Part apprenticeship standards,Part apprenticeship frameworks",
+						"Full apprenticeship standards,Full apprenticeship frameworks,Part apprenticeship frameworks",
+						"Full apprenticeship standards,Full apprenticeship frameworks,Part apprenticeship standards",
+						"Full apprenticeship standards,Full apprenticeship frameworks",
+						"Full apprenticeship standards,Part apprenticeship frameworks",
+						"Full apprenticeship frameworks,Part apprenticeship standards",
+						"Part apprenticeship standards,Part apprenticeship frameworks"
+                    ]
+				}
             ],
             "ActivatedByPageId": "6023",
             "BodyText": ""
@@ -984,58 +1007,58 @@
             "LinkTitle": "",
             "InfoText": "",
             "Questions": [{
-          "QuestionId": "PAT-671",
-          "QuestionTag": "Pat-contact-directory-name",
-          "Label": "<span class='govuk-label'>Full name</span>",
-          "ShortLabel": "",
-          "QuestionBodyText": "",
-          "Hint": "",
-          "Input": {
-            "Type": "Text",
-            "Validations": [
-              {
-                "Name": "Required",
-                "Value": null,
-                "ErrorMessage": "Enter a full name"
-              },
-              {
-                "Name": "MaxLength",
-                "Value": 255,
-                "ErrorMessage": "Enter a full name using 255 characters or less"
-              }
-            ]
-          },
-          "Order": null
-        },
-        {
-          "QuestionId": "PAT-672",
-          "QuestionTag": "Pat-contact-directory-email",
-          "Label": "<span class='govuk-label'>Email</span>",
-          "ShortLabel": "",
-          "QuestionBodyText": "",
-          "Hint": "",
-          "Input": {
-            "Type": "Text",
-            "Validations": [
-              {
-                "Name": "Required",
-                "Value": null,
-                "ErrorMessage": "Enter a valid email"
-              },
-              {
-                "Name": "MaxLength",
-                "Value": 70,
-                "ErrorMessage": "Enter an email using 70 characters or less"
-              },
-              {
-                "Name": "Email",
-                "Value": null,
-                "ErrorMessage": "Enter an email in the correct format, like name@example.com"
-              }
-            ]
-          },
-          "Order": null
-        }],
+				  "QuestionId": "PAT-671",
+				  "QuestionTag": "Pat-contact-directory-name",
+				  "Label": "<span class='govuk-label'>Full name</span>",
+				  "ShortLabel": "",
+				  "QuestionBodyText": "",
+				  "Hint": "",
+				  "Input": {
+					"Type": "Text",
+					"Validations": [
+					  {
+						"Name": "Required",
+						"Value": null,
+						"ErrorMessage": "Enter a full name"
+					  },
+					  {
+						"Name": "MaxLength",
+						"Value": 255,
+						"ErrorMessage": "Enter a full name using 255 characters or less"
+					  }
+					]
+				  },
+				  "Order": null
+				},
+				{
+				  "QuestionId": "PAT-672",
+				  "QuestionTag": "Pat-contact-directory-email",
+				  "Label": "<span class='govuk-label'>Email</span>",
+				  "ShortLabel": "",
+				  "QuestionBodyText": "",
+				  "Hint": "",
+				  "Input": {
+					"Type": "Text",
+					"Validations": [
+					  {
+						"Name": "Required",
+						"Value": null,
+						"ErrorMessage": "Enter a valid email"
+					  },
+					  {
+						"Name": "MaxLength",
+						"Value": 70,
+						"ErrorMessage": "Enter an email using 70 characters or less"
+					  },
+					  {
+						"Name": "Email",
+						"Value": null,
+						"ErrorMessage": "Enter an email in the correct format, like name@example.com"
+					  }
+					]
+				  },
+				  "Order": null
+				}],
             "PageOfAnswers": [],
             "Next": [
                 {
@@ -1052,6 +1075,15 @@
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
+			"NotRequiredConditions": [
+					{
+						"Field": "Apply-ProviderRoute",
+						"IsOneOf": [
+							"2"
+						]
+					}
+					
+            ],
             "ActivatedByPageId": "6020,6022,6800",
             "BodyText": "<p class='govuk-body'>This must be the person who will use the 'Publish to Course Directory' service to enter your organisation's apprenticeships.</p>"
         },
@@ -1182,11 +1214,6 @@
 						{
                             "QuestionId": null,
                             "QuestionTag": "PAT-Type-Of-Training-employer",
-                            "Contains": "Apprenticeship standards"
-                        },
-						{
-                            "QuestionId": null,
-                            "QuestionTag": "PAT-Type-Of-Training-employer",
                             "Contains": "Apprenticeship frameworks"
                         }
                     ],
@@ -1200,11 +1227,6 @@
                             "QuestionId": null,
                             "QuestionTag": "Apply-ProviderRoute",
                             "MustEqual": "1"
-                        },
-						{
-                            "QuestionId": null,
-                            "QuestionTag": "PAT-Type-Of-Training-main",
-                            "Contains": "Apprenticeship standards"
                         },
 						{
                             "QuestionId": null,
