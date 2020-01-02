@@ -780,7 +780,30 @@
                         "1",
                         "2"
                     ]
-                }
+                },
+				{
+				"Field": "PAT-Type-Of-Training-supporting",
+                    "IsOneOf": [
+                        "Full apprenticeship standards,Full apprenticeship frameworks,Part apprenticeship standards,Part apprenticeship frameworks,Functional skills",
+						"Full apprenticeship frameworks,Part apprenticeship standards,Part apprenticeship frameworks,Functional skills",
+						"Full apprenticeship standards,Part apprenticeship standards,Part apprenticeship frameworks,Functional skills",
+						"Full apprenticeship standards,Full apprenticeship frameworks,Part apprenticeship frameworks,Functional skills",
+						"Full apprenticeship standards,Full apprenticeship frameworks,Part apprenticeship standards,Functional skills",
+						"Full apprenticeship standards,Full apprenticeship frameworks,Functional skills",
+						"Full apprenticeship standards,Part apprenticeship frameworks,Functional skills",
+						"Full apprenticeship frameworks,Part apprenticeship standards,Functional skills",
+						"Part apprenticeship standards,Part apprenticeship frameworks,Functional skills",
+						"Full apprenticeship standards,Full apprenticeship frameworks,Part apprenticeship standards,Part apprenticeship frameworks",
+						"Full apprenticeship frameworks,Part apprenticeship standards,Part apprenticeship frameworks",
+						"Full apprenticeship standards,Part apprenticeship standards,Part apprenticeship frameworks",
+						"Full apprenticeship standards,Full apprenticeship frameworks,Part apprenticeship frameworks",
+						"Full apprenticeship standards,Full apprenticeship frameworks,Part apprenticeship standards",
+						"Full apprenticeship standards,Full apprenticeship frameworks",
+						"Full apprenticeship standards,Part apprenticeship frameworks",
+						"Full apprenticeship frameworks,Part apprenticeship standards",
+						"Part apprenticeship standards,Part apprenticeship frameworks"
+                    ]
+				}
             ],
             "ActivatedByPageId": "6023",
             "BodyText": ""
@@ -1053,18 +1076,13 @@
             "DisplayType": null,
             "Feedback": null,
 			"NotRequiredConditions": [
-                    {
-                    "Field": "PAT-Type-Of-Training-main",
-                    "IsOneOf": [
-                        "Apprenticeship frameworks"
-                    ]
-					},
 					{
-						"Field": "PAT-Type-Of-Training-employer",
+						"Field": "Apply-ProviderRoute",
 						"IsOneOf": [
-							"Apprenticeship frameworks"
+							"2"
 						]
 					}
+					
             ],
             "ActivatedByPageId": "6020,6022,6800",
             "BodyText": "<p class='govuk-body'>This must be the person who will use the 'Publish to Course Directory' service to enter your organisation's apprenticeships.</p>"
@@ -1196,11 +1214,6 @@
 						{
                             "QuestionId": null,
                             "QuestionTag": "PAT-Type-Of-Training-employer",
-                            "Contains": "Apprenticeship standards"
-                        },
-						{
-                            "QuestionId": null,
-                            "QuestionTag": "PAT-Type-Of-Training-employer",
                             "Contains": "Apprenticeship frameworks"
                         }
                     ],
@@ -1214,11 +1227,6 @@
                             "QuestionId": null,
                             "QuestionTag": "Apply-ProviderRoute",
                             "MustEqual": "1"
-                        },
-						{
-                            "QuestionId": null,
-                            "QuestionTag": "PAT-Type-Of-Training-main",
-                            "Contains": "Apprenticeship standards"
                         },
 						{
                             "QuestionId": null,
