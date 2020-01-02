@@ -69,7 +69,7 @@
                 }
             ],
             "ActivatedByPageId": null,
-            "BodyText": "<p class='govuk-body'></p>"
+            "BodyText": ""
         },
         {
             "PageId": "6310",
