@@ -8,7 +8,7 @@
     {
         if (errorMessage.Field == Model.QuestionId)
         {
-            <span class="govuk-error-message">@errorMessage.ErrorMessage</span>
+            <span class="govuk-error-message">@Html.Raw(errorMessage.ErrorMessage)</span>
             checkedStatus = string.Empty;
         }
     }
@@ -29,7 +29,7 @@
     {
         var checkboxChecked = (Model.Value != null && Model.Value.Contains(Model.Options[i].Value)) ? checkedStatus : "";
         var optionId = Model.QuestionId + (i == 0 ? "" : "_" + i);
-    <div class="govuk-checkboxes__item">
+    <div class="govuk-checkboxes__item" id="@Model.QuestionId">
         @if (Model.Options[i].HasHintText)
         {
             <input class="govuk-checkboxes__input js-check-all-checkbox" type="checkbox" id="option_@i" name="@Model.QuestionId" value="@Model.Options[i].Value" @checkboxChecked aria-describedby="@optionId-hint" />
