@@ -138,27 +138,11 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
                         if (!String.IsNullOrWhiteSpace(condition.QuestionTag))
                         {
                             var questionTagValue = applicationData[condition.QuestionTag];
+                            var questionTag = questionTagValue.Value<string>();
+                            allConditionsSatisfied = CheckAllConditionsSatisfied(condition, questionTag);
 
-                            if (questionTagValue == null )
-                            {
-                                allConditionsSatisfied = false;
+                            if (!allConditionsSatisfied)
                                 break;
-                            }
-                            else if (!string.IsNullOrEmpty(condition.MustEqual) && questionTagValue.Value<string>() != condition.MustEqual)
-                            {
-                                allConditionsSatisfied = false;
-                                break;
-                            }
-                            else if (!string.IsNullOrEmpty(condition.Contains))
-                            {
-                                var listOfAnswers = questionTagValue.Value<string>()
-                                    .Split(",", StringSplitOptions.RemoveEmptyEntries);
-                                if (!listOfAnswers.Contains(condition.Contains))
-                                {
-                                    allConditionsSatisfied = false;
-                                    break;
-                                }
-                            }
                         }
                         else
                         {
@@ -215,13 +199,39 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
             throw new ApplicationException($"Page {page.PageId}, in Sequence {page.SequenceId}, Section {page.SectionId} is missing a matching 'Next' instruction for Application {section.ApplicationId}");
         }
 
+        private static bool CheckAllConditionsSatisfied(Condition condition, string questionTag)
+        {
+            var allConditionsSatisfied = true;
+            
+
+            if (String.IsNullOrEmpty(questionTag))
+            {
+                allConditionsSatisfied = false;
+            }
+            else if (!string.IsNullOrEmpty(condition.MustEqual) && questionTag != condition.MustEqual)
+            {
+                allConditionsSatisfied = false;
+            }
+            else if (!string.IsNullOrEmpty(condition.Contains))
+            {
+                var listOfAnswers = questionTag
+                    .Split(",", StringSplitOptions.RemoveEmptyEntries);
+                if (!listOfAnswers.Contains(condition.Contains))
+                {
+                    allConditionsSatisfied = false;
+                }
+            }
+
+            return allConditionsSatisfied;
+        }
+
         public Next FindNextRequiredAction(ApplicationSection section, Next nextAction, JObject applicationData)
         {
             if (section?.QnAData is null || nextAction is null || nextAction.Action != "NextPage") return nextAction;
 
             var isRequiredNextAction = true;
 
-            // Check here for any NotRequiredConditions on the next page.
+            // CheckAllConditionsSatisfied here for any NotRequiredConditions on the next page.
             var nextPage = section.QnAData?.Pages.FirstOrDefault(p => p.PageId == nextAction.ReturnId);
 
             if (nextPage is null || applicationData is null)

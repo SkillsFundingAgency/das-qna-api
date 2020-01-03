@@ -1,10 +1,12 @@
 using System;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using NUnit.Framework;
 using SFA.DAS.QnA.Api.Types.Page;
 using SFA.DAS.QnA.Application.Commands.SetPageAnswers;
 using SFA.DAS.QnA.Data;
+using SFA.DAS.QnA.Data.Entities;
 
 namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.FindNextRequiredActionTests
 {
@@ -36,6 +38,18 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.FindNextRequiredAction
             await QnaDataContext.SaveChangesAsync();
 
             NextAction = new Next {Action = "NextPage", ReturnId = "2"};   
+        }
+
+
+        [Test]
+        public void TestNoNextAction()
+        {
+            var applicationSection = new ApplicationSection();
+            Next nextAction = null;
+             var applicationData = JObject.Parse("{}");
+            var result = SetAnswersBase.FindNextRequiredAction(applicationSection, nextAction, applicationData);
+
+            Assert.IsNull(result);
         }
     }
 }
