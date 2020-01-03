@@ -24,9 +24,9 @@
                                 "Value": null,
                                 "ErrorMessage": "Tell us what your organisation's process is for evaluating the quality of training delivered"
                             }, {
-                                "Name": "MaxLength",
-                                "Value": 1500,
-                                "ErrorMessage": "Your answer must be 1500 characters or less"
+                                "Name": "MaxWordCount",
+                                "Value":  275,
+                                "ErrorMessage": "Your answer must be 275 words or less"
                             }
                         ]
                     },
@@ -71,9 +71,9 @@
                                 "Value": null,
                                 "ErrorMessage": "Tell us how your organisation has made improvements using its process for evaluating the quality of training delivered"
                             }, {
-                                "Name": "MaxLength",
-                                "Value": 1500,
-                                "ErrorMessage": "Your answer must be 1500 characters or less"
+                                "Name": "MaxWordCount",
+                                "Value": 275,
+                                "ErrorMessage": "Your answer must be 275 words or less"
                             }
                         ]
                     },
