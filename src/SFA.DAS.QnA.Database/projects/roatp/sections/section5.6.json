@@ -24,9 +24,9 @@
                                 "Value": "",
                                 "ErrorMessage": "Tell us what your organisation's process is for initial assessments to recognise prior learning"
                             }, {
-                                "Name": "MaxLength",
-                                "Value": "1500",
-                                "ErrorMessage": "Your answer must be 1500 characters or less"
+                                "Name": "MaxWordCount",
+                                "Value": "275",
+                                "ErrorMessage": "Your answer must be 275 words or less"
                             }
                         ]
                     },
@@ -70,9 +70,9 @@
                                 "Value": "",
                                 "ErrorMessage": "Tell us what your organisation's process is to assess English and maths qualifications for apprentices"
                             }, {
-                                "Name": "MaxLength",
-                                "Value": "1500",
-                                "ErrorMessage": "Your answer must be 1500 characters or less"
+                                "Name": "MaxWordCount",
+                                "Value": "275",
+                                "ErrorMessage": "Your answer must be 275 words or less"
                             }
                         ]
                     },
