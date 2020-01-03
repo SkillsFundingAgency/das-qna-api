@@ -192,9 +192,9 @@
                                 "Value": "",
                                 "ErrorMessage": "Tell us how these quality and high standards in apprenticeship training are communicated to employees"
                             }, {
-                                "Name": "MaxLength",
-                                "Value": "1500",
-                                "ErrorMessage": "Your answer must be 1500 characters or less"
+                                "Name": "MaxWordCount",
+								"Value": "275",
+								"ErrorMessage": "Your answer must be 275 words or less"								
                             }
                         ]
                     },
