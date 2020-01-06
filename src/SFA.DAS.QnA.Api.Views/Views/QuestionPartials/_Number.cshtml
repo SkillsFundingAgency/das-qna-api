@@ -16,6 +16,11 @@
     }
 }
 
+@if (Model.InputPrefix != null)
+{
+    <span class="govuk-body-l govuk-!-margin-right-2">@Model.InputPrefix</span>
+}
+
 <input
     class="govuk-input @inputClasses @isError"
     type="number"
@@ -24,3 +29,8 @@
     value="@Model.Value"
     pattern="[0-9]*"
 />
+
+@if (Model.InputSuffix != null)
+{
+    <span class="govuk-body-l govuk-!-margin-left-2">@Model.InputSuffix</span>
+}
