@@ -16,7 +16,7 @@
     }
 }
 
-@if (Model.InputPrefix != null)
+@if (!string.IsNullOrWhiteSpace(Model.InputPrefix))
 {
     <span class="govuk-body-l govuk-!-margin-right-2">@Model.InputPrefix</span>
 }
@@ -30,7 +30,7 @@
     pattern="[0-9]*"
 />
 
-@if (Model.InputSuffix != null)
+@if (!string.IsNullOrWhiteSpace(Model.InputSuffix))
 {
     <span class="govuk-body-l govuk-!-margin-left-2">@Model.InputSuffix</span>
 }
