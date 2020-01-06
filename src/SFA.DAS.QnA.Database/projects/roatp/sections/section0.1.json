@@ -414,6 +414,19 @@
                         "Validations": []
                     },
                     "Order": null
+                },
+                {
+                    "QuestionId": "YO-1",
+                    "QuestionTag": "Apply-ProviderRoute",
+                    "Label": "",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "Text",
+                        "Validations": []
+                    },
+                    "Order": null
                 }
             ],
             "PageOfAnswers": [],
