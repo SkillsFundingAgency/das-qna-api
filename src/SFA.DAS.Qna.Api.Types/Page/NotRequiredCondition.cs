@@ -4,5 +4,8 @@ namespace SFA.DAS.QnA.Api.Types.Page
     {
         public string Field { get; set; }
         public string[] IsOneOf { get; set; }
+
+        //MFCMFC
+        //public string[] ContainsAllOf { get; set; }
     }
 }

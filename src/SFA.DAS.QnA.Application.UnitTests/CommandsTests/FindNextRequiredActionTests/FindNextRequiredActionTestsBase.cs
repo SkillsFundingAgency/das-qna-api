@@ -5,6 +5,7 @@ using Newtonsoft.Json.Linq;
 using NUnit.Framework;
 using SFA.DAS.QnA.Api.Types.Page;
 using SFA.DAS.QnA.Application.Commands.SetPageAnswers;
+using SFA.DAS.QnA.Application.Services;
 using SFA.DAS.QnA.Data;
 using SFA.DAS.QnA.Data.Entities;
 
@@ -18,13 +19,15 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.FindNextRequiredAction
         protected Guid ApplicationId;
         protected Next NextAction;
         protected string ApplicationDataJson;
+        protected INotRequiredProcessor notRequiredProcessor;
 
         [SetUp]
         public async Task SetUp()
         {
             QnaDataContext = DataContextHelpers.GetInMemoryDataContext();
 
-            SetAnswersBase = new SetAnswersBase(QnaDataContext);
+            notRequiredProcessor = new NotRequiredProcessor();
+            SetAnswersBase = new SetAnswersBase(QnaDataContext, notRequiredProcessor);
 
             ApplicationId = Guid.NewGuid();
 

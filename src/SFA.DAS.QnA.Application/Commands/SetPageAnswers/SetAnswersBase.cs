@@ -4,6 +4,7 @@ using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json.Linq;
 using SFA.DAS.QnA.Api.Types.Page;
+using SFA.DAS.QnA.Application.Services;
 using SFA.DAS.QnA.Data;
 using SFA.DAS.QnA.Data.Entities;
 
@@ -12,10 +13,11 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
     public class SetAnswersBase
     {
         protected readonly QnaDataContext _dataContext;
-
-        public SetAnswersBase(QnaDataContext dataContext)
+        protected readonly INotRequiredProcessor _notRequiredProcessor;
+        public SetAnswersBase(QnaDataContext dataContext, INotRequiredProcessor notRequiredProcessor)
         {
             _dataContext = dataContext;
+            _notRequiredProcessor = notRequiredProcessor;
         }
 
         protected List<Next> GetCheckboxListMatchingNextActionsForPage(Guid sectionId, string pageId)
@@ -240,7 +242,8 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
             }
             else if (nextPage.NotRequiredConditions != null && nextPage.NotRequiredConditions.Any())
             {
-                if (nextPage.NotRequiredConditions.Any(nrc => nrc.IsOneOf != null && nrc.IsOneOf.Contains(applicationData[nrc.Field]?.Value<string>())))
+                //if (nextPage.NotRequiredConditions.Any(nrc => nrc.IsOneOf != null && nrc.IsOneOf.Contains(applicationData[nrc.Field]?.Value<string>())))
+                if (_notRequiredProcessor.NotRequired(nextPage.NotRequiredConditions, applicationData))
                 {
                     isRequiredNextAction = false;
                 }
