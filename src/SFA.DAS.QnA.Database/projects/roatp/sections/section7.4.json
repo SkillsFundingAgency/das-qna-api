@@ -183,7 +183,7 @@
                     "QuestionTag": "",
                     "Label": "How are these quality and high standards in apprenticeship training communicated to employees?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body' id='dat-highstandards-communicated'>Your answer must include how these expectations are:</p><ul class='govuk-list govuk-list--bullet'><li>transparent and available to all employees</li><li>communicated throughout your organisation - for example through training or official policies</li><li>maintained through regular feedback from employees</li></ul>",
+                    "QuestionBodyText": "<p class='govuk-body' id='dat-highstandards-communicated'>Your answer must include how these expectations are:</p><ul class='govuk-list govuk-list--bullet'><li>transparent and available to all employees</li><li>communicated throughout your organisation - for example through training or official policies</li><li>maintained and what feedback mechanisms your organisation has for employees</li></ul>",
                     "Hint": "",
                     "Input": {
                         "Type": "Textarea",
