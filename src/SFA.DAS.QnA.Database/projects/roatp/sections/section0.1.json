@@ -414,7 +414,36 @@
                         "Validations": []
                     },
                     "Order": null
-                },
+                }
+            ],
+            "PageOfAnswers": [],
+            "Next": [
+                {
+                    "Action": "NextPage",
+                    "ReturnId": "2",
+                    "Conditions": [],
+                    "ConditionMet": false
+                }
+            ],
+            "Complete": false,
+            "AllowMultipleAnswers": false,
+            "Order": null,
+            "Active": true,
+            "Visible": true,
+            "Feedback": null,
+            "HasFeedback": false,
+            "NotRequiredConditions": [],
+            "ActivatedByPageId": null,
+            "BodyText": ""
+        },
+        {
+            "PageId": "2",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "Provider route",
+            "LinkTitle": "",
+            "InfoText": "",
+            "Questions": [                
                 {
                     "QuestionId": "YO-1",
                     "QuestionTag": "Apply-ProviderRoute",
@@ -433,7 +462,7 @@
             "Next": [
                 {
                     "Action": "NextPage",
-                    "ReturnId": "2",
+                    "ReturnToSection": "0.1",
                     "Conditions": [],
                     "ConditionMet": false
                 }
