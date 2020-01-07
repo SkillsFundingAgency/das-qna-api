@@ -16,7 +16,7 @@
                     "QuestionTag": "",
                     "Label": "Upload your management hierarchy's expectations for quality and high standards in apprenticeship training",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body' id='dat-highstandards-upload'>This must include how these expectations are:</p><ul class='govuk-list govuk-list--bullet'><li>formatted - for example through a set of principles, a vision or a mission statement</li><li>reviewed and monitored</li><li>reflected in developing and delivering apprenticeship training programmes</li><li>measured through key performance indicators for the outcomes of apprenticeship training programmes</li><li>used to benchmark apprenticeship training delivery against industry leaders</li></ul><p class='govuk-body'>The file must be a PDF and smaller than 5MB.</p>",
+                    "QuestionBodyText": "<p class='govuk-body' id='dat-highstandards-upload'>This must include what these expectations are and how they're:</p><ul class='govuk-list govuk-list--bullet'><li>reviewed and monitored</li><li>reflected in developing and delivering apprenticeship training programmes</li><li>measured through key performance indicators for the outcomes of apprenticeship training programmes</li><li>used to benchmark apprenticeship training delivery against industry leaders</li></ul><p class='govuk-body'>Your upload can be like a set of principles, a vision or a mission statement.</p><p class='govuk-body'>The file must be a PDF and smaller than 5MB.</p>",
                     "Hint": "",
                     "Input": {
                         "Type": "FileUpload",
