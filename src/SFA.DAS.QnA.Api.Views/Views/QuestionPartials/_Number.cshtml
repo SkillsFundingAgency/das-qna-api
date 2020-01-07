@@ -18,7 +18,7 @@
 
 @if (!string.IsNullOrWhiteSpace(Model.InputPrefix))
 {
-    <span class="govuk-body-l govuk-!-margin-right-2">@Model.InputPrefix</span>
+    <span class="govuk-body govuk-!-margin-right-2">@Html.Raw(Model.InputPrefix)</span>
 }
 
 <input
@@ -32,5 +32,5 @@
 
 @if (!string.IsNullOrWhiteSpace(Model.InputSuffix))
 {
-    <span class="govuk-body-l govuk-!-margin-left-2">@Model.InputSuffix</span>
+    <span class="govuk-body govuk-!-margin-left-2">@Html.Raw(Model.InputSuffix)</span>
 }
