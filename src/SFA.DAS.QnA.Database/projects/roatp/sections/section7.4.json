@@ -61,7 +61,7 @@
             "Questions": [{
                     "QuestionId": "DAT-41.1",
                     "QuestionTag": "",
-                    "Label": "<span class='govuk-label'>Full name</span>",
+                    "Label": "Full name",
                     "QuestionBodyText": "",
                     "ShortLabel": "",
                     "Hint": "",
@@ -87,7 +87,7 @@
                 }, {
                     "QuestionId": "DAT-41.2",
                     "QuestionTag": "",
-                    "Label": "<span class='govuk-label'>Email</span>",
+                    "Label": "Email",
                     "QuestionBodyText": "",
                     "ShortLabel": "",
                     "Hint": "",
@@ -117,7 +117,7 @@
                 }, {
                     "QuestionId": "DAT-41.3",
                     "QuestionTag": "",
-                    "Label": "<span class='govuk-label'>Contact number</span>",
+                    "Label": "Contact number",
                     "QuestionBodyText": "",
                     "ShortLabel": "",
                     "Hint": "",
