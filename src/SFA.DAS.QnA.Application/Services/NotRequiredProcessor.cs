@@ -18,10 +18,41 @@ namespace SFA.DAS.QnA.Application.Services
 
         public List<Page> PagesWithoutNotRequired(List<Page> pages, JObject applicationData)
         {
-            pages.RemoveAll(p => p.NotRequiredConditions != null && 
-                                 p.NotRequiredConditions.Any(nrc => nrc.IsOneOf.Contains(applicationData[nrc.Field]?.Value<string>())));
+            pages.RemoveAll(p => p.NotRequiredConditions != null &&
+                                 p.NotRequiredConditions.Any(nrc => nrc.IsOneOf != null && nrc.IsOneOf.Contains(applicationData[nrc.Field]?.Value<string>())));
 
-            return pages;
+
+            var pagesProcessed = new List<Page>();
+
+            foreach (var page in pages)
+            {
+                if (page.NotRequiredConditions==null)
+                    pagesProcessed.Add(page);
+                else
+                {
+                    var fieldMatch = false;
+                    foreach (var notRequiredCondition in page.NotRequiredConditions)
+                    {
+                        var fieldToCheck = notRequiredCondition.Field;
+                        var fieldValue = applicationData[fieldToCheck]?.Value<string>();
+                        if (string.IsNullOrEmpty(fieldValue)) continue;
+
+                            if (notRequiredCondition.ContainsAllOf != null)
+                            {
+                                fieldMatch = true;
+                                foreach (var containsAllOf in notRequiredCondition.ContainsAllOf)
+                                    if (!fieldValue.Contains(containsAllOf))
+                                        fieldMatch = false;
+                            }
+                    }
+
+                    if(!fieldMatch)
+                        pagesProcessed.Add(page);
+
+                }
+            }
+
+            return pagesProcessed;
         }
     }
 }
