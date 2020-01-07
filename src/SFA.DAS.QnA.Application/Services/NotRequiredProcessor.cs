@@ -21,38 +21,40 @@ namespace SFA.DAS.QnA.Application.Services
             pages.RemoveAll(p => p.NotRequiredConditions != null &&
                                  p.NotRequiredConditions.Any(nrc => nrc.IsOneOf != null && nrc.IsOneOf.Contains(applicationData[nrc.Field]?.Value<string>())));
 
-
-            var pagesProcessed = new List<Page>();
-
+            var pagesToRemove = new List<string>();
             foreach (var page in pages)
             {
-                if (page.NotRequiredConditions==null)
-                    pagesProcessed.Add(page);
-                else
+                if (page.NotRequiredConditions == null) continue;
+                foreach (var notRequiredCondition in page.NotRequiredConditions)
                 {
-                    var fieldMatch = false;
-                    foreach (var notRequiredCondition in page.NotRequiredConditions)
+                    if (notRequiredCondition.ContainsAllOf == null) continue;
+                    var fieldToCheck = notRequiredCondition.Field;
+                    var fieldValue = applicationData[fieldToCheck]?.Value<string>();
+                    if (string.IsNullOrEmpty(fieldValue)) continue;
+
+
+
+                    var applicationDataValues = fieldValue.Split(",", StringSplitOptions.RemoveEmptyEntries);
+
+                    var allFieldsMatch = true;
+                    foreach (var containsAllOf in notRequiredCondition.ContainsAllOf)
                     {
-                        var fieldToCheck = notRequiredCondition.Field;
-                        var fieldValue = applicationData[fieldToCheck]?.Value<string>();
-                        if (string.IsNullOrEmpty(fieldValue)) continue;
+                        //if (!fieldValue.Contains(containsAllOf))
+                        //    allFieldsMatch = false;
+                        if (applicationDataValues.Any(a => a != containsAllOf))
+                            allFieldsMatch = false;
 
-                            if (notRequiredCondition.ContainsAllOf != null)
-                            {
-                                fieldMatch = true;
-                                foreach (var containsAllOf in notRequiredCondition.ContainsAllOf)
-                                    if (!fieldValue.Contains(containsAllOf))
-                                        fieldMatch = false;
-                            }
+                       
                     }
-
-                    if(!fieldMatch)
-                        pagesProcessed.Add(page);
-
+                    if (allFieldsMatch)
+                        pagesToRemove.Add(page.PageId);
                 }
             }
 
-            return pagesProcessed;
+            pages.RemoveAll(p => pagesToRemove.Any(pr=>pr == p.PageId));
+
+
+            return pages;
         }
     }
 }

@@ -27,9 +27,7 @@ namespace SFA.DAS.QnA.Application.UnitTests.ServiceTests
                 var applicationDataValue = "value3,value1,value2";
                 var expectedPagesCount = 1;
                 var match = true;
-                //if (!match)
-                //    expectedPagesCount = 2;
-
+          
                 var pageIdAlwaysPresent = "3";
                 var pageIdAbsentIfNotRequired = "2";
                 var applicationDataJson = JsonConvert.SerializeObject(new
