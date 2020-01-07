@@ -16,8 +16,7 @@ Licensed under the [MIT license](https://github.com/SkillsFundingAgency/das-asse
 #### Setup
 - Obtain the appropriate JSON configuration file for this application.
 - Create a Configuration table in your storage account.
-- Add a row to the Configuration table with fields: 
-PartitionKey: LOCAL, RowKey: SFA.DAS.QnA.Api_1.0, Data: {The contents of the JSON Configuration file}.
+- Add a row to the Configuration table with fields: PartitionKey: LOCAL, RowKey: SFA.DAS.QnA.Api_1.0, Data: {The contents of the JSON Configuration file}.
 
 ##### Open the solution
 - Navigate to src/SFA.DAS.QnA.Api/
