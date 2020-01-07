@@ -194,7 +194,7 @@
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [],
                         "DataEndpoint": null,
-                        "InputPrefix": "&pound:",
+                        "InputPrefix": "&pound;",
                         "InputSuffix": "%"
                     },
                     "Order": null,
