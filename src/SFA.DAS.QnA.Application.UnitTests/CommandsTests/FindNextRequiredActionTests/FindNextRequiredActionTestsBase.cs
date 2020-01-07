@@ -19,15 +19,15 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.FindNextRequiredAction
         protected Guid ApplicationId;
         protected Next NextAction;
         protected string ApplicationDataJson;
-        protected INotRequiredProcessor notRequiredProcessor;
+        protected INotRequiredProcessor NotRequiredProcessor;
 
         [SetUp]
         public async Task SetUp()
         {
             QnaDataContext = DataContextHelpers.GetInMemoryDataContext();
 
-            notRequiredProcessor = new NotRequiredProcessor();
-            SetAnswersBase = new SetAnswersBase(QnaDataContext, notRequiredProcessor);
+            NotRequiredProcessor = new NotRequiredProcessor();
+            SetAnswersBase = new SetAnswersBase(QnaDataContext, NotRequiredProcessor);
 
             ApplicationId = Guid.NewGuid();
 
@@ -41,18 +41,6 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.FindNextRequiredAction
             await QnaDataContext.SaveChangesAsync();
 
             NextAction = new Next {Action = "NextPage", ReturnId = "2"};   
-        }
-
-
-        [Test]
-        public void TestNoNextAction()
-        {
-            var applicationSection = new ApplicationSection();
-            Next nextAction = null;
-             var applicationData = JObject.Parse("{}");
-            var result = SetAnswersBase.FindNextRequiredAction(applicationSection, nextAction, applicationData);
-
-            Assert.IsNull(result);
         }
     }
 }
