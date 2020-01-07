@@ -1,6 +1,6 @@
 {
-    "Title": "Where will your apprentices be trained?",
-    "LinkTitle": "Where will your apprentices be trained?",
+    "Title": "Where will your apprentices be trained",
+    "LinkTitle": "Where will your apprentices be trained",
     "DisplayType": "Pages",
     "RequestedFeedbackAnswered": null,
     "Pages": [
@@ -15,7 +15,7 @@
                 {
                     "QuestionId": "PAT-660",
                     "QuestionTag": null,
-                    "Label": "Building and Street",
+                    "Label": "<span class='govuk-label'>Building and Street</span>",
                     "ShortLabel": "",
                     "InputClasses": null,
                     "QuestionBodyText": "\n",
@@ -39,7 +39,7 @@
                 {
                     "QuestionId": "PAT-662",
                     "QuestionTag": null,
-                    "Label": "Town or City",
+                    "Label": "<span class='govuk-label'>Town or City</span>",
                     "ShortLabel": "",
                     "InputClasses": null,
                     "QuestionBodyText": "",
@@ -64,7 +64,7 @@
                 {
                     "QuestionId": "PAT-663",
                     "QuestionTag": null,
-                    "Label": "County",
+                    "Label": "<span class='govuk-label'>County</span>",
                     "ShortLabel": "",
                     "InputClasses": null,
                     "QuestionBodyText": "",
@@ -89,7 +89,7 @@
                 {
                     "QuestionId": "PAT-664",
                     "QuestionTag": null,
-                    "Label": "Postcode",
+                    "Label": "<span class='govuk-label'>Postcode</span>",
                     "ShortLabel": "",
                     "InputClasses": null,
                     "QuestionBodyText": "",
