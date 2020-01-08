@@ -134,9 +134,9 @@
                                 "Value": null,
                                 "ErrorMessage": "Tell us how your organisation will evaluate the quality of apprenticeship training"
                             }, {
-                                "Name": "MaxLength",
-                                "Value": 1500,
-                                "ErrorMessage": "Your answer must be 1500 characters or less"
+                                "Name": "MaxWordCount",
+                                "Value": 275,
+                                "ErrorMessage": "Your answer must be 275 words or less"
                             }
                         ]
                     },
@@ -186,9 +186,9 @@
                                 "Value": null,
                                 "ErrorMessage": "Tell us how your organisation will evaluate the quality of apprenticeship training"
                             }, {
-                                "Name": "MaxLength",
-                                "Value": 1500,
-                                "ErrorMessage": "Your answer must be 1500 characters or less"
+                                "Name": "MaxWordCount",
+                                "Value": 275,
+                                "ErrorMessage": "Your answer must be 275 words or less"
                             }
                         ]
                     },
@@ -238,9 +238,9 @@
                                 "Value": null,
                                 "ErrorMessage": "Tell us how your organisation will review its process for evaluating the quality of training delivered"
                             }, {
-                                "Name": "MaxLength",
-                                "Value": 1500,
-                                "ErrorMessage": "Your answer must be 1500 characters or less"
+                                "Name": "MaxWordCount",
+                                "Value": 275,
+                                "ErrorMessage": "Your answer must be 275 words or less"
                             }
                         ]
                     },

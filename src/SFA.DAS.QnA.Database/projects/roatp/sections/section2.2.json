@@ -514,7 +514,7 @@
                     "ShortLabel": "",
                     "InputClasses": null,
                     "QuestionBodyText": "",
-                    "Hint": "You can find this on your organisation's 'balance sheet'",
+                    "Hint": "You can find this on your organisation's 'balance sheet' under 'creditors: amount falling due within one year'.",
                     "Input": {
                         "Type": "Text",
                         "InputClasses": "govuk-input--width-10",
@@ -543,7 +543,7 @@
                     "ShortLabel": "",
                     "InputClasses": null,
                     "QuestionBodyText": "",
-                    "Hint": "You will need to add up a total of: <ul class='govuk-list govuk-list--bullet'><li>bank overdraft</li><li>loans</li><li>amounts owed to directors - including director loans and director accounts</li><li>amounts owed to subsidiaries - if your organisation is part of a group</li><li>amounts due under finance leases or hire purchase contracts</li></ul>",
+                    "Hint": "You will need to add up a total of: <ul class='govuk-list govuk-list--bullet govuk-hint'><li>bank overdraft</li><li>loans</li><li>amounts owed to directors - including director loans and director accounts</li><li>amounts owed to subsidiaries - if your organisation is part of a group</li><li>amounts due under finance leases or hire purchase contracts</li></ul>",
                     "Input": {
                         "Type": "Text",
                         "InputClasses": "govuk-input--width-10",
@@ -572,7 +572,7 @@
                     "ShortLabel": "",
                     "InputClasses": null,
                     "QuestionBodyText": "",
-                    "Hint": "You can find this on your organisation's 'balance sheet'",
+                    "Hint": "You can find this on your organisation's 'balance sheet'.",
                     "Input": {
                         "Type": "Text",
                         "InputClasses": "govuk-input--width-10",
@@ -858,7 +858,7 @@
                     "ShortLabel": "",
                     "InputClasses": null,
                     "QuestionBodyText": "",
-                    "Hint": "You will need to add up a total of: <ul class='govuk-list govuk-list--bullet'><li>bank overdraft</li><li>loans</li><li>amounts owed to directors - including director loans and director accounts</li><li>amounts owed to subsidiaries - if your organisation is part of a group</li><li>amounts due under finance leases or hire purchase contracts</li></ul>",
+                    "Hint": "You will need to add up a total of: <ul class='govuk-list govuk-list--bullet govuk-hint'><li>bank overdraft</li><li>loans</li><li>amounts owed to directors - including director loans and director accounts</li><li>amounts owed to subsidiaries - if your organisation is part of a group</li><li>amounts due under finance leases or hire purchase contracts</li></ul>",
                     "Input": {
                         "Type": "Text",
                         "InputClasses": "govuk-input--width-10",
@@ -953,12 +953,6 @@
             "Order": null,
             "Active": false,
             "NotRequiredConditions": [
-                {
-                    "Field": "FHA-Funding-Turnover-5pc",
-                    "IsOneOf": [
-                        "Yes"
-                    ]
-                },
                 {
                     "Field": "UKRLP-Verification-Company",
                     "IsOneOf": [
@@ -1173,7 +1167,7 @@
                     "ShortLabel": "",
                     "InputClasses": null,
                     "QuestionBodyText": "",
-                    "Hint": "You will need to add up a total of: <ul class='govuk-list govuk-list--bullet'><li>bank overdraft</li><li>loans</li><li>amounts owed to directors - including director loans and director accounts</li><li>amounts owed to subsidiaries - if your organisation is part of a group</li><li>amounts due under finance leases or hire purchase contracts</li></ul>",
+                    "Hint": "You will need to add up a total of: <ul class='govuk-list govuk-list--bullet govuk-hint'><li>bank overdraft</li><li>loans</li><li>amounts owed to directors - including director loans and director accounts</li><li>amounts owed to subsidiaries - if your organisation is part of a group</li><li>amounts due under finance leases or hire purchase contracts</li></ul>",
                     "Input": {
                         "Type": "Text",
                         "InputClasses": "govuk-input--width-10",
@@ -1268,12 +1262,6 @@
             "Order": null,
             "Active": false,
             "NotRequiredConditions": [
-                {
-                    "Field": "FHA-Funding-Turnover-5pc",
-                    "IsOneOf": [
-                        "Yes"
-                    ]
-                },
                 {
                     "Field": "UKRLP-Verification-Company",
                     "IsOneOf": [
@@ -1372,7 +1360,7 @@
                     "ShortLabel": "",
                     "InputClasses": null,
                     "QuestionBodyText": "",
-                    "Hint": "Profit or loss is the net amount earned after tax. You can find this under 'net profit' or 'net movement in funds' in its accounts.",
+                    "Hint": "Profit or loss is the net amount earned after tax. You can find this under 'net profit' or 'net movement in funds' in your organisation's accounts.",
                     "Input": {
                         "Type": "Text",
                         "InputClasses": "govuk-input--width-10",
@@ -1488,7 +1476,7 @@
                     "ShortLabel": "",
                     "InputClasses": null,
                     "QuestionBodyText": "",
-                    "Hint": "You will need to add up a total of: <ul class='govuk-list govuk-list--bullet'><li>bank overdraft</li><li>loans</li><li>amounts owed to directors - including director loans and director accounts</li><li>amounts owed to subsidiaries - if your organisation is part of a group</li><li>amounts due under finance leases or hire purchase contracts</li></ul>",
+                    "Hint": "You will need to add up a total of: <ul class='govuk-list govuk-list--bullet govuk-hint'><li>bank overdraft</li><li>loans</li><li>amounts owed to directors - including director loans and director accounts</li><li>amounts owed to subsidiaries - if your organisation is part of a group</li><li>amounts due under finance leases or hire purchase contracts</li></ul>",
                     "Input": {
                         "Type": "Text",
                         "InputClasses": "govuk-input--width-10",
@@ -1583,12 +1571,6 @@
             "Order": null,
             "Active": false,
             "NotRequiredConditions": [
-                {
-                    "Field": "FHA-Funding-Turnover-5pc",
-                    "IsOneOf": [
-                        "Yes"
-                    ]
-                },
                 {
                     "Field": "UKRLP-Verification-Company",
                     "IsOneOf": [
@@ -1774,7 +1756,7 @@
                     "ShortLabel": "",
                     "InputClasses": null,
                     "QuestionBodyText": "",
-                    "Hint": "You can find this on your organisation's 'balance sheet'.",
+                    "Hint": "You can find this on your organisation's 'balance sheet' under 'creditors: amount falling due within one year'.",
                     "Input": {
                         "Type": "Text",
                         "InputClasses": "govuk-input--width-10",
@@ -1803,7 +1785,7 @@
                     "ShortLabel": "",
                     "InputClasses": null,
                     "QuestionBodyText": "",
-                    "Hint": "You will need to add up a total of: <ul class='govuk-list govuk-list--bullet'><li>bank overdraft</li><li>loans</li><li>amounts owed to directors - including director loans and director accounts</li><li>amounts owed to subsidiaries - if your organisation is part of a group</li><li>amounts due under finance leases or hire purchase contracts</li></ul>",
+                    "Hint": "You will need to add up a total of: <ul class='govuk-list govuk-list--bullet govuk-hint'><li>bank overdraft</li><li>loans</li><li>amounts owed to directors - including director loans and director accounts</li><li>amounts owed to subsidiaries - if your organisation is part of a group</li><li>amounts due under finance leases or hire purchase contracts</li></ul>",
                     "Input": {
                         "Type": "Text",
                         "InputClasses": "govuk-input--width-10",
@@ -1898,12 +1880,6 @@
             "Order": null,
             "Active": false,
             "NotRequiredConditions": [
-                {
-                    "Field": "FHA-Funding-Turnover-5pc",
-                    "IsOneOf": [
-                        "Yes"
-                    ]
-                },
                 {
                     "Field": "UKRLP-Verification-Company",
                     "IsOneOf": [
@@ -2083,7 +2059,7 @@
                     "ShortLabel": "",
                     "InputClasses": null,
                     "QuestionBodyText": "",
-                    "Hint": "You can find this on your organisation's 'balance sheet'.",
+                    "Hint": "You can find this on your organisation's 'balance sheet' under 'creditors: amount falling due within one year'.",
                     "Input": {
                         "Type": "Text",
                         "InputClasses": "govuk-input--width-10",
@@ -2112,7 +2088,7 @@
                     "ShortLabel": "",
                     "InputClasses": null,
                     "QuestionBodyText": "",
-                    "Hint": "You will need to add up a total of: <ul class='govuk-list govuk-list--bullet'><li>bank overdraft</li><li>loans</li><li>amounts owed to directors - including director loans and director accounts</li><li>amounts owed to subsidiaries - if your organisation is part of a group</li><li>amounts due under finance leases or hire purchase contracts</li></ul>",
+                    "Hint": "You will need to add up a total of: <ul class='govuk-list govuk-list--bullet govuk-hint'><li>bank overdraft</li><li>loans</li><li>amounts owed to directors - including director loans and director accounts</li><li>amounts owed to subsidiaries - if your organisation is part of a group</li><li>amounts due under finance leases or hire purchase contracts</li></ul>",
                     "Input": {
                         "Type": "Text",
                         "InputClasses": "govuk-input--width-10",
@@ -2207,12 +2183,6 @@
             "Order": null,
             "Active": false,
             "NotRequiredConditions": [
-                {
-                    "Field": "FHA-Funding-Turnover-5pc",
-                    "IsOneOf": [
-                        "Yes"
-                    ]
-                },
                 {
                     "Field": "UKRLP-Verification-Company",
                     "IsOneOf": [
