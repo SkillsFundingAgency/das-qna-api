@@ -38,7 +38,7 @@ namespace SFA.DAS.QnA.Api.Views
         /// Hence the hack
         /// </summary>
         /// <param name="Model">QuestionViewModel or Question</param>
-        /// <returns>A dynamic list of Validations</returns>
+        /// <returns>A dynamic list of Options</returns>
         public static dynamic GetOptions(dynamic Model)
         {
             var options = ViewHelpers.PropertyExists(Model, "Options")
