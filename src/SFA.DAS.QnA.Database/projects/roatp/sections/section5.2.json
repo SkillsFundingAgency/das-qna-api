@@ -76,9 +76,9 @@
                                 "Value": "",
                                 "ErrorMessage": "Tell us how your organisation will manage its relationship with employers"
                             }, {
-                                "Name": "MaxLength",
-                                "Value": "1500",
-                                "ErrorMessage": "Your answer must be 1500 characters or less"
+                                "Name": "MaxWordCount",
+                                "Value": "275",
+                                "ErrorMessage": "Your answer must be 275 words or less"
                             }
                         ]
                     },
@@ -236,9 +236,9 @@
                                 "Value": "",
                                 "ErrorMessage": "Tell us how your organisation will promote apprenticeships to employers"
                             }, {
-                                "Name": "MaxLength",
-                                "Value": "750",
-                                "ErrorMessage": "Your answer must be 750 characters or less"
+                                "Name": "MaxWordCount",
+                                "Value": "150",
+                                "ErrorMessage": "Your answer must be 150 words or less"
                             }
                         ]
                     },
