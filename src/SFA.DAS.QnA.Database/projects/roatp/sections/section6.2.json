@@ -403,9 +403,9 @@
                                 "ErrorMessage": "Tell us how your organisation is ensuring it's ready to deliver training in apprenticeship standards"
                             },
                             {
-                                "Name": "MaxLength",
-                                "Value": "1500",
-                                "ErrorMessage": "Your answer must be 1500 characters or less"
+                                "Name": "MaxWordCount",
+                                "Value": "275",
+                                "ErrorMessage": "Your answer must be 275 words or less"
                             }
                         ],
                         "DataEndpoint": null
@@ -562,9 +562,9 @@
                                 "ErrorMessage": "Tell us how your organisation will transition from apprenticeship frameworks to apprenticeship standards"
                             },
                             {
-                                "Name": "MaxLength",
-                                "Value": "1500",
-                                "ErrorMessage": "Your answer must be 1500 characters or less"
+                                "Name": "MaxWordLength",
+                                "Value": "275",
+                                "ErrorMessage": "Your answer must be 275 words or less"
                             }
                         ],
                         "DataEndpoint": null
@@ -634,9 +634,9 @@
                                 "ErrorMessage": "Tell us why your organisation will only deliver apprenticeship frameworks"
                             },
                             {
-                                "Name": "MaxLength",
-                                "Value": "750",
-                                "ErrorMessage": "Your answer must be 750 characters or less"
+                                "Name": "MaxWordCount",
+                                "Value": "150",
+                                "ErrorMessage": "Your answer must be 150 words or less"
                             }
                         ],
                         "DataEndpoint": null
@@ -835,9 +835,9 @@
                                 "ErrorMessage": "Tell us how your organisation will transition from apprenticeship frameworks to apprenticeship standards"
                             },
                             {
-                                "Name": "MaxLength",
-                                "Value": "1500",
-                                "ErrorMessage": "Your answer must be 1500 characters or less"
+                                "Name": "MaxWordCount",
+                                "Value": "275",
+                                "ErrorMessage": "Your answer must be 275 words or less"
                             }
                         ],
                         "DataEndpoint": null
@@ -902,9 +902,9 @@
                                 "ErrorMessage": "Tell us why your organisation will only deliver apprenticeship frameworks"
                             },
                             {
-                                "Name": "MaxLength",
-                                "Value": "750",
-                                "ErrorMessage": "Your answer must be 750 characters or less"
+                                "Name": "MaxWordCount",
+                                "Value": "150",
+                                "ErrorMessage": "Your answer must be 150 words or less"
                             }
                         ],
                         "DataEndpoint": null
@@ -970,9 +970,9 @@
                                 "ErrorMessage": "Tell us how your organisation is ensuring it's ready to deliver training in apprenticeship standards"
                             },
                             {
-                                "Name": "MaxLength",
-                                "Value": "1500",
-                                "ErrorMessage": "Your answer must be 1500 characters or less"
+                                "Name": "MaxWordCount",
+                                "Value": "275",
+                                "ErrorMessage": "Your answer must be 275 words or less"
                             }
                         ],
                         "DataEndpoint": null
@@ -1113,9 +1113,9 @@
                                 "ErrorMessage": "Tell us how your organisation plans to engage and work with awarding bodies"
                             },
                             {
-                                "Name": "MaxLength",
-                                "Value": "1500",
-                                "ErrorMessage": "Your answer must be 1500 characters or less"
+                                "Name": "MaxWordCount",
+                                "Value": "275",
+                                "ErrorMessage": "Your answer must be 275 words or less"
                             }
                         ],
                         "DataEndpoint": null
@@ -1188,9 +1188,9 @@
                                 "ErrorMessage": "Tell us how your organisation will engage with end-point assessment organisations (EPAO's)"
                             },
                             {
-                                "Name": "MaxLength",
-                                "Value": "1500",
-                                "ErrorMessage": "Your answer must be 1500 characters or less"
+                                "Name": "MaxWordCount",
+                                "Value": "275",
+                                "ErrorMessage": "Your answer must be 275 words or less"
                             }
                         ],
                         "DataEndpoint": null
