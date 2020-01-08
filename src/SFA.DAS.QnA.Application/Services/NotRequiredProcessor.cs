@@ -35,18 +35,15 @@ namespace SFA.DAS.QnA.Application.Services
 
 
                     var applicationDataValues = fieldValue.Split(",", StringSplitOptions.RemoveEmptyEntries);
+                    if (notRequiredCondition.ContainsAllOf == null ||
+                        !notRequiredCondition.ContainsAllOf.Any()) continue;
 
-                    var allFieldsMatch = true;
-                    foreach (var containsAllOf in notRequiredCondition.ContainsAllOf)
-                    {
-                        //if (!fieldValue.Contains(containsAllOf))
-                        //    allFieldsMatch = false;
-                        if (applicationDataValues.Any(a => a != containsAllOf))
-                            allFieldsMatch = false;
+                    var containsAllValues =
+                        applicationDataValues.Select(p => p)
+                            .Intersect(notRequiredCondition.ContainsAllOf.Distinct()).Count() ==
+                        notRequiredCondition.ContainsAllOf.Distinct().Count();
 
-                       
-                    }
-                    if (allFieldsMatch)
+                    if (containsAllValues)
                         pagesToRemove.Add(page.PageId);
                 }
             }

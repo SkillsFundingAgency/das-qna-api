@@ -11,22 +11,27 @@ namespace SFA.DAS.QnA.Application.UnitTests.ServiceTests
     [TestFixture]
     public class NotRequiredProcessorPagesWithoutNotRequiredContainsAllOfTests
     {
-            //[TestCase("OrgType1", "OrgType1", true)]
-            //[TestCase("OrgType2", "OrgType2", true)]
-            //[TestCase("OrgType2", "OrgType1", false)]
-            //[TestCase("OrgType1", "OrgType2", false)]
-            //[TestCase("OrgType1", "orgType1", false)]
-            //[TestCase("orgType1", "OrgType1", false)]
-            //[TestCase("rgType1", "OrgType1", false)]
-            //[TestCase("OrgType1", "rgType1", false)]
 
-            //public void When_PagesWithNotRequired_conditions_are_removed(string notRequiredConditionValue, string applicationDataValue, bool match)
-            [Test]
-            public void When_PagesWithNotRequired_conditions_with_containsAllOf()
+        [TestCase(new[] { "value1", "value3" }, "value1,value3,value2", true)]
+        [TestCase(new[] { "value3", "value1" }, "value1,value3,value2", true)]
+        [TestCase(new[] { "value3", "value1" }, "value3,value2,value1", true)]
+        [TestCase(new[] { "value1" }, "value1,value3,value2", true)]
+        [TestCase(new[] { "value2" }, "value1,value3,value2", true)]
+        [TestCase(new[] { "value2", "value2" }, "value1,value3,value2", true)]
+        [TestCase(new[] { "value2", "value4" }, "value1,value3,value2", false)]
+        [TestCase(new[] { "value4", "value2" }, "value1,value3,value2", false)]
+        [TestCase(new[] { "value" }, "value1,value3,value2", false)]
+        [TestCase(new string[] {}, "value1,value3,value2", false)]
+        [TestCase(null, "value1,value3,value2", false)]
+        [TestCase(new[] { "value" }, "", false)]
+        [TestCase(new[] { "value" }, null, false)]
+        public void When_PagesWithNotRequired_conditions_with_containsAllOf(string[] containsAllValues, string applicationDataValue, bool match)
             {
-                var applicationDataValue = "value3,value1,value2";
+               // var applicationDataValue = "value1,value3,value2";
                 var expectedPagesCount = 1;
-                var match = true;
+               // var match = true;
+               if (!match)
+                   expectedPagesCount = 2;
           
                 var pageIdAlwaysPresent = "3";
                 var pageIdAbsentIfNotRequired = "2";
@@ -47,7 +52,7 @@ namespace SFA.DAS.QnA.Application.UnitTests.ServiceTests
                         new NotRequiredCondition()
                         {
                             Field = "FieldToTest",
-                            ContainsAllOf = new string[] {"value1", "value2"}
+                            ContainsAllOf = containsAllValues
                         }
                     },
                     Next = new List<Next>
@@ -77,9 +82,9 @@ namespace SFA.DAS.QnA.Application.UnitTests.ServiceTests
                 var actualPages = notRequiredProcessor.PagesWithoutNotRequired(pages, applicationData);
 
                 Assert.AreEqual(actualPages.Count, expectedPagesCount);
-                //Assert.IsTrue(actualPages.Any(p => p.PageId == pageIdAlwaysPresent));
-                //Assert.AreNotEqual(actualPages.Any(p => p.PageId == pageIdAbsentIfNotRequired), match);
-            }
+                Assert.IsTrue(actualPages.Any(p => p.PageId == pageIdAlwaysPresent));
+                Assert.AreNotEqual(actualPages.Any(p => p.PageId == pageIdAbsentIfNotRequired), match);
+        }
         }
     }
 
