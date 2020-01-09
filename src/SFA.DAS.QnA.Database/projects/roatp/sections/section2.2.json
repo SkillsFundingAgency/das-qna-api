@@ -371,7 +371,7 @@
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'profit and loss statement', 'income and expenditure account' or 'statement of financial activities'.",
                     "Input": {
-                        "Type": "Text",
+                        "Type": "Number",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
@@ -385,7 +385,8 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null
+                        "DataEndpoint": null,
+                        "InputPrefix": "&pound;"
                     },
                     "Order": null,
                     "Value": "",
@@ -400,7 +401,7 @@
                     "QuestionBodyText": "",
                     "Hint": "",
                     "Input": {
-                        "Type": "Text",
+                        "Type": "Number",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
@@ -414,7 +415,8 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null
+                        "DataEndpoint": null,
+                        "InputPrefix": "&pound;"
                     },
                     "Order": null,
                     "Value": "",
@@ -429,7 +431,7 @@
                     "QuestionBodyText": "",
                     "Hint": "Profit or loss is the net amount earned after tax.",
                     "Input": {
-                        "Type": "Text",
+                        "Type": "Number",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
@@ -443,7 +445,8 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null
+                        "DataEndpoint": null,
+                        "InputPrefix": "&pound;"
                     },
                     "Order": null,
                     "Value": "",
@@ -458,7 +461,7 @@
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'notes to the accounts'.",
                     "Input": {
-                        "Type": "Text",
+                        "Type": "Number",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
@@ -472,7 +475,8 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null
+                        "DataEndpoint": null,
+                        "InputPrefix": "&pound;"
                     },
                     "Order": null,
                     "Value": "",
@@ -487,7 +491,7 @@
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'balance sheet'.",
                     "Input": {
-                        "Type": "Text",
+                        "Type": "Number",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
@@ -501,7 +505,8 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null
+                        "DataEndpoint": null,
+                        "InputPrefix": "&pound;"
                     },
                     "Order": null,
                     "Value": "",
@@ -516,7 +521,7 @@
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'balance sheet' under 'creditors: amount falling due within one year'.",
                     "Input": {
-                        "Type": "Text",
+                        "Type": "Number",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
@@ -530,7 +535,8 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null
+                        "DataEndpoint": null,
+                        "InputPrefix": "&pound;"
                     },
                     "Order": null,
                     "Value": "",
@@ -545,7 +551,7 @@
                     "QuestionBodyText": "",
                     "Hint": "You will need to add up a total of: <ul class='govuk-list govuk-list--bullet govuk-hint'><li>bank overdraft</li><li>loans</li><li>amounts owed to directors - including director loans and director accounts</li><li>amounts owed to subsidiaries - if your organisation is part of a group</li><li>amounts due under finance leases or hire purchase contracts</li></ul>",
                     "Input": {
-                        "Type": "Text",
+                        "Type": "Number",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
@@ -559,7 +565,8 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null
+                        "DataEndpoint": null,
+                        "InputPrefix": "&pound;"
                     },
                     "Order": null,
                     "Value": "",
@@ -574,7 +581,7 @@
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'balance sheet'.",
                     "Input": {
-                        "Type": "Text",
+                        "Type": "Number",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
@@ -588,7 +595,8 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null
+                        "DataEndpoint": null,
+                        "InputPrefix": "&pound;"
                     },
                     "Order": null,
                     "Value": "",
@@ -603,7 +611,7 @@
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'balance sheet' under 'fixed assets' or 'goodwill'.",
                     "Input": {
-                        "Type": "Text",
+                        "Type": "Number",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
@@ -617,7 +625,8 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null
+                        "DataEndpoint": null,
+                        "InputPrefix": "&pound;"
                     },
                     "Order": null,
                     "Value": "",
@@ -686,7 +695,7 @@
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'profit and loss statement', 'income and expenditure account' or 'statement of financial activities'.",
                     "Input": {
-                        "Type": "Text",
+                        "Type": "Number",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
@@ -700,7 +709,8 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null
+                        "DataEndpoint": null,
+                        "InputPrefix": "&pound;"
                     },
                     "Order": null,
                     "Value": "",
@@ -715,7 +725,7 @@
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'operating profit note to the accounts'. You'll need to add up all the items under 'note 2' and enter the total figure.",
                     "Input": {
-                        "Type": "Text",
+                        "Type": "Number",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
@@ -729,7 +739,8 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null
+                        "DataEndpoint": null,
+                        "InputPrefix": "&pound;"
                     },
                     "Order": null,
                     "Value": "",
@@ -744,7 +755,7 @@
                     "QuestionBodyText": "",
                     "Hint": "Profit or loss is the net amount earned after tax. You can find this under your organisation's 'profit and loss statement' or under 'net profit' or 'net movement in funds' in its accounts.",
                     "Input": {
-                        "Type": "Text",
+                        "Type": "Number",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
@@ -758,7 +769,8 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null
+                        "DataEndpoint": null,
+                        "InputPrefix": "&pound;"
                     },
                     "Order": null,
                     "Value": "",
@@ -773,7 +785,7 @@
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'notes to the accounts'.",
                     "Input": {
-                        "Type": "Text",
+                        "Type": "Number",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
@@ -787,7 +799,8 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null
+                        "DataEndpoint": null,
+                        "InputPrefix": "&pound;"
                     },
                     "Order": null,
                     "Value": "",
@@ -802,7 +815,7 @@
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'balance sheet'.",
                     "Input": {
-                        "Type": "Text",
+                        "Type": "Number",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
@@ -816,7 +829,8 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null
+                        "DataEndpoint": null,
+                        "InputPrefix": "&pound;"
                     },
                     "Order": null,
                     "Value": "",
@@ -831,7 +845,7 @@
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'balance sheet' under 'creditors: amount falling due within one year'.",
                     "Input": {
-                        "Type": "Text",
+                        "Type": "Number",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
@@ -845,7 +859,8 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null
+                        "DataEndpoint": null,
+                        "InputPrefix": "&pound;"
                     },
                     "Order": null,
                     "Value": "",
@@ -860,7 +875,7 @@
                     "QuestionBodyText": "",
                     "Hint": "You will need to add up a total of: <ul class='govuk-list govuk-list--bullet govuk-hint'><li>bank overdraft</li><li>loans</li><li>amounts owed to directors - including director loans and director accounts</li><li>amounts owed to subsidiaries - if your organisation is part of a group</li><li>amounts due under finance leases or hire purchase contracts</li></ul>",
                     "Input": {
-                        "Type": "Text",
+                        "Type": "Number",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
@@ -874,7 +889,8 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null
+                        "DataEndpoint": null,
+                        "InputPrefix": "&pound;"
                     },
                     "Order": null,
                     "Value": "",
@@ -889,7 +905,7 @@
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'balance sheet' under 'the sum of all assets less all liabilities'.",
                     "Input": {
-                        "Type": "Text",
+                        "Type": "Number",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
@@ -903,7 +919,8 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null
+                        "DataEndpoint": null,
+                        "InputPrefix": "&pound;"
                     },
                     "Order": null,
                     "Value": "",
@@ -918,7 +935,7 @@
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'balance sheet' under 'fixed assets' or 'goodwill'.",
                     "Input": {
-                        "Type": "Text",
+                        "Type": "Number",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
@@ -932,7 +949,8 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null
+                        "DataEndpoint": null,
+                        "InputPrefix": "&pound;"
                     },
                     "Order": null,
                     "Value": "",
@@ -995,7 +1013,7 @@
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'profit and loss statement', 'income and expenditure account' or 'statement of financial activities'.",
                     "Input": {
-                        "Type": "Text",
+                        "Type": "Number",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
@@ -1009,7 +1027,8 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null
+                        "DataEndpoint": null,
+                        "InputPrefix": "&pound;"
                     },
                     "Order": null,
                     "Value": "",
@@ -1024,7 +1043,7 @@
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'operating profit note to the accounts'. You'll need to add up all the items under 'note 2' and enter the total figure.",
                     "Input": {
-                        "Type": "Text",
+                        "Type": "Number",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
@@ -1038,7 +1057,8 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null
+                        "DataEndpoint": null,
+                        "InputPrefix": "&pound;"
                     },
                     "Order": null,
                     "Value": "",
@@ -1053,7 +1073,7 @@
                     "QuestionBodyText": "",
                     "Hint": "Profit or loss is the net amount earned after tax. You can find this on your organisation's 'profit and loss statement'.",
                     "Input": {
-                        "Type": "Text",
+                        "Type": "Number",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
@@ -1067,7 +1087,8 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null
+                        "DataEndpoint": null,
+                        "InputPrefix": "&pound;"
                     },
                     "Order": null,
                     "Value": "",
@@ -1082,7 +1103,7 @@
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'notes to the accounts'.",
                     "Input": {
-                        "Type": "Text",
+                        "Type": "Number",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
@@ -1096,7 +1117,8 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null
+                        "DataEndpoint": null,
+                        "InputPrefix": "&pound;"
                     },
                     "Order": null,
                     "Value": "",
@@ -1111,7 +1133,7 @@
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'balance sheet'.",
                     "Input": {
-                        "Type": "Text",
+                        "Type": "Number",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
@@ -1125,7 +1147,8 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null
+                        "DataEndpoint": null,
+                        "InputPrefix": "&pound;"
                     },
                     "Order": null,
                     "Value": "",
@@ -1140,7 +1163,7 @@
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'balance sheet' under 'creditors: amount falling due within one year'.",
                     "Input": {
-                        "Type": "Text",
+                        "Type": "Number",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
@@ -1154,7 +1177,8 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null
+                        "DataEndpoint": null,
+                        "InputPrefix": "&pound;"
                     },
                     "Order": null,
                     "Value": "",
@@ -1169,7 +1193,7 @@
                     "QuestionBodyText": "",
                     "Hint": "You will need to add up a total of: <ul class='govuk-list govuk-list--bullet govuk-hint'><li>bank overdraft</li><li>loans</li><li>amounts owed to directors - including director loans and director accounts</li><li>amounts owed to subsidiaries - if your organisation is part of a group</li><li>amounts due under finance leases or hire purchase contracts</li></ul>",
                     "Input": {
-                        "Type": "Text",
+                        "Type": "Number",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
@@ -1183,7 +1207,8 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null
+                        "DataEndpoint": null,
+                        "InputPrefix": "&pound;"
                     },
                     "Order": null,
                     "Value": "",
@@ -1198,7 +1223,7 @@
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'balance sheet' under 'the sum of all assets less all liabilities'.",
                     "Input": {
-                        "Type": "Text",
+                        "Type": "Number",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
@@ -1212,7 +1237,8 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null
+                        "DataEndpoint": null,
+                        "InputPrefix": "&pound;"
                     },
                     "Order": null,
                     "Value": "",
@@ -1227,7 +1253,7 @@
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'balance sheet' under 'fixed assets' or 'goodwill'.",
                     "Input": {
-                        "Type": "Text",
+                        "Type": "Number",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
@@ -1241,7 +1267,8 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null
+                        "DataEndpoint": null,
+                        "InputPrefix": "&pound;"
                     },
                     "Order": null,
                     "Value": "",
@@ -1304,7 +1331,7 @@
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'profit and loss statement', 'income and expenditure account' or 'statement of financial activities'.",
                     "Input": {
-                        "Type": "Text",
+                        "Type": "Number",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
@@ -1318,7 +1345,8 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null
+                        "DataEndpoint": null,
+                        "InputPrefix": "&pound;"
                     },
                     "Order": null,
                     "Value": "",
@@ -1333,7 +1361,7 @@
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'operating profit note to the accounts'. You'll need to add up all the items under 'note 2' and enter the total figure.",
                     "Input": {
-                        "Type": "Text",
+                        "Type": "Number",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
@@ -1347,7 +1375,8 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null
+                        "DataEndpoint": null,
+                        "InputPrefix": "&pound;"
                     },
                     "Order": null,
                     "Value": "",
@@ -1362,7 +1391,7 @@
                     "QuestionBodyText": "",
                     "Hint": "Profit or loss is the net amount earned after tax. You can find this under 'net profit' or 'net movement in funds' in your organisation's accounts.",
                     "Input": {
-                        "Type": "Text",
+                        "Type": "Number",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
@@ -1376,7 +1405,8 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null
+                        "DataEndpoint": null,
+                        "InputPrefix": "&pound;"
                     },
                     "Order": null,
                     "Value": "",
@@ -1391,7 +1421,7 @@
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'notes to the accounts'.",
                     "Input": {
-                        "Type": "Text",
+                        "Type": "Number",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
@@ -1405,7 +1435,8 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null
+                        "DataEndpoint": null,
+                        "InputPrefix": "&pound;"
                     },
                     "Order": null,
                     "Value": "",
@@ -1420,7 +1451,7 @@
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'balance sheet'.",
                     "Input": {
-                        "Type": "Text",
+                        "Type": "Number",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
@@ -1434,7 +1465,8 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null
+                        "DataEndpoint": null,
+                        "InputPrefix": "&pound;"
                     },
                     "Order": null,
                     "Value": "",
@@ -1449,7 +1481,7 @@
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'balance sheet' under 'creditors: amount falling due within one year'.",
                     "Input": {
-                        "Type": "Text",
+                        "Type": "Number",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
@@ -1463,7 +1495,8 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null
+                        "DataEndpoint": null,
+                        "InputPrefix": "&pound;"
                     },
                     "Order": null,
                     "Value": "",
@@ -1478,7 +1511,7 @@
                     "QuestionBodyText": "",
                     "Hint": "You will need to add up a total of: <ul class='govuk-list govuk-list--bullet govuk-hint'><li>bank overdraft</li><li>loans</li><li>amounts owed to directors - including director loans and director accounts</li><li>amounts owed to subsidiaries - if your organisation is part of a group</li><li>amounts due under finance leases or hire purchase contracts</li></ul>",
                     "Input": {
-                        "Type": "Text",
+                        "Type": "Number",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
@@ -1492,7 +1525,8 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null
+                        "DataEndpoint": null,
+                        "InputPrefix": "&pound;"
                     },
                     "Order": null,
                     "Value": "",
@@ -1507,7 +1541,7 @@
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'balance sheet' under 'the sum of all assets less all liabilities'.",
                     "Input": {
-                        "Type": "Text",
+                        "Type": "Number",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
@@ -1521,7 +1555,8 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null
+                        "DataEndpoint": null,
+                        "InputPrefix": "&pound;"
                     },
                     "Order": null,
                     "Value": "",
@@ -1536,7 +1571,7 @@
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'balance sheet' under 'fixed assets' or 'goodwill'.",
                     "Input": {
-                        "Type": "Text",
+                        "Type": "Number",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
@@ -1550,7 +1585,8 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null
+                        "DataEndpoint": null,
+                        "InputPrefix": "&pound;"
                     },
                     "Order": null,
                     "Value": "",
@@ -1613,7 +1649,7 @@
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'profit and loss statement', 'income and expenditure account' or 'statement of financial activities'.",
                     "Input": {
-                        "Type": "Text",
+                        "Type": "Number",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
@@ -1627,7 +1663,8 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null
+                        "DataEndpoint": null,
+                        "InputPrefix": "&pound;"
                     },
                     "Order": null,
                     "Value": "",
@@ -1642,7 +1679,7 @@
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'operating profit note to the accounts'. You'll need to add up all the items under 'expenditure' and enter the total figure.",
                     "Input": {
-                        "Type": "Text",
+                        "Type": "Number",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
@@ -1656,7 +1693,8 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null
+                        "DataEndpoint": null,
+                        "InputPrefix": "&pound;"
                     },
                     "Order": null,
                     "Value": "",
@@ -1671,7 +1709,7 @@
                     "QuestionBodyText": "",
                     "Hint": "Profit or loss is the net amount earned after tax. You can find this under 'net profit' in your organisation accounts.",
                     "Input": {
-                        "Type": "Text",
+                        "Type": "Number",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
@@ -1685,7 +1723,8 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null
+                        "DataEndpoint": null,
+                        "InputPrefix": "&pound;"
                     },
                     "Order": null,
                     "Value": "",
@@ -1700,7 +1739,7 @@
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'notes to the accounts'.",
                     "Input": {
-                        "Type": "Text",
+                        "Type": "Number",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
@@ -1714,7 +1753,8 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null
+                        "DataEndpoint": null,
+                        "InputPrefix": "&pound;"
                     },
                     "Order": null,
                     "Value": "",
@@ -1729,7 +1769,7 @@
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'balance sheet'.",
                     "Input": {
-                        "Type": "Text",
+                        "Type": "Number",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
@@ -1743,7 +1783,8 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null
+                        "DataEndpoint": null,
+                        "InputPrefix": "&pound;"
                     },
                     "Order": null,
                     "Value": "",
@@ -1758,7 +1799,7 @@
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'balance sheet' under 'creditors: amount falling due within one year'.",
                     "Input": {
-                        "Type": "Text",
+                        "Type": "Number",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
@@ -1772,7 +1813,8 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null
+                        "DataEndpoint": null,
+                        "InputPrefix": "&pound;"
                     },
                     "Order": null,
                     "Value": "",
@@ -1787,7 +1829,7 @@
                     "QuestionBodyText": "",
                     "Hint": "You will need to add up a total of: <ul class='govuk-list govuk-list--bullet govuk-hint'><li>bank overdraft</li><li>loans</li><li>amounts owed to directors - including director loans and director accounts</li><li>amounts owed to subsidiaries - if your organisation is part of a group</li><li>amounts due under finance leases or hire purchase contracts</li></ul>",
                     "Input": {
-                        "Type": "Text",
+                        "Type": "Number",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
@@ -1801,7 +1843,8 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null
+                        "DataEndpoint": null,
+                        "InputPrefix": "&pound;"
                     },
                     "Order": null,
                     "Value": "",
@@ -1816,7 +1859,7 @@
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'balance sheet' under the 'capital account balance'.",
                     "Input": {
-                        "Type": "Text",
+                        "Type": "Number",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
@@ -1830,7 +1873,8 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null
+                        "DataEndpoint": null,
+                        "InputPrefix": "&pound;"
                     },
                     "Order": null,
                     "Value": "",
@@ -1845,7 +1889,7 @@
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'balance sheet' under 'fixed assets' or 'goodwill'.",
                     "Input": {
-                        "Type": "Text",
+                        "Type": "Number",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
@@ -1859,7 +1903,8 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null
+                        "DataEndpoint": null,
+                        "InputPrefix": "&pound;"
                     },
                     "Order": null,
                     "Value": "",
@@ -1916,7 +1961,7 @@
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'profit and loss statement', 'income and expenditure account' or 'statement of financial activities'.",
                     "Input": {
-                        "Type": "Text",
+                        "Type": "Number",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
@@ -1930,7 +1975,8 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null
+                        "DataEndpoint": null,
+                        "InputPrefix": "&pound;"
                     },
                     "Order": null,
                     "Value": "",
@@ -1945,7 +1991,7 @@
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'operating profit note to the accounts'. You'll need to add up all the items under 'expenditure' and enter the total figure.",
                     "Input": {
-                        "Type": "Text",
+                        "Type": "Number",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
@@ -1959,7 +2005,8 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null
+                        "DataEndpoint": null,
+                        "InputPrefix": "&pound;"
                     },
                     "Order": null,
                     "Value": "",
@@ -1974,7 +2021,7 @@
                     "QuestionBodyText": "",
                     "Hint": "Profit or loss is the net amount earned after tax.",
                     "Input": {
-                        "Type": "Text",
+                        "Type": "Number",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
@@ -1988,7 +2035,8 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null
+                        "DataEndpoint": null,
+                        "InputPrefix": "&pound;"
                     },
                     "Order": null,
                     "Value": "",
@@ -2003,7 +2051,7 @@
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'notes to the accounts'.",
                     "Input": {
-                        "Type": "Text",
+                        "Type": "Number",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
@@ -2017,7 +2065,8 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null
+                        "DataEndpoint": null,
+                        "InputPrefix": "&pound;"
                     },
                     "Order": null,
                     "Value": "",
@@ -2032,7 +2081,7 @@
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'balance sheet'.",
                     "Input": {
-                        "Type": "Text",
+                        "Type": "Number",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
@@ -2046,7 +2095,8 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null
+                        "DataEndpoint": null,
+                        "InputPrefix": "&pound;"
                     },
                     "Order": null,
                     "Value": "",
@@ -2061,7 +2111,7 @@
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'balance sheet' under 'creditors: amount falling due within one year'.",
                     "Input": {
-                        "Type": "Text",
+                        "Type": "Number",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
@@ -2075,7 +2125,8 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null
+                        "DataEndpoint": null,
+                        "InputPrefix": "&pound;"
                     },
                     "Order": null,
                     "Value": "",
@@ -2090,7 +2141,7 @@
                     "QuestionBodyText": "",
                     "Hint": "You will need to add up a total of: <ul class='govuk-list govuk-list--bullet govuk-hint'><li>bank overdraft</li><li>loans</li><li>amounts owed to directors - including director loans and director accounts</li><li>amounts owed to subsidiaries - if your organisation is part of a group</li><li>amounts due under finance leases or hire purchase contracts</li></ul>",
                     "Input": {
-                        "Type": "Text",
+                        "Type": "Number",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
@@ -2104,7 +2155,8 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null
+                        "DataEndpoint": null,
+                        "InputPrefix": "&pound;"
                     },
                     "Order": null,
                     "Value": "",
@@ -2119,7 +2171,7 @@
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'balance sheet' under the 'capital account balance'.",
                     "Input": {
-                        "Type": "Text",
+                        "Type": "Number",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
@@ -2133,7 +2185,8 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null
+                        "DataEndpoint": null,
+                        "InputPrefix": "&pound;"
                     },
                     "Order": null,
                     "Value": "",
@@ -2148,7 +2201,7 @@
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'balance sheet' under 'fixed assets' or 'goodwill'.",
                     "Input": {
-                        "Type": "Text",
+                        "Type": "Number",
                         "InputClasses": "govuk-input--width-10",
                         "Validations": [
                             {
@@ -2162,7 +2215,8 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null
+                        "DataEndpoint": null,
+                        "InputPrefix": "&pound;"
                     },
                     "Order": null,
                     "Value": "",
