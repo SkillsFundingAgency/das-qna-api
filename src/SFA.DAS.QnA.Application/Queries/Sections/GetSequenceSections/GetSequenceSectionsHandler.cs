@@ -58,9 +58,7 @@ namespace SFA.DAS.QnA.Application.Queries.Sections.GetSequenceSections
 
         private  void RemovePagesBasedOnNotRequiredConditions(Section section, JObject applicationData)
         {
-            //MFCMFC
-            //section.QnAData.Pages.RemoveAll(p => p.NotRequiredConditions != null && p.NotRequiredConditions.Any(nrc => nrc.IsOneOf.Contains(applicationData[nrc.Field]?.Value<string>())));
-            section.QnAData.Pages =
+             section.QnAData.Pages =
                 _notRequiredProcessor.PagesWithoutNotRequired(section.QnAData.Pages, applicationData);
 
         }
