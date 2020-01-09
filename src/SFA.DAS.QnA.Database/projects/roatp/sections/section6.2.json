@@ -783,25 +783,26 @@
                 },
 				{
 				"Field": "PAT-Type-Of-Training-supporting",
-                    "IsOneOf": [
-                        "Full apprenticeship standards,Full apprenticeship frameworks,Part apprenticeship standards,Part apprenticeship frameworks,Functional skills",
-						"Full apprenticeship frameworks,Part apprenticeship standards,Part apprenticeship frameworks,Functional skills",
-						"Full apprenticeship standards,Part apprenticeship standards,Part apprenticeship frameworks,Functional skills",
-						"Full apprenticeship standards,Full apprenticeship frameworks,Part apprenticeship frameworks,Functional skills",
-						"Full apprenticeship standards,Full apprenticeship frameworks,Part apprenticeship standards,Functional skills",
-						"Full apprenticeship standards,Full apprenticeship frameworks,Functional skills",
-						"Full apprenticeship standards,Part apprenticeship frameworks,Functional skills",
-						"Full apprenticeship frameworks,Part apprenticeship standards,Functional skills",
-						"Part apprenticeship standards,Part apprenticeship frameworks,Functional skills",
-						"Full apprenticeship standards,Full apprenticeship frameworks,Part apprenticeship standards,Part apprenticeship frameworks",
-						"Full apprenticeship frameworks,Part apprenticeship standards,Part apprenticeship frameworks",
-						"Full apprenticeship standards,Part apprenticeship standards,Part apprenticeship frameworks",
-						"Full apprenticeship standards,Full apprenticeship frameworks,Part apprenticeship frameworks",
-						"Full apprenticeship standards,Full apprenticeship frameworks,Part apprenticeship standards",
-						"Full apprenticeship standards,Full apprenticeship frameworks",
-						"Full apprenticeship standards,Part apprenticeship frameworks",
-						"Full apprenticeship frameworks,Part apprenticeship standards",
-						"Part apprenticeship standards,Part apprenticeship frameworks"
+                    "ContainsAllOf": [
+                        "Full apprenticeship standards","Full apprenticeship frameworks"			
+                    ]
+				},
+				{
+				"Field": "PAT-Type-Of-Training-supporting",
+                    "ContainsAllOf": [
+                        "Full apprenticeship standards","Part apprenticeship frameworks"			
+                    ]
+				},
+				{
+				"Field": "PAT-Type-Of-Training-supporting",
+                    "ContainsAllOf": [
+                        "Part apprenticeship standards","Full apprenticeship frameworks"			
+                    ]
+				},
+				{
+				"Field": "PAT-Type-Of-Training-supporting",
+                    "ContainsAllOf": [
+                        "Part apprenticeship standards","Part apprenticeship frameworks"			
                     ]
 				}
             ],

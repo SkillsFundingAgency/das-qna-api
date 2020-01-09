@@ -25,12 +25,12 @@ namespace SFA.DAS.QnA.Application.UnitTests.ServiceTests
         [TestCase(null, "value1,value3,value2", false)]
         [TestCase(new[] { "value" }, "", false)]
         [TestCase(new[] { "value" }, null, false)]
+        [TestCase(new string[] {}, null, false)]
+        [TestCase(null, null, false)]
         public void When_PagesWithNotRequired_conditions_with_containsAllOf(string[] containsAllValues, string applicationDataValue, bool match)
             {
-               // var applicationDataValue = "value1,value3,value2";
                 var expectedPagesCount = 1;
-               // var match = true;
-               if (!match)
+                if (!match)
                    expectedPagesCount = 2;
           
                 var pageIdAlwaysPresent = "3";
@@ -49,7 +49,7 @@ namespace SFA.DAS.QnA.Application.UnitTests.ServiceTests
                     PageId = pageIdAbsentIfNotRequired,
                     NotRequiredConditions = new List<NotRequiredCondition>
                     {
-                        new NotRequiredCondition()
+                        new NotRequiredCondition
                         {
                             Field = "FieldToTest",
                             ContainsAllOf = containsAllValues

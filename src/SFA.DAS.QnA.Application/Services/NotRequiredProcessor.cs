@@ -22,21 +22,16 @@ namespace SFA.DAS.QnA.Application.Services
                                  p.NotRequiredConditions.Any(nrc => nrc.IsOneOf != null && nrc.IsOneOf.Contains(applicationData[nrc.Field]?.Value<string>())));
 
             var pagesToRemove = new List<string>();
-            foreach (var page in pages)
+            foreach (var page in pages.Where(p=>p.NotRequiredConditions!=null))
             {
                 if (page.NotRequiredConditions == null) continue;
-                foreach (var notRequiredCondition in page.NotRequiredConditions)
+                foreach (var notRequiredCondition in page.NotRequiredConditions.Where(n=>n.ContainsAllOf!=null && n.ContainsAllOf.Any()))
                 {
-                    if (notRequiredCondition.ContainsAllOf == null) continue;
                     var fieldToCheck = notRequiredCondition.Field;
                     var fieldValue = applicationData[fieldToCheck]?.Value<string>();
                     if (string.IsNullOrEmpty(fieldValue)) continue;
 
-
-
                     var applicationDataValues = fieldValue.Split(",", StringSplitOptions.RemoveEmptyEntries);
-                    if (notRequiredCondition.ContainsAllOf == null ||
-                        !notRequiredCondition.ContainsAllOf.Any()) continue;
 
                     var containsAllValues =
                         applicationDataValues.Select(p => p)
