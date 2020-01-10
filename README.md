@@ -89,7 +89,7 @@ Database project containing setup in order to the create the QnA Database
 - projects/{subfolder}/sections
 	- Holds QnAData for each WorkflowSection
 	
-_NOTE:_ To publish the database to your local SQL Server, you need to ensure that `ProjectPath` contains the full path.
+_NOTE:_ To publish the database to your local SQL Server, you need to ensure that `ProjectPath` contains the full path, including trailing back-slash
 - {drive}:\{project-folders}\das-qna-api\src\SFA.DAS.QnA.Database\
 - For example: *C:\projects\efsa\das-qna-api\src\SFA.DAS.QnA.Database\*
 
