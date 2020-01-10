@@ -18,7 +18,7 @@
                     "Label": "What teaching methods will your organisation use to deliver 20% off the job training?",
                     "ShortLabel": "",
                     "InputClasses": null,
-                    "QuestionBodyText": "<p class='govuk-body'>Select all that apply.</p><p class='govuk-body'>Find out more about <a href=\"https://www.gov.uk/government/publications/apprenticeships-off-the-job-training\" target=\"_blank\">apprenticeship off the job training (opens in a new window or tab)</a>.</p>",
+                    "QuestionBodyText": "<p class='govuk-body'>Find out more about <a href=\"https://www.gov.uk/government/publications/apprenticeships-off-the-job-training\" target=\"_blank\">apprenticeship off the job training (opens in a new window or tab)</a>.</p><p class='govuk-body govuk-hint'>Select all that apply.</p>",
                     "Hint": "",
                     "Input": {
                         "Type": "CheckboxList",
