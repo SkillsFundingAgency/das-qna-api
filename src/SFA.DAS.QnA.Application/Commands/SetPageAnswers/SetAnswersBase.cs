@@ -140,7 +140,7 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
                         if (!String.IsNullOrWhiteSpace(condition.QuestionTag))
                         {
                             var questionTagValue = applicationData[condition.QuestionTag];
-                            var questionTag = questionTagValue.Value<string>();
+                            var questionTag = questionTagValue?.Value<string>();
                             allConditionsSatisfied = CheckAllConditionsSatisfied(condition, questionTag);
 
                             if (!allConditionsSatisfied)
@@ -206,7 +206,7 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
             var allConditionsSatisfied = true;
             
 
-            if (String.IsNullOrEmpty(questionTag))
+            if (string.IsNullOrEmpty(questionTag))
             {
                 allConditionsSatisfied = false;
             }
@@ -233,7 +233,7 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
 
             var isRequiredNextAction = true;
 
-            // CheckAllConditionsSatisfied here for any NotRequiredConditions on the next page.
+            // Check here for any NotRequiredConditions on the next page.
             var nextPage = section.QnAData?.Pages.FirstOrDefault(p => p.PageId == nextAction.ReturnId);
 
             if (nextPage is null || applicationData is null)

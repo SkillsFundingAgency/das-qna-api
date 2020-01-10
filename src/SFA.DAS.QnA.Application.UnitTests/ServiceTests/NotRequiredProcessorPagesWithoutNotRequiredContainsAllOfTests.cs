@@ -81,7 +81,7 @@ namespace SFA.DAS.QnA.Application.UnitTests.ServiceTests
                 var notRequiredProcessor = new NotRequiredProcessor();
                 var actualPages = notRequiredProcessor.PagesWithoutNotRequired(pages, applicationData);
 
-                Assert.AreEqual(actualPages.Count, expectedPagesCount);
+                Assert.AreEqual(actualPages.Count(), expectedPagesCount);
                 Assert.IsTrue(actualPages.Any(p => p.PageId == pageIdAlwaysPresent));
                 Assert.AreNotEqual(actualPages.Any(p => p.PageId == pageIdAbsentIfNotRequired), match);
         }

@@ -59,7 +59,7 @@ namespace SFA.DAS.QnA.Application.Queries.Sections.GetSequenceSections
         private  void RemovePagesBasedOnNotRequiredConditions(Section section, JObject applicationData)
         {
              section.QnAData.Pages =
-                _notRequiredProcessor.PagesWithoutNotRequired(section.QnAData.Pages, applicationData);
+                _notRequiredProcessor.PagesWithoutNotRequired(section.QnAData.Pages, applicationData).ToList();
 
         }
     }

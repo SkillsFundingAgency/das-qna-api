@@ -10,13 +10,13 @@ namespace SFA.DAS.QnA.Application.Services
 {
     public class NotRequiredProcessor: INotRequiredProcessor
     {
-        public bool NotRequired(List<NotRequiredCondition> notRequiredConditions, JObject applicationData)
+        public bool NotRequired(IEnumerable<NotRequiredCondition> notRequiredConditions, JObject applicationData)
         {
             return notRequiredConditions.Any(nrc =>
                 nrc.IsOneOf != null && nrc.IsOneOf.Contains(applicationData[nrc.Field]?.Value<string>()));
         }
 
-        public List<Page> PagesWithoutNotRequired(List<Page> pages, JObject applicationData)
+        public IEnumerable<Page> PagesWithoutNotRequired(List<Page> pages, JObject applicationData)
         {
             pages.RemoveAll(p => p.NotRequiredConditions != null &&
                                  p.NotRequiredConditions.Any(nrc => nrc.IsOneOf != null && nrc.IsOneOf.Contains(applicationData[nrc.Field]?.Value<string>())));

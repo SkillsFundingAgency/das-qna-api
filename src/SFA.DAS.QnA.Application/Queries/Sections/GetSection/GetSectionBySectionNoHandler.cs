@@ -16,7 +16,7 @@ namespace SFA.DAS.QnA.Application.Queries.Sections.GetSection
     {
         private readonly QnaDataContext _dataContext;
         private readonly IMapper _mapper;
-        private INotRequiredProcessor _notRequiredProcessor;
+        private readonly INotRequiredProcessor _notRequiredProcessor;
 
         public GetSectionBySectionNoHandler(QnaDataContext dataContext, IMapper mapper, INotRequiredProcessor notRequiredProcessor)
         {
@@ -41,7 +41,7 @@ namespace SFA.DAS.QnA.Application.Queries.Sections.GetSection
             return new HandlerResponse<Section>(_mapper.Map<Section>(section));
         }
 
-        private  void RemovePages(Data.Entities.Application application, ApplicationSection section)
+        private   void RemovePages(Data.Entities.Application application, ApplicationSection section)
         {
             var applicationData = JObject.Parse(application.ApplicationData);
 
@@ -57,7 +57,7 @@ namespace SFA.DAS.QnA.Application.Queries.Sections.GetSection
         private  void RemovePagesBasedOnNotRequiredConditions(ApplicationSection section, JObject applicationData)
         {
             section.QnAData.Pages =
-                _notRequiredProcessor.PagesWithoutNotRequired(section.QnAData.Pages, applicationData);
+                _notRequiredProcessor.PagesWithoutNotRequired(section.QnAData.Pages, applicationData).ToList();
         }
     }
 }
