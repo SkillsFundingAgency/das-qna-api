@@ -29,5 +29,22 @@ namespace SFA.DAS.QnA.Api.Views
                 : Model.Input.Validations;
             return validations;
         }
+
+        /// <summary>
+        /// Gets the options from the dynamic Model.
+        /// Normally the Model will be a QuestionViewModel and will contain Options.
+        /// If the Question is in FurtherQuestions in a ComplexRadio, then the Model will be a Question and
+        /// Options is a sub-property of Input.
+        /// Hence the hack
+        /// </summary>
+        /// <param name="Model">QuestionViewModel or Question</param>
+        /// <returns>A dynamic list of Options</returns>
+        public static dynamic GetOptions(dynamic Model)
+        {
+            var options = ViewHelpers.PropertyExists(Model, "Options")
+                ? Model.Options
+                : Model.Input.Options;
+            return options;
+        }
     }
 }

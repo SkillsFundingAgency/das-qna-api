@@ -1,7 +1,9 @@
+@using SFA.DAS.QnA.Api.Views
 @model dynamic
 
 @{
     var isError = Model.ErrorMessages != null && Model.ErrorMessages.Count > 0 ? "govuk-input--error" : "";
+    var options = ViewHelpers.GetOptions(Model);
 }
 
 @if (Model.ErrorMessages != null && Model.ErrorMessages.Count > 0)
@@ -17,54 +19,50 @@
 
 <div class="govuk-form-group">
 
-    @{ 
-        var hasConditionalText = ((IEnumerable<dynamic>)Model.Options).Any(opt => opt.HasConditionalContentText);
-        var shouldInlineOptions = Model.Options.Count <= 2;
+    @{
+        var hasConditionalText = ((IEnumerable<dynamic>)options).Any(opt => opt.HasConditionalContentText);
+        var shouldInlineOptions = options.Count <= 2;
         var cssClass = hasConditionalText ? "govuk-radios--conditional" : shouldInlineOptions ? "govuk-radios--inline" : "";
     }
 
     <div class="govuk-radios @cssClass" data-module="radios">
-        @for (int i = 0; i < Model.Options.Count; i++)
+        @for (int i = 0; i < options.Count; i++)
         {
-            var radioChecked = Model.Value == Model.Options[i].Value.ToString() ? "checked" : "";
+            var radioChecked = Model.Value == options[i].Value.ToString() ? "checked" : "";
             var optionId = Model.QuestionId + (i == 0 ? "" : "_" + i);
 
             <div class="govuk-radios__item">
-                @if (Model.Options[i].HasHintText)
+                @if (options[i].HasHintText)
                 {
-                    <input
-                        class="govuk-radios__input"
-                        type="radio"
-                        id="@optionId"
-                        name="@Model.QuestionId"
-                        value="@Model.Options[i].Value"
-                        data-aria-controls="conditional-@optionId"
-                        aria-describedby="@optionId-hint"
-                        @radioChecked
-                    />
+                    <input class="govuk-radios__input"
+                           type="radio"
+                           id="@optionId"
+                           name="@Model.QuestionId"
+                           value="@options[i].Value"
+                           data-aria-controls="conditional-@optionId"
+                           aria-describedby="@optionId-hint"
+                           @radioChecked />
                 }
                 else
                 {
-                    <input
-                        class="govuk-radios__input"
-                        type="radio"
-                        id="@optionId"
-                        name="@Model.QuestionId"
-                        value="@Model.Options[i].Value"
-                        data-aria-controls="conditional-@optionId"
-                        @radioChecked
-                    />
+                    <input class="govuk-radios__input"
+                           type="radio"
+                           id="@optionId"
+                           name="@Model.QuestionId"
+                           value="@options[i].Value"
+                           data-aria-controls="conditional-@optionId"
+                           @radioChecked />
                 }
-                <label class="govuk-label govuk-radios__label" for="@(Model.QuestionId + (i == 0 ? "" : "_" + i))">@Model.Options[i].Label</label>
+                <label class="govuk-label govuk-radios__label" for="@(Model.QuestionId + (i == 0 ? "" : "_" + i))">@options[i].Label</label>
                 <span id="@optionId-hint" class="govuk-hint govuk-radios__hint">
-                    @Html.Raw(Model.Options[i].HintText)
+                    @Html.Raw(options[i].HintText)
                 </span>
             </div>
 
-            if(@Model.Options[i].HasConditionalContentText)
+            @if (options[i].HasConditionalContentText)
             {
                 <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-@optionId">
-                    @Html.Raw(Model.Options[i].ConditionalContentText)
+                    @Html.Raw(options[i].ConditionalContentText)
                 </div>
             }
         }
