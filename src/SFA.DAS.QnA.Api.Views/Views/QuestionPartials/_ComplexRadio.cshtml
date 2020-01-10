@@ -19,7 +19,7 @@
     <div class="govuk-radios govuk-radios--conditional" data-module="radios">
         @for (int i = 0; i < Model.Options.Count; i++)
         {
-            var radioChecked = Model.Value == Model.Options[i].Label.ToString() ? "checked" : "";
+            var radioChecked = Model.Value == Model.Options[i].Value.ToString() ? "checked" : "";
             var optionId = Model.QuestionId + (i == 0 ? "" : "_" + i);
             <div class="govuk-radios__item">
                 @if (Model.Options[i].HasHintText)
@@ -29,7 +29,7 @@
                         type="radio"
                         id="@optionId"
                         name="@Model.QuestionId"
-                        value="@Model.Options[i].Label"
+                        value="@Model.Options[i].Value"
                         data-aria-controls="conditional-@optionId"
                         aria-describedby="@optionId-hint"
                         @radioChecked 
@@ -42,7 +42,7 @@
                         type="radio"
                         id="@optionId"
                         name="@Model.QuestionId"
-                        value="@Model.Options[i].Label"
+                        value="@Model.Options[i].Value"
                         data-aria-controls="conditional-@optionId"
                         @radioChecked
                     />
