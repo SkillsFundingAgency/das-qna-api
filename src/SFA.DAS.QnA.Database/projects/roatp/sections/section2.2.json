@@ -2514,7 +2514,7 @@
                     "ShortLabel": "",
                     "InputClasses": null,
                     "QuestionBodyText": "<p class='govuk-body'>Financial statements must include a:</p><ul class='govuk-list govuk-list--bullet'><li>balance sheet - showing the value of everything your organisation owns, owes and is owed</li><li>profit and loss account - showing your organisation's sales, running costs and profit and loss it's made</li><li>detailed notes about the accounts</li><li>breakdown of creditors and borrowings</li></ul><p class='govuk-body'>If applicable, financial statements should be signed and filed with Companies House or the Charity Commission of England and Wales.</p><p class='govuk-body'>Each file must be a PDF and smaller than 5MB.</p><div class='govuk-warning-text'> <span class='govuk-warning-text__icon' aria-hidden='true'>!</span> <strong class='govuk-warning-text__text'> <span class='govuk-warning-text__assistive'>Warning</span>Financial statements must not be abbreviated, filleted or for a micro entity.</strong> </div>",
-                    "Hint": "",
+                    "Hint": "Upload financial statements",
                     "Input": {
                         "Type": "FileUpload",
                         "InputClasses": null,
