@@ -18,7 +18,7 @@
                     "Label": "What teaching methods will your organisation use to deliver 20% off the job training?",
                     "ShortLabel": "",
                     "InputClasses": null,
-                    "QuestionBodyText": "<p class='govuk-body'>Select all that apply.</p><p class='govuk-body'>Find out more about <a href=\"https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/792228/OTJ_training_guidancev2_reissued_.pdf\" target=\"_blank\">apprenticeship off the job training (opens in a new window or tab)</a>.</p>",
+                    "QuestionBodyText": "<p class='govuk-body'>Find out more about <a href=\"https://www.gov.uk/government/publications/apprenticeships-off-the-job-training\" target=\"_blank\">apprenticeship off the job training (opens in a new window or tab)</a>.</p><p class='govuk-body govuk-hint'>Select all that apply.</p>",
                     "Hint": "",
                     "Input": {
                         "Type": "CheckboxList",
@@ -81,7 +81,7 @@
                 {
                     "Field": "Apply-ProviderRoute",
                     "IsOneOf": [
-                        "2"
+                        "3"
                     ]
                 }
             ],
@@ -89,7 +89,7 @@
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
-            "ActivatedByPageId": "6510"
+            "ActivatedByPageId": null
         },
         {
             "PageId": "6510",
@@ -105,7 +105,7 @@
                     "Label": "How will your organisation ensure 20% off the job training is relevant to the specific apprenticeship being delivered?",
                     "ShortLabel": "",
                     "InputClasses": null,
-                    "QuestionBodyText": "<p class='govuk-body' id='pya-equality-policy'>Your answer must include how your organisation has:</p><ul class='govuk-list govuk-list--bullet'><li>use technical and theoretical elements of the apprenticeship to decide the best training method</li><li>ensure training methods suit the employers and apprentices circumstances</li><li>work with employers to define a delivery plan</li><li>ensure its delivery plan is flexible and meets employers and apprentices needs</li><li>choose the right time for off the job training - the apprentice must have had sufficient time to gain the right knowledge and skills before starting off the job training</li></ul>",
+                    "QuestionBodyText": "<p class='govuk-body' id='pya-equality-policy'>Your answer must include how your organisation will:</p><ul class='govuk-list govuk-list--bullet'><li>use technical and theoretical elements of the apprenticeship to decide the best training method</li><li>ensure training methods suit the employers and apprentices circumstances</li><li>work with employers to define a delivery plan</li><li>ensure its delivery plan is flexible and meets employers and apprentices needs</li><li>choose the right time for off the job training - the apprentice must have had sufficient time to gain the right knowledge and skills before starting off the job training</li></ul>",
                     "Hint": "",
                     "Input": {
                         "Type": "Textarea",
