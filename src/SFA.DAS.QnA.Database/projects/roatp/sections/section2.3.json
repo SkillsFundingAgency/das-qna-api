@@ -308,7 +308,14 @@
             "AllowMultipleAnswers": false,
             "Order": null,
             "Active": false,
-            "NotRequiredConditions": [],
+            "NotRequiredConditions": [
+                {
+                    "Field": "FHA-Parent-Has-Other-Subsidiaries",
+                    "IsOneOf": [
+                        "No"
+                    ]
+                }
+            ],
             "BodyText": "",
             "Details": null,
             "DisplayType": null,
@@ -367,7 +374,14 @@
             "AllowMultipleAnswers": false,
             "Order": null,
             "Active": false,
-            "NotRequiredConditions": [],
+            "NotRequiredConditions": [
+                {
+                    "Field": "FHA-Parent-Has-Other-Subsidiaries",
+                    "IsOneOf": [
+                        "Yes"
+                    ]
+                }
+            ],
             "BodyText": "",
             "Details": null,
             "DisplayType": null,
