@@ -1,0 +1,127 @@
+{
+    "Title": "Systems and processes to collect apprenticeship data",
+    "LinkTitle": "Systems and processes to collect apprenticeship data",
+    "DisplayType": "Pages",
+    "RequestedFeedbackAnswered": null,
+    "Pages": [
+        {
+            "PageId": "8300",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "Systems and processes to collect apprenticeship data",
+            "LinkTitle": "Systems and processes to collect apprenticeship data",
+            "InfoText": "",
+            "Questions": [
+                {
+                    "QuestionId": "EAT-60",
+                    "QuestionTag": "EAT-Evaluating-Systems",
+                    "Label": "Does your organisation have systems and processes in place to collect apprenticeship data?",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "<p class='govuk-body' id='eat-evaluating-systems'>To be an apprenticeship training provider, your organisation must have systems and processes in place to collect:</p><ul class='govuk-list govuk-list--bullet'><li>retention data of apprentices</li><li>achievement data of apprentices</li><li>destination and progression data for apprentices - for example, permanent employment or getting a promotion at the end of the apprenticeship</li><li>employer and apprentice feedback</li></ul>",
+                    "Hint": "",
+                    "Input":
+                    {
+                        "Type": "Radio",
+                        "Options": [
+                            {
+                                "Label": "Yes",
+                                "Value": "Yes",
+                                "FurtherQuestions": null
+                            },
+                            {
+                                "Label": "No",
+                                "Value": "No",
+                                "FurtherQuestions": null,
+                                "ConditionalContentText": "<p class='govuk-body'>Before joining the RoATP, your organisation must have systems and processes in place to get this data. We may ask for evidence on this.</p>"
+                            }
+                        ],
+                        "Validations": [
+                            {
+                                "Name": "Required",
+                                "Value": null,
+                                "ErrorMessage": "Tell us if your organisation has systems and processes in place to collect apprenticeship data"
+                            }
+                        ]
+                    },
+                    "Order": null
+                }
+            ],
+            "PageOfAnswers": [],
+            "Next": [
+                {
+                    "Action": "NextPage",
+                    "ReturnId": "8310",
+                    "Conditions": [],
+                    "ConditionMet": false
+                }
+            ],
+            "Complete": false,
+            "AllowMultipleAnswers": false,
+            "Order": null,
+            "Active": true,
+            "Feedback": null,
+            "HasFeedback": false,
+            "NotRequiredConditions": [],
+            "BodyText": ""
+        },
+        {
+            "PageId": "8310",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "Systems and processes to collect apprenticeship data",
+            "LinkTitle": "Systems and processes to collect apprenticeship data",
+            "InfoText": "",
+            "Questions": [
+                {
+                    "QuestionId": "EAT-70",
+                    "QuestionTag": "EAT-Evaluating-IlrData",
+                    "Label": "Does your organisation have the resources to submit Individualised Learner Record (ILR) data?",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "<p class='govuk-body' id='eat-evaluating-ilrdata'>As part of joining the RoATP, your organisation is required to submit data every month using the ILR. If your organisation fails to do this, it will not receive funding under levy agreements.</p><p class='govuk-body'>Find out more about <a href='https://www.gov.uk/government/collections/individualised-learner-record-ilr' target='_blank'>the ILR (opens in a new window or tab)</a>.</p>",
+                    "Hint": "",
+                    "Input":
+                    {
+                        "Type": "Radio",
+                        "Options": [
+                            {
+                                "Label": "Yes",
+                                "Value": "Yes",
+                                "FurtherQuestions": null
+                            },
+                            {
+                                "Label": "No",
+                                "Value": "No",
+                                "FurtherQuestions": null
+                            }
+                        ],
+                        "Validations": [
+                            {
+                                "Name": "Required",
+                                "Value": null,
+                                "ErrorMessage": "Tell us if your organisation has systems and processes in place to collect apprenticeship data"
+                            }
+                        ]
+                    },
+                    "Order": null
+                }
+            ],
+            "PageOfAnswers": [],
+            "Next": [
+                {
+                    "Action": "ReturnToSection",
+                    "ReturnId": "9.1",
+                    "Conditions": [],
+                    "ConditionMet": false
+                }
+            ],
+            "Complete": false,
+            "AllowMultipleAnswers": false,
+            "Order": null,
+            "Active": true,
+            "Feedback": null,
+            "HasFeedback": false,
+            "NotRequiredConditions": [],
+            "BodyText": ""
+        }
+    ]
+}
