@@ -280,7 +280,7 @@
                             {
                                 "Name": "Required",
                                 "Value": "",
-                                "ErrorMessage": "Select a financial statement for all your UK ultimate company's subsidiary companies"
+                                "ErrorMessage": "Select a financial statement for all your UK ultimate parent company's subsidiary companies"
                             },
                             {
                                 "Name": "FileType",
