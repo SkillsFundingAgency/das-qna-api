@@ -2546,7 +2546,20 @@
             "AllowMultipleAnswers": false,
             "Order": null,
             "Active": false,
-            "NotRequiredConditions": [],
+            "NotRequiredConditions": [
+                {
+                    "Field": "FHA-Has-12Months-Statements",
+                    "IsOneOf": [
+                        "Yes"
+                    ]
+                },
+                {
+                    "Field": "FHA-Partial-Financial-Statements",
+                    "IsOneOf": [
+                        "No"
+                    ]
+                }
+            ],
             "BodyText": "<p class='govuk-body'>You'll need to upload your organisation's:</p><ul class='govuk-list govuk-list--bullet'><li>financial statements covering any period within the last 12 months</li><li>management accounts covering the remaining period to date</li></ul><p class='govuk-body'>Your management accounts must start from the date your financial statements end.</p><p class='govuk-body'>For example, if your financial statements end on 31 January, your management accounts must start on 1 February.</p>",
             "Details": null,
             "DisplayType": null,
@@ -2605,7 +2618,20 @@
             "AllowMultipleAnswers": false,
             "Order": null,
             "Active": false,
-            "NotRequiredConditions": [],
+            "NotRequiredConditions": [
+                {
+                    "Field": "FHA-Has-12Months-Statements",
+                    "IsOneOf": [
+                        "Yes"
+                    ]
+                },
+                {
+                    "Field": "FHA-Partial-Financial-Statements",
+                    "IsOneOf": [
+                        "No"
+                    ]
+                }
+            ],
             "BodyText": "",
             "Details": null,
             "DisplayType": null,
@@ -2638,6 +2664,12 @@
                     "Field": "Apply-ProviderRoute",
                     "IsOneOf": [
                         "3"
+                    ]
+                },
+                {
+                    "Field": "FHA-Has-12Months-Statements",
+                    "IsOneOf": [
+                        "Yes"
                     ]
                 }
             ],
@@ -2699,12 +2731,19 @@
             "AllowMultipleAnswers": false,
             "Order": null,
             "Active": false,
-            "NotRequiredConditions": [],
+            "NotRequiredConditions": [
+                {
+                    "Field": "FHA-Has-12Months-Statements",
+                    "IsOneOf": [
+                        "Yes"
+                    ]
+                }
+            ],
             "BodyText": "",
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
-            "ActivatedByPageId": "2170,2190"
+            "ActivatedByPageId": "2170,2190,2195"
         },
         {
             "PageId": "2260",
@@ -2862,6 +2901,12 @@
                         "1",
                         "2"
                     ]
+                },
+                {
+                    "Field": "FHA-Has-12Months-Statements",
+                    "IsOneOf": [
+                        "Yes"
+                    ]
                 }
             ],
             "BodyText": "",
@@ -2891,7 +2936,14 @@
             "AllowMultipleAnswers": false,
             "Order": null,
             "Active": false,
-            "NotRequiredConditions": [],
+            "NotRequiredConditions": [
+                {
+                    "Field": "FHA-Has-12Months-Statements",
+                    "IsOneOf": [
+                        "Yes"
+                    ]
+                }
+            ],
             "BodyText": "<p class='govuk-body'>You'll need to upload your organisation's full management accounts for the last 12 months.</p>",
             "Details": null,
             "DisplayType": null,
@@ -2957,6 +3009,12 @@
                         "1",
                         "2"
                     ]
+                },
+                {
+                    "Field": "FHA-Has-12Months-Statements",
+                    "IsOneOf": [
+                        "Yes"
+                    ]
                 }
             ],
             "BodyText": "",
@@ -2986,7 +3044,14 @@
             "AllowMultipleAnswers": false,
             "Order": null,
             "Active": false,
-            "NotRequiredConditions": [],
+            "NotRequiredConditions": [
+                {
+                    "Field": "FHA-Has-12Months-Statements",
+                    "IsOneOf": [
+                        "Yes"
+                    ]
+                }
+            ],
             "BodyText": "<p class='govuk-body'>You'll need to upload your organisation's:</p><ul class='govuk-list govuk-list--bullet'><li>management accounts covering at least 3 months within the last 12 months to show active trading</li><li>financial projections covering the remaining period</li></ul><p class='govuk-body'>Management accounts and financial projections must cover a 12-month period in total.</p>",
             "Details": null,
             "DisplayType": null,
@@ -3045,7 +3110,14 @@
             "AllowMultipleAnswers": false,
             "Order": null,
             "Active": false,
-            "NotRequiredConditions": [],
+            "NotRequiredConditions": [
+                {
+                    "Field": "FHA-Has-12Months-Statements",
+                    "IsOneOf": [
+                        "Yes"
+                    ]
+                }
+            ],
             "BodyText": "",
             "Details": null,
             "DisplayType": null,
@@ -3104,7 +3176,14 @@
             "AllowMultipleAnswers": false,
             "Order": null,
             "Active": false,
-            "NotRequiredConditions": [],
+            "NotRequiredConditions": [
+                {
+                    "Field": "FHA-Has-12Months-Statements",
+                    "IsOneOf": [
+                        "Yes"
+                    ]
+                }
+            ],
             "BodyText": "",
             "Details": null,
             "DisplayType": null,
