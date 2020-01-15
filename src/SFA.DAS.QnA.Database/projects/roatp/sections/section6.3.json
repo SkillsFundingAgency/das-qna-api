@@ -10,7 +10,7 @@
             "SectionId": null,
             "Title": "How will your organisation ensure apprentices are supported during their apprenticeship training?",
             "LinkTitle": "Supporting apprentices",
-            "InfoText": "Supporting apprentices",
+            "InfoText": "",
             "Questions": [
                 {
                     "QuestionId": "PAT-630",
@@ -77,7 +77,7 @@
             "SectionId": null,
             "Title": "How will your organisation support its apprentices?",
             "LinkTitle": "how apprentices suported",
-            "InfoText": "how apprentices suported",
+            "InfoText": "",
             "Questions": [
                 {
                     "QuestionId": "PAT-631",

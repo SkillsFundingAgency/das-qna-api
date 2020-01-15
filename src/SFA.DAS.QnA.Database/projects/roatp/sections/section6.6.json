@@ -10,7 +10,7 @@
             "SectionId": null,
             "Title": "Where will your apprentices be trained?",
             "LinkTitle": "Where will your apprentices be trained?",
-            "InfoText": "Where apprentices will be trained",
+            "InfoText": "",
             "Questions": [
                 {
                     "QuestionId": "PAT-660",
