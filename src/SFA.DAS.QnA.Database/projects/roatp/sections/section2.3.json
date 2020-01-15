@@ -346,7 +346,7 @@
                             {
                                 "Name": "Required",
                                 "Value": "",
-                                "ErrorMessage": "Select your ultimate UK parent company's full financial statements covering the last 12 months"
+                                "ErrorMessage": "Select your UK ultimate parent company's full financial statements covering the last 12 months"
                             },
                             {
                                 "Name": "FileType",
