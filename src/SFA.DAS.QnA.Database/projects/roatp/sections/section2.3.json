@@ -314,6 +314,12 @@
                     "IsOneOf": [
                         "No"
                     ]
+                },
+                {
+                    "Field": "FHA-Parent-Has-Consolidated-Statements",
+                    "IsOneOf": [
+                        "Yes"
+                    ]
                 }
             ],
             "BodyText": "",
@@ -377,6 +383,12 @@
             "NotRequiredConditions": [
                 {
                     "Field": "FHA-Parent-Has-Other-Subsidiaries",
+                    "IsOneOf": [
+                        "Yes"
+                    ]
+                },
+                {
+                    "Field": "FHA-Parent-Has-Consolidated-Statements",
                     "IsOneOf": [
                         "Yes"
                     ]
