@@ -32,11 +32,6 @@ namespace SFA.DAS.QnA.Application.Commands.ResetPageAnswers
             ResetPageAnswers(request);
             UpdateApplicationData(request);
 
-            var nextAction = GetNextActionForPage(request.SectionId, request.PageId);
-            var checkboxListAllNexts = GetCheckboxListMatchingNextActionsForPage(request.SectionId, request.PageId);
-
-            SetStatusOfNextPagesBasedOnDeemedNextActions(request.SectionId, request.PageId, nextAction, checkboxListAllNexts);
-
             return new HandlerResponse<ResetPageAnswersResponse>(new ResetPageAnswersResponse(true));
         }
 
@@ -79,7 +74,7 @@ namespace SFA.DAS.QnA.Application.Commands.ResetPageAnswers
                     page.PageOfAnswers = new List<PageOfAnswers>();
 
                     page.Complete = false;
-                    MarkPageFeedbackAsComplete(page); // TODO: Not sure about this. The answer has been changed though...
+                    MarkPageFeedbackAsComplete(page); // As the answer has been 'changed', feedback can be deemed as completed
 
                     // Assign QnAData back so Entity Framework will pick up changes
                     section.QnAData = qnaData;
@@ -105,7 +100,7 @@ namespace SFA.DAS.QnA.Application.Commands.ResetPageAnswers
 
                     foreach (var question in page.Questions)
                     {
-                        SetApplicationDataField(question, new List<Answer>(), applicationData);
+                        SetApplicationDataField(question, applicationData);
                         if (!string.IsNullOrWhiteSpace(question.QuestionTag)) questionTagsWhichHaveBeenUpdated.Add(question.QuestionTag);
 
                         if (question.Input.Options != null)
@@ -114,7 +109,7 @@ namespace SFA.DAS.QnA.Application.Commands.ResetPageAnswers
                             {
                                 foreach (var furtherQuestion in option.FurtherQuestions)
                                 {
-                                    SetApplicationDataField(furtherQuestion, new List<Answer>(), applicationData);
+                                    SetApplicationDataField(furtherQuestion, applicationData);
                                     if (!string.IsNullOrWhiteSpace(furtherQuestion.QuestionTag)) questionTagsWhichHaveBeenUpdated.Add(furtherQuestion.QuestionTag);
                                 }
                             }
@@ -171,12 +166,12 @@ namespace SFA.DAS.QnA.Application.Commands.ResetPageAnswers
             }
         }
 
-        private static void SetApplicationDataField(Question question, List<Answer> answers, JObject applicationData)
+        private static void SetApplicationDataField(Question question, JObject applicationData)
         {
             if (question != null && applicationData != null)
             {
                 var questionTag = question.QuestionTag;
-                var questionTagAnswer = answers?.SingleOrDefault(a => a.QuestionId == question.QuestionId)?.Value;
+                string questionTagAnswer = null;
 
                 if (!string.IsNullOrWhiteSpace(questionTag))
                 {
