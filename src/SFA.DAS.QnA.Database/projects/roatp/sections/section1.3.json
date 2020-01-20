@@ -193,7 +193,7 @@
             "InfoText": "",
             "Details": {
                 "Title": "I do not have an ICO registration number",
-                "Details": "<p class='govuk-body'>To get an ICO registration number, you'll need to <a href='https://ico.org.uk/registration/new' target='_blank'>register with the ICO (opens in a new window or tab)</a>.</p><p class='govuk-body'>After you've registered and received an ICO registration number, sign back in to continue with this application.</p>"
+                "Body": "<p class='govuk-body'>To get an ICO registration number, you'll need to <a href='https://ico.org.uk/registration/new' target='_blank'>register with the ICO (opens in a new window or tab)</a>.</p><p class='govuk-body'>After you've registered and received an ICO registration number, sign back in to continue with this application.</p>"
             },
             "Questions": [
                 {
