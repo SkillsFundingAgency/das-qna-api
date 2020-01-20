@@ -47,7 +47,7 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
                     foreach (var condition in next.Conditions.Where(c => c.Contains != null))
                     {
                         var question = page.Questions.Single(q => q.QuestionId == condition.QuestionId);
-                        var answers = page.PageOfAnswers?[0].Answers;
+                        var answers = page.PageOfAnswers?.FirstOrDefault()?.Answers;
                         var answer = answers?.FirstOrDefault(a => a.QuestionId == condition.QuestionId);
 
                         if ("CheckboxList".Equals(question.Input.Type, StringComparison.InvariantCultureIgnoreCase))
@@ -163,7 +163,7 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
                         else
                         {
                             var question = page.Questions.Single(q => q.QuestionId == condition.QuestionId);
-                            var answers = page.PageOfAnswers?[0].Answers;
+                            var answers = page.PageOfAnswers?.FirstOrDefault()?.Answers;
                             var answer = answers?.FirstOrDefault(a => a.QuestionId == condition.QuestionId);
 
                             if ("CheckboxList".Equals(question.Input.Type, StringComparison.InvariantCultureIgnoreCase))
