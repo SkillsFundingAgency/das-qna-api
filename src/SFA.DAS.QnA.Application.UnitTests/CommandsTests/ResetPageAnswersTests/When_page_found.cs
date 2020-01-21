@@ -50,5 +50,20 @@
             questionTag.Should().NotBeNull();
             questionTag.Value<string>().Should().BeNullOrEmpty();
         }
+
+        [Test]
+        public async Task Then_all_pages_have_their_active_status_set_correctly()
+        {
+            await Handler.Handle(new ResetPageAnswersRequest(ApplicationId, SectionId, "1"), CancellationToken.None);
+
+            var page1Response = await GetPageHandler.Handle(new GetPageRequest(ApplicationId, SectionId, "1"), CancellationToken.None);
+            page1Response.Value.Active.Should().BeTrue();
+
+            var page2Response = await GetPageHandler.Handle(new GetPageRequest(ApplicationId, SectionId, "2"), CancellationToken.None);
+            page2Response.Value.Active.Should().BeFalse();
+
+            var page3Response = await GetPageHandler.Handle(new GetPageRequest(ApplicationId, SectionId, "3"), CancellationToken.None);
+            page3Response.Value.Active.Should().BeFalse();
+        }
     }
 }
