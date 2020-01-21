@@ -32,6 +32,11 @@ namespace SFA.DAS.QnA.Application.Commands.ResetPageAnswers
             ResetPageAnswers(request);
             UpdateApplicationData(request);
 
+            var nextAction = GetNextActionForPage(request.SectionId, request.PageId);
+            var checkboxListAllNexts = GetCheckboxListMatchingNextActionsForPage(request.SectionId, request.PageId);
+
+            SetStatusOfNextPagesBasedOnDeemedNextActions(request.SectionId, request.PageId, nextAction, checkboxListAllNexts);
+
             return new HandlerResponse<ResetPageAnswersResponse>(new ResetPageAnswersResponse(true));
         }
 
