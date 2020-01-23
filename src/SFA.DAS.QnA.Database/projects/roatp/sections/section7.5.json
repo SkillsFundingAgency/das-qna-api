@@ -52,6 +52,64 @@
             "PageOfAnswers": [],
             "Next": [
                 {
+                    "Action": "NextPage",
+                    "ReturnId": "7510",
+                    "Conditions": [
+                        {
+                            "QuestionId": "DAT-750",
+                            "QuestionTag": null,
+                            "MustEqual": "No"
+                        }
+                    ],
+                    "ConditionMet": false
+                },
+                {
+                    "Action": "NextPage",
+                    "ReturnId": "7520",
+                    "Conditions": [
+                        {
+                            "QuestionId": "DAT-750",
+                            "MustEqual": "Yes"
+                        },
+                        {
+                            "QuestionTag": "Apply-ProviderRoute",
+                            "MustEqual": "1"
+                        }
+                    ],
+                    "ConditionMet": false
+                },
+                {
+                    "Action": "NextPage",
+                    "ReturnId": "7520",
+                    "Conditions": [
+                        {
+                            "QuestionId": "DAT-750",
+                            "MustEqual": "Yes"
+                        },
+                        {
+                            "QuestionTag": "Apply-ProviderRoute",
+                            "MustEqual": "3"
+                        }
+                    ],
+                    "ConditionMet": false
+                },
+                {
+                    "Action": "NextPage",
+                    "ReturnId": "7530",
+                    "Conditions": [
+                        {
+                            "QuestionId": "DAT-750",
+                            "MustEqual": "Yes"
+                        },
+                        {
+                            "QuestionId": null,
+                            "QuestionTag": "Apply-ProviderRoute",
+                            "MustEqual": "2"
+                        }
+                    ],
+                    "ConditionMet": false
+                },
+                {
                     "Action": "ReturnToSection",
                     "ReturnId": "7",
                     "Conditions": [],
@@ -81,7 +139,7 @@
             "SequenceId": null,
             "SectionId": null,
             "Title": "",
-            "LinkTitle": "",
+            "LinkTitle": "Developing and delivering training",
             "InfoText": "",
             "Questions": [
                 {
@@ -134,16 +192,194 @@
             "AllowMultipleAnswers": false,
             "Order": null,
             "Active": true,
-            "NotRequiredConditions": [{
+            "NotRequiredConditions": [
+                {
                     "Field": "SoleTrade-or-Partnership",
-                    "IsOneOf": [null, "Partnership"]
+                    "IsOneOf": [
+                        null,
+                        "Partnership"
+                    ]
                 }
             ],
             "BodyText": "",
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
-            "ActivatedByPageId": null
+            "ActivatedByPageId": "7500"
+        },
+        {
+            "PageId": "7520",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "",
+            "LinkTitle": "Developing and delivering training",
+            "InfoText": "",
+            "Questions": [
+                {
+                    "QuestionId": "DAT-752",
+                    "QuestionTag": null,
+                    "Label": "Who has the team worked with to develop and deliver training?",
+                    "ShortLabel": "",
+                    "InputClasses": null,
+                    "QuestionBodyText": "",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "Radio",
+                        "InputClasses": null,
+                        "Options": [
+                            {
+                                "Value": "Other Organisations",
+                                "Label": "Other Organisations",
+                                "HintText": ""
+                            },
+                            {
+                                "Value": "Employers - to deliver training to their employees",
+                                "Label": "Employers - to deliver training to their employees",
+                                "HintText": ""
+                            },
+                            {
+                                "Value": "Both other organisations and employers",
+                                "Label": "Both other organisations and employers",
+                                "HintText": ""
+                            },
+                            {
+                                "Value": "No one yet",
+                                "Label": "No one yet",
+                                "HintText": ""
+                            }
+                        ],
+                        "Validations": [
+                            {
+                                "Name": "Required",
+                                "Value": "",
+                                "ErrorMessage": "Tell us who the team worked with to develop and deliver training"
+                            }
+                        ],
+                        "DataEndpoint": null
+                    },
+                    "Order": null,
+                    "Value": "",
+                    "ErrorMessages": null
+                }
+            ],
+            "PageOfAnswers": [],
+            "Next": [
+                {
+                    "Action": "ReturnToSection",
+                    "ReturnId": "7",
+                    "Conditions": [],
+                    "ConditionMet": false
+                }
+            ],
+            "Complete": false,
+            "AllowMultipleAnswers": false,
+            "Order": null,
+            "Active": false,
+            "NotRequiredConditions": [],
+            "BodyText": "",
+            "Details": null,
+            "DisplayType": null,
+            "Feedback": null,
+            "ActivatedByPageId": "7500"
+        },
+        {
+            "PageId": "7530",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "",
+            "LinkTitle": null,
+            "InfoText": "",
+            "Questions": [
+                {
+                    "QuestionId": "DAT-753",
+                    "QuestionTag": null,
+                    "Label": "Tell us who's the overall manager for this team",
+                    "ShortLabel": "",
+                    "InputClasses": null,
+                    "QuestionBodyText": "<p class='govuk-body' id='dat-section_7_5_overall_manager'>This must be someone who is accountable for the team responsible for developing and delivering training.</p><p class='govuk-body'>Full name</p>",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "Text",
+                        "InputClasses": null,
+                        "Validations": [
+                            {
+                                "Name": "Required",
+                                "Value": "",
+                                "ErrorMessage": "Tell us who the overall manager is for this team and how much experience in developing and delivering training they have"
+                            },
+                            {
+                                "Name": "MaxLength",
+                                "Value": "255",
+                                "ErrorMessage": "Enter a full name using 255 characters or less"
+                            }
+                        ],
+                        "DataEndpoint": null
+                    },
+                    "Order": null,
+                    "Value": "",
+                    "ErrorMessages": null
+                },
+                {
+                    "QuestionId": "DAT-754",
+                    "QuestionTag": null,
+                    "Label": "How much experience do they have in developing and delivering training?",
+                    "ShortLabel": "",
+                    "InputClasses": null,
+                    "QuestionBodyText": "<p class='govuk-body' id='dat-section_7_5_experience'>This experience can be from either:\n</p><ul class='govuk-list govuk-list--bullet'><li>your organisation</li><li>previous employment</li></p>",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "Radio",
+                        "InputClasses": null,
+                        "Options": [
+                            {
+                                "Value": "Less than 9 months",
+                                "Label": "Less than 9 months",
+                                "HintText": ""
+                            },
+                            {
+                                "Value": "Between 9 to 18 months ",
+                                "Label": "Between 9 to 18 months ",
+                                "HintText": ""
+                            },
+                            {
+                                "Value": "Over 18 months",
+                                "Label": "Over 18 months",
+                                "HintText": ""
+                            }
+                        ],
+                        "Validations": [
+                            {
+                                "Name": "Required",
+                                "Value": "",
+                                "ErrorMessage": "Tell us how much experience they have in developing and delivering training"
+                            }
+                        ],
+                        "DataEndpoint": null
+                    },
+                    "Order": null,
+                    "Value": "",
+                    "ErrorMessages": null
+                }
+            ],
+            "PageOfAnswers": [],
+            "Next": [
+                {
+                    "Action": "ReturnToSection",
+                    "ReturnId": "7",
+                    "Conditions": [],
+                    "ConditionMet": false
+                }
+            ],
+            "Complete": false,
+            "AllowMultipleAnswers": false,
+            "Order": null,
+            "Active": false,
+            "NotRequiredConditions": [],
+            "BodyText": "",
+            "Details": null,
+            "DisplayType": null,
+            "Feedback": null,
+            "ActivatedByPageId": "7500"
         }
     ]
 }
