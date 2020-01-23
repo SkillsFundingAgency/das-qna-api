@@ -73,113 +73,6 @@
             "ActivatedByPageId": "1"
         },
         {
-            "PageId": "1",
-            "SequenceId": null,
-            "SectionId": null,
-            "Title": "Trading name",
-            "LinkTitle": "Trading ",
-            "InfoText": "",
-            "Questions": [
-                {
-                    "QuestionId": "CD-30",
-                    "QuestionTag": null,
-                    "Label": "Does your organisation have a trading name?",
-                    "ShortLabel": "",
-                    "InputClasses": null,
-                    "QuestionBodyText": "",
-                    "Hint": "",
-                    "Input": {
-                        "Type": "ComplexRadio",
-                        "InputClasses": null,
-                        "Options": [
-                            {
-                                "FurtherQuestions": [
-                                    {
-                                        "QuestionId": "CD-30.1",
-                                        "QuestionTag": "trading_name",
-                                        "Label": "What is your trading name?",
-                                        "ShortLabel": "",
-                                        "InputClasses": null,
-                                        "QuestionBodyText": "",
-                                        "Hint": "",
-                                        "Input": {
-                                            "Type": "Text",
-                                            "InputClasses": null,
-                                            "Options": [],
-                                            "Validations": [
-                                                {
-                                                    "Name": "Required",
-                                                    "Value": "",
-                                                    "ErrorMessage": "Enter a trading name"
-                                                }
-                                            ],
-                                            "DataEndpoint": null
-                                        },
-                                        "Order": null,
-                                        "Value": "",
-                                        "ErrorMessages": null
-                                    }
-                                ],
-                                "Value": "Yes",
-                                "Label": "Yes",
-                                "HintText": ""
-                            },
-                            {
-                                "FurtherQuestions": [],
-                                "Value": "No",
-                                "Label": "No",
-                                "HintText": ""
-                            }
-                        ],
-                        "Validations": [
-                            {
-                                "Name": "Required",
-                                "Value": "",
-                                "ErrorMessage": "Select yes if your organisation has a trading name"
-                            }
-                        ],
-                        "DataEndpoint": null
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
-                }
-            ],
-            "PageOfAnswers": [],
-            "Next": [
-                {
-                    "Action": "NextPage",
-                    "ReturnId": "2",
-                    "Condition": null,
-                    "Conditions": [
-                        {
-                            "QuestionId": "CD-30",
-                            "QuestionTag": null,
-                            "MustEqual": "Yes"
-                        }
-                    ],
-                    "ConditionMet": false
-                },
-                {
-                    "Action": "NextPage",
-                    "ReturnId": "3",
-                    "Condition": null,
-                    "Conditions": [],
-                    "ConditionMet": false
-                }
-            ],
-            "Complete": false,
-            "AllowMultipleAnswers": false,
-            "Order": null,
-            "Active": true,
-            "NotRequiredConditions": [],
-            "BodyText": "",
-            "Details": null,
-            "DisplayType": null,
-            "Feedback": null,
-            "ActivatedByPageId": null
-        },
-        {
             "PageId": "3",
             "SequenceId": null,
             "SectionId": null,
@@ -344,6 +237,113 @@
             "Active": true,
             "NotRequiredConditions": [],
             "BodyText": "<p class='govuk-body'>This information will be published on the Register of end-point assessment organisations and will be made available to the public.</p>",
+            "Details": null,
+            "DisplayType": null,
+            "Feedback": null,
+            "ActivatedByPageId": null
+        },
+        {
+            "PageId": "1",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "Trading name",
+            "LinkTitle": "Trading ",
+            "InfoText": "",
+            "Questions": [
+                {
+                    "QuestionId": "CD-30",
+                    "QuestionTag": null,
+                    "Label": "Does your organisation have a trading name?",
+                    "ShortLabel": "",
+                    "InputClasses": null,
+                    "QuestionBodyText": "",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "ComplexRadio",
+                        "InputClasses": null,
+                        "Options": [
+                            {
+                                "FurtherQuestions": [
+                                    {
+                                        "QuestionId": "CD-30.1",
+                                        "QuestionTag": "trading_name",
+                                        "Label": "What is your trading name?",
+                                        "ShortLabel": "",
+                                        "InputClasses": null,
+                                        "QuestionBodyText": "",
+                                        "Hint": "",
+                                        "Input": {
+                                            "Type": "Text",
+                                            "InputClasses": null,
+                                            "Options": [],
+                                            "Validations": [
+                                                {
+                                                    "Name": "Required",
+                                                    "Value": "",
+                                                    "ErrorMessage": "Enter a trading name"
+                                                }
+                                            ],
+                                            "DataEndpoint": null
+                                        },
+                                        "Order": null,
+                                        "Value": "",
+                                        "ErrorMessages": null
+                                    }
+                                ],
+                                "Value": "Yes",
+                                "Label": "Yes",
+                                "HintText": ""
+                            },
+                            {
+                                "FurtherQuestions": [],
+                                "Value": "No",
+                                "Label": "No",
+                                "HintText": ""
+                            }
+                        ],
+                        "Validations": [
+                            {
+                                "Name": "Required",
+                                "Value": "",
+                                "ErrorMessage": "Select yes if your organisation has a trading name"
+                            }
+                        ],
+                        "DataEndpoint": null
+                    },
+                    "Order": null,
+                    "Value": "",
+                    "ErrorMessages": null
+                }
+            ],
+            "PageOfAnswers": [],
+            "Next": [
+                {
+                    "Action": "NextPage",
+                    "ReturnId": "2",
+                    "Condition": null,
+                    "Conditions": [
+                        {
+                            "QuestionId": "CD-30",
+                            "QuestionTag": null,
+                            "MustEqual": "Yes"
+                        }
+                    ],
+                    "ConditionMet": false
+                },
+                {
+                    "Action": "NextPage",
+                    "ReturnId": "3",
+                    "Condition": null,
+                    "Conditions": [],
+                    "ConditionMet": false
+                }
+            ],
+            "Complete": false,
+            "AllowMultipleAnswers": false,
+            "Order": null,
+            "Active": true,
+            "NotRequiredConditions": [],
+            "BodyText": "",
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
