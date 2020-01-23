@@ -8,17 +8,17 @@
             "PageId": "7500",
             "SequenceId": null,
             "SectionId": null,
-            "Title": "Does your organisation have a team responsible for developing and delivering training?",
+            "Title": "Developing and delivering training",
             "LinkTitle": "Developing and delivering training",
             "InfoText": "",
             "Questions": [
                 {
                     "QuestionId": "DAT-750",
                     "QuestionTag": null,
-                    "Label": "",
+                    "Label": "Does your organisation have a team responsible for developing and delivering training?",
                     "ShortLabel": "",
                     "InputClasses": null,
-                    "QuestionBodyText": "",
+                    "QuestionBodyText": "<p class='govuk-body' id='dat-section_7_5_q1_not_sole_trader'>Training includes things like:</p><ul class='govuk-list govuk-list--bullet'><li>training of technical skills</li><li>apprenticeships</li><li>work based training</li><li>commercial training</li></p>",
                     "Hint": "",
                     "Input": {
                         "Type": "Radio",
@@ -70,7 +70,7 @@
                     ]
                 }
             ],
-            "BodyText": "<p class='govuk-body' id='dat-section_7_5_q1_not_sole_trader'>Training includes things like:</p><ul class='govuk-list govuk-list--bullet'><li>training of technical skills</li><li>apprenticeships</li><li>work based training</li><li>commercial training</li></p>",
+            "BodyText": "",
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
@@ -80,17 +80,17 @@
             "PageId": "7510",
             "SequenceId": null,
             "SectionId": null,
-            "Title": "Does your organisation have someone responsible for developing and delivering training?",
-            "LinkTitle": "Developing and delivering training",
+            "Title": "",
+            "LinkTitle": "",
             "InfoText": "",
             "Questions": [
                 {
                     "QuestionId": "DAT-751",
                     "QuestionTag": null,
-                    "Label": "",
+                    "Label": "Does your organisation have someone responsible for developing and delivering training?",
                     "ShortLabel": "",
                     "InputClasses": null,
-                    "QuestionBodyText": "",
+                    "QuestionBodyText": "<p class='govuk-body' id='dat-section_7_5_q1_sole_trader'>This person is you if you're the only person in your organisation.</a><p class='govuk-body'>Training includes things like:</p><ul class='govuk-list govuk-list--bullet'><li>training of technical skills</li><li>apprenticeships</li><li>work based training</li><li>commercial training</li></p>",
                     "Hint": "",
                     "Input": {
                         "Type": "Radio",
@@ -134,22 +134,12 @@
             "AllowMultipleAnswers": false,
             "Order": null,
             "Active": true,
-            "NotRequiredConditions": [
-                {
+            "NotRequiredConditions": [{
                     "Field": "SoleTrade-or-Partnership",
-                    "IsOneOf": [
-                        ""
-                    ]
-                },
-				{
-                    "Field": "SoleTrade-or-Partnership",
-                    "IsOneOf": [
-                        "Partnership"
-                    ]
+                    "IsOneOf": [null, "Partnership"]
                 }
-				
             ],
-            "BodyText": "<p class='govuk-body' id='dat-section_7_5_q1_sole_trader'>This person is you if you’re the only person in your organisation.</a><p class='govuk-body'>Training includes things like:</p><ul class='govuk-list govuk-list--bullet'><li>training of technical skills</li><li>apprenticeships</li><li>work based training</li><li>commercial training</li></p>",
+            "BodyText": "",
             "Details": null,
             "DisplayType": null,
             "Feedback": null,

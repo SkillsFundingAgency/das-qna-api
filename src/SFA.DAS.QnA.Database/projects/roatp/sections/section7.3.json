@@ -1,73 +1,50 @@
 {
-    "Title": "Developing and delivering training",
-    "LinkTitle": "Developing and delivering training",
-    "DisplayType": "Pages",
+    "Title": "Management hierarchy for apprenticeships",
+    "LinkTitle": "Management hierarchy for apprenticeships",
+    "DisplayType": "",
     "RequestedFeedbackAnswered": null,
     "Pages": [
-        {
-            "PageId": "7400",
-            "SequenceId": null,
-            "SectionId": null,
-            "Title": "Does your organisation have a team responsible for developing and delivering training?",
-            "LinkTitle": "Developing and delivering training",
-            "InfoText": "",
-            "Questions": [
-                {
-                    "QuestionId": "DAT-740",
-                    "QuestionTag": null,
-                    "Label": "",
-                    "ShortLabel": "",
-                    "InputClasses": null,
-                    "QuestionBodyText": "",
-                    "Hint": "",
-                    "Input": {
-                        "Type": "Radio",
-                        "InputClasses": null,
-                        "Options": [
-                            {
-                                "Value": "Yes",
-                                "Label": "Yes",
-                                "HintText": ""
-                            },
-                            {
-                                "Value": "No",
-                                "Label": "No",
-                                "HintText": ""
-                            }
-                        ],
-                        "Validations": [
-                            {
-                                "Name": "Required",
-                                "Value": "",
-                                "ErrorMessage": "Tell us if your organisation has a team responsible for developing and delivering training"
-                            }
-                        ],
-                        "DataEndpoint": null
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
-                }
-            ],
-            "PageOfAnswers": [],
-            "Next": [
-                {
-                    "Action": "NextPage",
-                    "ReturnId": "",
-                    "Conditions": [],
-                    "ConditionMet": false
-                }
-            ],
-            "Complete": false,
-            "AllowMultipleAnswers": false,
-            "Order": null,
-            "Active": true,
-            "NotRequiredConditions": [],
-            "BodyText": "<p class='govuk-body' id='dat-section_7_5_intro_not_sole_trader'>Training includes things like:</p><ul class='govuk-list govuk-list--bullet'><li>training of technical skills</li><li>apprenticeships</li><li>work based training</li><li>commercial training</li></p>",
-            "Details": null,
-            "DisplayType": null,
-            "Feedback": null,
-            "ActivatedByPageId": null
-        }
+      {
+          "PageId": "7200",
+          "SequenceId": null,
+          "SectionId": null,
+          "Title": "Confirm management hierarchy",
+          "LinkTitle": "",
+          "InfoText": "",
+          "Questions": [
+              {
+                  "QuestionId": "DAT-720",
+                  "QuestionTag": "AddManagementHierarchy",
+                  "Label": "Confirm management hierarchy",
+                  "ShortLabel": "",
+                  "QuestionBodyText": "",
+                  "Hint": "",
+                  "Input": {
+                      "Type": "TabularData",
+                      "Validations": []
+                  },
+                  "Order": null
+              }
+          ],
+          "PageOfAnswers": [],
+          "Next": [
+              {
+                  "Action": "NextSection",
+                  "ReturnId": "7.3",
+                  "Conditions": [],
+                  "ConditionMet": false
+              }
+          ],
+          "Complete": false,
+          "AllowMultipleAnswers": false,
+          "Order": null,
+          "Active": true,
+          "Visible": true,
+          "Feedback": null,
+          "HasFeedback": false,
+          "NotRequiredOrgTypes": [],
+          "BodyText": "",
+          "NotRequiredConditions": []
+      }
     ]
 }
