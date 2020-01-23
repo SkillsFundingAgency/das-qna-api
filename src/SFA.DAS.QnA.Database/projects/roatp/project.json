@@ -222,6 +222,12 @@
                "name":"Quality and high standards in apprenticeship training"
             },
             { 
+               "id":"section7.5",
+               "SequenceNo":7,
+               "SectionNo":5,
+               "name":"Developing and delivering training"
+            },
+            { 
                "id":"section8.1",
                "SequenceNo":8,
                "SectionNo":1,
