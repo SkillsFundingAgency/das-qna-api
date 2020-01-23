@@ -5,6 +5,74 @@
     "RequestedFeedbackAnswered": null,
     "Pages": [
         {
+            "PageId": "2",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "Trading name",
+            "LinkTitle": "Name to use on the register",
+            "InfoText": "",
+            "Questions": [
+                {
+                    "QuestionId": "CD-01",
+                    "QuestionTag": "use_trading_name",
+                    "Label": "Do you want to use your trading name on the register?",
+                    "ShortLabel": "",
+                    "InputClasses": null,
+                    "QuestionBodyText": "",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "Radio",
+                        "InputClasses": null,
+                        "Options": [
+                            {
+                                "FurtherQuestions": [],
+                                "Value": "Yes",
+                                "Label": "Yes",
+                                "HintText": ""
+                            },
+                            {
+                                "FurtherQuestions": [],
+                                "Value": "No",
+                                "Label": "No",
+                                "HintText": ""
+                            }
+                        ],
+                        "Validations": [
+                            {
+                                "Name": "Required",
+                                "Value": "",
+                                "ErrorMessage": "Select yes if you want to use your trading name on the register"
+                            }
+                        ],
+                        "DataEndpoint": null
+                    },
+                    "Order": null,
+                    "Value": "",
+                    "ErrorMessages": null
+                }
+            ],
+            "PageOfAnswers": [],
+            "Next": [
+                {
+                    "Action": "NextPage",
+                    "ReturnId": "3",
+                    "Condition": null,
+                    "Conditions": [],
+                    "ConditionMet": false
+                }
+            ],
+            "Complete": false,
+            "AllowMultipleAnswers": false,
+            "Order": null,
+            "Active": false,
+            "NotRequiredConditions": [],
+            "BodyText": "",
+            "Details": null,
+            "DisplayType": null,
+            "Feedback": null,
+            "ActivatedByPageId": "1"
+        },
+        {
             "PageId": "1",
             "SequenceId": null,
             "SectionId": null,
@@ -110,74 +178,6 @@
             "DisplayType": null,
             "Feedback": null,
             "ActivatedByPageId": null
-        },
-        {
-            "PageId": "2",
-            "SequenceId": null,
-            "SectionId": null,
-            "Title": "Trading name",
-            "LinkTitle": "Name to use on the register",
-            "InfoText": "",
-            "Questions": [
-                {
-                    "QuestionId": "CD-01",
-                    "QuestionTag": "use_trading_name",
-                    "Label": "Do you want to use your trading name on the register?",
-                    "ShortLabel": "",
-                    "InputClasses": null,
-                    "QuestionBodyText": "",
-                    "Hint": "",
-                    "Input": {
-                        "Type": "Radio",
-                        "InputClasses": null,
-                        "Options": [
-                            {
-                                "FurtherQuestions": [],
-                                "Value": "Yes",
-                                "Label": "Yes",
-                                "HintText": ""
-                            },
-                            {
-                                "FurtherQuestions": [],
-                                "Value": "No",
-                                "Label": "No",
-                                "HintText": ""
-                            }
-                        ],
-                        "Validations": [
-                            {
-                                "Name": "Required",
-                                "Value": "",
-                                "ErrorMessage": "Select yes if you want to use your trading name on the register"
-                            }
-                        ],
-                        "DataEndpoint": null
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
-                }
-            ],
-            "PageOfAnswers": [],
-            "Next": [
-                {
-                    "Action": "NextPage",
-                    "ReturnId": "3",
-                    "Condition": null,
-                    "Conditions": [],
-                    "ConditionMet": false
-                }
-            ],
-            "Complete": false,
-            "AllowMultipleAnswers": false,
-            "Order": null,
-            "Active": false,
-            "NotRequiredConditions": [],
-            "BodyText": "",
-            "Details": null,
-            "DisplayType": null,
-            "Feedback": null,
-            "ActivatedByPageId": "1"
         },
         {
             "PageId": "3",
