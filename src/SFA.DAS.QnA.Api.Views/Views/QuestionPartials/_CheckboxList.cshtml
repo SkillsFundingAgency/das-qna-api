@@ -1,7 +1,10 @@
+@using SFA.DAS.QnA.Api.Views
 @model dynamic
 @{
     var checkedStatus = "checked";
+    var options = ViewHelpers.GetOptions(Model);
 }
+
 @if (Model.ErrorMessages != null && Model.ErrorMessages.Count > 0)
 {
     foreach (var errorMessage in Model.ErrorMessages)
@@ -16,35 +19,35 @@
 
 <div class="govuk-checkboxes govuk-!-margin-bottom-5 js-check-all-container">
     <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input js-check-all-control" type="checkbox" id="allAreas" name="allAreas" value="" />
-        <label class="govuk-label govuk-checkboxes__label" for="allAreas">
-            All areas
+        <input class="govuk-checkboxes__input js-check-all-control" type="checkbox" id="checkAll" name="checkAll" value="" />
+        <label class="govuk-label govuk-checkboxes__label" for="checkAll">
+            Select all
         </label>
     </div>
 </div>
 
 
 <div class="govuk-checkboxes js-checkbox-container">
-    @for (int i = 0; i < Model.Options.Count; i++)
+    @for (int i = 0; i < options.Count; i++)
     {
-        var checkboxChecked = (Model.Value != null && Model.Value.Contains(Model.Options[i].Value)) ? checkedStatus : "";
+        var checkboxChecked = (Model.Value != null && Model.Value.Contains(options[i].Value)) ? checkedStatus : "";
         var optionId = Model.QuestionId + (i == 0 ? "" : "_" + i);
     <div class="govuk-checkboxes__item" id="@Model.QuestionId">
-        @if (Model.Options[i].HasHintText)
+        @if (options[i].HasHintText)
         {
-            <input class="govuk-checkboxes__input js-check-all-checkbox" type="checkbox" id="option_@i" name="@Model.QuestionId" value="@Model.Options[i].Value" @checkboxChecked aria-describedby="@optionId-hint" />
+            <input class="govuk-checkboxes__input js-check-all-checkbox" type="checkbox" id="option_@i" name="@Model.QuestionId" value="@options[i].Value" @checkboxChecked aria-describedby="@optionId-hint" />
         }
         else
         {
-            <input class="govuk-checkboxes__input js-check-all-checkbox" type="checkbox" id="option_@i" name="@Model.QuestionId" value="@Model.Options[i].Value" @checkboxChecked />
+            <input class="govuk-checkboxes__input js-check-all-checkbox" type="checkbox" id="option_@i" name="@Model.QuestionId" value="@options[i].Value" @checkboxChecked />
         }
         <label class="govuk-label govuk-checkboxes__label" for="option_@i">
-            @Model.Options[i].Label
+            @options[i].Label
         </label>
-        @if (Model.Options[i].HasHintText)
+        @if (options[i].HasHintText)
         {
             <span id="@optionId-hint" class="govuk-hint govuk-radios__hint">
-                @Html.Raw(Model.Options[i].HintText)
+                @Html.Raw(options[i].HintText)
             </span>
         }
     </div>
