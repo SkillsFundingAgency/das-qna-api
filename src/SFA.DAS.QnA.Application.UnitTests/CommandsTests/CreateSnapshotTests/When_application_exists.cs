@@ -8,6 +8,7 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.CreateSnapshotTests
     public class When_application_exists : CreateSnapshotTestBase
     {
         [Test]
+        [Ignore("Must be ran on local DEV machine")]
         public async Task Then_snapshot_is_created()
         {
             var snapshot = await Handler.Handle(new CreateSnapshotRequest(ApplicationId), new System.Threading.CancellationToken());
@@ -17,6 +18,7 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.CreateSnapshotTests
         }
 
         [Test]
+        [Ignore("Must be ran on local DEV machine")]
         public async Task Then_snapshot_has_copied_over_files_successfully()
         {
             var snapshot = await Handler.Handle(new CreateSnapshotRequest(ApplicationId), new System.Threading.CancellationToken());
