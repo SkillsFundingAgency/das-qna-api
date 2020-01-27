@@ -530,7 +530,7 @@
 			"Details": null,
 			"DisplayType": null,
 			"Feedback": null,
-			"ActivatedByPageId": "7500,7510,7530"
+			"ActivatedByPageId": "7500,7510,7530,7560,7570,7591,7592,7953,7954"
 		},
 		{
 			"PageId": "7560",
@@ -659,39 +659,147 @@
 			"ActivatedByPageId": "7510,7520,7560"
 		},
 		{
-			"PageId": "7570",
-			"SequenceId": null,
-			"SectionId": null,
-			"Title": "APR-1043 title",
-			"LinkTitle": "Developing and delivering training",
-			"InfoText": "",
-			"Questions": [],
-			"PageOfAnswers": [],
-			"Next": [{
-				"Action": "ReturnToSection",
-				"ReturnId": "7",
-				"Conditions": [],
-				"ConditionMet": false
-			}],
-			"Complete": false,
-			"AllowMultipleAnswers": false,
-			"Order": null,
-			"Active": false,
-			"NotRequiredConditions": [],
-			"BodyText": "APR-1043",
+            "PageId": "7570",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "",
+            "LinkTitle": "",
+            "InfoText": "",
+            "Questions": [{
+                    "QuestionId": "DAT-757",
+                    "QuestionTag": "",
+                    "Label": "How has the team worked with other organisations to develop and deliver training?",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "<p class='govuk-body' id='dat-team-worked-with-other-orgs'>Your answer must include how:</p><ul class='govuk-list govuk-list--bullet'><li>training needs were identified</li><li>training was determined for the right solution</li><li>learning objectives were identified and measured</li><li>training was developed from learning objectives</li><li>learning objectives will be delivered to apprentices</li></ul>",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "Textarea",
+                        "Validations": [{
+                                "Name": "Required",
+                                "Value": "",
+                                "ErrorMessage": "Tell us how the team worked with other organisations to develop and deliver training"
+                            }, {
+                                "Name": "MaxWordCount",
+								"Value": "275",
+								"ErrorMessage": "Your answer must be 275 words or less"								
+                            }
+                        ]
+                    },
+                    "Order": null
+                }
+            ],
+            "PageOfAnswers": [],
+            "Next": [
+				{
+					"Action": "NextPage",
+					"ReturnId": "7540",
+					"Conditions": [
+						{
+							"QuestionTag": "Apply-ProviderRoute",
+							"Contains": "1"
+						}
+					],
+					"ConditionMet": false
+				},
+				{
+					"Action": "NextPage",
+					"ReturnId": "7590",
+					"Conditions": [
+						{
+							"QuestionTag": "Apply-ProviderRoute",
+							"Contains": "3"
+						}
+					],
+					"ConditionMet": false
+				},
+				{
+                    "Action": "ReturnToSection",
+                    "ReturnId": "7",
+                    "Conditions": [],
+                    "ConditionMet": false
+                }
+            ],
+            "Complete": false,
+            "AllowMultipleAnswers": false,
+            "Order": null,
+            "Active": false,
+            "Feedback": null,
+            "HasFeedback": false,
+            "NotRequiredConditions": [],
+            "BodyText": "",
 			"Details": null,
 			"DisplayType": null,
-			"Feedback": null,
-			"ActivatedByPageId": "7570"
-		},
+			"ActivatedByPageId": "7530"
+        },
 		{
 			"PageId": "7590",
 			"SequenceId": null,
 			"SectionId": null,
-			"Title": "APR-1048 title",
-			"LinkTitle": "Developing and delivering training",
+			"Title": "Tell us who's the overall manager for this team",
+			"LinkTitle": null,
 			"InfoText": "",
-			"Questions": [],
+			"Questions": [{
+					"QuestionId": "DAT-758",
+					"QuestionTag": null,
+					"Label": "",
+					"ShortLabel": "",
+					"InputClasses": null,
+					"QuestionBodyText": "<p class='govuk-body' id='dat-section_7_5_overall_manager_supporting'>This must be someone who is accountable for the team responsible for developing and delivering training.</p><p class='govuk-body'>Full name</p>",
+					"Hint": "",
+					"Input": {
+						"Type": "Text",
+						"InputClasses": null,
+						"Validations": [{
+								"Name": "Required",
+								"Value": "",
+								"ErrorMessage": "Tell us who the overall manager is for this team and how much experience in developing and delivering training they have"
+							},
+							{
+								"Name": "MaxLength",
+								"Value": "255",
+								"ErrorMessage": "Enter a full name using 255 characters or less"
+							}
+						],
+						"DataEndpoint": null
+					},
+					"Order": null,
+					"Value": "",
+					"ErrorMessages": null
+				},
+				{
+					"QuestionId": "DAT-759",
+					"QuestionTag": null,
+					"Label": "<h1 class='govuk-heading-l'>Do they have at least 3 months experience in developing and delivering training?</h1>",
+					"ShortLabel": "",
+					"InputClasses": null,
+					"QuestionBodyText": "<p class='govuk-body' id='dat-section_7_5_experience_supporting'>This experience can be from either:\n</p><ul class='govuk-list govuk-list--bullet'><li>your organisation</li><li>previous employment</li></p>",
+					"Hint": "",
+					"Input": {
+						"Type": "Radio",
+						"InputClasses": null,
+						"Options": [{
+								"Value": "Yes",
+								"Label": "Yes",
+								"HintText": ""
+							},
+							{
+								"Value": "No",
+								"Label": "No",
+								"HintText": ""
+							}
+						],
+						"Validations": [{
+							"Name": "Required",
+							"Value": "",
+							"ErrorMessage": "Tell us if they have at least 3 months experience in developing and delivering training"
+						}],
+						"DataEndpoint": null
+					},
+					"Order": null,
+					"Value": "",
+					"ErrorMessages": null
+				}
+			],
 			"PageOfAnswers": [],
 			"Next": [{
 				"Action": "ReturnToSection",
@@ -704,11 +812,11 @@
 			"Order": null,
 			"Active": false,
 			"NotRequiredConditions": [],
-			"BodyText": "APR-1048",
+			"BodyText": "",
 			"Details": null,
 			"DisplayType": null,
 			"Feedback": null,
-			"ActivatedByPageId": "7530, 7560"
+			"ActivatedByPageId": "7530,7560,7570,7591,7592,7953,7954"
 		},
 		{
 			"PageId": "7591",
