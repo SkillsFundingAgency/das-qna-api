@@ -171,7 +171,7 @@ namespace SFA.DAS.QnA.Application.Commands.CreateSnapshot
                                     }
                                     catch (Exception ex)
                                     {
-                                        _logger.LogError($"Error coping file in snapshot: {snapshotFileUrl} || Message: {ex.Message} || Stack trace: {ex.StackTrace}");
+                                        _logger.LogError($"Error copying file in snapshot: {snapshotFileUrl} || Message: {ex.Message} || Stack trace: {ex.StackTrace}");
                                     }
                                 }
                             }
