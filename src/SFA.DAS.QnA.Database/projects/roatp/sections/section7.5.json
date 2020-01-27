@@ -819,31 +819,78 @@
 			"ActivatedByPageId": "7530,7560,7570,7591,7592,7953,7954"
 		},
 		{
-			"PageId": "7591",
-			"SequenceId": null,
-			"SectionId": null,
-			"Title": "APR-1225 title",
-			"LinkTitle": "Developing and delivering training",
-			"InfoText": "",
-			"Questions": [],
-			"PageOfAnswers": [],
-			"Next": [{
-				"Action": "ReturnToSection",
-				"ReturnId": "7",
-				"Conditions": [],
-				"ConditionMet": false
-			}],
-			"Complete": false,
-			"AllowMultipleAnswers": false,
-			"Order": null,
-			"Active": false,
-			"NotRequiredConditions": [],
-			"BodyText": "APR-1225",
+            "PageId": "7591",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "",
+            "LinkTitle": "",
+            "InfoText": "",
+            "Questions": [{
+                    "QuestionId": "DAT-75_10",
+                    "QuestionTag": "",
+                    "Label": "How has the team worked with other organisations and employers to develop and deliver training?",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "<p class='govuk-body' id='dat-team-worked-with-both'>Your answer must include how:</p><ul class='govuk-list govuk-list--bullet'><li>training needs were identified</li><li>training was determined for the right solution</li><li>learning objectives were identified and measured</li><li>training was developed from learning objectives</li><li>learning objectives will be delivered to apprentices</li></ul>",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "Textarea",
+                        "Validations": [{
+                                "Name": "Required",
+                                "Value": "",
+                                "ErrorMessage": "Tell us how the team worked with employers and other organisations to develop and deliver training"
+                            }, {
+                                "Name": "MaxWordCount",
+								"Value": "275",
+								"ErrorMessage": "Your answer must be 275 words or less"								
+                            }
+                        ]
+                    },
+                    "Order": null
+                }
+            ],
+            "PageOfAnswers": [],
+            "Next": [
+				{
+					"Action": "NextPage",
+					"ReturnId": "7540",
+					"Conditions": [
+						{
+							"QuestionTag": "Apply-ProviderRoute",
+							"Contains": "1"
+						}
+					],
+					"ConditionMet": false
+				},
+				{
+					"Action": "NextPage",
+					"ReturnId": "7590",
+					"Conditions": [
+						{
+							"QuestionTag": "Apply-ProviderRoute",
+							"Contains": "3"
+						}
+					],
+					"ConditionMet": false
+				},
+				{
+                    "Action": "ReturnToSection",
+                    "ReturnId": "7",
+                    "Conditions": [],
+                    "ConditionMet": false
+                }
+            ],
+            "Complete": false,
+            "AllowMultipleAnswers": false,
+            "Order": null,
+            "Active": false,
+            "Feedback": null,
+            "HasFeedback": false,
+            "NotRequiredConditions": [],
+            "BodyText": "",
 			"Details": null,
 			"DisplayType": null,
-			"Feedback": null,
 			"ActivatedByPageId": "7570"
-		},
+        },
 		{
 			"PageId": "7592",
 			"SequenceId": null,
