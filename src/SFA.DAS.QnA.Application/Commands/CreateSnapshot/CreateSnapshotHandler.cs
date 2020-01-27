@@ -133,19 +133,20 @@ namespace SFA.DAS.QnA.Application.Commands.CreateSnapshot
             var sections = await _dataContext.ApplicationSections.AsNoTracking().Where(sec => sec.ApplicationId == currentApplication.Id).ToListAsync();
             var newSections = await _dataContext.ApplicationSections.AsNoTracking().Where(sec => sec.ApplicationId == newApplication.Id).ToListAsync();
 
-            // go through each section
+            // go through each section in the application
             foreach (var section in sections)
             {
                 var newSection = newSections.FirstOrDefault(s => s.SectionNo == section.SectionNo && s.SequenceNo == section.SequenceNo);
                 if (newSection is null) continue;
 
-                // go through each page within the section
+                // go through each page within the section that has a FileUpload question
                 foreach (var page in section.QnAData.Pages)
                 {
                     if (page.Questions.Any(q => "FileUpload".Equals(q.Input?.Type)))
                     {
                         foreach (var pageOfAnswer in page.PageOfAnswers)
                         {
+                            // for each answer see if it exists in Azure Storage and copy it across
                             foreach (var answer in pageOfAnswer.Answers)
                             {
                                 if (!string.IsNullOrWhiteSpace(answer.Value))
