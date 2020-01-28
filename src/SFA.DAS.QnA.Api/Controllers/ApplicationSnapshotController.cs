@@ -21,8 +21,12 @@ namespace SFA.DAS.QnA.Api.Controllers
         }
 
         /// <summary>
-        ///     Creates a snapshot of the requested application. Used for RoATP
+        ///     Creates a snapshot of the requested application.
         /// </summary>
+        /// <remarks>
+        ///     Currently used for RoATP. The intention is to have a simple facility which allows audits
+        ///     across the history of an application being submitted for each review cycle.
+        /// </remarks>
         /// <param name="applicationId">The Id of the application which is to be snapshot</param>
         /// <returns>The newly created application's Id</returns>
         /// <response code="201">Returns the newly created application's Id</response>
