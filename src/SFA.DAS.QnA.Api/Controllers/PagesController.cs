@@ -13,6 +13,7 @@ using SFA.DAS.QnA.Api.Types.Page;
 using SFA.DAS.QnA.Application.Commands.AddPageAnswer;
 using SFA.DAS.QnA.Application.Commands.RemovePageAnswer;
 using SFA.DAS.QnA.Application.Commands.SetPageAnswers;
+using SFA.DAS.QnA.Application.Commands.ResetPageAnswers;
 using SFA.DAS.QnA.Application.Commands.SkipPage;
 using SFA.DAS.QnA.Application.Queries.Sections.GetPage;
 
@@ -82,6 +83,25 @@ namespace SFA.DAS.QnA.Api.Controllers
             _logger.LogInformation($"Response from SetPageAnswers: {JsonConvert.SerializeObject(savePageAnswersResponse.Value)}");
             
             return savePageAnswersResponse.Value;
+        }
+
+        /// <summary>
+        ///     Removes all answers on the page.
+        /// </summary>
+        /// <returns>An object describing if the page has had its answers reset</returns>
+        /// <response code="200">Returns the response</response>
+        [HttpPost("{applicationId}/sections/{sectionId}/pages/{pageId}/reset")]
+        [ProducesResponseType(200)]
+        public async Task<ActionResult<ResetPageAnswersResponse>> ResetPageAnswers(Guid applicationId, Guid sectionId, string pageId)
+        {
+            _logger.LogInformation($"Resetting all Answers on page {pageId}");
+
+            var resetPageAnswersResponse = await _mediator.Send(new ResetPageAnswersRequest(applicationId, sectionId, pageId), CancellationToken.None);
+            if (!resetPageAnswersResponse.Success) return BadRequest(new BadRequestError(resetPageAnswersResponse.Message));
+
+            _logger.LogInformation($"Response from ResetPageAnswers: {JsonConvert.SerializeObject(resetPageAnswersResponse.Value)}");
+
+            return resetPageAnswersResponse.Value;
         }
 
         /// <summary>
