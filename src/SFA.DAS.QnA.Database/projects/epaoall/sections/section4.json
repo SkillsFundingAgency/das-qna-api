@@ -1,64 +1,9 @@
 {
     "Title": "Apply has changed",
-    "LinkTitle": "Apply has changed",
+    "LinkTitle": "Apply has changed again",
     "DisplayType": "PagesWithSections",
     "RequestedFeedbackAnswered": null,
     "Pages": [
-        {
-            "PageId": "24",
-            "SequenceId": null,
-            "SectionId": null,
-            "Title": "Your policies and procedures",
-            "LinkTitle": "Information commissioner's office registration",
-            "InfoText": "",
-            "Questions": [
-                {
-                    "QuestionId": "CC-01",
-                    "QuestionTag": null,
-                    "Label": "Information commissioner's office (ICO) registration number",
-                    "ShortLabel": "Information commissoner's office registration",
-                    "InputClasses": null,
-                    "QuestionBodyText": "",
-                    "Hint": "Provide your ICO registration number",
-                    "Input": {
-                        "Type": "Text",
-                        "InputClasses": "govuk-input--width-10",
-                        "Options": [],
-                        "Validations": [
-                            {
-                                "Name": "Required",
-                                "Value": "",
-                                "ErrorMessage": "Enter your ICO registration number"
-                            }
-                        ],
-                        "DataEndpoint": null
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
-                }
-            ],
-            "PageOfAnswers": [],
-            "Next": [
-                {
-                    "Action": "NextPage",
-                    "ReturnId": "25",
-                    "Condition": null,
-                    "Conditions": [],
-                    "ConditionMet": false
-                }
-            ],
-            "Complete": false,
-            "AllowMultipleAnswers": false,
-            "Order": null,
-            "Active": true,
-            "NotRequiredConditions": [],
-            "BodyText": "",
-            "Details": null,
-            "DisplayType": null,
-            "Feedback": null,
-            "ActivatedByPageId": null
-        },
         {
             "PageId": "25",
             "SequenceId": null,
@@ -103,6 +48,61 @@
                 {
                     "Action": "NextPage",
                     "ReturnId": "26",
+                    "Condition": null,
+                    "Conditions": [],
+                    "ConditionMet": false
+                }
+            ],
+            "Complete": false,
+            "AllowMultipleAnswers": false,
+            "Order": null,
+            "Active": true,
+            "NotRequiredConditions": [],
+            "BodyText": "",
+            "Details": null,
+            "DisplayType": null,
+            "Feedback": null,
+            "ActivatedByPageId": null
+        },
+        {
+            "PageId": "24",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "Your policies and procedures",
+            "LinkTitle": "Information commissioner's office registration",
+            "InfoText": "",
+            "Questions": [
+                {
+                    "QuestionId": "CC-01",
+                    "QuestionTag": null,
+                    "Label": "Information commissioner's office (ICO) registration number",
+                    "ShortLabel": "Information commissoner's office registration",
+                    "InputClasses": null,
+                    "QuestionBodyText": "",
+                    "Hint": "Provide your ICO registration number",
+                    "Input": {
+                        "Type": "Text",
+                        "InputClasses": "govuk-input--width-10",
+                        "Options": [],
+                        "Validations": [
+                            {
+                                "Name": "Required",
+                                "Value": "",
+                                "ErrorMessage": "Enter your ICO registration number"
+                            }
+                        ],
+                        "DataEndpoint": null
+                    },
+                    "Order": null,
+                    "Value": "",
+                    "ErrorMessages": null
+                }
+            ],
+            "PageOfAnswers": [],
+            "Next": [
+                {
+                    "Action": "NextPage",
+                    "ReturnId": "25",
                     "Condition": null,
                     "Conditions": [],
                     "ConditionMet": false
