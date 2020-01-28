@@ -16,7 +16,7 @@
 				"Label": "Does your organisation have a team responsible for developing and delivering training?",
 				"ShortLabel": "",
 				"InputClasses": null,
-				"QuestionBodyText": "<p class='govuk-body' id='dat-section_7_5_q1_not_sole_trader'>Training includes things like:</p><ul class='govuk-list govuk-list--bullet'><li>training of technical skills</li><li>apprenticeships</li><li>work based training</li><li>commercial training</li></p>",
+				"QuestionBodyText": "<p class='govuk-body' id='dat-section_7_5_q1_not_sole_trader'>Training includes things like:</p><ul class='govuk-list govuk-list--bullet'><li>training of technical skills</li><li>apprenticeships</li><li>work based training</li><li>commercial training</li></ul></p>",
 				"Hint": "",
 				"Input": {
 					"Type": "Radio",
@@ -133,7 +133,7 @@
 				"Label": "Does your organisation have someone responsible for developing and delivering training?",
 				"ShortLabel": "",
 				"InputClasses": null,
-				"QuestionBodyText": "<p class='govuk-body' id='dat-section_7_5_q1_sole_trader'>This person is you if you're the only person in your organisation.</a><p class='govuk-body'>Training includes things like:</p><ul class='govuk-list govuk-list--bullet'><li>training of technical skills</li><li>apprenticeships</li><li>work based training</li><li>commercial training</li></p>",
+				"QuestionBodyText": "<p class='govuk-body' id='dat-section_7_5_q1_sole_trader'>This person is you if you're the only person in your organisation.</a><p class='govuk-body'>Training includes things like:</p><ul class='govuk-list govuk-list--bullet'><li>training of technical skills</li><li>apprenticeships</li><li>work based training</li><li>commercial training</li></ul></p>",
 				"Hint": "",
 				"Input": {
 					"Type": "Radio",
@@ -240,7 +240,7 @@
 				"Label": "Does your organisation have someone responsible for developing and delivering training?",
 				"ShortLabel": "",
 				"InputClasses": null,
-				"QuestionBodyText": "<p class='govuk-body' id='dat-section_7_5_q1_sole_trader_b'>This person is you if you're the only person in your organisation.</a><p class='govuk-body'>Training includes things like:</p><ul class='govuk-list govuk-list--bullet'><li>training of technical skills</li><li>apprenticeships</li><li>work based training</li><li>commercial training</li></p>",
+				"QuestionBodyText": "<p class='govuk-body' id='dat-section_7_5_q1_sole_trader_b'>This person is you if you're the only person in your organisation.</a><p class='govuk-body'>Training includes things like:</p><ul class='govuk-list govuk-list--bullet'><li>training of technical skills</li><li>apprenticeships</li><li>work based training</li><li>commercial training</li></ul></p>",
 				"Hint": "",
 				"Input": {
 					"Type": "Radio",
@@ -481,7 +481,7 @@
 					"Label": "<h1 class='govuk-heading-l'>How much experience do they have in developing and delivering training?</h1>",
 					"ShortLabel": "",
 					"InputClasses": null,
-					"QuestionBodyText": "<p class='govuk-body' id='dat-section_7_5_experience'>This experience can be from either:\n</p><ul class='govuk-list govuk-list--bullet'><li>your organisation</li><li>previous employment</li></p>",
+					"QuestionBodyText": "<p class='govuk-body' id='dat-section_7_5_experience'>This experience can be from either:\n</p><ul class='govuk-list govuk-list--bullet'><li>your organisation</li><li>previous employment</li></ul></p>",
 					"Hint": "",
 					"Input": {
 						"Type": "Radio",
@@ -670,7 +670,7 @@
                     "QuestionTag": "",
                     "Label": "How has the team worked with other organisations to develop and deliver training?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body' id='dat-team-worked-with-other-orgs'>Your answer must include how:</p><ul class='govuk-list govuk-list--bullet'><li>training needs were identified</li><li>training was determined for the right solution</li><li>learning objectives were identified and measured</li><li>training was developed from learning objectives</li><li>learning objectives will be delivered to apprentices</li></ul>",
+                    "QuestionBodyText": "<p class='govuk-body' id='dat-team-worked-with-other-orgs'>Your answer must include how:</p><ul class='govuk-list govuk-list--bullet'><li>training needs were identified</li><li>training was determined for the right solution</li><li>learning objectives were identified and measured</li><li>training was developed from learning objectives</li><li>learning objectives will be delivered to apprentices</li></ul></p>",
                     "Hint": "",
                     "Input": {
                         "Type": "Textarea",
@@ -772,7 +772,7 @@
 					"Label": "<h1 class='govuk-heading-l'>Do they have at least 3 months experience in developing and delivering training?</h1>",
 					"ShortLabel": "",
 					"InputClasses": null,
-					"QuestionBodyText": "<p class='govuk-body' id='dat-section_7_5_experience_supporting'>This experience can be from either:\n</p><ul class='govuk-list govuk-list--bullet'><li>your organisation</li><li>previous employment</li></p>",
+					"QuestionBodyText": "<p class='govuk-body' id='dat-section_7_5_experience_supporting'>This experience can be from either:\n</p><ul class='govuk-list govuk-list--bullet'><li>your organisation</li><li>previous employment</li></ul></p>",
 					"Hint": "",
 					"Input": {
 						"Type": "Radio",
@@ -830,7 +830,7 @@
                     "QuestionTag": "",
                     "Label": "How has the team worked with other organisations and employers to develop and deliver training?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body' id='dat-team-worked-with-both'>Your answer must include how:</p><ul class='govuk-list govuk-list--bullet'><li>training needs were identified</li><li>training was determined for the right solution</li><li>learning objectives were identified and measured</li><li>training was developed from learning objectives</li><li>learning objectives will be delivered to apprentices</li></ul>",
+                    "QuestionBodyText": "<p class='govuk-body' id='dat-team-worked-with-both'>Your answer must include how:</p><ul class='govuk-list govuk-list--bullet'><li>training needs were identified</li><li>training was determined for the right solution</li><li>learning objectives were identified and measured</li><li>training was developed from learning objectives</li><li>learning objectives will be delivered to apprentices</li></ul></p>",
                     "Hint": "",
                     "Input": {
                         "Type": "Textarea",
@@ -903,7 +903,7 @@
                     "QuestionTag": "",
                     "Label": "How has the team worked with employers to develop and deliver training?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body' id='dat-team-worked-with-both'>Your answer must include how:</p><ul class='govuk-list govuk-list--bullet'><li>training and sector needs were identified</li><li>training was determined for the right solution</li><li>learning objectives were identified and measured</li><li>training was developed from learning objectives</li><li>learning objectives will be delivered to apprentices</li></ul>",
+                    "QuestionBodyText": "<p class='govuk-body' id='dat-team-worked-with-both'>Your answer must include how:</p><ul class='govuk-list govuk-list--bullet'><li>training and sector needs were identified</li><li>training was determined for the right solution</li><li>learning objectives were identified and measured</li><li>training was developed from learning objectives</li><li>learning objectives will be delivered to apprentices</li></ul></p>",
                     "Hint": "",
                     "Input": {
                         "Type": "Textarea",
@@ -976,7 +976,7 @@
                     "QuestionTag": "",
                     "Label": "How has this person worked with other organisations to develop and deliver training?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body' id='dat-team-worked-with-both'>Your answer must include how:</p><ul class='govuk-list govuk-list--bullet'><li>training needs were identified</li><li>training was determined for the right solution</li><li>learning objectives were identified and measured</li><li>training was developed from learning objectives</li><li>learning objectives will be delivered to apprentices</li></ul>",
+                    "QuestionBodyText": "<p class='govuk-body' id='dat-team-worked-with-both'>Your answer must include how:</p><ul class='govuk-list govuk-list--bullet'><li>training needs were identified</li><li>training was determined for the right solution</li><li>learning objectives were identified and measured</li><li>training was developed from learning objectives</li><li>learning objectives will be delivered to apprentices</li></ul></p>",
                     "Hint": "",
                     "Input": {
                         "Type": "Textarea",
@@ -1049,7 +1049,7 @@
                     "QuestionTag": "",
                     "Label": "How has this person worked with other organisations and employers to develop and deliver training?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body' id='dat-team-worked-with-both-person'>Your answer must include how:</p><ul class='govuk-list govuk-list--bullet'><li>training needs were identified</li><li>training was determined for the right solution</li><li>learning objectives were identified and measured</li><li>training was developed from learning objectives</li><li>learning objectives will be delivered to apprentices</li></ul>",
+                    "QuestionBodyText": "<p class='govuk-body' id='dat-team-worked-with-both-person'>Your answer must include how:</p><ul class='govuk-list govuk-list--bullet'><li>training needs were identified</li><li>training was determined for the right solution</li><li>learning objectives were identified and measured</li><li>training was developed from learning objectives</li><li>learning objectives will be delivered to apprentices</li></ul></p>",
                     "Hint": "",
                     "Input": {
                         "Type": "Textarea",
@@ -1122,7 +1122,7 @@
                     "QuestionTag": "",
                     "Label": "How has this person worked with employers to develop and deliver training?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body' id='dat-team-worked-with-both-person'>Your answer must include how:</p><ul class='govuk-list govuk-list--bullet'><li>training and sector needs were identified</li><li>training was determined for the right solution</li><li>learning objectives were identified and measured</li><li>training was developed from learning objectives</li><li>learning objectives will be delivered to apprentices</li></ul>",
+                    "QuestionBodyText": "<p class='govuk-body' id='dat-team-worked-with-both-person'>Your answer must include how:</p><ul class='govuk-list govuk-list--bullet'><li>training and sector needs were identified</li><li>training was determined for the right solution</li><li>learning objectives were identified and measured</li><li>training was developed from learning objectives</li><li>learning objectives will be delivered to apprentices</li></ul></p>",
                     "Hint": "",
                     "Input": {
                         "Type": "Textarea",
