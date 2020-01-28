@@ -10,7 +10,7 @@
             "SectionId": null,
             "Title": "Type of apprenticeship training",
             "LinkTitle": "Type of apprenticeship training",
-            "InfoText": "Type of apprenticeship training",
+            "InfoText": "",
             "Questions": [
                 {
                     "QuestionId": "PAT-21",
@@ -112,7 +112,7 @@
             "SectionId": null,
             "Title": "Type of apprenticeship training",
             "LinkTitle": "Type of apprenticeship training",
-            "InfoText": "Type of apprenticeship training",
+            "InfoText": "",
             "Questions": [
                 {
                     "QuestionId": "PAT-22",
@@ -214,7 +214,7 @@
             "SectionId": null,
             "Title": "Type of apprenticeship training",
             "LinkTitle": "Type of apprenticeship training",
-            "InfoText": "Type of apprenticeship training",
+            "InfoText": "",
             "Questions": [
                 {
                     "QuestionId": "PAT-23",
@@ -382,7 +382,7 @@
             "SectionId": null,
             "Title": "application standards",
             "LinkTitle": "application standards",
-            "InfoText": "application standards",
+            "InfoText": "",
             "Questions": [
                 {
                     "QuestionId": "PAT-30",
@@ -440,7 +440,7 @@
             "SectionId": null,
             "Title": "application frameworks",
             "LinkTitle": "application frameworks",
-            "InfoText": "application frameworks",
+            "InfoText": "",
             "Questions": [
                 {
                     "QuestionId": "PAT-50",
@@ -541,7 +541,7 @@
             "SectionId": null,
             "Title": "",
             "LinkTitle": "organisation transition",
-            "InfoText": "organisation transition",
+            "InfoText": "",
             "Questions": [
                 {
                     "QuestionId": "PAT-52",
@@ -613,7 +613,7 @@
             "SectionId": null,
             "Title": "Why will your organisation only deliver apprenticeship frameworks?",
             "LinkTitle": "organisation only offering frameworks",
-            "InfoText": "organisation only offering frameworks",
+            "InfoText": "",
             "Questions": [
                 {
                     "QuestionId": "PAT-54",
@@ -701,7 +701,7 @@
             "SectionId": null,
             "Title": "application frameworks",
             "LinkTitle": "application frameworks",
-            "InfoText": "application frameworks",
+            "InfoText": "",
             "Questions": [
                 {
                     "QuestionId": "PAT-60",
@@ -815,7 +815,7 @@
             "SectionId": null,
             "Title": "",
             "LinkTitle": "organisation transition",
-            "InfoText": "organisation transition",
+            "InfoText": "",
             "Questions": [
                 {
                     "QuestionId": "PAT-62",
@@ -882,7 +882,7 @@
             "SectionId": null,
             "Title": "Why will your organisation only deliver apprenticeship frameworks?",
             "LinkTitle": "organisation only offering frameworks",
-            "InfoText": "organisation only offering frameworks",
+            "InfoText": "",
             "Questions": [
                 {
                     "QuestionId": "PAT-64",
@@ -950,7 +950,7 @@
             "SectionId": null,
             "Title": "application standards",
             "LinkTitle": "application standards",
-            "InfoText": "application standards",
+            "InfoText": "",
             "Questions": [
                 {
                     "QuestionId": "PAT-620",
@@ -1094,7 +1094,7 @@
             "SectionId": null,
             "Title": "How does your organisation plan to engage and work with awarding bodies?",
             "LinkTitle": "awarding bodies",
-            "InfoText": "awarding bodies",
+            "InfoText": "",
             "Questions": [{
                     "QuestionId": "PAT-800",
                     "QuestionTag": "PAT-awarding-bodies",
@@ -1168,7 +1168,7 @@
             "SectionId": null,
             "Title": "How will your organisation engage with end-point assessment organisations (EPAO's)?",
             "LinkTitle": "epao",
-            "InfoText": "epao",
+            "InfoText": "",
             "Questions": [
                 {
                     "QuestionId": "PAT-900",

@@ -10,7 +10,7 @@
       "SectionId": null,
       "Title": "Safeguarding and Prevent duty policy",
       "LinkTitle": "Safeguarding and Prevent duty policy",
-      "InfoText": "Safeguarding and Prevent duty policy",
+      "InfoText": "",
       "Questions": [
         {
           "QuestionId": "PYA-40",
@@ -62,7 +62,7 @@
       "SectionId": null,
       "Title": "Tell us who has overall responsibility for safeguarding in your organisation",
       "LinkTitle": "Safeguarding responsibility - link title",
-      "InfoText": "Safeguarding responsibility - info text",
+      "InfoText": "",
       "Questions": [
         {
           "QuestionId": "PYA-45",
