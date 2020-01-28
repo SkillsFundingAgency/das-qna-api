@@ -34,17 +34,10 @@ namespace SFA.DAS.QnA.Application.Commands.CreateSnapshot
             var application = await _dataContext.Applications.AsNoTracking().FirstOrDefaultAsync(app => app.Id == request.ApplicationId, cancellationToken);
             if (application is null) return new HandlerResponse<CreateSnapshotResponse>(false, "Application does not exist");
 
-            // Step 1a create application
             var newapplication = await CreateNewApplication(application, cancellationToken);
-
-            // Step 1b create sequences
             await CopySequences(application, newapplication, cancellationToken);
-
-            // Step 1c create sections
             await CopySections(application, newapplication, cancellationToken);
-
-            // Step 2 copy over files
-            await CopyFiles(application, newapplication, cancellationToken);
+            await CopyFileUploads(application, newapplication, cancellationToken);
 
             return new HandlerResponse<CreateSnapshotResponse>(new CreateSnapshotResponse { ApplicationId = newapplication.Id });
         }
@@ -96,7 +89,7 @@ namespace SFA.DAS.QnA.Application.Commands.CreateSnapshot
 
             foreach (var sequence in newApplicationSequences)
             {
-                // copy over all sections into the new Application Sequence
+                // Copy over all sections into the new Application Sequence
                 foreach (var section in sections.Where(sec => sec.SequenceNo == sequence.SequenceNo))
                 {
                     var newSection = new ApplicationSection
@@ -128,53 +121,29 @@ namespace SFA.DAS.QnA.Application.Commands.CreateSnapshot
             _logger.LogInformation($"Created ApplicationSection entities for Application: {newApplication.Id}");
         }
 
-        private async Task CopyFiles(Data.Entities.Application currentApplication, Data.Entities.Application newApplication, CancellationToken cancellationToken)
+        private async Task CopyFileUploads(Data.Entities.Application currentApplication, Data.Entities.Application newApplication, CancellationToken cancellationToken)
         {
             var sections = await _dataContext.ApplicationSections.AsNoTracking().Where(sec => sec.ApplicationId == currentApplication.Id).ToListAsync();
             var newSections = await _dataContext.ApplicationSections.AsNoTracking().Where(sec => sec.ApplicationId == newApplication.Id).ToListAsync();
 
-            // go through each section in the application
             foreach (var section in sections)
             {
                 var newSection = newSections.FirstOrDefault(s => s.SectionNo == section.SectionNo && s.SequenceNo == section.SequenceNo);
                 if (newSection is null) continue;
 
-                // go through each page within the section that has a FileUpload question
-                foreach (var page in section.QnAData.Pages)
+                // Go through each page that has a FileUpload question and copy any files across
+                foreach (var pageWithFileUpload in section.QnAData.Pages.Where(p => p.Questions.Any(q => "FileUpload".Equals(q.Input?.Type))))
                 {
-                    if (page.Questions.Any(q => "FileUpload".Equals(q.Input?.Type)))
+                    foreach (var pageOfAnswer in pageWithFileUpload.PageOfAnswers)
                     {
-                        foreach (var pageOfAnswer in page.PageOfAnswers)
+                        foreach (var answer in pageOfAnswer.Answers)
                         {
-                            // for each answer see if it exists in Azure Storage and copy it across
-                            foreach (var answer in pageOfAnswer.Answers)
+                            if (!string.IsNullOrWhiteSpace(answer.Value))
                             {
-                                if (!string.IsNullOrWhiteSpace(answer.Value))
-                                {
-                                    var originalFileUrl = $"{section.ApplicationId.ToString().ToLower()}/{section.SequenceId.ToString().ToLower()}/{section.Id.ToString().ToLower()}/{page.PageId.ToLower()}/{answer.QuestionId.ToLower()}/{answer.Value}";
-                                    var snapshotFileUrl = $"{newSection.ApplicationId.ToString().ToLower()}/{newSection.SequenceId.ToString().ToLower()}/{newSection.Id.ToString().ToLower()}/{page.PageId.ToLower()}/{answer.QuestionId.ToLower()}/{answer.Value}";
+                                var originalFileUrl = $"{section.ApplicationId.ToString().ToLower()}/{section.SequenceId.ToString().ToLower()}/{section.Id.ToString().ToLower()}/{pageWithFileUpload.PageId.ToLower()}/{answer.QuestionId.ToLower()}/{answer.Value}";
+                                var snapshotFileUrl = $"{newSection.ApplicationId.ToString().ToLower()}/{newSection.SequenceId.ToString().ToLower()}/{newSection.Id.ToString().ToLower()}/{pageWithFileUpload.PageId.ToLower()}/{answer.QuestionId.ToLower()}/{answer.Value}";
 
-                                    try
-                                    {
-                                        // get original file...
-                                        var account = CloudStorageAccount.Parse(_fileStorageConfig.Value.StorageConnectionString);
-                                        var client = account.CreateCloudBlobClient();
-                                        var container = client.GetContainerReference(_fileStorageConfig.Value.ContainerName);
-
-                                        var currentFileBlobReference = container.GetBlockBlobReference(originalFileUrl);
-
-                                        // it exists so copy it into the new application
-                                        if (currentFileBlobReference.Exists())
-                                        {
-                                            var snapshotFileBlobReference = container.GetBlockBlobReference(snapshotFileUrl);
-                                            await snapshotFileBlobReference.StartCopyAsync(currentFileBlobReference);
-                                        }
-                                    }
-                                    catch (Exception ex)
-                                    {
-                                        _logger.LogError($"Error copying file in snapshot: {snapshotFileUrl} || Message: {ex.Message} || Stack trace: {ex.StackTrace}");
-                                    }
-                                }
+                                await CopyFileInAzureStorage(originalFileUrl, snapshotFileUrl);
                             }
                         }
                     }
@@ -182,6 +151,28 @@ namespace SFA.DAS.QnA.Application.Commands.CreateSnapshot
             }
 
             _logger.LogInformation($"Copied over file uploads for Application: {newApplication.Id}");
+        }
+
+        private async Task CopyFileInAzureStorage(string source, string destination)
+        {
+            try
+            {
+                var account = CloudStorageAccount.Parse(_fileStorageConfig.Value.StorageConnectionString);
+                var client = account.CreateCloudBlobClient();
+                var container = client.GetContainerReference(_fileStorageConfig.Value.ContainerName);
+
+                var sourceFileBlobReference = container.GetBlockBlobReference(source);
+
+                if (sourceFileBlobReference.Exists())
+                {
+                    var destinationFileBlobReference = container.GetBlockBlobReference(destination);
+                    await destinationFileBlobReference.StartCopyAsync(sourceFileBlobReference);
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Error copying file in snapshot: {destination} || Message: {ex.Message} || Stack trace: {ex.StackTrace}");
+            }
         }
     }
 }
