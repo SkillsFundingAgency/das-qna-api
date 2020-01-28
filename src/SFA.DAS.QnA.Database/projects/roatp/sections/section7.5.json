@@ -12,7 +12,7 @@
 			"InfoText": "",
 			"Questions": [{
 				"QuestionId": "DAT-750",
-				"QuestionTag": null,
+				"QuestionTag": "DeliveringTeamResponsible",
 				"Label": "Does your organisation have a team responsible for developing and delivering training?",
 				"ShortLabel": "",
 				"InputClasses": null,
@@ -129,7 +129,7 @@
 			"InfoText": "",
 			"Questions": [{
 				"QuestionId": "DAT-751",
-				"QuestionTag": null,
+				"QuestionTag": "DeliveringPersonResponsible",
 				"Label": "Does your organisation have someone responsible for developing and delivering training?",
 				"ShortLabel": "",
 				"InputClasses": null,
@@ -236,7 +236,7 @@
 			"InfoText": "",
 			"Questions": [{
 				"QuestionId": "DAT-752",
-				"QuestionTag": null,
+				"QuestionTag": "DeliveringPersonResponsible",
 				"Label": "Does your organisation have someone responsible for developing and delivering training?",
 				"ShortLabel": "",
 				"InputClasses": null,
@@ -292,6 +292,20 @@
 						{
 							"QuestionTag": "Apply-ProviderRoute",
 							"Contains": "3"
+						}
+					],
+					"ConditionMet": false
+				},
+				{
+					"Action": "NextPage",
+					"ReturnId": "7540",
+					"Conditions": [{
+							"QuestionId": "DAT-752",
+							"MustEqual": "Yes"
+						},
+						{
+							"QuestionTag": "Apply-ProviderRoute",
+							"Contains": "2"
 						}
 					],
 					"ConditionMet": false
@@ -433,7 +447,14 @@
 			"AllowMultipleAnswers": false,
 			"Order": null,
 			"Active": false,
-			"NotRequiredConditions": [],
+			"NotRequiredConditions": [
+                {
+                    "Field": "DeliveringTeamResponsible",
+                    "IsOneOf": [
+                        "No"
+                    ]
+                }
+            ],
 			"BodyText": "",
 			"Details": null,
 			"DisplayType": null,
@@ -530,7 +551,7 @@
 			"Details": null,
 			"DisplayType": null,
 			"Feedback": null,
-			"ActivatedByPageId": "7530,7560,7570,7591,7592,7953,7954"
+			"ActivatedByPageId": "7510,7520,7530,7560"
 		},
 		{
 			"PageId": "7560",
@@ -651,12 +672,19 @@
 			"AllowMultipleAnswers": false,
 			"Order": null,
 			"Active": false,
-			"NotRequiredConditions": [],
+			"NotRequiredConditions": [
+				{
+                    "Field": "Apply-ProviderRoute",
+                    "IsOneOf": [
+                        "2"
+                    ]
+                }
+            ],
 			"BodyText": "",
 			"Details": null,
 			"DisplayType": null,
 			"Feedback": null,
-			"ActivatedByPageId": "7510,7520,7560"
+			"ActivatedByPageId": "7510,7520"
 		},
 		{
             "PageId": "7570",
@@ -816,7 +844,7 @@
 			"Details": null,
 			"DisplayType": null,
 			"Feedback": null,
-			"ActivatedByPageId": "7530,7560,7570,7591,7592,7953,7954"
+			"ActivatedByPageId": "7530,7560"
 		},
 		{
             "PageId": "7591",
@@ -889,7 +917,7 @@
             "BodyText": "",
 			"Details": null,
 			"DisplayType": null,
-			"ActivatedByPageId": "7570"
+			"ActivatedByPageId": "7530"
         },
 		{
             "PageId": "7592",
@@ -962,7 +990,7 @@
             "BodyText": "",
 			"Details": null,
 			"DisplayType": null,
-			"ActivatedByPageId": "7570"
+			"ActivatedByPageId": "7530"
         },
 		{
             "PageId": "7593",
