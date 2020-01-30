@@ -69,7 +69,7 @@
                     "Label": "Tell us how these expectations for quality and high standards in apprenticeship training are monitored and evaluated",
                     "ShortLabel": "",
                     "InputClasses": null,
-                    "QuestionBodyText": "<p class='govuk-body'>Your answer must include how they're:</p><ul class='govuk-list govuk-list--bullet'><li>reviewed and monitored</li><li>reflected in developing and delivering apprenticeship training programmes</li><li>measured through key performance indicators for the outcomes of apprenticeship training programmes</li><li>used to benchmark apprenticeship training delivery against industry leaders</li</ul>",
+                    "QuestionBodyText": "<p class='govuk-body'>Your answer must include how they're:</p><ul class='govuk-list govuk-list--bullet'><li>reviewed and monitored</li><li>reflected in developing and delivering apprenticeship training programmes</li><li>measured through key performance indicators for the outcomes of apprenticeship training programmes</li><li>used to benchmark apprenticeship training delivery against industry leaders</li></ul>",
                     "Hint": "",
                     "Input": {
                         "Type": "Textarea",
