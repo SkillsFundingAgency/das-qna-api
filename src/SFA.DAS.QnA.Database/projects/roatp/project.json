@@ -221,6 +221,12 @@
                "SectionNo":4,
                "name":"Quality and high standards in apprenticeship training"
             },
+			{
+			 "id":"section7.6",
+               "SequenceNo":7,
+               "SectionNo":6,
+               "name":"Sectors and employee experience"	
+			},
             { 
                "id":"section8.1",
                "SequenceNo":8,

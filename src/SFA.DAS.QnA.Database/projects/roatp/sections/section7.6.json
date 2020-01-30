@@ -1,0 +1,263 @@
+{
+    "Title": "Sectors and employee experience",
+    "LinkTitle": "Sectors and employee experience",
+    "DisplayType": "PagesWithSections",
+    "RequestedFeedbackAnswered": null,
+    "Pages": [
+        {
+            "PageId": "7600",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "Sectors and employee experience",
+            "LinkTitle": "xx",
+            "InfoText": "",
+            "Questions": [{
+                    "QuestionId": "DAT-7600",
+                    "QuestionTag": "SectorsChosen",
+                    "Label": "What sectors will your organisation offer apprenticeship training in?",
+                    "QuestionBodyText": "<p>We'll ask you who the most experienced employees are in your selected sectors - including any sector specific qualifications they may have.</p><p>Select all that apply.</p>",
+                    "ShortLabel": "",
+                    "Hint": "Add the most experienced employee",
+                    "Input": {
+                        "Type": "CheckBoxList",
+						"InputClasses": null,
+            "Options": [
+						  {
+							"Value": "A7000-01",
+							"Label": "Agriculture, environmental and animal care",
+							"HintText": null,
+							"HasHintText": false
+						  },
+						  {
+							"Value": "A7000-02",
+							"Label": "Business and administration",
+							"HintText": null,
+							"HasHintText": false
+						  },
+						  {
+							"Value": "A7000-03",
+							"Label": "Care services",
+							"HintText": null,
+							"HasHintText": false
+						  },
+						  {
+							"Value": "A7000-04",
+							"Label": "Catering and hospitality",
+							"HintText": null,
+							"HasHintText": false
+						  },
+						  {
+							"Value": "A7000-05",
+							"Label": "Construction",
+							"HintText": null,
+							"HasHintText": false
+						  },
+						  {
+							"Value": "A7000-06",
+							"Label": "Creative and design",
+							"HintText": null,
+							"HasHintText": false
+						  },
+						  {
+							"Value": "A7000-07",
+							"Label": "Digital",
+							"HintText": null,
+							"HasHintText": false
+						  },
+						  {
+							"Value": "A7000-08",
+							"Label": "Education and childcare",
+							"HintText": null,
+							"HasHintText": false
+						  },
+						  {
+							"Value": "A7000-09",
+							"Label": "Engineering and manufacturing",
+							"HintText": null,
+							"HasHintText": false
+						  },
+						  {
+							"Value": "A7000-10",
+							"Label": "Hair and beauty",
+							"HintText": null,
+							"HasHintText": false
+						  },
+						  {
+							"Value": "A7000-11",
+							"Label": "Health and science",
+							"HintText": null,
+							"HasHintText": false
+						  },
+						  {
+							"Value": "A7000-12",
+							"Label": "Legal, finance and accounting",
+							"HintText": null,
+							"HasHintText": false
+						  },
+						  {
+							"Value": "A7000-13",
+							"Label": "Protective services",
+							"HintText": null,
+							"HasHintText": false
+						  },
+						  {
+							"Value": "A7000-14",
+							"Label": "Sales, marketing and procurement",
+							"HintText": null,
+							"HasHintText": false
+						  },
+						  {
+							"Value": "A7000-15",
+							"Label": "Transport and logistics",
+							"HintText": null,
+							"HasHintText": false
+						  }
+						],
+                        "Validations": [{
+                                "Name": "Required",
+                                "Value": "",
+                                "ErrorMessage": "Choose sector"
+                            }
+                        ],
+                        
+                        "DataEndpoint": null
+                    },
+                    "Order": null,
+                    "Value": "",
+                    "ErrorMessages": null
+                }
+            ],
+            "PageOfAnswers": [],
+            "Next": [
+        {
+          "Action": "NextPage",
+          "ReturnId": "7601",
+          "Condition": null,
+          "Conditions": [
+            {
+              "QuestionId": "DAT-7600",
+              "QuestionTag": null,
+              "Contains": "A7000-01"
+            }
+          ],
+          "ConditionMet": false
+        },
+        {
+          "Action": "NextPage",
+          "ReturnId": "7602",
+          "Condition": null,
+          "Conditions": [
+            {
+              "QuestionId": "DAT-7601",
+              "QuestionTag": null,
+              "Contains": "A7000-02"
+            }
+          ],
+          "ConditionMet": false
+        },
+        {
+          "Action": "NextPage",
+          "ReturnId": "7003",
+          "Condition": null,
+          "Conditions": [
+            {
+              "QuestionId": "DAT-7603",
+              "QuestionTag": null,
+              "Contains": "A7000-03"
+            }
+          ],
+          "ConditionMet": false
+        }
+      ],
+            "Complete": false,
+            "AllowMultipleAnswers": false,
+            "Order": null,
+            "Active": true,
+            "NotRequiredConditions": [],
+            "BodyText": "Sectors and employee experience",
+            "Details": null,
+            "DisplayType": null,
+            "Feedback": null,
+            "ActivatedByPageId": null
+        },
+	{
+      "PageId": "7601",
+      "SequenceId": null,
+      "SectionId": null,
+      "Title": "Agriculture, environmental and animal care",
+      "LinkTitle": "Agriculture, environmental and animal care",
+      "InfoText": "",
+      "Questions": [
+        {
+          "QuestionId": "DAT-7601",
+          "QuestionTag": null,
+          "Label": "Fullname",
+          "ShortLabel": "",
+          "InputClasses": null,
+          "QuestionBodyText": "Enter the name",
+          "Hint": "",
+          "Input": {
+            "Type": "Text",
+            "InputClasses": null,
+            "Validations": [
+              {
+                "Name": "Required",
+                "Value": "",
+                "ErrorMessage": "Is needed"
+              }
+            ],
+            "DataEndpoint": null
+          },
+          "Order": null,
+          "Value": "",
+          "ErrorMessages": null
+        },
+        {
+          "QuestionId": "7601.2",
+          "QuestionTag": null,
+          "Label": "Number with prefix and suffix",
+          "ShortLabel": "",
+          "InputClasses": null,
+          "QuestionBodyText": "",
+          "Hint": "",
+          "Input": {
+            "Type": "Number",
+            "InputClasses": "govuk-input--width-10",
+            "Validations": [
+              {
+                "Name": "Required",
+                "Value": "",
+                "ErrorMessage": "Is needed"
+              }
+            ],
+            "DataEndpoint": null,
+            "InputPrefix": "&pound:",
+            "InputSuffix": "%"
+          },
+          "Order": null,
+          "Value": "",
+          "ErrorMessages": null
+        }
+      ],
+      "PageOfAnswers": [],
+      "Next": [
+        {
+          "Action": "ReturnToSection",
+          "ReturnId": "7.6",
+          "Condition": null,
+          "Conditions": [],
+          "ConditionMet": false
+        }
+      ],
+      "Complete": false,
+      "AllowMultipleAnswers": false,
+      "Order": null,
+      "Active": false,
+      "NotRequiredConditions": [],
+      "BodyText": "",
+      "Details": null,
+      "DisplayType": null,
+      "Feedback": null,
+      "ActivatedByPageId": "7600"
+    }]
+}
