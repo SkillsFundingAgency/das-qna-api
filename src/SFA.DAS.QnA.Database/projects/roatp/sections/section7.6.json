@@ -21,91 +21,91 @@
 					"Type": "CheckBoxList",
 					"InputClasses": null,
 					"Options": [{
-							"Value": "A7000-01",
+							"Value": "A7611",
 							"Label": "Agriculture, environmental and animal care",
 							"HintText": null,
 							"HasHintText": false
 						},
 						{
-							"Value": "A7000-02",
+							"Value": "A7612",
 							"Label": "Business and administration",
 							"HintText": null,
 							"HasHintText": false
 						},
 						{
-							"Value": "A7000-03",
+							"Value": "A7613",
 							"Label": "Care services",
 							"HintText": null,
 							"HasHintText": false
 						},
 						{
-							"Value": "A7000-04",
+							"Value": "A7614",
 							"Label": "Catering and hospitality",
 							"HintText": null,
 							"HasHintText": false
 						},
 						{
-							"Value": "A7000-05",
+							"Value": "A7615",
 							"Label": "Construction",
 							"HintText": null,
 							"HasHintText": false
 						},
 						{
-							"Value": "A7000-06",
+							"Value": "A7616",
 							"Label": "Creative and design",
 							"HintText": null,
 							"HasHintText": false
 						},
 						{
-							"Value": "A7000-07",
+							"Value": "A7617",
 							"Label": "Digital",
 							"HintText": null,
 							"HasHintText": false
 						},
 						{
-							"Value": "A7000-08",
+							"Value": "A7618",
 							"Label": "Education and childcare",
 							"HintText": null,
 							"HasHintText": false
 						},
 						{
-							"Value": "A7000-09",
+							"Value": "A7619",
 							"Label": "Engineering and manufacturing",
 							"HintText": null,
 							"HasHintText": false
 						},
 						{
-							"Value": "A7000-10",
+							"Value": "A7620",
 							"Label": "Hair and beauty",
 							"HintText": null,
 							"HasHintText": false
 						},
 						{
-							"Value": "A7000-11",
+							"Value": "A7621",
 							"Label": "Health and science",
 							"HintText": null,
 							"HasHintText": false
 						},
 						{
-							"Value": "A7000-12",
+							"Value": "A7622",
 							"Label": "Legal, finance and accounting",
 							"HintText": null,
 							"HasHintText": false
 						},
 						{
-							"Value": "A7000-13",
+							"Value": "A7623",
 							"Label": "Protective services",
 							"HintText": null,
 							"HasHintText": false
 						},
 						{
-							"Value": "A7000-14",
+							"Value": "A7624",
 							"Label": "Sales, marketing and procurement",
 							"HintText": null,
 							"HasHintText": false
 						},
 						{
-							"Value": "A7000-15",
+							"Value": "A7625",
 							"Label": "Transport and logistics",
 							"HintText": null,
 							"HasHintText": false
@@ -149,7 +149,7 @@
 			"ActivatedByPageId": null
 		},
 		{
-			"PageId": "7610",
+			"PageId": "7611",
 			"SequenceId": null,
 			"SectionId": null,
 			"Title": "2. Add the most experienced employee for each sector",
@@ -214,7 +214,14 @@
 			"AllowMultipleAnswers": false,
 			"Order": null,
 			"Active": true,
-			"NotRequiredConditions": [],
+			"NotRequiredConditions": [
+                {
+                    "Field": "SectorsChosen",
+                    "DoesNotContain": [
+                        "A7611"
+                    ]
+                }
+            ],
 			"BodyText": "",
 			"Details": null,
 			"DisplayType": null,
@@ -222,7 +229,7 @@
 			"ActivatedByPageId": null
 		},
 		{
-			"PageId": "7620",
+			"PageId": "7612",
 			"SequenceId": null,
 			"SectionId": null,
 			"Title": "2. Add the most experienced employee for each sector",
@@ -287,7 +294,14 @@
 			"AllowMultipleAnswers": false,
 			"Order": null,
 			"Active": true,
-			"NotRequiredConditions": [],
+			"NotRequiredConditions": [
+                {
+                    "Field": "SectorsChosen",
+                    "DoesNotContain": [
+                        "A7612"
+                    ]
+                }
+            ],
 			"BodyText": "",
 			"Details": null,
 			"DisplayType": null,
