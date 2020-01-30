@@ -340,6 +340,9 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
 
         protected void ActivateDependentPages(Next chosenAction, string branchingPageId, QnAData qnaData)
         {
+            if (chosenAction.ReturnId == branchingPageId)
+                return;
+
             if (chosenAction != null && "NextPage".Equals(chosenAction.Action, StringComparison.InvariantCultureIgnoreCase)  && qnaData != null)
             {
                 var nextPage = qnaData.Pages.FirstOrDefault(p => p.PageId == chosenAction.ReturnId);
