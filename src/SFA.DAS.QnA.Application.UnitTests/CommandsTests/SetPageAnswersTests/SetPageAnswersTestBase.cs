@@ -6,6 +6,7 @@ using NUnit.Framework;
 using SFA.DAS.QnA.Api.Types.Page;
 using SFA.DAS.QnA.Application.Commands.SetPageAnswers;
 using SFA.DAS.QnA.Application.Commands;
+using SFA.DAS.QnA.Application.Services;
 using SFA.DAS.QnA.Data;
 using SFA.DAS.QnA.Data.Entities;
 
@@ -18,16 +19,17 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.SetPageAnswersTests
         protected Guid SectionId;
         protected SetPageAnswersHandler Handler;
         protected QnaDataContext DataContext;
-        
+        protected NotRequiredProcessor NotRequiredProcessor;
         [SetUp]
         public async Task SetUp()
         {
             DataContext = DataContextHelpers.GetInMemoryDataContext();
             var validator = Substitute.For<IAnswerValidator>();
-
+            NotRequiredProcessor = new NotRequiredProcessor();
+            
             validator.Validate(Arg.Any<List<Answer>>(), Arg.Any<Page>()).Returns(new List<KeyValuePair<string, string>>());
             
-            Handler = new SetPageAnswersHandler(DataContext, validator);
+            Handler = new SetPageAnswersHandler(DataContext, validator, NotRequiredProcessor);
 
             ApplicationId = Guid.NewGuid();
             SectionId = Guid.NewGuid();
