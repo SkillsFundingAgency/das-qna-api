@@ -8,8 +8,8 @@
             "PageId": "7600",
             "SequenceId": null,
             "SectionId": null,
-            "Title": "Sectors and employee experience",
-            "LinkTitle": "xx",
+            "Title": "1. Sectors",
+            "LinkTitle": "Choose your organisation's sectors",
             "InfoText": "",
             "Questions": [{
                     "QuestionId": "DAT-7600",
@@ -131,7 +131,7 @@
             "Next": [
         {
           "Action": "NextPage",
-          "ReturnId": "7601",
+          "ReturnId": "7600",
           "Condition": null,
           "Conditions": [
             {
@@ -144,7 +144,7 @@
         },
         {
           "Action": "NextPage",
-          "ReturnId": "7602",
+          "ReturnId": "7600",
           "Condition": null,
           "Conditions": [
             {
@@ -157,7 +157,7 @@
         },
         {
           "Action": "NextPage",
-          "ReturnId": "7003",
+          "ReturnId": "7600",
           "Condition": null,
           "Conditions": [
             {
@@ -173,7 +173,14 @@
             "AllowMultipleAnswers": false,
             "Order": null,
             "Active": true,
-            "NotRequiredConditions": [],
+            "NotRequiredConditions": [
+                {
+                    "Field": "Apply-ProviderRoute",
+                    "IsOneOf": [
+                        "3"
+                    ]
+                }
+            ],
             "BodyText": "Sectors and employee experience",
             "Details": null,
             "DisplayType": null,
@@ -181,10 +188,10 @@
             "ActivatedByPageId": null
         },
 	{
-      "PageId": "7601",
+      "PageId": "7610",
       "SequenceId": null,
       "SectionId": null,
-      "Title": "Agriculture, environmental and animal care",
+      "Title": "2. Add the most experienced employee for each sector",
       "LinkTitle": "Agriculture, environmental and animal care",
       "InfoText": "",
       "Questions": [
