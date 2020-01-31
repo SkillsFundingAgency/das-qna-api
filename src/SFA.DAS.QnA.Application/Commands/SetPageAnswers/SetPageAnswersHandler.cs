@@ -9,6 +9,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using SFA.DAS.QnA.Api.Types;
 using SFA.DAS.QnA.Api.Types.Page;
+using SFA.DAS.QnA.Application.Services;
 using SFA.DAS.QnA.Data;
 using SFA.DAS.QnA.Data.Entities;
 
@@ -18,7 +19,7 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
     {
         private readonly IAnswerValidator _answerValidator;
 
-        public SetPageAnswersHandler(QnaDataContext dataContext, IAnswerValidator answerValidator) : base(dataContext)
+        public SetPageAnswersHandler(QnaDataContext dataContext, IAnswerValidator answerValidator, INotRequiredProcessor notRequiredProcessor) : base(dataContext, notRequiredProcessor)
         {
             _answerValidator = answerValidator;
         }
