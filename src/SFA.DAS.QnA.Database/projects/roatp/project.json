@@ -20,37 +20,30 @@
                "id":"section1.1",
                "SequenceNo":1,
                "SectionNo":1,
-               "name":"Provider route",
-               "IsActive":true
+               "name":"Introduction and what you'll need"
             },
             { 
                "id":"section1.2",
                "SequenceNo":1,
                "SectionNo":2,
-               "name":"Introduction and what you'll need"
+               "name":"Organisation details"
             },
             { 
                "id":"section1.3",
                "SequenceNo":1,
                "SectionNo":3,
-               "name":"Organisation details"
+               "name":"Confirm who's in control"
             },
             { 
                "id":"section1.4",
                "SequenceNo":1,
                "SectionNo":4,
-               "name":"Confirm who's in control"
+               "name":"Describe your organisation"
             },
             { 
                "id":"section1.5",
                "SequenceNo":1,
                "SectionNo":5,
-               "name":"Describe your organisation"
-            },
-            { 
-               "id":"section1.6",
-               "SequenceNo":1,
-               "SectionNo":6,
                "name":"Experience and accreditations"
             },
             { 
@@ -208,6 +201,18 @@
                "SequenceNo":7,
                "SectionNo":1,
                "name":"Introduction and what you'll need"
+            },
+            { 
+               "id":"section7.2",
+               "SequenceNo":7,
+               "SectionNo":2,
+               "name":"Overall accountability for apprenticeships"
+            },
+            { 
+               "id":"section7.4",
+               "SequenceNo":7,
+               "SectionNo":4,
+               "name":"Quality and high standards in apprenticeship training"
             },
             { 
                "id":"section8.1",
