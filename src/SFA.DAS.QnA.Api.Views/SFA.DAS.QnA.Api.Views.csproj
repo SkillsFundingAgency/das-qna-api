@@ -18,6 +18,10 @@
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </Content>
     </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Views\QuestionPartials\_YearsMonths.cshtml" />
+    </ItemGroup>
     
     <ItemGroup>
         <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.2.0" />
