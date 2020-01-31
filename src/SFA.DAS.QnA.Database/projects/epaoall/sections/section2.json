@@ -1283,7 +1283,7 @@
                     "Label": "Organisation removal from registers",
                     "ShortLabel": "Organisation removal from registers",
                     "InputClasses": null,
-                    "QuestionBodyText": "<p class='govuk-body'>Has you organisation been removed from:</p><ul class='govuk-list govuk-list--bullet'><li>Education and skills funding agency's register of training organisations (RoATP)</li><li>End-point assessor organisations (EPAO) register</li><li>Ofqual's register</li><li>other professional or trade registers</li></ul>",
+                    "QuestionBodyText": "<p class='govuk-body'>Has your organisation been removed from:</p><ul class='govuk-list govuk-list--bullet'><li>Education and skills funding agency's register of training organisations (RoATP)</li><li>End-point assessor organisations (EPAO) register</li><li>Ofqual's register</li><li>other professional or trade registers</li></ul>",
                     "Hint": "",
                     "Input": {
                         "Type": "ComplexRadio",

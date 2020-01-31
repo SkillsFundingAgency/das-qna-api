@@ -8,13 +8,14 @@ using System;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using SFA.DAS.QnA.Application.Services;
 
 namespace SFA.DAS.QnA.Application.Commands.SkipPage
 {
     public class SkipPageHandler : SetAnswersBase, IRequestHandler<SkipPageRequest, HandlerResponse<SkipPageResponse>>
     {
 
-        public SkipPageHandler(QnaDataContext dataContext) : base(dataContext)
+        public SkipPageHandler(QnaDataContext dataContext, INotRequiredProcessor notRequiredProcessor) : base(dataContext, notRequiredProcessor)
         {
         }
 

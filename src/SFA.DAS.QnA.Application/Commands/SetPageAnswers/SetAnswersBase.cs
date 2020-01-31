@@ -4,6 +4,7 @@ using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json.Linq;
 using SFA.DAS.QnA.Api.Types.Page;
+using SFA.DAS.QnA.Application.Services;
 using SFA.DAS.QnA.Data;
 using SFA.DAS.QnA.Data.Entities;
 
@@ -12,10 +13,11 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
     public class SetAnswersBase
     {
         protected readonly QnaDataContext _dataContext;
-
-        public SetAnswersBase(QnaDataContext dataContext)
+        protected readonly INotRequiredProcessor _notRequiredProcessor;
+        public SetAnswersBase(QnaDataContext dataContext, INotRequiredProcessor notRequiredProcessor)
         {
             _dataContext = dataContext;
+            _notRequiredProcessor = notRequiredProcessor;
         }
 
         protected List<Next> GetCheckboxListMatchingNextActionsForPage(Guid sectionId, string pageId)
@@ -138,27 +140,11 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
                         if (!String.IsNullOrWhiteSpace(condition.QuestionTag))
                         {
                             var questionTagValue = applicationData[condition.QuestionTag];
+                            var questionTag = questionTagValue?.Value<string>();
+                            allConditionsSatisfied = CheckAllConditionsSatisfied(condition, questionTag);
 
-                            if (questionTagValue == null )
-                            {
-                                allConditionsSatisfied = false;
+                            if (!allConditionsSatisfied)
                                 break;
-                            }
-                            else if (!string.IsNullOrEmpty(condition.MustEqual) && questionTagValue.Value<string>() != condition.MustEqual)
-                            {
-                                allConditionsSatisfied = false;
-                                break;
-                            }
-                            else if (!string.IsNullOrEmpty(condition.Contains))
-                            {
-                                var listOfAnswers = questionTagValue.Value<string>()
-                                    .Split(",", StringSplitOptions.RemoveEmptyEntries);
-                                if (!listOfAnswers.Contains(condition.Contains))
-                                {
-                                    allConditionsSatisfied = false;
-                                    break;
-                                }
-                            }
                         }
                         else
                         {
@@ -208,6 +194,32 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
             return FindNextRequiredAction(section, nextAction, applicationData);
         }
 
+        private static bool CheckAllConditionsSatisfied(Condition condition, string questionTag)
+        {
+            var allConditionsSatisfied = true;
+            
+
+            if (string.IsNullOrEmpty(questionTag))
+            {
+                allConditionsSatisfied = false;
+            }
+            else if (!string.IsNullOrEmpty(condition.MustEqual) && questionTag != condition.MustEqual)
+            {
+                allConditionsSatisfied = false;
+            }
+            else if (!string.IsNullOrEmpty(condition.Contains))
+            {
+                var listOfAnswers = questionTag
+                    .Split(",", StringSplitOptions.RemoveEmptyEntries);
+                if (!listOfAnswers.Contains(condition.Contains))
+                {
+                    allConditionsSatisfied = false;
+                }
+            }
+
+            return allConditionsSatisfied;
+        }
+
         public Next FindNextRequiredAction(ApplicationSection section, Next nextAction, JObject applicationData)
         {
             if (section?.QnAData is null || nextAction is null || nextAction.Action != "NextPage") return nextAction;
@@ -223,7 +235,7 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
             }
             else if (nextPage.NotRequiredConditions != null && nextPage.NotRequiredConditions.Any())
             {
-                if (nextPage.NotRequiredConditions.Any(nrc => nrc.IsOneOf != null && nrc.IsOneOf.Contains(applicationData[nrc.Field]?.Value<string>())))
+                if (_notRequiredProcessor.NotRequired(nextPage.NotRequiredConditions, applicationData))
                 {
                     isRequiredNextAction = false;
                 }
