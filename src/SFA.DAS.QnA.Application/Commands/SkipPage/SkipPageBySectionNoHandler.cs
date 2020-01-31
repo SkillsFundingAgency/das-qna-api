@@ -8,13 +8,15 @@ using System;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using SFA.DAS.QnA.Application.Services;
 
 namespace SFA.DAS.QnA.Application.Commands.SkipPage
 {
     public class SkipPageBySectionNoHandler : SetAnswersBase, IRequestHandler<SkipPageBySectionNoRequest, HandlerResponse<SkipPageResponse>>
     {
-        public SkipPageBySectionNoHandler(QnaDataContext dataContext) : base(dataContext)
-        { 
+
+        public SkipPageBySectionNoHandler(QnaDataContext dataContext, INotRequiredProcessor notRequiredProcessor) : base(dataContext, notRequiredProcessor)
+        {
         }
 
         public async Task<HandlerResponse<SkipPageResponse>> Handle(SkipPageBySectionNoRequest request, CancellationToken cancellationToken)

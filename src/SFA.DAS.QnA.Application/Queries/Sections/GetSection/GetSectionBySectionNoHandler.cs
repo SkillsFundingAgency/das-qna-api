@@ -8,6 +8,7 @@ using SFA.DAS.QnA.Data.Entities;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using SFA.DAS.QnA.Application.Services;
 
 namespace SFA.DAS.QnA.Application.Queries.Sections.GetSection
 {
@@ -15,11 +16,13 @@ namespace SFA.DAS.QnA.Application.Queries.Sections.GetSection
     {
         private readonly QnaDataContext _dataContext;
         private readonly IMapper _mapper;
+        private readonly INotRequiredProcessor _notRequiredProcessor;
 
-        public GetSectionBySectionNoHandler(QnaDataContext dataContext, IMapper mapper)
+        public GetSectionBySectionNoHandler(QnaDataContext dataContext, IMapper mapper, INotRequiredProcessor notRequiredProcessor)
         {
             _dataContext = dataContext;
             _mapper = mapper;
+            _notRequiredProcessor = notRequiredProcessor;
         }
         
         public async Task<HandlerResponse<Section>> Handle(GetSectionBySectionNoRequest request, CancellationToken cancellationToken)
@@ -38,7 +41,7 @@ namespace SFA.DAS.QnA.Application.Queries.Sections.GetSection
             return new HandlerResponse<Section>(_mapper.Map<Section>(section));
         }
 
-        private static void RemovePages(Data.Entities.Application application, ApplicationSection section)
+        private   void RemovePages(Data.Entities.Application application, ApplicationSection section)
         {
             var applicationData = JObject.Parse(application.ApplicationData);
 
@@ -51,9 +54,10 @@ namespace SFA.DAS.QnA.Application.Queries.Sections.GetSection
             section.QnAData.Pages.RemoveAll(p => !p.Active);
         }
 
-        private static void RemovePagesBasedOnNotRequiredConditions(ApplicationSection section, JObject applicationData)
+        private  void RemovePagesBasedOnNotRequiredConditions(ApplicationSection section, JObject applicationData)
         {
-            section.QnAData.Pages.RemoveAll(p => p.NotRequiredConditions != null && p.NotRequiredConditions.Any(nrc => nrc.IsOneOf.Contains(applicationData[nrc.Field]?.Value<string>())));
+            section.QnAData.Pages =
+                _notRequiredProcessor.PagesWithoutNotRequired(section.QnAData.Pages, applicationData).ToList();
         }
     }
 }
