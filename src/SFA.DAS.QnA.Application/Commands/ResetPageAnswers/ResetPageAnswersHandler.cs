@@ -10,13 +10,14 @@ using Newtonsoft.Json.Linq;
 using SFA.DAS.QnA.Api.Types;
 using SFA.DAS.QnA.Api.Types.Page;
 using SFA.DAS.QnA.Application.Commands.SetPageAnswers;
+using SFA.DAS.QnA.Application.Services;
 using SFA.DAS.QnA.Data;
 
 namespace SFA.DAS.QnA.Application.Commands.ResetPageAnswers
 {
     public class ResetPageAnswersHandler : SetAnswersBase, IRequestHandler<ResetPageAnswersRequest, HandlerResponse<ResetPageAnswersResponse>>
     {
-        public ResetPageAnswersHandler(QnaDataContext dataContext) : base(dataContext)
+        public ResetPageAnswersHandler(QnaDataContext dataContext, INotRequiredProcessor notRequiredProcessor) : base(dataContext, notRequiredProcessor)
         {
         }
 

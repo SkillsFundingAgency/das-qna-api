@@ -8,6 +8,7 @@ using SFA.DAS.QnA.Data;
 using SFA.DAS.QnA.Data.Entities;
 using SFA.DAS.QnA.Application.Queries.ApplicationData.GetApplicationData;
 using SFA.DAS.QnA.Application.Queries.Sections.GetPage;
+using SFA.DAS.QnA.Application.Services;
 
 namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.ResetPageAnswersTests
 {
@@ -25,7 +26,7 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.ResetPageAnswersTests
         public async Task SetUp()
         {
             DataContext = DataContextHelpers.GetInMemoryDataContext();
-            Handler = new ResetPageAnswersHandler(DataContext);
+            Handler = new ResetPageAnswersHandler(DataContext, new NotRequiredProcessor());
             GetApplicationDataHandler = new GetApplicationDataHandler(DataContext);
             GetPageHandler = new GetPageHandler(DataContext);
 
