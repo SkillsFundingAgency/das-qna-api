@@ -136,12 +136,6 @@
 			"AllowMultipleAnswers": false,
 			"Order": null,
 			"Active": true,
-			"NotRequiredConditions": [{
-				"Field": "Apply-ProviderRoute",
-				"IsOneOf": [
-					"3"
-				]
-			}],
 			"BodyText": "Sectors and employee experience",
 			"Details": null,
 			"DisplayType": "PagesWithSections",
