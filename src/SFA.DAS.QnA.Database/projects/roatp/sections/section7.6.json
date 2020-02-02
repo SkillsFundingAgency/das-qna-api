@@ -1,5 +1,5 @@
 {
-	"Title": "Sectors and employee experience",
+	"Title": "Your sectors and employees",
 	"LinkTitle": "Sectors and employee experience",
 	"DisplayType": "PagesWithSections",
 	"RequestedFeedbackAnswered": null,
@@ -14,98 +14,98 @@
 				"QuestionId": "DAT-7600",
 				"QuestionTag": "SectorsChosen",
 				"Label": "What sectors will your organisation offer apprenticeship training in?",
-				"QuestionBodyText": "<p>We'll ask you who the most experienced employees are in your selected sectors - including any sector specific qualifications they may have.</p><p>Select all that apply.</p>",
+				"QuestionBodyText": "<p  class='govuk-body' id='sector-list'>We'll ask you who the most experienced employees are in your selected sectors - including any sector specific qualifications they may have.</p>",
 				"ShortLabel": "",
-				"Hint": "Add the most experienced employee",
+				"Hint": "Select all that apply.",
 				"Input": {
 					"Type": "CheckBoxList",
 					"InputClasses": null,
 					"Options": [{
-							"Value": "A7611",
+							"Value": "A7610",
 							"Label": "Agriculture, environmental and animal care",
 							"HintText": null,
 							"HasHintText": false
 						},
 						{
-							"Value": "A7612",
+							"Value": "A7615",
 							"Label": "Business and administration",
 							"HintText": null,
 							"HasHintText": false
 						},
 						{
-							"Value": "A7613",
+							"Value": "A7620",
 							"Label": "Care services",
 							"HintText": null,
 							"HasHintText": false
 						},
 						{
-							"Value": "A7614",
+							"Value": "A7625",
 							"Label": "Catering and hospitality",
 							"HintText": null,
 							"HasHintText": false
 						},
 						{
-							"Value": "A7615",
+							"Value": "A7630",
 							"Label": "Construction",
 							"HintText": null,
 							"HasHintText": false
 						},
 						{
-							"Value": "A7616",
+							"Value": "A7635",
 							"Label": "Creative and design",
 							"HintText": null,
 							"HasHintText": false
 						},
 						{
-							"Value": "A7617",
+							"Value": "A7640",
 							"Label": "Digital",
 							"HintText": null,
 							"HasHintText": false
 						},
 						{
-							"Value": "A7618",
+							"Value": "A7645",
 							"Label": "Education and childcare",
 							"HintText": null,
 							"HasHintText": false
 						},
 						{
-							"Value": "A7619",
+							"Value": "A7650",
 							"Label": "Engineering and manufacturing",
 							"HintText": null,
 							"HasHintText": false
 						},
 						{
-							"Value": "A7620",
+							"Value": "A7655",
 							"Label": "Hair and beauty",
 							"HintText": null,
 							"HasHintText": false
 						},
 						{
-							"Value": "A7621",
+							"Value": "A7660",
 							"Label": "Health and science",
 							"HintText": null,
 							"HasHintText": false
 						},
 						{
-							"Value": "A7622",
+							"Value": "A7665",
 							"Label": "Legal, finance and accounting",
 							"HintText": null,
 							"HasHintText": false
 						},
 						{
-							"Value": "A7623",
+							"Value": "A7670",
 							"Label": "Protective services",
 							"HintText": null,
 							"HasHintText": false
 						},
 						{
-							"Value": "A7624",
+							"Value": "A7675",
 							"Label": "Sales, marketing and procurement",
 							"HintText": null,
 							"HasHintText": false
 						},
 						{
-							"Value": "A7625",
+							"Value": "A7680",
 							"Label": "Transport and logistics",
 							"HintText": null,
 							"HasHintText": false
@@ -116,7 +116,6 @@
 						"Value": "",
 						"ErrorMessage": "Choose sector"
 					}],
-
 					"DataEndpoint": null
 				},
 				"Order": null,
@@ -125,18 +124,103 @@
 			}],
 			"PageOfAnswers": [],
 			"Next": [{
-					"Action": "ReturnToSection",
-					"ReturnId": "7.6",
-					"Condition": null,
-					"Conditions": [],
-					"ConditionMet": false
-				}
-			],
+				"Action": "ReturnToSection",
+				"ReturnId": "7.6",
+				"Conditions": [],
+				"ConditionMet": false
+			}],
 			"Complete": false,
 			"AllowMultipleAnswers": false,
 			"Order": null,
 			"Active": true,
-			"BodyText": "Sectors and employee experience",
+			"BodyText": "",
+			"Details": null,
+			"DisplayType": "PagesWithSections",
+			"Feedback": null,
+			"ActivatedByPageId": null
+		},
+		{
+			"PageId": "7610",
+			"SequenceId": null,
+			"SectionId": null,
+			"Title": "2. Add the most experienced employee for each sector",
+			"LinkTitle": "Agriculture, environmental and animal care",
+			"InfoText": "",
+			"Questions": [{
+					"QuestionId": "DAT-7610.1",
+					"QuestionTag": "DATAgricultureFullName",
+					"Label": "Full name",
+					"ShortLabel": "",
+					"InputClasses": null,
+					"QuestionBodyText": "",
+					"Hint": "",
+					"Input": {
+						"Type": "Text",
+						"InputClasses": null,
+						"Validations": [{
+								"Name": "Required",
+								"Value": "",
+								"ErrorMessage": "Enter a full name"
+							},
+							{
+								"Name": "MaxLength",
+								"Value": "255",
+								"ErrorMessage": "Enter a full name using 255 characters or less"
+							}
+						],
+						"DataEndpoint": null
+					},
+					"Order": null,
+					"Value": "",
+					"ErrorMessages": null
+				},
+				{
+					"QuestionId": "DAT-7610.2",
+					"QuestionTag": null,
+					"Label": "Job role",
+					"ShortLabel": "",
+					"InputClasses": null,
+					"QuestionBodyText": "",
+					"Hint": "",
+					"Input": {
+						"Type": "Text",
+						"InputClasses": null,
+						"Validations": [{
+								"Name": "Required",
+								"Value": "",
+								"ErrorMessage": "Enter a job role"
+							},
+							{
+								"Name": "MaxLength",
+								"Value": "255",
+								"ErrorMessage": "Enter a job role using 255 characters or less"
+							}
+						],
+						"DataEndpoint": null
+					},
+					"Order": null,
+					"Value": "",
+					"ErrorMessages": null
+				}
+			],
+			"PageOfAnswers": [],
+			"Next": [{
+				"Action": "NextPage",
+				"ReturnId": "7611",
+				"Conditions": [],
+				"ConditionMet": false
+			}],
+			"Complete": false,
+			"AllowMultipleAnswers": false,
+			"Order": null,
+			"Active": true,
+			"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"A7610"
+				]
+			}],
+			"BodyText": "Who's the most experienced employee in the 'Agriculture, environmental and animal care' sector?",
 			"Details": null,
 			"DisplayType": "PagesWithSections",
 			"Feedback": null,
@@ -147,23 +231,166 @@
 			"SequenceId": null,
 			"SectionId": null,
 			"Title": "2. Add the most experienced employee for each sector",
-			"LinkTitle": "Agriculture, environmental and animal care",
+			"LinkTitle": "{{DATAgricultureFullName}}'s experience in the 'Agriculture, environmental and animal care' sector",
 			"InfoText": "",
 			"Questions": [{
-					"QuestionId": "DAT-7601",
+					"QuestionId": "DAT-76111",
 					"QuestionTag": null,
-					"Label": "Fullname",
+					"Label": "<h3 class='govuk-heading-3'>What's their experience of delivering training in this sector?</h3>",
 					"ShortLabel": "",
 					"InputClasses": null,
-					"QuestionBodyText": "Enter the name",
+					"QuestionBodyText": "",
 					"Hint": "",
 					"Input": {
-						"Type": "Text",
+						"Type": "ComplexRadio",
 						"InputClasses": null,
+						"Options": [{
+								"FurtherQuestions": [{
+									"QuestionId": "DAT-76111.1",
+									"QuestionTag": null,
+									"Label": "Where did they gain this experience?",
+									"ShortLabel": "",
+									"InputClasses": null,
+									"QuestionBodyText": "",
+									"Hint": "",
+									"Input": {
+										"Type": "Textarea",
+										"InputClasses": null,
+										"Options": [],
+										"Validations": [{
+												"Name": "Required",
+												"Value": "",
+												"ErrorMessage": "Tell us where they gained this experience"
+											},
+											{
+												"Name": "MaxWordCount",
+												"Value": "275",
+												"ErrorMessage": "Your answer must be 275 words or less"
+											}
+										],
+										"DataEndpoint": null
+									},
+									"Order": null,
+									"Value": "",
+									"ErrorMessages": null
+								}],
+								"Value": "Less than a year",
+								"Label": "Less than a year",
+								"HintText": ""
+							},
+							{
+								"FurtherQuestions": [{
+									"QuestionId": "DAT-76111.2",
+									"QuestionTag": null,
+									"Label": "Where did they gain this experience?",
+									"ShortLabel": "",
+									"InputClasses": null,
+									"QuestionBodyText": "",
+									"Hint": "",
+									"Input": {
+										"Type": "Textarea",
+										"InputClasses": null,
+										"Options": [],
+										"Validations": [{
+												"Name": "Required",
+												"Value": "",
+												"ErrorMessage": "Tell us where they gained this experience"
+											},
+											{
+												"Name": "MaxWordCount",
+												"Value": "275",
+												"ErrorMessage": "Your answer must be 275 words or less"
+											}
+										],
+										"DataEndpoint": null
+									},
+									"Order": null,
+									"Value": "",
+									"ErrorMessages": null
+								}],
+								"Value": "One to 2 years",
+								"Label": "One to 2 years",
+								"HintText": ""
+							},
+							{
+								"FurtherQuestions": [{
+									"QuestionId": "DAT-76111.3",
+									"QuestionTag": null,
+									"Label": "Where did they gain this experience?",
+									"ShortLabel": "",
+									"InputClasses": null,
+									"QuestionBodyText": "",
+									"Hint": "",
+									"Input": {
+										"Type": "Textarea",
+										"InputClasses": null,
+										"Options": [],
+										"Validations": [{
+												"Name": "Required",
+												"Value": "",
+												"ErrorMessage": "Tell us where they gained this experience"
+											},
+											{
+												"Name": "MaxWordCount",
+												"Value": "275",
+												"ErrorMessage": "Your answer must be 275 words or less"
+											}
+										],
+										"DataEndpoint": null
+									},
+									"Order": null,
+									"Value": "",
+									"ErrorMessages": null
+								}],
+								"Value": "3 to 5 years",
+								"Label": "3 to 5 years",
+								"HintText": ""
+							},
+							{
+								"FurtherQuestions": [{
+									"QuestionId": "DAT-76111.4",
+									"QuestionTag": null,
+									"Label": "Where did they gain this experience?",
+									"ShortLabel": "",
+									"InputClasses": null,
+									"QuestionBodyText": "",
+									"Hint": "",
+									"Input": {
+										"Type": "Textarea",
+										"InputClasses": null,
+										"Options": [],
+										"Validations": [{
+												"Name": "Required",
+												"Value": "",
+												"ErrorMessage": "Tell us where they gained this experience"
+											},
+											{
+												"Name": "MaxWordCount",
+												"Value": "275",
+												"ErrorMessage": "Your answer must be 275 words or less"
+											}
+										],
+										"DataEndpoint": null
+									},
+									"Order": null,
+									"Value": "",
+									"ErrorMessages": null
+								}],
+								"Value": "Over 5 years",
+								"Label": "Over 5 years",
+								"HintText": ""
+							},
+							{
+								"FurtherQuestions": [],
+								"Value": "No experience",
+								"Label": "No experience",
+								"HintText": ""
+							}
+						],
 						"Validations": [{
 							"Name": "Required",
 							"Value": "",
-							"ErrorMessage": "Is needed"
+							"ErrorMessage": " Tell us what their experience is of delivering training in this sector"
 						}],
 						"DataEndpoint": null
 					},
@@ -172,115 +399,99 @@
 					"ErrorMessages": null
 				},
 				{
-					"QuestionId": "7601.2",
+					"QuestionId": "DAT-76112",
 					"QuestionTag": null,
-					"Label": "Number with prefix and suffix",
+					"Label": "<h3 class='govuk-heading-3'>Do they have any qualifications relating to this sector?</h3>",
 					"ShortLabel": "",
 					"InputClasses": null,
 					"QuestionBodyText": "",
 					"Hint": "",
 					"Input": {
-						"Type": "Number",
-						"InputClasses": "govuk-input--width-10",
+						"Type": "ComplexRadio",
+						"InputClasses": null,
+						"Options": [{
+								"Value": "Yes",
+								"Label": "Yes",
+								"HintText": "",
+								"FurtherQuestions": [{
+									"QuestionId": "DAT-76112.1",
+									"QuestionTag": null,
+									"Label": "Tell us what qualifications they have",
+									"ShortLabel": "",
+									"InputClasses": null,
+									"QuestionBodyText": "",
+									"Hint": "",
+									"Input": {
+										"Type": "Textarea",
+										"InputClasses": null,
+										"Options": [],
+										"Validations": [{
+												"Name": "Required",
+												"Value": "",
+												"ErrorMessage": "Enter what qualifications they have"
+											},
+											{
+												"Name": "MaxWordCount",
+												"Value": "275",
+												"ErrorMessage": "Your answer must be 275 words or less"
+											}
+										],
+										"DataEndpoint": null
+									},
+									"Order": null,
+									"Value": "",
+									"ErrorMessages": null
+								}]
+							},
+							{
+								"Value": "No",
+								"Label": "No",
+								"HintText": ""
+							}
+						],
 						"Validations": [{
 							"Name": "Required",
 							"Value": "",
-							"ErrorMessage": "Is needed"
+							"ErrorMessage": "Tell us if they have any qualifications relating to this sector"
 						}],
-						"DataEndpoint": null,
-						"InputPrefix": "&pound:",
-						"InputSuffix": "%"
+						"DataEndpoint": null
 					},
 					"Order": null,
 					"Value": "",
 					"ErrorMessages": null
 				}
+
 			],
 			"PageOfAnswers": [],
 			"Next": [{
 				"Action": "ReturnToSection",
 				"ReturnId": "7.6",
-				"Condition": null,
 				"Conditions": [],
 				"ConditionMet": false
 			}],
 			"Complete": false,
 			"AllowMultipleAnswers": false,
 			"Order": null,
-			"Active": true,
-			"NotRequiredConditions": [
-                {
-                    "Field": "SectorsChosen",
-                    "DoesNotContain": [
-                        "A7611"
-                    ]
-                }
-            ],
-			"BodyText": "",
+			"Active": false,
+			"NotRequiredConditions": [],
+			"BodyText": "{{DATAgricultureFullName}}'s experience in the 'Agriculture, environmental and animal care' sector",
 			"Details": null,
-			"DisplayType": null,
+			"DisplayType": "OtherPagesInPagesWithSections",
 			"Feedback": null,
-			"ActivatedByPageId": null
+			"ActivatedByPageId": "7610"
 		},
 		{
-			"PageId": "7612",
+			"PageId": "7615",
 			"SequenceId": null,
 			"SectionId": null,
 			"Title": "2. Add the most experienced employee for each sector",
 			"LinkTitle": "Business and administration",
 			"InfoText": "",
-			"Questions": [{
-					"QuestionId": "DAT-7601",
-					"QuestionTag": null,
-					"Label": "Fullname",
-					"ShortLabel": "",
-					"InputClasses": null,
-					"QuestionBodyText": "Enter the name",
-					"Hint": "",
-					"Input": {
-						"Type": "Text",
-						"InputClasses": null,
-						"Validations": [{
-							"Name": "Required",
-							"Value": "",
-							"ErrorMessage": "Is needed"
-						}],
-						"DataEndpoint": null
-					},
-					"Order": null,
-					"Value": "",
-					"ErrorMessages": null
-				},
-				{
-					"QuestionId": "7601.2",
-					"QuestionTag": null,
-					"Label": "Number with prefix and suffix",
-					"ShortLabel": "",
-					"InputClasses": null,
-					"QuestionBodyText": "",
-					"Hint": "",
-					"Input": {
-						"Type": "Number",
-						"InputClasses": "govuk-input--width-10",
-						"Validations": [{
-							"Name": "Required",
-							"Value": "",
-							"ErrorMessage": "Is needed"
-						}],
-						"DataEndpoint": null,
-						"InputPrefix": "&pound:",
-						"InputSuffix": "%"
-					},
-					"Order": null,
-					"Value": "",
-					"ErrorMessages": null
-				}
-			],
+			"Questions": [],
 			"PageOfAnswers": [],
 			"Next": [{
 				"Action": "ReturnToSection",
 				"ReturnId": "7.6",
-				"Condition": null,
 				"Conditions": [],
 				"ConditionMet": false
 			}],
@@ -288,17 +499,15 @@
 			"AllowMultipleAnswers": false,
 			"Order": null,
 			"Active": true,
-			"NotRequiredConditions": [
-                {
-                    "Field": "SectorsChosen",
-                    "DoesNotContain": [
-                        "A7612"
-                    ]
-                }
-            ],
+			"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"A7615"
+				]
+			}],
 			"BodyText": "",
 			"Details": null,
-			"DisplayType": null,
+			"DisplayType": "PagesWithSections",
 			"Feedback": null,
 			"ActivatedByPageId": null
 		}
