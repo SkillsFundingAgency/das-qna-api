@@ -11,6 +11,7 @@ using Newtonsoft.Json.Linq;
 using SFA.DAS.QnA.Api.Types;
 using SFA.DAS.QnA.Api.Types.Page;
 using SFA.DAS.QnA.Application.Commands.SetPageAnswers;
+using SFA.DAS.QnA.Application.Services;
 using SFA.DAS.QnA.Configuration.Config;
 using SFA.DAS.QnA.Data;
 
@@ -22,7 +23,7 @@ namespace SFA.DAS.QnA.Application.Commands.Files.UploadFile
         private readonly IEncryptionService _encryptionService;
         private readonly IAnswerValidator _answerValidator;
 
-        public SubmitPageOfFilesHandler(QnaDataContext dataContext, IOptions<FileStorageConfig> fileStorageConfig, IEncryptionService encryptionService, IAnswerValidator answerValidator) : base(dataContext)
+        public SubmitPageOfFilesHandler(QnaDataContext dataContext, IOptions<FileStorageConfig> fileStorageConfig, IEncryptionService encryptionService, IAnswerValidator answerValidator,  INotRequiredProcessor notRequiredProcessor) : base(dataContext, notRequiredProcessor)
         {
             _fileStorageConfig = fileStorageConfig;
             _encryptionService = encryptionService;

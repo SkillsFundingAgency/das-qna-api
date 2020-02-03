@@ -21,6 +21,7 @@ using SFA.DAS.QnA.Application.Commands;
 using SFA.DAS.QnA.Application.Commands.Files;
 using SFA.DAS.QnA.Application.Commands.Files.UploadFile;
 using SFA.DAS.QnA.Application.Commands.StartApplication;
+using SFA.DAS.QnA.Application.Services;
 using SFA.DAS.QnA.Application.Validators;
 using SFA.DAS.QnA.Configuration.Config;
 using SFA.DAS.QnA.Configuration.Infrastructure;
@@ -93,8 +94,8 @@ namespace SFA.DAS.QnA.Api
             services.AddTransient<IApplicationDataValidator, ApplicationDataValidator>();
             
             services.AddTransient<IEncryptionService, EncryptionService>();
+            services.AddTransient<INotRequiredProcessor, NotRequiredProcessor>();
             services.AddTransient<IKeyProvider, ConfigKeyProvider>();
-            
             services.AddAutoMapper(typeof(SystemTime).Assembly);
             services.AddMediatR(AppDomain.CurrentDomain.GetAssemblies());
 
