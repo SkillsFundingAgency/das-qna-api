@@ -459,13 +459,136 @@
 					"Order": null,
 					"Value": "",
 					"ErrorMessages": null
+				},
+				{
+					"QuestionId": "DAT-76113",
+					"QuestionTag": null,
+					"Label": "<h3 class='govuk-heading-3'>Are they approved by awarding bodies to deliver training?</h3>",
+					"ShortLabel": "",
+					"InputClasses": null,
+					"QuestionBodyText": "",
+					"Hint": "",
+					"Input": {
+						"Type": "ComplexRadio",
+						"InputClasses": null,
+						"Options": [{
+								"Value": "Yes",
+								"Label": "Yes",
+								"HintText": "",
+								"FurtherQuestions": [{
+									"QuestionId": "DAT-76113.1",
+									"QuestionTag": null,
+									"Label": "Names of awarding bodies",
+									"ShortLabel": "",
+									"InputClasses": null,
+									"QuestionBodyText": "",
+									"Hint": "",
+									"Input": {
+										"Type": "Textarea",
+										"InputClasses": null,
+										"Options": [],
+										"Validations": [{
+												"Name": "Required",
+												"Value": "",
+												"ErrorMessage": "Enter names of awarding bodies"
+											},
+											{
+												"Name": "MaxWordCount",
+												"Value": "275",
+												"ErrorMessage": "Your answer must be 275 words or less"
+											}
+										],
+										"DataEndpoint": null
+									},
+									"Order": null,
+									"Value": "",
+									"ErrorMessages": null
+								}]
+							},
+							{
+								"Value": "No",
+								"Label": "No",
+								"HintText": ""
+							}
+						],
+						"Validations": [{
+							"Name": "Required",
+							"Value": "",
+							"ErrorMessage": "Tell us if they are approved by awarding bodies to deliver training"
+						}],
+						"DataEndpoint": null
+					},
+					"Order": null,
+					"Value": "",
+					"ErrorMessages": null
+				},
+				{
+					"QuestionId": "DAT-76114",
+					"QuestionTag": null,
+					"Label": "<h3 class='govuk-heading-3'>Do they have sector or trade body memberships?</h3>",
+					"ShortLabel": "",
+					"InputClasses": null,
+					"QuestionBodyText": "",
+					"Hint": "",
+					"Input": {
+						"Type": "ComplexRadio",
+						"InputClasses": null,
+						"Options": [{
+								"Value": "Yes",
+								"Label": "Yes",
+								"HintText": "",
+								"FurtherQuestions": [{
+									"QuestionId": "DAT-76114.1",
+									"QuestionTag": null,
+									"Label": "Names of sector or trade bodies",
+									"ShortLabel": "",
+									"InputClasses": null,
+									"QuestionBodyText": "",
+									"Hint": "",
+									"Input": {
+										"Type": "Textarea",
+										"InputClasses": null,
+										"Options": [],
+										"Validations": [{
+												"Name": "Required",
+												"Value": "",
+												"ErrorMessage": "Enter names of sector or trade bodies"
+											},
+											{
+												"Name": "MaxWordCount",
+												"Value": "275",
+												"ErrorMessage": "Your answer must be 275 words or less"
+											}
+										],
+										"DataEndpoint": null
+									},
+									"Order": null,
+									"Value": "",
+									"ErrorMessages": null
+								}]
+							},
+							{
+								"Value": "No",
+								"Label": "No",
+								"HintText": ""
+							}
+						],
+						"Validations": [{
+							"Name": "Required",
+							"Value": "",
+							"ErrorMessage": "Tell us if they have sector or trade body memberships"
+						}],
+						"DataEndpoint": null
+					},
+					"Order": null,
+					"Value": "",
+					"ErrorMessages": null
 				}
-
 			],
 			"PageOfAnswers": [],
 			"Next": [{
-				"Action": "ReturnToSection",
-				"ReturnId": "7.6",
+				"Action": "NextPage",
+				"ReturnId": "7612",
 				"Conditions": [],
 				"ConditionMet": false
 			}],
@@ -479,6 +602,259 @@
 			"DisplayType": "OtherPagesInPagesWithSections",
 			"Feedback": null,
 			"ActivatedByPageId": "7610"
+		},
+		{
+			"PageId": "7612",
+			"SequenceId": null,
+			"SectionId": null,
+			"Title": "2. Add the most experienced employee for each sector",
+			"LinkTitle": "{{DATAgricultureFullName}}'s experience in the 'Agriculture, environmental and animal care' sector",
+			"InfoText": "",
+			"Questions": [{
+					"QuestionId": "DAT-76121",
+					"QuestionTag": null,
+					"Label": "<h3 class='govuk-heading-3'>What type of apprenticeship training have they delivered? </h3>",
+					"ShortLabel": "",
+					"InputClasses": null,
+					"QuestionBodyText": "",
+					"Hint": "",
+					"Input": {
+						"Type": "Radio",
+						"InputClasses": null,
+						"Options": [{
+								"Value": "Apprenticeship standards",
+								"Label": "Apprenticeship standards",
+								"HintText": ""
+							},
+							{
+								"Value": "Apprenticeship frameworks",
+								"Label": "Apprenticeship frameworks",
+								"HintText": ""
+							},
+							{
+								"Value": "Apprenticeship standards and frameworks",
+								"Label": "Apprenticeship standards and frameworks",
+								"HintText": ""
+							},
+							{
+								"Value": "No apprenticeship training delivered",
+								"Label": "No apprenticeship training delivered",
+								"HintText": ""
+							}
+						],
+						"Validations": [{
+							"Name": "Required",
+							"Value": "",
+							"ErrorMessage": "Tell us what type of apprenticeship training have they delivered"
+						}],
+						"DataEndpoint": null
+					},
+					"Order": null,
+					"Value": "",
+					"ErrorMessages": null
+				}
+			],
+			"PageOfAnswers": [],
+			"Next": [{
+                    "Action": "ReturnToSection",
+                    "ReturnId": "7.6",
+                    "Conditions": [
+                        {
+                            "QuestionId": "DAT-76121",
+                            "MustEqual": "No apprenticeship training delivered"
+                        }
+                    ],
+                    "ConditionMet": false
+                },
+				{
+				"Action": "NextPage",
+				"ReturnId": "7613",
+				"Conditions": [],
+				"ConditionMet": false
+			}],
+			"Complete": false,
+			"AllowMultipleAnswers": false,
+			"Order": null,
+			"Active": false,
+			"NotRequiredConditions": [],
+			"BodyText": "{{DATAgricultureFullName}}'s experience in the 'Agriculture, environmental and animal care' sector",
+			"Details": null,
+			"DisplayType": "OtherPagesInPagesWithSections",
+			"Feedback": null,
+			"ActivatedByPageId": "7611"
+		},
+		{
+			"PageId": "7613",
+			"SequenceId": null,
+			"SectionId": null,
+			"Title": "2. Add the most experienced employee for each sector",
+			"LinkTitle": "{{DATAgricultureFullName}}'s experience in the 'Agriculture, environmental and animal care' sector",
+			"InfoText": "",
+			"Questions": [{
+					"QuestionId": "DAT-76131",
+					"QuestionTag": null,
+					"Label": "<h3 class='govuk-heading-3'>How have they delivered training to apprentices?</h3>",
+					"ShortLabel": "",
+					"InputClasses": null,
+					"QuestionBodyText": "",
+					"Hint": "",
+					"Input": {
+						"Type": "CheckBoxList",
+						"InputClasses": null,
+						"Options": [{
+								"Value": "Classroom-based training",
+								"Label": "Classroom-based training",
+								"HintText": ""
+							},
+							{
+								"Value": "Coaching",
+								"Label": "Coaching",
+								"HintText": ""
+							},
+							{
+								"Value": "E-learning",
+								"Label": "E-learning",
+								"HintText": ""
+							},
+							{
+								"Value": "Mentoring",
+								"Label": "Mentoring",
+								"HintText": ""
+							},
+							{
+								"Value": "On the job",
+								"Label": "On the job",
+								"HintText": ""
+							},
+							{
+								"Value": "Other",
+								"Label": "Other",
+								"HintText": ""
+							}
+						],
+						"Validations": [{
+							"Name": "Required",
+							"Value": "",
+							"ErrorMessage": "Tell us how they have delivered training to apprentices"
+						}],
+						"DataEndpoint": null
+					},
+					"Order": null,
+					"Value": "",
+					"ErrorMessages": null
+				},
+				{
+					"QuestionId": "DAT-76132",
+					"QuestionTag": null,
+					"Label": "<h3 class='govuk-heading-3'>What's their experience of delivering training to apprentices?</h3>",
+					"ShortLabel": "",
+					"InputClasses": null,
+					"QuestionBodyText": "",
+					"Hint": "",
+					"Input": {
+						"Type": "Radio",
+						"InputClasses": null,
+						"Options": [{
+								"Value": "Less than a year",
+								"Label": "Less than a year",
+								"HintText": ""
+							},
+							{
+								"Value": "One to 2 years",
+								"Label": "One to 2 years",
+								"HintText": ""
+							},
+							{
+								"Value": "3 to 5 years",
+								"Label": "3 to 5 years",
+								"HintText": ""
+							},
+							{
+								"Value": "Over 5 years",
+								"Label": "Over 5 years",
+								"HintText": ""
+							},
+							{
+								"Value": "No experience",
+								"Label": "No experience",
+								"HintText": ""
+							}
+						],
+						"Validations": [{
+							"Name": "Required",
+							"Value": "",
+							"ErrorMessage": "Tell us what their experience is of delivering training to apprentices"
+						}],
+						"DataEndpoint": null
+					},
+					"Order": null,
+					"Value": "",
+					"ErrorMessages": null
+				},
+				{
+					"QuestionId": "DAT-76133",
+					"QuestionTag": null,
+					"Label": "<h3 class='govuk-heading-3'>What's the typical duration of training they have delivered to apprentices?</h3>",
+					"ShortLabel": "",
+					"InputClasses": null,
+					"QuestionBodyText": "",
+					"Hint": "",
+					"Input": {
+						"Type": "Radio",
+						"InputClasses": null,
+						"Options": [{
+								"Value": "Less than one month",
+								"Label": "Less than one month",
+								"HintText": ""
+							},
+							{
+								"Value": "One to 5 months",
+								"Label": "One to 5 months",
+								"HintText": ""
+							},
+							{
+								"Value": "6 to 12 months",
+								"Label": "6 to 12 months",
+								"HintText": ""
+							},
+							{
+								"Value": "Over 12 months",
+								"Label": "Over 12 months",
+								"HintText": ""
+							},
+							{
+								"Value": "No training delivered",
+								"Label": "No training delivered",
+								"HintText": ""
+							}
+						],
+						"Validations": [{
+							"Name": "Required",
+							"Value": "",
+							"ErrorMessage": "Tell us how they have delivered training to apprentices"
+						}],
+						"DataEndpoint": null
+					},
+					"Order": null,
+					"Value": "",
+					"ErrorMessages": null}],
+			"PageOfAnswers": [],
+			"Next": [{
+				"Action": "ReturnToSection",
+				"ReturnId": "7.6",
+				"Conditions": [],
+				"ConditionMet": false
+			}],
+			"Complete": false,
+			"AllowMultipleAnswers": false,
+			"Order": null,
+			"Active": false,
+			"NotRequiredConditions": [],
+			"BodyText": "",
+			"Details": null,
+			"DisplayType": "OtherPagesInPagesWithSections",
+			"Feedback": null,
+			"ActivatedByPageId": "7612"
 		},
 		{
 			"PageId": "7615",
