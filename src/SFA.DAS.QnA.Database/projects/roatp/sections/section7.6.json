@@ -201,6 +201,34 @@
 					"Order": null,
 					"Value": "",
 					"ErrorMessages": null
+				},
+				{
+					"QuestionId": "DAT-7610.3",
+					"QuestionTag": null,
+					"Label": "Time in role (years and months)",
+					"ShortLabel": "",
+					"InputClasses": null,
+					"QuestionBodyText": "",
+					"Hint": "eg. 1 year, 3 months",
+					"Input": {
+						"Type": "Text",
+						"InputClasses": null,
+						"Validations": [{
+								"Name": "Required",
+								"Value": "",
+								"ErrorMessage": "Enter how long they have been in this role in years and months"
+							},
+							{
+								"Name": "MaxLength",
+								"Value": "255",
+								"ErrorMessage": "Enter the time in role using 255 characters or less"
+							}
+						],
+						"DataEndpoint": null
+					},
+					"Order": null,
+					"Value": "",
+					"ErrorMessages": null
 				}
 			],
 			"PageOfAnswers": [],
@@ -611,67 +639,65 @@
 			"LinkTitle": "{{DATAgricultureFullName}}'s experience in the 'Agriculture, environmental and animal care' sector",
 			"InfoText": "",
 			"Questions": [{
-					"QuestionId": "DAT-76121",
-					"QuestionTag": null,
-					"Label": "<h3 class='govuk-heading-3'>What type of apprenticeship training have they delivered? </h3>",
-					"ShortLabel": "",
+				"QuestionId": "DAT-76121",
+				"QuestionTag": null,
+				"Label": "<h3 class='govuk-heading-3'>What type of apprenticeship training have they delivered? </h3>",
+				"ShortLabel": "",
+				"InputClasses": null,
+				"QuestionBodyText": "",
+				"Hint": "",
+				"Input": {
+					"Type": "Radio",
 					"InputClasses": null,
-					"QuestionBodyText": "",
-					"Hint": "",
-					"Input": {
-						"Type": "Radio",
-						"InputClasses": null,
-						"Options": [{
-								"Value": "Apprenticeship standards",
-								"Label": "Apprenticeship standards",
-								"HintText": ""
-							},
-							{
-								"Value": "Apprenticeship frameworks",
-								"Label": "Apprenticeship frameworks",
-								"HintText": ""
-							},
-							{
-								"Value": "Apprenticeship standards and frameworks",
-								"Label": "Apprenticeship standards and frameworks",
-								"HintText": ""
-							},
-							{
-								"Value": "No apprenticeship training delivered",
-								"Label": "No apprenticeship training delivered",
-								"HintText": ""
-							}
-						],
-						"Validations": [{
-							"Name": "Required",
-							"Value": "",
-							"ErrorMessage": "Tell us what type of apprenticeship training have they delivered"
-						}],
-						"DataEndpoint": null
-					},
-					"Order": null,
-					"Value": "",
-					"ErrorMessages": null
-				}
-			],
+					"Options": [{
+							"Value": "Apprenticeship standards",
+							"Label": "Apprenticeship standards",
+							"HintText": ""
+						},
+						{
+							"Value": "Apprenticeship frameworks",
+							"Label": "Apprenticeship frameworks",
+							"HintText": ""
+						},
+						{
+							"Value": "Apprenticeship standards and frameworks",
+							"Label": "Apprenticeship standards and frameworks",
+							"HintText": ""
+						},
+						{
+							"Value": "No apprenticeship training delivered",
+							"Label": "No apprenticeship training delivered",
+							"HintText": ""
+						}
+					],
+					"Validations": [{
+						"Name": "Required",
+						"Value": "",
+						"ErrorMessage": "Tell us what type of apprenticeship training have they delivered"
+					}],
+					"DataEndpoint": null
+				},
+				"Order": null,
+				"Value": "",
+				"ErrorMessages": null
+			}],
 			"PageOfAnswers": [],
 			"Next": [{
-                    "Action": "ReturnToSection",
-                    "ReturnId": "7.6",
-                    "Conditions": [
-                        {
-                            "QuestionId": "DAT-76121",
-                            "MustEqual": "No apprenticeship training delivered"
-                        }
-                    ],
-                    "ConditionMet": false
-                },
+					"Action": "ReturnToSection",
+					"ReturnId": "7.6",
+					"Conditions": [{
+						"QuestionId": "DAT-76121",
+						"MustEqual": "No apprenticeship training delivered"
+					}],
+					"ConditionMet": false
+				},
 				{
-				"Action": "NextPage",
-				"ReturnId": "7613",
-				"Conditions": [],
-				"ConditionMet": false
-			}],
+					"Action": "NextPage",
+					"ReturnId": "7613",
+					"Conditions": [],
+					"ConditionMet": false
+				}
+			],
 			"Complete": false,
 			"AllowMultipleAnswers": false,
 			"Order": null,
@@ -699,7 +725,7 @@
 					"QuestionBodyText": "",
 					"Hint": "",
 					"Input": {
-						"Type": "CheckBoxList",
+						"Type": "ComplexCheckBoxList",
 						"InputClasses": null,
 						"Options": [{
 								"Value": "Classroom-based training",
@@ -837,7 +863,9 @@
 					},
 					"Order": null,
 					"Value": "",
-					"ErrorMessages": null}],
+					"ErrorMessages": null
+				}
+			],
 			"PageOfAnswers": [],
 			"Next": [{
 				"Action": "ReturnToSection",
