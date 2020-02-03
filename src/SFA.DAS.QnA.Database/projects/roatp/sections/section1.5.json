@@ -14,7 +14,7 @@
             "Questions": [
                 {
                     "QuestionId": "YO-235",
-                    "QuestionTag": null,
+                    "QuestionTag": "OFS-Funded",
                     "Label": "Is your organisation funded by the Office for Students?",
                     "ShortLabel": "",
                     "InputClasses": null,
@@ -1064,7 +1064,17 @@
                 {
                     "Field": "Ofsted-FE-Skills",
                     "IsOneOf": [
-                        "No"
+                        "General Further Education College",
+                        "Higher Education Institute",
+                        "National College",
+                        "Sixth Form College"
+                    ]
+                },
+                {
+                    "Field": "Organisation-School-MS",
+                    "IsOneOf": [
+                        "Local Education Authority (LEA) school",
+                        "None of the above"
                     ]
                 }
             ],
@@ -1153,6 +1163,13 @@
                     "Field": "Ofsted-FE-Skills",
                     "IsOneOf": [
                         "No"
+                    ]
+                },
+                {
+                    "Field": "Organisation-School-Emp",
+                    "IsOneOf": [
+                        "Local Education Authority (LEA) school",
+                        "None of the above"
                     ]
                 }
             ],
