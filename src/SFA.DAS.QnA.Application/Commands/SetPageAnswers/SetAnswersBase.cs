@@ -49,7 +49,7 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
                     foreach (var condition in next.Conditions.Where(c => c.Contains != null))
                     {
                         var question = page.Questions.Single(q => q.QuestionId == condition.QuestionId);
-                        var answers = page.PageOfAnswers?[0].Answers;
+                        var answers = page.PageOfAnswers?.FirstOrDefault()?.Answers;
                         var answer = answers?.FirstOrDefault(a => a.QuestionId == condition.QuestionId);
 
                         if ("CheckboxList".Equals(question.Input.Type, StringComparison.InvariantCultureIgnoreCase))
@@ -149,7 +149,7 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
                         else
                         {
                             var question = page.Questions.Single(q => q.QuestionId == condition.QuestionId);
-                            var answers = page.PageOfAnswers?[0].Answers;
+                            var answers = page.PageOfAnswers?.FirstOrDefault()?.Answers;
                             var answer = answers?.FirstOrDefault(a => a.QuestionId == condition.QuestionId);
 
                             if ("CheckboxList".Equals(question.Input.Type, StringComparison.InvariantCultureIgnoreCase))
@@ -191,14 +191,7 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
                 }
             }
 
-            nextAction = FindNextRequiredAction(section, nextAction, applicationData);
-
-            if (nextAction != null)
-            {
-                return nextAction;
-            }
-
-            throw new ApplicationException($"Page {page.PageId}, in Sequence {page.SequenceId}, Section {page.SectionId} is missing a matching 'Next' instruction for Application {section.ApplicationId}");
+            return FindNextRequiredAction(section, nextAction, applicationData);
         }
 
         private static bool CheckAllConditionsSatisfied(Condition condition, string questionTag)
@@ -226,6 +219,7 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
 
             return allConditionsSatisfied;
         }
+
 
         public Next FindNextRequiredAction(ApplicationSection section, Next nextAction, JObject applicationData)
         {
@@ -314,6 +308,15 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
                     {
                         DeactivateDependentPages(deemedNextAction, page.PageId, qnaData, page);
                         ActivateDependentPages(deemedNextAction, page.PageId, qnaData);
+                    }
+                    else if (deemedNextAction is null && page.Next != null)
+                    {
+                        // NOTE: This should only occur when resetting page answers and all of the next actions are based on particular answer being provided
+                        // Unforunately we don't have one of those answers so we must deactivate all dependant pages
+                        foreach(var nextAction in page.Next)
+                        {
+                            DeactivateDependentPages(nextAction, page.PageId, qnaData, page);
+                        }
                     }
 
                     // Assign QnAData back so Entity Framework will pick up changes
