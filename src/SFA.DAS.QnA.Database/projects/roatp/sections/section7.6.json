@@ -755,7 +755,36 @@
 							{
 								"Value": "Other",
 								"Label": "Other",
-								"HintText": ""
+								"HintText": "",
+								"FurtherQuestions": [{
+									"QuestionId": "DAT-76131.1",
+									"QuestionTag": null,
+									"Label": "",
+									"ShortLabel": "",
+									"InputClasses": null,
+									"QuestionBodyText": "",
+									"Hint": "",
+									"Input": {
+										"Type": "Text",
+										"InputClasses": null,
+										"Options": [],
+										"Validations": [{
+												"Name": "Required",
+												"Value": "",
+												"ErrorMessage": "Tell us how they have delivered training to apprentices"
+											},
+											{
+												"Name": "MaxLength",
+												"Value": "255",
+												"ErrorMessage": "Your answer must be  255 characters or less"
+											}
+										],
+										"DataEndpoint": null
+									},
+									"Order": null,
+									"Value": "",
+									"ErrorMessages": null
+								}]
 							}
 						],
 						"Validations": [{

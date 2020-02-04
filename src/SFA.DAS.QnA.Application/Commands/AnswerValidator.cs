@@ -26,12 +26,15 @@ namespace SFA.DAS.QnA.Application.Commands
 
                 if (question.Input.Options == null) continue;
 
-                foreach (var option in question.Input.Options.Where(option => answerToThisQuestion?.Value == option.Value && option.FurtherQuestions != null))
+                foreach (var option in question.Input.Options.Where(option => answerToThisQuestion?.Value != null && option.FurtherQuestions != null))
                 {
-                    foreach (var furtherQuestion in option.FurtherQuestions)
+                    if (answerToThisQuestion?.Value != null && answerToThisQuestion.Value.Contains(option.Value))
                     {
-                        var furtherAnswer = answers.FirstOrDefault(a => a.QuestionId == furtherQuestion.QuestionId);
-                        ValidateQuestion(furtherQuestion, validationErrors, furtherAnswer);
+                        foreach (var furtherQuestion in option.FurtherQuestions)
+                        {
+                            var furtherAnswer = answers.FirstOrDefault(a => a.QuestionId == furtherQuestion.QuestionId);
+                            ValidateQuestion(furtherQuestion, validationErrors, furtherAnswer);
+                        }
                     }
                 }
             }

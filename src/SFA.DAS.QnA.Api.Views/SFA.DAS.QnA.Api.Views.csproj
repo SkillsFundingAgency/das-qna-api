@@ -8,7 +8,7 @@
         <Company>EFSA</Company>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <PackageOutputPath>..\NugetPackages</PackageOutputPath>
-        <PackageVersion>0.2.29.0</PackageVersion>
+        <PackageVersion>0.2.34.0</PackageVersion>
     </PropertyGroup>
 
     <ItemGroup>
@@ -17,6 +17,10 @@
             <BuildAction>Content</BuildAction>
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </Content>
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Views\QuestionPartials\_ComplexCheckboxList.cshtml" />
     </ItemGroup>
     
     <ItemGroup>
