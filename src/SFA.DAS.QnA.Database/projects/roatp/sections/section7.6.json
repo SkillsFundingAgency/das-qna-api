@@ -114,7 +114,7 @@
 					"Validations": [{
 						"Name": "Required",
 						"Value": "",
-						"ErrorMessage": "Choose sector"
+						"ErrorMessage": "Tell us what sectors your organisation will offer apprenticeship training in"
 					}],
 					"DataEndpoint": null
 				},
