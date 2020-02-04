@@ -932,31 +932,10 @@
 			"NotRequiredConditions": [{
 					"Field": "ITT-PGTA",
 					"IsOneOf": [
-						"Yes"
-					]
-				},
-				{
-					"Field": "Apply-ProviderRoute",
-					"IsOneOf": [
-						"3"
-					]
-				},
-				{
-					"Field": "Ofsted-FE-Skills",
-					"IsOneOf": [
-						"Yes"
-					]
-				},
-				{
-					"Field": "Apply-ProviderRoute",
-					"IsOneOf": [
-						"3"
-					]
-				},
-				{
-					"Field": "Ofsted-FE-Skills",
-					"IsOneOf": [
-						"No"
+						"General Further Education College",
+						"Higher Education Institute",
+						"National College",
+						"Sixth Form College"
 					]
 				},
 				{
