@@ -202,6 +202,10 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
             {
                 allConditionsSatisfied = false;
             }
+            else if(string.IsNullOrEmpty(condition.MustEqual) && !string.IsNullOrEmpty(questionTag))
+            {
+                allConditionsSatisfied = false;
+            }
             else if (!string.IsNullOrEmpty(condition.Contains))
             {
                 var listOfAnswers = questionTag

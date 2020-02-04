@@ -52,10 +52,40 @@
 
             var response = await Handler.Handle(new SetPageAnswersRequest(applicationId, sectionId, "100", new List<Answer>
             {
-                new Answer() {QuestionId = "Q1", Value = "Yes"}
+                new Answer() {QuestionId = "Q1", Value = ""}
             }), CancellationToken.None);
 
             response.Value.NextActionId.Should().Be("101");
+        }
+
+        [Test]
+        public async Task Then_the_condition_does_not_pass_if_answer_is_blank_when_must_equal_a_value()
+        {
+            var applicationId = Guid.NewGuid();
+            var sectionId = Guid.NewGuid();
+            await SetupQuestionData(applicationId, sectionId, "", "No");
+
+            var response = await Handler.Handle(new SetPageAnswersRequest(applicationId, sectionId, "100", new List<Answer>
+            {
+                new Answer() {QuestionId = "Q1", Value = "Yes"}
+            }), CancellationToken.None);
+
+            response.Value.NextActionId.Should().Be("102");
+        }
+
+        [Test]
+        public async Task Then_the_condition_does_not_pass_if_answer_is_not_blank_when_must_equal_blank()
+        {
+            var applicationId = Guid.NewGuid();
+            var sectionId = Guid.NewGuid();
+            await SetupQuestionData(applicationId, sectionId, "Yes", "");
+
+            var response = await Handler.Handle(new SetPageAnswersRequest(applicationId, sectionId, "100", new List<Answer>
+            {
+                new Answer() {QuestionId = "Q1", Value = "Yes"}
+            }), CancellationToken.None);
+
+            response.Value.NextActionId.Should().Be("102");
         }
 
         [Test]
