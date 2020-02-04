@@ -220,6 +220,12 @@
                "SectionNo":4,
                "name":"Quality and high standards in apprenticeship training"
             },
+			{ 
+               "id":"section7.7",
+               "SequenceNo":7,
+               "SectionNo":7,
+               "name":"Policy for professional development of employees "
+            },
             { 
                "id":"section8.1",
                "SequenceNo":8,
