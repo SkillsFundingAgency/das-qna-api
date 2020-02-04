@@ -44,6 +44,21 @@
         }
 
         [Test]
+        public async Task Then_the_condition_passes_if_the_answer_tested_for_is_blank()
+        {
+            var applicationId = Guid.NewGuid();
+            var sectionId = Guid.NewGuid();
+            await SetupQuestionData(applicationId, sectionId, "", "");
+
+            var response = await Handler.Handle(new SetPageAnswersRequest(applicationId, sectionId, "100", new List<Answer>
+            {
+                new Answer() {QuestionId = "Q1", Value = "Yes"}
+            }), CancellationToken.None);
+
+            response.Value.NextActionId.Should().Be("101");
+        }
+
+        [Test]
         public async Task Then_all_pages_are_set_to_active_if_the_condition_passes_and_answer_matches()
         {
             var applicationId = Guid.NewGuid();

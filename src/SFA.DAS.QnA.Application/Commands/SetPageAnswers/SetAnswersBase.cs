@@ -197,13 +197,8 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
         private static bool CheckAllConditionsSatisfied(Condition condition, string questionTag)
         {
             var allConditionsSatisfied = true;
-            
-
-            if (string.IsNullOrEmpty(questionTag))
-            {
-                allConditionsSatisfied = false;
-            }
-            else if (!string.IsNullOrEmpty(condition.MustEqual) && questionTag != condition.MustEqual)
+ 
+            if (!string.IsNullOrEmpty(condition.MustEqual) && questionTag != condition.MustEqual)
             {
                 allConditionsSatisfied = false;
             }
