@@ -54,6 +54,11 @@ DECLARE @LoadBLOB BIT = 0;  -- assume local - set to 1 if $(ProjectPath) starts 
 DECLARE @SQLString NVARCHAR(4000);  
 DECLARE @ParmDefinition NVARCHAR(500);
 
+DECLARE @AllSections NVARCHAR(MAX);
+DECLARE @ObsoleteSections TABLE 	
+(Id UNIQUEIDENTIFIER, SectionId UNIQUEIDENTIFIER, SequenceNo INT, SectionNo INT);
+DECLARE @ObsoleteSectionsCount INT;
+
 BEGIN
 -- loop through the projects
 	SET @ProjectIndex = 0;
@@ -254,8 +259,38 @@ BEGIN
 			UPDATE Workflows SET Status = 'Dead' WHERE [Id] != @WorkflowId AND [Type] = @WorkflowType AND [ProjectId] = @ProjectId
 			UPDATE Workflows SET Status = 'Live' WHERE [Id] = @WorkflowId
 		END
+		ELSE 
+		BEGIN
+			-- Tidy up any sections that exist in the database but not in projects.json
+			
+			SELECT @AllSections = section FROM OPENJSON(@Workflows)
+			WITH (
+					[section] NVARCHAR(MAX) AS JSON
+				)
 
+			INSERT INTO @ObsoleteSections
+			SELECT Id, SectionId, ws.SequenceNo, ws.SectionNo FROM dbo.WorkflowSequences ws 
+			LEFT JOIN OPENJSON(@AllSections) 
+			WITH
+				(
+					[SequenceNo] INT,
+					[SectionNo] INT
+				)
+			jws
+			ON jws.SequenceNo = ws.SequenceNo
+			AND jws.SectionNo = ws.SectionNo
+			WHERE WorkflowId = @WorkflowId
+			AND jws.SequenceNo IS NULL
+			AND jws.SectionNo IS NULL
+			
+			SELECT @ObsoleteSectionsCount = COUNT(*) FROM @ObsoleteSections
+			PRINT 'Obsolete sections to be removed : ' + CONVERT(char,@ObsoleteSectionsCount)
+						
+			DELETE FROM dbo.WorkflowSections WHERE Id IN (SELECT SectionId FROM @ObsoleteSections)
 
+			DELETE FROM dbo.WorkflowSequences WHERE WorkflowId = @WorkflowId AND Id IN (SELECT Id FROM @ObsoleteSections)
+		END
+				
 
 		SET @ProjectIndex = @ProjectIndex + 1;
 	END
