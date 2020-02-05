@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using SFA.DAS.QnA.Api.Infrastructure;
+using SFA.DAS.QnA.Api.Types;
 using SFA.DAS.QnA.Application.Commands.CreateSnapshot;
 
 namespace SFA.DAS.QnA.Api.Controllers
@@ -34,13 +35,13 @@ namespace SFA.DAS.QnA.Api.Controllers
         [HttpPost("{applicationId}/snapshot")]
         [ProducesResponseType((int)HttpStatusCode.Created)]
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
-        public async Task<ActionResult<Guid>> CreateApplicationSnapshot(Guid applicationId)
+        public async Task<ActionResult<CreateSnapshotResponse>> CreateApplicationSnapshot(Guid applicationId)
         {
             var newSnapshot = await _mediator.Send(new CreateSnapshotRequest(applicationId));
 
             if (!newSnapshot.Success) return NotFound(new NotFoundError(newSnapshot.Message));
 
-            return Ok(new { newSnapshot.Value.ApplicationId });
+            return newSnapshot.Value;
         }
     }
 }
