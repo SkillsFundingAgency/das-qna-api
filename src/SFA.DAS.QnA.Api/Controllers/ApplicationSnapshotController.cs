@@ -35,13 +35,13 @@ namespace SFA.DAS.QnA.Api.Controllers
         [HttpPost("{applicationId}/snapshot")]
         [ProducesResponseType((int)HttpStatusCode.Created)]
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
-        public async Task<ActionResult<CreateSnapshotResponse>> CreateApplicationSnapshot(Guid applicationId)
+        public async Task<ActionResult<Guid>> CreateApplicationSnapshot(Guid applicationId)
         {
             var newSnapshot = await _mediator.Send(new CreateSnapshotRequest(applicationId));
 
             if (!newSnapshot.Success) return NotFound(new NotFoundError(newSnapshot.Message));
 
-            return newSnapshot.Value;
+            return newSnapshot.Value.ApplicationId;
         }
     }
 }
