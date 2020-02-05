@@ -196,10 +196,12 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
 
         private static bool CheckAllConditionsSatisfied(Condition condition, string questionTag)
         {
+            bool allConditionsSatisified = true;
+
             if ((string.IsNullOrEmpty(condition.Contains)) && ((!string.IsNullOrEmpty(condition.MustEqual) && questionTag != condition.MustEqual) 
                 || (string.IsNullOrEmpty(condition.MustEqual) && !string.IsNullOrEmpty(questionTag))))
             {
-                return false;
+                allConditionsSatisified = false;
             }
             
             if (!string.IsNullOrEmpty(condition.Contains))
@@ -208,11 +210,11 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
                     .Split(",", StringSplitOptions.RemoveEmptyEntries);
                 if (!listOfAnswers.Contains(condition.Contains))
                 {
-                    return false;
+                    allConditionsSatisified = false;
                 }
             }
 
-            return true;
+            return allConditionsSatisified;
         }
 
 
