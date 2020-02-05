@@ -220,6 +220,7 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
             return allConditionsSatisfied;
         }
 
+
         public Next FindNextRequiredAction(ApplicationSection section, Next nextAction, JObject applicationData)
         {
             if (section?.QnAData is null || nextAction is null || nextAction.Action != "NextPage") return nextAction;
