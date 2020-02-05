@@ -198,8 +198,8 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
         {
             var allConditionsSatisfied = true;
  
-            if ((!string.IsNullOrEmpty(condition.MustEqual) && questionTag != condition.MustEqual) 
-                || (string.IsNullOrEmpty(condition.MustEqual) && !string.IsNullOrEmpty(questionTag)))
+            if ((string.IsNullOrEmpty(condition.Contains)) && ((!string.IsNullOrEmpty(condition.MustEqual) && questionTag != condition.MustEqual) 
+                || (string.IsNullOrEmpty(condition.MustEqual) && !string.IsNullOrEmpty(questionTag))))
             {
                 return false;
             }
