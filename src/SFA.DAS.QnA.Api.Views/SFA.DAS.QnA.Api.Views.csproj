@@ -8,9 +8,8 @@
         <Company>EFSA</Company>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <PackageOutputPath>..\NugetPackages</PackageOutputPath>
-        <PackageVersion>0.2.29.0</PackageVersion>
+        <PackageVersion>0.2.30.0</PackageVersion>
     </PropertyGroup>
-
     <ItemGroup>
         <Content Include="Views/**/*.*">
             <IncludeInPackage>true</IncludeInPackage>
@@ -18,10 +17,8 @@
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </Content>
     </ItemGroup>
-    
     <ItemGroup>
         <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.2.0" />
         <PackageReference Include="Microsoft.AspNetCore" Version="2.2.0" />
     </ItemGroup>
-    
 </Project>
