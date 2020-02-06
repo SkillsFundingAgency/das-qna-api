@@ -35,7 +35,7 @@ namespace SFA.DAS.QnA.Api.Controllers
         [HttpPost("{applicationId}/snapshot")]
         [ProducesResponseType((int)HttpStatusCode.Created)]
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
-        public async Task<ActionResult<CreateSnapshotResponse>> CreateApplicationSnapshot(Guid applicationId)
+        public async Task<ActionResult<CreateSnapshotResponse>> CreateSnapshot(Guid applicationId)
         {
             var newSnapshot = await _mediator.Send(new CreateSnapshotRequest(applicationId));
 
