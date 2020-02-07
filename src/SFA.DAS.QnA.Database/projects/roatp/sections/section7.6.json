@@ -1019,7 +1019,7 @@
 		"NotRequiredConditions": [{
 			"Field": "SectorsChosen",
 			"DoesNotContain": [
-				"A7610"
+				"A7615"
 			]
 		}],
 		"BodyText": "Who's the most experienced employee in the 'Business and administration' sector?",
@@ -1793,7 +1793,7 @@
 		"NotRequiredConditions": [{
 			"Field": "SectorsChosen",
 			"DoesNotContain": [
-				"A7610"
+				"A7620"
 			]
 		}],
 		"BodyText": "Who's the most experienced employee in the 'Care Services' sector?",
@@ -2567,7 +2567,7 @@
 		"NotRequiredConditions": [{
 			"Field": "SectorsChosen",
 			"DoesNotContain": [
-				"A7610"
+				"A7625"
 			]
 		}],
 		"BodyText": "Who's the most experienced employee in the 'Catering and hospitality' sector?",
@@ -3341,7 +3341,7 @@
 		"NotRequiredConditions": [{
 			"Field": "SectorsChosen",
 			"DoesNotContain": [
-				"A7610"
+				"A7630"
 			]
 		}],
 		"BodyText": "Who's the most experienced employee in the 'Construction' sector?",
@@ -4115,7 +4115,7 @@
 		"NotRequiredConditions": [{
 			"Field": "SectorsChosen",
 			"DoesNotContain": [
-				"A7610"
+				"A7635"
 			]
 		}],
 		"BodyText": "Who's the most experienced employee in the 'Creative and design' sector?",
@@ -4889,7 +4889,7 @@
 		"NotRequiredConditions": [{
 			"Field": "SectorsChosen",
 			"DoesNotContain": [
-				"A7610"
+				"A7640"
 			]
 		}],
 		"BodyText": "Who's the most experienced employee in the 'Digital' sector?",
@@ -5663,7 +5663,7 @@
 		"NotRequiredConditions": [{
 			"Field": "SectorsChosen",
 			"DoesNotContain": [
-				"A7610"
+				"A7645"
 			]
 		}],
 		"BodyText": "Who's the most experienced employee in the 'Education and childcare' sector?",
@@ -6438,7 +6438,7 @@
 		"NotRequiredConditions": [{
 			"Field": "SectorsChosen",
 			"DoesNotContain": [
-				"A7610"
+				"A7650"
 			]
 		}],
 		"BodyText": "Who's the most experienced employee in the 'Engineering and manufacturing' sector?",
@@ -7212,7 +7212,7 @@
 		"NotRequiredConditions": [{
 			"Field": "SectorsChosen",
 			"DoesNotContain": [
-				"A7610"
+				"A7655"
 			]
 		}],
 		"BodyText": "Who's the most experienced employee in the 'Hair and Beauty' sector?",
@@ -7986,7 +7986,7 @@
 		"NotRequiredConditions": [{
 			"Field": "SectorsChosen",
 			"DoesNotContain": [
-				"A7610"
+				"A7660"
 			]
 		}],
 		"BodyText": "Who's the most experienced employee in the 'Health and Science' sector?",
@@ -8760,7 +8760,7 @@
 		"NotRequiredConditions": [{
 			"Field": "SectorsChosen",
 			"DoesNotContain": [
-				"A7610"
+				"A7665"
 			]
 		}],
 		"BodyText": "Who's the most experienced employee in the 'Legal, finance and accounting' sector?",
@@ -9534,7 +9534,7 @@
 		"NotRequiredConditions": [{
 			"Field": "SectorsChosen",
 			"DoesNotContain": [
-				"A7610"
+				"A7670"
 			]
 		}],
 		"BodyText": "Who's the most experienced employee in the 'Protective services' sector?",
@@ -10308,7 +10308,7 @@
 		"NotRequiredConditions": [{
 			"Field": "SectorsChosen",
 			"DoesNotContain": [
-				"A7610"
+				"A7675"
 			]
 		}],
 		"BodyText": "Who's the most experienced employee in the 'Sales, marketing and procurement' sector?",
@@ -11082,7 +11082,7 @@
 		"NotRequiredConditions": [{
 			"Field": "SectorsChosen",
 			"DoesNotContain": [
-				"A7610"
+				"A7680"
 			]
 		}],
 		"BodyText": "Who's the most experienced employee in the 'Transport and logistics' sector?",
