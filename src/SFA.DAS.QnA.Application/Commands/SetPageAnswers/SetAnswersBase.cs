@@ -196,28 +196,25 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
 
         private static bool CheckAllConditionsSatisfied(Condition condition, string questionTag)
         {
-            var allConditionsSatisfied = true;
-            
+            bool allConditionsSatisified = true;
 
-            if (string.IsNullOrEmpty(questionTag))
+            if ((string.IsNullOrEmpty(condition.Contains)) && ((!string.IsNullOrEmpty(condition.MustEqual) && questionTag != condition.MustEqual) 
+                || (string.IsNullOrEmpty(condition.MustEqual) && !string.IsNullOrEmpty(questionTag))))
             {
-                allConditionsSatisfied = false;
+                allConditionsSatisified = false;
             }
-            else if (!string.IsNullOrEmpty(condition.MustEqual) && questionTag != condition.MustEqual)
-            {
-                allConditionsSatisfied = false;
-            }
-            else if (!string.IsNullOrEmpty(condition.Contains))
+            
+            if (!string.IsNullOrEmpty(condition.Contains))
             {
                 var listOfAnswers = questionTag
                     .Split(",", StringSplitOptions.RemoveEmptyEntries);
                 if (!listOfAnswers.Contains(condition.Contains))
                 {
-                    allConditionsSatisfied = false;
+                    allConditionsSatisified = false;
                 }
             }
 
-            return allConditionsSatisfied;
+            return allConditionsSatisified;
         }
 
 
