@@ -21,9 +21,6 @@ namespace SFA.DAS.QnA.Application.UnitTests.ServiceTests
         [TestCase("rgType1", "OrgType1", true, false, "not present so should be removed")]
         [TestCase("OrgType", "OrgType1", true, false, "not present so should be removed")]
         [TestCase("orgType1", "OrgType1", false, false, "present so should not be removed")]
-
-      
-
         public void When_PagesWithNotRequired_DoesNotContain_conditions_are_removed(string notRequiredConditionValue, string applicationDataValue, bool toRemove, bool singleValue, string explanation)
         {
             var expectedPagesCount = 2;
