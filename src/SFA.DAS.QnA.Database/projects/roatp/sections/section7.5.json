@@ -542,7 +542,12 @@
 			"AllowMultipleAnswers": false,
 			"Order": null,
 			"Active": false,
-			"NotRequiredConditions": [],
+			"NotRequiredConditions": [{
+				"Field": "Apply-ProviderRoute",
+				"IsOneOf": [
+					"3"
+				]
+			}],
 			"BodyText": "",
 			"Details": null,
 			"DisplayType": null,
@@ -829,7 +834,12 @@
 			"AllowMultipleAnswers": false,
 			"Order": null,
 			"Active": false,
-			"NotRequiredConditions": [],
+			"NotRequiredConditions": [{
+				"Field": "Apply-ProviderRoute",
+				"IsOneOf": [
+					"1","2"
+				]
+			}],
 			"BodyText": "",
 			"Details": null,
 			"DisplayType": null,
