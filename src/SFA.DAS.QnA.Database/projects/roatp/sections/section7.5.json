@@ -1053,6 +1053,17 @@
 				"IsOneOf": [
 					"Yes"
 				]
+			},
+			{
+				"Field": "Apply-ProviderRoute",
+				"IsOneOf": [
+					"2"
+				]
+			},{
+				"Field": "DeliveringPersonResponsible",
+				"IsOneOf": [
+					"No"
+				]
 			}],
 			"BodyText": "",
 			"Details": null,
@@ -1124,6 +1135,17 @@
 				"IsOneOf": [
 					"Yes"
 				]
+			},
+			{
+				"Field": "Apply-ProviderRoute",
+				"IsOneOf": [
+					"2"
+				]
+			},{
+				"Field": "DeliveringPersonResponsible",
+				"IsOneOf": [
+					"No"
+				]
 			}],
 			"BodyText": "",
 			"Details": null,
@@ -1194,6 +1216,17 @@
 				"Field": "DeliveringTeamResponsible",
 				"IsOneOf": [
 					"Yes"
+				]
+			},
+			{
+				"Field": "Apply-ProviderRoute",
+				"IsOneOf": [
+					"2"
+				]
+			},{
+				"Field": "DeliveringPersonResponsible",
+				"IsOneOf": [
+					"No"
 				]
 			}],
 			"BodyText": "",
