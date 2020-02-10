@@ -9,7 +9,7 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.CreateSnapshotTests
     {
         [Test]
 #if (!DEBUG)
-        [Ignore("Must be ran on local DEV machine")]
+        [Ignore("Must be tested on local DEV machine as it uses local Azure storage")]
 #endif
         public async Task Then_snapshot_is_created()
         {
@@ -21,7 +21,7 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.CreateSnapshotTests
 
         [Test]
 #if (!DEBUG)
-        [Ignore("Must be ran on local DEV machine")]
+        [Ignore("Must be tested on local DEV machine as it uses local Azure storage")]
 #endif
         public async Task Then_snapshot_has_copied_over_files_successfully()
         {
