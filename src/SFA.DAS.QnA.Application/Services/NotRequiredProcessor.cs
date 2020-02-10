@@ -56,7 +56,7 @@ namespace SFA.DAS.QnA.Application.Services
                         {
                             foreach (var condition in notRequiredCondition.DoesNotContain)
                             {
-                                if (string.Equals(adv, condition, StringComparison.CurrentCultureIgnoreCase)) isPresent = true;
+                                if (string.Equals(adv, condition, StringComparison.InvariantCultureIgnoreCase)) isPresent = true;
                             }
                         }
                     

@@ -25,10 +25,11 @@ namespace SFA.DAS.QnA.Application.Commands
                 ValidateQuestion(question, validationErrors, answerToThisQuestion);
 
                 if (question.Input.Options == null) continue;
+                if (answerToThisQuestion?.Value == null) continue;
 
                 foreach (var option in question.Input.Options.Where(option => answerToThisQuestion?.Value != null && option.FurtherQuestions != null))
                 {
-                    if (answerToThisQuestion?.Value != null && answerToThisQuestion.Value.Contains(option.Value))
+                    if ( answerToThisQuestion.Value.Contains(option.Value))
                     {
                         foreach (var furtherQuestion in option.FurtherQuestions)
                         {
