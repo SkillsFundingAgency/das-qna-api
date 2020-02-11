@@ -1420,6 +1420,206 @@
             "Questions": [
                 {
                     "QuestionId": "CC-110",
+                    "QuestionTag": "CC-People-RemovedTrustees",
+                    "Label": "Is anyone who's in control of your organisation on the Register of Removed Trustees?",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "<p class='govuk-body' id='cc-people-removedtrustees'></p>",
+                    "Hint": "",
+                    "Input":
+                    {
+                        "Type": "ComplexRadio",
+                        "InputClasses": null,
+                        "Options": [
+                            {
+                                "FurtherQuestions": [
+                                    {
+                                        "QuestionId": "CC-110.1",
+                                        "QuestionTag": "CC-People-RemovedTrustees-Information",
+                                        "Label": "Give us more information",
+                                        "ShortLabel": "",
+                                        "InputClasses": null,
+                                        "QuestionBodyText": "",
+                                        "Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include:</p><ul class='govuk-list govuk-list--bullet govuk-hint'><li>full names of who this was</li><li>why they were removed</li><li>if any actions were taken to resolve this</li></ul>",
+                                        "Input":
+                                        {
+                                            "Type": "Textarea",
+                                            "InputClasses": "",
+                                            "Options": [],
+                                            "Validations": [
+                                                {
+                                                    "Name": "Required",
+                                                    "Value": "",
+                                                    "ErrorMessage": "Enter more information "
+                                                },
+                                                {
+                                                    "Name": "MaxWordCount",
+                                                    "Value": "275",
+                                                    "ErrorMessage": "Your answer must be 275 words or less"
+                                                }
+                                            ],
+                                            "DataEndpoint": null
+
+                                        },
+                                        "Order": null,
+                                        "Value": null,
+                                        "ErrorMessages": null
+                                    }
+                                ],
+                                "Value": "Yes",
+                                "Label": "Yes",
+                                "HintText": ""
+                            },
+                            {
+                                "FurtherQuestions": [],
+                                "Value": "No",
+                                "Label": "No",
+                                "HintText": ""
+                            }
+                        ],
+                        "Validations": [
+                            {
+                                "Name": "Required",
+                                "Value": "",
+                                "ErrorMessage": "Tell us if anyone who's in control of your organisation is on the Register of Removed Trustees"
+                            }
+                        ],
+                        "DataEndpoint": null
+                    }
+                }
+            ],
+            "PageOfAnswers": [],
+            "Next": [
+                {
+                    "Action": "NextPage",
+                    "ReturnId": "3380",
+                    "Conditions": [],
+                    "ConditionMet": false
+                }				
+            ],
+            "Complete": false,
+            "AllowMultipleAnswers": false,
+            "Order": null,
+            "Active": false,
+            "ActivatedByPageId": "3300,3360",
+            "Feedback": null,
+            "HasFeedback": false,
+            "NotRequiredConditions": [{
+                    "Field": "SoleTrade-or-Partnership",
+                    "IsOneOf": ["Sole trader"]
+                }
+            ],
+            "BodyText": ""
+        },
+        {
+            "PageId": "3371",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "Checks on who's in control of your organisation",
+            "LinkTitle": "Checks on who's in control of your organisation",
+            "InfoText": "",
+            "Questions": [
+                {
+                    "QuestionId": "CC-111",
+                    "QuestionTag": "CC-People-RemovedTrustees-SoleTrader",
+                    "Label": "Are you on the Register of Removed Trustees?",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "<p class='govuk-body' id='cc-people-removedtrustees-soletrader'></p>",
+                    "Hint": "",
+                    "Input":
+                    {
+                        "Type": "ComplexRadio",
+                        "InputClasses": null,
+                        "Options": [
+                            {
+                                "FurtherQuestions": [
+                                    {
+                                        "QuestionId": "CC-111.1",
+                                        "QuestionTag": "CC-People-RemovedTrustees-SoleTrader-Information",
+                                        "Label": "Give us more information",
+                                        "ShortLabel": "",
+                                        "InputClasses": null,
+                                        "QuestionBodyText": "",
+                                        "Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include:</p><ul class='govuk-list govuk-list--bullet govuk-hint'><li>why you were removed</li><li>if any actions were taken to resolve this</li></ul>",
+                                        "Input":
+                                        {
+                                            "Type": "Textarea",
+                                            "InputClasses": "",
+                                            "Options": [],
+                                            "Validations": [
+                                                {
+                                                    "Name": "Required",
+                                                    "Value": "",
+                                                    "ErrorMessage": "Enter more information "
+                                                },
+                                                {
+                                                    "Name": "MaxWordCount",
+                                                    "Value": "275",
+                                                    "ErrorMessage": "Your answer must be 275 words or less"
+                                                }
+                                            ],
+                                            "DataEndpoint": null
+
+                                        },
+                                        "Order": null,
+                                        "Value": null,
+                                        "ErrorMessages": null
+                                    }
+                                ],
+                                "Value": "Yes",
+                                "Label": "Yes",
+                                "HintText": ""
+                            },
+                            {
+                                "FurtherQuestions": [],
+                                "Value": "No",
+                                "Label": "No",
+                                "HintText": ""
+                            }
+                        ],
+                        "Validations": [
+                            {
+                                "Name": "Required",
+                                "Value": "",
+                                "ErrorMessage": "Tell us if you are on the Register of Removed Trustees"
+                            }
+                        ],
+                        "DataEndpoint": null
+                    }
+                }
+            ],
+            "PageOfAnswers": [],
+            "Next": [
+                {
+                    "Action": "NextPage",
+                    "ReturnId": "3381",
+                    "Conditions": [],
+                    "ConditionMet": false
+                }				
+            ],
+            "Complete": false,
+            "AllowMultipleAnswers": false,
+            "Order": null,
+            "Active": false,
+            "ActivatedByPageId": "3301,3361",
+            "Feedback": null,
+            "HasFeedback": false,
+            "NotRequiredConditions": [{
+                    "Field": "SoleTrade-or-Partnership",
+                    "IsOneOf": [null, "Partnership"]
+                }
+            ],
+            "BodyText": ""
+        },
+        {
+            "PageId": "3380",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "Checks on who's in control of your organisation",
+            "LinkTitle": "Checks on who's in control of your organisation",
+            "InfoText": "",
+            "Questions": [
+                {
+                    "QuestionId": "CC-120",
                     "QuestionTag": "CC-People-Bankruptcy",
                     "Label": "Has anyone who's in control of your organisation or any of its partner organisations been made bankrupt in the last 3 years?",
                     "ShortLabel": "",
@@ -1433,7 +1633,7 @@
                             {
                                 "FurtherQuestions": [
                                     {
-                                        "QuestionId": "CC-110.1",
+                                        "QuestionId": "CC-120.1",
                                         "QuestionTag": "CC-People-Bankruptcy-Information",
                                         "Label": "Give us more information",
                                         "ShortLabel": "",
@@ -1500,7 +1700,7 @@
             "AllowMultipleAnswers": false,
             "Order": null,
             "Active": false,
-            "ActivatedByPageId": "3300,3360",
+            "ActivatedByPageId": "3300,3370",
             "Feedback": null,
             "HasFeedback": false,
             "NotRequiredConditions": [{
@@ -1511,7 +1711,7 @@
             "BodyText": ""
         },
         {
-            "PageId": "3371",
+            "PageId": "3381",
             "SequenceId": null,
             "SectionId": null,
             "Title": "Checks on who's in control of your organisation",
@@ -1519,7 +1719,7 @@
             "InfoText": "",
             "Questions": [
                 {
-                    "QuestionId": "CC-111",
+                    "QuestionId": "CC-121",
                     "QuestionTag": "CC-People-Bankruptcy-SoleTrader",
                     "Label": "Have you or anyone who's in control of your partner organisations been made bankrupt in the last 3 years?",
                     "ShortLabel": "",
@@ -1533,7 +1733,7 @@
                             {
                                 "FurtherQuestions": [
                                     {
-                                        "QuestionId": "CC-111.1",
+                                        "QuestionId": "CC-121.1",
                                         "QuestionTag": "CC-People-Bankruptcy-SoleTrader-Information",
                                         "Label": "Give us more information",
                                         "ShortLabel": "",
@@ -1600,7 +1800,7 @@
             "AllowMultipleAnswers": false,
             "Order": null,
             "Active": false,
-            "ActivatedByPageId": "3301,3361",
+            "ActivatedByPageId": "3301,3371",
             "Feedback": null,
             "HasFeedback": false,
             "NotRequiredConditions": [{
