@@ -4,6 +4,7 @@ using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json.Linq;
 using SFA.DAS.QnA.Api.Types.Page;
+using SFA.DAS.QnA.Application.Services;
 using SFA.DAS.QnA.Data;
 using SFA.DAS.QnA.Data.Entities;
 
@@ -12,10 +13,11 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
     public class SetAnswersBase
     {
         protected readonly QnaDataContext _dataContext;
-
-        public SetAnswersBase(QnaDataContext dataContext)
+        protected readonly INotRequiredProcessor _notRequiredProcessor;
+        public SetAnswersBase(QnaDataContext dataContext, INotRequiredProcessor notRequiredProcessor)
         {
             _dataContext = dataContext;
+            _notRequiredProcessor = notRequiredProcessor;
         }
 
         protected List<Next> GetCheckboxListMatchingNextActionsForPage(Guid sectionId, string pageId)
@@ -31,7 +33,7 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
             {
                 throw new ApplicationException($"Page {page.PageId}, in Sequence {page.SequenceId}, Section {page.SectionId} has no 'Next' instructions.");
             }
-            else if (page.Questions.All(q => !"CheckboxList".Equals(q.Input.Type, StringComparison.InvariantCultureIgnoreCase)))
+            else if (page.Questions.All(q => !"CheckboxList".Equals(q.Input.Type, StringComparison.InvariantCultureIgnoreCase) && !"ComplexCheckboxList".Equals(q.Input.Type, StringComparison.InvariantCultureIgnoreCase)))
             {
                 return new List<Next>();
             }
@@ -47,10 +49,10 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
                     foreach (var condition in next.Conditions.Where(c => c.Contains != null))
                     {
                         var question = page.Questions.Single(q => q.QuestionId == condition.QuestionId);
-                        var answers = page.PageOfAnswers?[0].Answers;
+                        var answers = page.PageOfAnswers?.FirstOrDefault()?.Answers;
                         var answer = answers?.FirstOrDefault(a => a.QuestionId == condition.QuestionId);
 
-                        if ("CheckboxList".Equals(question.Input.Type, StringComparison.InvariantCultureIgnoreCase))
+                        if ("CheckboxList".Equals(question.Input.Type, StringComparison.InvariantCultureIgnoreCase) || ("ComplexCheckboxList".Equals(question.Input.Type, StringComparison.InvariantCultureIgnoreCase)))
                         {
                             if (answer == null)
                             {
@@ -138,35 +140,19 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
                         if (!String.IsNullOrWhiteSpace(condition.QuestionTag))
                         {
                             var questionTagValue = applicationData[condition.QuestionTag];
+                            var questionTag = questionTagValue?.Value<string>();
+                            allConditionsSatisfied = CheckAllConditionsSatisfied(condition, questionTag);
 
-                            if (questionTagValue == null )
-                            {
-                                allConditionsSatisfied = false;
+                            if (!allConditionsSatisfied)
                                 break;
-                            }
-                            else if (!string.IsNullOrEmpty(condition.MustEqual) && questionTagValue.Value<string>() != condition.MustEqual)
-                            {
-                                allConditionsSatisfied = false;
-                                break;
-                            }
-                            else if (!string.IsNullOrEmpty(condition.Contains))
-                            {
-                                var listOfAnswers = questionTagValue.Value<string>()
-                                    .Split(",", StringSplitOptions.RemoveEmptyEntries);
-                                if (!listOfAnswers.Contains(condition.Contains))
-                                {
-                                    allConditionsSatisfied = false;
-                                    break;
-                                }
-                            }
                         }
                         else
                         {
                             var question = page.Questions.Single(q => q.QuestionId == condition.QuestionId);
-                            var answers = page.PageOfAnswers?[0].Answers;
+                            var answers = page.PageOfAnswers?.FirstOrDefault()?.Answers;
                             var answer = answers?.FirstOrDefault(a => a.QuestionId == condition.QuestionId);
 
-                            if ("CheckboxList".Equals(question.Input.Type, StringComparison.InvariantCultureIgnoreCase))
+                            if ("CheckboxList".Equals(question.Input.Type, StringComparison.InvariantCultureIgnoreCase) || ("ComplexCheckboxList".Equals(question.Input.Type, StringComparison.InvariantCultureIgnoreCase)))
                             {
                                 if (answer == null)
                                 {
@@ -205,15 +191,32 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
                 }
             }
 
-            nextAction = FindNextRequiredAction(section, nextAction, applicationData);
+            return FindNextRequiredAction(section, nextAction, applicationData);
+        }
 
-            if (nextAction != null)
+        private static bool CheckAllConditionsSatisfied(Condition condition, string questionTag)
+        {
+            bool allConditionsSatisified = true;
+
+            if ((string.IsNullOrEmpty(condition.Contains)) && ((!string.IsNullOrEmpty(condition.MustEqual) && questionTag != condition.MustEqual) 
+                || (string.IsNullOrEmpty(condition.MustEqual) && !string.IsNullOrEmpty(questionTag))))
             {
-                return nextAction;
+                allConditionsSatisified = false;
+            }
+            
+            if (!string.IsNullOrEmpty(condition.Contains))
+            {
+                var listOfAnswers = questionTag
+                    .Split(",", StringSplitOptions.RemoveEmptyEntries);
+                if (!listOfAnswers.Contains(condition.Contains))
+                {
+                    allConditionsSatisified = false;
+                }
             }
 
-            throw new ApplicationException($"Page {page.PageId}, in Sequence {page.SequenceId}, Section {page.SectionId} is missing a matching 'Next' instruction for Application {section.ApplicationId}");
+            return allConditionsSatisified;
         }
+
 
         public Next FindNextRequiredAction(ApplicationSection section, Next nextAction, JObject applicationData)
         {
@@ -230,7 +233,7 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
             }
             else if (nextPage.NotRequiredConditions != null && nextPage.NotRequiredConditions.Any())
             {
-                if (nextPage.NotRequiredConditions.Any(nrc => nrc.IsOneOf != null && nrc.IsOneOf.Contains(applicationData[nrc.Field]?.Value<string>())))
+                if (_notRequiredProcessor.NotRequired(nextPage.NotRequiredConditions, applicationData))
                 {
                     isRequiredNextAction = false;
                 }
@@ -303,6 +306,15 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
                         DeactivateDependentPages(deemedNextAction, page.PageId, qnaData, page);
                         ActivateDependentPages(deemedNextAction, page.PageId, qnaData);
                     }
+                    else if (deemedNextAction is null && page.Next != null)
+                    {
+                        // NOTE: This should only occur when resetting page answers and all of the next actions are based on particular answer being provided
+                        // Unforunately we don't have one of those answers so we must deactivate all dependant pages
+                        foreach(var nextAction in page.Next)
+                        {
+                            DeactivateDependentPages(nextAction, page.PageId, qnaData, page);
+                        }
+                    }
 
                     // Assign QnAData back so Entity Framework will pick up changes
                     section.QnAData = qnaData;
@@ -340,6 +352,9 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
 
         protected void ActivateDependentPages(Next chosenAction, string branchingPageId, QnAData qnaData)
         {
+            if (chosenAction.ReturnId == branchingPageId)
+                return;
+
             if (chosenAction != null && "NextPage".Equals(chosenAction.Action, StringComparison.InvariantCultureIgnoreCase)  && qnaData != null)
             {
                 var nextPage = qnaData.Pages.FirstOrDefault(p => p.PageId == chosenAction.ReturnId);

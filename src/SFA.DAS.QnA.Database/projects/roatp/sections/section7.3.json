@@ -1,0 +1,50 @@
+{
+    "Title": "Management hierarchy for apprenticeships",
+    "LinkTitle": "Management hierarchy for apprenticeships",
+    "DisplayType": "",
+    "RequestedFeedbackAnswered": null,
+    "Pages": [
+      {
+          "PageId": "7200",
+          "SequenceId": null,
+          "SectionId": null,
+          "Title": "Confirm management hierarchy",
+          "LinkTitle": "",
+          "InfoText": "",
+          "Questions": [
+              {
+                  "QuestionId": "DAT-720",
+                  "QuestionTag": "AddManagementHierarchy",
+                  "Label": "Confirm management hierarchy",
+                  "ShortLabel": "",
+                  "QuestionBodyText": "",
+                  "Hint": "",
+                  "Input": {
+                      "Type": "TabularData",
+                      "Validations": []
+                  },
+                  "Order": null
+              }
+          ],
+          "PageOfAnswers": [],
+          "Next": [
+              {
+                  "Action": "NextSection",
+                  "ReturnId": "7.3",
+                  "Conditions": [],
+                  "ConditionMet": false
+              }
+          ],
+          "Complete": false,
+          "AllowMultipleAnswers": false,
+          "Order": null,
+          "Active": true,
+          "Visible": true,
+          "Feedback": null,
+          "HasFeedback": false,
+          "NotRequiredOrgTypes": [],
+          "BodyText": "",
+          "NotRequiredConditions": []
+      }
+    ]
+}
