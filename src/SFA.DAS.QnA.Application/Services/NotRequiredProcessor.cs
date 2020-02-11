@@ -41,6 +41,30 @@ namespace SFA.DAS.QnA.Application.Services
                     if (containsAllValues)
                         pagesToRemove.Add(page.PageId);
                 }
+
+                foreach (var notRequiredCondition in page.NotRequiredConditions.Where(n =>
+                    n.DoesNotContain != null && n.DoesNotContain.Any(x=>!string.IsNullOrEmpty(x))))
+                {
+                    var isPresent = false;
+                    var fieldToCheck = notRequiredCondition.Field;
+                    var fieldValue = applicationData[fieldToCheck]?.Value<string>();
+                    if (!string.IsNullOrEmpty(fieldValue))
+                    {
+
+                        var applicationDataValues = fieldValue.Split(",", StringSplitOptions.RemoveEmptyEntries);
+                        foreach (var adv in applicationDataValues)
+                        {
+                            foreach (var condition in notRequiredCondition.DoesNotContain)
+                            {
+                                if (string.Equals(adv, condition, StringComparison.InvariantCultureIgnoreCase)) isPresent = true;
+                            }
+                        }
+                    
+                    }
+
+                    if (!isPresent)
+                        pagesToRemove.Add(page.PageId);
+                }
             }
 
             pages.RemoveAll(p => pagesToRemove.Any(pr=>pr == p.PageId));
