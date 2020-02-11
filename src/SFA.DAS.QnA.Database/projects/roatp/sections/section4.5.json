@@ -156,8 +156,8 @@
       "PageOfAnswers": [],
       "Next": [
         {
-          "Action": "NextPage",
-          "ReturnId": "",
+          "Action": "ReturnToSection",
+          "ReturnId": "4.6",
           "Conditions": [],
           "ConditionMet": false
         }

@@ -230,8 +230,8 @@
           "ConditionMet": false
         },
         {
-          "Action": "NextPage",
-          "ReturnId": "",
+          "Action": "ReturnToSection",
+          "ReturnId": "4.5",
           "Conditions": [],
           "ConditionMet": false
         }
@@ -287,8 +287,8 @@
       "PageOfAnswers": [],
       "Next": [
         {
-          "Action": "NextPage",
-          "ReturnId": null,
+          "Action": "ReturnToSection",
+          "ReturnId": "4.5",
           "Conditions": [],
           "ConditionMet": false
         }
