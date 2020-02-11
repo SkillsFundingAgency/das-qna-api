@@ -9,6 +9,7 @@ using NUnit.Framework;
 using SFA.DAS.QnA.Api.Types;
 using SFA.DAS.QnA.Api.Types.Page;
 using SFA.DAS.QnA.Application.Queries.Sections.GetSection;
+using SFA.DAS.QnA.Application.Services;
 using SFA.DAS.QnA.Data.Entities;
 
 namespace SFA.DAS.QnA.Application.UnitTests.QueriesTests.GetSectionTests
@@ -46,8 +47,9 @@ namespace SFA.DAS.QnA.Application.UnitTests.QueriesTests.GetSectionTests
             dataContext.SaveChanges();
             
             var mapperConfig = new MapperConfiguration(options => { options.CreateMap<ApplicationSection, Section>(); });
+            var notRequiredProcessor = new NotRequiredProcessor();
 
-            var handler = new GetSectionHandler(dataContext, mapperConfig.CreateMapper());
+            var handler = new GetSectionHandler(dataContext, mapperConfig.CreateMapper(),notRequiredProcessor);
 
             var section = await handler.Handle(new GetSectionRequest(applicationId, sectionId), CancellationToken.None);
 

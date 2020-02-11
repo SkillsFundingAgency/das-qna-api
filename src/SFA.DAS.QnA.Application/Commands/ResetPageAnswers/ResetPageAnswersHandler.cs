@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
@@ -9,90 +9,63 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using SFA.DAS.QnA.Api.Types;
 using SFA.DAS.QnA.Api.Types.Page;
+using SFA.DAS.QnA.Application.Commands.SetPageAnswers;
 using SFA.DAS.QnA.Application.Services;
 using SFA.DAS.QnA.Data;
-using SFA.DAS.QnA.Data.Entities;
 
-namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
+namespace SFA.DAS.QnA.Application.Commands.ResetPageAnswers
 {
-    public class SetPageAnswersHandler : SetAnswersBase, IRequestHandler<SetPageAnswersRequest, HandlerResponse<SetPageAnswersResponse>>
+    public class ResetPageAnswersHandler : SetAnswersBase, IRequestHandler<ResetPageAnswersRequest, HandlerResponse<ResetPageAnswersResponse>>
     {
-        private readonly IAnswerValidator _answerValidator;
-
-        public SetPageAnswersHandler(QnaDataContext dataContext, IAnswerValidator answerValidator, INotRequiredProcessor notRequiredProcessor) : base(dataContext, notRequiredProcessor)
+        public ResetPageAnswersHandler(QnaDataContext dataContext, INotRequiredProcessor notRequiredProcessor) : base(dataContext, notRequiredProcessor)
         {
-            _answerValidator = answerValidator;
         }
 
-        public async Task<HandlerResponse<SetPageAnswersResponse>> Handle(SetPageAnswersRequest request, CancellationToken cancellationToken)
+        public async Task<HandlerResponse<ResetPageAnswersResponse>> Handle(ResetPageAnswersRequest request, CancellationToken cancellationToken)
         {
             var validationErrorResponse = ValidateRequest(request);
 
-            if(validationErrorResponse != null)
+            if (validationErrorResponse != null)
             {
                 return validationErrorResponse;
             }
- 
-            SaveAnswersIntoPage(request);
+
+            ResetPageAnswers(request);
             UpdateApplicationData(request);
 
             var nextAction = GetNextActionForPage(request.SectionId, request.PageId);
             var checkboxListAllNexts = GetCheckboxListMatchingNextActionsForPage(request.SectionId, request.PageId);
-            
+
             SetStatusOfNextPagesBasedOnDeemedNextActions(request.SectionId, request.PageId, nextAction, checkboxListAllNexts);
-            
-            return new HandlerResponse<SetPageAnswersResponse>(new SetPageAnswersResponse(nextAction.Action, nextAction.ReturnId));
+
+            return new HandlerResponse<ResetPageAnswersResponse>(new ResetPageAnswersResponse(true));
         }
 
-        private HandlerResponse<SetPageAnswersResponse> ValidateRequest(SetPageAnswersRequest request)
+        private HandlerResponse<ResetPageAnswersResponse> ValidateRequest(ResetPageAnswersRequest request)
         {
-            var section =  _dataContext.ApplicationSections.AsNoTracking().SingleOrDefault(sec => sec.Id == request.SectionId && sec.ApplicationId == request.ApplicationId);
+            var section = _dataContext.ApplicationSections.AsNoTracking().SingleOrDefault(sec => sec.Id == request.SectionId && sec.ApplicationId == request.ApplicationId);
             var page = section?.QnAData?.Pages.SingleOrDefault(p => p.PageId == request.PageId);
-
-            var answers = request.Answers;
 
             if (page is null)
             {
-                return new HandlerResponse<SetPageAnswersResponse>(success: false, message: "Cannot find requested page.");
-            }
-            else if(answers is null)
-            {
-                return new HandlerResponse<SetPageAnswersResponse>(success: false, message: "No answers specified.");
-            }
-            else if(answers.Any(a => a.QuestionId is null))
-            {
-                return new HandlerResponse<SetPageAnswersResponse>(success: false, message: "All answers must specify which question they are related to.");
-            }
-            else if (page.AllowMultipleAnswers)
-            {
-                return new HandlerResponse<SetPageAnswersResponse>(success: false, message: "This endpoint cannot be used for Multiple Answers pages. Use AddAnswer / RemoveAnswer instead.");
+                return new HandlerResponse<ResetPageAnswersResponse>(success: false, message: "Cannot find requested page.");
             }
             else if (page.Questions.Count > 0)
             {
                 if (page.Questions.All(q => "FileUpload".Equals(q.Input?.Type, StringComparison.InvariantCultureIgnoreCase)))
                 {
-                    return new HandlerResponse<SetPageAnswersResponse>(success: false, message: "This endpoint cannot be used for FileUpload questions. Use Upload / DeleteFile instead.");
+                    return new HandlerResponse<ResetPageAnswersResponse>(success: false, message: "This endpoint cannot be used for FileUpload questions. Use Upload / DeleteFile instead.");
                 }
                 else if (page.Questions.Any(q => "FileUpload".Equals(q.Input?.Type, StringComparison.InvariantCultureIgnoreCase)))
                 {
-                    return new HandlerResponse<SetPageAnswersResponse>(success: false, message: "Pages cannot contain a mixture of FileUploads and other Question Types.");
-                }
-                else if (page.Questions.Count > answers.Count)
-                {
-                    return new HandlerResponse<SetPageAnswersResponse>(success: false, message: $"Number of Answers supplied ({answers.Count}) does not match number of first level Questions on page ({page.Questions.Count}).");
-                }
-
-                var validationErrors = _answerValidator.Validate(answers, page);
-                if (validationErrors.Any())
-                {
-                    return new HandlerResponse<SetPageAnswersResponse>(new SetPageAnswersResponse(validationErrors));
+                    return new HandlerResponse<ResetPageAnswersResponse>(success: false, message: "Pages cannot contain a mixture of FileUploads and other Question Types.");
                 }
             }
 
             return null;
         }
 
-        private void SaveAnswersIntoPage(SetPageAnswersRequest request)
+        private void ResetPageAnswers(ResetPageAnswersRequest request)
         {
             var section = _dataContext.ApplicationSections.SingleOrDefault(sec => sec.Id == request.SectionId && sec.ApplicationId == request.ApplicationId);
 
@@ -104,10 +77,10 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
 
                 if (page != null)
                 {
-                    page.PageOfAnswers = new List<PageOfAnswers>(new[] { new PageOfAnswers() { Answers = request.Answers } });
+                    page.PageOfAnswers = new List<PageOfAnswers>();
 
-                    MarkPageAsComplete(page);
-                    MarkPageFeedbackAsComplete(page);
+                    page.Complete = false;
+                    MarkPageFeedbackAsComplete(page); // As the answer has been 'changed', feedback can be deemed as completed
 
                     // Assign QnAData back so Entity Framework will pick up changes
                     section.QnAData = qnaData;
@@ -116,7 +89,7 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
             }
         }
 
-        private void UpdateApplicationData(SetPageAnswersRequest request)
+        private void UpdateApplicationData(ResetPageAnswersRequest request)
         {
             var application = _dataContext.Applications.SingleOrDefault(app => app.Id == request.ApplicationId);
 
@@ -133,7 +106,7 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
 
                     foreach (var question in page.Questions)
                     {
-                        SetApplicationDataField(question, request.Answers, applicationData);
+                        SetApplicationDataField(question, applicationData);
                         if (!string.IsNullOrWhiteSpace(question.QuestionTag)) questionTagsWhichHaveBeenUpdated.Add(question.QuestionTag);
 
                         if (question.Input.Options != null)
@@ -142,7 +115,7 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
                             {
                                 foreach (var furtherQuestion in option.FurtherQuestions)
                                 {
-                                    SetApplicationDataField(furtherQuestion, request.Answers, applicationData);
+                                    SetApplicationDataField(furtherQuestion, applicationData);
                                     if (!string.IsNullOrWhiteSpace(furtherQuestion.QuestionTag)) questionTagsWhichHaveBeenUpdated.Add(furtherQuestion.QuestionTag);
                                 }
                             }
@@ -199,12 +172,12 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
             }
         }
 
-        private static void SetApplicationDataField(Question question, List<Answer> answers, JObject applicationData)
+        private static void SetApplicationDataField(Question question, JObject applicationData)
         {
             if (question != null && applicationData != null)
             {
                 var questionTag = question.QuestionTag;
-                var questionTagAnswer = answers?.SingleOrDefault(a => a.QuestionId == question.QuestionId)?.Value;
+                string questionTagAnswer = null;
 
                 if (!string.IsNullOrWhiteSpace(questionTag))
                 {
