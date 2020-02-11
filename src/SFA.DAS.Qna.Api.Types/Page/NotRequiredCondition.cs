@@ -6,5 +6,7 @@ namespace SFA.DAS.QnA.Api.Types.Page
         public string[] IsOneOf { get; set; }
 
         public string[] ContainsAllOf { get; set; }
+
+        public string[] DoesNotContain { get; set; }
     }
 }

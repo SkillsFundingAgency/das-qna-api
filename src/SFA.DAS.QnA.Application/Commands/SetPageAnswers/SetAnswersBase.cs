@@ -33,7 +33,7 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
             {
                 throw new ApplicationException($"Page {page.PageId}, in Sequence {page.SequenceId}, Section {page.SectionId} has no 'Next' instructions.");
             }
-            else if (page.Questions.All(q => !"CheckboxList".Equals(q.Input.Type, StringComparison.InvariantCultureIgnoreCase)))
+            else if (page.Questions.All(q => !"CheckboxList".Equals(q.Input.Type, StringComparison.InvariantCultureIgnoreCase) && !"ComplexCheckboxList".Equals(q.Input.Type, StringComparison.InvariantCultureIgnoreCase)))
             {
                 return new List<Next>();
             }
@@ -52,7 +52,7 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
                         var answers = page.PageOfAnswers?.FirstOrDefault()?.Answers;
                         var answer = answers?.FirstOrDefault(a => a.QuestionId == condition.QuestionId);
 
-                        if ("CheckboxList".Equals(question.Input.Type, StringComparison.InvariantCultureIgnoreCase))
+                        if ("CheckboxList".Equals(question.Input.Type, StringComparison.InvariantCultureIgnoreCase) || ("ComplexCheckboxList".Equals(question.Input.Type, StringComparison.InvariantCultureIgnoreCase)))
                         {
                             if (answer == null)
                             {
@@ -152,7 +152,7 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
                             var answers = page.PageOfAnswers?.FirstOrDefault()?.Answers;
                             var answer = answers?.FirstOrDefault(a => a.QuestionId == condition.QuestionId);
 
-                            if ("CheckboxList".Equals(question.Input.Type, StringComparison.InvariantCultureIgnoreCase))
+                            if ("CheckboxList".Equals(question.Input.Type, StringComparison.InvariantCultureIgnoreCase) || ("ComplexCheckboxList".Equals(question.Input.Type, StringComparison.InvariantCultureIgnoreCase)))
                             {
                                 if (answer == null)
                                 {
@@ -352,6 +352,9 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
 
         protected void ActivateDependentPages(Next chosenAction, string branchingPageId, QnAData qnaData)
         {
+            if (chosenAction.ReturnId == branchingPageId)
+                return;
+
             if (chosenAction != null && "NextPage".Equals(chosenAction.Action, StringComparison.InvariantCultureIgnoreCase)  && qnaData != null)
             {
                 var nextPage = qnaData.Pages.FirstOrDefault(p => p.PageId == chosenAction.ReturnId);
