@@ -298,13 +298,13 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
 
                         foreach (var checkboxNextAction in deemedCheckboxListNextActions)
                         {
-                            ActivateDependentPages(checkboxNextAction, page.PageId, qnaData);
+                            ActivateDependentPages(checkboxNextAction, page.PageId, qnaData, page);
                         }
                     }
                     else if(deemedNextAction != null)
                     {
                         DeactivateDependentPages(deemedNextAction, page.PageId, qnaData, page);
-                        ActivateDependentPages(deemedNextAction, page.PageId, qnaData);
+                        ActivateDependentPages(deemedNextAction, page.PageId, qnaData, page);
                     }
                     else if (deemedNextAction is null && page.Next != null)
                     {
@@ -325,7 +325,7 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
 
         protected void DeactivateDependentPages(Next chosenAction, string branchingPageId, QnAData qnaData, Page page, bool subPages = false)
         {
-            if (page != null)
+            if (chosenAction != null && page != null)
             {
                 // process all sub pages or those which are not the chosen action
                 foreach (var nextAction in page.Next.Where(n => subPages || !(n.Action == chosenAction.Action && n.ReturnId == chosenAction.ReturnId)))
@@ -350,24 +350,28 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
             }
         }
 
-        protected void ActivateDependentPages(Next chosenAction, string branchingPageId, QnAData qnaData)
+        protected void ActivateDependentPages(Next chosenAction, string branchingPageId, QnAData qnaData, Page page)
         {
-            if (chosenAction.ReturnId == branchingPageId)
-                return;
-
-            if (chosenAction != null && "NextPage".Equals(chosenAction.Action, StringComparison.InvariantCultureIgnoreCase)  && qnaData != null)
+            if (chosenAction != null && page != null)
             {
-                var nextPage = qnaData.Pages.FirstOrDefault(p => p.PageId == chosenAction.ReturnId);
-                if (nextPage != null)
+                // process sub pages which are the chosen action
+                foreach (var nextAction in page.Next.Where(n => n.Action == chosenAction.Action && n.ReturnId == chosenAction.ReturnId))
                 {
-                    if (nextPage.ActivatedByPageId != null && nextPage.ActivatedByPageId.Split(",", StringSplitOptions.RemoveEmptyEntries).Contains(branchingPageId))
+                    if ("NextPage".Equals(nextAction.Action, StringComparison.InvariantCultureIgnoreCase))
                     {
-                        nextPage.Active = true;
-                    }
+                        var nextPage = qnaData.Pages.FirstOrDefault(p => p.PageId == nextAction.ReturnId);
+                        if (nextPage != null)
+                        {
+                            if (nextPage.ActivatedByPageId != null && nextPage.ActivatedByPageId.Split(",", StringSplitOptions.RemoveEmptyEntries).Contains(branchingPageId))
+                            {
+                                nextPage.Active = true;
 
-                    foreach (var nextPagesAction in nextPage.Next)
-                    {
-                        ActivateDependentPages(nextPagesAction, branchingPageId, qnaData);
+                                foreach (var nextPagesAction in nextPage.Next)
+                                {
+                                    ActivateDependentPages(nextPagesAction, branchingPageId, qnaData, nextPage);
+                                }
+                            }
+                        }
                     }
                 }
             }
