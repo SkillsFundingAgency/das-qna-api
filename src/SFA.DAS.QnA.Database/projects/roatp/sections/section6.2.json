@@ -524,12 +524,6 @@
                     "IsOneOf": [
                         "Apprenticeship standards,Apprenticeship frameworks"
                     ]
-                },
-				{
-                    "Field": "PAT-Type-Of-Training-main-employer",
-                    "IsOneOf": [
-                        "Apprenticeship standards,Apprenticeship frameworks"
-                    ]
                 }
             ],
             "ActivatedByPageId": "6020,6022",
