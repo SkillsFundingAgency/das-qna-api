@@ -62,7 +62,7 @@
 							"MustEqual": "Yes"
 						},
 						{
-							"QuestionTag": "Apply-ProviderRoute",
+							"QuestionTag": "ApplyProviderRoute",
 							"MustEqual": "1"
 						}
 					],
@@ -76,7 +76,7 @@
 							"MustEqual": "Yes"
 						},
 						{
-							"QuestionTag": "Apply-ProviderRoute",
+							"QuestionTag": "ApplyProviderRoute",
 							"MustEqual": "3"
 						}
 					],
@@ -91,7 +91,7 @@
 						},
 						{
 							"QuestionId": null,
-							"QuestionTag": "Apply-ProviderRoute",
+							"QuestionTag": "ApplyProviderRoute",
 							"MustEqual": "2"
 						}
 					],
@@ -169,7 +169,7 @@
 							"MustEqual": "Yes"
 						},
 						{
-							"QuestionTag": "Apply-ProviderRoute",
+							"QuestionTag": "ApplyProviderRoute",
 							"Contains": "1"
 						}
 					],
@@ -183,7 +183,7 @@
 							"MustEqual": "Yes"
 						},
 						{
-							"QuestionTag": "Apply-ProviderRoute",
+							"QuestionTag": "ApplyProviderRoute",
 							"Contains": "3"
 						}
 					],
@@ -197,7 +197,7 @@
 							"MustEqual": "Yes"
 						},
 						{
-							"QuestionTag": "Apply-ProviderRoute",
+							"QuestionTag": "ApplyProviderRoute",
 							"Contains": "2"
 						}
 					],
@@ -215,7 +215,7 @@
 			"Order": null,
 			"Active": true,
 			"NotRequiredConditions": [{
-				"Field": "SoleTrade-or-Partnership",
+				"Field": "SoleTradeOrPartnership",
 				"IsOneOf": [
 					null,
 					"Partnership"

@@ -14,7 +14,7 @@
             "Questions": [
                 {
                     "QuestionId": "PAT-21",
-                    "QuestionTag": "PAT-Type-Of-Training-main",
+                    "QuestionTag": "PATTypeOfTrainingMain",
                     "Label": "What type of apprenticeship training will your organisation offer?",
                     "ShortLabel": "",
                     "QuestionBodyText": "<p class='govuk-body'>Select all that apply.</p>",
@@ -73,7 +73,7 @@
                         },
 						{
                             "QuestionId": null,
-                            "QuestionTag": "Apply-ProviderRoute",
+                            "QuestionTag": "ApplyProviderRoute",
                             "MustEqual": "1"
                         }
                     ],
@@ -90,7 +90,7 @@
                         },
 						{
                             "QuestionId": null,
-                            "QuestionTag": "Apply-ProviderRoute",
+                            "QuestionTag": "ApplyProviderRoute",
                             "MustEqual": "1"
                         }
                     ],
@@ -116,7 +116,7 @@
             "Questions": [
                 {
                     "QuestionId": "PAT-22",
-                    "QuestionTag": "PAT-Type-Of-Training-employer",
+                    "QuestionTag": "PATTypeOfTrainingEmployer",
                     "Label": "What type of apprenticeship training will your organisation offer?",
                     "ShortLabel": "",
                     "QuestionBodyText": "<p class='govuk-body'>Select all that apply.</p>",
@@ -174,7 +174,7 @@
                         },
 						{
                             "QuestionId": null,
-                            "QuestionTag": "Apply-ProviderRoute",
+                            "QuestionTag": "ApplyProviderRoute",
                             "MustEqual": "2"
                         }
                     ],
@@ -191,7 +191,7 @@
                         },
 						{
                             "QuestionId": null,
-                            "QuestionTag": "Apply-ProviderRoute",
+                            "QuestionTag": "ApplyProviderRoute",
                             "MustEqual": "2"
                         }
                     ],
@@ -218,7 +218,7 @@
             "Questions": [
                 {
                     "QuestionId": "PAT-23",
-                    "QuestionTag": "PAT-Type-Of-Training-supporting",
+                    "QuestionTag": "PATTypeOfTrainingSupporting",
                     "Label": "What type of apprenticeship training will your organisation offer?",
                     "ShortLabel": "",
                     "QuestionBodyText": "<p class='govuk-body'>Select all that apply.</p>",
@@ -291,7 +291,7 @@
                         },
 						{
                             "QuestionId": null,
-                            "QuestionTag": "Apply-ProviderRoute",
+                            "QuestionTag": "ApplyProviderRoute",
                             "MustEqual": "3"
                         }
                     ],
@@ -308,7 +308,7 @@
                         },
 						{
                             "QuestionId": null,
-                            "QuestionTag": "Apply-ProviderRoute",
+                            "QuestionTag": "ApplyProviderRoute",
                             "MustEqual": "3"
                         }
                     ],
@@ -325,7 +325,7 @@
                         },
 						{
                             "QuestionId": null,
-                            "QuestionTag": "Apply-ProviderRoute",
+                            "QuestionTag": "ApplyProviderRoute",
                             "MustEqual": "3"
                         }
                     ],
@@ -342,7 +342,7 @@
                         },
 						{
                             "QuestionId": null,
-                            "QuestionTag": "Apply-ProviderRoute",
+                            "QuestionTag": "ApplyProviderRoute",
                             "MustEqual": "3"
                         }
                     ],
@@ -359,7 +359,7 @@
                         },
 						{
                             "QuestionId": null,
-                            "QuestionTag": "Apply-ProviderRoute",
+                            "QuestionTag": "ApplyProviderRoute",
                             "MustEqual": "3"
                         }
                     ],
@@ -386,7 +386,7 @@
             "Questions": [
                 {
                     "QuestionId": "PAT-30",
-                    "QuestionTag": "PAT-Type-Of-Training-Apprenticeship-Standards",
+                    "QuestionTag": null,
                     "Label": "How is your organisation ensuring it's ready to deliver training in apprenticeship standards?",
                     "ShortLabel": "",
                     "InputClasses": null,
@@ -444,7 +444,7 @@
             "Questions": [
                 {
                     "QuestionId": "PAT-50",
-                    "QuestionTag": "PAT-Apprenticeship-Frameworks-main-and-employer",
+                    "QuestionTag": null,
                     "Label": "Offering apprenticeship frameworks",
                     "ShortLabel": "",
                     "QuestionBodyText": "<p class='govuk-body' id='pat-offering-apprenticeship-frameworks'>Apprenticeship frameworks will be replaced by apprenticeship standards by 1 August 2020. </p><p class='govuk-body govuk-!-font-weight-bold'>Does your organisation have a plan to transition from apprenticeship frameworks to apprenticeship standards?</p><p class='govuk-body'>Find out more on <a href='https://www.gov.uk/government/publications/removal-of-apprenticeship-frameworks' target='_blank'>the withdrawal of apprenticeship frameworks  (opens in a new window or tab)</a>.</p>",
@@ -545,7 +545,7 @@
             "Questions": [
                 {
                     "QuestionId": "PAT-52",
-                    "QuestionTag": "PAT-Organisation-Transition-main-and-employer",
+                    "QuestionTag": null,
                     "Label": "How will your organisation transition from apprenticeship frameworks to apprenticeship standards?",
                     "ShortLabel": "",
                     "InputClasses": null,
@@ -617,7 +617,7 @@
             "Questions": [
                 {
                     "QuestionId": "PAT-54",
-                    "QuestionTag": "PAT-Only-Offer-Frameworks-main-and-employer",
+                    "QuestionTag": null,
                     "Label": "Why will your organisation only deliver apprenticeship frameworks?",
                     "ShortLabel": "",
                     "InputClasses": null,
@@ -653,7 +653,7 @@
                     "ReturnId": "6800",
                     "Conditions": [
                         {
-                            "QuestionTag": "Apply-ProviderRoute",
+                            "QuestionTag": "ApplyProviderRoute",
                             "MustEqual": "1"
                         }
                     ],
@@ -664,7 +664,7 @@
                     "ReturnId": "6800",
                     "Conditions": [
                         {
-                            "QuestionTag": "Apply-ProviderRoute",
+                            "QuestionTag": "ApplyProviderRoute",
                             "MustEqual": "2"
                         }
                     ],
@@ -705,7 +705,7 @@
             "Questions": [
                 {
                     "QuestionId": "PAT-60",
-                    "QuestionTag": "PAT-Apprenticeship-Frameworks-supporting",
+                    "QuestionTag": null,
                     "Label": "Offering apprenticeship frameworks",
                     "ShortLabel": "",
                     "QuestionBodyText": "<p class='govuk-body' id='pat-offering-apprenticeship-frameworks'>Apprenticeship frameworks will be replaced by apprenticeship standards by 1 August 2020. </p><p class='govuk-body' >Does your organisation have a plan to transition from apprenticeship frameworks to apprenticeship standards?</p><p class='govuk-body'>Find out more on <a href='https://www.gov.uk/government/publications/removal-of-apprenticeship-frameworks' target='_blank'>the withdrawal of apprenticeship frameworks  (opens in a new window or tab)</a>.</p>",
@@ -819,7 +819,7 @@
             "Questions": [
                 {
                     "QuestionId": "PAT-62",
-                    "QuestionTag": "PAT-Organisation-Transition-supporting",
+                    "QuestionTag": null,
                     "Label": "How will your organisation transition from apprenticeship frameworks to apprenticeship standards?",
                     "ShortLabel": "",
                     "InputClasses": null,
@@ -886,7 +886,7 @@
             "Questions": [
                 {
                     "QuestionId": "PAT-64",
-                    "QuestionTag": "PAT-Only-Offer-Frameworks-supporting",
+                    "QuestionTag": null,
                     "Label": "Why will your organisation only deliver apprenticeship frameworks?",
                     "ShortLabel": "",
                     "InputClasses": null,
@@ -954,7 +954,7 @@
             "Questions": [
                 {
                     "QuestionId": "PAT-620",
-                    "QuestionTag": "",
+                    "QuestionTag": null,
                     "Label": "How is your organisation ensuring it's ready to deliver training in apprenticeship standards?",
                     "ShortLabel": "",
                     "InputClasses": null,
@@ -1009,7 +1009,7 @@
             "InfoText": "",
             "Questions": [{
 				  "QuestionId": "PAT-671",
-				  "QuestionTag": "Pat-contact-directory-name",
+				  "QuestionTag": null,
 				  "Label": "<span class='govuk-label'>Full name</span>",
 				  "ShortLabel": "",
 				  "QuestionBodyText": "",
@@ -1033,7 +1033,7 @@
 				},
 				{
 				  "QuestionId": "PAT-672",
-				  "QuestionTag": "Pat-contact-directory-email",
+				  "QuestionTag": null,
 				  "Label": "<span class='govuk-label'>Email</span>",
 				  "ShortLabel": "",
 				  "QuestionBodyText": "",
@@ -1097,7 +1097,7 @@
             "InfoText": "",
             "Questions": [{
                     "QuestionId": "PAT-800",
-                    "QuestionTag": "PAT-awarding-bodies",
+                    "QuestionTag": null,
                     "Label": "How does your organisation plan to engage and work with awarding bodies?",
                     "ShortLabel": "",
                     "InputClasses": null,
@@ -1132,7 +1132,7 @@
                     "Conditions": [		
 						{
                             "QuestionId": null,
-                            "QuestionTag": "Apply-ProviderRoute",
+                            "QuestionTag": "ApplyProviderRoute",
                             "MustEqual": "1"
                         }
                     ],
@@ -1172,7 +1172,7 @@
             "Questions": [
                 {
                     "QuestionId": "PAT-900",
-                    "QuestionTag": "PAT-epao",
+                    "QuestionTag": null,
                     "Label": "How will your organisation engage with end-point assessment organisations (EPAO's)?",
                     "ShortLabel": "",
                     "InputClasses": null,
@@ -1209,12 +1209,12 @@
                     "Conditions": [		
 						{
                             "QuestionId": null,
-                            "QuestionTag": "Apply-ProviderRoute",
+                            "QuestionTag": "ApplyProviderRoute",
                             "MustEqual": "2"
                         },					
 						{
                             "QuestionId": null,
-                            "QuestionTag": "PAT-Type-Of-Training-employer",
+                            "QuestionTag": "PATTypeOfTrainingEmployer",
                             "Contains": "Apprenticeship frameworks"
                         }
                     ],
@@ -1226,12 +1226,12 @@
                     "Conditions": [                    
 						{
                             "QuestionId": null,
-                            "QuestionTag": "Apply-ProviderRoute",
+                            "QuestionTag": "ApplyProviderRoute",
                             "MustEqual": "1"
                         },
 						{
                             "QuestionId": null,
-                            "QuestionTag": "PAT-Type-Of-Training-main",
+                            "QuestionTag": "PATTypeOfTrainingMain",
                             "Contains": "Apprenticeship frameworks"
                         }
                     ],
@@ -1243,12 +1243,12 @@
                     "Conditions": [   
 						{
                             "QuestionId": null,
-                            "QuestionTag": "Apply-ProviderRoute",
+                            "QuestionTag": "ApplyProviderRoute",
                             "MustEqual": "1"
                         },					
 						{
                             "QuestionId": null,
-                            "QuestionTag": "PAT-Type-Of-Training-main",
+                            "QuestionTag": "PATTypeOfTrainingMain",
                             "Contains": "Apprenticeship standards"
                         }
                     ],
@@ -1270,7 +1270,7 @@
             "Feedback": null,
             "NotRequiredConditions": [
                 {
-                    "Field": "Apply-ProviderRoute",
+                    "Field": "ApplyProviderRoute",
                     "IsOneOf": [
                         "3"
                     ]

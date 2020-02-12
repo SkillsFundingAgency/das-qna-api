@@ -14,7 +14,7 @@
             "Questions": [
                 {
                     "QuestionId": "PAT-630",
-                    "QuestionTag": "",
+                    "QuestionTag": null,
                     "Label": "How will your organisation ensure apprentices are supported during their apprenticeship training?",
                     "ShortLabel": "",
                     "InputClasses": null,

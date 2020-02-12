@@ -14,7 +14,7 @@
             "Questions": [
                 {
                     "QuestionId": "COA-1",
-                    "QuestionTag": "COA-Stage1-Application",
+                    "QuestionTag": "COAStage1Application",
                     "Label": "",
                     "ShortLabel": "",
                     "QuestionBodyText": "",

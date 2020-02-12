@@ -14,7 +14,7 @@
             "Questions": [
                 {
                     "QuestionId": "FH-500",
-                    "QuestionTag": "FHA-Parent-Has-Consolidated-Statements",
+                    "QuestionTag": "FHAParentHasConsolidatedStatements",
                     "Label": "Does your UK ultimate parent company have consolidated financial statements?",
                     "ShortLabel": "",
                     "InputClasses": null,
@@ -103,7 +103,7 @@
             "Questions": [
                 {
                     "QuestionId": "FH-510",
-                    "QuestionTag": "FHA-Parent-Financial-Statements",
+                    "QuestionTag": null,
                     "Label": "Upload your UK ultimate parent company's consolidated financial statements",
                     "ShortLabel": "",
                     "InputClasses": null,
@@ -147,7 +147,7 @@
             "Active": false,
             "NotRequiredConditions": [
                 {
-                    "Field": "FHA-Parent-Has-Consolidated-Statements",
+                    "Field": "FHAParentHasConsolidatedStatements",
                     "IsOneOf": [
                         "No"
                     ]
@@ -169,7 +169,7 @@
             "Questions": [
                 {
                     "QuestionId": "FH-520",
-                    "QuestionTag": "FHA-Parent-Has-Other-Subsidiaries",
+                    "QuestionTag": "FHAParentHasOtherSubsidiaries",
                     "Label": "Does your UK ultimate parent company have other subsidiary companies?",
                     "ShortLabel": "",
                     "InputClasses": null,
@@ -235,7 +235,7 @@
             "Active": false,
             "NotRequiredConditions": [
                 {
-                    "Field": "FHA-Parent-Has-Consolidated-Statements",
+                    "Field": "FHAParentHasConsolidatedStatements",
                     "IsOneOf": [
                         "Yes"
                     ]
@@ -260,7 +260,7 @@
             "Questions": [
                 {
                     "QuestionId": "FH-530",
-                    "QuestionTag": "FHA-Subsidaries-Financial-Statements",
+                    "QuestionTag": null,
                     "Label": "Upload a financial statement for all your UK ultimate parent company's subsidiary companies",
                     "ShortLabel": "",
                     "InputClasses": null,
@@ -310,13 +310,13 @@
             "Active": false,
             "NotRequiredConditions": [
                 {
-                    "Field": "FHA-Parent-Has-Other-Subsidiaries",
+                    "Field": "FHAParentHasOtherSubsidiaries",
                     "IsOneOf": [
                         "No"
                     ]
                 },
                 {
-                    "Field": "FHA-Parent-Has-Consolidated-Statements",
+                    "Field": "FHAParentHasConsolidatedStatements",
                     "IsOneOf": [
                         "Yes"
                     ]
@@ -338,7 +338,7 @@
             "Questions": [
                 {
                     "QuestionId": "FH-540",
-                    "QuestionTag": "FHA-Parent-12Months-Financial-Statements",
+                    "QuestionTag": null,
                     "Label": "Upload your UK ultimate parent company's full financial statements covering the last 12 months",
                     "ShortLabel": "",
                     "InputClasses": null,
@@ -382,13 +382,13 @@
             "Active": false,
             "NotRequiredConditions": [
                 {
-                    "Field": "FHA-Parent-Has-Other-Subsidiaries",
+                    "Field": "FHAParentHasOtherSubsidiaries",
                     "IsOneOf": [
                         "Yes"
                     ]
                 },
                 {
-                    "Field": "FHA-Parent-Has-Consolidated-Statements",
+                    "Field": "FHAParentHasConsolidatedStatements",
                     "IsOneOf": [
                         "Yes"
                     ]
