@@ -14,7 +14,7 @@
             "Questions": [
                 {
                     "QuestionId": "FIN-10",
-                    "QuestionTag": "Finish-Permission-Personal-Details",
+                    "QuestionTag": "FinishPermissionPersonalDetails",
                     "Label": "Do you have permission from everyone named in this application to use their details?",
                     "ShortLabel": "",
                     "QuestionBodyText": "",
@@ -88,7 +88,7 @@
             "Questions": [
                 {
                     "QuestionId": "FIN-20",
-                    "QuestionTag": "Finish-Accurate-Personal-Details",
+                    "QuestionTag": "FinishAccuratePersonalDetails",
                     "Label": "Have you checked with everyone named in this application that the details provided for them are accurate?",
                     "ShortLabel": "",
                     "InputClasses": null,
@@ -166,7 +166,7 @@
             "Questions": [
                 {
                     "QuestionId": "FIN-30",
-                    "QuestionTag": "Finish-Permission-SubmitApp",
+                    "QuestionTag": "FinishPermissionSubmitApp",
                     "Label": "Do you have permission from your organisation to submit this application?",
                     "ShortLabel": "",
                     "InputClasses": null,

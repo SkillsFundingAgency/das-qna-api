@@ -14,7 +14,7 @@
       "Questions": [
         {
           "QuestionId": "FIN-40",
-          "QuestionTag": "Finish-Commercial-Confidence",
+          "QuestionTag": "FinishCommercialConfidence",
           "Label": "Is any of the information in this application 'commercial in confidence'?",
           "ShortLabel": "",
           "InputClasses": null,
