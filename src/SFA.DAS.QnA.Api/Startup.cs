@@ -99,7 +99,7 @@ namespace SFA.DAS.QnA.Api
             services.AddAutoMapper(typeof(SystemTime).Assembly);
             services.AddMediatR(AppDomain.CurrentDomain.GetAssemblies());
 
-            services.AddDbContext<QnaDataContext>(options => options.UseSqlServer(config.Value.SqlConnectionstring));
+            services.AddDbContext<QnaDataContext>(options => options.UseSqlServer(config.Value.SqlConnectionstring,providerOptions => providerOptions.EnableRetryOnFailure()));
 
             services.AddEntityFrameworkSqlServer();
 
