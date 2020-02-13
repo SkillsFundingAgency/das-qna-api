@@ -186,7 +186,7 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
                             if (nextAction?.Conditions != null)
                             {
                                 DeactivateDependentPages(nextAction, page.PageId, qnaData, page);
-                                ActivateDependentPages(nextAction, page.PageId, qnaData);
+                                ActivateDependentPages(nextAction, page.PageId, qnaData, page);
                             }
                         }
                     }
