@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using SFA.DAS.QnA.Api.Infrastructure;
 using SFA.DAS.QnA.Application.Commands.SetApplicationData;
 using SFA.DAS.QnA.Application.Queries.ApplicationData.GetApplicationData;
@@ -36,6 +37,50 @@ namespace SFA.DAS.QnA.Api.Controllers
             if (!applicationDataResponse.Success) return NotFound(new NotFoundError(applicationDataResponse.Message));
 
             return JsonConvert.DeserializeObject(applicationDataResponse.Value);
+        }
+
+        /// <summary>
+        ///     Returns the QuestionTag Value for an Application by ApplicationId and QuestionTag
+        /// </summary>
+        /// <param name="applicationId">ApplicationId (Guid)</param>
+        /// <param name="questionTag">QuestionTag (string)</param>
+        /// <returns>The QuestionTag Value</returns>
+        /// <response code="200">Returns the QuestionTag Value</response>
+        /// <response code="404">If there is no Application for the given Application Id or QuestionTag does not exist.</response>
+        /// <response code="422">ApplicationData either does not exist or cannot be parsed as json.</response>
+        [ProducesResponseType(200)]
+        [ProducesResponseType(404)]
+        [ProducesResponseType(422)]
+        [HttpGet("{applicationId}/applicationData/{questionTag}")]
+        public async Task<ActionResult<object>> GetQuestionTag(Guid applicationId, string questionTag)
+        {
+            var applicationDataResponse = await _mediator.Send(new GetApplicationDataRequest(applicationId));
+
+            if (!applicationDataResponse.Success) return NotFound(new NotFoundError(applicationDataResponse.Message));
+
+            if (applicationDataResponse != null)
+            {
+                var applicationData = JObject.Parse(applicationDataResponse.Value.ToString());
+
+                if (applicationData != null)
+                {
+                    var answerData = applicationData[questionTag];
+                    if (answerData != null)
+                    {
+                        return answerData.Value<object>(); 
+                    }
+                    else
+                    {
+                        return NotFound(new NotFoundError("QuestionTag does not exist."));
+                    }
+                }
+                else
+                {
+                    return UnprocessableEntity(new UnprocessableEntityError("ApplicationData either does not exist or cannot be parsed as json."));
+                }
+            }
+
+            return Task.FromResult<object>(null);
         }
 
         /// <summary>
