@@ -40,8 +40,8 @@
             "PageOfAnswers": [],
             "Next": [
                 {
-                    "Action": "NextPage",
-                    "ReturnId": "4030",
+                    "Action": "ReturnToSection",
+                    "ReturnId": "4.4",
                     "Conditions": [],
                     "ConditionMet": false
                 }
