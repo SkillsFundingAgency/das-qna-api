@@ -1526,7 +1526,7 @@
             "Next": [
                 {
                     "Action": "ReturnToSection",
-                    "ReturnId": 7,
+                    "ReturnId": "1.5",
                     "Conditions": [],
                     "ConditionMet": false
                 }
@@ -1539,7 +1539,7 @@
             "Feedback": null,
             "HasFeedback": false,
             "NotRequiredConditions": [],
-            "ActivatedByPageId": "180,181,200,201,210,211,220",
+            "ActivatedByPageId": "140,170,171,180,181,200,201,210,211,220",
             "BodyText": ""
         }
     ]
