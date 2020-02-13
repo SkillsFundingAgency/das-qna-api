@@ -14,7 +14,7 @@
             "Questions": [
                 {
                     "QuestionId": "PAT-21",
-                    "QuestionTag": "PAT-Type-Of-Training-main",
+                    "QuestionTag": "PAT-Type-Of-Training-main-employer",
                     "Label": "What type of apprenticeship training will your organisation offer?",
                     "ShortLabel": "",
                     "QuestionBodyText": "<p class='govuk-body'>Select all that apply.</p>",
@@ -116,7 +116,7 @@
             "Questions": [
                 {
                     "QuestionId": "PAT-22",
-                    "QuestionTag": "PAT-Type-Of-Training-employer",
+                    "QuestionTag": "PAT-Type-Of-Training-main-employer",
                     "Label": "What type of apprenticeship training will your organisation offer?",
                     "ShortLabel": "",
                     "QuestionBodyText": "<p class='govuk-body'>Select all that apply.</p>",
@@ -520,13 +520,7 @@
                     ]
                 },
 				{
-                    "Field": "PAT-Type-Of-Training-main",
-                    "IsOneOf": [
-                        "Apprenticeship standards,Apprenticeship frameworks"
-                    ]
-                },
-				{
-                    "Field": "PAT-Type-Of-Training-employer",
+                    "Field": "PAT-Type-Of-Training-main-employer",
                     "IsOneOf": [
                         "Apprenticeship standards,Apprenticeship frameworks"
                     ]
@@ -1214,7 +1208,7 @@
                         },					
 						{
                             "QuestionId": null,
-                            "QuestionTag": "PAT-Type-Of-Training-employer",
+                            "QuestionTag": "PAT-Type-Of-Training-main-employer",
                             "Contains": "Apprenticeship frameworks"
                         }
                     ],
@@ -1231,7 +1225,7 @@
                         },
 						{
                             "QuestionId": null,
-                            "QuestionTag": "PAT-Type-Of-Training-main",
+                            "QuestionTag": "PAT-Type-Of-Training-main-employer",
                             "Contains": "Apprenticeship frameworks"
                         }
                     ],
@@ -1248,7 +1242,7 @@
                         },					
 						{
                             "QuestionId": null,
-                            "QuestionTag": "PAT-Type-Of-Training-main",
+                            "QuestionTag": "PAT-Type-Of-Training-main-employer",
                             "Contains": "Apprenticeship standards"
                         }
                     ],
