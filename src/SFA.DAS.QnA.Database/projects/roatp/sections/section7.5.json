@@ -109,7 +109,7 @@
 			"Order": null,
 			"Active": true,
 			"NotRequiredConditions": [{
-				"Field": "SoleTrade-or-Partnership",
+				"Field": "SoleTradeOrPartnership",
 				"IsOneOf": [
 					"Sole trader"
 				]
@@ -543,7 +543,7 @@
 			"Order": null,
 			"Active": false,
 			"NotRequiredConditions": [{
-				"Field": "Apply-ProviderRoute",
+				"Field": "ApplyProviderRoute",
 				"IsOneOf": [
 					"3"
 				]
@@ -672,7 +672,7 @@
 			"Order": null,
 			"Active": false,
 			"NotRequiredConditions": [{
-				"Field": "Apply-ProviderRoute",
+				"Field": "ApplyProviderRoute",
 				"IsOneOf": [
 					"2"
 				]
@@ -835,7 +835,7 @@
 			"Order": null,
 			"Active": false,
 			"NotRequiredConditions": [{
-				"Field": "Apply-ProviderRoute",
+				"Field": "ApplyProviderRoute",
 				"IsOneOf": [
 					"1","2"
 				]
