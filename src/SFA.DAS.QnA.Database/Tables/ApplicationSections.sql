@@ -16,7 +16,7 @@ GO
 ALTER TABLE [ApplicationSections] ADD  CONSTRAINT [DF_ApplicationSequences_Id]  DEFAULT (newid()) FOR [Id]
 GO
 
-CREATE UNIQUE NONCLUSTERED INDEX [IXU_ApplicationSections_ApplicationId] ON [ApplicationSections]   (  [ApplicationId]  )
+CREATE INDEX [IX_ApplicationSections_ApplicationId] ON [ApplicationSections]   (  [ApplicationId]  )
 GO
 
 CREATE  INDEX [IX_ApplicationSections_SequenceId] ON [ApplicationSections]   (  [SequenceId]  )
