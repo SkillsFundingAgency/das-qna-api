@@ -193,9 +193,9 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
 
                     // Assign QnAData back so Entity Framework will pick up changes
                     section.QnAData = qnaData;
+                    _dataContext.SaveChanges();
                 }
 
-                _dataContext.SaveChanges();
             }
         }
 
