@@ -239,7 +239,7 @@
       "Questions": [
         {
           "QuestionId": "YO-260",
-				"QuestionTag": null,
+				"QuestionTag":  "OfstedFESkills",
           "Label": "Has your organisation had a full Ofsted inspection in further education and skills?",
           "ShortLabel": "",
           "QuestionBodyText": "<p class='govuk-body'>If you're not sure, <a href='https://reports.ofsted.gov.uk/' target='_blank'>check if your organisation's had an Ofsted inspection (opens in a new window or tab)</a>.</p>",
@@ -740,7 +740,7 @@
       "Questions": [
         {
           "QuestionId": "YO-301",
-				"QuestionTag": null,
+				"QuestionTag": "OfstedApprenticeshipsGradeOFS",
           "Label": "What grade did your organisation get for apprenticeships in this full Ofsted inspection?",
           "ShortLabel": "",
           "QuestionBodyText": "",
@@ -1461,7 +1461,7 @@
       "Feedback": null,
       "NotRequiredConditions": [
         {
-          "Field": "Apply-ProviderRoute",
+          "Field": "ApplyProviderRoute",
           "IsOneOf": [
             "3"
           ]
