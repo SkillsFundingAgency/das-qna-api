@@ -1115,8 +1115,14 @@
                         "General Further Education College",
                         "Higher Education Institute",
                         "National College",
-                        "School",
                         "Sixth Form College"
+                    ]
+                },
+                {
+                    "Field": "Organisation-School-MS",
+                    "IsOneOf": [
+                        "Local Education Authority (LEA) school",
+                        "None of the above"
                     ]
                 }
             ],
@@ -1208,8 +1214,14 @@
                         "General Further Education College",
                         "Higher Education Institute",
                         "National College",
-                        "School",
                         "Sixth Form College"
+                    ]
+                },
+                {
+                    "Field": "Organisation-School-Emp",
+                    "IsOneOf": [
+                        "Local Education Authority (LEA) school",
+                        "None of the above"
                     ]
                 }
             ],
