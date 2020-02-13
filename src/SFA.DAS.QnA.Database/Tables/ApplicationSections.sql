@@ -1,5 +1,6 @@
-CREATE TABLE [dbo].[ApplicationSections](
-	[Id] [uniqueidentifier] NOT NULL,
+CREATE TABLE [ApplicationSections]
+(
+	[Id] [uniqueidentifier] NOT NULL PRIMARY KEY DEFAULT NEWID(),
 	[ApplicationId] [uniqueidentifier] NOT NULL,
 	[SequenceNo] [int] NOT NULL,
 	[SectionNo] [int] NOT NULL,
@@ -7,9 +8,18 @@ CREATE TABLE [dbo].[ApplicationSections](
 	[Title] [nvarchar](250) NOT NULL,
 	[LinkTitle] [nvarchar](250) NOT NULL,
 	[DisplayType] [nvarchar](50) NOT NULL,
-  [SequenceId] [uniqueidentifier] NOT NULL
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+    [SequenceId] [uniqueidentifier] NOT NULL
+) 
 GO
 
-ALTER TABLE [dbo].[ApplicationSections] ADD  CONSTRAINT [DF_ApplicationSequences_Id]  DEFAULT (newid()) FOR [Id]
+CREATE INDEX [IX_ApplicationSections_ApplicationId] ON [ApplicationSections]  ( [ApplicationId] )
+GO
+
+CREATE INDEX [IX_ApplicationSections_BySequenceId] ON [ApplicationSections]   ( [ApplicationId], [SequenceId] )
+GO
+
+CREATE INDEX [IX_ApplicationSections_BySequenceNo] ON [ApplicationSections]   ( [ApplicationId], [SequenceNo] )
+GO
+
+CREATE INDEX [IX_ApplicationSections_BySequenceNoAndSectionNo] ON [ApplicationSections]   ( [ApplicationId], [SequenceNo], [SectionNo] )
 GO
