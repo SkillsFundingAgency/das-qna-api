@@ -1,4 +1,5 @@
-CREATE TABLE [dbo].[Workflows](
+CREATE TABLE [Workflows]
+(
 	[Id] [uniqueidentifier] NOT NULL,
 	[ProjectId] [uniqueidentifier] NOT NULL,
 	[Description] [nvarchar](200) NOT NULL,
@@ -12,13 +13,10 @@ CREATE TABLE [dbo].[Workflows](
 	[DeletedAt] [datetime2](7) NULL,
 	[DeletedBy] [nvarchar](256) NULL, 
     [ApplicationDataSchema] NVARCHAR(MAX) NULL, 
-    CONSTRAINT [PK_Workflows] PRIMARY KEY CLUSTERED 
-(
-	[Id] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
+    CONSTRAINT [PK_Workflows] PRIMARY KEY (	[Id] )
+) 
 GO
 
-ALTER TABLE [dbo].[Workflows] ADD  DEFAULT (newid()) FOR [Id]
+ALTER TABLE [Workflows] ADD  DEFAULT (newid()) FOR [Id]
 GO
 
