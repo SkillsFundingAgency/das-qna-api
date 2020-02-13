@@ -14,7 +14,7 @@
       "Questions": [
         {
           "QuestionId": "PYA-50",
-          "QuestionTag": "ProtectApprentice-Health-And-Safety",
+          "QuestionTag": null,
           "Label": "Upload your organisation's health and safety policy",
           "ShortLabel": "",
           "QuestionBodyText": "<p class='govuk-body' id='pya-health-and-safety-policy'>This must include how your organisation will:</p><ul class='govuk-list govuk-list--bullet'><li>promote the policy</li><li>get commitment to the policy</li><li>train its employees in implementing the policy</li><li>cover apprentices in its care</li><li>have people who are responsible for health and safety</li><li>identify and manage health and safety concerns</li><li>have a procedure for accidents or ill health of apprentices</li></ul><p class='govuk-body'>The file must be a PDF and smaller than 5MB.</p>",
@@ -66,7 +66,7 @@
       "Questions": [
         {
           "QuestionId": "PYA-55",
-          "QuestionTag": "ProtectApprentice-Health-And-Safety-officer-name",
+          "QuestionTag": null,
           "Label": "<span class='govuk-label'>Full name</span>",
           "ShortLabel": "",
           "QuestionBodyText": "",
@@ -90,7 +90,7 @@
         },
         {
           "QuestionId": "PYA-56",
-          "QuestionTag": "ProtectApprentice-Safeguarding-responsibility-email",
+          "QuestionTag": null,
           "Label": "<span class='govuk-label'>Email</span>",
           "ShortLabel": "",
           "QuestionBodyText": "",
@@ -119,7 +119,7 @@
         },
         {
           "QuestionId": "PYA-57",
-          "QuestionTag": "ProtectApprentice-Health-And-Safety-officer-contact-number",
+          "QuestionTag": null,
           "Label": "<span class='govuk-label'>Contact number</span>",
           "ShortLabel": "",
           "QuestionBodyText": "",

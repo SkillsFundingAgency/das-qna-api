@@ -14,7 +14,7 @@
             "Questions": [
                 {
                     "QuestionId": "FIN-50",
-                    "QuestionTag": "COA-Part2-MainEmployer",
+                    "QuestionTag": "COAPart2MainEmployer",
                     "Label": "Do you understand that your organisation will not join the RoATP until it completes all post application tasks?",
                     "ShortLabel": "",
                     "InputClasses": null,
@@ -99,7 +99,7 @@
             "Questions": [
                 {
                     "QuestionId": "FIN-60",
-                    "QuestionTag": "COA-Part2-Supporting",
+                    "QuestionTag": "COAPart2Supporting",
                     "Label": "Do you agree to the terms and conditions of submitting an application?",
                     "ShortLabel": "",
                     "InputClasses": null,
@@ -185,7 +185,7 @@
             "Questions": [
                 {
                     "QuestionId": "FIN-70",
-                    "QuestionTag": "COA-Part3-MainEmployer",
+                    "QuestionTag": "COAPart3MainEmployer",
                     "Label": "Do you agree to the terms and conditions of joining and staying on the RoATP?",
                     "ShortLabel": "",
                     "InputClasses": null,
@@ -270,7 +270,7 @@
             "Questions": [
                 {
                     "QuestionId": "FIN-80",
-                    "QuestionTag": "COA-Part3-Supporting",
+                    "QuestionTag": "COAPart3Supporting",
                     "Label": "Do you agree to the terms and conditions of joining the RoATP?",
                     "ShortLabel": "",
                     "InputClasses": null,

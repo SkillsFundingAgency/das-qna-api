@@ -18,7 +18,7 @@
           "Questions": [
               {
                   "QuestionId": "YO-70",
-                  "QuestionTag": "Companies-House-Directors",
+                  "QuestionTag": "CompaniesHouseDirectors",
                   "Label": "",
                   "ShortLabel": "",
                   "QuestionBodyText": "<p class='govuk-body'>These are the details we found on Companies House.</p>",
@@ -31,7 +31,7 @@
               },
               {
                   "QuestionId": "YO-71",
-                  "QuestionTag": "Companies-House-PSCs",
+                  "QuestionTag": "CompaniesHousePSCs",
                   "Label": "",
                   "ShortLabel": "",
                   "QuestionBodyText": "",
@@ -44,7 +44,7 @@
               },
               {
                   "QuestionId": "YO-75",
-                  "QuestionTag": "Directors-PSCs-Confirmed",
+                  "QuestionTag": "DirectorsPSCsConfirmed",
                   "Label": "",
                   "ShortLabel": "",
                   "QuestionBodyText": "",
@@ -63,7 +63,7 @@
                   "ReturnId": "90",
                   "Conditions": [
                       {
-                          "QuestionTag": "CC-TrusteeManualEntry",
+                          "QuestionTag": "CCTrusteeManualEntry",
                           "MustEqual": "TRUE"
                       }
                   ],
@@ -74,7 +74,7 @@
                   "ReturnId": "80",
                   "Conditions": [
                       {
-                          "QuestionTag": "UKRLP-Verification-Charity",
+                          "QuestionTag": "UKRLPVerificationCharity",
                           "MustEqual": "TRUE"
                       }
                   ],
@@ -98,7 +98,7 @@
           "BodyText": "",
           "NotRequiredConditions": [
               {
-                  "Field": "UKRLP-Verification-CompanyNumber",
+                  "Field": "UKRLPVerificationCompanyNumber",
                   "IsOneOf": [
                       ""
                   ]
@@ -115,7 +115,7 @@
           "Questions": [
               {
                   "QuestionId": "YO-80",
-                  "QuestionTag": "Charity-Trustees",
+                  "QuestionTag": "CharityTrustees",
                   "Label": "",
                   "ShortLabel": "",
                   "QuestionBodyText": "",
@@ -128,7 +128,7 @@
               },
               {
                   "QuestionId": "YO-85",
-                  "QuestionTag": "Confirm-Trustees",
+                  "QuestionTag": "ConfirmTrustees",
                   "Label": "",
                   "ShortLabel": "",
                   "QuestionBodyText": "",
@@ -160,7 +160,7 @@
           "BodyText": "",
           "NotRequiredConditions": [
               {
-                  "Field": "UKRLP-Verification-Charity",
+                  "Field": "UKRLPVerificationCharity",
                   "IsOneOf": [
                       ""
                   ]
@@ -177,10 +177,10 @@
           "Questions": [
               {
                   "QuestionId": "YO-90",
-                  "QuestionTag": "Add-Trustees",
+                  "QuestionTag": "AddTrustees",
                   "Label": "Confirm who's in control",
                   "ShortLabel": "",
-                  "QuestionBodyText": "PLACEHOLDER Add Trustees",
+                  "QuestionBodyText": "Add Trustees",
                   "Hint": "",
                   "Input": {
                       "Type": "Hidden",
@@ -209,7 +209,7 @@
           "BodyText": "",
           "NotRequiredConditions": [
               {
-                  "Field": "UKRLP-Verification-Charity",
+                  "Field": "UKRLPVerificationCharity",
                   "IsOneOf": [
                       ""
                   ]
@@ -231,7 +231,7 @@
           "Questions": [
               {
                   "QuestionId": "YO-100",
-                  "QuestionTag": "SoleTrade-or-Partnership",
+                  "QuestionTag": "SoleTradeOrPartnership",
                   "Label": "Tell us your organisation's type",
                   "ShortLabel": "",
                   "QuestionBodyText": "",
@@ -297,7 +297,7 @@
           "BodyText": "",
           "NotRequiredConditions": [
               {
-                  "Field": "UKRLP-Verification-SoleTraderPartnership",
+                  "Field": "UKRLPVerificationSoleTraderPartnership",
                   "IsOneOf": [
                       ""
                   ]
@@ -314,7 +314,7 @@
           "Questions": [
               {
                   "QuestionId": "YO-101",
-                  "QuestionTag": "Partnership-Type",
+                  "QuestionTag": "PartnershipType",
                   "Label": "What is your organisation's partner?",
                   "ShortLabel": "",
                   "QuestionBodyText": "",
@@ -391,7 +391,7 @@
           "Questions": [
               {
                   "QuestionId": "YO-110",
-                  "QuestionTag": "Add-Partners",
+                  "QuestionTag": "AddPartners",
                   "Label": "Enter the individual's details",
                   "ShortLabel": "",
                   "QuestionBodyText": "",
@@ -424,19 +424,19 @@
           "ActivatedByPageId": "101", 
           "NotRequiredConditions": [
               {
-                  "Field": "SoleTrade-or-Partnership",
+                  "Field": "SoleTradeOrPartnership",
                   "IsOneOf": [
                       "Sole trader"
                   ]
               },
               {
-                "Field": "UKRLP-Verification-Company",
+                "Field": "UKRLPVerificationCompany",
                 "IsOneOf": [
                     "TRUE"
                 ]
               },
               {
-                  "Field": "UKRLP-Verification-Charity",
+                  "Field": "UKRLPVerificationCharity",
                   "IsOneOf": [
                       "TRUE"
                   ]
@@ -447,14 +447,14 @@
           "PageId": "120",
           "SequenceId": null,
           "SectionId": null,
-          "Title": "What is {{UKRLP-LegalName}}'s date of birth?",
+          "Title": "What is {{UKRLPLegalName}}'s date of birth?",
           "LinkTitle": "",
           "InfoText": "",
           "Questions": [
               {
                   "QuestionId": "YO-120",
-                  "QuestionTag": "Add-SoleTrade-DOB",
-                  "Label": "What is {{UKRLP-LegalName}}'s date of birth?",
+                  "QuestionTag": "AddSoleTradeDOB",
+                  "Label": "What is {{UKRLPLegalName}}'s date of birth?",
                   "ShortLabel": "Date of birth",
                   "QuestionBodyText": "",
                   "Hint": "",
@@ -497,7 +497,7 @@
           "ActivatedByPageId": "100",
           "NotRequiredConditions": [
               {
-                  "Field": "SoleTrade-or-Partnership",
+                  "Field": "SoleTradeOrPartnership",
                   "IsOneOf": [
                       "Partnership"
                   ]
@@ -514,7 +514,7 @@
           "Questions": [
               {
                   "QuestionId": "YO-130",
-                  "QuestionTag": "Add-PeopleInControl",
+                  "QuestionTag": "AddPeopleInControl",
                   "Label": "Confirm who's in control",
                   "ShortLabel": "",
                   "QuestionBodyText": "",
@@ -546,19 +546,19 @@
           "BodyText": "",
           "NotRequiredConditions": [
               {
-                  "Field": "UKRLP-Verification-Company",
+                  "Field": "UKRLPVerificationCompany",
                   "IsOneOf": [
                       "TRUE"
                   ]
               },
               {
-                  "Field": "UKRLP-Verification-Charity",
+                  "Field": "UKRLPVerificationCharity",
                   "IsOneOf": [
                       "TRUE"
                   ]
               },
               {
-                  "Field": "UKRLP-Verification-SoleTraderPartnership",
+                  "Field": "UKRLPVerificationSoleTraderPartnership",
                   "IsOneOf": [
                       "TRUE"
                   ]
