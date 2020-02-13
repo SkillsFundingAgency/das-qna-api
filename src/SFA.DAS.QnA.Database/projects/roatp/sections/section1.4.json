@@ -1058,14 +1058,14 @@
             "PageId": "200",
             "SequenceId": null,
             "SectionId": null,
-            "Title": "Is your organisation already registered with ESFA?",
-            "LinkTitle": "Is your organisation already registered with ESFA?",
+            "Title": "Is your organisation registered and receiving funding from ESFA?",
+            "LinkTitle": "Is your organisation registered and receiving funding from ESFA?",
             "InfoText": "",
             "Questions": [
                 {
                     "QuestionId": "YO-200",
                     "QuestionTag": "OrganisationRegisteredESFAMS",
-                    "Label": "Is your organisation already registered with ESFA?",
+                    "Label": "Is your organisation registered and receiving funding from ESFA?",
                     "ShortLabel": "",
                     "QuestionBodyText": "",
                     "Hint": "",
@@ -1085,7 +1085,7 @@
                             {
                                 "Name": "Required",
                                 "Value": "",
-                                "ErrorMessage": "Tell us if your organisation is already registered with ESFA"
+                                "ErrorMessage": "Tell us if your organisation is registered and receiving funding from ESFA"
                             }
                         ]
                     },
