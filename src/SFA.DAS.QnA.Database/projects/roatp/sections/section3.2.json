@@ -19,8 +19,7 @@
                     "ShortLabel": "",
                     "QuestionBodyText": "<p class='govuk-body' id='cc-organisation-composition'>Composition with creditors is an agreement between a debtor and its creditors where all the creditors agree to accept less than the original amount of debt due to them in full satisfaction of their claim.</p>",
                     "Hint": "",
-                    "Input":
-                    {
+                    "Input": {
                         "Type": "ComplexRadio",
                         "InputClasses": null,
                         "Options": [
@@ -34,8 +33,7 @@
                                         "InputClasses": null,
                                         "QuestionBodyText": "",
                                         "Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include:</p><ul class='govuk-list govuk-list--bullet govuk-hint'><li>a brief summary of the agreement</li><li>how your organisation will settle the debt</li><li>the date of when the debt will be fully paid off</li></ul>",
-                                        "Input":
-                                        {
+                                        "Input": {
                                             "Type": "Textarea",
                                             "InputClasses": "",
                                             "Options": [],
@@ -52,7 +50,6 @@
                                                 }
                                             ],
                                             "DataEndpoint": null
-
                                         },
                                         "Order": null,
                                         "Value": null,
@@ -114,8 +111,7 @@
                     "ShortLabel": "",
                     "QuestionBodyText": "<p class='govuk-body' id='cc-organisation-repayfunding'>Tell us if your organisation has failed to repay &pound;50,000 or more:</p><ul class='govuk-list govuk-list--bullet'><li>to ESFA or any other public body</li><li>under a subcontract to deliver education and training services funded by ESFA</li></ul>",
                     "Hint": "",
-                    "Input":
-                    {
+                    "Input": {
                         "Type": "ComplexRadio",
                         "InputClasses": null,
                         "Options": [
@@ -129,8 +125,7 @@
                                         "InputClasses": null,
                                         "QuestionBodyText": "",
                                         "Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include:</p><ul class='govuk-list govuk-list--bullet govuk-hint'><li>why your organisation failed to repay funding</li><li>which public body was involved</li><li>if any actions have been taken to resolve this</li></ul>",
-                                        "Input":
-                                        {
+                                        "Input": {
                                             "Type": "Textarea",
                                             "InputClasses": "",
                                             "Options": [],
@@ -147,7 +142,6 @@
                                                 }
                                             ],
                                             "DataEndpoint": null
-
                                         },
                                         "Order": null,
                                         "Value": null,
@@ -209,8 +203,7 @@
                     "ShortLabel": "",
                     "QuestionBodyText": "<p class='govuk-body' id='cc-organisation-contractterminated'></p>",
                     "Hint": "",
-                    "Input":
-                    {
+                    "Input": {
                         "Type": "ComplexRadio",
                         "InputClasses": null,
                         "Options": [
@@ -224,8 +217,7 @@
                                         "InputClasses": null,
                                         "QuestionBodyText": "",
                                         "Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include:</p><ul class='govuk-list govuk-list--bullet govuk-hint'><li>a brief summary of why the contract was terminated</li><li>which public body was involved</li><li>if any actions have been taken to resolve this</li></ul>",
-                                        "Input":
-                                        {
+                                        "Input": {
                                             "Type": "Textarea",
                                             "InputClasses": "",
                                             "Options": [],
@@ -242,7 +234,6 @@
                                                 }
                                             ],
                                             "DataEndpoint": null
-
                                         },
                                         "Order": null,
                                         "Value": null,
@@ -304,8 +295,7 @@
                     "ShortLabel": "",
                     "QuestionBodyText": "<p class='govuk-body' id='cc-organisation-contractwithdrawal'></p>",
                     "Hint": "",
-                    "Input":
-                    {
+                    "Input": {
                         "Type": "ComplexRadio",
                         "InputClasses": null,
                         "Options": [
@@ -319,8 +309,7 @@
                                         "InputClasses": null,
                                         "QuestionBodyText": "",
                                         "Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include:</p><ul class='govuk-list govuk-list--bullet govuk-hint'><li>a brief summary of why your organisation withdrew from a contract</li><li>which public body was involved</li><li>if any actions have been taken to resolve this</li></ul>",
-                                        "Input":
-                                        {
+                                        "Input": {
                                             "Type": "Textarea",
                                             "InputClasses": "",
                                             "Options": [],
@@ -337,7 +326,6 @@
                                                 }
                                             ],
                                             "DataEndpoint": null
-
                                         },
                                         "Order": null,
                                         "Value": null,
@@ -370,7 +358,7 @@
             "Next": [
                 {
                     "Action": "NextPage",
-                    "ReturnId": "3140",
+                    "ReturnId": "3135",
                     "Conditions": [],
                     "ConditionMet": false
                 }
@@ -383,6 +371,104 @@
             "HasFeedback": false,
             "NotRequiredConditions": [],
             "BodyText": ""
+        },
+        {
+            "PageId": "3135",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "Has your organisation been removed from the Register of Training Organisations (RoTO) in the last 3 years? ",
+            "LinkTitle": "Checks on your organisation",
+            "InfoText": "",
+            "Questions": [
+                {
+                    "QuestionId": "CC-235",
+                    "QuestionTag": "CC-Organisation-RoTO",
+                    "Label": "Has your organisation been removed from the Register of Training Organisations (RoTO) in the last 3 years? ",
+                    "ShortLabel": "",
+                    "InputClasses": null,
+                    "QuestionBodyText": "",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "ComplexRadio",
+                        "InputClasses": null,
+                        "Options": [
+                            {
+                                "FurtherQuestions": [
+                                    {
+                                        "QuestionId": "CC-235.1",
+                                        "QuestionTag": "CC-Organisation-RoTO-Information",
+                                        "Label": "Give us more information",
+                                        "ShortLabel": "",
+                                        "InputClasses": null,
+                                        "QuestionBodyText": "",
+                                        "Hint": "<p class='govuk-body govuk-hint'>You'll need to include a brief summary of why your organisation was removed.</p>",
+                                        "Input": {
+                                            "Type": "Textarea",
+                                            "InputClasses": null,
+                                            "Options": [],
+                                            "Validations": [
+                                                {
+                                                    "Name": "Required",
+                                                    "Value": "",
+                                                    "ErrorMessage": "Enter more information "
+                                                },
+                                                {
+                                                    "Name": "MaxWordCount",
+                                                    "Value": "275",
+                                                    "ErrorMessage": "Your answer must be 275 words or less"
+                                                }
+                                            ],
+                                            "DataEndpoint": null
+                                        },
+                                        "Order": null,
+                                        "Value": "",
+                                        "ErrorMessages": null
+                                    }
+                                ],
+                                "Value": "Yes",
+                                "Label": "Yes",
+                                "HintText": ""
+                            },
+                            {
+                                "FurtherQuestions": [],
+                                "Value": "No",
+                                "Label": "No",
+                                "HintText": ""
+                            }
+                        ],
+                        "Validations": [
+                            {
+                                "Name": "Required",
+                                "Value": "",
+                                "ErrorMessage": "Tell us if your organisation has been removed from the Register of Training Organisations (RoTO) in the last 3 years"
+                            }
+                        ],
+                        "DataEndpoint": null
+                    },
+                    "Order": null,
+                    "Value": "",
+                    "ErrorMessages": null
+                }
+            ],
+            "PageOfAnswers": [],
+            "Next": [
+                {
+                    "Action": "NextPage",
+                    "ReturnId": "3140",
+                    "Conditions": [],
+                    "ConditionMet": false
+                }
+            ],
+            "Complete": false,
+            "AllowMultipleAnswers": false,
+            "Order": null,
+            "Active": true,
+            "NotRequiredConditions": [],
+            "BodyText": "",
+            "Details": null,
+            "DisplayType": null,
+            "Feedback": null,
+            "ActivatedByPageId": null
         },
         {
             "PageId": "3140",
@@ -399,8 +485,7 @@
                     "ShortLabel": "",
                     "QuestionBodyText": "<p class='govuk-body' id='cc-organisation-fundingremoval'>This only includes funds removed by:</p><ul class='govuk-list govuk-list--bullet'><li>the Higher Education Funding Council for England (HEFCE)</li><li>the Office for Students (OfS)</li></ul>",
                     "Hint": "",
-                    "Input":
-                    {
+                    "Input": {
                         "Type": "ComplexRadio",
                         "InputClasses": null,
                         "Options": [
@@ -414,8 +499,7 @@
                                         "InputClasses": null,
                                         "QuestionBodyText": "",
                                         "Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include:</p><ul class='govuk-list govuk-list--bullet govuk-hint'><li>a brief summary of why funding was removed</li><li>if any actions have been taken to resolve this</li></ul>",
-                                        "Input":
-                                        {
+                                        "Input": {
                                             "Type": "Textarea",
                                             "InputClasses": "",
                                             "Options": [],
@@ -432,7 +516,6 @@
                                                 }
                                             ],
                                             "DataEndpoint": null
-
                                         },
                                         "Order": null,
                                         "Value": null,
@@ -494,8 +577,7 @@
                     "ShortLabel": "",
                     "QuestionBodyText": "<p class='govuk-body' id='cc-organisation-traderegisterremoval'></p>",
                     "Hint": "",
-                    "Input":
-                    {
+                    "Input": {
                         "Type": "ComplexRadio",
                         "InputClasses": null,
                         "Options": [
@@ -509,8 +591,7 @@
                                         "InputClasses": null,
                                         "QuestionBodyText": "",
                                         "Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include:</p><ul class='govuk-list govuk-list--bullet govuk-hint'><li>a brief summary of why your organisation was removed</li><li>if any actions have been taken to resolve this</li></ul>",
-                                        "Input":
-                                        {
+                                        "Input": {
                                             "Type": "Textarea",
                                             "InputClasses": "",
                                             "Options": [],
@@ -527,7 +608,6 @@
                                                 }
                                             ],
                                             "DataEndpoint": null
-
                                         },
                                         "Order": null,
                                         "Value": null,
@@ -589,8 +669,7 @@
                     "ShortLabel": "",
                     "QuestionBodyText": "<p class='govuk-body' id='cc-organisation-ittwithdrawal'></p>",
                     "Hint": "",
-                    "Input":
-                    {
+                    "Input": {
                         "Type": "ComplexRadio",
                         "InputClasses": null,
                         "Options": [
@@ -604,8 +683,7 @@
                                         "InputClasses": null,
                                         "QuestionBodyText": "",
                                         "Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include a brief summary of why your organisation was withdrawn involuntarily.</p>",
-                                        "Input":
-                                        {
+                                        "Input": {
                                             "Type": "Textarea",
                                             "InputClasses": "",
                                             "Options": [],
@@ -622,7 +700,6 @@
                                                 }
                                             ],
                                             "DataEndpoint": null
-
                                         },
                                         "Order": null,
                                         "Value": null,
@@ -684,8 +761,7 @@
                     "ShortLabel": "",
                     "QuestionBodyText": "<p class='govuk-body' id='cc-organisation-charityregisterremoval'>This includes being removed from:</p><ul class='govuk-list govuk-list--bullet'><li>the Charity Commission for England and Wales</li><li>the Charity Commission for Northern Ireland</li><li>the Office of the Scottish Charity Regulator</li></ul>",
                     "Hint": "",
-                    "Input":
-                    {
+                    "Input": {
                         "Type": "ComplexRadio",
                         "InputClasses": null,
                         "Options": [
@@ -699,8 +775,7 @@
                                         "InputClasses": null,
                                         "QuestionBodyText": "",
                                         "Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include a brief summary of why your organisation was removed.</p>",
-                                        "Input":
-                                        {
+                                        "Input": {
                                             "Type": "Textarea",
                                             "InputClasses": "",
                                             "Options": [],
@@ -717,7 +792,6 @@
                                                 }
                                             ],
                                             "DataEndpoint": null
-
                                         },
                                         "Order": null,
                                         "Value": null,
@@ -779,8 +853,7 @@
                     "ShortLabel": "",
                     "QuestionBodyText": "<p class='govuk-body' id='cc-organisation-safeguarding'></p>",
                     "Hint": "",
-                    "Input":
-                    {
+                    "Input": {
                         "Type": "ComplexRadio",
                         "InputClasses": null,
                         "Options": [
@@ -794,8 +867,7 @@
                                         "InputClasses": null,
                                         "QuestionBodyText": "",
                                         "Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include:</p><ul class='govuk-list govuk-list--bullet govuk-hint'><li>what the issues were</li><li>who was involved</li><li>if any actions were taken to resolve this</li></ul>",
-                                        "Input":
-                                        {
+                                        "Input": {
                                             "Type": "Textarea",
                                             "InputClasses": "",
                                             "Options": [],
@@ -812,7 +884,6 @@
                                                 }
                                             ],
                                             "DataEndpoint": null
-
                                         },
                                         "Order": null,
                                         "Value": null,
@@ -874,8 +945,7 @@
                     "ShortLabel": "",
                     "QuestionBodyText": "<p class='govuk-body' id='cc-organisation-whistleblowing'></p>",
                     "Hint": "",
-                    "Input":
-                    {
+                    "Input": {
                         "Type": "ComplexRadio",
                         "InputClasses": null,
                         "Options": [
@@ -889,8 +959,7 @@
                                         "InputClasses": null,
                                         "QuestionBodyText": "",
                                         "Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include:</p><ul class='govuk-list govuk-list--bullet govuk-hint'><li>what the issues were</li><li>who was involved</li><li>if any actions were taken to resolve this</li></ul>",
-                                        "Input":
-                                        {
+                                        "Input": {
                                             "Type": "Textarea",
                                             "InputClasses": "",
                                             "Options": [],
@@ -907,7 +976,6 @@
                                                 }
                                             ],
                                             "DataEndpoint": null
-
                                         },
                                         "Order": null,
                                         "Value": null,
@@ -969,8 +1037,7 @@
                     "ShortLabel": "",
                     "QuestionBodyText": "<p class='govuk-body' id='cc-organisation-insolvency'>A partner organisation is an organisation who either:</p><ul class='govuk-list govuk-list--bullet'><li>shares the same UK ultimate parent company as your organisation - so they are part of the same group</li><li>has a legal contract with your organisation to deliver training</li></ul>",
                     "Hint": "",
-                    "Input":
-                    {
+                    "Input": {
                         "Type": "ComplexRadio",
                         "InputClasses": null,
                         "Options": [
@@ -984,8 +1051,7 @@
                                         "InputClasses": null,
                                         "QuestionBodyText": "",
                                         "Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include:</p><ul class='govuk-list govuk-list--bullet govuk-hint'><li>names of the other organisations</li><li>a brief summary of why this happened - including relevant dates</li><li>outstanding judgements or legal proceedings</li></ul>",
-                                        "Input":
-                                        {
+                                        "Input": {
                                             "Type": "Textarea",
                                             "InputClasses": "",
                                             "Options": [],
@@ -1002,7 +1068,6 @@
                                                 }
                                             ],
                                             "DataEndpoint": null
-
                                         },
                                         "Order": null,
                                         "Value": null,
