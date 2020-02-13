@@ -54,7 +54,7 @@
             "PageOfAnswers": [],
             "NotRequiredConditions": [
                 {
-                    "Field": "Apply-ProviderRoute",
+                    "Field": "ApplyProviderRoute",
                     "IsOneOf": [
                         "2",
                         "3"
@@ -155,7 +155,7 @@
             "HasFeedback": false,
             "NotRequiredConditions": [
                 {
-                    "Field": "Apply-ProviderRoute",
+                    "Field": "ApplyProviderRoute",
                     "IsOneOf": [
                         "1",
                         "3"
@@ -272,7 +272,7 @@
             "HasFeedback": false,
             "NotRequiredConditions": [
                 {
-                    "Field": "Apply-ProviderRoute",
+                    "Field": "ApplyProviderRoute",
                     "IsOneOf": [
                         "1",
                         "2"
@@ -514,19 +514,19 @@
             "Feedback": null,
             "NotRequiredConditions": [
                 {
-                    "Field": "Apply-ProviderRoute",
+                    "Field": "ApplyProviderRoute",
                     "IsOneOf": [
                         "3"
                     ]
                 },
 				{
-                    "Field": "PAT-Type-Of-Training-main",
+                    "Field": "PATTypeOfTrainingMain",
                     "IsOneOf": [
                         "Apprenticeship standards,Apprenticeship frameworks"
                     ]
                 },
 				{
-                    "Field": "PAT-Type-Of-Training-employer",
+                    "Field": "PATTypeOfTrainingEmployer",
                     "IsOneOf": [
                         "Apprenticeship standards,Apprenticeship frameworks"
                     ]
@@ -584,7 +584,7 @@
             "Feedback": null,
             "NotRequiredConditions": [
                 {
-                    "Field": "Apply-ProviderRoute",
+                    "Field": "ApplyProviderRoute",
                     "IsOneOf": [
                         "3"
                     ]
@@ -686,7 +686,7 @@
             "Feedback": null,
             "NotRequiredConditions": [
                 {
-                    "Field": "Apply-ProviderRoute",
+                    "Field": "ApplyProviderRoute",
                     "IsOneOf": [
                         "3"
                     ]
@@ -775,7 +775,7 @@
             "Feedback": null,
             "NotRequiredConditions": [
                 {
-                    "Field": "Apply-ProviderRoute",
+                    "Field": "ApplyProviderRoute",
                     "IsOneOf": [
                         "1",
                         "2"
@@ -858,7 +858,7 @@
             "Feedback": null,
 			 "NotRequiredConditions": [
                 {
-                    "Field": "Apply-ProviderRoute",
+                    "Field": "ApplyProviderRoute",
                     "IsOneOf": [
                         "1",
                         "2"
@@ -934,7 +934,7 @@
             "Feedback": null,
             "NotRequiredConditions": [
                 {
-                    "Field": "Apply-ProviderRoute",
+                    "Field": "ApplyProviderRoute",
                     "IsOneOf": [
                         "1",
                         "2"
@@ -1078,7 +1078,7 @@
             "Feedback": null,
 			"NotRequiredConditions": [
 					{
-						"Field": "Apply-ProviderRoute",
+						"Field": "ApplyProviderRoute",
 						"IsOneOf": [
 							"2"
 						]
@@ -1153,7 +1153,7 @@
             "Feedback": null,
             "NotRequiredConditions": [
                 {
-                    "Field": "Apply-ProviderRoute",
+                    "Field": "ApplyProviderRoute",
                     "IsOneOf": [
                         "3"
                     ]

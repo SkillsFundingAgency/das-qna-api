@@ -159,7 +159,7 @@
             "Feedback": null,
             "HasFeedback": false,
             "NotRequiredConditions": [{
-                    "Field": "Apply-ProviderRoute",
+                    "Field": "ApplyProviderRoute",
                     "IsOneOf": ["3"]
                 }
             ],
@@ -211,7 +211,7 @@
             "Feedback": null,
             "HasFeedback": false,
             "NotRequiredConditions": [{
-                    "Field": "Apply-ProviderRoute",
+                    "Field": "ApplyProviderRoute",
                     "IsOneOf": ["1", "2"]
                 }
             ],
