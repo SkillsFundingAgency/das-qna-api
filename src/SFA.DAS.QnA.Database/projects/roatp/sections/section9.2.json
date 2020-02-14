@@ -1,20 +1,20 @@
 {
-  "Title": "'Commercial in confidence' information",
-  "LinkTitle": "'Commercial in confidence' information",
-  "DisplayType": "Pages",
-  "RequestedFeedbackAnswered": null,
-  "Pages": [
-    {
-      "PageId": "9100",
-      "SequenceId": null,
-      "SectionId": null,
-      "Title": "Is any of the information in this application 'commercial in confidence'?",
-      "LinkTitle": "'Commercial in confidence' information",
-      "InfoText": "",
-      "Questions": [
+    "Title": "Quality statement",
+    "LinkTitle": "Quality statement",
+    "DisplayType": "Pages",
+    "RequestedFeedbackAnswered": null,
+    "Pages": [
         {
-          "QuestionId": "FIN-40",
-          "QuestionTag": "Finish-Commercial-Confidence",
+            "PageId": "9100",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "Quality statement",
+            "LinkTitle": "Quality statement",
+            "InfoText": "",
+            "Questions": [
+                {
+                    "QuestionId": "FIN-40",
+          "QuestionTag": "FinishCommercialConfidence",
           "Label": "Is any of the information in this application 'commercial in confidence'?",
           "ShortLabel": "",
           "InputClasses": null,

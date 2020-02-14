@@ -30,7 +30,7 @@
             "HasFeedback": false,
             "NotRequiredConditions": [
                 {
-                    "Field": "Has-ParentCompany",
+                    "Field": "HasParentCompany",
                     "IsOneOf": [
                         "Yes"
                     ]
@@ -62,7 +62,7 @@
             "Active": true,
             "NotRequiredConditions": [
                 {
-                    "Field": "Has-ParentCompany",
+                    "Field": "HasParentCompany",
                     "IsOneOf": [
                         "No",
                         "",

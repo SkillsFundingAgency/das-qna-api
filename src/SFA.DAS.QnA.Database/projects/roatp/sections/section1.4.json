@@ -14,7 +14,7 @@
             "Questions": [
                 {
                     "QuestionId": "YO-140",
-                    "QuestionTag": "Organisation-Type-MainSupporting",
+                    "QuestionTag": "OrganisationTypeMainSupporting",
                     "Label": "What is your organisation?",
                     "ShortLabel": "",
                     "QuestionBodyText": "",
@@ -148,7 +148,7 @@
             "HasFeedback": false,
             "NotRequiredConditions": [
                 {
-                    "Field": "Apply-ProviderRoute",
+                    "Field": "ApplyProviderRoute",
                     "IsOneOf": [
                         "2"
                     ]
@@ -167,7 +167,7 @@
             "Questions": [
                 {
                     "QuestionId": "YO-150",
-                    "QuestionTag": "Organisation-Type-Employer",
+                    "QuestionTag": "OrganisationTypeEmployer",
                     "Label": "What is your organisation?",
                     "ShortLabel": "",
                     "QuestionBodyText": "",
@@ -234,7 +234,7 @@
                     "Conditions": [
                         {
                             "QuestionId": "",
-                            "QuestionTag": "CH-ManualEntryRequired",
+                            "QuestionTag": "CHManualEntryRequired",
                             "MustEqual": "TRUE"
                         }
                     ],
@@ -246,7 +246,7 @@
                     "Conditions": [
                         {
                             "QuestionId": "",
-                            "QuestionTag": "UKRLP-Verification-Company",
+                            "QuestionTag": "UKRLPVerificationCompany",
                             "MustEqual": "TRUE"
                         }
                     ],
@@ -258,7 +258,7 @@
                     "Conditions": [
                         {
                             "QuestionId": "",
-                            "QuestionTag": "CC-TrusteeManualEntry",
+                            "QuestionTag": "CCTrusteeManualEntry",
                             "MustEqual": "TRUE"
                         }
                     ],
@@ -270,7 +270,7 @@
                     "Conditions": [
                         {
                             "QuestionId": "",
-                            "QuestionTag": "UKRLP-Verification-Charity",
+                            "QuestionTag": "UKRLPVerificationCharity",
                             "MustEqual": "TRUE"
                         }
                     ],
@@ -292,7 +292,7 @@
             "HasFeedback": false,
             "NotRequiredConditions": [
                 {
-                    "Field": "Apply-ProviderRoute",
+                    "Field": "ApplyProviderRoute",
                     "IsOneOf": [
                         "1",
                         "3"
@@ -312,7 +312,7 @@
             "Questions": [
                 {
                     "QuestionId": "YO-160",
-                    "QuestionTag": "Organisation-EducationInstitute-MainSupporting",
+                    "QuestionTag": "OrganisationEducationInstituteMainSupporting",
                     "Label": "What type of educational institute is your organisation?",
                     "ShortLabel": "",
                     "QuestionBodyText": "",
@@ -492,7 +492,7 @@
             "Questions": [
                 {
                     "QuestionId": "YO-161",
-                    "QuestionTag": "Organisation-EducationInstitute-Employer",
+                    "QuestionTag": "OrganisationEducationInstituteEmployer",
                     "Label": "What type of educational institute is your organisation?",
                     "ShortLabel": "",
                     "QuestionBodyText": "",
@@ -672,7 +672,7 @@
             "Questions": [
                 {
                     "QuestionId": "YO-170",
-                    "QuestionTag": "Organisation-PublicBody-MS",
+                    "QuestionTag": null,
                     "Label": "What type of public body is your organisation?",
                     "ShortLabel": "",
                     "QuestionBodyText": "",
@@ -757,7 +757,7 @@
             "Questions": [
                 {
                     "QuestionId": "YO-171",
-                    "QuestionTag": "Organisation-PublicBody-Emp",
+                    "QuestionTag": null,
                     "Label": "What type of public body is your organisation?",
                     "ShortLabel": "",
                     "QuestionBodyText": "",
@@ -820,7 +820,7 @@
                     "Conditions": [
                         {
                             "QuestionId": "",
-                            "QuestionTag": "UKRLP-Verification-Company",
+                            "QuestionTag": "UKRLPVerificationCompany",
                             "MustEqual": "TRUE"
                         }
                     ],
@@ -832,7 +832,7 @@
                     "Conditions": [
                         {
                             "QuestionId": "",
-                            "QuestionTag": "UKRLP-Verification-Charity",
+                            "QuestionTag": "UKRLPVerificationCharity",
                             "MustEqual": "TRUE"
                         }
                     ],
@@ -866,7 +866,7 @@
             "Questions": [
                 {
                     "QuestionId": "YO-180",
-                    "QuestionTag": "Organisation-School-MS",
+                    "QuestionTag": "OrganisationSchoolMS",
                     "Label": "What type of school is your organisation?",
                     "ShortLabel": "",
                     "QuestionBodyText": "",
@@ -928,7 +928,7 @@
             "HasFeedback": false,
             "NotRequiredConditions": [
                 {
-                    "Field": "Organisation-EducationInstitute-MainSupporting",
+                    "Field": "OrganisationEducationInstituteMainSupporting",
                     "IsOneOf": [
                         "Academy",
                         "Further Education Institute",
@@ -953,7 +953,7 @@
             "Questions": [
                 {
                     "QuestionId": "YO-181",
-                    "QuestionTag": "Organisation-School-Emp",
+                    "QuestionTag": "OrganisationSchoolEmp",
                     "Label": "What type of school is your organisation?",
                     "ShortLabel": "",
                     "QuestionBodyText": "",
@@ -1005,7 +1005,7 @@
                     "Conditions": [
                         {
                             "QuestionId": "",
-                            "QuestionTag": "UKRLP-Verification-Company",
+                            "QuestionTag": "UKRLPVerificationCompany",
                             "MustEqual": "TRUE"
                         }
                     ],
@@ -1017,7 +1017,7 @@
                     "Conditions": [
                         {
                             "QuestionId": "",
-                            "QuestionTag": "UKRLP-Verification-Charity",
+                            "QuestionTag": "UKRLPVerificationCharity",
                             "MustEqual": "TRUE"
                         }
                     ],
@@ -1039,7 +1039,7 @@
             "HasFeedback": false,
             "NotRequiredConditions": [
                 {
-                    "Field": "Organisation-EducationInstitute-Employer",
+                    "Field": "OrganisationEducationInstituteEmployer",
                     "IsOneOf": [
                         "Academy",
                         "Further Education Institute",
@@ -1058,14 +1058,14 @@
             "PageId": "200",
             "SequenceId": null,
             "SectionId": null,
-            "Title": "Is your organisation already registered with ESFA?",
-            "LinkTitle": "Is your organisation already registered with ESFA?",
+            "Title": "Is your organisation registered and receiving funding from ESFA?",
+            "LinkTitle": "Is your organisation registered and receiving funding from ESFA?",
             "InfoText": "",
             "Questions": [
                 {
                     "QuestionId": "YO-200",
-                    "QuestionTag": "Organisation-RegisteredESFA-MS",
-                    "Label": "Is your organisation already registered with ESFA?",
+                    "QuestionTag": "OrganisationRegisteredESFAMS",
+                    "Label": "Is your organisation registered and receiving funding from ESFA?",
                     "ShortLabel": "",
                     "QuestionBodyText": "",
                     "Hint": "",
@@ -1085,7 +1085,7 @@
                             {
                                 "Name": "Required",
                                 "Value": "",
-                                "ErrorMessage": "Tell us if your organisation is already registered with ESFA"
+                                "ErrorMessage": "Tell us if your organisation is registered and receiving funding from ESFA"
                             }
                         ]
                     },
@@ -1110,13 +1110,19 @@
             "HasFeedback": false,
             "NotRequiredConditions": [
                 {
-                    "Field": "Organisation-EducationInstitute-MainSupporting",
+                    "Field": "OrganisationEducationInstituteMainSupporting",
                     "IsOneOf": [
                         "General Further Education College",
                         "Higher Education Institute",
                         "National College",
-                        "School",
                         "Sixth Form College"
+                    ]
+                },
+                {
+                    "Field": "Organisation-School-MS",
+                    "IsOneOf": [
+                        "Local Education Authority (LEA) school",
+                        "None of the above"
                     ]
                 }
             ],
@@ -1133,7 +1139,7 @@
             "Questions": [
                 {
                     "QuestionId": "YO-201",
-                    "QuestionTag": "Organisation-RegisteredESFA-Emp",
+                    "QuestionTag": "OrganisationRegisteredESFAEmp",
                     "Label": "Is your organisation already registered with ESFA?",
                     "ShortLabel": "",
                     "QuestionBodyText": "",
@@ -1169,7 +1175,7 @@
                     "Conditions": [
                         {
                             "QuestionId": "",
-                            "QuestionTag": "UKRLP-Verification-Company",
+                            "QuestionTag": "UKRLPVerificationCompany",
                             "MustEqual": "TRUE"
                         }
                     ],
@@ -1181,7 +1187,7 @@
                     "Conditions": [
                         {
                             "QuestionId": "",
-                            "QuestionTag": "UKRLP-Verification-Charity",
+                            "QuestionTag": "UKRLPVerificationCharity",
                             "MustEqual": "TRUE"
                         }
                     ],
@@ -1203,13 +1209,19 @@
             "HasFeedback": false,
             "NotRequiredConditions": [
                 {
-                    "Field": "Organisation-EducationInstitute-Employer",
+                    "Field": "OrganisationEducationInstituteEmployer",
                     "IsOneOf": [
                         "General Further Education College",
                         "Higher Education Institute",
                         "National College",
-                        "School",
                         "Sixth Form College"
+                    ]
+                },
+                {
+                    "Field": "Organisation-School-Emp",
+                    "IsOneOf": [
+                        "Local Education Authority (LEA) school",
+                        "None of the above"
                     ]
                 }
             ],
@@ -1226,7 +1238,7 @@
             "Questions": [
                 {
                     "QuestionId": "YO-210",
-                    "QuestionTag": "Organisation-FundedESFA-MS",
+                    "QuestionTag": "OrganisationFundedESFAMS",
                     "Label": "Is your organisation receiving funding from ESFA?",
                     "ShortLabel": "",
                     "QuestionBodyText": "",
@@ -1272,7 +1284,7 @@
             "HasFeedback": false,
             "NotRequiredConditions": [
                 {
-                    "Field": "Organisation-EducationInstitute-MainSupporting",
+                    "Field": "OrganisationEducationInstituteMainSupporting",
                     "IsOneOf": [
                         "Academy",
                         "Further Education Institute",
@@ -1295,7 +1307,7 @@
             "Questions": [
                 {
                     "QuestionId": "YO-211",
-                    "QuestionTag": "Organisation-FundedESFA-Emp",
+                    "QuestionTag": "OrganisationFundedESFAEmp",
                     "Label": "Is your organisation receiving funding from ESFA?",
                     "ShortLabel": "",
                     "QuestionBodyText": "",
@@ -1331,7 +1343,7 @@
                     "Conditions": [
                         {
                             "QuestionId": "",
-                            "QuestionTag": "UKRLP-Verification-Company",
+                            "QuestionTag": "UKRLPVerificationCompany",
                             "MustEqual": "TRUE"
                         }
                     ],
@@ -1343,7 +1355,7 @@
                     "Conditions": [
                         {
                             "QuestionId": "",
-                            "QuestionTag": "UKRLP-Verification-Charity",
+                            "QuestionTag": "UKRLPVerificationCharity",
                             "MustEqual": "TRUE"
                         }
                     ],
@@ -1365,7 +1377,7 @@
             "HasFeedback": false,
             "NotRequiredConditions": [
                 {
-                    "Field": "Organisation-EducationInstitute-Employer",
+                    "Field": "OrganisationEducationInstituteEmployer",
                     "IsOneOf": [
                         "Academy",
                         "Further Education Institute",
@@ -1392,7 +1404,7 @@
             "Questions": [
                 {
                     "QuestionId": "YO-220",
-                    "QuestionTag": "Organisation-TrainingApprentices",
+                    "QuestionTag": null,
                     "Label": "How will your organisation train its apprentices?",
                     "ShortLabel": "",
                     "QuestionBodyText": "",
@@ -1442,7 +1454,7 @@
             "HasFeedback": false,
             "NotRequiredConditions": [
                 {
-                    "Field": "Organisation-Type-MainSupporting",
+                    "Field": "OrganisationTypeMainSupporting",
                     "IsOneOf": [
                         "A Group Training Association",
                         "A public body",
@@ -1466,7 +1478,7 @@
             "Questions": [
                 {
                     "QuestionId": "YO-230",
-                    "QuestionTag": "Organisation-DescribeOrganisation",
+                    "QuestionTag": null,
                     "Label": "How would you describe your organisation?",
                     "ShortLabel": "",
                     "QuestionBodyText": "<p class='govuk-body'>Select all that apply.</p>",
@@ -1514,7 +1526,7 @@
             "Next": [
                 {
                     "Action": "ReturnToSection",
-                    "ReturnId": 7,
+                    "ReturnId": "1.5",
                     "Conditions": [],
                     "ConditionMet": false
                 }
@@ -1527,7 +1539,7 @@
             "Feedback": null,
             "HasFeedback": false,
             "NotRequiredConditions": [],
-            "ActivatedByPageId": "180,181,200,201,210,211,220",
+            "ActivatedByPageId": "140,170,171,180,181,200,201,210,211,220",
             "BodyText": ""
         }
     ]

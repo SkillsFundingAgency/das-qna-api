@@ -14,7 +14,7 @@
             "Questions": [
                 {
                     "QuestionId": "FIN-10",
-                    "QuestionTag": "Finish-Permission-Personal-Details",
+                    "QuestionTag": "FinishPermissionPersonalDetails",
                     "Label": "Do you have permission from everyone named in this application to use their details?",
                     "ShortLabel": "",
                     "QuestionBodyText": "",
@@ -88,7 +88,7 @@
             "Questions": [
                 {
                     "QuestionId": "FIN-20",
-                    "QuestionTag": "Finish-Accurate-Personal-Details",
+                    "QuestionTag": "FinishAccuratePersonalDetails",
                     "Label": "Have you checked with everyone named in this application that the details provided for them are accurate?",
                     "ShortLabel": "",
                     "InputClasses": null,
@@ -166,7 +166,7 @@
             "Questions": [
                 {
                     "QuestionId": "FIN-30",
-                    "QuestionTag": "Finish-Permission-SubmitApp",
+                    "QuestionTag": "FinishPermissionSubmitApp",
                     "Label": "Do you have permission from your organisation to submit this application?",
                     "ShortLabel": "",
                     "InputClasses": null,
@@ -239,8 +239,8 @@
             "PageId": "10005",
             "SequenceId": null,
             "SectionId": null,
-            "Title": "Before you submit this application",
-            "LinkTitle": "Before you submit this application",
+            "Title": "Before you submit your application",
+            "LinkTitle": "Before you submit your application",
             "InfoText": "",
             "Questions": [],
             "PageOfAnswers": [],
@@ -250,7 +250,7 @@
             "Order": null,
             "Active": false,
             "NotRequiredConditions": [],
-            "BodyText": "<p class='govuk-body'>Before you submit this application, you must have:</p> <p class='govuk-body'> <ul class='govuk-list govuk-list--bullet'><li>permission from everyone named in this application to use their details</li><li>checked with everyone named in this application that the details provided for them are accurate</li><li>permission from your organisation to submit this application</li></ul></p>",
+            "BodyText": "<p class='govuk-body'>Before you submit your application you must:</p> <p class='govuk-body'> <ul class='govuk-list govuk-list--bullet'><li>have permission from everyone named in the application to use their details</li><li>check with everyone named in the application that the details provided for them are accurate</li><li>have permission from your organisation to submit the application</li></ul></p>",
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
