@@ -1119,7 +1119,7 @@
                     ]
                 },
                 {
-                    "Field": "Organisation-School-MS",
+                    "Field": "OrganisationSchoolMS",
                     "IsOneOf": [
                         "Local Education Authority (LEA) school",
                         "None of the above"
@@ -1218,7 +1218,7 @@
                     ]
                 },
                 {
-                    "Field": "Organisation-School-Emp",
+                    "Field": "OrganisationSchoolEmp",
                     "IsOneOf": [
                         "Local Education Authority (LEA) school",
                         "None of the above"
