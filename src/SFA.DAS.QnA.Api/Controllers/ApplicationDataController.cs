@@ -48,11 +48,13 @@ namespace SFA.DAS.QnA.Api.Controllers
         /// <response code="200">Returns the QuestionTag Value</response>
         /// <response code="404">If there is no Application for the given Application Id or QuestionTag does not exist.</response>
         /// <response code="422">ApplicationData either does not exist or cannot be parsed as json.</response>
+        /// <response code="400">ApplicationData is null.</response>
         [ProducesResponseType(200)]
         [ProducesResponseType(404)]
         [ProducesResponseType(422)]
+        [ProducesResponseType(400)]
         [HttpGet("{applicationId}/applicationData/{questionTag}")]
-        public async Task<ActionResult<object>> GetQuestionTag(Guid applicationId, string questionTag)
+        public async Task<ActionResult<string>> GetQuestionTag(Guid applicationId, string questionTag)
         {
             var applicationDataResponse = await _mediator.Send(new GetApplicationDataRequest(applicationId));
 
@@ -67,7 +69,7 @@ namespace SFA.DAS.QnA.Api.Controllers
                     var answerData = applicationData[questionTag];
                     if (answerData != null)
                     {
-                        return answerData.Value<object>(); 
+                        return answerData.Value<string>(); 
                     }
                     else
                     {
@@ -80,7 +82,7 @@ namespace SFA.DAS.QnA.Api.Controllers
                 }
             }
 
-            return Task.FromResult<object>(null);
+            return BadRequest(new BadRequestError("ApplicationData is null"));
         }
 
         /// <summary>
