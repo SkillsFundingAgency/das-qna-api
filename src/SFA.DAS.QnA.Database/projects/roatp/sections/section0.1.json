@@ -27,7 +27,7 @@
                 },
                 {
                     "QuestionId": "PRE-20",
-                    "QuestionTag": "UKRLP-LegalName",
+                    "QuestionTag": "UKRLPLegalName",
                     "Label": "",
                     "ShortLabel": "",
                     "QuestionBodyText": "",
@@ -40,7 +40,7 @@
                 },
                 {
                     "QuestionId": "PRE-30",
-                    "QuestionTag": "UKRLP-Website",
+                    "QuestionTag": "UKRLPWebsite",
                     "Label": "",
                     "ShortLabel": "",
                     "QuestionBodyText": "",
@@ -53,7 +53,7 @@
                 },
                 {
                     "QuestionId": "PRE-31",
-                    "QuestionTag": "UKRLP-NoWebsite",
+                    "QuestionTag": "UKRLPNoWebsite",
                     "Label": "",
                     "ShortLabel": "",
                     "QuestionBodyText": "",
@@ -66,7 +66,7 @@
                 },
                 {
                     "QuestionId": "PRE-40",
-                    "QuestionTag": "UKRLP-LegalAddress-Line1",
+                    "QuestionTag": null,
                     "Label": "",
                     "ShortLabel": "",
                     "QuestionBodyText": "",
@@ -79,7 +79,7 @@
                 },
                 {
                     "QuestionId": "PRE-41",
-                    "QuestionTag": "UKRLP-LegalAddress-Line2",
+                    "QuestionTag": null,
                     "Label": "",
                     "ShortLabel": "",
                     "QuestionBodyText": "",
@@ -92,7 +92,7 @@
                 },
                 {
                     "QuestionId": "PRE-42",
-                    "QuestionTag": "UKRLP-LegalAddress-Line3",
+                    "QuestionTag": null,
                     "Label": "",
                     "ShortLabel": "",
                     "QuestionBodyText": "",
@@ -105,7 +105,7 @@
                 },
                 {
                     "QuestionId": "PRE-43",
-                    "QuestionTag": "UKRLP-LegalAddress-Line4",
+                    "QuestionTag": null,
                     "Label": "",
                     "ShortLabel": "",
                     "QuestionBodyText": "",
@@ -118,7 +118,7 @@
                 },
                 {
                     "QuestionId": "PRE-44",
-                    "QuestionTag": "UKRLP-LegalAddress-Town",
+                    "QuestionTag": null,
                     "Label": "",
                     "ShortLabel": "",
                     "QuestionBodyText": "",
@@ -131,7 +131,7 @@
                 },
                 {
                     "QuestionId": "PRE-45",
-                    "QuestionTag": "UKRLP-LegalAddress-PostCode",
+                    "QuestionTag": null,
                     "Label": "",
                     "ShortLabel": "",
                     "QuestionBodyText": "",
@@ -144,7 +144,7 @@
                 },
                 {
                     "QuestionId": "PRE-46",
-                    "QuestionTag": "UKRLP-TradingName",
+                    "QuestionTag": null,
                     "Label": "",
                     "ShortLabel": "",
                     "QuestionBodyText": "",
@@ -157,7 +157,7 @@
                 },
                 {
                     "QuestionId": "PRE-50",
-                    "QuestionTag": "CH-ManualEntryRequired",
+                    "QuestionTag": "CHManualEntryRequired",
                     "Label": "",
                     "ShortLabel": "",
                     "QuestionBodyText": "",
@@ -170,7 +170,7 @@
                 },
                 {
                     "QuestionId": "PRE-51",
-                    "QuestionTag": "UKRLP-Verification-CompanyNumber",
+                    "QuestionTag": "UKRLPVerificationCompanyNumber",
                     "Label": "",
                     "ShortLabel": "",
                     "QuestionBodyText": "",
@@ -183,7 +183,7 @@
                 },
                 {
                     "QuestionId": "PRE-52",
-                    "QuestionTag": "CH-CompanyName",
+                    "QuestionTag": null,
                     "Label": "",
                     "ShortLabel": "",
                     "QuestionBodyText": "",
@@ -196,7 +196,7 @@
                 },
                 {
                     "QuestionId": "PRE-53",
-                    "QuestionTag": "CH-CompanyType",
+                    "QuestionTag": null,
                     "Label": "",
                     "ShortLabel": "",
                     "QuestionBodyText": "",
@@ -209,7 +209,7 @@
                 },
                 {
                     "QuestionId": "PRE-54",
-                    "QuestionTag": "CH-CompanyStatus",
+                    "QuestionTag": null,
                     "Label": "",
                     "ShortLabel": "",
                     "QuestionBodyText": "",
@@ -222,7 +222,7 @@
                 },
                 {
                     "QuestionId": "PRE-55",
-                    "QuestionTag": "CH-IncorporationDate",
+                    "QuestionTag": null,
                     "Label": "",
                     "ShortLabel": "",
                     "QuestionBodyText": "",
@@ -235,7 +235,7 @@
                 },
                 {
                     "QuestionId": "PRE-56",
-                    "QuestionTag": "UKRLP-Verification-Company",
+                    "QuestionTag": "UKRLPVerificationCompany",
                     "Label": "",
                     "ShortLabel": "",
                     "QuestionBodyText": "",
@@ -248,7 +248,7 @@
                 },
                 {
                     "QuestionId": "PRE-60",
-                    "QuestionTag": "CC-TrusteeManualEntry",
+                    "QuestionTag": "CCTrusteeManualEntry",
                     "Label": "",
                     "ShortLabel": "",
                     "QuestionBodyText": "",
@@ -261,7 +261,7 @@
                 },
                 {
                     "QuestionId": "PRE-61",
-                    "QuestionTag": "UKRLP-Verification-CharityRegNumber",
+                    "QuestionTag": "UKRLPVerificationCharityRegNumber",
                     "Label": "",
                     "ShortLabel": "",
                     "QuestionBodyText": "",
@@ -274,7 +274,7 @@
                 },
                 {
                     "QuestionId": "PRE-62",
-                    "QuestionTag": "CC-CharityName",
+                    "QuestionTag": null,
                     "Label": "",
                     "ShortLabel": "",
                     "QuestionBodyText": "",
@@ -287,7 +287,7 @@
                 },
                 {
                     "QuestionId": "PRE-64",
-                    "QuestionTag": "CC-RegistrationDate",
+                    "QuestionTag": null,
                     "Label": "",
                     "ShortLabel": "",
                     "QuestionBodyText": "",
@@ -300,7 +300,7 @@
                 },
                 {
                     "QuestionId": "PRE-65",
-                    "QuestionTag": "UKRLP-Verification-Charity",
+                    "QuestionTag": "UKRLPVerificationCharity",
                     "Label": "",
                     "ShortLabel": "",
                     "QuestionBodyText": "",
@@ -313,7 +313,7 @@
                 },
                 {
                     "QuestionId": "PRE-70",
-                    "QuestionTag": "UKRLP-Verification-SoleTraderPartnership",
+                    "QuestionTag": "UKRLPVerificationSoleTraderPartnership",
                     "Label": "",
                     "ShortLabel": "",
                     "QuestionBodyText": "",
@@ -326,7 +326,7 @@
                 },
                 {
                     "QuestionId": "PRE-80",
-                    "QuestionTag": "UKRLP-PrimaryVerificationSource",
+                    "QuestionTag": "UKRLPPrimaryVerificationSource",
                     "Label": "",
                     "ShortLabel": "",
                     "QuestionBodyText": "",
@@ -339,7 +339,7 @@
                 },
                 {
                     "QuestionId": "PRE-90",
-                    "QuestionTag": "OnROATP",
+                    "QuestionTag": null,
                     "Label": "",
                     "ShortLabel": "",
                     "QuestionBodyText": "",
@@ -352,7 +352,7 @@
                 },
                 {
                     "QuestionId": "PRE-91",
-                    "QuestionTag": "ROATP-CurrentStatus",
+                    "QuestionTag": null,
                     "Label": "",
                     "ShortLabel": "",
                     "QuestionBodyText": "",
@@ -365,7 +365,7 @@
                 },
                 {
                     "QuestionId": "PRE-92",
-                    "QuestionTag": "ROATP-RemovedReason",
+                    "QuestionTag": null,
                     "Label": "",
                     "ShortLabel": "",
                     "QuestionBodyText": "",
@@ -378,7 +378,7 @@
                 },
                 {
                     "QuestionId": "PRE-93",
-                    "QuestionTag": "ROATP-StatusDate",
+                    "QuestionTag": null,
                     "Label": "",
                     "ShortLabel": "",
                     "QuestionBodyText": "",
@@ -391,7 +391,7 @@
                 },
                 {
                     "QuestionId": "PRE-94",
-                    "QuestionTag": "ROATP-ProviderRoute",
+                    "QuestionTag": null,
                     "Label": "",
                     "ShortLabel": "",
                     "QuestionBodyText": "",
@@ -404,7 +404,7 @@
                 },
                 {
                     "QuestionId": "PRE-95",
-                    "QuestionTag": "EmployerProvider-LevyPaying",
+                    "QuestionTag": null,
                     "Label": "",
                     "ShortLabel": "",
                     "QuestionBodyText": "",
@@ -446,7 +446,7 @@
             "Questions": [                
                 {
                     "QuestionId": "YO-1",
-                    "QuestionTag": "Apply-ProviderRoute",
+                    "QuestionTag": "ApplyProviderRoute",
                     "Label": "",
                     "ShortLabel": "",
                     "QuestionBodyText": "",
