@@ -413,12 +413,6 @@
             "Feedback": null,
             "NotRequiredConditions": [
                 {
-                    "Field": "ITTPGTA",
-                    "IsOneOf": [
-                        "Yes"
-                    ]
-                },
-                {
                     "Field": "ApplyProviderRoute",
                     "IsOneOf": [
                         "3"
@@ -528,12 +522,6 @@
             "Feedback": null,
             "NotRequiredConditions": [
                 {
-                    "Field": "ITTPGTA",
-                    "IsOneOf": [
-                        "Yes"
-                    ]
-                },
-                {
                     "Field": "ApplyProviderRoute",
                     "IsOneOf": [
                         "3"
@@ -602,12 +590,6 @@
             "Active": false,
             "Feedback": null,
             "NotRequiredConditions": [
-                {
-                    "Field": "ITTPGTA",
-                    "IsOneOf": [
-                        "Yes"
-                    ]
-                },
                 {
                     "Field": "ApplyProviderRoute",
                     "IsOneOf": [
@@ -717,12 +699,6 @@
             "Active": false,
             "Feedback": null,
             "NotRequiredConditions": [
-                {
-                    "Field": "ITTPGTA",
-                    "IsOneOf": [
-                        "Yes"
-                    ]
-                },
                 {
                     "Field": "ApplyProviderRoute",
                     "IsOneOf": [
@@ -839,12 +815,6 @@
             "Feedback": null,
             "NotRequiredConditions": [
                 {
-                    "Field": "ITTPGTA",
-                    "IsOneOf": [
-                        "Yes"
-                    ]
-                },
-                {
                     "Field": "ApplyProviderRoute",
                     "IsOneOf": [
                         "3"
@@ -929,12 +899,6 @@
             "Active": false,
             "Feedback": null,
             "NotRequiredConditions": [
-                {
-                    "Field": "ITTPGTA",
-                    "IsOneOf": [
-                        "Yes"
-                    ]
-                },
                 {
                     "Field": "ApplyProviderRoute",
                     "IsOneOf": [
@@ -1021,12 +985,6 @@
             "Feedback": null,
             "NotRequiredConditions": [
                 {
-                    "Field": "ITTPGTA",
-                    "IsOneOf": [
-                        "Yes"
-                    ]
-                },
-                {
                     "Field": "ApplyProviderRoute",
                     "IsOneOf": [
                         "3"
@@ -1097,7 +1055,7 @@
             "Feedback": null,
             "NotRequiredConditions": [
                 {
-                    "Field": "ITTPGTA",
+                    "Field": "OrganisationEducationInstituteMainSupporting",
                     "IsOneOf": [
                         "General Further Education College",
                         "Higher Education Institute",
@@ -1110,6 +1068,15 @@
                     "IsOneOf": [
                         "Local Education Authority (LEA) school",
                         "None of the above"
+                    ]
+                },
+                {
+                    "Field": "OrganisationEducationInstituteEmployer",
+                    "IsOneOf": [
+                        "General Further Education College",
+                        "Higher Education Institute",
+                        "National College",
+                        "Sixth Form College"
                     ]
                 }
             ],
@@ -1185,12 +1152,6 @@
             "Active": false,
             "Feedback": null,
             "NotRequiredConditions": [
-                {
-                    "Field": "ITTPGTA",
-                    "IsOneOf": [
-                        "Yes"
-                    ]
-                },
                 {
                     "Field": "ApplyProviderRoute",
                     "IsOneOf": [
@@ -1283,12 +1244,6 @@
             "Active": false,
             "Feedback": null,
             "NotRequiredConditions": [
-                {
-                    "Field": "ITTPGTA",
-                    "IsOneOf": [
-                        "Yes"
-                    ]
-                },
                 {
                     "Field": "ApplyProviderRoute",
                     "IsOneOf": [
