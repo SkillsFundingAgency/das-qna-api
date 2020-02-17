@@ -62,7 +62,7 @@
 							"MustEqual": "Yes"
 						},
 						{
-							"QuestionTag": "Apply-ProviderRoute",
+							"QuestionTag": "ApplyProviderRoute",
 							"MustEqual": "1"
 						}
 					],
@@ -76,7 +76,7 @@
 							"MustEqual": "Yes"
 						},
 						{
-							"QuestionTag": "Apply-ProviderRoute",
+							"QuestionTag": "ApplyProviderRoute",
 							"MustEqual": "3"
 						}
 					],
@@ -91,7 +91,7 @@
 						},
 						{
 							"QuestionId": null,
-							"QuestionTag": "Apply-ProviderRoute",
+							"QuestionTag": "ApplyProviderRoute",
 							"MustEqual": "2"
 						}
 					],
@@ -109,7 +109,7 @@
 			"Order": null,
 			"Active": true,
 			"NotRequiredConditions": [{
-				"Field": "SoleTrade-or-Partnership",
+				"Field": "SoleTradeOrPartnership",
 				"IsOneOf": [
 					"Sole trader"
 				]
@@ -169,7 +169,7 @@
 							"MustEqual": "Yes"
 						},
 						{
-							"QuestionTag": "Apply-ProviderRoute",
+							"QuestionTag": "ApplyProviderRoute",
 							"Contains": "1"
 						}
 					],
@@ -183,7 +183,7 @@
 							"MustEqual": "Yes"
 						},
 						{
-							"QuestionTag": "Apply-ProviderRoute",
+							"QuestionTag": "ApplyProviderRoute",
 							"Contains": "3"
 						}
 					],
@@ -197,7 +197,7 @@
 							"MustEqual": "Yes"
 						},
 						{
-							"QuestionTag": "Apply-ProviderRoute",
+							"QuestionTag": "ApplyProviderRoute",
 							"Contains": "2"
 						}
 					],
@@ -215,7 +215,7 @@
 			"Order": null,
 			"Active": true,
 			"NotRequiredConditions": [{
-				"Field": "SoleTrade-or-Partnership",
+				"Field": "SoleTradeOrPartnership",
 				"IsOneOf": [
 					null,
 					"Partnership"
@@ -276,7 +276,7 @@
 							"MustEqual": "Yes"
 						},
 						{
-							"QuestionTag": "Apply-ProviderRoute",
+							"QuestionTag": "ApplyProviderRoute",
 							"Contains": "1"
 						}
 					],
@@ -290,7 +290,7 @@
 							"MustEqual": "Yes"
 						},
 						{
-							"QuestionTag": "Apply-ProviderRoute",
+							"QuestionTag": "ApplyProviderRoute",
 							"Contains": "3"
 						}
 					],
@@ -304,7 +304,7 @@
 							"MustEqual": "Yes"
 						},
 						{
-							"QuestionTag": "Apply-ProviderRoute",
+							"QuestionTag": "ApplyProviderRoute",
 							"Contains": "2"
 						}
 					],
@@ -414,7 +414,7 @@
 							"MustEqual": "No one yet"
 						},
 						{
-							"QuestionTag": "Apply-ProviderRoute",
+							"QuestionTag": "ApplyProviderRoute",
 							"Contains": "1"
 						}
 					],
@@ -428,7 +428,7 @@
 							"MustEqual": "No one yet"
 						},
 						{
-							"QuestionTag": "Apply-ProviderRoute",
+							"QuestionTag": "ApplyProviderRoute",
 							"Contains": "3"
 						}
 					],
@@ -543,7 +543,7 @@
 			"Order": null,
 			"Active": false,
 			"NotRequiredConditions": [{
-				"Field": "Apply-ProviderRoute",
+				"Field": "ApplyProviderRoute",
 				"IsOneOf": [
 					"3"
 				]
@@ -640,7 +640,7 @@
 							"MustEqual": "No one yet"
 						},
 						{
-							"QuestionTag": "Apply-ProviderRoute",
+							"QuestionTag": "ApplyProviderRoute",
 							"Contains": "1"
 						}
 					],
@@ -654,7 +654,7 @@
 							"MustEqual": "No one yet"
 						},
 						{
-							"QuestionTag": "Apply-ProviderRoute",
+							"QuestionTag": "ApplyProviderRoute",
 							"Contains": "3"
 						}
 					],
@@ -672,7 +672,7 @@
 			"Order": null,
 			"Active": false,
 			"NotRequiredConditions": [{
-				"Field": "Apply-ProviderRoute",
+				"Field": "ApplyProviderRoute",
 				"IsOneOf": [
 					"2"
 				]
@@ -716,7 +716,7 @@
 					"Action": "NextPage",
 					"ReturnId": "7540",
 					"Conditions": [{
-						"QuestionTag": "Apply-ProviderRoute",
+						"QuestionTag": "ApplyProviderRoute",
 						"Contains": "1"
 					}],
 					"ConditionMet": false
@@ -725,7 +725,7 @@
 					"Action": "NextPage",
 					"ReturnId": "7590",
 					"Conditions": [{
-						"QuestionTag": "Apply-ProviderRoute",
+						"QuestionTag": "ApplyProviderRoute",
 						"Contains": "3"
 					}],
 					"ConditionMet": false
@@ -835,7 +835,7 @@
 			"Order": null,
 			"Active": false,
 			"NotRequiredConditions": [{
-				"Field": "Apply-ProviderRoute",
+				"Field": "ApplyProviderRoute",
 				"IsOneOf": [
 					"1","2"
 				]
@@ -879,7 +879,7 @@
 					"Action": "NextPage",
 					"ReturnId": "7540",
 					"Conditions": [{
-						"QuestionTag": "Apply-ProviderRoute",
+						"QuestionTag": "ApplyProviderRoute",
 						"Contains": "1"
 					}],
 					"ConditionMet": false
@@ -888,7 +888,7 @@
 					"Action": "NextPage",
 					"ReturnId": "7590",
 					"Conditions": [{
-						"QuestionTag": "Apply-ProviderRoute",
+						"QuestionTag": "ApplyProviderRoute",
 						"Contains": "3"
 					}],
 					"ConditionMet": false
@@ -950,7 +950,7 @@
 					"Action": "NextPage",
 					"ReturnId": "7540",
 					"Conditions": [{
-						"QuestionTag": "Apply-ProviderRoute",
+						"QuestionTag": "ApplyProviderRoute",
 						"Contains": "1"
 					}],
 					"ConditionMet": false
@@ -959,7 +959,7 @@
 					"Action": "NextPage",
 					"ReturnId": "7590",
 					"Conditions": [{
-						"QuestionTag": "Apply-ProviderRoute",
+						"QuestionTag": "ApplyProviderRoute",
 						"Contains": "3"
 					}],
 					"ConditionMet": false
@@ -1021,7 +1021,7 @@
 					"Action": "NextPage",
 					"ReturnId": "7540",
 					"Conditions": [{
-						"QuestionTag": "Apply-ProviderRoute",
+						"QuestionTag": "ApplyProviderRoute",
 						"Contains": "1"
 					}],
 					"ConditionMet": false
@@ -1030,7 +1030,7 @@
 					"Action": "NextPage",
 					"ReturnId": "7590",
 					"Conditions": [{
-						"QuestionTag": "Apply-ProviderRoute",
+						"QuestionTag": "ApplyProviderRoute",
 						"Contains": "3"
 					}],
 					"ConditionMet": false
@@ -1103,7 +1103,7 @@
 					"Action": "NextPage",
 					"ReturnId": "7540",
 					"Conditions": [{
-						"QuestionTag": "Apply-ProviderRoute",
+						"QuestionTag": "ApplyProviderRoute",
 						"Contains": "1"
 					}],
 					"ConditionMet": false
@@ -1112,7 +1112,7 @@
 					"Action": "NextPage",
 					"ReturnId": "7590",
 					"Conditions": [{
-						"QuestionTag": "Apply-ProviderRoute",
+						"QuestionTag": "ApplyProviderRoute",
 						"Contains": "3"
 					}],
 					"ConditionMet": false
@@ -1185,7 +1185,7 @@
 					"Action": "NextPage",
 					"ReturnId": "7540",
 					"Conditions": [{
-						"QuestionTag": "Apply-ProviderRoute",
+						"QuestionTag": "ApplyProviderRoute",
 						"Contains": "1"
 					}],
 					"ConditionMet": false
@@ -1194,7 +1194,7 @@
 					"Action": "NextPage",
 					"ReturnId": "7590",
 					"Conditions": [{
-						"QuestionTag": "Apply-ProviderRoute",
+						"QuestionTag": "ApplyProviderRoute",
 						"Contains": "3"
 					}],
 					"ConditionMet": false
@@ -1219,7 +1219,7 @@
 				]
 			},
 			{
-				"Field": "Apply-ProviderRoute",
+				"Field": "ApplyProviderRoute",
 				"IsOneOf": [
 					"2"
 				]

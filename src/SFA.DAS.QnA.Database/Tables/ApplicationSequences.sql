@@ -1,12 +1,14 @@
-CREATE TABLE [dbo].[ApplicationSequences](
-	[Id] [uniqueidentifier] NOT NULL,
+CREATE TABLE [ApplicationSequences]
+(
+	[Id] [uniqueidentifier] NOT NULL PRIMARY KEY DEFAULT NEWID(),
 	[ApplicationId] [uniqueidentifier] NOT NULL,
 	[SequenceNo] [int] NOT NULL,
 	[IsActive] [bit] NOT NULL DEFAULT 0
-) ON [PRIMARY]
+) 
 GO
 
-ALTER TABLE [dbo].[ApplicationSequences] ADD  CONSTRAINT [DF_ApplicationSequences_Id_1]  DEFAULT (newid()) FOR [Id]
+CREATE  INDEX [IX_ApplicationSequences_ApplicationId] ON [ApplicationSequences]   ( [ApplicationId] )
 GO
 
-
+CREATE INDEX [IX_ApplicationSequences_BySequenceNo] ON [ApplicationSections]   ( [ApplicationId], [SequenceNo]  )
+GO

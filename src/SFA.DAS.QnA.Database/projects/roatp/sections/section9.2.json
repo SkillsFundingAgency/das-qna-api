@@ -14,7 +14,7 @@
             "Questions": [
                 {
                     "QuestionId": "FIN-40",
-                    "QuestionTag": "Finish-Commercial-Confidence",
+                    "QuestionTag": "FinishCommercialConfidence",
                     "Label": "Do you understand that your organisation must develop and deliver apprenticeship training in line with the Institute for Apprenticeships and Technical Education's 'quality statement'?",
                     "ShortLabel": "",
                     "InputClasses": null,
