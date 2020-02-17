@@ -14,7 +14,7 @@
             "Questions": [
                 {
                     "QuestionId": "FH-30",
-                    "QuestionTag": "FHA-Turnover-Over75m",
+                    "QuestionTag": "FHATurnoverOver75m",
                     "Label": "Was your organisation's total annual turnover over &pound;75 million for the last financial year?",
                     "ShortLabel": "",
                     "InputClasses": null,
@@ -71,11 +71,11 @@
                             "MustEqual": "No"
                         },
                         {
-                            "QuestionTag": "UKRLP-Verification-Company",
+                            "QuestionTag": "UKRLPVerificationCompany",
                             "MustEqual": "TRUE"
                         },
                         {
-                            "QuestionTag": "UKRLP-Verification-Charity",
+                            "QuestionTag": "UKRLPVerificationCharity",
                             "MustEqual": "TRUE"
                         }
                     ],
@@ -90,12 +90,12 @@
                             "MustEqual": "No"
                         },
                         {
-                            "QuestionTag": "UKRLP-Verification-Charity",
+                            "QuestionTag": "UKRLPVerificationCharity",
                             "MustEqual": "",
                             "Contains": ""
                         },
                         {
-                            "QuestionTag": "UKRLP-Verification-Company",
+                            "QuestionTag": "UKRLPVerificationCompany",
                             "MustEqual": "TRUE"
                         }
                     ],
@@ -110,11 +110,11 @@
                             "MustEqual": "No"
                         },
                         {
-                            "QuestionTag": "UKRLP-Verification-Charity",
+                            "QuestionTag": "UKRLPVerificationCharity",
                             "MustEqual": "TRUE"
                         },
                         {
-                            "QuestionTag": "UKRLP-Verification-Company",
+                            "QuestionTag": "UKRLPVerificationCompany",
                             "MustEqual": "",
                             "Contains": ""
                         }
@@ -130,7 +130,7 @@
                             "MustEqual": "No"
                         },
                         {
-                            "QuestionTag": "SoleTrade-or-Partnership",
+                            "QuestionTag": "SoleTradeOrPartnership",
                             "MustEqual": "Sole trader"
                         }
                     ],
@@ -145,7 +145,7 @@
                             "MustEqual": "No"
                         },
                         {
-                            "QuestionTag": "SoleTrade-or-Partnership",
+                            "QuestionTag": "SoleTradeOrPartnership",
                             "MustEqual": "Partnership"
                         }
                     ],
@@ -184,7 +184,7 @@
             "Questions": [
                 {
                     "QuestionId": "FH-40",
-                    "QuestionTag": "FHA-Funding-Turnover-5pc",
+                    "QuestionTag": "FHAFundingTurnover5pc",
                     "Label": "Does your organisation expect its funding from ESFA to be less than 5% of its total annual turnover?",
                     "ShortLabel": "",
                     "InputClasses": null,
@@ -241,11 +241,11 @@
                             "MustEqual": "No"
                         },
                         {
-                            "QuestionTag": "UKRLP-Verification-Company",
+                            "QuestionTag": "UKRLPVerificationCompany",
                             "MustEqual": "TRUE"
                         },
                         {
-                            "QuestionTag": "UKRLP-Verification-Charity",
+                            "QuestionTag": "UKRLPVerificationCharity",
                             "MustEqual": "TRUE"
                         }
                     ],
@@ -260,12 +260,12 @@
                             "MustEqual": "No"
                         },
                         {
-                            "QuestionTag": "UKRLP-Verification-Charity",
+                            "QuestionTag": "UKRLPVerificationCharity",
                             "MustEqual": "",
                             "Contains": ""
                         },
                         {
-                            "QuestionTag": "UKRLP-Verification-Company",
+                            "QuestionTag": "UKRLPVerificationCompany",
                             "MustEqual": "TRUE"
                         }
                     ],
@@ -280,11 +280,11 @@
                             "MustEqual": "No"
                         },
                         {
-                            "QuestionTag": "UKRLP-Verification-Charity",
+                            "QuestionTag": "UKRLPVerificationCharity",
                             "MustEqual": "TRUE"
                         },
                         {
-                            "QuestionTag": "UKRLP-Verification-Company",
+                            "QuestionTag": "UKRLPVerificationCompany",
                             "MustEqual": "",
                             "Contains": ""
                         }
@@ -300,7 +300,7 @@
                             "MustEqual": "No"
                         },
                         {
-                            "QuestionTag": "SoleTrade-or-Partnership",
+                            "QuestionTag": "SoleTradeOrPartnership",
                             "MustEqual": "Sole trader"
                         }
                     ],
@@ -315,7 +315,7 @@
                             "MustEqual": "No"
                         },
                         {
-                            "QuestionTag": "SoleTrade-or-Partnership",
+                            "QuestionTag": "SoleTradeOrPartnership",
                             "MustEqual": "Partnership"
                         }
                     ],
@@ -339,7 +339,7 @@
             "Active": false,
             "NotRequiredConditions": [
                 {
-                    "Field": "FHA-Turnover-Over75m",
+                    "Field": "FHATurnoverOver75m",
                     "IsOneOf": [
                         "No"
                     ]
@@ -364,7 +364,7 @@
             "Questions": [
                 {
                     "QuestionId": "FH-50",
-                    "QuestionTag": "FHA-Other-Annual-Turnover",
+                    "QuestionTag": null,
                     "Label": "Enter your organisation's total annual turnover for the last financial year",
                     "ShortLabel": "",
                     "InputClasses": null,
@@ -394,7 +394,7 @@
                 },
                 {
                     "QuestionId": "FH-60",
-                    "QuestionTag": "FHA-Other-Depreciation-Amortisation",
+                    "QuestionTag": null,
                     "Label": "Enter your organisation's total depreciation and amortisation charges for the last financial year",
                     "ShortLabel": "",
                     "InputClasses": null,
@@ -424,7 +424,7 @@
                 },
                 {
                     "QuestionId": "FH-70",
-                    "QuestionTag": "FHA-Other-Profit-Loss",
+                    "QuestionTag": null,
                     "Label": "Enter your organisation's profit or loss for the last financial year",
                     "ShortLabel": "",
                     "InputClasses": null,
@@ -454,7 +454,7 @@
                 },
                 {
                     "QuestionId": "FH-80",
-                    "QuestionTag": "FHA-Other-Dividends",
+                    "QuestionTag": null,
                     "Label": "Enter your organisation's total dividends for the last financial year",
                     "ShortLabel": "",
                     "InputClasses": null,
@@ -484,7 +484,7 @@
                 },
                 {
                     "QuestionId": "FH-90",
-                    "QuestionTag": "FHA-Other-Total-Assets",
+                    "QuestionTag": null,
                     "Label": "Enter your organisation's total current assets for the last financial year",
                     "ShortLabel": "",
                     "InputClasses": null,
@@ -514,7 +514,7 @@
                 },
                 {
                     "QuestionId": "FH-100",
-                    "QuestionTag": "FHA-Other-Total-Liabilities",
+                    "QuestionTag": null,
                     "Label": "Enter your organisation's total current liabilities for the last financial year",
                     "ShortLabel": "",
                     "InputClasses": null,
@@ -544,7 +544,7 @@
                 },
                 {
                     "QuestionId": "FH-110",
-                    "QuestionTag": "FHA-Other-Total-Borrowings",
+                    "QuestionTag": null,
                     "Label": "Enter your organisation's total borrowings for the last financial year",
                     "ShortLabel": "",
                     "InputClasses": null,
@@ -574,7 +574,7 @@
                 },
                 {
                     "QuestionId": "FH-120",
-                    "QuestionTag": "FHA-Other-Net-Assets",
+                    "QuestionTag": null,
                     "Label": "Enter your organisation's net assets for the last financial year",
                     "ShortLabel": "",
                     "InputClasses": null,
@@ -604,7 +604,7 @@
                 },
                 {
                     "QuestionId": "FH-130",
-                    "QuestionTag": "FHA-Other-Intangible-Assets",
+                    "QuestionTag": null,
                     "Label": "Enter your organisation's total intangible assets for the last financial year",
                     "ShortLabel": "",
                     "InputClasses": "govuk-input--width-10",
@@ -648,25 +648,25 @@
             "Active": false,
             "NotRequiredConditions": [
                 {
-                    "Field": "FHA-Funding-Turnover-5pc",
+                    "Field": "FHAFundingTurnover5pc",
                     "IsOneOf": [
                         "Yes"
                     ]
                 },
                 {
-                    "Field": "UKRLP-Verification-Company",
+                    "Field": "UKRLPVerificationCompany",
                     "IsOneOf": [
                         "TRUE"
                     ]
                 },
                 {
-                    "Field": "UKRLP-Verification-Charity",
+                    "Field": "UKRLPVerificationCharity",
                     "IsOneOf": [
                         "TRUE"
                     ]
                 },
                 {
-                    "Field": "UKRLP-Verification-SoleTraderPartnership",
+                    "Field": "UKRLPVerificationSoleTraderPartnership",
                     "IsOneOf": [
                         "TRUE"
                     ]
@@ -688,7 +688,7 @@
             "Questions": [
                 {
                     "QuestionId": "FH-140",
-                    "QuestionTag": "FHA-CC-Annual-Turnover",
+                    "QuestionTag": null,
                     "Label": "Enter your organisation's total annual turnover for the last financial year",
                     "ShortLabel": "",
                     "InputClasses": null,
@@ -718,7 +718,7 @@
                 },
                 {
                     "QuestionId": "FH-150",
-                    "QuestionTag": "FHA-CC-Depreciation-Amortisation",
+                    "QuestionTag": null,
                     "Label": "Enter your organisation's total depreciation and amortisation charges for the last financial year",
                     "ShortLabel": "",
                     "InputClasses": null,
@@ -748,7 +748,7 @@
                 },
                 {
                     "QuestionId": "FH-160",
-                    "QuestionTag": "FHA-CC-Profit-Loss",
+                    "QuestionTag": null,
                     "Label": "Enter your organisation's profit or loss for the last financial year",
                     "ShortLabel": "",
                     "InputClasses": null,
@@ -778,7 +778,7 @@
                 },
                 {
                     "QuestionId": "FH-170",
-                    "QuestionTag": "FHA-CC-Dividends",
+                    "QuestionTag": null,
                     "Label": "Enter your organisation's total dividends for the last financial year",
                     "ShortLabel": "",
                     "InputClasses": null,
@@ -808,7 +808,7 @@
                 },
                 {
                     "QuestionId": "FH-180",
-                    "QuestionTag": "FHA-CC-Total-Assets",
+                    "QuestionTag": null,
                     "Label": "Enter your organisation's total current assets for the last financial year",
                     "ShortLabel": "",
                     "InputClasses": null,
@@ -838,7 +838,7 @@
                 },
                 {
                     "QuestionId": "FH-190",
-                    "QuestionTag": "FHA-CC-Total-Liabilities",
+                    "QuestionTag": null,
                     "Label": "Enter your organisation's total current liabilities for the last financial year",
                     "ShortLabel": "",
                     "InputClasses": null,
@@ -868,7 +868,7 @@
                 },
                 {
                     "QuestionId": "FH-200",
-                    "QuestionTag": "FHA-CC-Total-Borrowings",
+                    "QuestionTag": null,
                     "Label": "Enter your organisation's total borrowings for the last financial year",
                     "ShortLabel": "",
                     "InputClasses": null,
@@ -898,7 +898,7 @@
                 },
                 {
                     "QuestionId": "FH-210",
-                    "QuestionTag": "FHA-CC-Net-Assets",
+                    "QuestionTag": null,
                     "Label": "Enter your organisation's net assets for the last financial year",
                     "ShortLabel": "",
                     "InputClasses": null,
@@ -928,7 +928,7 @@
                 },
                 {
                     "QuestionId": "FH-220",
-                    "QuestionTag": "FHA-CC-Intangible-Assets",
+                    "QuestionTag": null,
                     "Label": "Enter your organisation's total intangible assets for the last financial year",
                     "ShortLabel": "",
                     "InputClasses": "govuk-input--width-10",
@@ -972,19 +972,19 @@
             "Active": false,
             "NotRequiredConditions": [
                 {
-                    "Field": "UKRLP-Verification-Company",
+                    "Field": "UKRLPVerificationCompany",
                     "IsOneOf": [
                         null
                     ]
                 },
                 {
-                    "Field": "UKRLP-Verification-Charity",
+                    "Field": "UKRLPVerificationCharity",
                     "IsOneOf": [
                         null
                     ]
                 },
                 {
-                    "Field": "UKRLP-Verification-SoleTraderPartnership",
+                    "Field": "UKRLPVerificationSoleTraderPartnership",
                     "IsOneOf": [
                         "TRUE"
                     ]
@@ -1006,7 +1006,7 @@
             "Questions": [
                 {
                     "QuestionId": "FH-140",
-                    "QuestionTag": "FHA-CC-Annual-Turnover",
+                    "QuestionTag": null,
                     "Label": "Enter your organisation's total annual turnover for the last financial year",
                     "ShortLabel": "",
                     "InputClasses": null,
@@ -1036,7 +1036,7 @@
                 },
                 {
                     "QuestionId": "FH-150",
-                    "QuestionTag": "FHA-CC-Depreciation-Amortisation",
+                    "QuestionTag": null,
                     "Label": "Enter your organisation's total depreciation and amortisation charges for the last financial year",
                     "ShortLabel": "",
                     "InputClasses": null,
@@ -1066,7 +1066,7 @@
                 },
                 {
                     "QuestionId": "FH-160",
-                    "QuestionTag": "FHA-CC-Profit-Loss",
+                    "QuestionTag": null,
                     "Label": "Enter your organisation's profit or loss for the last financial year",
                     "ShortLabel": "",
                     "InputClasses": null,
@@ -1096,7 +1096,7 @@
                 },
                 {
                     "QuestionId": "FH-170",
-                    "QuestionTag": "FHA-CC-Dividends",
+                    "QuestionTag": null,
                     "Label": "Enter your organisation's total dividends for the last financial year",
                     "ShortLabel": "",
                     "InputClasses": null,
@@ -1126,7 +1126,7 @@
                 },
                 {
                     "QuestionId": "FH-180",
-                    "QuestionTag": "FHA-CC-Total-Assets",
+                    "QuestionTag": null,
                     "Label": "Enter your organisation's total current assets for the last financial year",
                     "ShortLabel": "",
                     "InputClasses": null,
@@ -1156,7 +1156,7 @@
                 },
                 {
                     "QuestionId": "FH-190",
-                    "QuestionTag": "FHA-CC-Total-Liabilities",
+                    "QuestionTag": null,
                     "Label": "Enter your organisation's total current liabilities for the last financial year",
                     "ShortLabel": "",
                     "InputClasses": null,
@@ -1186,7 +1186,7 @@
                 },
                 {
                     "QuestionId": "FH-200",
-                    "QuestionTag": "FHA-CC-Total-Borrowings",
+                    "QuestionTag": null,
                     "Label": "Enter your organisation's total borrowings for the last financial year",
                     "ShortLabel": "",
                     "InputClasses": null,
@@ -1216,7 +1216,7 @@
                 },
                 {
                     "QuestionId": "FH-210",
-                    "QuestionTag": "FHA-CC-Net-Assets",
+                    "QuestionTag": null,
                     "Label": "Enter your organisation's net assets for the last financial year",
                     "ShortLabel": "",
                     "InputClasses": null,
@@ -1246,7 +1246,7 @@
                 },
                 {
                     "QuestionId": "FH-220",
-                    "QuestionTag": "FHA-CC-Intangible-Assets",
+                    "QuestionTag": null,
                     "Label": "Enter your organisation's total intangible assets for the last financial year",
                     "ShortLabel": "",
                     "InputClasses": "govuk-input--width-10",
@@ -1290,19 +1290,19 @@
             "Active": false,
             "NotRequiredConditions": [
                 {
-                    "Field": "UKRLP-Verification-Company",
+                    "Field": "UKRLPVerificationCompany",
                     "IsOneOf": [
                         ""
                     ]
                 },
                 {
-                    "Field": "UKRLP-Verification-Charity",
+                    "Field": "UKRLPVerificationCharity",
                     "IsOneOf": [
                         "TRUE"
                     ]
                 },
                 {
-                    "Field": "UKRLP-Verification-SoleTraderPartnership",
+                    "Field": "UKRLPVerificationSoleTraderPartnership",
                     "IsOneOf": [
                         "TRUE"
                     ]
@@ -1324,7 +1324,7 @@
             "Questions": [
                 {
                     "QuestionId": "FH-140",
-                    "QuestionTag": "FHA-CC-Annual-Turnover",
+                    "QuestionTag": null,
                     "Label": "Enter your organisation's total annual turnover for the last financial year",
                     "ShortLabel": "",
                     "InputClasses": null,
@@ -1354,7 +1354,7 @@
                 },
                 {
                     "QuestionId": "FH-150",
-                    "QuestionTag": "FHA-CC-Depreciation-Amortisation",
+                    "QuestionTag": null,
                     "Label": "Enter your organisation's total depreciation and amortisation charges for the last financial year",
                     "ShortLabel": "",
                     "InputClasses": null,
@@ -1384,7 +1384,7 @@
                 },
                 {
                     "QuestionId": "FH-160",
-                    "QuestionTag": "FHA-CC-Profit-Loss",
+                    "QuestionTag": null,
                     "Label": "Enter your organisation's profit or loss for the last financial year",
                     "ShortLabel": "",
                     "InputClasses": null,
@@ -1414,7 +1414,7 @@
                 },
                 {
                     "QuestionId": "FH-170",
-                    "QuestionTag": "FHA-CC-Dividends",
+                    "QuestionTag": null,
                     "Label": "Enter your organisation's total dividends for the last financial year",
                     "ShortLabel": "",
                     "InputClasses": null,
@@ -1444,7 +1444,7 @@
                 },
                 {
                     "QuestionId": "FH-180",
-                    "QuestionTag": "FHA-CC-Total-Assets",
+                    "QuestionTag": null,
                     "Label": "Enter your organisation's total current assets for the last financial year",
                     "ShortLabel": "",
                     "InputClasses": null,
@@ -1474,7 +1474,7 @@
                 },
                 {
                     "QuestionId": "FH-190",
-                    "QuestionTag": "FHA-CC-Total-Liabilities",
+                    "QuestionTag": null,
                     "Label": "Enter your organisation's total current liabilities for the last financial year",
                     "ShortLabel": "",
                     "InputClasses": null,
@@ -1504,7 +1504,7 @@
                 },
                 {
                     "QuestionId": "FH-200",
-                    "QuestionTag": "FHA-CC-Total-Borrowings",
+                    "QuestionTag": null,
                     "Label": "Enter your organisation's total borrowings for the last financial year",
                     "ShortLabel": "",
                     "InputClasses": null,
@@ -1534,7 +1534,7 @@
                 },
                 {
                     "QuestionId": "FH-210",
-                    "QuestionTag": "FHA-CC-Net-Assets",
+                    "QuestionTag": null,
                     "Label": "Enter your organisation's net assets for the last financial year",
                     "ShortLabel": "",
                     "InputClasses": null,
@@ -1564,7 +1564,7 @@
                 },
                 {
                     "QuestionId": "FH-220",
-                    "QuestionTag": "FHA-CC-Intangible-Assets",
+                    "QuestionTag": null,
                     "Label": "Enter your organisation's total intangible assets for the last financial year",
                     "ShortLabel": "",
                     "InputClasses": "govuk-input--width-10",
@@ -1608,19 +1608,19 @@
             "Active": false,
             "NotRequiredConditions": [
                 {
-                    "Field": "UKRLP-Verification-Company",
+                    "Field": "UKRLPVerificationCompany",
                     "IsOneOf": [
                         "TRUE"
                     ]
                 },
                 {
-                    "Field": "UKRLP-Verification-Charity",
+                    "Field": "UKRLPVerificationCharity",
                     "IsOneOf": [
                         ""
                     ]
                 },
                 {
-                    "Field": "UKRLP-Verification-SoleTraderPartnership",
+                    "Field": "UKRLPVerificationSoleTraderPartnership",
                     "IsOneOf": [
                         "TRUE"
                     ]
@@ -1642,7 +1642,7 @@
             "Questions": [
                 {
                     "QuestionId": "FH-230",
-                    "QuestionTag": "FHA-STP-Annual-Turnover",
+                    "QuestionTag": null,
                     "Label": "Enter your organisation's total annual turnover for the last financial year",
                     "ShortLabel": "",
                     "InputClasses": null,
@@ -1672,7 +1672,7 @@
                 },
                 {
                     "QuestionId": "FH-240",
-                    "QuestionTag": "FHA-STP-Depreciation-Amortisation",
+                    "QuestionTag": null,
                     "Label": "Enter your organisation's total depreciation and amortisation charges for the last financial year",
                     "ShortLabel": "",
                     "InputClasses": null,
@@ -1702,7 +1702,7 @@
                 },
                 {
                     "QuestionId": "FH-250",
-                    "QuestionTag": "FHA-STP-Profit-Loss",
+                    "QuestionTag": null,
                     "Label": "Enter your organisation's profit or loss for the last financial year",
                     "ShortLabel": "",
                     "InputClasses": null,
@@ -1732,7 +1732,7 @@
                 },
                 {
                     "QuestionId": "FH-260",
-                    "QuestionTag": "FHA-STP-Dividends",
+                    "QuestionTag": null,
                     "Label": "Enter your organisation's total dividends for the last financial year",
                     "ShortLabel": "",
                     "InputClasses": null,
@@ -1762,7 +1762,7 @@
                 },
                 {
                     "QuestionId": "FH-270",
-                    "QuestionTag": "FHA-STP-Total-Assets",
+                    "QuestionTag": null,
                     "Label": "Enter your organisation's total current assets for the last financial year",
                     "ShortLabel": "",
                     "InputClasses": null,
@@ -1792,7 +1792,7 @@
                 },
                 {
                     "QuestionId": "FH-280",
-                    "QuestionTag": "FHA-STP-Total-Liabilities",
+                    "QuestionTag": null,
                     "Label": "Enter your organisation's total current liabilities for the last financial year",
                     "ShortLabel": "",
                     "InputClasses": null,
@@ -1822,7 +1822,7 @@
                 },
                 {
                     "QuestionId": "FH-290",
-                    "QuestionTag": "FHA-STP-Total-Borrowings",
+                    "QuestionTag": null,
                     "Label": "Enter your organisation's total borrowings for the last financial year",
                     "ShortLabel": "",
                     "InputClasses": null,
@@ -1852,7 +1852,7 @@
                 },
                 {
                     "QuestionId": "FH-300",
-                    "QuestionTag": "FHA-STP-Net-Assets",
+                    "QuestionTag": null,
                     "Label": "Enter your organisation's net assets for the last financial year",
                     "ShortLabel": "",
                     "InputClasses": null,
@@ -1882,7 +1882,7 @@
                 },
                 {
                     "QuestionId": "FH-310",
-                    "QuestionTag": "FHA-STP-Intangible-Assets",
+                    "QuestionTag": null,
                     "Label": "Enter your organisation's total intangible assets for the last financial year",
                     "ShortLabel": "",
                     "InputClasses": "govuk-input--width-10",
@@ -1926,13 +1926,13 @@
             "Active": false,
             "NotRequiredConditions": [
                 {
-                    "Field": "UKRLP-Verification-Company",
+                    "Field": "UKRLPVerificationCompany",
                     "IsOneOf": [
                         "TRUE"
                     ]
                 },
                 {
-                    "Field": "UKRLP-Verification-Charity",
+                    "Field": "UKRLPVerificationCharity",
                     "IsOneOf": [
                         "TRUE"
                     ]
@@ -1954,7 +1954,7 @@
             "Questions": [
                 {
                     "QuestionId": "FH-230",
-                    "QuestionTag": "FHA-STP-Annual-Turnover",
+                    "QuestionTag": null,
                     "Label": "Enter your organisation's total annual turnover for the last financial year",
                     "ShortLabel": "",
                     "InputClasses": null,
@@ -1984,7 +1984,7 @@
                 },
                 {
                     "QuestionId": "FH-240",
-                    "QuestionTag": "FHA-STP-Depreciation-Amortisation",
+                    "QuestionTag": null,
                     "Label": "Enter your organisation's total depreciation and amortisation charges for the last financial year",
                     "ShortLabel": "",
                     "InputClasses": null,
@@ -2014,7 +2014,7 @@
                 },
                 {
                     "QuestionId": "FH-250",
-                    "QuestionTag": "FHA-STP-Profit-Loss",
+                    "QuestionTag": null,
                     "Label": "Enter your organisation's profit or loss for the last financial year",
                     "ShortLabel": "",
                     "InputClasses": null,
@@ -2044,7 +2044,7 @@
                 },
                 {
                     "QuestionId": "FH-260",
-                    "QuestionTag": "FHA-STP-Dividends",
+                    "QuestionTag": null,
                     "Label": "Enter your organisation's total dividends for the last financial year",
                     "ShortLabel": "",
                     "InputClasses": null,
@@ -2074,7 +2074,7 @@
                 },
                 {
                     "QuestionId": "FH-270",
-                    "QuestionTag": "FHA-STP-Total-Assets",
+                    "QuestionTag": null,
                     "Label": "Enter your organisation's total current assets for the last financial year",
                     "ShortLabel": "",
                     "InputClasses": null,
@@ -2104,7 +2104,7 @@
                 },
                 {
                     "QuestionId": "FH-280",
-                    "QuestionTag": "FHA-STP-Total-Liabilities",
+                    "QuestionTag": null,
                     "Label": "Enter your organisation's total current liabilities for the last financial year",
                     "ShortLabel": "",
                     "InputClasses": null,
@@ -2134,7 +2134,7 @@
                 },
                 {
                     "QuestionId": "FH-290",
-                    "QuestionTag": "FHA-STP-Total-Borrowings",
+                    "QuestionTag": null,
                     "Label": "Enter your organisation's total borrowings for the last financial year",
                     "ShortLabel": "",
                     "InputClasses": null,
@@ -2164,7 +2164,7 @@
                 },
                 {
                     "QuestionId": "FH-300",
-                    "QuestionTag": "FHA-STP-Net-Assets",
+                    "QuestionTag": null,
                     "Label": "Enter your organisation's net assets for the last financial year",
                     "ShortLabel": "",
                     "InputClasses": null,
@@ -2194,7 +2194,7 @@
                 },
                 {
                     "QuestionId": "FH-310",
-                    "QuestionTag": "FHA-STP-Intangible-Assets",
+                    "QuestionTag": null,
                     "Label": "Enter your organisation's total intangible assets for the last financial year",
                     "ShortLabel": "",
                     "InputClasses": "govuk-input--width-10",
@@ -2238,13 +2238,13 @@
             "Active": false,
             "NotRequiredConditions": [
                 {
-                    "Field": "UKRLP-Verification-Company",
+                    "Field": "UKRLPVerificationCompany",
                     "IsOneOf": [
                         "TRUE"
                     ]
                 },
                 {
-                    "Field": "UKRLP-Verification-Charity",
+                    "Field": "UKRLPVerificationCharity",
                     "IsOneOf": [
                         "TRUE"
                     ]
@@ -2266,7 +2266,7 @@
             "Questions": [
                 {
                     "QuestionId": "FHA-320",
-                    "QuestionTag": "FHA-Has-12Months-Statements",
+                    "QuestionTag": "FHAHas12MonthsStatements",
                     "Label": "Has your organisation produced its latest full financial statements covering a minimum of 12 months?",
                     "ShortLabel": "",
                     "InputClasses": null,
@@ -2347,7 +2347,7 @@
             "Questions": [
                 {
                     "QuestionId": "FH-330",
-                    "QuestionTag": "FHA-12Months-Financial-Statements",
+                    "QuestionTag": "FHA12MonthsFinancialStatements",
                     "Label": "Upload your organisation's latest full financial statements covering a minimum of 12 months",
                     "ShortLabel": "",
                     "InputClasses": null,
@@ -2391,7 +2391,7 @@
             "Active": false,
             "NotRequiredConditions": [
                 {
-                    "Field": "FHA-Has-12Months-Statements",
+                    "Field": "FHAHas12MonthsStatements",
                     "IsOneOf": [
                         "No"
                     ]
@@ -2413,7 +2413,7 @@
             "Questions": [
                 {
                     "QuestionId": "FH-340",
-                    "QuestionTag": "FHA-Partial-Financial-Statements",
+                    "QuestionTag": "FHAPartialFinancialStatements",
                     "Label": "Has your organisation produced financial statements covering any period within the last 12 months?",
                     "ShortLabel": "",
                     "InputClasses": null,
@@ -2470,7 +2470,7 @@
                             "MustEqual": "No"
                         },
                         {
-                            "QuestionTag": "Apply-ProviderRoute",
+                            "QuestionTag": "ApplyProviderRoute",
                             "MustEqual": "1"
                         }
                     ],
@@ -2485,7 +2485,7 @@
                             "MustEqual": "No"
                         },
                         {
-                            "QuestionTag": "Apply-ProviderRoute",
+                            "QuestionTag": "ApplyProviderRoute",
                             "MustEqual": "2"
                         }
                     ],
@@ -2500,7 +2500,7 @@
                             "MustEqual": "No"
                         },
                         {
-                            "QuestionTag": "Apply-ProviderRoute",
+                            "QuestionTag": "ApplyProviderRoute",
                             "MustEqual": "3"
                         }
                     ],
@@ -2513,7 +2513,7 @@
             "Active": false,
             "NotRequiredConditions": [
                 {
-                    "Field": "FHA-Has-12Months-Statements",
+                    "Field": "FHAHas12MonthsStatements",
                     "IsOneOf": [
                         "Yes"
                     ]
@@ -2548,13 +2548,13 @@
             "Active": false,
             "NotRequiredConditions": [
                 {
-                    "Field": "FHA-Has-12Months-Statements",
+                    "Field": "FHAHas12MonthsStatements",
                     "IsOneOf": [
                         "Yes"
                     ]
                 },
                 {
-                    "Field": "FHA-Partial-Financial-Statements",
+                    "Field": "FHAPartialFinancialStatements",
                     "IsOneOf": [
                         "No"
                     ]
@@ -2576,7 +2576,7 @@
             "Questions": [
                 {
                     "QuestionId": "FH-350",
-                    "QuestionTag": "FHA-Partial-Financial-Statements",
+                    "QuestionTag": null,
                     "Label": "Upload your organisation's financial statements covering any period within the last 12 months",
                     "ShortLabel": "",
                     "InputClasses": null,
@@ -2620,13 +2620,13 @@
             "Active": false,
             "NotRequiredConditions": [
                 {
-                    "Field": "FHA-Has-12Months-Statements",
+                    "Field": "FHAHas12MonthsStatements",
                     "IsOneOf": [
                         "Yes"
                     ]
                 },
                 {
-                    "Field": "FHA-Partial-Financial-Statements",
+                    "Field": "FHAPartialFinancialStatements",
                     "IsOneOf": [
                         "No"
                     ]
@@ -2661,13 +2661,13 @@
             "Active": false,
             "NotRequiredConditions": [
                 {
-                    "Field": "Apply-ProviderRoute",
+                    "Field": "ApplyProviderRoute",
                     "IsOneOf": [
                         "3"
                     ]
                 },
                 {
-                    "Field": "FHA-Has-12Months-Statements",
+                    "Field": "FHAHas12MonthsStatements",
                     "IsOneOf": [
                         "Yes"
                     ]
@@ -2689,7 +2689,7 @@
             "Questions": [
                 {
                     "QuestionId": "FH-360",
-                    "QuestionTag": "FHA-Management-Accounts",
+                    "QuestionTag": null,
                     "Label": "Upload your organisation's management accounts covering the remaining period to date",
                     "ShortLabel": "",
                     "InputClasses": null,
@@ -2733,7 +2733,7 @@
             "Active": false,
             "NotRequiredConditions": [
                 {
-                    "Field": "FHA-Has-12Months-Statements",
+                    "Field": "FHAHas12MonthsStatements",
                     "IsOneOf": [
                         "Yes"
                     ]
@@ -2755,7 +2755,7 @@
             "Questions": [
                 {
                     "QuestionId": "FH-410",
-                    "QuestionTag": "FHA-Who-Prepared-Accounts",
+                    "QuestionTag": null,
                     "Label": "Who prepared the answers and uploads in this section?",
                     "ShortLabel": "",
                     "InputClasses": null,
@@ -2830,7 +2830,7 @@
             "Questions": [
                 {
                     "QuestionId": "FH-370",
-                    "QuestionTag": "FHA-Has-12Months-Management-Accs",
+                    "QuestionTag": "FHAHas12MonthsManagementAccs",
                     "Label": "Has your organisation produced full management accounts covering the last 12 months?",
                     "ShortLabel": "",
                     "InputClasses": null,
@@ -2896,14 +2896,14 @@
             "Active": false,
             "NotRequiredConditions": [
                 {
-                    "Field": "Apply-ProviderRoute",
+                    "Field": "ApplyProviderRoute",
                     "IsOneOf": [
                         "1",
                         "2"
                     ]
                 },
                 {
-                    "Field": "FHA-Has-12Months-Statements",
+                    "Field": "FHAHas12MonthsStatements",
                     "IsOneOf": [
                         "Yes"
                     ]
@@ -2938,7 +2938,7 @@
             "Active": false,
             "NotRequiredConditions": [
                 {
-                    "Field": "FHA-Has-12Months-Statements",
+                    "Field": "FHAHas12MonthsStatements",
                     "IsOneOf": [
                         "Yes"
                     ]
@@ -2960,7 +2960,7 @@
             "Questions": [
                 {
                     "QuestionId": "FH-380",
-                    "QuestionTag": "FHA-12Months-Management-Accs",
+                    "QuestionTag": null,
                     "Label": "Upload your organisation's full management accounts for the last 12 months",
                     "ShortLabel": "",
                     "InputClasses": null,
@@ -3004,14 +3004,14 @@
             "Active": false,
             "NotRequiredConditions": [
                 {
-                    "Field": "Apply-ProviderRoute",
+                    "Field": "ApplyProviderRoute",
                     "IsOneOf": [
                         "1",
                         "2"
                     ]
                 },
                 {
-                    "Field": "FHA-Has-12Months-Statements",
+                    "Field": "FHAHas12MonthsStatements",
                     "IsOneOf": [
                         "Yes"
                     ]
@@ -3046,7 +3046,7 @@
             "Active": false,
             "NotRequiredConditions": [
                 {
-                    "Field": "FHA-Has-12Months-Statements",
+                    "Field": "FHAHas12MonthsStatements",
                     "IsOneOf": [
                         "Yes"
                     ]
@@ -3068,7 +3068,7 @@
             "Questions": [
                 {
                     "QuestionId": "FH-390",
-                    "QuestionTag": "FHA-3Months-Management-Accs",
+                    "QuestionTag": null,
                     "Label": "Upload your organisation's management accounts covering at least 3 months within the last 12 months",
                     "ShortLabel": "",
                     "InputClasses": null,
@@ -3112,7 +3112,7 @@
             "Active": false,
             "NotRequiredConditions": [
                 {
-                    "Field": "FHA-Has-12Months-Statements",
+                    "Field": "FHAHas12MonthsStatements",
                     "IsOneOf": [
                         "Yes"
                     ]
@@ -3134,7 +3134,7 @@
             "Questions": [
                 {
                     "QuestionId": "FH-400",
-                    "QuestionTag": "FHA-Projections",
+                    "QuestionTag": null,
                     "Label": "Upload your organisation's financial projections covering the remaining period",
                     "ShortLabel": "",
                     "InputClasses": null,
@@ -3178,7 +3178,7 @@
             "Active": false,
             "NotRequiredConditions": [
                 {
-                    "Field": "FHA-Has-12Months-Statements",
+                    "Field": "FHAHas12MonthsStatements",
                     "IsOneOf": [
                         "Yes"
                     ]

@@ -15,8 +15,8 @@
             "PageOfAnswers": [],
             "Next": [
                 {
-                    "Action": "NextPage",
-                    "ReturnId": "4010",
+                    "Action": "ReturnToSection",
+                    "ReturnId": "4.2",
                     "Conditions": [],
                     "ConditionMet": false
                 }
@@ -30,7 +30,7 @@
             "HasFeedback": false,
 			"NotRequiredConditions": [
 				{
-					"Field": "Apply-ProviderRoute",
+					"Field": "ApplyProviderRoute",
 					"IsOneOf": [
 						"2",
 						"3"
@@ -50,8 +50,8 @@
             "PageOfAnswers": [],
             "Next": [
                 {
-                    "Action": "NextPage",
-                    "ReturnId": "4010",
+                    "Action": "ReturnToSection",
+                    "ReturnId": "4.2",
                     "Conditions": [],
                     "ConditionMet": false
                 }
@@ -65,7 +65,7 @@
             "HasFeedback": false,
 			"NotRequiredConditions": [
 				{
-					"Field": "Apply-ProviderRoute",
+					"Field": "ApplyProviderRoute",
 					"IsOneOf": [
 						"1",
 						"3"
@@ -85,8 +85,8 @@
             "PageOfAnswers": [],
             "Next": [
                 {
-                    "Action": "NextPage",
-                    "ReturnId": "4010",
+                    "Action": "ReturnToSection",
+                    "ReturnId": "4.2",
                     "Conditions": [],
                     "ConditionMet": false
                 }
@@ -100,7 +100,7 @@
             "HasFeedback": false,
             "NotRequiredConditions": [
 				{
-					"Field": "Apply-ProviderRoute",
+					"Field": "ApplyProviderRoute",
 					"IsOneOf": [
 						"1",
 						"2"

@@ -29,7 +29,7 @@
             "HasFeedback": false,
             "NotRequiredConditions": [
                 {
-                    "Field": "Apply-ProviderRoute",
+                    "Field": "ApplyProviderRoute",
                     "IsOneOf": [
                         "2",
                         "3"
@@ -63,7 +63,7 @@
             "HasFeedback": false,
             "NotRequiredConditions": [
                 {
-                    "Field": "Apply-ProviderRoute",
+                    "Field": "ApplyProviderRoute",
                     "IsOneOf": [
                         "1",
                         "3"
@@ -97,7 +97,7 @@
             "HasFeedback": false,
             "NotRequiredConditions": [
                 {
-                    "Field": "Apply-ProviderRoute",
+                    "Field": "ApplyProviderRoute",
                     "IsOneOf": [
                         "1",
                         "2"
