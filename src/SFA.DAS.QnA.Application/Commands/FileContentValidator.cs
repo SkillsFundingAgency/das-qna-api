@@ -43,7 +43,7 @@ namespace SFA.DAS.QnA.Application.Commands
                 {
                     using (var stream = file.OpenReadStream())
                     {
-                        var fileExtension = Path.GetExtension(file.FileName);
+                        var fileExtension = Path.GetExtension(file.FileName).TrimStart('.');
 
                         if (!FileContentIsValidForFileExtension(fileExtension, stream))
                         {
@@ -63,9 +63,7 @@ namespace SFA.DAS.QnA.Application.Commands
 
             if (fileExtension != null && fileContents != null)
             {
-                var headerForFileExtension = _knownFileSignatures[fileExtension.ToUpperInvariant()];
-
-                if (headerForFileExtension != null)
+                if (_knownFileSignatures.TryGetValue(fileExtension.ToUpperInvariant(), out var headerForFileExtension))
                 {
                     var headerOfActualFile = new byte[headerForFileExtension.Length];
                     fileContents.Read(headerOfActualFile, 0, headerOfActualFile.Length);
