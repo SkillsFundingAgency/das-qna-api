@@ -14,61 +14,93 @@
             "Questions": [
                 {
                     "QuestionId": "FIN-40",
-          "QuestionTag": "FinishCommercialConfidence",
-          "Label": "Is any of the information in this application 'commercial in confidence'?",
-          "ShortLabel": "",
-          "InputClasses": null,
-          "QuestionBodyText": "",
-          "Hint": "",
-          "Input": {
-            "Type": "Radio",
-            "InputClasses": null,
-            "Options": [
-              {
-                "Value": "Yes",
-                "Label": "Yes",
-                "HintText": ""
-              },
-              {
-                "Value": "No",
-                "Label": "No",
-                "HintText": ""
-              }
+                    "QuestionTag": "FinishCommercialConfidence",
+                    "Label": "Do you understand that your organisation must develop and deliver apprenticeship training in line with the Institute for Apprenticeships and Technical Education's 'quality statement'?",
+                    "ShortLabel": "",
+                    "InputClasses": null,
+                    "QuestionBodyText": "<p class='govuk-body'>Find out more about <a href='https://www.instituteforapprenticeships.org/quality/what-is-a-quality-apprenticeship/' target='_blank'>the Institute for Apprenticeships and Technical Education's 'quality statement' (opens in a new window or tab)</a>.</p>",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "Radio",
+                        "InputClasses": null,
+                        "Options": [
+                            {
+                                "Value": "Yes",
+                                "Label": "Yes",
+                                "HintText": ""
+                            },
+                            {
+                                "Value": "No",
+                                "Label": "No",
+                                "HintText": ""
+                            }
+                        ],
+                        "Validations": [
+                            {
+                                "Name": "Required",
+                                "Value": "",
+                                "ErrorMessage": "Tell us if you understand that your organisation must develop and deliver apprenticeship training in line with the Institute for Apprenticeships and Technical Education's 'quality statement'"
+                            }
+                        ],
+                        "DataEndpoint": null
+                    },
+                    "Order": null,
+                    "Value": "",
+                    "ErrorMessages": null
+                }
             ],
-            "Validations": [
-              {
-                "Name": "Required",
-                "Value": "",
-                "ErrorMessage": "Tell us if any of the information in this application is 'commercial in confidence'"
-              }
+            "PageOfAnswers": [],
+            "Next": [
+                {
+                    "Action": "NextPage",
+                    "ReturnId": "100055",
+                    "Condition": null,
+                    "Conditions": [
+                        {
+                            "QuestionId": "FIN-40",
+                            "MustEqual": "No"
+                        }
+                    ],
+                    "ConditionMet": false
+                },
+                {
+                    "Action": "ReturnToSection",
+                    "ReturnId": "",
+                    "Conditions": [],
+                    "ConditionMet": false
+                }
             ],
-            "DataEndpoint": null
-          },
-          "Order": null,
-          "Value": "",
-          "ErrorMessages": null
-        }
-      ],
-      "PageOfAnswers": [],
-      "Next": [
+            "Complete": false,
+            "AllowMultipleAnswers": false,
+            "Order": null,
+            "Active": true,
+            "NotRequiredConditions": [],
+            "BodyText": "",
+            "Details": null,
+            "DisplayType": null,
+            "Feedback": null,
+            "ActivatedByPageId": null
+        },
         {
-          "Action": "ReturnToSection",
-          "ReturnId": "",
-          "Condition": null,
-          "Conditions": [],
-          "ConditionMet": false
+            "PageId": "100055",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "Before you submit your application",
+            "LinkTitle": "Before you submit your application",
+            "InfoText": "",
+            "Questions": [],
+            "PageOfAnswers": [],
+            "Next": [],
+            "Complete": false,
+            "AllowMultipleAnswers": false,
+            "Order": null,
+            "Active": false,
+            "NotRequiredConditions": [],
+            "BodyText": "<p class='govuk-body'>Before you submit your application you must understand the Institute for Apprenticeships and Technical Education's 'quality statement'.</p>",
+            "Details": null,
+            "DisplayType": null,
+            "Feedback": null,
+            "ActivatedByPageId": "9100"
         }
-      ],
-      "Complete": false,
-      "AllowMultipleAnswers": false,
-      "Order": null,
-      "Active": true,
-      "NotRequiredConditions": [],
-      "BodyText": "<p class='govuk-body'>'Commercial in confidence' information is sensitive to your organisation. If this information is shared, it could result in damage to commercial interests, intellectual property or trade secrets.</p><p class='govuk-body'>If any of the information in this application is 'commercial in confidence', we will not share it without your permission.</p>",
-      "Details": null,
-      "DisplayType": null,
-      "Feedback": null,
-      "ActivatedByPageId": null
-    }
-  ]
+    ]
 }
