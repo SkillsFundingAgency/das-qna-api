@@ -47,42 +47,23 @@ namespace SFA.DAS.QnA.Api.Controllers
         /// <returns>The QuestionTag Value</returns>
         /// <response code="200">Returns the QuestionTag Value</response>
         /// <response code="404">If there is no Application for the given Application Id or QuestionTag does not exist.</response>
-        /// <response code="422">ApplicationData either does not exist or cannot be parsed as json.</response>
-        /// <response code="400">ApplicationData is null.</response>
+        /// <response code="400">QuestionTag value is null.</response>
         [ProducesResponseType(200)]
         [ProducesResponseType(404)]
-        [ProducesResponseType(422)]
         [ProducesResponseType(400)]
         [HttpGet("{applicationId}/applicationData/{questionTag}")]
-        public async Task<ActionResult<string>> GetQuestionTag(Guid applicationId, string questionTag)
+        public async Task<ActionResult<string>> GetQuestionTagData(Guid applicationId, string questionTag)
         {
-            var applicationDataResponse = await _mediator.Send(new GetApplicationDataRequest(applicationId));
+            var applicationDataResponse = await _mediator.Send(new GetQuestionTagDataRequest(applicationId, questionTag));
 
             if (!applicationDataResponse.Success) return NotFound(new NotFoundError(applicationDataResponse.Message));
 
-            if (applicationDataResponse != null)
+            if (applicationDataResponse != null && applicationDataResponse.Value != null)
             {
-                var applicationData = JObject.Parse(applicationDataResponse.Value.ToString());
-
-                if (applicationData != null)
-                {
-                    var answerData = applicationData[questionTag];
-                    if (answerData != null)
-                    {
-                        return answerData.Value<string>(); 
-                    }
-                    else
-                    {
-                        return NotFound(new NotFoundError("QuestionTag does not exist."));
-                    }
-                }
-                else
-                {
-                    return UnprocessableEntity(new UnprocessableEntityError("ApplicationData either does not exist or cannot be parsed as json."));
-                }
+                return applicationDataResponse.Value;
             }
 
-            return BadRequest(new BadRequestError("ApplicationData is null"));
+            return BadRequest(new BadRequestError("QuestionTag value is null"));
         }
 
         /// <summary>
