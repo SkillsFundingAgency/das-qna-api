@@ -58,7 +58,7 @@ namespace SFA.DAS.QnA.Api.Controllers
 
             if (!applicationDataResponse.Success) return NotFound(new NotFoundError(applicationDataResponse.Message));
 
-            if (applicationDataResponse != null && applicationDataResponse.Value != null)
+            if (!string.IsNullOrEmpty(applicationDataResponse?.Value))
             {
                 return applicationDataResponse.Value;
             }
