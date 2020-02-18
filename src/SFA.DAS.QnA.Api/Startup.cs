@@ -91,6 +91,7 @@ namespace SFA.DAS.QnA.Api
             services.RegisterAllTypes<IValidator>(new[] { typeof(IValidator).Assembly });
             services.AddTransient<IValidatorFactory, ValidatorFactory>();
             services.AddTransient<IAnswerValidator, AnswerValidator>();
+            services.AddTransient<IFileContentValidator, FileContentValidator>();
             services.AddTransient<IApplicationDataValidator, ApplicationDataValidator>();
             
             services.AddTransient<IEncryptionService, EncryptionService>();

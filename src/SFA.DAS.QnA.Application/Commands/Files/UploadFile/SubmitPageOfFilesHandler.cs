@@ -22,12 +22,14 @@ namespace SFA.DAS.QnA.Application.Commands.Files.UploadFile
         private readonly IOptions<FileStorageConfig> _fileStorageConfig;
         private readonly IEncryptionService _encryptionService;
         private readonly IAnswerValidator _answerValidator;
+        private readonly IFileContentValidator _fileContentValidator;
 
-        public SubmitPageOfFilesHandler(QnaDataContext dataContext, IOptions<FileStorageConfig> fileStorageConfig, IEncryptionService encryptionService, IAnswerValidator answerValidator,  INotRequiredProcessor notRequiredProcessor) : base(dataContext, notRequiredProcessor)
+        public SubmitPageOfFilesHandler(QnaDataContext dataContext, IOptions<FileStorageConfig> fileStorageConfig, IEncryptionService encryptionService, IAnswerValidator answerValidator, IFileContentValidator fileContentValidator, INotRequiredProcessor notRequiredProcessor) : base(dataContext, notRequiredProcessor)
         {
             _fileStorageConfig = fileStorageConfig;
             _encryptionService = encryptionService;
             _answerValidator = answerValidator;
+            _fileContentValidator = fileContentValidator;
         }
         
         public async Task<HandlerResponse<SetPageAnswersResponse>> Handle(SubmitPageOfFilesRequest request, CancellationToken cancellationToken)
@@ -79,6 +81,12 @@ namespace SFA.DAS.QnA.Application.Commands.Files.UploadFile
             if (validationErrors.Any())
             {
                 return new HandlerResponse<SetPageAnswersResponse>(new SetPageAnswersResponse(validationErrors));
+            }
+
+            var fileContentValidationErrors = _fileContentValidator.Validate(request.Files);
+            if (fileContentValidationErrors.Any())
+            {
+                return new HandlerResponse<SetPageAnswersResponse>(new SetPageAnswersResponse(fileContentValidationErrors));
             }
 
             var container = await ContainerHelpers.GetContainer(_fileStorageConfig.Value.StorageConnectionString, _fileStorageConfig.Value.ContainerName);
