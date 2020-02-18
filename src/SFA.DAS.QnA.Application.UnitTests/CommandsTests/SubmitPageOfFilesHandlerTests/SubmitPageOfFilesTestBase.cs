@@ -13,6 +13,7 @@ using SFA.DAS.QnA.Configuration.Config;
 using SFA.DAS.QnA.Application.Commands.Files;
 using System.IO;
 using SFA.DAS.QnA.Application.Services;
+using Microsoft.AspNetCore.Http;
 
 namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.SubmitPageOfFilesHandlerTests
 {
@@ -39,7 +40,10 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.SubmitPageOfFilesHandl
             var validator = Substitute.For<IAnswerValidator>();
             validator.Validate(Arg.Any<List<Answer>>(), Arg.Any<Page>()).Returns(new List<KeyValuePair<string, string>>());
 
-            Handler = new SubmitPageOfFilesHandler(DataContext, fileStorageConfig, encryptionService, validator, NotRequiredProcessor);
+            var fileContentValidator = Substitute.For<IFileContentValidator>();
+            fileContentValidator.Validate(Arg.Any<IFormFileCollection>()).Returns(new List<KeyValuePair<string, string>>());
+
+            Handler = new SubmitPageOfFilesHandler(DataContext, fileStorageConfig, encryptionService, validator, fileContentValidator, NotRequiredProcessor);
 
             ApplicationId = Guid.NewGuid();
             SectionId = Guid.NewGuid();

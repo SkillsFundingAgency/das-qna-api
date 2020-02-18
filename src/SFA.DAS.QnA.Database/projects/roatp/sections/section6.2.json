@@ -1214,6 +1214,23 @@
                     ],
                     "ConditionMet": false
                 },
+				{ 
+                    "Action": "NextPage",
+                    "ReturnId": "6800",
+                    "Conditions": [                    
+						{
+                            "QuestionId": null,
+                            "QuestionTag": "ApplyProviderRoute",
+                            "MustEqual": "1"
+                        },
+						{
+                            "QuestionId": null,
+                            "QuestionTag": "PATTypeOfTrainingMainEmployer",
+                            "Contains": "Apprenticeship frameworks"
+                        }
+                    ],
+                    "ConditionMet": false
+                },
                 {
                     "Action": "NextPage",
                     "ReturnId": "6700",

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
@@ -15,6 +16,8 @@ using SFA.DAS.QnA.Data;
 
 namespace SFA.DAS.QnA.Api.Controllers
 {
+    [ExcludeFromCodeCoverage]
+    [ApiExplorerSettings(IgnoreApi = true)]
     public class StorageMigrationController : Controller
     {
         private QnaDataContext _dataContext;
