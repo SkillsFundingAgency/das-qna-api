@@ -79,7 +79,8 @@
             {
                 "name": "projects"
             }
-        ]
+        ],
+        "storagePrimaryEndpointsBlob": "[concat('https://', variables('storageAccountName'), '.blob.core.windows.net')]"
     },
     "resources": [
         {
@@ -315,7 +316,7 @@
         },
         "StoragePrimaryEndpointsBlob": {
             "type": "string",
-            "value": "[reference('storage-account').outputs.storagePrimaryEndpointsBlob.value]"
+            "value": "[variables('storagePrimaryEndpointsBlob')]"
         }
     }
 }
