@@ -17,7 +17,7 @@
           "QuestionTag": null,
           "Label": "Upload your organisation's safeguarding policy",
           "ShortLabel": "",
-          "QuestionBodyText": "<p class='govuk-body' id='pya-equality-policy'>This must include how your organisation will:</p><ul class='govuk-list govuk-list--bullet'><li>promote the policy</li><li>get commitment towards the policy</li><li>train its employees in implementing the policy</li><li>protect its apprentices</li><li>prevent abuse towards its apprentices</li><li>have  way of raising, recording and investigating concerns</li><li>have a way of apprentices getting support or guidance</li><li>monitor its IT usage</li></ul><p class='govuk-body'>Find out more about safeguarding in <a href='http://www.legislation.gov.uk/ukpga/2014/23/contents' target='_blank'>the Care Act 2014 (opens in a new windows or tab)</a>.</p><p class='govuk-body'>The file must be a PDF and smaller than 5MB.</p>",
+          "QuestionBodyText": "<p class='govuk-body' id='pya-equality-policy'>This must include how your organisation will:</p><ul class='govuk-list govuk-list--bullet'><li>promote the policy</li><li>get commitment towards the policy</li><li>train its employees in implementing the policy</li><li>protect its apprentices</li><li>prevent abuse towards its apprentices</li><li>have  way of raising, recording and investigating concerns</li><li>have a way of apprentices getting support or guidance</li><li>monitor its IT usage</li></ul><p class='govuk-body'>Find out more about safeguarding in <a href='http://www.legislation.gov.uk/ukpga/2014/23/contents' class='govuk-link' target='_blank'>the Care Act 2014 (opens in a new windows or tab)</a>.</p><p class='govuk-body'>The file must be a PDF and smaller than 5MB.</p>",
           "Hint": "",
           "Input": {
             "Type": "FileUpload",
@@ -109,7 +109,7 @@
                 "ErrorMessage": "Enter an email using 70 characters or less"
               },
               {
-				"Name": "Email",
+                "Name": "Email",
                 "Value": null,
                 "ErrorMessage": "Enter an email in the correct format, like name@example.com"
               }
@@ -151,7 +151,6 @@
           },
           "Order": null
         }
-
       ],
       "PageOfAnswers": [],
       "Next": [
@@ -189,7 +188,7 @@
           "QuestionTag": null,
           "Label": "Does your organisation's safeguarding policy include its responsibilities towards the Prevent duty?",
           "ShortLabel": "",
-          "QuestionBodyText": "<p class='govuk-body' id='pya-equality-policy'>This means your organisation's safeguarding policy includes how it will:</p><ul class='govuk-list govuk-list--bullet'><li>have a legal responsibility to fulfil the Prevent duty statement</li><li>protect apprentices and employees from radicalising influences</li><li>ensure apprentices and employees are resilient to extreme narratives</li><li>identify changes in behaviour of apprentices and employees</li><li>deal with any issues raised by apprentices or employees</li></ul><p class='govuk-body'>Find out about <a href='https://www.gov.uk/government/publications/prevent-duty-guidance' target='_blank'>the Prevent duty (opens in a new windows or tab)</a></p>",
+          "QuestionBodyText": "<p class='govuk-body' id='pya-equality-policy'>This means your organisation's safeguarding policy includes how it will:</p><ul class='govuk-list govuk-list--bullet'><li>have a legal responsibility to fulfil the Prevent duty statement</li><li>protect apprentices and employees from radicalising influences</li><li>ensure apprentices and employees are resilient to extreme narratives</li><li>identify changes in behaviour of apprentices and employees</li><li>deal with any issues raised by apprentices or employees</li></ul><p class='govuk-body'>Find out about <a href='https://www.gov.uk/government/publications/prevent-duty-guidance' class='govuk-link' target='_blank'>the Prevent duty (opens in a new windows or tab)</a></p>",
           "Hint": "",
           "Input": {
             "Type": "Radio",
@@ -263,7 +262,7 @@
           "QuestionTag": null,
           "Label": "Upload your organisation's Prevent duty policy",
           "ShortLabel": "",
-          "QuestionBodyText": "<p class='govuk-body' id='pya-continuity-plan-2'>This must include how your organisation will:</p><ul class='govuk-list govuk-list--bullet'><lipromote the policy</li><li>get commitment to the policy</li><li>train employees in implementing the policy</li><li>have a legal responsibility to fulfil the Prevent duty statement</li><li>protect apprentices and employees from radicalising influences</li><li>ensure apprentices and employees are resilient to extreme narratives</li><li>identify changes in behaviour of apprentices and employees</li><li>deal with any issues raised by apprentices or employees</li></ul><p class='govuk-body'>Find out more about <a href='https://www.gov.uk/government/publications/prevent-duty-guidance' target='_blank'>the Prevent duty (opens in a new windows or tab)</a>.</p><p class='govuk-body'>The file must be a PDF and smaller than 5MB.</p>",
+          "QuestionBodyText": "<p class='govuk-body' id='pya-continuity-plan-2'>This must include how your organisation will:</p><ul class='govuk-list govuk-list--bullet'><lipromote the policy</li><li>get commitment to the policy</li><li>train employees in implementing the policy</li><li>have a legal responsibility to fulfil the Prevent duty statement</li><li>protect apprentices and employees from radicalising influences</li><li>ensure apprentices and employees are resilient to extreme narratives</li><li>identify changes in behaviour of apprentices and employees</li><li>deal with any issues raised by apprentices or employees</li></ul><p class='govuk-body'>Find out more about <a href='https://www.gov.uk/government/publications/prevent-duty-guidance' class='govuk-link' target='_blank'>the Prevent duty (opens in a new windows or tab)</a>.</p><p class='govuk-body'>The file must be a PDF and smaller than 5MB.</p>",
           "Hint": "",
           "Input": {
             "Type": "FileUpload",
@@ -282,7 +281,6 @@
           },
           "Order": null
         }
-
       ],
       "PageOfAnswers": [],
       "Next": [
@@ -301,8 +299,8 @@
       "Feedback": null,
       "HasFeedback": false,
       "NotRequiredConditions": [],
-	  "ActivatedByPageId": "4037",
-      "BodyText": ""      
+      "ActivatedByPageId": "4037",
+      "BodyText": ""
     }
   ]
-  }
+}
