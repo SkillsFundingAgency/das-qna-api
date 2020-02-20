@@ -55,7 +55,8 @@
 </div>
 
 <script type="text/javascript">
-    if (document.querySelector('.js-check-all-container')) {
+    // Is ".js-check-all-container" shown on the page
+    if (document.querySelector('.js-check-all-container').offsetParent) {
         document.addEventListener("DOMContentLoaded", function() { 
             GOVUK.checkAll.init()
         });
