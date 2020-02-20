@@ -1078,6 +1078,12 @@
                         "National College",
                         "Sixth Form College"
                     ]
+                },
+                {
+                    "Field": "ITTPGTA",
+                    "IsOneOf": [
+                        "Yes"
+                    ]
                 }
             ],
             "ActivatedByPageId": "310,340",
@@ -1255,6 +1261,12 @@
                     "IsOneOf": [
                         "No"
                     ]
+                },
+                {
+                    "Field": "ITTPGTA",
+                    "IsOneOf": [
+                        "Yes"
+                    ]
                 }
             ],
             "ActivatedByPageId": "330",
@@ -1429,6 +1441,12 @@
                     "Field": "ApplyProviderRoute",
                     "IsOneOf": [
                         "3"
+                    ]
+                },
+                {
+                    "Field": "ITTPGTA",
+                    "IsOneOf": [
+                        "Yes"
                     ]
                 }
             ],
