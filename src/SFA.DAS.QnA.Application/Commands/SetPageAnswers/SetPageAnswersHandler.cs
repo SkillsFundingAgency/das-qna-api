@@ -21,7 +21,7 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
         private readonly IAnswerValidator _answerValidator;
         private readonly ITagProcessingService _tagProcessingService;
 
-        public SetPageAnswersHandler(QnaDataContext dataContext, IAnswerValidator answerValidator, INotRequiredProcessor notRequiredProcessor, ITagProcessingService tagProcessingService) : base(dataContext, notRequiredProcessor)
+        public SetPageAnswersHandler(QnaDataContext dataContext, IAnswerValidator answerValidator, INotRequiredProcessor notRequiredProcessor, ITagProcessingService tagProcessingService) : base(dataContext, notRequiredProcessor, tagProcessingService)
         {
             _answerValidator = answerValidator;
             _tagProcessingService = tagProcessingService;

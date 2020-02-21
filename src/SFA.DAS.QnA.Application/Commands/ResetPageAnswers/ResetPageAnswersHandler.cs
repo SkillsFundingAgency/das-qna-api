@@ -19,7 +19,7 @@ namespace SFA.DAS.QnA.Application.Commands.ResetPageAnswers
     {
         private readonly ITagProcessingService _tagProcessingService;
 
-        public ResetPageAnswersHandler(QnaDataContext dataContext, INotRequiredProcessor notRequiredProcessor, ITagProcessingService tagProcessingService) : base(dataContext, notRequiredProcessor)
+        public ResetPageAnswersHandler(QnaDataContext dataContext, INotRequiredProcessor notRequiredProcessor, ITagProcessingService tagProcessingService) : base(dataContext, notRequiredProcessor,tagProcessingService)
         {
             _tagProcessingService = tagProcessingService;
         }

@@ -25,12 +25,14 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.SubmitPageOfFilesHandl
         protected SubmitPageOfFilesHandler Handler;
         protected QnaDataContext DataContext;
         protected NotRequiredProcessor NotRequiredProcessor;
+        protected TagProcessingService TagProcessingService;
 
         [SetUp]
         public async Task SetUp()
         {
             DataContext = DataContextHelpers.GetInMemoryDataContext();
             NotRequiredProcessor = new NotRequiredProcessor();
+            TagProcessingService = new TagProcessingService(DataContext);
             var fileStorageConfig = Options.Create(new FileStorageConfig { ContainerName = "", FileEncryptionKey = "", StorageConnectionString = "" });
             
             var encryptionService = Substitute.For<IEncryptionService>();
@@ -43,7 +45,7 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.SubmitPageOfFilesHandl
             var fileContentValidator = Substitute.For<IFileContentValidator>();
             fileContentValidator.Validate(Arg.Any<IFormFileCollection>()).Returns(new List<KeyValuePair<string, string>>());
 
-            Handler = new SubmitPageOfFilesHandler(DataContext, fileStorageConfig, encryptionService, validator, fileContentValidator, NotRequiredProcessor);
+            Handler = new SubmitPageOfFilesHandler(DataContext, fileStorageConfig, encryptionService, validator, fileContentValidator, NotRequiredProcessor,TagProcessingService);
 
             ApplicationId = Guid.NewGuid();
             SectionId = Guid.NewGuid();
