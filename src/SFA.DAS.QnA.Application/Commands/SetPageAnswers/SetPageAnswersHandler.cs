@@ -7,6 +7,7 @@ using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using Newtonsoft.Json.Schema;
 using SFA.DAS.QnA.Api.Types;
 using SFA.DAS.QnA.Api.Types.Page;
 using SFA.DAS.QnA.Application.Services;
@@ -18,10 +19,12 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
     public class SetPageAnswersHandler : SetAnswersBase, IRequestHandler<SetPageAnswersRequest, HandlerResponse<SetPageAnswersResponse>>
     {
         private readonly IAnswerValidator _answerValidator;
+        private readonly ITagProcessingService _tagProcessingService;
 
-        public SetPageAnswersHandler(QnaDataContext dataContext, IAnswerValidator answerValidator, INotRequiredProcessor notRequiredProcessor) : base(dataContext, notRequiredProcessor)
+        public SetPageAnswersHandler(QnaDataContext dataContext, IAnswerValidator answerValidator, INotRequiredProcessor notRequiredProcessor, ITagProcessingService tagProcessingService) : base(dataContext, notRequiredProcessor)
         {
             _answerValidator = answerValidator;
+            _tagProcessingService = tagProcessingService;
         }
 
         public async Task<HandlerResponse<SetPageAnswersResponse>> Handle(SetPageAnswersRequest request, CancellationToken cancellationToken)
@@ -134,7 +137,8 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
                     foreach (var question in page.Questions)
                     {
                         SetApplicationDataField(question, request.Answers, applicationData);
-                        if (!string.IsNullOrWhiteSpace(question.QuestionTag)) questionTagsWhichHaveBeenUpdated.Add(question.QuestionTag);
+                        if (!string.IsNullOrWhiteSpace(question.QuestionTag))
+                            questionTagsWhichHaveBeenUpdated.Add(question.QuestionTag);
 
                         if (question.Input.Options != null)
                         {
@@ -143,7 +147,8 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
                                 foreach (var furtherQuestion in option.FurtherQuestions)
                                 {
                                     SetApplicationDataField(furtherQuestion, request.Answers, applicationData);
-                                    if (!string.IsNullOrWhiteSpace(furtherQuestion.QuestionTag)) questionTagsWhichHaveBeenUpdated.Add(furtherQuestion.QuestionTag);
+                                    if (!string.IsNullOrWhiteSpace(furtherQuestion.QuestionTag))
+                                        questionTagsWhichHaveBeenUpdated.Add(furtherQuestion.QuestionTag);
                                 }
                             }
                         }
@@ -153,6 +158,8 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
                     _dataContext.SaveChanges();
 
                     SetStatusOfAllPagesBasedOnUpdatedQuestionTags(application.Id, questionTagsWhichHaveBeenUpdated);
+                    _tagProcessingService.ClearDeactivatedTags(application.Id, request.SectionId);
+      
                 }
             }
         }
@@ -177,17 +184,18 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
                         pagesToProcess.AddRange(questionTagPages);
                     }
 
-                    // Deactivate & Activate affected pages accordingly
+                  // Deactivate & Activate affected pages accordingly
                     foreach (var page in pagesToProcess)
                     {
                         if (page.PageOfAnswers != null && page.PageOfAnswers.Count > 0)
                         {
-                            var nextAction = GetNextActionForPage(section.Id, page.PageId);
+                              var nextAction = GetNextActionForPage(section.Id, page.PageId);
                             if (nextAction?.Conditions != null)
                             {
                                 DeactivateDependentPages(nextAction, page.PageId, qnaData, page);
                                 ActivateDependentPages(nextAction, page.PageId, qnaData, page);
                             }
+
                         }
                     }
 

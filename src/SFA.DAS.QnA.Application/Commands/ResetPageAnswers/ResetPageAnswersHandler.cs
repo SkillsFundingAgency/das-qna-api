@@ -17,8 +17,11 @@ namespace SFA.DAS.QnA.Application.Commands.ResetPageAnswers
 {
     public class ResetPageAnswersHandler : SetAnswersBase, IRequestHandler<ResetPageAnswersRequest, HandlerResponse<ResetPageAnswersResponse>>
     {
-        public ResetPageAnswersHandler(QnaDataContext dataContext, INotRequiredProcessor notRequiredProcessor) : base(dataContext, notRequiredProcessor)
+        private readonly ITagProcessingService _tagProcessingService;
+
+        public ResetPageAnswersHandler(QnaDataContext dataContext, INotRequiredProcessor notRequiredProcessor, ITagProcessingService tagProcessingService) : base(dataContext, notRequiredProcessor)
         {
+            _tagProcessingService = tagProcessingService;
         }
 
         public async Task<HandlerResponse<ResetPageAnswersResponse>> Handle(ResetPageAnswersRequest request, CancellationToken cancellationToken)
@@ -126,6 +129,8 @@ namespace SFA.DAS.QnA.Application.Commands.ResetPageAnswers
                     _dataContext.SaveChanges();
 
                     SetStatusOfAllPagesBasedOnUpdatedQuestionTags(application.Id, questionTagsWhichHaveBeenUpdated);
+                    _tagProcessingService.ClearDeactivatedTags(application.Id, request.SectionId);
+
                 }
             }
         }
