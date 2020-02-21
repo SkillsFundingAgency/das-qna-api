@@ -532,6 +532,12 @@
                     "IsOneOf": [
                         "No"
                     ]
+                },
+                {
+                    "Field": "ITTPGTA",
+                    "IsOneOf": [
+                        "Yes"
+                    ]
                 }
             ],
             "ActivatedByPageId": "270,300",
@@ -710,6 +716,12 @@
                     "IsOneOf": [
                         "No"
                     ]
+                },
+                {
+                    "Field": "ITTPGTA",
+                    "IsOneOf": [
+                        "Yes"
+                    ]
                 }
             ],
             "ActivatedByPageId": "270",
@@ -825,6 +837,12 @@
                     "IsOneOf": [
                         "No"
                     ]
+                },
+                {
+                    "Field": "ITTPGTA",
+                    "IsOneOf": [
+                        "Yes"
+                    ]
                 }
             ],
             "ActivatedByPageId": "270",
@@ -910,6 +928,12 @@
                     "IsOneOf": [
                         "No"
                     ]
+                },
+                {
+                    "Field": "ITTPGTA",
+                    "IsOneOf": [
+                        "Yes"
+                    ]
                 }
             ],
             "ActivatedByPageId": "280,300,301",
@@ -994,6 +1018,12 @@
                     "Field": "OfstedFESkills",
                     "IsOneOf": [
                         "No"
+                    ]
+                },
+                {
+                    "Field": "ITTPGTA",
+                    "IsOneOf": [
+                        "Yes"
                     ]
                 }
             ],
@@ -1175,6 +1205,12 @@
                     "IsOneOf": [
                         "Local Education Authority (LEA) school",
                         "None of the above"
+                    ]
+                },
+                {
+                    "Field": "ITTPGTA",
+                    "IsOneOf": [
+                        "Yes"
                     ]
                 }
             ],
