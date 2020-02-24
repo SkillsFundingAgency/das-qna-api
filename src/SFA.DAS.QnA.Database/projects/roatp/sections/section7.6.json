@@ -21,91 +21,91 @@
 					"Type": "CheckBoxList",
 					"InputClasses": null,
 					"Options": [{
-							"Value": "A7610",
+							"Value": "Agriculture&comma; environmental and animal care",
 							"Label": "Agriculture, environmental and animal care",
 							"HintText": null,
 							"HasHintText": false
 						},
 						{
-							"Value": "A7615",
+							"Value": "Business and administration",
 							"Label": "Business and administration",
 							"HintText": null,
 							"HasHintText": false
 						},
 						{
-							"Value": "A7620",
+							"Value": "Care services",
 							"Label": "Care services",
 							"HintText": null,
 							"HasHintText": false
 						},
 						{
-							"Value": "A7625",
+							"Value": "Catering and hospitality",
 							"Label": "Catering and hospitality",
 							"HintText": null,
 							"HasHintText": false
 						},
 						{
-							"Value": "A7630",
+							"Value": "Construction",
 							"Label": "Construction",
 							"HintText": null,
 							"HasHintText": false
 						},
 						{
-							"Value": "A7635",
+							"Value": "Creative and design",
 							"Label": "Creative and design",
 							"HintText": null,
 							"HasHintText": false
 						},
 						{
-							"Value": "A7640",
+							"Value": "Digital",
 							"Label": "Digital",
 							"HintText": null,
 							"HasHintText": false
 						},
 						{
-							"Value": "A7645",
+							"Value": "Education and childcare",
 							"Label": "Education and childcare",
 							"HintText": null,
 							"HasHintText": false
 						},
 						{
-							"Value": "A7650",
+							"Value": "Engineering and manufacturing",
 							"Label": "Engineering and manufacturing",
 							"HintText": null,
 							"HasHintText": false
 						},
 						{
-							"Value": "A7655",
+							"Value": "Hair and beauty",
 							"Label": "Hair and beauty",
 							"HintText": null,
 							"HasHintText": false
 						},
 						{
-							"Value": "A7660",
+							"Value": "Health and science",
 							"Label": "Health and science",
 							"HintText": null,
 							"HasHintText": false
 						},
 						{
-							"Value": "A7665",
+							"Value": "Legal&comma; finance and accounting",
 							"Label": "Legal, finance and accounting",
 							"HintText": null,
 							"HasHintText": false
 						},
 						{
-							"Value": "A7670",
+							"Value": "Protective services",
 							"Label": "Protective services",
 							"HintText": null,
 							"HasHintText": false
 						},
 						{
-							"Value": "A7675",
+							"Value": "Sales&comma; marketing and procurement",
 							"Label": "Sales, marketing and procurement",
 							"HintText": null,
 							"HasHintText": false
 						},
 						{
-							"Value": "A7680",
+							"Value": "Transport and logistics",
 							"Label": "Transport and logistics",
 							"HintText": null,
 							"HasHintText": false
@@ -245,7 +245,7 @@
 			"NotRequiredConditions": [{
 				"Field": "SectorsChosen",
 				"DoesNotContain": [
-					"A7610"
+					"Agriculture&comma; environmental and animal care"
 				]
 			}],
 			"BodyText": "Who's the most experienced employee in the 'Agriculture, environmental and animal care' sector?",
@@ -1019,7 +1019,7 @@
 		"NotRequiredConditions": [{
 			"Field": "SectorsChosen",
 			"DoesNotContain": [
-				"A7615"
+				"Business and administration"
 			]
 		}],
 		"BodyText": "Who's the most experienced employee in the 'Business and administration' sector?",
@@ -1793,7 +1793,7 @@
 		"NotRequiredConditions": [{
 			"Field": "SectorsChosen",
 			"DoesNotContain": [
-				"A7620"
+				"Care services"
 			]
 		}],
 		"BodyText": "Who's the most experienced employee in the 'Care Services' sector?",
@@ -2567,7 +2567,7 @@
 		"NotRequiredConditions": [{
 			"Field": "SectorsChosen",
 			"DoesNotContain": [
-				"A7625"
+				"Catering and hospitality"
 			]
 		}],
 		"BodyText": "Who's the most experienced employee in the 'Catering and hospitality' sector?",
@@ -3341,7 +3341,7 @@
 		"NotRequiredConditions": [{
 			"Field": "SectorsChosen",
 			"DoesNotContain": [
-				"A7630"
+				"Construction"
 			]
 		}],
 		"BodyText": "Who's the most experienced employee in the 'Construction' sector?",
@@ -4115,7 +4115,7 @@
 		"NotRequiredConditions": [{
 			"Field": "SectorsChosen",
 			"DoesNotContain": [
-				"A7635"
+				"Creative and design"
 			]
 		}],
 		"BodyText": "Who's the most experienced employee in the 'Creative and design' sector?",
@@ -4889,7 +4889,7 @@
 		"NotRequiredConditions": [{
 			"Field": "SectorsChosen",
 			"DoesNotContain": [
-				"A7640"
+				"Digital"
 			]
 		}],
 		"BodyText": "Who's the most experienced employee in the 'Digital' sector?",
@@ -5663,7 +5663,7 @@
 		"NotRequiredConditions": [{
 			"Field": "SectorsChosen",
 			"DoesNotContain": [
-				"A7645"
+				"Education and childcare"
 			]
 		}],
 		"BodyText": "Who's the most experienced employee in the 'Education and childcare' sector?",
@@ -6438,7 +6438,7 @@
 		"NotRequiredConditions": [{
 			"Field": "SectorsChosen",
 			"DoesNotContain": [
-				"A7650"
+				"Engineering and manufacturing"
 			]
 		}],
 		"BodyText": "Who's the most experienced employee in the 'Engineering and manufacturing' sector?",
@@ -7212,7 +7212,7 @@
 		"NotRequiredConditions": [{
 			"Field": "SectorsChosen",
 			"DoesNotContain": [
-				"A7655"
+				"Hair and beauty"
 			]
 		}],
 		"BodyText": "Who's the most experienced employee in the 'Hair and Beauty' sector?",
@@ -7986,7 +7986,7 @@
 		"NotRequiredConditions": [{
 			"Field": "SectorsChosen",
 			"DoesNotContain": [
-				"A7660"
+				"Health and science"
 			]
 		}],
 		"BodyText": "Who's the most experienced employee in the 'Health and Science' sector?",
@@ -8760,7 +8760,7 @@
 		"NotRequiredConditions": [{
 			"Field": "SectorsChosen",
 			"DoesNotContain": [
-				"A7665"
+				"Legal&comma; finance and accounting"
 			]
 		}],
 		"BodyText": "Who's the most experienced employee in the 'Legal, finance and accounting' sector?",
@@ -9534,7 +9534,7 @@
 		"NotRequiredConditions": [{
 			"Field": "SectorsChosen",
 			"DoesNotContain": [
-				"A7670"
+				"Protective services"
 			]
 		}],
 		"BodyText": "Who's the most experienced employee in the 'Protective services' sector?",
@@ -10308,7 +10308,7 @@
 		"NotRequiredConditions": [{
 			"Field": "SectorsChosen",
 			"DoesNotContain": [
-				"A7675"
+				"Sales&comma; marketing and procurement"
 			]
 		}],
 		"BodyText": "Who's the most experienced employee in the 'Sales, marketing and procurement' sector?",
@@ -11082,7 +11082,7 @@
 		"NotRequiredConditions": [{
 			"Field": "SectorsChosen",
 			"DoesNotContain": [
-				"A7680"
+				"Transport and logistics"
 			]
 		}],
 		"BodyText": "Who's the most experienced employee in the 'Transport and logistics' sector?",
