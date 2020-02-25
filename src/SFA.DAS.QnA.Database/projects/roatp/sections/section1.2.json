@@ -93,7 +93,7 @@
                 {
                     "QuestionId": "YO-21",
                     "QuestionTag": null,
-                    "Label": "<span class='govuk-label'>Company number</span>",
+                    "Label": "Company number",
                     "ShortLabel": "",
                     "QuestionBodyText": "",
                     "Hint": "",
@@ -128,7 +128,7 @@
                 {
                     "QuestionId": "YO-22",
                     "QuestionTag": null,
-                    "Label": "<span class='govuk-label'>Company name</span>",
+                    "Label": "Company name",
                     "ShortLabel": "",
                     "QuestionBodyText": "",
                     "Hint": "",
@@ -202,7 +202,7 @@
                     "Label": "What is your organisation's Information Commissioner's Office (ICO) registration number?",
                     "ShortLabel": "",
                     "QuestionBodyText": "<p class='govuk-body'>This is an 8-digit registration number from the ICO data protection public register. Any organisation that processes personal data must have one.</p><p class='govuk-body'>If you're not sure, <a href='https://ico.org.uk/ESDWebPages/Search' class='govuk-link' target='_blank'>search for your organisation on the ICO data protection register (opens in a new window or tab)</a></p>",
-                    "Hint": "<span class='govuk-label'>ICO registration number</span>",
+                    "Hint": "",
                     "Input": {
                         "Type": "Text",
                         "InputClasses": "app-uppercase govuk-input--width-10",
