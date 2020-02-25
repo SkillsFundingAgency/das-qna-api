@@ -99,7 +99,7 @@
                     "Hint": "",
                     "Input": {
                         "Type": "Text",
-                        "InputClasses": "app-uppercase",
+                        "InputClasses": "app-uppercase govuk-input--width-10",
                         "Validations": [
                             {
                                 "Name": "Required",
@@ -134,7 +134,7 @@
                     "Hint": "",
                     "Input": {
                         "Type": "Text",
-                        "InputClasses": "app-uppercase",
+                        "InputClasses": "govuk-!-width-two-thirds",
                         "Validations": [
                             {
                                 "Name": "Required",
@@ -205,7 +205,7 @@
                     "Hint": "<span class='govuk-label'>ICO registration number</span>",
                     "Input": {
                         "Type": "Text",
-                        "InputClasses": "app-uppercase",
+                        "InputClasses": "app-uppercase govuk-input--width-10",
                         "Validations": [
                             {
                                 "Name": "Required",
@@ -313,6 +313,7 @@
                                         "Label": "Enter main website address",
                                         "Input": {
                                             "Type": "Text",
+                                            "InputClasses": "govuk-!-width-two-thirds",
                                             "Options": [],
                                             "Validations": [
                                                 {
