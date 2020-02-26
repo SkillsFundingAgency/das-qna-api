@@ -428,22 +428,22 @@
                         "Options": [
                             {
                                 "Label": "Less than 12 months",
-                                "Value": "1",
+                                "Value": "Less than 12 months",
                                 "FurtherQuestions": []
                             },
                             {
                                 "Label": "12 to 18 months",
-                                "Value": "2",
+                                "Value": "12 to 18 months",
                                 "FurtherQuestions": []
                             },
                             {
                                 "Label": "19 to 23 months",
-                                "Value": "3",
+                                "Value": "19 to 23 months",
                                 "FurtherQuestions": []
                             },
                             {
                                 "Label": "More than 23 months",
-                                "Value": "4",
+                                "Value": "More than 23 months",
                                 "FurtherQuestions": []
                             }
                         ],
@@ -466,7 +466,7 @@
                     "Conditions": [
                         {
                             "QuestionId": "YO-50",
-                            "MustEqual": "1"
+                            "MustEqual": "Less than 12 months"
                         }
                     ],
                     "ConditionMet": false
@@ -572,22 +572,22 @@
                         "Options": [
                             {
                                 "Label": "Less than 12 months",
-                                "Value": "1",
+                                "Value": "Less than 12 months",
                                 "FurtherQuestions": []
                             },
                             {
                                 "Label": "12 to 18 months",
-                                "Value": "2",
+                                "Value": "12 to 18 months",
                                 "FurtherQuestions": []
                             },
                             {
                                 "Label": "19 to 23 months",
-                                "Value": "3",
+                                "Value": "19 to 23 months",
                                 "FurtherQuestions": []
                             },
                             {
                                 "Label": "More than 23 months",
-                                "Value": "4",
+                                "Value": "More than 23 months",
                                 "FurtherQuestions": []
                             }
                         ],
@@ -610,7 +610,7 @@
                     "Conditions": [
                         {
                             "QuestionId": "YO-51",
-                            "MustEqual": "1"
+                            "MustEqual": "Less than 12 months"
                         }
                     ],
                     "ConditionMet": false
@@ -716,22 +716,22 @@
                         "Options": [
                             {
                                 "Label": "Less than 3 months",
-                                "Value": "1",
+                                "Value": "Less than 3 months",
                                 "FurtherQuestions": []
                             },
                             {
                                 "Label": "3 to 6 months",
-                                "Value": "2",
+                                "Value": "3 to 6 months",
                                 "FurtherQuestions": []
                             },
                             {
                                 "Label": "7 to 11 months",
-                                "Value": "3",
+                                "Value": "7 to 11 months",
                                 "FurtherQuestions": []
                             },
                             {
                                 "Label": "More than 11 months",
-                                "Value": "4",
+                                "Value": "More than 11 months",
                                 "FurtherQuestions": []
                             }
                         ],
@@ -754,7 +754,7 @@
                     "Conditions": [
                         {
                             "QuestionId": "YO-60",
-                            "MustEqual": "1"
+                            "MustEqual": "Less than 3 months"
                         }
                     ],
                     "ConditionMet": false

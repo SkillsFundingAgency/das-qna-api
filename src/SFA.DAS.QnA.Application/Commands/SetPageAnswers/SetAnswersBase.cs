@@ -14,10 +14,12 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
     {
         protected readonly QnaDataContext _dataContext;
         protected readonly INotRequiredProcessor _notRequiredProcessor;
-        public SetAnswersBase(QnaDataContext dataContext, INotRequiredProcessor notRequiredProcessor)
+        private readonly ITagProcessingService _tagProcessingService;
+        public SetAnswersBase(QnaDataContext dataContext, INotRequiredProcessor notRequiredProcessor, ITagProcessingService tagProcessingService)
         {
             _dataContext = dataContext;
             _notRequiredProcessor = notRequiredProcessor;
+            _tagProcessingService = tagProcessingService;
         }
 
         protected List<Next> GetCheckboxListMatchingNextActionsForPage(Guid sectionId, string pageId)
@@ -320,6 +322,51 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
                     section.QnAData = qnaData;
                     _dataContext.SaveChanges();
                 }
+            }
+        }
+
+        protected void SetStatusOfAllPagesBasedOnUpdatedQuestionTags(Guid applicationId, List<string> questionTags)
+        {
+            if (questionTags != null && questionTags.Count > 0)
+            {
+                var sections = _dataContext.ApplicationSections.Where(sec => sec.ApplicationId == applicationId);
+
+                // Go through each section in the application
+                foreach (var section in sections)
+                {
+                    // Get the list of pages that contain one of QuestionTags in the next condition
+                    var pagesToProcess = new List<Page>();
+                    foreach (var questionTag in questionTags.Distinct())
+                    {
+                        var questionTagPages = section.QnAData.Pages.Where(p => !p.AllowMultipleAnswers && p.Next.SelectMany(n => n.Conditions).Select(c => c.QuestionTag).Contains(questionTag));
+                        pagesToProcess.AddRange(questionTagPages);
+                    }
+
+                    if (pagesToProcess.Any())
+                    {
+                        // Have to force QnAData a new object and reassign for Entity Framework to pick up changes
+                        var qnaData = new QnAData(section.QnAData);
+
+                        // Deactivate & Activate affected pages accordingly
+                        foreach (var page in pagesToProcess)
+                        {
+                            if (page.PageOfAnswers != null && page.PageOfAnswers.Count > 0)
+                            {
+                                var nextAction = GetNextActionForPage(section.Id, page.PageId);
+                                if (nextAction?.Conditions != null)
+                                {
+                                    DeactivateDependentPages(nextAction, page.PageId, qnaData, page);
+                                    ActivateDependentPages(nextAction, page.PageId, qnaData, page);
+                                }
+                            }
+                        }
+
+                        // Assign QnAData back so Entity Framework will pick up changes
+                        section.QnAData = qnaData;
+                    }
+                }
+
+                _dataContext.SaveChanges();
             }
         }
 
