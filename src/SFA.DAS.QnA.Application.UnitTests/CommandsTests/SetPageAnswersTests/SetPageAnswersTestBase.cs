@@ -20,16 +20,18 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.SetPageAnswersTests
         protected SetPageAnswersHandler Handler;
         protected QnaDataContext DataContext;
         protected NotRequiredProcessor NotRequiredProcessor;
+        protected TagProcessingService TagProcessingService;
         [SetUp]
         public async Task SetUp()
         {
             DataContext = DataContextHelpers.GetInMemoryDataContext();
             var validator = Substitute.For<IAnswerValidator>();
             NotRequiredProcessor = new NotRequiredProcessor();
-            
+            TagProcessingService = new TagProcessingService(DataContext);
+
             validator.Validate(Arg.Any<List<Answer>>(), Arg.Any<Page>()).Returns(new List<KeyValuePair<string, string>>());
             
-            Handler = new SetPageAnswersHandler(DataContext, validator, NotRequiredProcessor);
+            Handler = new SetPageAnswersHandler(DataContext, validator, NotRequiredProcessor, TagProcessingService);
 
             ApplicationId = Guid.NewGuid();
             SectionId = Guid.NewGuid();

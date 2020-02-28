@@ -97,6 +97,7 @@ namespace SFA.DAS.QnA.Api
             services.AddTransient<IEncryptionService, EncryptionService>();
             services.AddTransient<INotRequiredProcessor, NotRequiredProcessor>();
             services.AddTransient<IKeyProvider, ConfigKeyProvider>();
+            services.AddTransient<ITagProcessingService, TagProcessingService>();
             services.AddAutoMapper(typeof(SystemTime).Assembly);
             services.AddMediatR(AppDomain.CurrentDomain.GetAssemblies());
 
