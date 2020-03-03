@@ -23,5 +23,7 @@ namespace SFA.DAS.QnA.Application.Queries.ApplicationData.GetApplicationData
                 ? new HandlerResponse<string>(success:false, message:"Application does not exist.") 
                 : new HandlerResponse<string>(application.ApplicationData);
         }
+
+
     }
 }
