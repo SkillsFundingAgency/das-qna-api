@@ -20,14 +20,15 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.FindNextRequiredAction
         protected Next NextAction;
         protected string ApplicationDataJson;
         protected INotRequiredProcessor NotRequiredProcessor;
-
+        protected ITagProcessingService TagProcessingService;
         [SetUp]
         public async Task SetUp()
         {
             QnaDataContext = DataContextHelpers.GetInMemoryDataContext();
 
             NotRequiredProcessor = new NotRequiredProcessor();
-            SetAnswersBase = new SetAnswersBase(QnaDataContext, NotRequiredProcessor);
+            TagProcessingService = new TagProcessingService(QnaDataContext);
+            SetAnswersBase = new SetAnswersBase(QnaDataContext, NotRequiredProcessor,TagProcessingService);
 
             ApplicationId = Guid.NewGuid();
 

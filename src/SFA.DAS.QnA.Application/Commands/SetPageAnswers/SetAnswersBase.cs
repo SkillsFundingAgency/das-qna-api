@@ -14,10 +14,12 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
     {
         protected readonly QnaDataContext _dataContext;
         protected readonly INotRequiredProcessor _notRequiredProcessor;
-        public SetAnswersBase(QnaDataContext dataContext, INotRequiredProcessor notRequiredProcessor)
+        private readonly ITagProcessingService _tagProcessingService;
+        public SetAnswersBase(QnaDataContext dataContext, INotRequiredProcessor notRequiredProcessor, ITagProcessingService tagProcessingService)
         {
             _dataContext = dataContext;
             _notRequiredProcessor = notRequiredProcessor;
+            _tagProcessingService = tagProcessingService;
         }
 
         protected List<Next> GetCheckboxListMatchingNextActionsForPage(Guid sectionId, string pageId)
