@@ -9,7 +9,7 @@
           "SequenceId": null,
           "SectionId": null,
           "Title": "Confirm who's in control",
-          "LinkTitle": "",
+          "LinkTitle": "Confirm who's in control",
           "InfoText": "",
           "Details": {
               "Title": "What if these details are wrong?",
@@ -110,7 +110,7 @@
           "SequenceId": null,
           "SectionId": null,
           "Title": "Confirm who's in control",
-          "LinkTitle": "",
+          "LinkTitle": "Confirm who's in control",
           "InfoText": "",
           "Questions": [
               {
@@ -172,7 +172,7 @@
           "SequenceId": null,
           "SectionId": null,
           "Title": "Confirm who's in control",
-          "LinkTitle": "",
+          "LinkTitle": "Confirm who's in control",
           "InfoText": "",
           "Questions": [
               {
@@ -222,7 +222,7 @@
           "SequenceId": null,
           "SectionId": null,
           "Title": "Tell us your organisation's type",
-          "LinkTitle": "",
+          "LinkTitle": "Tell us your organisation's type",
           "InfoText": "",
           "Details": {
               "Title": "What is a sole trader or partnership?",
@@ -309,7 +309,7 @@
           "SequenceId": null,
           "SectionId": null,
           "Title": "What is your organisation's partner?",
-          "LinkTitle": "",
+          "LinkTitle": "What is your organisation's partner?",
           "InfoText": "",
           "Questions": [
               {
@@ -386,7 +386,7 @@
           "SequenceId": null,
           "SectionId": null,
           "Title": "Enter the individual's details",
-          "LinkTitle": "",
+          "LinkTitle": "Enter the individual's details",
           "InfoText": "",
           "Questions": [
               {
@@ -448,7 +448,7 @@
           "SequenceId": null,
           "SectionId": null,
           "Title": "What is {{UKRLPLegalName}}'s date of birth?",
-          "LinkTitle": "",
+          "LinkTitle": "What is {{UKRLPLegalName}}'s date of birth?",
           "InfoText": "",
           "Questions": [
               {
@@ -509,7 +509,7 @@
           "SequenceId": null,
           "SectionId": null,
           "Title": "Confirm who's in control",
-          "LinkTitle": "",
+          "LinkTitle": "Confirm who's in control",
           "InfoText": "",
           "Questions": [
               {
