@@ -58,12 +58,7 @@ namespace SFA.DAS.QnA.Api.Controllers
 
             if (!applicationDataResponse.Success) return NotFound(new NotFoundError(applicationDataResponse.Message));
 
-            if (!string.IsNullOrEmpty(applicationDataResponse?.Value))
-            {
-                return applicationDataResponse.Value;
-            }
-
-            return BadRequest(new BadRequestError("QuestionTag value is null"));
+            return applicationDataResponse?.Value;
         }
 
         /// <summary>
