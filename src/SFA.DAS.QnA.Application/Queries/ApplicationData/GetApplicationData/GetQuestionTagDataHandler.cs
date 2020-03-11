@@ -35,15 +35,8 @@ namespace SFA.DAS.QnA.Application.Queries.ApplicationData.GetApplicationData
 
                 try
                 {
-                    var questionTagValue = (string)command.ExecuteScalar();
-                    if (string.IsNullOrEmpty(questionTagValue))
-                    {
-                        return new HandlerResponse<string>(success: false, message: "QuestionTag does not have a value.");
-                    }
-                    else
-                    {
-                        return new HandlerResponse<string>(questionTagValue);
-                    }
+                    var questionTagValue = command.ExecuteScalar();
+                    return new HandlerResponse<string>(Convert.ToString(questionTagValue));
                 }
                 catch (Exception ex)
                 {
