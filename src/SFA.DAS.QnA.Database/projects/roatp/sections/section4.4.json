@@ -61,7 +61,7 @@
       "SequenceId": null,
       "SectionId": null,
       "Title": "Tell us who has overall responsibility for safeguarding in your organisation",
-      "LinkTitle": "Safeguarding responsibility - link title",
+      "LinkTitle": "Tell us who has overall responsibility for safeguarding in your organisation",
       "InfoText": "",
       "Questions": [
         {
@@ -176,7 +176,7 @@
       "SequenceId": null,
       "SectionId": null,
       "Title": "Does your organisation's safeguarding policy include its responsibilities towards the Prevent duty?",
-      "LinkTitle": "",
+      "LinkTitle": "Does your organisation's safeguarding policy include its responsibilities towards the Prevent duty?",
       "InfoText": "",
       "Details": {
         "Title": "What is the Prevent duty statement?",
@@ -250,7 +250,7 @@
       "SequenceId": null,
       "SectionId": null,
       "Title": "Upload your organisation's Prevent duty policy",
-      "LinkTitle": "",
+      "LinkTitle": "Upload your organisation's Prevent duty policy",
       "InfoText": "",
       "Details": {
         "Title": "What is the Prevent duty statement?",
