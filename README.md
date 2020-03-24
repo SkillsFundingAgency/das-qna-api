@@ -59,6 +59,8 @@ See [Support Site](https://skillsfundingagency.atlassian.net/wiki/spaces/NDL/pag
 - To include the latest question sets when publishing a database to your local SQL Server, you need to ensure that `ProjectPath` variable contains the full path in the format  `{{drive}}:\{{project-folders}}\das-qna-api\src\SFA.DAS.QnA.Database\` 
   - eg. `C:\Source\Repos\SFA\das-qna-api\src\SFA.DAS.QnA.Database\`
 
+    **Note**: The required trailing backslash on the path in the example above.
+
   or
 
 - Create a database manually named {{database name}} on {{local instance name}} and run each of the `.sql` scripts in the SFA.DAS.QnA.Database project.
