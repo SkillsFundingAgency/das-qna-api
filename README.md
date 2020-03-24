@@ -61,7 +61,7 @@ See [Support Site](https://skillsfundingagency.atlassian.net/wiki/spaces/NDL/pag
 
     **Note**: The required trailing backslash on the path in the example above.
 
-  or
+or
 
 - Create a database manually named {{database name}} on {{local instance name}} and run each of the `.sql` scripts in the SFA.DAS.QnA.Database project.
 
@@ -74,15 +74,16 @@ See [Support Site](https://skillsfundingagency.atlassian.net/wiki/spaces/NDL/pag
 
 ##### Run the solution
 
-- Set SFA.DAS.QnA.API as the startup project
-- Running the solution will launch the API in your browser
-- JSON configuration was created to work with dotnet run
-
--or-
+JSON configuration was created to work with dotnet run.
 
 - Navigate to src/SFA.DAS.QnA.API/
 - run `dotnet restore`
 - run `dotnet run`
+
+or
+
+- Set SFA.DAS.QnA.API as the startup project
+- Running the solution will launch the API in your browser
 	
 #### To run a local copy you may also require 
 To create a JSON structure required to author updates and create new question sets:
@@ -114,7 +115,7 @@ Contains all of the application logic to handle requests
 Enables functionality to store and read configuration from Microsoft Azure storage
 
 - AuthenticationConfig
-	- JWT authentication
+  - JWT authentication
 	
 - FileStorageConfig
 	- Information relating to storage of files
