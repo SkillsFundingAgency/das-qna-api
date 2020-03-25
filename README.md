@@ -1,46 +1,98 @@
-# ![crest](https://assets.publishing.service.gov.uk/government/assets/crests/org_crest_27px-916806dcf065e7273830577de490d5c7c42f36ddec83e907efe62086785f24fb.png) Digital Apprenticeships Service
+# Digital Apprenticeships Service
 
-##  Question and Answer API (das-qna-api)
-![Build Status](https://sfa-gov-uk.visualstudio.com/Digital%20Apprenticeship%20Service/_apis/build/status/Endpoint%20Assessment%20Organisation/das-qna-api)
+##  Question and Answer API
+Licensed under the [MIT license](https://github.com/SkillsFundingAgency/das-qna-api/blob/master/LICENSE)
 
-## License
-Licensed under the [MIT license](https://github.com/SkillsFundingAgency/das-assessor-service-external-apiclient/blob/master/LICENSE)
+|               |               |
+| ------------- | ------------- |
+|![crest](https://assets.publishing.service.gov.uk/government/assets/crests/org_crest_27px-916806dcf065e7273830577de490d5c7c42f36ddec83e907efe62086785f24fb.png)|QnA API|
+| Info | A Web API service which allows question sets to be organised and presented and their answers collected by exposing HTTP REST end points.  |
+| Build | [![Build Status](https://sfa-gov-uk.visualstudio.com/Digital%20Apprenticeship%20Service/_apis/build/status/Endpoint%20Assessment%20Organisation/das-qna-api?branchName=master)](https://sfa-gov-uk.visualstudio.com/Digital%20Apprenticeship%20Service/_build/latest?definitionId=1654&branchName=master) |
+| Web  | https://localhost:5555/swagger/index.html  |
+
+|               | <div style="width:500px"></div>              |
+| ------------- | ------------- |
+|![crest](https://assets.publishing.service.gov.uk/government/assets/crests/org_crest_27px-916806dcf065e7273830577de490d5c7c42f36ddec83e907efe62086785f24fb.png)| QnA API Client |
+| Info  | A .Net Core client library for QnA API HTTP REST end points |
+| Build  | [![NuGet Badge](https://buildstats.info/nuget/SFA.DAS.QnA.Api.Client)](https://www.nuget.org/packages/SFA.DAS.QnA.Api.Client)  |
+
+|               | <div style="width:500px"></div>              |
+| ------------- | ------------- |
+|![crest](https://assets.publishing.service.gov.uk/government/assets/crests/org_crest_27px-916806dcf065e7273830577de490d5c7c42f36ddec83e907efe62086785f24fb.png)| QnA API Types |
+| Info  | Common types to interact with the QnA Api  |
+| Build  | [![NuGet Badge](https://buildstats.info/nuget/SFA.DAS.QnA.Api.Types)](https://www.nuget.org/packages/SFA.DAS.QnA.Api.Types)  |
+
+|               | <div style="width:500px"></div>              |
+| ------------- | ------------- |
+|![crest](https://assets.publishing.service.gov.uk/government/assets/crests/org_crest_27px-916806dcf065e7273830577de490d5c7c42f36ddec83e907efe62086785f24fb.png)| QnA API Views |
+| Info  | Asp.Net Core Views using [GOV UK Design System](https://design-system.service.gov.uk/get-started/)  |
+| Build  | [![NuGet Badge](https://buildstats.info/nuget/SFA.DAS.QnA.Api.Views)](https://www.nuget.org/packages/SFA.DAS.QnA.Api.Views)  |
+
+
+See [Support Site](https://skillsfundingagency.atlassian.net/wiki/spaces/NDL/pages/1686274228/QnA+API+-+Developer+Overview) for EFSA developer details.
 
 ### Developer Setup
 
 #### Requirements
-- [.NET Core 2.2 SDK](https://dotnet.microsoft.com/download/dotnet-core/2.2)
-- An Azure Storage account (or the [Storage Emulator](https://go.microsoft.com/fwlink/?linkid=717179&clcid=0x409))
-- [Azure Storage Explorer](http://storageexplorer.com/)
+- Install [.NET Core 2.2 SDK](https://www.microsoft.com/net/download)
+- Install [Visual Studio 2019](https://www.visualstudio.com/downloads/) with these workloads:
+    - ASP.NET and web development
+- Install [SQL Server 2017 Developer Edition](https://go.microsoft.com/fwlink/?linkid=853016)
+- Install [SQL Management Studio](https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms)
+- Install [Azure Storage Emulator](https://go.microsoft.com/fwlink/?linkid=717179&clcid=0x409) (Make sure you are on atleast v5.3)
+- Install [Azure Storage Explorer](http://storageexplorer.com/) 
+- Administrator Access
+
+##### Alternatives (caveat emptor)
+
+- [Visual Studio Code](https://code.visualstudio.com/download)
 
 #### Setup
-- Obtain the appropriate JSON configuration file for this application.
-- Create a Configuration table in your storage account.
-- Add a row to the Configuration table with fields: PartitionKey: LOCAL, RowKey: SFA.DAS.QnA.Api_1.0, Data: {The contents of the JSON Configuration file}.
 
-##### Open the solution
-- Navigate to src/SFA.DAS.QnA.Api/
-- run `dotnet build`
-- run `dotnet test`
+- Clone this repository
+- Open Visual Studio as an administrator
+
+##### Publish Database
+
+- Build the solution SFA.DAS.QnA.sln
+- Either use Visual Studio's `Publish Database` tool to publish the database project SFA.DAS.QnA.Database to name {{database name}} on {{local instance name}}
+- To include the latest question sets when publishing a database to your local SQL Server, you need to ensure that `ProjectPath` variable contains the full path in the format  `{{drive}}:\{{project-folders}}\das-qna-api\src\SFA.DAS.QnA.Database\` 
+  - eg. `C:\Source\Repos\SFA\das-qna-api\src\SFA.DAS.QnA.Database\`
+
+    **Note**: The required trailing backslash on the path in the example above.
+
+or
+
+- Create a database manually named {{database name}} on {{local instance name}} and run each of the `.sql` scripts in the SFA.DAS.QnA.Database project.
+
+##### Config
+
+- Get the das-qna-api configuration json file from [das-employer-config](https://github.com/SkillsFundingAgency/das-employer-config/blob/master/das-qna-api/SFA.DAS.QnA.Api.json); which is a non-public repository.
+- Create a Configuration table in your (Development) local Azure Storage account.
+- Add a row to the Configuration table with fields: PartitionKey: LOCAL, RowKey: SFA.DAS.QnA.API_1.0, Data: {{The contents of the local config json file}}.
+- Update Configuration SFA.DAS.QnA.API_1.0, Data { "SqlConnectionstring":"Server={{local instance name}};Initial Catalog={{database name}};Trusted_Connection=True;" }
+
+##### Run the solution
+
+JSON configuration was created to work with dotnet run.
+
+- Navigate to src/SFA.DAS.QnA.API/
+- run `dotnet restore`
 - run `dotnet run`
 
-#### Swagger Documentation
-- https://localhost:5555/swagger/index.html
+or
 
-#### QnA Config Tool
-- https://qna-config.apprenticeships.education.gov.uk/
+- Set SFA.DAS.QnA.API as the startup project
+- Running the solution will launch the API in your browser
+	
+#### To run a local copy you may also require 
+To create a JSON structure required to author updates and create new question sets:
+- [Config Tool](https://github.com/SkillsFundingAgency/das-qna-config)
 
-####  SFA.DAS.AssessorService.QnA
-Web API project exposing HTTP REST end points
-- Refer to Swagger documentation
+To view how the question sets will be presented when integrated into a client application using [GOV UK Design System](https://design-system.service.gov.uk/get-started/):
+- [Config Preview](https://github.com/SkillsFundingAgency/das-qna-config-preview)
 
-#### SFA.DAS.QnA.Api.Types
-Common types to interact with the QnA Api
-- Published to Nuget: https://www.nuget.org/packages/SFA.DAS.QnA.Api.Types
-
-#### SFA.DAS.QnA.Api.Views
-Common views to display questions
-- Published to Nuget: https://www.nuget.org/packages/SFA.DAS.QnA.Api.Views
+### Important Concepts
 
 #### SFA.DAS.QnA.Application
 Contains all of the application logic to handle requests
@@ -63,16 +115,13 @@ Contains all of the application logic to handle requests
 Enables functionality to store and read configuration from Microsoft Azure storage
 
 - AuthenticationConfig
-	- JWT authentication
+  - JWT authentication
 	
 - FileStorageConfig
 	- Information relating to storage of files
 	
 - QnAConfig
 	- Connection string for the QnA Database
-
-#### SFA.DAS.QnA.Data
-Contains all repositories which interact with the QnA Database
 
 #### SFA.DAS.QnA.Database
 Database project containing setup in order to the create the QnA Database
@@ -88,14 +137,3 @@ Database project containing setup in order to the create the QnA Database
 	
 - projects/{subfolder}/sections
 	- Holds QnAData for each WorkflowSection
-	
-_NOTE:_ To publish the database to your local SQL Server, you need to ensure that `ProjectPath` contains the full path.
-- {drive}:\{project-folders}\das-qna-api\src\SFA.DAS.QnA.Database\
-- For example: *C:\projects\efsa\das-qna-api\src\SFA.DAS.QnA.Database\*
-
-#### SFA.DAS.QnA.Api.UnitTests
-Contains a collection of nUnit tests to verify functionality of QnA API HTTP REST end points
-
-#### SFA.DAS.QnA.Application.UnitTests
-Contains a collection of nUnit tests to verify functionality of QnA API application logic
-
