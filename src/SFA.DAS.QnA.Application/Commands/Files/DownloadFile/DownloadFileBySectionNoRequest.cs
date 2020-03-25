@@ -16,7 +16,7 @@ namespace SFA.DAS.QnA.Application.Commands.Files.DownloadFile
         public DownloadFileBySectionNoRequest(Guid applicationId, int sequenceNo, int sectionNo, string pageId, string questionId, string fileName)
         {
             ApplicationId = applicationId;
-            SequenceNo = sectionNo;
+            SequenceNo = sequenceNo;
             SectionNo = sectionNo;
             PageId = pageId;
             QuestionId = questionId;
