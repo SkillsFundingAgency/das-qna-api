@@ -444,6 +444,68 @@
           ]
       },
       {
+          "PageId": "111",
+          "SequenceId": null,
+          "SectionId": null,
+          "Title": "Enter the organisation's details",
+          "LinkTitle": "Enter the organisation's details",
+          "InfoText": "",
+          "Questions": [
+              {
+                  "QuestionId": "YO-111",
+                  "QuestionTag": "AddPartners",
+                  "Label": "Enter the organisation's details",
+                  "ShortLabel": "",
+                  "QuestionBodyText": "",
+                  "Hint": "",
+                  "Input": {
+                      "Type": "TabularData",
+                      "Validations": []
+                  },
+                  "Order": null
+              }
+          ],
+          "PageOfAnswers": [],
+          "Next": [
+              {
+                  "Action": "NextPage",
+                  "ReturnId": "140",
+                  "Conditions": [],
+                  "ConditionMet": false
+              }
+          ],
+          "Complete": false,
+          "AllowMultipleAnswers": false,
+          "Order": null,
+          "Active": false,
+          "Visible": true,
+          "Feedback": null,
+          "HasFeedback": false,
+          "NotRequiredOrgTypes": [],
+          "BodyText": "",
+          "ActivatedByPageId": "101", 
+          "NotRequiredConditions": [
+              {
+                  "Field": "SoleTradeOrPartnership",
+                  "IsOneOf": [
+                      "Sole trader"
+                  ]
+              },
+              {
+                "Field": "UKRLPVerificationCompany",
+                "IsOneOf": [
+                    "TRUE"
+                ]
+              },
+              {
+                  "Field": "UKRLPVerificationCharity",
+                  "IsOneOf": [
+                      "TRUE"
+                  ]
+              }
+          ]
+      },
+      {
           "PageId": "120",
           "SequenceId": null,
           "SectionId": null,
