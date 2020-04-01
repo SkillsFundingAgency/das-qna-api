@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using SFA.DAS.QnA.Api.Types.Page;
@@ -29,7 +30,18 @@ namespace SFA.DAS.QnA.Application.Commands
 
                 foreach (var option in question.Input.Options.Where(option => answerToThisQuestion?.Value != null && option.FurtherQuestions != null))
                 {
-                    if ( answerToThisQuestion.Value.Contains(option.Value))
+                    bool validateFurtherQuestions;
+
+                    if("CheckboxList".Equals(question.Input.Type, StringComparison.InvariantCultureIgnoreCase))
+                    {
+                        validateFurtherQuestions = answerToThisQuestion.Value.Contains(option.Value);
+                    }
+                    else
+                    {
+                        validateFurtherQuestions = answerToThisQuestion.Value.Equals(option.Value);
+                    }
+
+                    if (validateFurtherQuestions)
                     {
                         foreach (var furtherQuestion in option.FurtherQuestions)
                         {

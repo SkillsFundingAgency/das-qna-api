@@ -724,7 +724,7 @@
                     ]
                 }
             ],
-            "ActivatedByPageId": "270",
+            "ActivatedByPageId": "260,270",
             "BodyText": ""
         },
         {
@@ -1113,6 +1113,12 @@
                     "Field": "ITTPGTA",
                     "IsOneOf": [
                         "Yes"
+                    ]
+                },
+                {
+                    "Field": "OfstedFESkills",
+                    "IsOneOf": [
+                        "No"
                     ]
                 }
             ],
