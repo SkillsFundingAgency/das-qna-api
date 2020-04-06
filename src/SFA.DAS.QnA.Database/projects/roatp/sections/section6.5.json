@@ -10,7 +10,7 @@
             "SectionId": null,
             "Title": "What teaching methods will your organisation use to deliver 20% off the job training?",
             "LinkTitle": "Deliver 20% OTJ",
-            "InfoText": "<p class='govuk-body'>Find out more about <a class=\"govuk-link\" href=\"https://www.gov.uk/government/publications/apprenticeships-off-the-job-training\" target=\"_blank\">apprenticeship off the job training (opens in a new window or tab)</a>.</p>",
+            "InfoText": "<p class='govuk-body'>Find out more about <a class='govuk-link' href='https://www.gov.uk/government/publications/apprenticeships-off-the-job-training' target='_blank'>apprenticeship off the job training (opens in a new window or tab)</a>.</p>",
             "Questions": [
                 {
                     "QuestionId": "PAT-650",
@@ -119,8 +119,8 @@
                             },
                             {
                                 "Name": "MaxWordCount",
-								"Value": "275",
-								"ErrorMessage": "Your answer must be 275 words or less"	
+                                "Value": "275",
+                                "ErrorMessage": "Your answer must be 275 words or less"
                             }
                         ],
                         "DataEndpoint": null

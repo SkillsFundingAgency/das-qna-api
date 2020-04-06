@@ -18,7 +18,7 @@
                     "Label": "Do you understand that your organisation must develop and deliver apprenticeship training in line with the Institute for Apprenticeships and Technical Education's 'quality statement'?",
                     "ShortLabel": "",
                     "InputClasses": null,
-                    "QuestionBodyText": "<p class='govuk-body'>Find out more about <a href='https://www.instituteforapprenticeships.org/quality/what-is-a-quality-apprenticeship/' target='_blank'>the Institute for Apprenticeships and Technical Education's 'quality statement' (opens in a new window or tab)</a>.</p>",
+                    "QuestionBodyText": "<p class='govuk-body'>Find out more about <a href='https://www.instituteforapprenticeships.org/quality/what-is-a-quality-apprenticeship/' class='govuk-link' target='_blank'>the Institute for Apprenticeships and Technical Education's 'quality statement' (opens in a new window or tab)</a>.</p>",
                     "Hint": "",
                     "Input": {
                         "Type": "Radio",

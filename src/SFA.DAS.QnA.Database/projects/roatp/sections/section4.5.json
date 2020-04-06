@@ -67,7 +67,7 @@
         {
           "QuestionId": "PYA-55",
           "QuestionTag": null,
-          "Label": "<span class='govuk-label'>Full name</span>",
+          "Label": "Full name",
           "ShortLabel": "",
           "QuestionBodyText": "",
           "Hint": "",
@@ -91,7 +91,7 @@
         {
           "QuestionId": "PYA-56",
           "QuestionTag": null,
-          "Label": "<span class='govuk-label'>Email</span>",
+          "Label": "Email",
           "ShortLabel": "",
           "QuestionBodyText": "",
           "Hint": "",
@@ -120,7 +120,7 @@
         {
           "QuestionId": "PYA-57",
           "QuestionTag": null,
-          "Label": "<span class='govuk-label'>Contact number</span>",
+          "Label": "Contact number",
           "ShortLabel": "",
           "QuestionBodyText": "",
           "Hint": "",
@@ -151,7 +151,6 @@
           },
           "Order": null
         }
-
       ],
       "PageOfAnswers": [],
       "Next": [

@@ -1499,7 +1499,7 @@
                             {
                                 "Label": "A small or medium enterprise (SME)",
                                 "Value": "A small or medium enterprise (SME)",
-                                "HintText": "As explained by the <a href='https://ec.europa.eu/growth/smes/business-friendly-environment/sme-definition_en' target='blank'>European Commission (opens in a new window or tab).</a>"
+                                "HintText": "As explained by the <a href='https://ec.europa.eu/growth/smes/business-friendly-environment/sme-definition_en' class='govuk-link' target='blank'>European Commission (opens in a new window or tab).</a>"
                             },
                             {
                                 "Label": "A third sector organisation",
