@@ -134,7 +134,7 @@
                     "Hint": "",
                     "Input": {
                         "Type": "Text",
-                        "InputClasses": "govuk-!-width-two-thirds",
+                        "InputClasses": "app-uppercase govuk-!-width-two-thirds",
                         "Validations": [
                             {
                                 "Name": "Required",
