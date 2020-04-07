@@ -93,13 +93,13 @@
                 {
                     "QuestionId": "YO-21",
                     "QuestionTag": null,
-                    "Label": "<span class='govuk-label'>Company number</span>",
+                    "Label": "Company number",
                     "ShortLabel": "",
                     "QuestionBodyText": "",
                     "Hint": "",
                     "Input": {
                         "Type": "Text",
-                        "InputClasses": "app-uppercase",
+                        "InputClasses": "app-uppercase govuk-input--width-10",
                         "Validations": [
                             {
                                 "Name": "Required",
@@ -128,13 +128,13 @@
                 {
                     "QuestionId": "YO-22",
                     "QuestionTag": null,
-                    "Label": "<span class='govuk-label'>Company name</span>",
+                    "Label": "Company name",
                     "ShortLabel": "",
                     "QuestionBodyText": "",
                     "Hint": "",
                     "Input": {
                         "Type": "Text",
-                        "InputClasses": "app-uppercase",
+                        "InputClasses": "app-uppercase govuk-!-width-two-thirds",
                         "Validations": [
                             {
                                 "Name": "Required",
@@ -182,7 +182,7 @@
                 }
             ],
             "ActivatedByPageId": "20",
-            "BodyText": "<p class='govuk-body'>If you're not sure, <a href='https://beta.companieshouse.gov.uk/' target='_blank'>search for your UK ultimate parent company (opens in a new window or tab)</a>.</p>"
+            "BodyText": "<p class='govuk-body'>If you're not sure, <a href='https://beta.companieshouse.gov.uk/' class='govuk-link' target='_blank'>search for your UK ultimate parent company (opens in a new window or tab)</a>.</p>"
         },
         {
             "PageId": "30",
@@ -193,7 +193,7 @@
             "InfoText": "",
             "Details": {
                 "Title": "I do not have an ICO registration number",
-                "Body": "<p class='govuk-body'>To get an ICO registration number, you'll need to <a href='https://ico.org.uk/registration/new' target='_blank'>register with the ICO (opens in a new window or tab)</a>.</p><p class='govuk-body'>After you've registered and received an ICO registration number, sign back in to continue with this application.</p>"
+                "Body": "<p class='govuk-body'>To get an ICO registration number, you'll need to <a href='https://ico.org.uk/registration/new' class='govuk-link' target='_blank'>register with the ICO (opens in a new window or tab)</a>.</p><p class='govuk-body'>After you've registered and received an ICO registration number, sign back in to continue with this application.</p>"
             },
             "Questions": [
                 {
@@ -201,11 +201,11 @@
                     "QuestionTag": null,
                     "Label": "What is your organisation's Information Commissioner's Office (ICO) registration number?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body'>This is an 8-digit registration number from the ICO data protection public register. Any organisation that processes personal data must have one.</p><p class='govuk-body'>If you're not sure, <a href='https://ico.org.uk/ESDWebPages/Search' target='_blank'>search for your organisation on the ICO data protection register (opens in a new window or tab)</a></p>",
-                    "Hint": "<span class='govuk-label'>ICO registration number</span>",
+                    "QuestionBodyText": "<p class='govuk-body'>This is an 8-digit registration number from the ICO data protection public register. Any organisation that processes personal data must have one.</p><p class='govuk-body'>If you're not sure, <a href='https://ico.org.uk/ESDWebPages/Search' class='govuk-link' target='_blank'>search for your organisation on the ICO data protection register (opens in a new window or tab)</a></p>",
+                    "Hint": "",
                     "Input": {
                         "Type": "Text",
-                        "InputClasses": "app-uppercase",
+                        "InputClasses": "app-uppercase govuk-input--width-10",
                         "Validations": [
                             {
                                 "Name": "Required",
@@ -313,6 +313,7 @@
                                         "Label": "Enter main website address",
                                         "Input": {
                                             "Type": "Text",
+                                            "InputClasses": "govuk-!-width-two-thirds",
                                             "Options": [],
                                             "Validations": [
                                                 {
@@ -852,7 +853,7 @@
                     "QuestionTag": null,
                     "Label": "Your organisation is not eligible to apply to join RoATP",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body'>To apply as a main provider, your organisation must have been trading for at least 12 months.</p><p class='govuk-body'>You can try again once your organisation has enough trading history.</p><p class='govuk-body'><a href='https://www.gov.uk'>Back to GOV.UK</a></p>",
+                    "QuestionBodyText": "<p class='govuk-body'>To apply as a main provider, your organisation must have been trading for at least 12 months.</p><p class='govuk-body'>You can try again once your organisation has enough trading history.</p><p class='govuk-body'><a href='https://www.gov.uk' class='govuk-link'>Back to GOV.UK</a></p>",
                     "Hint": "",
                     "Input": {
                         "Type": "Hidden",
@@ -887,7 +888,7 @@
                     "QuestionTag": null,
                     "Label": "Your organisation is not eligible to apply to join RoATP",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body'>To apply as an employer provider, your organisation must have been trading for at least 12 months.</p><p class='govuk-body'>You can try again once your organisation has enough trading history.</p><p class='govuk-body'><a href='https://www.gov.uk'>Back to GOV.UK</a></p>",
+                    "QuestionBodyText": "<p class='govuk-body'>To apply as an employer provider, your organisation must have been trading for at least 12 months.</p><p class='govuk-body'>You can try again once your organisation has enough trading history.</p><p class='govuk-body'><a href='https://www.gov.uk' class='govuk-link'>Back to GOV.UK</a></p>",
                     "Hint": "",
                     "Input": {
                         "Type": "Hidden",
@@ -922,7 +923,7 @@
                     "QuestionTag": null,
                     "Label": "Your organisation is not eligible to apply to join RoATP",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body'>To apply as a supporting provider, your organisation must have been trading for at least 3 months.</p><p class='govuk-body'>You can try again once your organisation has enough trading history.</p><p class='govuk-body'><a href='https://www.gov.uk'>Back to GOV.UK</a></p>",
+                    "QuestionBodyText": "<p class='govuk-body'>To apply as a supporting provider, your organisation must have been trading for at least 3 months.</p><p class='govuk-body'>You can try again once your organisation has enough trading history.</p><p class='govuk-body'><a href='https://www.gov.uk' class='govuk-link'>Back to GOV.UK</a></p>",
                     "Hint": "",
                     "Input": {
                         "Type": "Hidden",

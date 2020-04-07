@@ -71,7 +71,7 @@
                             "QuestionTag": null,
                             "Contains": "Apprenticeship standards"
                         },
-						{
+                        {
                             "QuestionId": null,
                             "QuestionTag": "ApplyProviderRoute",
                             "MustEqual": "1"
@@ -88,7 +88,7 @@
                             "QuestionTag": null,
                             "Contains": "Apprenticeship frameworks"
                         },
-						{
+                        {
                             "QuestionId": null,
                             "QuestionTag": "ApplyProviderRoute",
                             "MustEqual": "1"
@@ -96,12 +96,12 @@
                     ],
                     "ConditionMet": false
                 },
-				{
-				"Action": "ReturnToSection",
+                {
+                    "Action": "ReturnToSection",
                     "ReturnId": "",
                     "Conditions": [],
                     "ConditionMet": false
-				}
+                }
             ],
             "ActivatedByPageId": null,
             "BodyText": ""
@@ -172,7 +172,7 @@
                             "QuestionTag": null,
                             "Contains": "Apprenticeship standards"
                         },
-						{
+                        {
                             "QuestionId": null,
                             "QuestionTag": "ApplyProviderRoute",
                             "MustEqual": "2"
@@ -189,7 +189,7 @@
                             "QuestionTag": null,
                             "Contains": "Apprenticeship frameworks"
                         },
-						{
+                        {
                             "QuestionId": null,
                             "QuestionTag": "ApplyProviderRoute",
                             "MustEqual": "2"
@@ -197,12 +197,12 @@
                     ],
                     "ConditionMet": false
                 },
-				{
-				"Action": "ReturnToSection",
+                {
+                    "Action": "ReturnToSection",
                     "ReturnId": "",
                     "Conditions": [],
                     "ConditionMet": false
-				}
+                }
             ],
             "PageOfAnswers": [],
             "ActivatedByPageId": null,
@@ -289,7 +289,7 @@
                             "QuestionTag": null,
                             "Contains": "Full apprenticeship standards"
                         },
-						{
+                        {
                             "QuestionId": null,
                             "QuestionTag": "ApplyProviderRoute",
                             "MustEqual": "3"
@@ -306,7 +306,7 @@
                             "QuestionTag": null,
                             "Contains": "Part apprenticeship standards"
                         },
-						{
+                        {
                             "QuestionId": null,
                             "QuestionTag": "ApplyProviderRoute",
                             "MustEqual": "3"
@@ -323,7 +323,7 @@
                             "QuestionTag": null,
                             "Contains": "Full apprenticeship frameworks"
                         },
-						{
+                        {
                             "QuestionId": null,
                             "QuestionTag": "ApplyProviderRoute",
                             "MustEqual": "3"
@@ -340,7 +340,7 @@
                             "QuestionTag": null,
                             "Contains": "Part apprenticeship frameworks"
                         },
-						{
+                        {
                             "QuestionId": null,
                             "QuestionTag": "ApplyProviderRoute",
                             "MustEqual": "3"
@@ -357,7 +357,7 @@
                             "QuestionTag": null,
                             "Contains": "Functional skills"
                         },
-						{
+                        {
                             "QuestionId": null,
                             "QuestionTag": "ApplyProviderRoute",
                             "MustEqual": "3"
@@ -365,12 +365,12 @@
                     ],
                     "ConditionMet": false
                 },
-				{
-				"Action": "ReturnToSection",
+                {
+                    "Action": "ReturnToSection",
                     "ReturnId": "",
                     "Conditions": [],
                     "ConditionMet": false
-				}
+                }
             ],
             "PageOfAnswers": [],
             "ActivatedByPageId": null,
@@ -447,7 +447,7 @@
                     "QuestionTag": null,
                     "Label": "Offering apprenticeship frameworks",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body' id='pat-offering-apprenticeship-frameworks'>Apprenticeship frameworks will be replaced by apprenticeship standards by 1 August 2020. </p><p class='govuk-body govuk-!-font-weight-bold'>Does your organisation have a plan to transition from apprenticeship frameworks to apprenticeship standards?</p><p class='govuk-body'>Find out more on <a href='https://www.gov.uk/government/publications/removal-of-apprenticeship-frameworks' target='_blank'>the withdrawal of apprenticeship frameworks  (opens in a new window or tab)</a>.</p>",
+                    "QuestionBodyText": "<p class='govuk-body' id='pat-offering-apprenticeship-frameworks'>Apprenticeship frameworks will be replaced by apprenticeship standards by 1 August 2020. </p><p class='govuk-body govuk-!-font-weight-bold'>Does your organisation have a plan to transition from apprenticeship frameworks to apprenticeship standards?</p><p class='govuk-body'>Find out more on <a href='https://www.gov.uk/government/publications/removal-of-apprenticeship-frameworks' class='govuk-link' target='_blank'>the withdrawal of apprenticeship frameworks  (opens in a new window or tab)</a>.</p>",
                     "Hint": "",
                     "Input": {
                         "Type": "Radio",
@@ -498,12 +498,12 @@
                     ],
                     "ConditionMet": false
                 },
-				{
-				"Action": "ReturnToSection",
+                {
+                    "Action": "ReturnToSection",
                     "ReturnId": "",
                     "Conditions": [],
                     "ConditionMet": false
-				}
+                }
             ],
             "Complete": false,
             "AllowMultipleAnswers": false,
@@ -519,7 +519,7 @@
                         "3"
                     ]
                 },
-				{
+                {
                     "Field": "PATTypeOfTrainingMainEmployer",
                     "IsOneOf": [
                         "Apprenticeship standards,Apprenticeship frameworks"
@@ -584,19 +584,19 @@
                     ]
                 }
             ],
-			"Next": [
+            "Next": [
                 {
                     "Action": "NextPage",
                     "ReturnId": "6900",
                     "Conditions": [],
                     "ConditionMet": false
                 },
-				{
-				"Action": "ReturnToSection",
+                {
+                    "Action": "ReturnToSection",
                     "ReturnId": "",
                     "Conditions": [],
                     "ConditionMet": false
-				}
+                }
             ],
             "ActivatedByPageId": "6050",
             "BodyText": ""
@@ -702,7 +702,7 @@
                     "QuestionTag": null,
                     "Label": "Offering apprenticeship frameworks",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body' id='pat-offering-apprenticeship-frameworks'>Apprenticeship frameworks will be replaced by apprenticeship standards by 1 August 2020. </p><p class='govuk-body' >Does your organisation have a plan to transition from apprenticeship frameworks to apprenticeship standards?</p><p class='govuk-body'>Find out more on <a href='https://www.gov.uk/government/publications/removal-of-apprenticeship-frameworks' target='_blank'>the withdrawal of apprenticeship frameworks  (opens in a new window or tab)</a>.</p>",
+                    "QuestionBodyText": "<p class='govuk-body' id='pat-offering-apprenticeship-frameworks'>Apprenticeship frameworks will be replaced by apprenticeship standards by 1 August 2020. </p><p class='govuk-body' >Does your organisation have a plan to transition from apprenticeship frameworks to apprenticeship standards?</p><p class='govuk-body'>Find out more on <a href='https://www.gov.uk/government/publications/removal-of-apprenticeship-frameworks' class='govuk-link' target='_blank'>the withdrawal of apprenticeship frameworks  (opens in a new window or tab)</a>.</p>",
                     "Hint": "",
                     "Input": {
                         "Type": "Radio",
@@ -753,12 +753,12 @@
                     ],
                     "ConditionMet": false
                 },
-				{
-				"Action": "ReturnToSection",
+                {
+                    "Action": "ReturnToSection",
                     "ReturnId": "",
                     "Conditions": [],
                     "ConditionMet": false
-				}
+                }
             ],
             "Complete": false,
             "AllowMultipleAnswers": false,
@@ -775,30 +775,34 @@
                         "2"
                     ]
                 },
-				{
-				"Field": "PATTypeOfTrainingSupporting",
+                {
+                    "Field": "PATTypeOfTrainingSupporting",
                     "ContainsAllOf": [
-                        "Full apprenticeship standards","Full apprenticeship frameworks"			
+                        "Full apprenticeship standards",
+                        "Full apprenticeship frameworks"
                     ]
-				},
-				{
-				"Field": "PATTypeOfTrainingSupporting",
+                },
+                {
+                    "Field": "PATTypeOfTrainingSupporting",
                     "ContainsAllOf": [
-                        "Full apprenticeship standards","Part apprenticeship frameworks"			
+                        "Full apprenticeship standards",
+                        "Part apprenticeship frameworks"
                     ]
-				},
-				{
-				"Field": "PATTypeOfTrainingSupporting",
+                },
+                {
+                    "Field": "PATTypeOfTrainingSupporting",
                     "ContainsAllOf": [
-                        "Part apprenticeship standards","Full apprenticeship frameworks"			
+                        "Part apprenticeship standards",
+                        "Full apprenticeship frameworks"
                     ]
-				},
-				{
-				"Field": "PATTypeOfTrainingSupporting",
+                },
+                {
+                    "Field": "PATTypeOfTrainingSupporting",
                     "ContainsAllOf": [
-                        "Part apprenticeship standards","Part apprenticeship frameworks"			
+                        "Part apprenticeship standards",
+                        "Part apprenticeship frameworks"
                     ]
-				}
+                }
             ],
             "ActivatedByPageId": "6023",
             "BodyText": ""
@@ -850,7 +854,7 @@
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
-			 "NotRequiredConditions": [
+            "NotRequiredConditions": [
                 {
                     "Field": "ApplyProviderRoute",
                     "IsOneOf": [
@@ -859,7 +863,7 @@
                     ]
                 }
             ],
-			"Next": [
+            "Next": [
                 {
                     "Action": "NextPage",
                     "ReturnId": "6900",
@@ -978,12 +982,14 @@
                 }
             ],
             "PageOfAnswers": [],
-            "Next": [{
+            "Next": [
+                {
                     "Action": "ReturnToSection",
                     "ReturnId": "",
                     "Conditions": [],
                     "ConditionMet": false
-                }],
+                }
+            ],
             "Complete": false,
             "AllowMultipleAnswers": false,
             "Order": null,
@@ -1001,59 +1007,61 @@
             "Title": "Who can we contact about the apprenticeships your organisation will deliver?",
             "LinkTitle": "Who can we contact about the apprenticeships your organisation will deliver?",
             "InfoText": "",
-            "Questions": [{
-				  "QuestionId": "PAT-671",
-				  "QuestionTag": null,
-				  "Label": "<span class='govuk-label'>Full name</span>",
-				  "ShortLabel": "",
-				  "QuestionBodyText": "",
-				  "Hint": "",
-				  "Input": {
-					"Type": "Text",
-					"Validations": [
-					  {
-						"Name": "Required",
-						"Value": null,
-						"ErrorMessage": "Enter a full name"
-					  },
-					  {
-						"Name": "MaxLength",
-						"Value": 255,
-						"ErrorMessage": "Enter a full name using 255 characters or less"
-					  }
-					]
-				  },
-				  "Order": null
-				},
-				{
-				  "QuestionId": "PAT-672",
-				  "QuestionTag": null,
-				  "Label": "<span class='govuk-label'>Email</span>",
-				  "ShortLabel": "",
-				  "QuestionBodyText": "",
-				  "Hint": "",
-				  "Input": {
-					"Type": "Text",
-					"Validations": [
-					  {
-						"Name": "Required",
-						"Value": null,
-						"ErrorMessage": "Enter a valid email"
-					  },
-					  {
-						"Name": "MaxLength",
-						"Value": 70,
-						"ErrorMessage": "Enter an email using 70 characters or less"
-					  },
-					  {
-						"Name": "Email",
-						"Value": null,
-						"ErrorMessage": "Enter an email in the correct format, like name@example.com"
-					  }
-					]
-				  },
-				  "Order": null
-				}],
+            "Questions": [
+                {
+                    "QuestionId": "PAT-671",
+                    "QuestionTag": null,
+                    "Label": "Full name",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "Text",
+                        "Validations": [
+                            {
+                                "Name": "Required",
+                                "Value": null,
+                                "ErrorMessage": "Enter a full name"
+                            },
+                            {
+                                "Name": "MaxLength",
+                                "Value": 255,
+                                "ErrorMessage": "Enter a full name using 255 characters or less"
+                            }
+                        ]
+                    },
+                    "Order": null
+                },
+                {
+                    "QuestionId": "PAT-672",
+                    "QuestionTag": null,
+                    "Label": "Email",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "Text",
+                        "Validations": [
+                            {
+                                "Name": "Required",
+                                "Value": null,
+                                "ErrorMessage": "Enter a valid email"
+                            },
+                            {
+                                "Name": "MaxLength",
+                                "Value": 70,
+                                "ErrorMessage": "Enter an email using 70 characters or less"
+                            },
+                            {
+                                "Name": "Email",
+                                "Value": null,
+                                "ErrorMessage": "Enter an email in the correct format, like name@example.com"
+                            }
+                        ]
+                    },
+                    "Order": null
+                }
+            ],
             "PageOfAnswers": [],
             "Next": [
                 {
@@ -1070,14 +1078,13 @@
             "Details": null,
             "DisplayType": null,
             "Feedback": null,
-			"NotRequiredConditions": [
-					{
-						"Field": "ApplyProviderRoute",
-						"IsOneOf": [
-							"2"
-						]
-					}
-					
+            "NotRequiredConditions": [
+                {
+                    "Field": "ApplyProviderRoute",
+                    "IsOneOf": [
+                        "2"
+                    ]
+                }
             ],
             "ActivatedByPageId": "6020,6022,6800",
             "BodyText": "<p class='govuk-body'>This must be the person who will use the 'Publish to Course Directory' service to enter your organisation's apprenticeships.</p>"
@@ -1089,7 +1096,8 @@
             "Title": "How does your organisation plan to engage and work with awarding bodies?",
             "LinkTitle": "How does your organisation plan to engage and work with awarding bodies?",
             "InfoText": "",
-            "Questions": [{
+            "Questions": [
+                {
                     "QuestionId": "PAT-800",
                     "QuestionTag": null,
                     "Label": "How does your organisation plan to engage and work with awarding bodies?",
@@ -1118,13 +1126,15 @@
                     "Order": null,
                     "Value": "",
                     "ErrorMessages": null
-                }],
+                }
+            ],
             "PageOfAnswers": [],
-            "Next": [{
+            "Next": [
+                {
                     "Action": "NextPage",
                     "ReturnId": "6700",
-                    "Conditions": [		
-						{
+                    "Conditions": [
+                        {
                             "QuestionId": null,
                             "QuestionTag": "ApplyProviderRoute",
                             "MustEqual": "1"
@@ -1132,12 +1142,13 @@
                     ],
                     "ConditionMet": false
                 },
-				{
+                {
                     "Action": "ReturnToSection",
                     "ReturnId": "",
                     "Conditions": [],
                     "ConditionMet": false
-                }],
+                }
+            ],
             "Complete": false,
             "AllowMultipleAnswers": false,
             "Order": null,
@@ -1200,13 +1211,13 @@
                 {
                     "Action": "NextPage",
                     "ReturnId": "6800",
-                    "Conditions": [		
-						{
+                    "Conditions": [
+                        {
                             "QuestionId": null,
                             "QuestionTag": "ApplyProviderRoute",
                             "MustEqual": "2"
-                        },					
-						{
+                        },
+                        {
                             "QuestionId": null,
                             "QuestionTag": "PATTypeOfTrainingMainEmployer",
                             "Contains": "Apprenticeship frameworks"
@@ -1214,16 +1225,16 @@
                     ],
                     "ConditionMet": false
                 },
-				{ 
+                {
                     "Action": "NextPage",
                     "ReturnId": "6800",
-                    "Conditions": [                    
-						{
+                    "Conditions": [
+                        {
                             "QuestionId": null,
                             "QuestionTag": "ApplyProviderRoute",
                             "MustEqual": "1"
                         },
-						{
+                        {
                             "QuestionId": null,
                             "QuestionTag": "PATTypeOfTrainingMainEmployer",
                             "Contains": "Apprenticeship frameworks"
@@ -1234,13 +1245,13 @@
                 {
                     "Action": "NextPage",
                     "ReturnId": "6700",
-                    "Conditions": [   
-						{
+                    "Conditions": [
+                        {
                             "QuestionId": null,
                             "QuestionTag": "ApplyProviderRoute",
                             "MustEqual": "1"
-                        },					
-						{
+                        },
+                        {
                             "QuestionId": null,
                             "QuestionTag": "PATTypeOfTrainingMainEmployer",
                             "Contains": "Apprenticeship standards"

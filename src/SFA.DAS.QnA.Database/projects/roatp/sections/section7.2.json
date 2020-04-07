@@ -11,20 +11,23 @@
             "Title": "Tell us who has overall accountability for apprenticeships in your organisation",
             "LinkTitle": "Tell us who has overall accountability for apprenticeships in your organisation",
             "InfoText": "",
-            "Questions": [{
+            "Questions": [
+                {
                     "QuestionId": "DAT-10.1",
                     "QuestionTag": null,
-                    "Label": "<span class='govuk-label'>Full name</span>",
+                    "Label": "Full name",
                     "QuestionBodyText": "",
                     "ShortLabel": "",
                     "Hint": "",
                     "Input": {
                         "Type": "Text",
-                        "Validations": [{
+                        "Validations": [
+                            {
                                 "Name": "Required",
                                 "Value": "",
                                 "ErrorMessage": "Enter a full name"
-                            }, {
+                            },
+                            {
                                 "Name": "MaxLength",
                                 "Value": "255",
                                 "ErrorMessage": "Enter a full name using 255 characters or less"
@@ -37,24 +40,28 @@
                     "Order": null,
                     "Value": "",
                     "ErrorMessages": null
-                }, {
+                },
+                {
                     "QuestionId": "DAT-10.2",
                     "QuestionTag": null,
-                    "Label": "<span class='govuk-label'>Email</span>",
+                    "Label": "Email",
                     "QuestionBodyText": "",
                     "ShortLabel": "",
                     "Hint": "",
                     "Input": {
                         "Type": "Email",
-                        "Validations": [{
+                        "Validations": [
+                            {
                                 "Name": "Required",
                                 "Value": "",
                                 "ErrorMessage": "Enter a valid email"
-                            }, {
+                            },
+                            {
                                 "Name": "Email",
                                 "Value": "",
-                                "ErrorMessage": "Enter an email in the correct format, like name@example.com"                                
-                            }, {
+                                "ErrorMessage": "Enter an email in the correct format, like name@example.com"
+                            },
+                            {
                                 "Name": "MaxLength",
                                 "Value": "70",
                                 "ErrorMessage": "Enter an email using 70 characters or less"
@@ -67,28 +74,33 @@
                     "Order": null,
                     "Value": "",
                     "ErrorMessages": null
-                }, {
+                },
+                {
                     "QuestionId": "DAT-10.3",
                     "QuestionTag": null,
-                    "Label": "<span class='govuk-label'>Contact number</span>",
+                    "Label": "Contact number",
                     "QuestionBodyText": "",
                     "ShortLabel": "",
                     "Hint": "",
                     "Input": {
                         "Type": "Number",
-                        "Validations": [{
+                        "Validations": [
+                            {
                                 "Name": "Required",
                                 "Value": "",
                                 "ErrorMessage": "Enter a valid contact number using only numbers"
-                            }, {
+                            },
+                            {
                                 "Name": "Number",
                                 "Value": "",
                                 "ErrorMessage": "Enter a valid contact number using only numbers"
-                            }, {
+                            },
+                            {
                                 "Name": "MinLength",
                                 "Value": "10",
                                 "ErrorMessage": "Enter a contact number using 10 digits or more"
-                            }, {
+                            },
+                            {
                                 "Name": "MaxLength",
                                 "Value": "20",
                                 "ErrorMessage": "Enter a contact number using 20 digits or less"
