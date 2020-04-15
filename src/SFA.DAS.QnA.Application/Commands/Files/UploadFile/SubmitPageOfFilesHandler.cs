@@ -73,7 +73,7 @@ namespace SFA.DAS.QnA.Application.Commands.Files.UploadFile
             }
             else if (page.Questions.Any())
             {
-                if (page.Questions.Any(q => "FileUpload".Equals(q.Input?.Type, StringComparison.InvariantCultureIgnoreCase)))
+                if (page.Questions.Any(q => !"FileUpload".Equals(q.Input?.Type, StringComparison.InvariantCultureIgnoreCase)))
                 {
                     return new HandlerResponse<SetPageAnswersResponse>(success: false, message: "Pages cannot contain a mixture of FileUploads and other Question Types.");
                 }
