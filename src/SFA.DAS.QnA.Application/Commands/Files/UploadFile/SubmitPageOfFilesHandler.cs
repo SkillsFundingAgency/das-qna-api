@@ -67,6 +67,10 @@ namespace SFA.DAS.QnA.Application.Commands.Files.UploadFile
             {
                 return new HandlerResponse<SetPageAnswersResponse>(success: false, message: "No files specified.");
             }
+            else if (request.Files.Any(f => f.Name is null))
+            {
+                return new HandlerResponse<SetPageAnswersResponse>(success: false, message: "All files must specify which question they are related to.");
+            }
             else if (page.AllowMultipleAnswers)
             {
                 return new HandlerResponse<SetPageAnswersResponse>(success: false, message: "This endpoint cannot be used for Multiple Answers pages. Use AddAnswer / RemoveAnswer instead.");
