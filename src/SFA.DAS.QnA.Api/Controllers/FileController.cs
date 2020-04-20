@@ -66,7 +66,22 @@ namespace SFA.DAS.QnA.Api.Controllers
             
             return File(downloadResultValue.Stream, downloadResultValue.ContentType, downloadResultValue.FileName);
         }
-        
+
+        [HttpGet("{applicationId}/sequences/{sequenceNo}/sections/{sectionNo}/pages/{pageId}/questions/{questionId}/download")]
+        public async Task<IActionResult> DownloadFileOrZipOfFiles(Guid applicationId, int sequenceNo, int sectionNo, string pageId, string questionId)
+        {
+            var downloadResult = await _mediator.Send(new DownloadFileBySectionNoRequest(applicationId, sequenceNo, sectionNo, pageId, questionId, null));
+
+            if (!downloadResult.Success)
+            {
+                return BadRequest(new BadRequestError(downloadResult.Message));
+            }
+
+            var downloadResultValue = downloadResult.Value;
+
+            return File(downloadResultValue.Stream, downloadResultValue.ContentType, downloadResultValue.FileName);
+        }
+
         [HttpGet("{applicationId}/sections/{sectionId}/pages/{pageId}/questions/{questionId}/download/{fileName}")]
         public async Task<IActionResult> DownloadFile(Guid applicationId, Guid sectionId, string pageId, string questionId, string fileName)
         {
