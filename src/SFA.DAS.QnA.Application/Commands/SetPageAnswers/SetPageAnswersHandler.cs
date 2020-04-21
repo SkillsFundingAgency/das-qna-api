@@ -52,17 +52,15 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
             var section =  _dataContext.ApplicationSections.AsNoTracking().SingleOrDefault(sec => sec.Id == request.SectionId && sec.ApplicationId == request.ApplicationId);
             var page = section?.QnAData?.Pages.SingleOrDefault(p => p.PageId == request.PageId);
 
-            var answers = GetAnswersFromRequest(request);
-
             if (page is null)
             {
                 return new HandlerResponse<SetPageAnswersResponse>(success: false, message: "Cannot find requested page.");
             }
-            else if(answers is null || !answers.Any())
+            else if(request.Answers is null)
             {
                 return new HandlerResponse<SetPageAnswersResponse>(success: false, message: "No answers specified.");
             }
-            else if(answers.Any(a => a.QuestionId is null))
+            else if(request.Answers.Any(a => a.QuestionId is null))
             {
                 return new HandlerResponse<SetPageAnswersResponse>(success: false, message: "All answers must specify which question they are related to.");
             }
@@ -72,6 +70,8 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
             }
             else if (page.Questions.Any())
             {
+                var answers = GetAnswersFromRequest(request);
+
                 if (page.Questions.All(q => "FileUpload".Equals(q.Input?.Type, StringComparison.InvariantCultureIgnoreCase)))
                 {
                     return new HandlerResponse<SetPageAnswersResponse>(success: false, message: "This endpoint cannot be used for FileUpload questions. Use Upload / DeleteFile instead.");
