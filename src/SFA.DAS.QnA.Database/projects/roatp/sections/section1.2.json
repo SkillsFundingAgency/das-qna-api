@@ -549,7 +549,7 @@
                     ]
                 }
             ],
-            "ActivatedByPageId": "40",
+            "ActivatedByPageId": "30,40",
             "BodyText": ""
         },
         {
@@ -693,7 +693,7 @@
                     ]
                 }
             ],
-            "ActivatedByPageId": "40",
+            "ActivatedByPageId": "30,40",
             "BodyText": ""
         },
         {
