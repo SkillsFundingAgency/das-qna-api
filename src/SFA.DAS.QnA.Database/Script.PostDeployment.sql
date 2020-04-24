@@ -13,4 +13,8 @@ Post-Deployment Script Template
 -- deploy QnA Workflow Definitions for all projects
 :r .\projects\Inject-projects.sql
 
+-- Deploy any One Off Scripts
+-- NOTE: Remember to make these idempotent and remove when not required any more
+:r .\OneOffScripts\APR-1583.sql
+
 -- END

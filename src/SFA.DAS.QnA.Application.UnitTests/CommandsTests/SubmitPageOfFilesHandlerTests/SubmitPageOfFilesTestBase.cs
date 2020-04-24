@@ -14,12 +14,17 @@ using SFA.DAS.QnA.Application.Commands.Files;
 using System.IO;
 using SFA.DAS.QnA.Application.Services;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http.Internal;
+using System.Text;
 
 namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.SubmitPageOfFilesHandlerTests
 {
     [TestFixture]
     public class SubmitPageOfFilesTestBase
     {
+        private const string _fileStorageConnectionString = "UseDevelopmentStorage=true;DevelopmentStorageProxyUri=http://127.0.0.1";
+        private string _fileStorageContainerName = Guid.NewGuid().ToString();
+
         protected Guid ApplicationId;
         protected Guid SectionId;
         protected SubmitPageOfFilesHandler Handler;
@@ -33,7 +38,7 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.SubmitPageOfFilesHandl
             DataContext = DataContextHelpers.GetInMemoryDataContext();
             NotRequiredProcessor = new NotRequiredProcessor();
             TagProcessingService = new TagProcessingService(DataContext);
-            var fileStorageConfig = Options.Create(new FileStorageConfig { ContainerName = "", FileEncryptionKey = "", StorageConnectionString = "" });
+            var fileStorageConfig = GetFileStorageConfig();
             
             var encryptionService = Substitute.For<IEncryptionService>();
             encryptionService.Encrypt(Arg.Any<Stream>()).Returns(callinfo => callinfo.ArgAt<Stream>(0)); // Don't Encrypt stream
@@ -72,6 +77,20 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.SubmitPageOfFilesHandl
             await DataContext.Applications.AddAsync(new Data.Entities.Application() { Id = ApplicationId, ApplicationData = "{}" });
 
             await DataContext.SaveChangesAsync();
+        }
+
+        private IOptions<FileStorageConfig> GetFileStorageConfig()
+        {
+            return Options.Create(new FileStorageConfig { ContainerName = _fileStorageContainerName, StorageConnectionString = _fileStorageConnectionString });
+        }
+
+        protected static FormFile GenerateFile(string content, string questionId, string filename)
+        {
+            return new FormFile(new MemoryStream(Encoding.UTF8.GetBytes(content)), 0, 0, questionId, filename)
+                                {
+                                    Headers = new HeaderDictionary(),
+                                    ContentType = "application/octet-stream"
+                                };
         }
     }
 }

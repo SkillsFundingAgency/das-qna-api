@@ -2746,81 +2746,6 @@
             "ActivatedByPageId": "2170,2190,2195"
         },
         {
-            "PageId": "2260",
-            "SequenceId": null,
-            "SectionId": null,
-            "Title": "Who prepared the answers and uploads in this section?",
-            "LinkTitle": "Who prepared the answers and uploads in this section?",
-            "InfoText": "",
-            "Questions": [
-                {
-                    "QuestionId": "FH-410",
-                    "QuestionTag": null,
-                    "Label": "Who prepared the answers and uploads in this section?",
-                    "ShortLabel": "",
-                    "InputClasses": null,
-                    "QuestionBodyText": "<p class='govuk-hint'>Select all that apply.</p>",
-                    "Hint": "",
-                    "Input": {
-                        "Type": "CheckboxList",
-                        "InputClasses": null,
-                        "Options": [
-                            {
-                                "Value": "An employee in your organisation",
-                                "Label": "An employee in your organisation",
-                                "HintText": ""
-                            },
-                            {
-                                "Value": "An accountant or auditor",
-                                "Label": "An accountant or auditor",
-                                "HintText": ""
-                            },
-                            {
-                                "Value": "A paid consultant",
-                                "Label": "A paid consultant",
-                                "HintText": ""
-                            },
-                            {
-                                "Value": "Another third party",
-                                "Label": "Another third party",
-                                "HintText": ""
-                            }
-                        ],
-                        "Validations": [
-                            {
-                                "Name": "Required",
-                                "Value": "",
-                                "ErrorMessage": "Tell us who prepared the answers and uploads in this section"
-                            }
-                        ],
-                        "DataEndpoint": null
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
-                }
-            ],
-            "PageOfAnswers": [],
-            "Next": [
-                {
-                    "Action": "ReturnToSection",
-                    "ReturnId": "2.2",
-                    "Conditions": [],
-                    "ConditionMet": false
-                }
-            ],
-            "Complete": false,
-            "AllowMultipleAnswers": false,
-            "Order": null,
-            "Active": false,
-            "NotRequiredConditions": [],
-            "BodyText": "",
-            "Details": null,
-            "DisplayType": null,
-            "Feedback": null,
-            "ActivatedByPageId": "2160,2200,2220,2250"
-        },
-        {
             "PageId": "2210",
             "SequenceId": null,
             "SectionId": null,
@@ -3189,6 +3114,81 @@
             "DisplayType": null,
             "Feedback": null,
             "ActivatedByPageId": "2240"
+        },
+        {
+            "PageId": "2260",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "Who prepared the answers and uploads in this section?",
+            "LinkTitle": "Who prepared the answers and uploads in this section?",
+            "InfoText": "",
+            "Questions": [
+                {
+                    "QuestionId": "FH-410",
+                    "QuestionTag": null,
+                    "Label": "Who prepared the answers and uploads in this section?",
+                    "ShortLabel": "",
+                    "InputClasses": null,
+                    "QuestionBodyText": "<p class='govuk-hint'>Select all that apply.</p>",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "CheckboxList",
+                        "InputClasses": null,
+                        "Options": [
+                            {
+                                "Value": "An employee in your organisation",
+                                "Label": "An employee in your organisation",
+                                "HintText": ""
+                            },
+                            {
+                                "Value": "An accountant or auditor",
+                                "Label": "An accountant or auditor",
+                                "HintText": ""
+                            },
+                            {
+                                "Value": "A paid consultant",
+                                "Label": "A paid consultant",
+                                "HintText": ""
+                            },
+                            {
+                                "Value": "Another third party",
+                                "Label": "Another third party",
+                                "HintText": ""
+                            }
+                        ],
+                        "Validations": [
+                            {
+                                "Name": "Required",
+                                "Value": "",
+                                "ErrorMessage": "Tell us who prepared the answers and uploads in this section"
+                            }
+                        ],
+                        "DataEndpoint": null
+                    },
+                    "Order": null,
+                    "Value": "",
+                    "ErrorMessages": null
+                }
+            ],
+            "PageOfAnswers": [],
+            "Next": [
+                {
+                    "Action": "ReturnToSection",
+                    "ReturnId": "2.2",
+                    "Conditions": [],
+                    "ConditionMet": false
+                }
+            ],
+            "Complete": false,
+            "AllowMultipleAnswers": false,
+            "Order": null,
+            "Active": false,
+            "NotRequiredConditions": [],
+            "BodyText": "",
+            "Details": null,
+            "DisplayType": null,
+            "Feedback": null,
+            "ActivatedByPageId": "2160,2200,2220,2250"
         }
     ]
 }
