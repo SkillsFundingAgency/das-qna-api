@@ -89,6 +89,7 @@
             "Title": "Enter your organisation's ultimate parent company details",
             "LinkTitle": "Enter your organisation's ultimate parent company details",
             "InfoText": "",
+			"ShowTitleAsCaption": true,
             "Questions": [
                 {
                     "QuestionId": "YO-21",
