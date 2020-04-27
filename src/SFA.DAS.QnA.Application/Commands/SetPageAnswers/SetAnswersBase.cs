@@ -415,7 +415,7 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
 
                                 foreach (var nextPagesAction in nextPage.Next)
                                 {
-                                    ActivateDependentPages(nextPagesAction, branchingPageId, qnaData, nextPage);
+                                    ActivateDependentPages(nextPagesAction, nextPage.PageId, qnaData, nextPage);
                                 }
                             }
                         }
