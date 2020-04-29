@@ -16,7 +16,7 @@
         {
             var response = await Handler.Handle(new SubmitPageOfFilesRequest(ApplicationId, SectionId, "NOT_FOUND", new FormFileCollection
             {
-                new FormFile(new MemoryStream(Encoding.UTF8.GetBytes("This is a dummy file")), 0, 0, "Q1", "File.txt")
+                GenerateFile("This is a dummy file", "Q1", "File.txt")
             }), CancellationToken.None);
 
             response.Success.Should().BeFalse();
