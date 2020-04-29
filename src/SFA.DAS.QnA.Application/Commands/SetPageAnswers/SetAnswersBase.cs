@@ -389,7 +389,7 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
 
                             foreach (var nextPagesAction in nextPage.Next)
                             {
-                                DeactivateDependentPages(nextPagesAction, branchingPageId, qnaData, nextPage, true);
+                                DeactivateDependentPages(nextPagesAction, nextPage.PageId, qnaData, nextPage, true);
                             }
                         }
                     }

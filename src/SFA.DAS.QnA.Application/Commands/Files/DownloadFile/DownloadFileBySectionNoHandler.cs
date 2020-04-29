@@ -9,26 +9,26 @@ using SFA.DAS.QnA.Data;
 
 namespace SFA.DAS.QnA.Application.Commands.Files.DownloadFile
 {
-    public class DownloadFileHandler :IRequestHandler<DownloadFileRequest, HandlerResponse<DownloadFile>>
+    public class DownloadFileBySectionNoHandler :IRequestHandler<DownloadFileBySectionNoRequest, HandlerResponse<DownloadFile>>
     {
         private readonly IOptions<FileStorageConfig> _fileStorageConfig;
         private readonly IEncryptionService _encryptionService;
         private readonly QnaDataContext _dataContext;
 
-        public DownloadFileHandler(IOptions<FileStorageConfig> fileStorageConfig, IEncryptionService encryptionService, QnaDataContext dataContext)
+        public DownloadFileBySectionNoHandler(IOptions<FileStorageConfig> fileStorageConfig, IEncryptionService encryptionService, QnaDataContext dataContext)
         {
             _fileStorageConfig = fileStorageConfig;
             _encryptionService = encryptionService;
             _dataContext = dataContext;
         }
         
-        public async Task<HandlerResponse<DownloadFile>> Handle(DownloadFileRequest request, CancellationToken cancellationToken)
+        public async Task<HandlerResponse<DownloadFile>> Handle(DownloadFileBySectionNoRequest request, CancellationToken cancellationToken)
         {
-            var section = await _dataContext.ApplicationSections.FirstOrDefaultAsync(sec => sec.Id == request.SectionId && sec.ApplicationId == request.ApplicationId, cancellationToken);
+            var section = await _dataContext.ApplicationSections.FirstOrDefaultAsync(sec => sec.SectionNo == request.SectionNo && sec.SequenceNo == request.SequenceNo && sec.ApplicationId == request.ApplicationId, cancellationToken);
 
             if (section == null)
             {
-                return new HandlerResponse<DownloadFile>(success:false, message:$"Section {request.SectionId} in Application {request.ApplicationId} does not exist.");
+                return new HandlerResponse<DownloadFile>(success:false, message:$"Section {request.SectionNo} in Application {request.ApplicationId} does not exist.");
             }
 
             var downloadSerivce = new DownloadFileService(_fileStorageConfig, _encryptionService);

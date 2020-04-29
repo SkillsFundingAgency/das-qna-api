@@ -52,17 +52,15 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
             var section =  _dataContext.ApplicationSections.AsNoTracking().SingleOrDefault(sec => sec.Id == request.SectionId && sec.ApplicationId == request.ApplicationId);
             var page = section?.QnAData?.Pages.SingleOrDefault(p => p.PageId == request.PageId);
 
-            var answers = request.Answers;
-
             if (page is null)
             {
                 return new HandlerResponse<SetPageAnswersResponse>(success: false, message: "Cannot find requested page.");
             }
-            else if(answers is null)
+            else if(request.Answers is null)
             {
                 return new HandlerResponse<SetPageAnswersResponse>(success: false, message: "No answers specified.");
             }
-            else if(answers.Any(a => a.QuestionId is null))
+            else if(request.Answers.Any(a => a.QuestionId is null))
             {
                 return new HandlerResponse<SetPageAnswersResponse>(success: false, message: "All answers must specify which question they are related to.");
             }
@@ -70,8 +68,10 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
             {
                 return new HandlerResponse<SetPageAnswersResponse>(success: false, message: "This endpoint cannot be used for Multiple Answers pages. Use AddAnswer / RemoveAnswer instead.");
             }
-            else if (page.Questions.Count > 0)
+            else if (page.Questions.Any())
             {
+                var answers = GetAnswersFromRequest(request);
+
                 if (page.Questions.All(q => "FileUpload".Equals(q.Input?.Type, StringComparison.InvariantCultureIgnoreCase)))
                 {
                     return new HandlerResponse<SetPageAnswersResponse>(success: false, message: "This endpoint cannot be used for FileUpload questions. Use Upload / DeleteFile instead.");
@@ -107,7 +107,8 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
 
                 if (page != null)
                 {
-                    page.PageOfAnswers = new List<PageOfAnswers>(new[] { new PageOfAnswers() { Answers = request.Answers } });
+                    var answers = GetAnswersFromRequest(request);
+                    page.PageOfAnswers = new List<PageOfAnswers>(new[] { new PageOfAnswers() { Answers = answers } });
 
                     MarkPageAsComplete(page);
                     MarkPageFeedbackAsComplete(page);
@@ -133,10 +134,11 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
                 if (page != null)
                 {
                     var questionTagsWhichHaveBeenUpdated = new List<string>();
+                    var answers = GetAnswersFromRequest(request);
 
                     foreach (var question in page.Questions)
                     {
-                        SetApplicationDataField(question, request.Answers, applicationData);
+                        SetApplicationDataField(question, answers, applicationData);
                         if (!string.IsNullOrWhiteSpace(question.QuestionTag))
                             questionTagsWhichHaveBeenUpdated.Add(question.QuestionTag);
 
@@ -146,7 +148,7 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
                             {
                                 foreach (var furtherQuestion in option.FurtherQuestions)
                                 {
-                                    SetApplicationDataField(furtherQuestion, request.Answers, applicationData);
+                                    SetApplicationDataField(furtherQuestion, answers, applicationData);
                                     if (!string.IsNullOrWhiteSpace(furtherQuestion.QuestionTag))
                                         questionTagsWhichHaveBeenUpdated.Add(furtherQuestion.QuestionTag);
                                 }
@@ -164,51 +166,6 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
             }
         }
 
-        // MFC should use the central version of this (in SetAnswerBase), but leaving here for now JUST IN CASE
-        // Delete if it's already March 2020 or later....
-        //private void SetStatusOfAllPagesBasedOnUpdatedQuestionTags(Guid applicationId, List<string> questionTags)
-        //{
-        //    if (questionTags != null && questionTags.Count > 0)
-        //    {
-        //        var sections = _dataContext.ApplicationSections.Where(sec => sec.ApplicationId == applicationId);
-
-        //        // Go through each section in the application
-        //        foreach (var section in sections)
-        //        {
-        //            // Have to force QnAData a new object and reassign for Entity Framework to pick up changes
-        //            var qnaData = new QnAData(section.QnAData);
-
-        //            // Get the list of pages that contain one of QuestionTags in the next condition
-        //            var pagesToProcess = new List<Page>();
-        //            foreach (var questionTag in questionTags.Distinct())
-        //            {
-        //                var questionTagPages = qnaData.Pages.Where(p => !p.AllowMultipleAnswers && p.Next.SelectMany(n => n.Conditions).Select(c => c.QuestionTag).Contains(questionTag));
-        //                pagesToProcess.AddRange(questionTagPages);
-        //            }
-
-        //          // Deactivate & Activate affected pages accordingly
-        //            foreach (var page in pagesToProcess)
-        //            {
-        //                if (page.PageOfAnswers != null && page.PageOfAnswers.Count > 0)
-        //                {
-        //                      var nextAction = GetNextActionForPage(section.Id, page.PageId);
-        //                    if (nextAction?.Conditions != null)
-        //                    {
-        //                        DeactivateDependentPages(nextAction, page.PageId, qnaData, page);
-        //                        ActivateDependentPages(nextAction, page.PageId, qnaData, page);
-        //                    }
-
-        //                }
-        //            }
-
-        //            // Assign QnAData back so Entity Framework will pick up changes
-        //            section.QnAData = qnaData;
-        //        }
-
-        //        _dataContext.SaveChanges();
-        //    }
-        //}
-
         private static void SetApplicationDataField(Question question, List<Answer> answers, JObject applicationData)
         {
             if (question != null && applicationData != null)
@@ -218,16 +175,28 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
 
                 if (!string.IsNullOrWhiteSpace(questionTag))
                 {
-                    if (applicationData.ContainsKey(question.QuestionTag))
+                    if (applicationData.ContainsKey(questionTag))
                     {
-                        applicationData[question.QuestionTag] = questionTagAnswer;
+                        applicationData[questionTag] = questionTagAnswer;
                     }
                     else
                     {
-                        applicationData.Add(question.QuestionTag, new JValue(questionTagAnswer));
+                        applicationData.Add(questionTag, new JValue(questionTagAnswer));
                     }
                 }
             }
+        }
+
+        private static List<Answer> GetAnswersFromRequest(SetPageAnswersRequest request)
+        {
+            var answers = new List<Answer>();
+
+            if (request.Answers != null)
+            {
+                answers.AddRange(request.Answers);
+            }
+
+            return answers;
         }
     }
 }
