@@ -15,16 +15,16 @@ namespace SFA.DAS.QnA.Application.Commands.SkipPage
     public class SkipPageHandler : SetAnswersBase, IRequestHandler<SkipPageRequest, HandlerResponse<SkipPageResponse>>
     {
 
-        public SkipPageHandler(QnaDataContext dataContext, INotRequiredProcessor notRequiredProcessor, ITagProcessingService tagProcessingService) : base(dataContext, notRequiredProcessor,  tagProcessingService)
+        public SkipPageHandler(QnaDataContext dataContext, INotRequiredProcessor notRequiredProcessor, ITagProcessingService tagProcessingService) : base(dataContext, notRequiredProcessor)
         {
         }
 
         public async Task<HandlerResponse<SkipPageResponse>> Handle(SkipPageRequest request, CancellationToken cancellationToken)
         {
-            var application = await _dataContext.Applications.AsNoTracking().SingleOrDefaultAsync(app => app.Id == request.ApplicationId, cancellationToken: cancellationToken);
+            var application = await _dataContext.Applications.SingleOrDefaultAsync(app => app.Id == request.ApplicationId, cancellationToken: cancellationToken);
             if (application is null) return new HandlerResponse<SkipPageResponse>(false, "Application does not exist");
 
-            var section = await _dataContext.ApplicationSections.AsNoTracking().SingleOrDefaultAsync(sec => sec.Id == request.SectionId && sec.ApplicationId == request.ApplicationId, cancellationToken);
+            var section = await _dataContext.ApplicationSections.SingleOrDefaultAsync(sec => sec.Id == request.SectionId && sec.ApplicationId == request.ApplicationId, cancellationToken);
             if (section is null) return new HandlerResponse<SkipPageResponse>(false, "Section does not exist");
 
             var qnaData = new QnAData(section.QnAData);
@@ -33,10 +33,10 @@ namespace SFA.DAS.QnA.Application.Commands.SkipPage
 
             try
             {
-                var nextAction = GetNextActionForPage(section.Id, page.PageId);
-                var checkboxListAllNexts = GetCheckboxListMatchingNextActionsForPage(section.Id, page.PageId);
+                var nextAction = GetNextActionForPage(section, application, page.PageId);
+                var checkboxListAllNexts = GetCheckboxListMatchingNextActionsForPage(section, application, page.PageId);
 
-                SetStatusOfNextPagesBasedOnDeemedNextActions(section.Id, page.PageId, nextAction, checkboxListAllNexts);
+                SetStatusOfNextPagesBasedOnDeemedNextActions(section, page.PageId, nextAction, checkboxListAllNexts);
 
                 return new HandlerResponse<SkipPageResponse>(new SkipPageResponse(nextAction.Action, nextAction.ReturnId));
             }

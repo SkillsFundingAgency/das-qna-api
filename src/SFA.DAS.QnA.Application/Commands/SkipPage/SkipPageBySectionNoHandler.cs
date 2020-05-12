@@ -16,20 +16,17 @@ namespace SFA.DAS.QnA.Application.Commands.SkipPage
     {
 
 
-        public SkipPageBySectionNoHandler(QnaDataContext dataContext, INotRequiredProcessor notRequiredProcessor, ITagProcessingService tagProcessingService) : base(dataContext, notRequiredProcessor, tagProcessingService)
+        public SkipPageBySectionNoHandler(QnaDataContext dataContext, INotRequiredProcessor notRequiredProcessor, ITagProcessingService tagProcessingService) : base(dataContext, notRequiredProcessor)
         {
 
         }
 
         public async Task<HandlerResponse<SkipPageResponse>> Handle(SkipPageBySectionNoRequest request, CancellationToken cancellationToken)
         {
-            var application = await _dataContext.Applications.AsNoTracking().SingleOrDefaultAsync(app => app.Id == request.ApplicationId, cancellationToken: cancellationToken);
+            var application = await _dataContext.Applications.SingleOrDefaultAsync(app => app.Id == request.ApplicationId, cancellationToken: cancellationToken);
             if (application is null) return new HandlerResponse<SkipPageResponse>(false, "Application does not exist");
 
-            var sequence = await _dataContext.ApplicationSequences.AsNoTracking().SingleOrDefaultAsync(seq => seq.SequenceNo == request.SequenceNo && seq.ApplicationId == request.ApplicationId, cancellationToken: cancellationToken);
-            if (sequence is null) return new HandlerResponse<SkipPageResponse>(false, "Sequence does not exist");
-
-            var section = await _dataContext.ApplicationSections.AsNoTracking().SingleOrDefaultAsync(sec => sec.SectionNo == request.SectionNo && sec.SequenceNo == request.SequenceNo && sec.ApplicationId == request.ApplicationId, cancellationToken);
+            var section = await _dataContext.ApplicationSections.SingleOrDefaultAsync(sec => sec.SectionNo == request.SectionNo && sec.SequenceNo == request.SequenceNo && sec.ApplicationId == request.ApplicationId, cancellationToken);
             if (section is null) return new HandlerResponse<SkipPageResponse>(false, "Section does not exist");
 
             var qnaData = new QnAData(section.QnAData);
@@ -38,9 +35,9 @@ namespace SFA.DAS.QnA.Application.Commands.SkipPage
 
             try
             {
-                var nextAction = GetNextActionForPage(section.Id, page.PageId);
-                var checkboxListAllNexts = GetCheckboxListMatchingNextActionsForPage(section.Id, page.PageId);
-                SetStatusOfNextPagesBasedOnDeemedNextActions(section.Id, page.PageId, nextAction, checkboxListAllNexts);
+                var nextAction = GetNextActionForPage(section, application, page.PageId);
+                var checkboxListAllNexts = GetCheckboxListMatchingNextActionsForPage(section, application, page.PageId);
+                SetStatusOfNextPagesBasedOnDeemedNextActions(section, page.PageId, nextAction, checkboxListAllNexts);
 
                 return new HandlerResponse<SkipPageResponse>(new SkipPageResponse(nextAction.Action, nextAction.ReturnId));
             }

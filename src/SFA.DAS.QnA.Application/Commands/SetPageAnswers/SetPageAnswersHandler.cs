@@ -21,7 +21,7 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
         private readonly IAnswerValidator _answerValidator;
         private readonly ITagProcessingService _tagProcessingService;
 
-        public SetPageAnswersHandler(QnaDataContext dataContext, IAnswerValidator answerValidator, INotRequiredProcessor notRequiredProcessor, ITagProcessingService tagProcessingService) : base(dataContext, notRequiredProcessor, tagProcessingService)
+        public SetPageAnswersHandler(QnaDataContext dataContext, IAnswerValidator answerValidator, INotRequiredProcessor notRequiredProcessor, ITagProcessingService tagProcessingService) : base(dataContext, notRequiredProcessor)
         {
             _answerValidator = answerValidator;
             _tagProcessingService = tagProcessingService;
@@ -29,27 +29,29 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
 
         public async Task<HandlerResponse<SetPageAnswersResponse>> Handle(SetPageAnswersRequest request, CancellationToken cancellationToken)
         {
-            var validationErrorResponse = ValidateRequest(request);
+            var section = await _dataContext.ApplicationSections.SingleOrDefaultAsync(sec => sec.Id == request.SectionId && sec.ApplicationId == request.ApplicationId, cancellationToken);
+            var validationErrorResponse = ValidateRequest(request, section);
 
             if(validationErrorResponse != null)
             {
                 return validationErrorResponse;
             }
- 
-            SaveAnswersIntoPage(request);
-            UpdateApplicationData(request);
 
-            var nextAction = GetNextActionForPage(request.SectionId, request.PageId);
-            var checkboxListAllNexts = GetCheckboxListMatchingNextActionsForPage(request.SectionId, request.PageId);
+            SaveAnswersIntoPage(section, request);
+
+            var application = await _dataContext.Applications.SingleOrDefaultAsync(app => app.Id == request.ApplicationId, cancellationToken);
+            UpdateApplicationData(request, section, application);
+
+            var nextAction = GetNextActionForPage(section, application, request.PageId);
+            var checkboxListAllNexts = GetCheckboxListMatchingNextActionsForPage(section, application, request.PageId);
             
-            SetStatusOfNextPagesBasedOnDeemedNextActions(request.SectionId, request.PageId, nextAction, checkboxListAllNexts);
+            SetStatusOfNextPagesBasedOnDeemedNextActions(section, request.PageId, nextAction, checkboxListAllNexts);
             
             return new HandlerResponse<SetPageAnswersResponse>(new SetPageAnswersResponse(nextAction.Action, nextAction.ReturnId));
         }
 
-        private HandlerResponse<SetPageAnswersResponse> ValidateRequest(SetPageAnswersRequest request)
+        private HandlerResponse<SetPageAnswersResponse> ValidateRequest(SetPageAnswersRequest request, ApplicationSection section)
         {
-            var section =  _dataContext.ApplicationSections.AsNoTracking().SingleOrDefault(sec => sec.Id == request.SectionId && sec.ApplicationId == request.ApplicationId);
             var page = section?.QnAData?.Pages.SingleOrDefault(p => p.PageId == request.PageId);
 
             if (page is null)
@@ -95,10 +97,8 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
             return null;
         }
 
-        private void SaveAnswersIntoPage(SetPageAnswersRequest request)
+        private void SaveAnswersIntoPage(ApplicationSection section, SetPageAnswersRequest request)
         {
-            var section = _dataContext.ApplicationSections.SingleOrDefault(sec => sec.Id == request.SectionId && sec.ApplicationId == request.ApplicationId);
-
             if (section != null)
             {
                 // Have to force QnAData a new object and reassign for Entity Framework to pick up changes
@@ -120,15 +120,12 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
             }
         }
 
-        private void UpdateApplicationData(SetPageAnswersRequest request)
+        private void UpdateApplicationData(SetPageAnswersRequest request, ApplicationSection section, Data.Entities.Application application)
         {
-            var application = _dataContext.Applications.SingleOrDefault(app => app.Id == request.ApplicationId);
-
             if (application != null)
             {
                 var applicationData = JObject.Parse(application.ApplicationData ?? "{}");
 
-                var section = _dataContext.ApplicationSections.AsNoTracking().SingleOrDefault(sec => sec.Id == request.SectionId && sec.ApplicationId == application.Id);
                 var page = section?.QnAData?.Pages.SingleOrDefault(p => p.PageId == request.PageId);
 
                 if (page != null)
@@ -159,7 +156,7 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
                     application.ApplicationData = applicationData.ToString(Formatting.None);
                     _dataContext.SaveChanges();
 
-                    SetStatusOfAllPagesBasedOnUpdatedQuestionTags(application.Id, questionTagsWhichHaveBeenUpdated);
+                    SetStatusOfAllPagesBasedOnUpdatedQuestionTags(application, questionTagsWhichHaveBeenUpdated);
                     _tagProcessingService.ClearDeactivatedTags(application.Id, request.SectionId);
       
                 }

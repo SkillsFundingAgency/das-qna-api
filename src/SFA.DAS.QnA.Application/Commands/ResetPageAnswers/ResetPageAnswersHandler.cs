@@ -12,6 +12,7 @@ using SFA.DAS.QnA.Api.Types.Page;
 using SFA.DAS.QnA.Application.Commands.SetPageAnswers;
 using SFA.DAS.QnA.Application.Services;
 using SFA.DAS.QnA.Data;
+using SFA.DAS.QnA.Data.Entities;
 
 namespace SFA.DAS.QnA.Application.Commands.ResetPageAnswers
 {
@@ -19,34 +20,36 @@ namespace SFA.DAS.QnA.Application.Commands.ResetPageAnswers
     {
         private readonly ITagProcessingService _tagProcessingService;
 
-        public ResetPageAnswersHandler(QnaDataContext dataContext, INotRequiredProcessor notRequiredProcessor, ITagProcessingService tagProcessingService) : base(dataContext, notRequiredProcessor,tagProcessingService)
+        public ResetPageAnswersHandler(QnaDataContext dataContext, INotRequiredProcessor notRequiredProcessor, ITagProcessingService tagProcessingService) : base(dataContext, notRequiredProcessor)
         {
             _tagProcessingService = tagProcessingService;
         }
 
         public async Task<HandlerResponse<ResetPageAnswersResponse>> Handle(ResetPageAnswersRequest request, CancellationToken cancellationToken)
         {
-            var validationErrorResponse = ValidateRequest(request);
+            var section = await _dataContext.ApplicationSections.SingleOrDefaultAsync(sec => sec.Id == request.SectionId && sec.ApplicationId == request.ApplicationId, cancellationToken);
+            var validationErrorResponse = ValidateRequest(request, section);
 
             if (validationErrorResponse != null)
             {
                 return validationErrorResponse;
             }
 
-            ResetPageAnswers(request);
-            UpdateApplicationData(request);
+            ResetPageAnswers(request, section);
 
-            var nextAction = GetNextActionForPage(request.SectionId, request.PageId);
-            var checkboxListAllNexts = GetCheckboxListMatchingNextActionsForPage(request.SectionId, request.PageId);
+            var application = await _dataContext.Applications.SingleOrDefaultAsync(app => app.Id == request.ApplicationId, cancellationToken);
+            UpdateApplicationData(request, application, section);
 
-            SetStatusOfNextPagesBasedOnDeemedNextActions(request.SectionId, request.PageId, nextAction, checkboxListAllNexts);
+            var nextAction = GetNextActionForPage(section, application, request.PageId);
+            var checkboxListAllNexts = GetCheckboxListMatchingNextActionsForPage(section, application, request.PageId);
+
+            SetStatusOfNextPagesBasedOnDeemedNextActions(section, request.PageId, nextAction, checkboxListAllNexts);
 
             return new HandlerResponse<ResetPageAnswersResponse>(new ResetPageAnswersResponse(true));
         }
 
-        private HandlerResponse<ResetPageAnswersResponse> ValidateRequest(ResetPageAnswersRequest request)
+        private HandlerResponse<ResetPageAnswersResponse> ValidateRequest(ResetPageAnswersRequest request, ApplicationSection section)
         {
-            var section = _dataContext.ApplicationSections.AsNoTracking().SingleOrDefault(sec => sec.Id == request.SectionId && sec.ApplicationId == request.ApplicationId);
             var page = section?.QnAData?.Pages.SingleOrDefault(p => p.PageId == request.PageId);
 
             if (page is null)
@@ -68,10 +71,8 @@ namespace SFA.DAS.QnA.Application.Commands.ResetPageAnswers
             return null;
         }
 
-        private void ResetPageAnswers(ResetPageAnswersRequest request)
+        private void ResetPageAnswers(ResetPageAnswersRequest request, ApplicationSection section)
         {
-            var section = _dataContext.ApplicationSections.SingleOrDefault(sec => sec.Id == request.SectionId && sec.ApplicationId == request.ApplicationId);
-
             if (section != null)
             {
                 // Have to force QnAData a new object and reassign for Entity Framework to pick up changes
@@ -92,15 +93,12 @@ namespace SFA.DAS.QnA.Application.Commands.ResetPageAnswers
             }
         }
 
-        private void UpdateApplicationData(ResetPageAnswersRequest request)
+        private void UpdateApplicationData(ResetPageAnswersRequest request, Data.Entities.Application application, ApplicationSection section)
         {
-            var application = _dataContext.Applications.SingleOrDefault(app => app.Id == request.ApplicationId);
-
             if (application != null)
             {
                 var applicationData = JObject.Parse(application.ApplicationData ?? "{}");
 
-                var section = _dataContext.ApplicationSections.AsNoTracking().SingleOrDefault(sec => sec.Id == request.SectionId && sec.ApplicationId == application.Id);
                 var page = section?.QnAData?.Pages.SingleOrDefault(p => p.PageId == request.PageId);
 
                 if (page != null)
@@ -128,7 +126,7 @@ namespace SFA.DAS.QnA.Application.Commands.ResetPageAnswers
                     application.ApplicationData = applicationData.ToString(Formatting.None);
                     _dataContext.SaveChanges();
 
-                    SetStatusOfAllPagesBasedOnUpdatedQuestionTags(application.Id, questionTagsWhichHaveBeenUpdated);
+                    SetStatusOfAllPagesBasedOnUpdatedQuestionTags(application, questionTagsWhichHaveBeenUpdated);
                     _tagProcessingService.ClearDeactivatedTags(application.Id, request.SectionId);
 
                 }

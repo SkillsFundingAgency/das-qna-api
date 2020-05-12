@@ -14,17 +14,15 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
     {
         protected readonly QnaDataContext _dataContext;
         protected readonly INotRequiredProcessor _notRequiredProcessor;
-        private readonly ITagProcessingService _tagProcessingService;
-        public SetAnswersBase(QnaDataContext dataContext, INotRequiredProcessor notRequiredProcessor, ITagProcessingService tagProcessingService)
+        
+        public SetAnswersBase(QnaDataContext dataContext, INotRequiredProcessor notRequiredProcessor)
         {
             _dataContext = dataContext;
             _notRequiredProcessor = notRequiredProcessor;
-            _tagProcessingService = tagProcessingService;
         }
 
-        protected List<Next> GetCheckboxListMatchingNextActionsForPage(Guid sectionId, string pageId)
+        protected List<Next> GetCheckboxListMatchingNextActionsForPage(ApplicationSection section, Data.Entities.Application application, string pageId)
         {
-            var section = _dataContext.ApplicationSections.AsNoTracking().SingleOrDefault(sec => sec.Id == sectionId);
             var page = section?.QnAData?.Pages.SingleOrDefault(p => p.PageId == pageId);
 
             if (page is null)
@@ -90,7 +88,6 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
                 }
             }
 
-            var application = _dataContext.Applications.AsNoTracking().SingleOrDefault(app => app.Id == section.ApplicationId);
             var applicationData = JObject.Parse(application?.ApplicationData ?? "{}");
             var matchingNextsToReturn = new List<Next>();
 
@@ -107,9 +104,8 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
             return matchingNextsToReturn;
         }
 
-        protected Next GetNextActionForPage(Guid sectionId, string pageId)
+        protected Next GetNextActionForPage(ApplicationSection section, Data.Entities.Application application, string pageId)
         {
-            var section = _dataContext.ApplicationSections.AsNoTracking().SingleOrDefault(sec => sec.Id == sectionId);
             var page = section?.QnAData?.Pages.SingleOrDefault(p => p.PageId == pageId);
 
             if (page is null)
@@ -121,7 +117,6 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
                 throw new ApplicationException($"Page {page.PageId}, in Sequence {page.SequenceId}, Section {page.SectionId} has no 'Next' instructions.");
             }
 
-            var application = _dataContext.Applications.AsNoTracking().SingleOrDefault(app => app.Id == section.ApplicationId);
             var applicationData = JObject.Parse(application?.ApplicationData ?? "{}");
 
             Next nextAction = null;
@@ -279,10 +274,8 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
             }
         }
 
-        protected void SetStatusOfNextPagesBasedOnDeemedNextActions(Guid sectionId, string pageId, Next deemedNextAction, List<Next> deemedCheckboxListNextActions)
+        protected void SetStatusOfNextPagesBasedOnDeemedNextActions(ApplicationSection section, string pageId, Next deemedNextAction, List<Next> deemedCheckboxListNextActions)
         {
-            var section = _dataContext.ApplicationSections.FirstOrDefault(sec => sec.Id == sectionId);
-
             if (section != null)
             {
                 // Have to force QnAData a new object and reassign for Entity Framework to pick up changes
@@ -325,11 +318,11 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
             }
         }
 
-        protected void SetStatusOfAllPagesBasedOnUpdatedQuestionTags(Guid applicationId, List<string> questionTags)
+        protected void SetStatusOfAllPagesBasedOnUpdatedQuestionTags(Data.Entities.Application application, List<string> questionTags)
         {
             if (questionTags != null && questionTags.Count > 0)
             {
-                var sections = _dataContext.ApplicationSections.Where(sec => sec.ApplicationId == applicationId);
+                var sections = _dataContext.ApplicationSections.Where(sec => sec.ApplicationId == application.Id);
 
                 // Go through each section in the application
                 foreach (var section in sections)
@@ -352,7 +345,7 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
                         {
                             if (page.PageOfAnswers != null && page.PageOfAnswers.Count > 0)
                             {
-                                var nextAction = GetNextActionForPage(section.Id, page.PageId);
+                                var nextAction = GetNextActionForPage(section, application, page.PageId);
                                 if (nextAction?.Conditions != null)
                                 {
                                     DeactivateDependentPages(nextAction, page.PageId, qnaData, page);
