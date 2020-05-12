@@ -30,10 +30,12 @@ namespace SFA.DAS.QnA.Application.Queries.Sections.GetSequenceSections
             var application = await _dataContext.Applications.FirstOrDefaultAsync(app => app.Id == request.ApplicationId, cancellationToken: cancellationToken);
             if (application is null) return new HandlerResponse<List<Section>>(false, "Application does not exist");
 
-            var sequence = await _dataContext.ApplicationSequences.FirstOrDefaultAsync(seq => seq.Id == request.SequenceId, cancellationToken: cancellationToken);
-            if (sequence is null) return new HandlerResponse<List<Section>>(false, "Sequence does not exist");
-
             var sections = _mapper.Map<List<Section>>(await _dataContext.ApplicationSections.Where(section => section.SequenceId == request.SequenceId).ToListAsync(cancellationToken: cancellationToken));
+
+            if (!sections.Any())
+            {
+                return new HandlerResponse<List<Section>>(false, "Sequence does not exist");
+            }
 
             foreach (var section in sections)
             {
