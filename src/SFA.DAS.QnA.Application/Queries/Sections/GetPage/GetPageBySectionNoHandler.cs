@@ -20,12 +20,6 @@ namespace SFA.DAS.QnA.Application.Queries.Sections.GetPage
         
         public async Task<HandlerResponse<Page>> Handle(GetPageBySectionNoRequest request, CancellationToken cancellationToken)
         {
-            var application = await _dataContext.Applications.FirstOrDefaultAsync(app => app.Id == request.ApplicationId, cancellationToken: cancellationToken);
-            if (application is null) return new HandlerResponse<Page>(false, "Application does not exist");
-
-            var sequence = await _dataContext.ApplicationSequences.FirstOrDefaultAsync(seq => seq.SequenceNo == request.SequenceNo && seq.ApplicationId == request.ApplicationId, cancellationToken: cancellationToken);
-            if (sequence is null) return new HandlerResponse<Page>(false, "Sequence does not exist");
-
             var section = await _dataContext.ApplicationSections.FirstOrDefaultAsync(sec => sec.SectionNo == request.SectionNo && sec.SequenceNo == request.SequenceNo && sec.ApplicationId == request.ApplicationId, cancellationToken);
             if (section is null) return new HandlerResponse<Page>(false, "Section does not exist");
 
