@@ -4,6 +4,7 @@ using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using NUnit.Framework;
 using SFA.DAS.QnA.Application.Queries.Sections.GetSections;
+using SFA.DAS.QnA.Application.Services;
 using SFA.DAS.QnA.Data;
 using SFA.DAS.QnA.Data.Entities;
 
@@ -45,7 +46,7 @@ namespace SFA.DAS.QnA.Application.UnitTests.QueriesTests.GetSectionsTests
 
             var mapper = new Mapper(new MapperConfiguration(config => { config.AddMaps(AppDomain.CurrentDomain.GetAssemblies()); }));
 
-            Handler = new GetSectionsHandler(context, mapper);
+            Handler = new GetSectionsHandler(context, mapper, new NotRequiredProcessor());
         }
     }
 }
