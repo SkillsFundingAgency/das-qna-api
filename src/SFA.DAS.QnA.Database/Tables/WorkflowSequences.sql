@@ -13,3 +13,5 @@ GO
 ALTER TABLE [WorkflowSequences] ADD  CONSTRAINT [DF_WorkflowSequences_Id]  DEFAULT (newid()) FOR [Id]
 GO
 
+CREATE INDEX [IX_WorkflowSequences_WorkflowId] ON [WorkflowSequences]  ( [WorkflowId] )
+GO
