@@ -46,6 +46,8 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
             var checkboxListAllNexts = GetCheckboxListMatchingNextActionsForPage(section, application, request.PageId);
             
             SetStatusOfNextPagesBasedOnDeemedNextActions(section, request.PageId, nextAction, checkboxListAllNexts);
+
+            await _dataContext.SaveChangesAsync(cancellationToken);
             
             return new HandlerResponse<SetPageAnswersResponse>(new SetPageAnswersResponse(nextAction.Action, nextAction.ReturnId));
         }
@@ -115,7 +117,6 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
 
                     // Assign QnAData back so Entity Framework will pick up changes
                     section.QnAData = qnaData;
-                    _dataContext.SaveChanges();
                 }
             }
         }
@@ -154,7 +155,6 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
                     }
 
                     application.ApplicationData = applicationData.ToString(Formatting.None);
-                    _dataContext.SaveChanges();
 
                     SetStatusOfAllPagesBasedOnUpdatedQuestionTags(application, questionTagsWhichHaveBeenUpdated);
                     _tagProcessingService.ClearDeactivatedTags(application.Id, request.SectionId);

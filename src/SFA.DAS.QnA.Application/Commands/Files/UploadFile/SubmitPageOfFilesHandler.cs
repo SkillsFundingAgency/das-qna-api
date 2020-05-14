@@ -54,6 +54,8 @@ namespace SFA.DAS.QnA.Application.Commands.Files.UploadFile
 
             SetStatusOfNextPagesBasedOnDeemedNextActions(section, request.PageId, nextAction, checkboxListAllNexts);
 
+            await _dataContext.SaveChangesAsync(cancellationToken);
+
             return new HandlerResponse<SetPageAnswersResponse>(new SetPageAnswersResponse(nextAction.Action, nextAction.ReturnId));
         }
 
@@ -155,7 +157,6 @@ namespace SFA.DAS.QnA.Application.Commands.Files.UploadFile
 
                     // Assign QnAData back so Entity Framework will pick up changes
                     section.QnAData = qnaData;
-                    _dataContext.SaveChanges();
                 }
             }
         }
@@ -194,8 +195,7 @@ namespace SFA.DAS.QnA.Application.Commands.Files.UploadFile
                     }
 
                     application.ApplicationData = applicationData.ToString(Formatting.None);
-                    _dataContext.SaveChanges();
-
+                    
                     SetStatusOfAllPagesBasedOnUpdatedQuestionTags(application, questionTagsWhichHaveBeenUpdated);
                     _tagProcessingService.ClearDeactivatedTags(application.Id, request.SectionId);
                 }

@@ -39,6 +39,8 @@ namespace SFA.DAS.QnA.Application.Commands.SkipPage
                 var checkboxListAllNexts = GetCheckboxListMatchingNextActionsForPage(section, application, page.PageId);
                 SetStatusOfNextPagesBasedOnDeemedNextActions(section, page.PageId, nextAction, checkboxListAllNexts);
 
+                await _dataContext.SaveChangesAsync(cancellationToken);
+
                 return new HandlerResponse<SkipPageResponse>(new SkipPageResponse(nextAction.Action, nextAction.ReturnId));
             }
             catch (ApplicationException)

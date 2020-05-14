@@ -38,6 +38,8 @@ namespace SFA.DAS.QnA.Application.Commands.SkipPage
 
                 SetStatusOfNextPagesBasedOnDeemedNextActions(section, page.PageId, nextAction, checkboxListAllNexts);
 
+                await _dataContext.SaveChangesAsync(cancellationToken);
+
                 return new HandlerResponse<SkipPageResponse>(new SkipPageResponse(nextAction.Action, nextAction.ReturnId));
             }
             catch (ApplicationException)
