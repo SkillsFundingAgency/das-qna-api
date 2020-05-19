@@ -16,7 +16,7 @@ namespace SFA.DAS.QnA.Application.Commands.SkipPage
     {
 
 
-        public SkipPageBySectionNoHandler(QnaDataContext dataContext, INotRequiredProcessor notRequiredProcessor, ITagProcessingService tagProcessingService) : base(dataContext, notRequiredProcessor)
+        public SkipPageBySectionNoHandler(QnaDataContext dataContext, INotRequiredProcessor notRequiredProcessor, ITagProcessingService tagProcessingService) : base(dataContext, notRequiredProcessor, tagProcessingService, null)
         {
 
         }

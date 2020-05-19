@@ -15,7 +15,7 @@ namespace SFA.DAS.QnA.Application.Commands.SkipPage
     public class SkipPageHandler : SetAnswersBase, IRequestHandler<SkipPageRequest, HandlerResponse<SkipPageResponse>>
     {
 
-        public SkipPageHandler(QnaDataContext dataContext, INotRequiredProcessor notRequiredProcessor, ITagProcessingService tagProcessingService) : base(dataContext, notRequiredProcessor)
+        public SkipPageHandler(QnaDataContext dataContext, INotRequiredProcessor notRequiredProcessor, ITagProcessingService tagProcessingService) : base(dataContext, notRequiredProcessor, tagProcessingService, null)
         {
         }
 

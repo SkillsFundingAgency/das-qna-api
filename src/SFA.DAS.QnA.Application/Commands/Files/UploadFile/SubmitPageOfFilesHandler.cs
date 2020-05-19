@@ -22,17 +22,13 @@ namespace SFA.DAS.QnA.Application.Commands.Files.UploadFile
     {
         private readonly IOptions<FileStorageConfig> _fileStorageConfig;
         private readonly IEncryptionService _encryptionService;
-        private readonly IAnswerValidator _answerValidator;
         private readonly IFileContentValidator _fileContentValidator;
-        private readonly ITagProcessingService _tagProcessingService;
 
-        public SubmitPageOfFilesHandler(QnaDataContext dataContext, IOptions<FileStorageConfig> fileStorageConfig, IEncryptionService encryptionService, IAnswerValidator answerValidator, IFileContentValidator fileContentValidator, INotRequiredProcessor notRequiredProcessor, ITagProcessingService tagProcessingService) : base(dataContext, notRequiredProcessor)
+        public SubmitPageOfFilesHandler(QnaDataContext dataContext, IOptions<FileStorageConfig> fileStorageConfig, IEncryptionService encryptionService, IAnswerValidator answerValidator, IFileContentValidator fileContentValidator, INotRequiredProcessor notRequiredProcessor, ITagProcessingService tagProcessingService) : base(dataContext, notRequiredProcessor, tagProcessingService, answerValidator)
         {
             _fileStorageConfig = fileStorageConfig;
             _encryptionService = encryptionService;
-            _answerValidator = answerValidator;
             _fileContentValidator = fileContentValidator;
-            _tagProcessingService = tagProcessingService;
         }
 
         public async Task<HandlerResponse<SetPageAnswersResponse>> Handle(SubmitPageOfFilesRequest request, CancellationToken cancellationToken)
