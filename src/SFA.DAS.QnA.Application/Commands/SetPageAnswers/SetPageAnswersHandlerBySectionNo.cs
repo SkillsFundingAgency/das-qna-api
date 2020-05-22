@@ -8,15 +8,15 @@ using SFA.DAS.QnA.Data;
 
 namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
 {
-    public class SetPageAnswersHandler : SetAnswersBase, IRequestHandler<SetPageAnswersRequest, HandlerResponse<SetPageAnswersResponse>>
+    public class SetPageAnswersBySectionNoHandler : SetAnswersBase, IRequestHandler<SetPageAnswersBySectionNoRequest, HandlerResponse<SetPageAnswersResponse>>
     {
-        public SetPageAnswersHandler(QnaDataContext dataContext, IAnswerValidator answerValidator, INotRequiredProcessor notRequiredProcessor, ITagProcessingService tagProcessingService) : base(dataContext, notRequiredProcessor, tagProcessingService, answerValidator)
+        public SetPageAnswersBySectionNoHandler(QnaDataContext dataContext, IAnswerValidator answerValidator, INotRequiredProcessor notRequiredProcessor, ITagProcessingService tagProcessingService) : base(dataContext, notRequiredProcessor, tagProcessingService, answerValidator)
         {
         }
 
-        public async Task<HandlerResponse<SetPageAnswersResponse>> Handle(SetPageAnswersRequest request, CancellationToken cancellationToken)
+        public async Task<HandlerResponse<SetPageAnswersResponse>> Handle(SetPageAnswersBySectionNoRequest request, CancellationToken cancellationToken)
         {
-            var section = await _dataContext.ApplicationSections.SingleOrDefaultAsync(sec => sec.Id == request.SectionId && sec.ApplicationId == request.ApplicationId, cancellationToken);
+            var section = await _dataContext.ApplicationSections.SingleOrDefaultAsync(sec => sec.SequenceNo == request.SequenceNo && sec.SectionNo == request.SectionNo && sec.ApplicationId == request.ApplicationId, cancellationToken);
             var validationErrorResponse = ValidateSetPageAnswersRequest(request.PageId, request.Answers, section);
 
             if(validationErrorResponse != null)

@@ -14,6 +14,7 @@ using SFA.DAS.QnA.Application.Commands.SetPageAnswers;
 using SFA.DAS.QnA.Application.Services;
 using SFA.DAS.QnA.Configuration.Config;
 using SFA.DAS.QnA.Data;
+using SFA.DAS.QnA.Data.Entities;
 
 namespace SFA.DAS.QnA.Application.Commands.Files.UploadFile
 {
@@ -21,42 +22,41 @@ namespace SFA.DAS.QnA.Application.Commands.Files.UploadFile
     {
         private readonly IOptions<FileStorageConfig> _fileStorageConfig;
         private readonly IEncryptionService _encryptionService;
-        private readonly IAnswerValidator _answerValidator;
         private readonly IFileContentValidator _fileContentValidator;
-        private readonly ITagProcessingService _tagProcessingService;
 
-        public SubmitPageOfFilesHandler(QnaDataContext dataContext, IOptions<FileStorageConfig> fileStorageConfig, IEncryptionService encryptionService, IAnswerValidator answerValidator, IFileContentValidator fileContentValidator, INotRequiredProcessor notRequiredProcessor, ITagProcessingService tagProcessingService) : base(dataContext, notRequiredProcessor, tagProcessingService)
+        public SubmitPageOfFilesHandler(QnaDataContext dataContext, IOptions<FileStorageConfig> fileStorageConfig, IEncryptionService encryptionService, IAnswerValidator answerValidator, IFileContentValidator fileContentValidator, INotRequiredProcessor notRequiredProcessor, ITagProcessingService tagProcessingService) : base(dataContext, notRequiredProcessor, tagProcessingService, answerValidator)
         {
             _fileStorageConfig = fileStorageConfig;
             _encryptionService = encryptionService;
-            _answerValidator = answerValidator;
             _fileContentValidator = fileContentValidator;
-            _tagProcessingService = tagProcessingService;
         }
 
         public async Task<HandlerResponse<SetPageAnswersResponse>> Handle(SubmitPageOfFilesRequest request, CancellationToken cancellationToken)
         {
-            var validationErrorResponse = ValidateRequest(request);
+            var section = await _dataContext.ApplicationSections.SingleOrDefaultAsync(sec => sec.Id == request.SectionId && sec.ApplicationId == request.ApplicationId);
+            var validationErrorResponse = ValidateRequest(request, section);
 
             if (validationErrorResponse != null)
             {
                 return validationErrorResponse;
             }
 
-            await SaveAnswersIntoPage(request, cancellationToken);
-            UpdateApplicationData(request);
+            await SaveAnswersIntoPage(section, request, cancellationToken);
+            var application = await _dataContext.Applications.SingleOrDefaultAsync(app => app.Id == request.ApplicationId);
+            UpdateApplicationData(request, application, section);
 
-            var nextAction = GetNextActionForPage(request.SectionId, request.PageId);
-            var checkboxListAllNexts = GetCheckboxListMatchingNextActionsForPage(request.SectionId, request.PageId);
+            var nextAction = GetNextActionForPage(section, application, request.PageId);
+            var checkboxListAllNexts = GetCheckboxListMatchingNextActionsForPage(section, application, request.PageId);
 
-            SetStatusOfNextPagesBasedOnDeemedNextActions(request.SectionId, request.PageId, nextAction, checkboxListAllNexts);
+            SetStatusOfNextPagesBasedOnDeemedNextActions(section, request.PageId, nextAction, checkboxListAllNexts);
+
+            await _dataContext.SaveChangesAsync(cancellationToken);
 
             return new HandlerResponse<SetPageAnswersResponse>(new SetPageAnswersResponse(nextAction.Action, nextAction.ReturnId));
         }
 
-        private HandlerResponse<SetPageAnswersResponse> ValidateRequest(SubmitPageOfFilesRequest request)
+        private HandlerResponse<SetPageAnswersResponse> ValidateRequest(SubmitPageOfFilesRequest request, ApplicationSection section)
         {
-            var section = _dataContext.ApplicationSections.AsNoTracking().SingleOrDefault(sec => sec.Id == request.SectionId && sec.ApplicationId == request.ApplicationId);
             var page = section?.QnAData?.Pages.SingleOrDefault(p => p.PageId == request.PageId);
 
             if (page is null)
@@ -100,10 +100,8 @@ namespace SFA.DAS.QnA.Application.Commands.Files.UploadFile
             return null;
         }
 
-        private async Task SaveAnswersIntoPage(SubmitPageOfFilesRequest request, CancellationToken cancellationToken)
+        private async Task SaveAnswersIntoPage(ApplicationSection section, SubmitPageOfFilesRequest request, CancellationToken cancellationToken)
         {
-            var section = _dataContext.ApplicationSections.SingleOrDefault(sec => sec.Id == request.SectionId && sec.ApplicationId == request.ApplicationId);
-
             if (section != null)
             {
                 // Have to force QnAData a new object and reassign for Entity Framework to pick up changes
@@ -155,20 +153,16 @@ namespace SFA.DAS.QnA.Application.Commands.Files.UploadFile
 
                     // Assign QnAData back so Entity Framework will pick up changes
                     section.QnAData = qnaData;
-                    _dataContext.SaveChanges();
                 }
             }
         }
 
-        private void UpdateApplicationData(SubmitPageOfFilesRequest request)
+        private void UpdateApplicationData(SubmitPageOfFilesRequest request, Data.Entities.Application application, ApplicationSection section)
         {
-            var application = _dataContext.Applications.SingleOrDefault(app => app.Id == request.ApplicationId);
-
             if (application != null)
             {
                 var applicationData = JObject.Parse(application.ApplicationData ?? "{}");
 
-                var section = _dataContext.ApplicationSections.AsNoTracking().SingleOrDefault(sec => sec.Id == request.SectionId && sec.ApplicationId == application.Id);
                 var page = section?.QnAData?.Pages.SingleOrDefault(p => p.PageId == request.PageId);
 
                 if (page != null)
@@ -197,9 +191,8 @@ namespace SFA.DAS.QnA.Application.Commands.Files.UploadFile
                     }
 
                     application.ApplicationData = applicationData.ToString(Formatting.None);
-                    _dataContext.SaveChanges();
-
-                    SetStatusOfAllPagesBasedOnUpdatedQuestionTags(application.Id, questionTagsWhichHaveBeenUpdated);
+                    
+                    SetStatusOfAllPagesBasedOnUpdatedQuestionTags(application, questionTagsWhichHaveBeenUpdated);
                     _tagProcessingService.ClearDeactivatedTags(application.Id, request.SectionId);
                 }
             }
