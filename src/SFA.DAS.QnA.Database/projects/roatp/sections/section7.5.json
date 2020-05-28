@@ -467,10 +467,10 @@
 			"Questions": [{
 					"QuestionId": "DAT-754.1",
 					"QuestionTag": null,
-					"Label": "",
+					"Label": "<h1 class='govuk-heading-l'>Full name</h1>",
 					"ShortLabel": "",
 					"InputClasses": null,
-					"QuestionBodyText": "<p class='govuk-body' id='dat-section_7_5_overall_manager'>This must be someone who is accountable for the team responsible for developing and delivering training.</p><p class='govuk-body'>Full name</p>",
+					"QuestionBodyText": "<p class='govuk-body' id='dat-section_7_5_overall_manager'>This must be someone who is accountable for the team responsible for developing and delivering training.</p>",
 					"Hint": "",
 					"Input": {
 						"Type": "Text",
@@ -764,10 +764,10 @@
 			"Questions": [{
 					"QuestionId": "DAT-759.1",
 					"QuestionTag": null,
-					"Label": "",
+					"Label": "<h1 class='govuk-heading-l'>Full name</h1>",
 					"ShortLabel": "",
 					"InputClasses": null,
-					"QuestionBodyText": "<p class='govuk-body' id='dat-section_7_5_overall_manager_supporting'>This must be someone who is accountable for the team responsible for developing and delivering training.</p><p class='govuk-body'>Full name</p>",
+					"QuestionBodyText": "<p class='govuk-body' id='dat-section_7_5_overall_manager_supporting'>This must be someone who is accountable for the team responsible for developing and delivering training.</p>",
 					"Hint": "",
 					"Input": {
 						"Type": "Text",
