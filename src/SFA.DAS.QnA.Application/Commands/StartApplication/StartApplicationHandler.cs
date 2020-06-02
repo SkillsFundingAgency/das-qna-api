@@ -8,7 +8,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using SFA.DAS.QnA.Api.Types;
-using SFA.DAS.QnA.Api.Types.Page;
 using SFA.DAS.QnA.Data;
 using SFA.DAS.QnA.Data.Entities;
 
@@ -64,6 +63,7 @@ namespace SFA.DAS.QnA.Application.Commands.StartApplication
             }
 
             await CopyWorkflows(cancellationToken, newApplication);
+            await _dataContext.SaveChangesAsync(cancellationToken);
 
             _logger.LogInformation($"Successfully created new Application. Application Id = {newApplication.Id} | Workflow = {request.WorkflowType}");
             return new HandlerResponse<StartApplicationResponse>(new StartApplicationResponse {ApplicationId = newApplication.Id});
@@ -81,7 +81,6 @@ namespace SFA.DAS.QnA.Application.Commands.StartApplication
             };
 
             _dataContext.Applications.Add(newApplication);
-            await _dataContext.SaveChangesAsync(cancellationToken);
             _logger.LogInformation($"Created Application entity: {newApplication.Id}");
 
             return newApplication;
@@ -103,7 +102,6 @@ namespace SFA.DAS.QnA.Application.Commands.StartApplication
             }).ToList();
 
             await _dataContext.ApplicationSequences.AddRangeAsync(newApplicationSequences, cancellationToken);
-            await _dataContext.SaveChangesAsync(cancellationToken);
             _logger.LogInformation($"Created ApplicationSequence entities for Application: {newApplication.Id}");
 
             var sectionIds = groupedSequences.SelectMany(seq => seq).Select(seq => seq.SectionId).ToList();
@@ -144,7 +142,6 @@ namespace SFA.DAS.QnA.Application.Commands.StartApplication
             }
 
             await _dataContext.ApplicationSections.AddRangeAsync(newApplicationSections, cancellationToken);
-            await _dataContext.SaveChangesAsync(cancellationToken);
             _logger.LogInformation($"Created ApplicationSection entities for Application: {newApplication.Id}");
         }
     }

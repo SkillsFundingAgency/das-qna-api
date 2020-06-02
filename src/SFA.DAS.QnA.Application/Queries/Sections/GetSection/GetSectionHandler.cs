@@ -4,7 +4,6 @@ using System.Threading.Tasks;
 using AutoMapper;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
-using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using SFA.DAS.QnA.Api.Types;
 using SFA.DAS.QnA.Application.Services;
@@ -43,8 +42,8 @@ namespace SFA.DAS.QnA.Application.Queries.Sections.GetSection
         {
             var applicationData = JObject.Parse(application.ApplicationData);
 
-            RemovePagesBasedOnNotRequiredConditions(section, applicationData);
             RemoveInactivePages(section);
+            RemovePagesBasedOnNotRequiredConditions(section, applicationData);
         }
 
         private static void RemoveInactivePages(ApplicationSection section)
