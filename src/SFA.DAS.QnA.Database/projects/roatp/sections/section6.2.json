@@ -1001,95 +1001,6 @@
             "BodyText": ""
         },
         {
-            "PageId": "6700",
-            "SequenceId": null,
-            "SectionId": null,
-            "Title": "Who can we contact about the apprenticeships your organisation will deliver?",
-            "LinkTitle": "Who can we contact about the apprenticeships your organisation will deliver?",
-            "InfoText": "",
-            "Questions": [
-                {
-                    "QuestionId": "PAT-671",
-                    "QuestionTag": null,
-                    "Label": "Full name",
-                    "ShortLabel": "",
-                    "QuestionBodyText": "",
-                    "Hint": "",
-                    "Input": {
-                        "Type": "Text",
-                        "Validations": [
-                            {
-                                "Name": "Required",
-                                "Value": null,
-                                "ErrorMessage": "Enter a full name"
-                            },
-                            {
-                                "Name": "MaxLength",
-                                "Value": 255,
-                                "ErrorMessage": "Enter a full name using 255 characters or less"
-                            }
-                        ]
-                    },
-                    "Order": null
-                },
-                {
-                    "QuestionId": "PAT-672",
-                    "QuestionTag": null,
-                    "Label": "Email",
-                    "ShortLabel": "",
-                    "QuestionBodyText": "",
-                    "Hint": "",
-                    "Input": {
-                        "Type": "Text",
-                        "Validations": [
-                            {
-                                "Name": "Required",
-                                "Value": null,
-                                "ErrorMessage": "Enter a valid email"
-                            },
-                            {
-                                "Name": "MaxLength",
-                                "Value": 70,
-                                "ErrorMessage": "Enter an email using 70 characters or less"
-                            },
-                            {
-                                "Name": "Email",
-                                "Value": null,
-                                "ErrorMessage": "Enter an email in the correct format, like name@example.com"
-                            }
-                        ]
-                    },
-                    "Order": null
-                }
-            ],
-            "PageOfAnswers": [],
-            "Next": [
-                {
-                    "Action": "ReturnToSection",
-                    "ReturnId": "",
-                    "Conditions": [],
-                    "ConditionMet": false
-                }
-            ],
-            "Complete": false,
-            "AllowMultipleAnswers": false,
-            "Order": null,
-            "Active": false,
-            "Details": null,
-            "DisplayType": null,
-            "Feedback": null,
-            "NotRequiredConditions": [
-                {
-                    "Field": "ApplyProviderRoute",
-                    "IsOneOf": [
-                        "2"
-                    ]
-                }
-            ],
-            "ActivatedByPageId": "6020,6022,6800",
-            "BodyText": "<p class='govuk-body'>This must be the person who will use the 'Publish to Course Directory' service to enter your organisation's apprenticeships.</p>"
-        },
-        {
             "PageId": "6800",
             "SequenceId": null,
             "SectionId": null,
@@ -1130,18 +1041,6 @@
             ],
             "PageOfAnswers": [],
             "Next": [
-                {
-                    "Action": "NextPage",
-                    "ReturnId": "6700",
-                    "Conditions": [
-                        {
-                            "QuestionId": null,
-                            "QuestionTag": "ApplyProviderRoute",
-                            "MustEqual": "1"
-                        }
-                    ],
-                    "ConditionMet": false
-                },
                 {
                     "Action": "ReturnToSection",
                     "ReturnId": "",
@@ -1238,23 +1137,6 @@
                             "QuestionId": null,
                             "QuestionTag": "PATTypeOfTrainingMainEmployer",
                             "Contains": "Apprenticeship frameworks"
-                        }
-                    ],
-                    "ConditionMet": false
-                },
-                {
-                    "Action": "NextPage",
-                    "ReturnId": "6700",
-                    "Conditions": [
-                        {
-                            "QuestionId": null,
-                            "QuestionTag": "ApplyProviderRoute",
-                            "MustEqual": "1"
-                        },
-                        {
-                            "QuestionId": null,
-                            "QuestionTag": "PATTypeOfTrainingMainEmployer",
-                            "Contains": "Apprenticeship standards"
                         }
                     ],
                     "ConditionMet": false
