@@ -7,9 +7,6 @@ trigger:
 
 pr: none
 
-workspace:
-    clean: all
-
 variables:
   buildConfiguration: 'release'
   buildPlatform: 'anycpu'
