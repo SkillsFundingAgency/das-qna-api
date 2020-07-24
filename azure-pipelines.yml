@@ -35,7 +35,7 @@ jobs:
     displayName: dot restore
     inputs:
       command: restore
-      projects: 'src/SFA.DAS.QnA.sln'
+      projects: 'src/**/*.csproj'
       noCache: true
 
   - task: DotNetCoreCLI@2
