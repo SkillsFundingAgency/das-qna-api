@@ -20,6 +20,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\SFA.DAS.Qna.Api.Types\SFA.DAS.QnA.Api.Types.csproj" />
+      <ProjectReference Include="..\SFA.DAS.Qna.Api.Types\SFA.DAS.Qna.Api.Types.csproj" />
     </ItemGroup>
 </Project>
