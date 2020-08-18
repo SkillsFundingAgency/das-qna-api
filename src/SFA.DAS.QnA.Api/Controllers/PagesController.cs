@@ -86,6 +86,25 @@ namespace SFA.DAS.QnA.Api.Controllers
         }
 
         /// <summary>
+        ///     Sets the answers on the page.
+        /// </summary>
+        /// <returns>An object describing validity / next steps</returns>
+        /// <response code="200">Returns the response</response>
+        [HttpPost("{applicationId}/sequences/{sequenceNo}/sections/{sectionNo}/pages/{pageId}")]
+        [ProducesResponseType(200)]
+        public async Task<ActionResult<SetPageAnswersResponse>> SetPageAnswers(Guid applicationId, int sequenceNo, int sectionNo, string pageId, [FromBody] List<Answer> answers)
+        {
+            _logger.LogInformation($"Answers sent to SetPageAnswers: {JsonConvert.SerializeObject(answers)}");
+
+            var savePageAnswersResponse = await _mediator.Send(new SetPageAnswersBySectionNoRequest(applicationId, sequenceNo, sectionNo, pageId, answers), CancellationToken.None);
+            if (!savePageAnswersResponse.Success) return BadRequest(new BadRequestError(savePageAnswersResponse.Message));
+
+            _logger.LogInformation($"Response from SetPageAnswers: {JsonConvert.SerializeObject(savePageAnswersResponse.Value)}");
+
+            return savePageAnswersResponse.Value;
+        }
+
+        /// <summary>
         ///     Removes all answers on the page.
         /// </summary>
         /// <returns>An object describing if the page has had its answers reset</returns>

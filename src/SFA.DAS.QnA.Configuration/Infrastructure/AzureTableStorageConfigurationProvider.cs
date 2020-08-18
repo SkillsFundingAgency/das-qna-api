@@ -30,6 +30,7 @@ namespace SFA.DAS.QnA.Configuration.Infrastructure
 
             var table = GetTable();
             var operation = GetOperation(_appName, _environment, _version);
+            
             var result = table.ExecuteAsync(operation).Result;
 
             var configItem = (ConfigurationItem)result.Result;

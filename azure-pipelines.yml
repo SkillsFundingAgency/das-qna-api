@@ -23,13 +23,11 @@ resources:
     endpoint: "GitHub (SFA)"
 
 pool:
-  name: 'Continuous Integration 02 - SSD - 160ACU'
-  demands: 
-  - msbuild
-  - visualstudio
+  name: 'DAS - Continuous Integration'
+  demands: Agent.OS -equals Windows_NT
 
 steps:
-- task: gittools.gitversion.gitversion-task.GitVersion@4
+- task: gittools.gitversion.gitversion-task.GitVersion@5
   displayName: GitVersion
   inputs:
     updateAssemblyInfo: true
@@ -46,7 +44,7 @@ steps:
   inputs:
     projects: 'src/**/*.csproj'
     arguments: '--configuration $(buildConfiguration)  --no-restore'
-    
+
 - task: DotNetCoreCLI@2
   displayName: dotnet test
   inputs:
@@ -71,7 +69,7 @@ steps:
     publishWebProjects: false
     projects: src/SFA.DAS.Qna.Data/SFA.DAS.Qna.Data.csproj
     arguments: '--configuration $(buildConfiguration) --output $(build.artifactstagingdirectory)/publish --no-restore  --no-build'
-    
+
 - task: DotNetCoreCLI@2
   displayName: 'dotnet pack'
   inputs:

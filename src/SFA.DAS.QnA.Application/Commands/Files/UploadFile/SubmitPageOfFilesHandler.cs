@@ -14,6 +14,7 @@ using SFA.DAS.QnA.Application.Commands.SetPageAnswers;
 using SFA.DAS.QnA.Application.Services;
 using SFA.DAS.QnA.Configuration.Config;
 using SFA.DAS.QnA.Data;
+using SFA.DAS.QnA.Data.Entities;
 
 namespace SFA.DAS.QnA.Application.Commands.Files.UploadFile
 {
@@ -21,151 +22,253 @@ namespace SFA.DAS.QnA.Application.Commands.Files.UploadFile
     {
         private readonly IOptions<FileStorageConfig> _fileStorageConfig;
         private readonly IEncryptionService _encryptionService;
-        private readonly IAnswerValidator _answerValidator;
         private readonly IFileContentValidator _fileContentValidator;
-        private readonly ITagProcessingService _tagProcessingService;
-        public SubmitPageOfFilesHandler(QnaDataContext dataContext, IOptions<FileStorageConfig> fileStorageConfig, IEncryptionService encryptionService, IAnswerValidator answerValidator, IFileContentValidator fileContentValidator, INotRequiredProcessor notRequiredProcessor, ITagProcessingService tagProcessingService) : base(dataContext, notRequiredProcessor, tagProcessingService)
+
+        public SubmitPageOfFilesHandler(QnaDataContext dataContext, IOptions<FileStorageConfig> fileStorageConfig, IEncryptionService encryptionService, IAnswerValidator answerValidator, IFileContentValidator fileContentValidator, INotRequiredProcessor notRequiredProcessor, ITagProcessingService tagProcessingService) : base(dataContext, notRequiredProcessor, tagProcessingService, answerValidator)
         {
             _fileStorageConfig = fileStorageConfig;
             _encryptionService = encryptionService;
-            _answerValidator = answerValidator;
             _fileContentValidator = fileContentValidator;
-            _tagProcessingService = tagProcessingService;
         }
-        
+
         public async Task<HandlerResponse<SetPageAnswersResponse>> Handle(SubmitPageOfFilesRequest request, CancellationToken cancellationToken)
         {
-            var section = await _dataContext.ApplicationSections.FirstOrDefaultAsync(sec => sec.Id == request.SectionId && sec.ApplicationId == request.ApplicationId, cancellationToken);
-            
-            var qnaData = new QnAData(section.QnAData);
-            var page = qnaData.Pages.FirstOrDefault(p => p.PageId == request.PageId);
+            var section = await _dataContext.ApplicationSections.SingleOrDefaultAsync(sec => sec.Id == request.SectionId && sec.ApplicationId == request.ApplicationId);
+            var validationErrorResponse = ValidateRequest(request, section);
+
+            if (validationErrorResponse != null)
+            {
+                return validationErrorResponse;
+            }
+
+            await SaveAnswersIntoPage(section, request, cancellationToken);
+            var application = await _dataContext.Applications.SingleOrDefaultAsync(app => app.Id == request.ApplicationId);
+            UpdateApplicationData(request, application, section);
+
+            var nextAction = GetNextActionForPage(section, application, request.PageId);
+            var checkboxListAllNexts = GetCheckboxListMatchingNextActionsForPage(section, application, request.PageId);
+
+            SetStatusOfNextPagesBasedOnDeemedNextActions(section, request.PageId, nextAction, checkboxListAllNexts);
+
+            await _dataContext.SaveChangesAsync(cancellationToken);
+
+            return new HandlerResponse<SetPageAnswersResponse>(new SetPageAnswersResponse(nextAction.Action, nextAction.ReturnId));
+        }
+
+        private HandlerResponse<SetPageAnswersResponse> ValidateRequest(SubmitPageOfFilesRequest request, ApplicationSection section)
+        {
+            var page = section?.QnAData?.Pages.SingleOrDefault(p => p.PageId == request.PageId);
 
             if (page is null)
             {
-                return new HandlerResponse<SetPageAnswersResponse>(success: false, message: $"The page {request.PageId} in section {request.SectionId} does not exist.");
+                return new HandlerResponse<SetPageAnswersResponse>(success: false, message: "Cannot find requested page.");
+            }
+            else if (request.Files is null || !request.Files.Any())
+            {
+                return new HandlerResponse<SetPageAnswersResponse>(success: false, message: "No files specified.");
+            }
+            else if (request.Files.Any(f => f.Name is null))
+            {
+                return new HandlerResponse<SetPageAnswersResponse>(success: false, message: "All files must specify which question they are related to.");
             }
             else if (page.AllowMultipleAnswers)
             {
-                return new HandlerResponse<SetPageAnswersResponse>(success: false, message: "This endpoint cannot be used for Multiple Answers pages.");
+                return new HandlerResponse<SetPageAnswersResponse>(success: false, message: "This endpoint cannot be used for Multiple Answers pages. Use AddAnswer / RemoveAnswer instead.");
             }
-            else if (page.Questions.Count > 0)
+            else if (page.Questions.Any())
             {
                 if (page.Questions.Any(q => !"FileUpload".Equals(q.Input?.Type, StringComparison.InvariantCultureIgnoreCase)))
                 {
                     return new HandlerResponse<SetPageAnswersResponse>(success: false, message: "Pages cannot contain a mixture of FileUploads and other Question Types.");
                 }
+
+                var answersToValidate = GetAnswersToValidate(request, page);
+
+                var validationErrors = _answerValidator.Validate(answersToValidate, page);
+                if (validationErrors.Any())
+                {
+                    return new HandlerResponse<SetPageAnswersResponse>(new SetPageAnswersResponse(validationErrors));
+                }
+
+                var fileContentValidationErrors = _fileContentValidator.Validate(request.Files);
+                if (fileContentValidationErrors.Any())
+                {
+                    return new HandlerResponse<SetPageAnswersResponse>(new SetPageAnswersResponse(fileContentValidationErrors));
+                }
             }
 
-            var answersToValidate = new List<Answer>();
-            foreach (var file in request.Files)
+            return null;
+        }
+
+        private async Task SaveAnswersIntoPage(ApplicationSection section, SubmitPageOfFilesRequest request, CancellationToken cancellationToken)
+        {
+            if (section != null)
             {
-                var answer = new Answer() {QuestionId = file.Name, Value = file.FileName};
-                answersToValidate.Add(answer);
+                // Have to force QnAData a new object and reassign for Entity Framework to pick up changes
+                var qnaData = new QnAData(section.QnAData);
+                var page = qnaData?.Pages.SingleOrDefault(p => p.PageId == request.PageId);
+
+                if (page != null)
+                {
+                    var container = await ContainerHelpers.GetContainer(_fileStorageConfig.Value.StorageConnectionString, _fileStorageConfig.Value.ContainerName);
+
+                    foreach (var file in request.Files)
+                    {
+                        var questionIdFromFileName = file.Name;
+                        var questionFolder = ContainerHelpers.GetDirectory(request.ApplicationId, section.SequenceId, request.SectionId, request.PageId, questionIdFromFileName, container);
+
+                        var blob = questionFolder.GetBlockBlobReference(file.FileName);
+                        blob.Properties.ContentType = file.ContentType;
+
+                        var encryptedFileStream = _encryptionService.Encrypt(file.OpenReadStream());
+
+                        await blob.UploadFromStreamAsync(encryptedFileStream, cancellationToken);
+
+                        if (page.PageOfAnswers is null)
+                        {
+                            page.PageOfAnswers = new List<PageOfAnswers>();
+                        }
+
+                        var foundExistingOnPage = page.PageOfAnswers.SelectMany(a => a.Answers).Any(answer => answer.QuestionId == file.Name && answer.Value == file.FileName);
+
+                        if (!foundExistingOnPage)
+                        {
+                            page.PageOfAnswers.Add(new PageOfAnswers
+                            {
+                                Id = Guid.NewGuid(),
+                                Answers = new List<Answer>
+                                {
+                                    new Answer
+                                    {
+                                        QuestionId = file.Name,
+                                        Value = file.FileName
+                                    }
+                                }
+                            });
+                        }
+                    }
+
+                    MarkPageAsComplete(page);
+                    MarkPageFeedbackAsComplete(page);
+
+                    // Assign QnAData back so Entity Framework will pick up changes
+                    section.QnAData = qnaData;
+                }
             }
-            
-            // Need to add to answersToValidate here any existing answers on the page for questions not already in answersToValidate
+        }
+
+        private void UpdateApplicationData(SubmitPageOfFilesRequest request, Data.Entities.Application application, ApplicationSection section)
+        {
+            if (application != null)
+            {
+                var applicationData = JObject.Parse(application.ApplicationData ?? "{}");
+
+                var page = section?.QnAData?.Pages.SingleOrDefault(p => p.PageId == request.PageId);
+
+                if (page != null)
+                {
+                    var questionTagsWhichHaveBeenUpdated = new List<string>();
+                    var answers = GetAnswersFromRequest(request);
+
+                    foreach (var question in page.Questions)
+                    {
+                        SetApplicationDataField(question, answers, applicationData);
+                        if (!string.IsNullOrWhiteSpace(question.QuestionTag))
+                            questionTagsWhichHaveBeenUpdated.Add(question.QuestionTag);
+
+                        if (question.Input.Options != null)
+                        {
+                            foreach (var option in question.Input.Options.Where(o => o.FurtherQuestions != null))
+                            {
+                                foreach (var furtherQuestion in option.FurtherQuestions)
+                                {
+                                    SetApplicationDataField(furtherQuestion, answers, applicationData);
+                                    if (!string.IsNullOrWhiteSpace(furtherQuestion.QuestionTag))
+                                        questionTagsWhichHaveBeenUpdated.Add(furtherQuestion.QuestionTag);
+                                }
+                            }
+                        }
+                    }
+
+                    application.ApplicationData = applicationData.ToString(Formatting.None);
+                    
+                    SetStatusOfAllPagesBasedOnUpdatedQuestionTags(application, questionTagsWhichHaveBeenUpdated);
+                    _tagProcessingService.ClearDeactivatedTags(application.Id, request.SectionId);
+                }
+            }
+        }
+
+        private static void SetApplicationDataField(Question question, List<Answer> answers, JObject applicationData)
+        {
+            if (question != null && applicationData != null)
+            {
+                var questionTag = question.QuestionTag;
+                var questionTagAnswer = answers?.SingleOrDefault(a => a.QuestionId == question.QuestionId)?.Value;
+
+                if (!string.IsNullOrWhiteSpace(questionTag))
+                {
+                    if (applicationData.ContainsKey(questionTag))
+                    {
+                        applicationData[questionTag] = questionTagAnswer;
+                    }
+                    else
+                    {
+                        applicationData.Add(questionTag, new JValue(questionTagAnswer));
+                    }
+                }
+            }
+        }
+
+        private static List<Answer> GetAnswersFromRequest(SubmitPageOfFilesRequest request)
+        {
+            var answers = new List<Answer>();
+
+            if (request.Files != null)
+            {
+                foreach (var file in request.Files)
+                {
+                    var answer = new Answer { QuestionId = file.Name, Value = file.FileName };
+                    answers.Add(answer);
+                }
+            }
+
+            return answers;
+        }
+
+        private static List<Answer> GetExistingAnswersFromPage(Page page)
+        {
+            var answers = new List<Answer>();
+
             if (page.PageOfAnswers != null)
             {
                 foreach (var pageOfAnswers in page.PageOfAnswers)
                 {
-                    foreach (var existingAnswer in pageOfAnswers.Answers)
+                    foreach (var pageAnswer in pageOfAnswers.Answers)
                     {
-                        if (answersToValidate.All(a => a.QuestionId != existingAnswer.QuestionId))
+                        if (answers.All(a => a.QuestionId != pageAnswer.QuestionId))
                         {
-                            answersToValidate.Add(existingAnswer);
+                            answers.Add(pageAnswer);
                         }
                     }
-                }   
-            }
-
-            var validationErrors = _answerValidator.Validate(answersToValidate, page);
-            if (validationErrors.Any())
-            {
-                return new HandlerResponse<SetPageAnswersResponse>(new SetPageAnswersResponse(validationErrors));
-            }
-
-            var fileContentValidationErrors = _fileContentValidator.Validate(request.Files);
-            if (fileContentValidationErrors.Any())
-            {
-                return new HandlerResponse<SetPageAnswersResponse>(new SetPageAnswersResponse(fileContentValidationErrors));
-            }
-
-            var container = await ContainerHelpers.GetContainer(_fileStorageConfig.Value.StorageConnectionString, _fileStorageConfig.Value.ContainerName);
-
-            foreach (var file in request.Files)
-            {
-                var questionIdFromFileName = file.Name;
-                var questionFolder = ContainerHelpers.GetDirectory(request.ApplicationId, section.SequenceId, request.SectionId, request.PageId, questionIdFromFileName, container);
-            
-                var blob = questionFolder.GetBlockBlobReference(file.FileName);
-                blob.Properties.ContentType = file.ContentType;
-
-                var encryptedFileStream = _encryptionService.Encrypt(file.OpenReadStream());
-                
-                
-                await blob.UploadFromStreamAsync(encryptedFileStream, cancellationToken);
-
-                if (page.PageOfAnswers is null)
-                {
-                    page.PageOfAnswers = new List<PageOfAnswers>();
                 }
+            }
 
-                var foundExistingOnPage = page.PageOfAnswers.SelectMany(a => a.Answers).Any(answer => answer.QuestionId == file.Name && answer.Value == file.FileName);
-                
-                if (!foundExistingOnPage)
+            return answers;
+        }
+
+        private static List<Answer> GetAnswersToValidate(SubmitPageOfFilesRequest request, Page page)
+        {
+            var answers = GetAnswersFromRequest(request);
+
+            foreach (var existingAnswer in GetExistingAnswersFromPage(page))
+            {
+                if (answers.All(a => a.QuestionId != existingAnswer.QuestionId))
                 {
-                    page.PageOfAnswers.Add(new PageOfAnswers(){Id = Guid.NewGuid(), Answers = new List<Answer>()
-                    {
-                        new Answer()
-                        {
-                            QuestionId = file.Name,
-                            Value = file.FileName
-                        }
-                    }});
+                    answers.Add(existingAnswer);
                 }
-
             }
 
-            MarkPageAsComplete(page);
-            MarkPageFeedbackAsComplete(page);
-
-            section.QnAData = qnaData;
-            await _dataContext.SaveChangesAsync(cancellationToken);
-
-
-            await UpdateApplicationData(request.ApplicationId, page, page.PageOfAnswers.SelectMany(poa => poa.Answers).ToList());
-            
-            var nextAction = GetNextActionForPage(section.Id, page.PageId);
-            
-            return new HandlerResponse<SetPageAnswersResponse>(new SetPageAnswersResponse(nextAction.Action, nextAction.ReturnId));
-        }
-        
-        private async Task UpdateApplicationData(Guid applicationId, Page page, List<Answer> answers)
-        {
-            var application = await _dataContext.Applications.SingleOrDefaultAsync(app => app.Id == applicationId);
-            var applicationData = JObject.Parse(application.ApplicationData);
-            foreach (var question in page.Questions)
-            {
-                SetApplicationDataField(answers, applicationData, question);
-            }
-
-            application.ApplicationData = applicationData.ToString(Formatting.None);
-
-            await _dataContext.SaveChangesAsync();
-        }
-        
-        private static void SetApplicationDataField(List<Answer> answers, JObject applicationData, Question question)
-        {
-            if (string.IsNullOrWhiteSpace(question.QuestionTag)) return;
-
-            if (applicationData.ContainsKey(question.QuestionTag))
-            {
-                applicationData[question.QuestionTag] = answers.Single(a => a.QuestionId == question.QuestionId).Value;
-            }
-            else
-            {
-                applicationData.Add(question.QuestionTag, new JValue(answers.Single(a => a.QuestionId == question.QuestionId).Value));
-            }
+            return answers;
         }
     }
 }

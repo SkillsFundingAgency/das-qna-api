@@ -20,3 +20,5 @@ GO
 ALTER TABLE [Workflows] ADD  DEFAULT (newid()) FOR [Id]
 GO
 
+CREATE INDEX [IX_Workflows_TypeStatus] ON [Workflows]  ( [Type], [Status] )
+GO

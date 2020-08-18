@@ -23,12 +23,14 @@ namespace SFA.DAS.QnA.Application.Queries.Sequences.GetSequences
         
         public async Task<HandlerResponse<List<Sequence>>> Handle(GetSequencesRequest request, CancellationToken cancellationToken)
         {
-            var application = await _dataContext.Applications.SingleOrDefaultAsync(app => app.Id == request.ApplicationId, cancellationToken);
-            if (application is null) return new HandlerResponse<List<Sequence>>(false, "Application does not exist");
-
             var sequences = await _dataContext.ApplicationSequences
                 .Where(seq => seq.ApplicationId == request.ApplicationId)
                 .ToListAsync(cancellationToken: cancellationToken);
+
+            if (!sequences.Any())
+            {
+                return new HandlerResponse<List<Sequence>>(false, "Application does not exist");
+            }
 
             var mappedSequences = _mapper.Map<List<Sequence>>(sequences);
             
