@@ -63,6 +63,7 @@ namespace SFA.DAS.QnA.Application.Commands.StartApplication
             }
 
             await CopyWorkflows(cancellationToken, newApplication);
+            _logger.LogInformation($"Saving context changes... {newApplication.Id}");
             await _dataContext.SaveChangesAsync(cancellationToken);
 
             _logger.LogInformation($"Successfully created new Application. Application Id = {newApplication.Id} | Workflow = {request.WorkflowType}");
@@ -88,9 +89,12 @@ namespace SFA.DAS.QnA.Application.Commands.StartApplication
 
         private async Task CopyWorkflows(CancellationToken cancellationToken, Data.Entities.Application newApplication)
         {
+            _logger.LogInformation($"Copying workflows... {newApplication.Id}");
 
             var workflowSequences = await _dataContext.WorkflowSequences.AsNoTracking()
                 .Where(seq => seq.WorkflowId == newApplication.WorkflowId).ToListAsync(cancellationToken);
+
+            _logger.LogInformation($"Retrieved workflow sequences {newApplication.Id}");
 
             var groupedSequences = workflowSequences.GroupBy(seq => new {seq.SequenceNo, seq.IsActive}).ToList();
 
@@ -106,8 +110,13 @@ namespace SFA.DAS.QnA.Application.Commands.StartApplication
 
             var sectionIds = groupedSequences.SelectMany(seq => seq).Select(seq => seq.SectionId).ToList();
 
+            _logger.LogInformation($"Retrieving workflow sections... {newApplication.Id}");
+
             var workflowSections = await _dataContext.WorkflowSections.AsNoTracking()
                 .Where(sec => sectionIds.Contains(sec.Id)).ToListAsync(cancellationToken: cancellationToken);
+
+            _logger.LogInformation($"Retrieved workflow sections {newApplication.Id}");
+            _logger.LogInformation($"Building application sections model... {newApplication.Id}");
 
             var newApplicationSections = new List<ApplicationSection>();
             foreach (var sequence in groupedSequences)
@@ -141,6 +150,7 @@ namespace SFA.DAS.QnA.Application.Commands.StartApplication
                 }
             }
 
+            _logger.LogInformation($"Built application sections model {newApplication.Id}");
             await _dataContext.ApplicationSections.AddRangeAsync(newApplicationSections, cancellationToken);
             _logger.LogInformation($"Created ApplicationSection entities for Application: {newApplication.Id}");
         }
