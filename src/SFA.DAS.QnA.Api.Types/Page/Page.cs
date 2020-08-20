@@ -21,6 +21,7 @@ namespace SFA.DAS.QnA.Api.Types.Page
         public bool AllowMultipleAnswers { get; set; }
         public int? Order { get; set; }
         public bool Active { get; set; }
+        public bool NotRequired { get; set; }
 
         public List<NotRequiredCondition> NotRequiredConditions { get; set; }
         
