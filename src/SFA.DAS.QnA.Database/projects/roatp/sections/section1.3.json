@@ -84,12 +84,8 @@
                     "Action": "NextPage",
                     "ReturnId": "130",
                     "Conditions": [
-                        {
-                            "QuestionTag": "VerifiedCompaniesHouse",
-                            "MustEqual": "TRUE"
-                        },
 						{
-						"QuestionTag": "CompaniesHouseManualEntry",
+						"QuestionTag": "CHManualEntryRequired",
                             "MustEqual": "TRUE"			
 						}
                     ],
