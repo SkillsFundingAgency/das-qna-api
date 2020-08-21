@@ -17,4 +17,5 @@ Post-Deployment Script Template
 -- NOTE: Remember to make these idempotent and remove when not required any more
 :r .\OneOffScripts\APR-1583.sql
 :r .\OneOffScripts\APR-1650.sql
+:r .\OneOffScripts\APR-1779.sql
 -- END
