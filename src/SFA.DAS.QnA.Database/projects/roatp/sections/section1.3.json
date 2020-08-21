@@ -82,6 +82,21 @@
                 },
                 {
                     "Action": "NextPage",
+                    "ReturnId": "130",
+                    "Conditions": [
+                        {
+                            "QuestionTag": "VerifiedCompaniesHouse",
+                            "MustEqual": "TRUE"
+                        },
+						{
+						"QuestionTag": "CompaniesHouseManualEntry",
+                            "MustEqual": "TRUE"			
+						}
+                    ],
+                    "ConditionMet": false
+                },
+                {
+                    "Action": "NextPage",
                     "ReturnId": "140",
                     "Conditions": [],
                     "ConditionMet": false
@@ -625,7 +640,8 @@
                         "TRUE"
                     ]
                 }
-            ]
+            ],
+            "ActivatedByPageId": "130"
         }
     ]
 }
