@@ -106,80 +106,6 @@
             ]
         },
         {
-            "PageId": "130",
-            "SequenceId": null,
-            "SectionId": null,
-            "Title": "Confirm who's in control",
-            "LinkTitle": "Confirm who's in control",
-            "InfoText": "",
-            "Questions": [
-                {
-                    "QuestionId": "YO-130",
-                    "QuestionTag": "AddPeopleInControl",
-                    "Label": "Confirm who's in control",
-                    "ShortLabel": "",
-                    "QuestionBodyText": "",
-                    "Hint": "",
-                    "Input":
-                    {
-                        "Type": "TabularData",
-                        "Validations": []
-                    }
-                }
-            ],
-            "PageOfAnswers": [],
-            "Next": [
-                {
-                    "Action": "NextPage",
-                    "ReturnId": "80",
-                    "Conditions": [
-                        {
-                            "QuestionTag": "UKRLPVerificationCharity",
-                            "MustEqual": "TRUE"
-                        },
-                        {
-                            "QuestionTag": "CCTrusteeManualEntry",
-                            "MustEqual": ""
-                        }
-                    ]
-                },
-                {
-                    "Action": "NextPage",
-                    "ReturnId": "90",
-                    "Conditions": [
-                        {
-                            "QuestionTag": "UKRLPVerificationCharity",
-                            "MustEqual": "TRUE"
-                        },
-                        {
-                            "QuestionTag": "CCTrusteeManualEntry",
-                            "MustEqual": "TRUE"
-                        }
-                    ]
-                },
-                {
-                    "Action": "NextPage",
-                    "ReturnId": null,
-                    "Conditions": []
-                }
-            ],
-            "Complete": false,
-            "AllowMultipleAnswers": false,
-            "Active": true,
-            "Visible": true,
-            "BodyText": "",
-            "NotRequiredConditions": [
-                {
-                    "Field": "UKRLPVerificationCompany",
-                    "IsOneOf": [""]
-                },
-                {
-                    "Field": "CHManualEntryRequired",
-                    "IsOneOf": [""]
-                }
-            ]
-        },
-        {
             "PageId": "80",
             "SequenceId": null,
             "SectionId": null,
@@ -608,6 +534,80 @@
                     "IsOneOf": [
                         "Partnership"
                     ]
+                }
+            ]
+        },
+        {
+            "PageId": "130",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "Confirm who's in control",
+            "LinkTitle": "Confirm who's in control",
+            "InfoText": "",
+            "Questions": [
+                {
+                    "QuestionId": "YO-130",
+                    "QuestionTag": "AddPeopleInControl",
+                    "Label": "Confirm who's in control",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "",
+                    "Hint": "",
+                    "Input":
+                    {
+                        "Type": "TabularData",
+                        "Validations": []
+                    }
+                }
+            ],
+            "PageOfAnswers": [],
+            "Next": [
+                {
+                    "Action": "NextPage",
+                    "ReturnId": "80",
+                    "Conditions": [
+                        {
+                            "QuestionTag": "UKRLPVerificationCharity",
+                            "MustEqual": "TRUE"
+                        },
+                        {
+                            "QuestionTag": "CCTrusteeManualEntry",
+                            "MustEqual": ""
+                        }
+                    ]
+                },
+                {
+                    "Action": "NextPage",
+                    "ReturnId": "90",
+                    "Conditions": [
+                        {
+                            "QuestionTag": "UKRLPVerificationCharity",
+                            "MustEqual": "TRUE"
+                        },
+                        {
+                            "QuestionTag": "CCTrusteeManualEntry",
+                            "MustEqual": "TRUE"
+                        }
+                    ]
+                },
+                {
+                    "Action": "NextPage",
+                    "ReturnId": null,
+                    "Conditions": []
+                }
+            ],
+            "Complete": false,
+            "AllowMultipleAnswers": false,
+            "Active": true,
+            "Visible": true,
+            "BodyText": "",
+            "NotRequiredConditions": [
+                {
+                    "Field": "UKRLPVerificationCompany",
+                    "IsOneOf": [""]
+                },
+                {
+                    "Field": "CHManualEntryRequired",
+                    "IsOneOf": [""]
                 }
             ]
         }
