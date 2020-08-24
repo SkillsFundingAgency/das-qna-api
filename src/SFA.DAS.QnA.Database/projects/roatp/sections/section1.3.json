@@ -611,25 +611,13 @@
             "Complete": false,
             "AllowMultipleAnswers": false,
             "Order": null,
-            "Active": true,
+            "Active": false,
             "Visible": true,
             "Feedback": null,
             "HasFeedback": false,
             "NotRequiredOrgTypes": [],
             "BodyText": "",
             "NotRequiredConditions": [
-                {
-                    "Field": "UKRLPVerificationCompany",
-                    "IsOneOf": [
-                        "TRUE"
-                    ]
-                },
-                {
-                    "Field": "UKRLPVerificationCharity",
-                    "IsOneOf": [
-                        "TRUE"
-                    ]
-                },
                 {
                     "Field": "UKRLPVerificationSoleTraderPartnership",
                     "IsOneOf": [
