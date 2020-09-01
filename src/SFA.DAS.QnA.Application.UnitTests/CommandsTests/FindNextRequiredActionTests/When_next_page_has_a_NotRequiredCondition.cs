@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using FluentAssertions;
 using Newtonsoft.Json.Linq;
@@ -107,6 +108,44 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.FindNextRequiredAction
             var applicationData = JObject.Parse(ApplicationDataJson);
             var nextActionAfterFindingNextAction = SetAnswersBase.FindNextRequiredAction(section, NextAction, applicationData);
             nextActionAfterFindingNextAction.Should().BeEquivalentTo(actionWithNoCondition);
+        }
+
+        [Test]
+        public void Then_the_page_is_marked_as_not_required()
+        {
+            var section = new ApplicationSection
+            {
+                ApplicationId = ApplicationId,
+                QnAData = new QnAData
+                {
+                    Pages = new List<Page>
+                    {
+                        new Page
+                        {
+                            PageId = "2",
+                            NotRequiredConditions = new List<NotRequiredCondition>{new NotRequiredCondition(){Field = "OrgType", IsOneOf = new string[]{"OrgType1","OrgType2"}}},
+                            Next = new List<Next>
+                            {
+                                new Next
+                                {
+                                    Action = "NextPage",
+                                    ReturnId = "12",
+                                    Conditions = new List<Condition>()
+                                }
+                            }
+                        },
+                        new Page
+                        {
+                            PageId = "3",
+                            NotRequiredConditions = null
+                        }
+                    }
+                }
+            };
+
+            var applicationData = JObject.Parse(ApplicationDataJson);
+            SetAnswersBase.FindNextRequiredAction(section, NextAction, applicationData);
+            Assert.IsTrue(section.QnAData.Pages.First().NotRequired);
         }
     }
 
