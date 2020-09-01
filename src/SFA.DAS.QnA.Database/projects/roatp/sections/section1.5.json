@@ -1411,7 +1411,7 @@
                     "ShortLabel": "",
                     "InputClasses": null,
                     "QuestionBodyText": "<p class='govuk-body'>The contract must be:</p><ul class='govuk-list govuk-list--bullet'><li>signed and dated by your organisation and a main or employer provider</li><li>from the last 12 months</li></ul><p class='govuk-body'>The file must be a PDF and smaller than 5MB.</p>",
-                    "Hint": "",
+                    "Hint": "Upload a file",
                     "Input": {
                         "Type": "FileUpload",
                         "InputClasses": null,
