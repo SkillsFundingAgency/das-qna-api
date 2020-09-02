@@ -2,6 +2,7 @@ using System.Net;
 using System.Threading.Tasks;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using SFA.DAS.QnA.Api.Infrastructure;
 using SFA.DAS.QnA.Api.Types;
 
@@ -12,10 +13,12 @@ namespace SFA.DAS.QnA.Api.Controllers
     [ApiController]
     public class ApplicationController : ControllerBase
     {
+        private readonly ILogger<ApplicationController> _logger;
         private readonly IMediator _mediator;
 
-        public ApplicationController(IMediator mediator)
+        public ApplicationController(ILogger<ApplicationController> logger, IMediator mediator)
         {
+            _logger = logger;
             _mediator = mediator;
         }
 
@@ -31,11 +34,15 @@ namespace SFA.DAS.QnA.Api.Controllers
         [ProducesResponseType((int) HttpStatusCode.BadRequest)]
         public async Task<ActionResult> StartApplication([FromBody] StartApplicationRequest request)
         {
-            var newApplication = await _mediator.Send(request);
+            var newApplicationResponse = await _mediator.Send(request);
 
-            if (newApplication.Success == false) return BadRequest(new BadRequestError(newApplication.Message));
+            if (!newApplicationResponse.Success)
+            {
+                _logger.LogError($"Unable to start application | Reason : {newApplicationResponse.Message}");
+                return BadRequest(new BadRequestError(newApplicationResponse.Message));
+            }
 
-            return Ok(new {newApplication.Value.ApplicationId});
+            return Ok(new {newApplicationResponse.Value.ApplicationId});
         }
     }
 }

@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using SFA.DAS.QnA.Api.Infrastructure;
 using SFA.DAS.QnA.Api.Types;
 using SFA.DAS.QnA.Application.Commands.Files.DeleteFile;
@@ -15,11 +16,13 @@ namespace SFA.DAS.QnA.Api.Controllers
     [Produces("application/json")]
     public class FileController : Controller
     {
+        private readonly ILogger<FileController> _logger;
         private readonly IMediator _mediator;
         private readonly IHttpContextAccessor _contextAccessor;
 
-        public FileController(IMediator mediator, IHttpContextAccessor contextAccessor)
+        public FileController(ILogger<FileController> logger, IMediator mediator, IHttpContextAccessor contextAccessor)
         {
+            _logger = logger;
             _mediator = mediator;
             _contextAccessor = contextAccessor;
         }
@@ -31,6 +34,7 @@ namespace SFA.DAS.QnA.Api.Controllers
 
             if (!uploadResult.Success)
             {
+                _logger.LogError($"Unable to upload file for page {pageId} | Reason : {uploadResult.Message}");
                 return BadRequest(new BadRequestError(uploadResult.Message));
             }
             
@@ -44,6 +48,7 @@ namespace SFA.DAS.QnA.Api.Controllers
 
             if (!downloadResult.Success)
             {
+                _logger.LogError($"Unable to download files for page {pageId} | Reason : {downloadResult.Message}");
                 return BadRequest(new BadRequestError(downloadResult.Message));
             }
 
@@ -59,6 +64,7 @@ namespace SFA.DAS.QnA.Api.Controllers
 
             if (!downloadResult.Success)
             {
+                _logger.LogError($"Unable to download files for question {questionId} | Reason : {downloadResult.Message}");
                 return BadRequest(new BadRequestError(downloadResult.Message));
             }
 
@@ -74,6 +80,7 @@ namespace SFA.DAS.QnA.Api.Controllers
 
             if (!downloadResult.Success)
             {
+                _logger.LogError($"Unable to download files for question {questionId} | Reason : {downloadResult.Message}");
                 return BadRequest(new BadRequestError(downloadResult.Message));
             }
 
@@ -89,6 +96,7 @@ namespace SFA.DAS.QnA.Api.Controllers
 
             if (!downloadResult.Success)
             {
+                _logger.LogError($"Unable to download file for question {questionId} | Reason : {downloadResult.Message}");
                 return BadRequest(new BadRequestError(downloadResult.Message));
             }
 
@@ -104,6 +112,7 @@ namespace SFA.DAS.QnA.Api.Controllers
 
             if (!deleteFileResponse.Success)
             {
+                _logger.LogError($"Unable to delete file for question {questionId} | Reason : {deleteFileResponse.Message}");
                 return BadRequest(new BadRequestError(deleteFileResponse.Message));
             }
 
