@@ -15,8 +15,8 @@
             "PageOfAnswers": [],
             "Next": [
                 {
-                    "Action": "NextPage",
-                    "ReturnId": null,
+                    "Action": "ReturnToSection",
+                    "ReturnId": "2.2",
                     "Conditions": [],
                     "ConditionMet": false
                 }
@@ -50,8 +50,8 @@
             "PageOfAnswers": [],
             "Next": [
                 {
-                    "Action": "NextPage",
-                    "ReturnId": null,
+                    "Action": "ReturnToSection",
+                    "ReturnId": "2.2",
                     "Conditions": [],
                     "ConditionMet": false
                 }

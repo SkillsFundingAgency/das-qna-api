@@ -29,8 +29,8 @@
             "PageOfAnswers": [],
             "Next": [
                 {
-                    "Action": "NextPage",
-                    "ReturnId": "3",
+                    "Action": "ReturnToSection",
+                    "ReturnId": "",
                     "Conditions": [],
                     "ConditionMet": false
                 }

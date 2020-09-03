@@ -15,8 +15,8 @@
       "PageOfAnswers": [],
       "Next": [
         {
-          "Action": "NextPage",
-          "ReturnId": "6010",
+          "Action": "ReturnToSection",
+          "ReturnId": "6.2",
           "Conditions": [],
           "ConditionMet": false
         }
@@ -50,8 +50,8 @@
       "PageOfAnswers": [],
       "Next": [
         {
-          "Action": "NextPage",
-          "ReturnId": "6010",
+          "Action": "ReturnToSection",
+          "ReturnId": "6.2",
           "Conditions": [],
           "ConditionMet": false
         }
@@ -85,8 +85,8 @@
       "PageOfAnswers": [],
       "Next": [
         {
-          "Action": "NextPage",
-          "ReturnId": "6010",
+          "Action": "ReturnToSection",
+          "ReturnId": "6.2",
           "Conditions": [],
           "ConditionMet": false
         }

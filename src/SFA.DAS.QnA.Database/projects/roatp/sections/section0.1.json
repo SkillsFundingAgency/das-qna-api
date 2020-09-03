@@ -461,7 +461,7 @@
             "PageOfAnswers": [],
             "Next": [
                 {
-                    "Action": "NextPage",
+                    "Action": "ReturnToSection",
                     "ReturnToSection": "0.1",
                     "Conditions": [],
                     "ConditionMet": false

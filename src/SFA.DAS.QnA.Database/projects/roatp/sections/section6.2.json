@@ -98,7 +98,7 @@
                 },
                 {
                     "Action": "ReturnToSection",
-                    "ReturnId": "",
+                    "ReturnId": "6.4",
                     "Conditions": [],
                     "ConditionMet": false
                 }
@@ -199,7 +199,7 @@
                 },
                 {
                     "Action": "ReturnToSection",
-                    "ReturnId": "",
+                    "ReturnId": "6.4",
                     "Conditions": [],
                     "ConditionMet": false
                 }
@@ -350,7 +350,7 @@
                 },
                 {
                     "Action": "ReturnToSection",
-                    "ReturnId": "",
+                    "ReturnId": "6.4",
                     "Conditions": [
                         {
                             "QuestionId": "PAT-23",
@@ -367,7 +367,7 @@
                 },
                 {
                     "Action": "ReturnToSection",
-                    "ReturnId": "",
+                    "ReturnId": "6.4",
                     "Conditions": [],
                     "ConditionMet": false
                 }
