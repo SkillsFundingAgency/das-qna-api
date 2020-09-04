@@ -13,7 +13,7 @@
             "InfoText": "",
             "Questions": [
                 {
-                    "QuestionId": "DAT-10.1",
+                    "QuestionId": "DAT-10_1",
                     "QuestionTag": null,
                     "Label": "Full name",
                     "QuestionBodyText": "",
@@ -42,7 +42,7 @@
                     "ErrorMessages": null
                 },
                 {
-                    "QuestionId": "DAT-10.2",
+                    "QuestionId": "DAT-10_2",
                     "QuestionTag": null,
                     "Label": "Email",
                     "QuestionBodyText": "",
@@ -76,7 +76,7 @@
                     "ErrorMessages": null
                 },
                 {
-                    "QuestionId": "DAT-10.3",
+                    "QuestionId": "DAT-10_3",
                     "QuestionTag": null,
                     "Label": "Contact number",
                     "QuestionBodyText": "",
