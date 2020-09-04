@@ -57,11 +57,9 @@ namespace SFA.DAS.QnA.Application.Commands
 
         private void ValidateQuestion(Question question, List<KeyValuePair<string, string>> validationErrors, Answer answerToThisQuestion)
         {
-            // if we had access to the application data here - could extract it
+            // if we had access to the application data here - could extract it "{{MyKey}}"
             var validators = _validatorFactory.Build(question);
 
-            "{{MyKey}}"
-            
             if (answerToThisQuestion is null || answerToThisQuestion.Value == "")
             {
                 if (!validators.Any(v => v.GetType().Name.EndsWith("RequiredValidator"))) return;
