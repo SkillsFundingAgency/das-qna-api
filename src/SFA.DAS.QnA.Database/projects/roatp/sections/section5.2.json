@@ -109,7 +109,7 @@
             "LinkTitle": "Tell us who's responsible for managing relationships with employers",
             "InfoText": "",
             "Questions": [{
-                    "QuestionId": "RTE-22_1",
+                    "QuestionId": "RTE-22-1",
                     "QuestionTag": null,
                     "Label": "Full name",
                     "QuestionBodyText": "",
@@ -135,7 +135,7 @@
                     "Value": "",
                     "ErrorMessages": null
                 }, {
-                    "QuestionId": "RTE-22_2",
+                    "QuestionId": "RTE-22-2",
                     "QuestionTag": null,
                     "Label": "Email",
                     "QuestionBodyText": "",
@@ -165,7 +165,7 @@
                     "Value": "",
                     "ErrorMessages": null
                 }, {
-                    "QuestionId": "RTE-22_3",
+                    "QuestionId": "RTE-22-3",
                     "QuestionTag": null,
                     "Label": "Contact number",
                     "QuestionBodyText": "",
