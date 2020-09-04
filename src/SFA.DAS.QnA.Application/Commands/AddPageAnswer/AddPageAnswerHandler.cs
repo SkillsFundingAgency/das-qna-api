@@ -25,6 +25,9 @@ namespace SFA.DAS.QnA.Application.Commands.AddPageAnswer
         {
             await GetSectionAndPage(request.ApplicationId, request.SectionId, request.PageId);
 
+            // this is the data of the application set by the base method call above
+            //Application.ApplicationData;
+
             if (Application == null || Section == null || Page == null)
             {
                 return new HandlerResponse<AddPageAnswerResponse>(false, $"ApplicationId {request.ApplicationId}, Section {request.SectionId} or PageId {request.PageId} does not exist.");
