@@ -26,10 +26,10 @@ namespace SFA.DAS.QnA.Api.Controllers
         private readonly IMediator _mediator;
         private readonly ILogger<PagesController> _logger;
 
-        public PagesController(IMediator mediator, ILogger<PagesController> logger)
+        public PagesController(ILogger<PagesController> logger, IMediator mediator)
         {
-            _mediator = mediator;
             _logger = logger;
+            _mediator = mediator;
         }
 
         /// <summary>
@@ -44,7 +44,11 @@ namespace SFA.DAS.QnA.Api.Controllers
         public async Task<ActionResult<Page>> GetPage(Guid applicationId, Guid sectionId, string pageId)
         {
             var pageResponse = await _mediator.Send(new GetPageRequest(applicationId, sectionId, pageId), CancellationToken.None);
-            if (!pageResponse.Success) return NotFound();
+            if (!pageResponse.Success)
+            {
+                _logger.LogError($"Unable to find page {pageId} | Reason : {pageResponse.Message}");
+                return NotFound();
+            }
 
             return pageResponse.Value;
         }
@@ -61,7 +65,11 @@ namespace SFA.DAS.QnA.Api.Controllers
         public async Task<ActionResult<Page>> GetPageBySectionNo(Guid applicationId, int sequenceNo, int sectionNo, string pageId)
         {
             var pageResponse = await _mediator.Send(new GetPageBySectionNoRequest(applicationId, sequenceNo, sectionNo, pageId), CancellationToken.None);
-            if (!pageResponse.Success) return NotFound();
+            if (!pageResponse.Success)
+            {
+                _logger.LogError($"Unable to find page {pageId} | Reason : {pageResponse.Message}");
+                return NotFound();
+            }
 
             return pageResponse.Value;
         }
@@ -78,7 +86,11 @@ namespace SFA.DAS.QnA.Api.Controllers
             _logger.LogInformation($"Answers sent to SetPageAnswers: {JsonConvert.SerializeObject(answers)}");
             
             var savePageAnswersResponse = await _mediator.Send(new SetPageAnswersRequest(applicationId, sectionId, pageId, answers), CancellationToken.None);
-            if (!savePageAnswersResponse.Success) return BadRequest(new BadRequestError(savePageAnswersResponse.Message));
+            if (!savePageAnswersResponse.Success)
+            {
+                _logger.LogError($"Unable to save answers for page {pageId} | Reason : {savePageAnswersResponse.Message}");
+                return BadRequest(new BadRequestError(savePageAnswersResponse.Message));
+            }
 
             _logger.LogInformation($"Response from SetPageAnswers: {JsonConvert.SerializeObject(savePageAnswersResponse.Value)}");
             
@@ -97,7 +109,11 @@ namespace SFA.DAS.QnA.Api.Controllers
             _logger.LogInformation($"Answers sent to SetPageAnswers: {JsonConvert.SerializeObject(answers)}");
 
             var savePageAnswersResponse = await _mediator.Send(new SetPageAnswersBySectionNoRequest(applicationId, sequenceNo, sectionNo, pageId, answers), CancellationToken.None);
-            if (!savePageAnswersResponse.Success) return BadRequest(new BadRequestError(savePageAnswersResponse.Message));
+            if (!savePageAnswersResponse.Success)
+            {
+                _logger.LogError($"Unable to save answers for page {pageId} | Reason : {savePageAnswersResponse.Message}");
+                return BadRequest(new BadRequestError(savePageAnswersResponse.Message));
+            }
 
             _logger.LogInformation($"Response from SetPageAnswers: {JsonConvert.SerializeObject(savePageAnswersResponse.Value)}");
 
@@ -116,7 +132,11 @@ namespace SFA.DAS.QnA.Api.Controllers
             _logger.LogInformation($"Resetting all Answers on page {pageId}");
 
             var resetPageAnswersResponse = await _mediator.Send(new ResetPageAnswersRequest(applicationId, sectionId, pageId), CancellationToken.None);
-            if (!resetPageAnswersResponse.Success) return BadRequest(new BadRequestError(resetPageAnswersResponse.Message));
+            if (!resetPageAnswersResponse.Success)
+            {
+                _logger.LogError($"Unable to reset answers for page {pageId} | Reason : {resetPageAnswersResponse.Message}");
+                return BadRequest(new BadRequestError(resetPageAnswersResponse.Message));
+            }
 
             _logger.LogInformation($"Response from ResetPageAnswers: {JsonConvert.SerializeObject(resetPageAnswersResponse.Value)}");
 
@@ -135,7 +155,11 @@ namespace SFA.DAS.QnA.Api.Controllers
         public async Task<ActionResult<AddPageAnswerResponse>> AddPageAnswer(Guid applicationId, Guid sectionId, string pageId, [FromBody] List<Answer> answers)
         {
             var addPageAnswerResponse = await _mediator.Send(new AddPageAnswerRequest(applicationId, sectionId, pageId, answers), CancellationToken.None);
-            if (!addPageAnswerResponse.Success) return BadRequest(new BadRequestError(addPageAnswerResponse.Message));
+            if (!addPageAnswerResponse.Success)
+            {
+                _logger.LogError($"Unable to add answer to page {pageId} | Reason : {addPageAnswerResponse.Message}");
+                return BadRequest(new BadRequestError(addPageAnswerResponse.Message));
+            }
 
             return addPageAnswerResponse.Value;
         }
@@ -152,7 +176,11 @@ namespace SFA.DAS.QnA.Api.Controllers
         public async Task<ActionResult<Page>> RemovePageAnswer(Guid applicationId, Guid sectionId, string pageId, Guid answerId)
         {
             var removePageAnswerResponse = await _mediator.Send(new RemovePageAnswerRequest(applicationId, sectionId, pageId, answerId), CancellationToken.None);
-            if (!removePageAnswerResponse.Success) return BadRequest(new BadRequestError(removePageAnswerResponse.Message));
+            if (!removePageAnswerResponse.Success)
+            {
+                _logger.LogError($"Unable to remove answer for page {pageId} | Reason : {removePageAnswerResponse.Message}");
+                return BadRequest(new BadRequestError(removePageAnswerResponse.Message));
+            }
 
             return removePageAnswerResponse.Value.Page;
         }
@@ -171,7 +199,11 @@ namespace SFA.DAS.QnA.Api.Controllers
             _logger.LogInformation($"Getting the next action...: applicationId = {applicationId} , pageId = {pageId}");
 
             var getNextActionResponse = await _mediator.Send(new SkipPageRequest(applicationId, sectionId, pageId), CancellationToken.None);
-            if (!getNextActionResponse.Success) return BadRequest(new BadRequestError(getNextActionResponse.Message));
+            if (!getNextActionResponse.Success)
+            {
+                _logger.LogError($"Unable to get the next action for page {pageId} | Reason : {getNextActionResponse.Message}");
+                return BadRequest(new BadRequestError(getNextActionResponse.Message));
+            }
 
             _logger.LogInformation($"Response from SkipPage: {JsonConvert.SerializeObject(getNextActionResponse.Value)}");
 
@@ -192,7 +224,11 @@ namespace SFA.DAS.QnA.Api.Controllers
             _logger.LogInformation($"Getting the next action...: applicationId = {applicationId} , sequenceNo = {sequenceNo} , sectionNo = {sectionNo} , pageId = {pageId}");
 
             var getNextActionResponse = await _mediator.Send(new SkipPageBySectionNoRequest(applicationId, sequenceNo, sectionNo, pageId), CancellationToken.None);
-            if (!getNextActionResponse.Success) return BadRequest(new BadRequestError(getNextActionResponse.Message));
+            if (!getNextActionResponse.Success)
+            {
+                _logger.LogError($"Unable to get the next action for page {pageId} | Reason : {getNextActionResponse.Message}");
+                return BadRequest(new BadRequestError(getNextActionResponse.Message));
+            }
 
             _logger.LogInformation($"Response from SkipPageBySectionNo: {JsonConvert.SerializeObject(getNextActionResponse.Value)}");
 
