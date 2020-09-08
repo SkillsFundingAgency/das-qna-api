@@ -2,7 +2,6 @@
     "Title": "Equality and diversity policy",
     "LinkTitle": "Equality and diversity policy",
     "DisplayType": "Pages",
-    "RequestedFeedbackAnswered": null,
     "Pages": [
         {
             "PageId": "4020",
@@ -33,26 +32,18 @@
                                 "ErrorMessage": "The selected file must be a PDF"
                             }
                         ]
-                    },
-                    "Order": null
+                    }
                 }
             ],
-            "PageOfAnswers": [],
             "Next": [
                 {
                     "Action": "ReturnToSection",
                     "ReturnId": "4.4",
-                    "Conditions": [],
-                    "ConditionMet": false
+                    "Conditions": []
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
-            "Order": null,
             "Active": true,
-            "Visible": true,
-            "Feedback": null,
-            "HasFeedback": false,
             "NotRequiredConditions": [],
             "ActivatedByPageId": null,
             "BodyText": ""

@@ -2,7 +2,6 @@
   "Title": "Safeguarding and Prevent duty policy",
   "LinkTitle": "Safeguarding and Prevent duty policy",
   "DisplayType": "Pages",
-  "RequestedFeedbackAnswered": null,
   "Pages": [
     {
       "PageId": "4030",
@@ -33,26 +32,18 @@
                 "ErrorMessage": "The selected file must be a PDF"
               }
             ]
-          },
-          "Order": null
+          }
         }
       ],
-      "PageOfAnswers": [],
       "Next": [
         {
           "Action": "NextPage",
           "ReturnId": "4035",
-          "Conditions": [],
-          "ConditionMet": false
+          "Conditions": []
         }
       ],
-      "Complete": false,
       "AllowMultipleAnswers": false,
-      "Order": null,
       "Active": true,
-      "Visible": true,
-      "Feedback": null,
-      "HasFeedback": false,
       "NotRequiredConditions": [],
       "BodyText": ""
     },
@@ -85,8 +76,7 @@
                 "ErrorMessage": "Enter a full name using 255 characters or less"
               }
             ]
-          },
-          "Order": null
+          }
         },
         {
           "QuestionId": "PYA-46",
@@ -114,8 +104,7 @@
                 "ErrorMessage": "Enter an email in the correct format, like name@example.com"
               }
             ]
-          },
-          "Order": null
+          }
         },
         {
           "QuestionId": "PYA-47",
@@ -148,8 +137,7 @@
                 "ErrorMessage": "Enter a contact number using 20 digits or less"
               }
             ]
-          },
-          "Order": null
+          }
         }
       ],
       "PageOfAnswers": [],
@@ -157,17 +145,11 @@
         {
           "Action": "NextPage",
           "ReturnId": "4037",
-          "Conditions": [],
-          "ConditionMet": false
+          "Conditions": []
         }
       ],
-      "Complete": false,
       "AllowMultipleAnswers": false,
-      "Order": null,
       "Active": true,
-      "Visible": true,
-      "Feedback": null,
-      "HasFeedback": false,
       "NotRequiredConditions": [],
       "BodyText": "<p class='govuk-body'>This must be someone who has the overall responsibility, relevant knowledge and skills to manage safeguarding concerns.</p><p class='govuk-body'>We'll only contact them if there is a safeguarding concern.</p>"
     },
@@ -211,11 +193,9 @@
                 "ErrorMessage": "Tell us if your organisation's safeguarding policy include its responsibilities towards the Prevent duty"
               }
             ]
-          },
-          "Order": null
+          }
         }
       ],
-      "PageOfAnswers": [],
       "Next": [
         {
           "Action": "NextPage",
@@ -225,23 +205,16 @@
               "QuestionId": "PYA-48",
               "MustEqual": "No"
             }
-          ],
-          "ConditionMet": false
+          ]
         },
         {
           "Action": "ReturnToSection",
           "ReturnId": "4.5",
-          "Conditions": [],
-          "ConditionMet": false
+          "Conditions": []
         }
       ],
-      "Complete": false,
       "AllowMultipleAnswers": false,
-      "Order": null,
       "Active": true,
-      "Visible": true,
-      "Feedback": null,
-      "HasFeedback": false,
       "NotRequiredConditions": [],
       "BodyText": ""
     },
@@ -278,26 +251,18 @@
                 "ErrorMessage": "The selected file must be a PDF"
               }
             ]
-          },
-          "Order": null
+          }
         }
-      ],
-      "PageOfAnswers": [],
+      ]
       "Next": [
         {
           "Action": "ReturnToSection",
           "ReturnId": "4.5",
-          "Conditions": [],
-          "ConditionMet": false
+          "Conditions": []
         }
       ],
-      "Complete": false,
       "AllowMultipleAnswers": false,
-      "Order": null,
       "Active": false,
-      "Visible": true,
-      "Feedback": null,
-      "HasFeedback": false,
       "NotRequiredConditions": [],
       "ActivatedByPageId": "4037",
       "BodyText": ""

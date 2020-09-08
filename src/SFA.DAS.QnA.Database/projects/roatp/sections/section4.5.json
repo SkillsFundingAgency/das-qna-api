@@ -2,7 +2,6 @@
   "Title": "Health and safety policy",
   "LinkTitle": "Health and safety policy",
   "DisplayType": "Pages",
-  "RequestedFeedbackAnswered": null,
   "Pages": [
     {
       "PageId": "4040",
@@ -33,26 +32,18 @@
                 "ErrorMessage": "The selected file must be a PDF"
               }
             ]
-          },
-          "Order": null
+          }
         }
-      ],
-      "PageOfAnswers": [],
+      ]
       "Next": [
         {
           "Action": "NextPage",
           "ReturnId": "4045",
-          "Conditions": [],
-          "ConditionMet": false
+          "Conditions": []
         }
       ],
-      "Complete": false,
       "AllowMultipleAnswers": false,
-      "Order": null,
       "Active": true,
-      "Visible": true,
-      "Feedback": null,
-      "HasFeedback": false,
       "NotRequiredConditions": [],
       "BodyText": ""
     },
@@ -85,8 +76,7 @@
                 "ErrorMessage": "Enter a full name using 255 characters or less"
               }
             ]
-          },
-          "Order": null
+          }
         },
         {
           "QuestionId": "PYA-56",
@@ -114,8 +104,7 @@
                 "ErrorMessage": "Enter an email in the correct format, like name@example.com"
               }
             ]
-          },
-          "Order": null
+          }
         },
         {
           "QuestionId": "PYA-57",
@@ -148,8 +137,7 @@
                 "ErrorMessage": "Enter a contact number using 20 digits or less"
               }
             ]
-          },
-          "Order": null
+          }
         }
       ],
       "PageOfAnswers": [],
@@ -157,17 +145,11 @@
         {
           "Action": "ReturnToSection",
           "ReturnId": "4.6",
-          "Conditions": [],
-          "ConditionMet": false
+          "Conditions": []
         }
       ],
-      "Complete": false,
       "AllowMultipleAnswers": false,
-      "Order": null,
       "Active": true,
-      "Visible": true,
-      "Feedback": null,
-      "HasFeedback": false,
       "NotRequiredConditions": [],
       "BodyText": "<p class='govuk-body'>This can be an individual or another organisation who has overall responsibility, relevant knowledge and skills to manage health and safety concerns.</p><p class='govuk-body'>We'll only contact them if there is a health and safety concern.</p>"
     }
