@@ -2,7 +2,6 @@
 	"Title": "Checks on who's in control of your organisation",
 	"LinkTitle": "Checks on who's in control of your organisation",
 	"DisplayType": "Pages",
-	"RequestedFeedbackAnswered": null,
 	"Pages": [
 		{
 			"PageId": "3300",
@@ -21,7 +20,6 @@
 					"Hint": "",
 					"Input": {
 						"Type": "ComplexRadio",
-						"InputClasses": null,
 						"Options": [
 							{
 								"FurtherQuestions": [
@@ -30,12 +28,10 @@
 										"QuestionTag": null,
 										"Label": "Give us more information",
 										"ShortLabel": "",
-										"InputClasses": null,
 										"QuestionBodyText": "",
 										"Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include:</p><ul class='govuk-list govuk-list--bullet govuk-hint'><li>a brief summary of the conviction</li><li>full names of who the conviction is for</li><li>conviction dates including any time spent</li><li>outstanding judgements or legal proceedings</li><li>any actions your organisation has taken in relation to the conviction</li></ul>",
 										"Input": {
 											"Type": "Textarea",
-											"InputClasses": "",
 											"Options": [],
 											"Validations": [
 												{
@@ -48,12 +44,8 @@
 													"Value": "275",
 													"ErrorMessage": "Your answer must be 275 words or less"
 												}
-											],
-											"DataEndpoint": null
-										},
-										"Order": null,
-										"Value": null,
-										"ErrorMessages": null
+											]
+										}
 									}
 								],
 								"Value": "Yes",
@@ -73,26 +65,19 @@
 								"Value": "",
 								"ErrorMessage": "Tell us if anyone who's in control of your organisation has any unspent criminal convictions"
 							}
-						],
-						"DataEndpoint": null
+						]
 					}
 				}
 			],
-			"PageOfAnswers": [],
 			"Next": [
 				{
 					"Action": "NextPage",
 					"ReturnId": "3310",
-					"Conditions": [],
-					"ConditionMet": false
+					"Conditions": []
 				}
 			],
-			"Complete": false,
 			"AllowMultipleAnswers": false,
-			"Order": null,
 			"Active": true,
-			"Feedback": null,
-			"HasFeedback": false,
 			"NotRequiredConditions": [
 				{
 					"Field": "SoleTradeOrPartnership",
@@ -124,7 +109,6 @@
 					"Hint": "",
 					"Input": {
 						"Type": "ComplexRadio",
-						"InputClasses": null,
 						"Options": [
 							{
 								"FurtherQuestions": [
@@ -133,12 +117,10 @@
 										"QuestionTag": null,
 										"Label": "Give us more information",
 										"ShortLabel": "",
-										"InputClasses": null,
 										"QuestionBodyText": "",
 										"Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include:</p><ul class='govuk-list govuk-list--bullet govuk-hint'><li>a brief summary of the conviction</li><li>conviction dates including any time spent</li><li>outstanding judgements or legal proceedings</li><li>any actions your organisation has taken in relation to the conviction</li></ul>",
 										"Input": {
 											"Type": "Textarea",
-											"InputClasses": "",
 											"Options": [],
 											"Validations": [
 												{
@@ -151,12 +133,8 @@
 													"Value": "275",
 													"ErrorMessage": "Your answer must be 275 words or less"
 												}
-											],
-											"DataEndpoint": null
-										},
-										"Order": null,
-										"Value": null,
-										"ErrorMessages": null
+											]
+										}
 									}
 								],
 								"Value": "Yes",
@@ -176,26 +154,19 @@
 								"Value": "",
 								"ErrorMessage": "Tell us if you have any unspent criminal convictions"
 							}
-						],
-						"DataEndpoint": null
+						]
 					}
 				}
 			],
-			"PageOfAnswers": [],
 			"Next": [
 				{
 					"Action": "NextPage",
 					"ReturnId": "3311",
-					"Conditions": [],
-					"ConditionMet": false
+					"Conditions": []
 				}
 			],
-			"Complete": false,
 			"AllowMultipleAnswers": false,
-			"Order": null,
 			"Active": true,
-			"Feedback": null,
-			"HasFeedback": false,
 			"NotRequiredConditions": [
 				{
 					"Field": "SoleTradeOrPartnership",
@@ -228,7 +199,6 @@
 					"Hint": "",
 					"Input": {
 						"Type": "ComplexRadio",
-						"InputClasses": null,
 						"Options": [
 							{
 								"FurtherQuestions": [
@@ -237,12 +207,10 @@
 										"QuestionTag": null,
 										"Label": "Give us more information",
 										"ShortLabel": "",
-										"InputClasses": null,
 										"QuestionBodyText": "",
 										"Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include:</p><ul class='govuk-list govuk-list--bullet govuk-hint'><li>full names of who this was</li><li>which public body was involved</li><li>if any actions were taken to resolve this</li></ul>",
 										"Input": {
 											"Type": "Textarea",
-											"InputClasses": "",
 											"Options": [],
 											"Validations": [
 												{
@@ -255,12 +223,8 @@
 													"Value": "275",
 													"ErrorMessage": "Your answer must be 275 words or less"
 												}
-											],
-											"DataEndpoint": null
-										},
-										"Order": null,
-										"Value": null,
-										"ErrorMessages": null
+											]
+										}
 									}
 								],
 								"Value": "Yes",
@@ -280,27 +244,20 @@
 								"Value": "",
 								"ErrorMessage": "Tell us if anyone who's in control of your organisation has failed to pay back funds in the last 3 years"
 							}
-						],
-						"DataEndpoint": null
+						]
 					}
 				}
 			],
-			"PageOfAnswers": [],
 			"Next": [
 				{
 					"Action": "NextPage",
 					"ReturnId": "3320",
-					"Conditions": [],
-					"ConditionMet": false
+					"Conditions": []
 				}
 			],
-			"Complete": false,
 			"AllowMultipleAnswers": false,
-			"Order": null,
 			"Active": false,
 			"ActivatedByPageId": "3300",
-			"Feedback": null,
-			"HasFeedback": false,
 			"NotRequiredConditions": [
 				{
 					"Field": "SoleTradeOrPartnership",
@@ -328,7 +285,6 @@
 					"Hint": "",
 					"Input": {
 						"Type": "ComplexRadio",
-						"InputClasses": null,
 						"Options": [
 							{
 								"FurtherQuestions": [
@@ -337,12 +293,10 @@
 										"QuestionTag": null,
 										"Label": "Give us more information",
 										"ShortLabel": "",
-										"InputClasses": null,
 										"QuestionBodyText": "",
 										"Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include:</p><ul class='govuk-list govuk-list--bullet govuk-hint'><li>which public body was involved</li><li>if any actions were taken to resolve this</li></ul>",
 										"Input": {
 											"Type": "Textarea",
-											"InputClasses": "",
 											"Options": [],
 											"Validations": [
 												{
@@ -355,12 +309,8 @@
 													"Value": "275",
 													"ErrorMessage": "Your answer must be 275 words or less"
 												}
-											],
-											"DataEndpoint": null
-										},
-										"Order": null,
-										"Value": null,
-										"ErrorMessages": null
+											]
+										}
 									}
 								],
 								"Value": "Yes",
@@ -380,27 +330,20 @@
 								"Value": "",
 								"ErrorMessage": "Tell us if you have failed to pay back funds in the last 3 years"
 							}
-						],
-						"DataEndpoint": null
+						]
 					}
 				}
 			],
-			"PageOfAnswers": [],
 			"Next": [
 				{
 					"Action": "NextPage",
 					"ReturnId": "3321",
-					"Conditions": [],
-					"ConditionMet": false
+					"Conditions": []
 				}
 			],
-			"Complete": false,
 			"AllowMultipleAnswers": false,
-			"Order": null,
 			"Active": false,
 			"ActivatedByPageId": "3301",
-			"Feedback": null,
-			"HasFeedback": false,
 			"NotRequiredConditions": [
 				{
 					"Field": "SoleTradeOrPartnership",
@@ -429,7 +372,6 @@
 					"Hint": "",
 					"Input": {
 						"Type": "ComplexRadio",
-						"InputClasses": null,
 						"Options": [
 							{
 								"FurtherQuestions": [
@@ -438,12 +380,10 @@
 										"QuestionTag": null,
 										"Label": "Give us more information",
 										"ShortLabel": "",
-										"InputClasses": null,
 										"QuestionBodyText": "",
 										"Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include:</p><ul class='govuk-list govuk-list--bullet govuk-hint'><li>full names of who this was</li><li>what the investigation was</li><li>the outcome of the investigation</li><li>if any actions were taken to resolve this</li></ul>",
 										"Input": {
 											"Type": "Textarea",
-											"InputClasses": "",
 											"Options": [],
 											"Validations": [
 												{
@@ -456,12 +396,8 @@
 													"Value": "275",
 													"ErrorMessage": "Your answer must be 275 words or less"
 												}
-											],
-											"DataEndpoint": null
-										},
-										"Order": null,
-										"Value": null,
-										"ErrorMessages": null
+											]
+										}
 									}
 								],
 								"Value": "Yes",
@@ -481,27 +417,20 @@
 								"Value": "",
 								"ErrorMessage": "Tell us if anyone who's in control of your organisation has been investigated for fraud or irregularities in the last 3 years"
 							}
-						],
-						"DataEndpoint": null
+						]
 					}
 				}
 			],
-			"PageOfAnswers": [],
 			"Next": [
 				{
 					"Action": "NextPage",
 					"ReturnId": "3330",
-					"Conditions": [],
-					"ConditionMet": false
+					"Conditions": []
 				}
 			],
-			"Complete": false,
 			"AllowMultipleAnswers": false,
-			"Order": null,
 			"Active": false,
 			"ActivatedByPageId": "3300,3310",
-			"Feedback": null,
-			"HasFeedback": false,
 			"NotRequiredConditions": [
 				{
 					"Field": "SoleTradeOrPartnership",
@@ -529,7 +458,6 @@
 					"Hint": "",
 					"Input": {
 						"Type": "ComplexRadio",
-						"InputClasses": null,
 						"Options": [
 							{
 								"FurtherQuestions": [
@@ -538,12 +466,10 @@
 										"QuestionTag": null,
 										"Label": "Give us more information",
 										"ShortLabel": "",
-										"InputClasses": null,
 										"QuestionBodyText": "",
 										"Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include:</p><ul class='govuk-list govuk-list--bullet govuk-hint'><li>what the investigation was</li><li>the outcome of the investigation</li><li>if any actions were taken to resolve this</li></ul>",
 										"Input": {
 											"Type": "Textarea",
-											"InputClasses": "",
 											"Options": [],
 											"Validations": [
 												{
@@ -556,12 +482,8 @@
 													"Value": "275",
 													"ErrorMessage": "Your answer must be 275 words or less"
 												}
-											],
-											"DataEndpoint": null
-										},
-										"Order": null,
-										"Value": null,
-										"ErrorMessages": null
+											]
+										}
 									}
 								],
 								"Value": "Yes",
@@ -581,27 +503,20 @@
 								"Value": "",
 								"ErrorMessage": "Tell us if you have been investigated for fraud or irregularities in the last 3 years"
 							}
-						],
-						"DataEndpoint": null
+						]
 					}
 				}
 			],
-			"PageOfAnswers": [],
 			"Next": [
 				{
 					"Action": "NextPage",
 					"ReturnId": "3331",
-					"Conditions": [],
-					"ConditionMet": false
+					"Conditions": []
 				}
 			],
-			"Complete": false,
 			"AllowMultipleAnswers": false,
-			"Order": null,
 			"Active": false,
 			"ActivatedByPageId": "3301,3311",
-			"Feedback": null,
-			"HasFeedback": false,
 			"NotRequiredConditions": [
 				{
 					"Field": "SoleTradeOrPartnership",
@@ -630,7 +545,6 @@
 					"Hint": "",
 					"Input": {
 						"Type": "ComplexRadio",
-						"InputClasses": null,
 						"Options": [
 							{
 								"FurtherQuestions": [
@@ -639,12 +553,10 @@
 										"QuestionTag": null,
 										"Label": "Give us more information",
 										"ShortLabel": "",
-										"InputClasses": null,
 										"QuestionBodyText": "",
 										"Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include:</p><ul class='govuk-list govuk-list--bullet govuk-hint'><li>full names of who this is</li><li>what the investigation is</li><li>any relevant dates</li></ul>",
 										"Input": {
 											"Type": "Textarea",
-											"InputClasses": "",
 											"Options": [],
 											"Validations": [
 												{
@@ -657,12 +569,8 @@
 													"Value": "275",
 													"ErrorMessage": "Your answer must be 275 words or less"
 												}
-											],
-											"DataEndpoint": null
-										},
-										"Order": null,
-										"Value": null,
-										"ErrorMessages": null
+											]
+										}
 									}
 								],
 								"Value": "Yes",
@@ -682,27 +590,20 @@
 								"Value": "",
 								"ErrorMessage": "Tell us if anyone who's in control of your organisation has any ongoing investigations for fraud or irregularities"
 							}
-						],
-						"DataEndpoint": null
+						]
 					}
 				}
 			],
-			"PageOfAnswers": [],
 			"Next": [
 				{
 					"Action": "NextPage",
 					"ReturnId": "3340",
-					"Conditions": [],
-					"ConditionMet": false
+					"Conditions": []
 				}
 			],
-			"Complete": false,
 			"AllowMultipleAnswers": false,
-			"Order": null,
 			"Active": false,
 			"ActivatedByPageId": "3300,3320",
-			"Feedback": null,
-			"HasFeedback": false,
 			"NotRequiredConditions": [
 				{
 					"Field": "SoleTradeOrPartnership",
@@ -730,7 +631,6 @@
 					"Hint": "",
 					"Input": {
 						"Type": "ComplexRadio",
-						"InputClasses": null,
 						"Options": [
 							{
 								"FurtherQuestions": [
@@ -739,12 +639,10 @@
 										"QuestionTag": null,
 										"Label": "Give us more information",
 										"ShortLabel": "",
-										"InputClasses": null,
 										"QuestionBodyText": "",
 										"Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include:</p><ul class='govuk-list govuk-list--bullet govuk-hint'><li>what the investigation is</li><li>any relevant dates</li></ul>",
 										"Input": {
 											"Type": "Textarea",
-											"InputClasses": "",
 											"Options": [],
 											"Validations": [
 												{
@@ -757,12 +655,8 @@
 													"Value": "275",
 													"ErrorMessage": "Your answer must be 275 words or less"
 												}
-											],
-											"DataEndpoint": null
-										},
-										"Order": null,
-										"Value": null,
-										"ErrorMessages": null
+											]
+										}
 									}
 								],
 								"Value": "Yes",
@@ -782,27 +676,20 @@
 								"Value": "",
 								"ErrorMessage": "Tell us if you have any ongoing investigations for fraud or irregularities"
 							}
-						],
-						"DataEndpoint": null
+						]
 					}
 				}
 			],
-			"PageOfAnswers": [],
 			"Next": [
 				{
 					"Action": "NextPage",
 					"ReturnId": "3341",
-					"Conditions": [],
-					"ConditionMet": false
+					"Conditions": []
 				}
 			],
-			"Complete": false,
 			"AllowMultipleAnswers": false,
-			"Order": null,
 			"Active": false,
 			"ActivatedByPageId": "3301,3321",
-			"Feedback": null,
-			"HasFeedback": false,
 			"NotRequiredConditions": [
 				{
 					"Field": "SoleTradeOrPartnership",
@@ -831,7 +718,6 @@
 					"Hint": "",
 					"Input": {
 						"Type": "ComplexRadio",
-						"InputClasses": null,
 						"Options": [
 							{
 								"FurtherQuestions": [
@@ -840,12 +726,10 @@
 										"QuestionTag": null,
 										"Label": "Give us more information",
 										"ShortLabel": "",
-										"InputClasses": null,
 										"QuestionBodyText": "",
 										"Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include:</p><ul class='govuk-list govuk-list--bullet govuk-hint'><li>full names of who this was</li><li>which public body was involved</li><li>if any actions were taken to resolve this</li></ul>",
 										"Input": {
 											"Type": "Textarea",
-											"InputClasses": "",
 											"Options": [],
 											"Validations": [
 												{
@@ -858,12 +742,8 @@
 													"Value": "275",
 													"ErrorMessage": "Your answer must be 275 words or less"
 												}
-											],
-											"DataEndpoint": null
-										},
-										"Order": null,
-										"Value": null,
-										"ErrorMessages": null
+											]
+										}
 									}
 								],
 								"Value": "Yes",
@@ -883,27 +763,20 @@
 								"Value": "",
 								"ErrorMessage": "Tell us if anyone who's in control of your organisation has had a contract terminated by a public body in the last 3 years"
 							}
-						],
-						"DataEndpoint": null
+						]
 					}
 				}
 			],
-			"PageOfAnswers": [],
 			"Next": [
 				{
 					"Action": "NextPage",
 					"ReturnId": "3350",
-					"Conditions": [],
-					"ConditionMet": false
+					"Conditions": []
 				}
 			],
-			"Complete": false,
 			"AllowMultipleAnswers": false,
-			"Order": null,
 			"Active": false,
 			"ActivatedByPageId": "3300,3330",
-			"Feedback": null,
-			"HasFeedback": false,
 			"NotRequiredConditions": [
 				{
 					"Field": "SoleTradeOrPartnership",
@@ -931,7 +804,6 @@
 					"Hint": "",
 					"Input": {
 						"Type": "ComplexRadio",
-						"InputClasses": null,
 						"Options": [
 							{
 								"FurtherQuestions": [
@@ -940,12 +812,11 @@
 										"QuestionTag": null,
 										"Label": "Give us more information",
 										"ShortLabel": "",
-										"InputClasses": null,
 										"QuestionBodyText": "",
 										"Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include:</p><ul class='govuk-list govuk-list--bullet govuk-hint'><li>which public body was involved</li><li>if any actions were taken to resolve this</li></ul>",
 										"Input": {
 											"Type": "Textarea",
-											"InputClasses": "",
+
 											"Options": [],
 											"Validations": [
 												{
@@ -958,12 +829,8 @@
 													"Value": "275",
 													"ErrorMessage": "Your answer must be 275 words or less"
 												}
-											],
-											"DataEndpoint": null
-										},
-										"Order": null,
-										"Value": null,
-										"ErrorMessages": null
+											]
+										}
 									}
 								],
 								"Value": "Yes",
@@ -983,27 +850,20 @@
 								"Value": "",
 								"ErrorMessage": "Tell us if you had a contract terminated by a public body in the last 3 years"
 							}
-						],
-						"DataEndpoint": null
+						]
 					}
 				}
 			],
-			"PageOfAnswers": [],
 			"Next": [
 				{
 					"Action": "NextPage",
 					"ReturnId": "3351",
-					"Conditions": [],
-					"ConditionMet": false
+					"Conditions": []
 				}
 			],
-			"Complete": false,
 			"AllowMultipleAnswers": false,
-			"Order": null,
 			"Active": false,
 			"ActivatedByPageId": "3301,3331",
-			"Feedback": null,
-			"HasFeedback": false,
 			"NotRequiredConditions": [
 				{
 					"Field": "SoleTradeOrPartnership",
@@ -1032,7 +892,6 @@
 					"Hint": "",
 					"Input": {
 						"Type": "ComplexRadio",
-						"InputClasses": null,
 						"Options": [
 							{
 								"FurtherQuestions": [
@@ -1041,12 +900,10 @@
 										"QuestionTag": null,
 										"Label": "Give us more information",
 										"ShortLabel": "",
-										"InputClasses": null,
 										"QuestionBodyText": "",
 										"Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include:</p><ul class='govuk-list govuk-list--bullet govuk-hint'><li>full names of who this was</li><li>which public body was involved</li><li>if any actions were taken to resolve this</li></ul>",
 										"Input": {
 											"Type": "Textarea",
-											"InputClasses": "",
 											"Options": [],
 											"Validations": [
 												{
@@ -1059,12 +916,8 @@
 													"Value": "275",
 													"ErrorMessage": "Your answer must be 275 words or less"
 												}
-											],
-											"DataEndpoint": null
-										},
-										"Order": null,
-										"Value": null,
-										"ErrorMessages": null
+											]
+										}
 									}
 								],
 								"Value": "Yes",
@@ -1084,27 +937,20 @@
 								"Value": "",
 								"ErrorMessage": "Tell us if anyone who's in control of your organisation withdrawn from a contract with a public body in the last 3 years"
 							}
-						],
-						"DataEndpoint": null
+						]
 					}
 				}
 			],
-			"PageOfAnswers": [],
 			"Next": [
 				{
 					"Action": "NextPage",
 					"ReturnId": "3360",
-					"Conditions": [],
-					"ConditionMet": false
+					"Conditions": []
 				}
 			],
-			"Complete": false,
 			"AllowMultipleAnswers": false,
-			"Order": null,
 			"Active": false,
 			"ActivatedByPageId": "3300,3340",
-			"Feedback": null,
-			"HasFeedback": false,
 			"NotRequiredConditions": [
 				{
 					"Field": "SoleTradeOrPartnership",
@@ -1132,7 +978,6 @@
 					"Hint": "",
 					"Input": {
 						"Type": "ComplexRadio",
-						"InputClasses": null,
 						"Options": [
 							{
 								"FurtherQuestions": [
@@ -1141,12 +986,10 @@
 										"QuestionTag": null,
 										"Label": "Give us more information",
 										"ShortLabel": "",
-										"InputClasses": null,
 										"QuestionBodyText": "",
 										"Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include:</p><ul class='govuk-list govuk-list--bullet govuk-hint'><li>which public body was involved</li><li>if any actions were taken to resolve this</li></ul>",
 										"Input": {
 											"Type": "Textarea",
-											"InputClasses": "",
 											"Options": [],
 											"Validations": [
 												{
@@ -1159,12 +1002,8 @@
 													"Value": "275",
 													"ErrorMessage": "Your answer must be 275 words or less"
 												}
-											],
-											"DataEndpoint": null
-										},
-										"Order": null,
-										"Value": null,
-										"ErrorMessages": null
+											]
+										}
 									}
 								],
 								"Value": "Yes",
@@ -1184,27 +1023,20 @@
 								"Value": "",
 								"ErrorMessage": "Tell us if you withdrawn from a contract with a public body in the last 3 years"
 							}
-						],
-						"DataEndpoint": null
+						]
 					}
 				}
 			],
-			"PageOfAnswers": [],
 			"Next": [
 				{
 					"Action": "NextPage",
 					"ReturnId": "3361",
-					"Conditions": [],
-					"ConditionMet": false
+					"Conditions": []
 				}
 			],
-			"Complete": false,
 			"AllowMultipleAnswers": false,
-			"Order": null,
 			"Active": false,
 			"ActivatedByPageId": "3301,3341",
-			"Feedback": null,
-			"HasFeedback": false,
 			"NotRequiredConditions": [
 				{
 					"Field": "SoleTradeOrPartnership",
@@ -1233,7 +1065,6 @@
 					"Hint": "",
 					"Input": {
 						"Type": "ComplexRadio",
-						"InputClasses": null,
 						"Options": [
 							{
 								"FurtherQuestions": [
@@ -1242,12 +1073,10 @@
 										"QuestionTag": null,
 										"Label": "Give us more information",
 										"ShortLabel": "",
-										"InputClasses": null,
 										"QuestionBodyText": "",
 										"Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include:</p><ul class='govuk-list govuk-list--bullet govuk-hint'><li>full names of who this was</li><li>what the breach related to</li><li>if any actions were taken to resolve this</li></ul>",
 										"Input": {
 											"Type": "Textarea",
-											"InputClasses": "",
 											"Options": [],
 											"Validations": [
 												{
@@ -1260,12 +1089,8 @@
 													"Value": "275",
 													"ErrorMessage": "Your answer must be 275 words or less"
 												}
-											],
-											"DataEndpoint": null
-										},
-										"Order": null,
-										"Value": null,
-										"ErrorMessages": null
+											]
+										}
 									}
 								],
 								"Value": "Yes",
@@ -1285,27 +1110,20 @@
 								"Value": "",
 								"ErrorMessage": "Tell us if anyone who's in control of your organisation has breached tax payments or social security contributions in the last 3 years"
 							}
-						],
-						"DataEndpoint": null
+						]
 					}
 				}
 			],
-			"PageOfAnswers": [],
 			"Next": [
 				{
 					"Action": "NextPage",
 					"ReturnId": "3370",
-					"Conditions": [],
-					"ConditionMet": false
+					"Conditions": []
 				}
 			],
-			"Complete": false,
 			"AllowMultipleAnswers": false,
-			"Order": null,
 			"Active": false,
 			"ActivatedByPageId": "3300,3350",
-			"Feedback": null,
-			"HasFeedback": false,
 			"NotRequiredConditions": [
 				{
 					"Field": "SoleTradeOrPartnership",
@@ -1333,7 +1151,6 @@
 					"Hint": "",
 					"Input": {
 						"Type": "ComplexRadio",
-						"InputClasses": null,
 						"Options": [
 							{
 								"FurtherQuestions": [
@@ -1342,12 +1159,10 @@
 										"QuestionTag": null,
 										"Label": "Give us more information",
 										"ShortLabel": "",
-										"InputClasses": null,
 										"QuestionBodyText": "",
 										"Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include:</p><ul class='govuk-list govuk-list--bullet govuk-hint'><li>what the breach related to</li><li>if any actions were taken to resolve this</li></ul>",
 										"Input": {
 											"Type": "Textarea",
-											"InputClasses": "",
 											"Options": [],
 											"Validations": [
 												{
@@ -1360,12 +1175,8 @@
 													"Value": "275",
 													"ErrorMessage": "Your answer must be 275 words or less"
 												}
-											],
-											"DataEndpoint": null
-										},
-										"Order": null,
-										"Value": null,
-										"ErrorMessages": null
+											]
+										}
 									}
 								],
 								"Value": "Yes",
@@ -1385,27 +1196,20 @@
 								"Value": "",
 								"ErrorMessage": "Tell us if you breached tax payments or social security contributions in the last 3 years"
 							}
-						],
-						"DataEndpoint": null
+						]
 					}
 				}
 			],
-			"PageOfAnswers": [],
 			"Next": [
 				{
 					"Action": "NextPage",
 					"ReturnId": "3371",
-					"Conditions": [],
-					"ConditionMet": false
+					"Conditions": []
 				}
 			],
-			"Complete": false,
 			"AllowMultipleAnswers": false,
-			"Order": null,
 			"Active": false,
 			"ActivatedByPageId": "3301,3351",
-			"Feedback": null,
-			"HasFeedback": false,
 			"NotRequiredConditions": [
 				{
 					"Field": "SoleTradeOrPartnership",
@@ -1434,7 +1238,6 @@
 					"Hint": "",
 					"Input": {
 						"Type": "ComplexRadio",
-						"InputClasses": null,
 						"Options": [
 							{
 								"FurtherQuestions": [
@@ -1443,12 +1246,10 @@
 										"QuestionTag": null,
 										"Label": "Give us more information",
 										"ShortLabel": "",
-										"InputClasses": null,
 										"QuestionBodyText": "",
 										"Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include:</p><ul class='govuk-list govuk-list--bullet govuk-hint'><li>full names of who this was</li><li>why they were removed</li><li>if any actions were taken to resolve this</li></ul>",
 										"Input": {
 											"Type": "Textarea",
-											"InputClasses": "",
 											"Options": [],
 											"Validations": [
 												{
@@ -1461,12 +1262,8 @@
 													"Value": "275",
 													"ErrorMessage": "Your answer must be 275 words or less"
 												}
-											],
-											"DataEndpoint": null
-										},
-										"Order": null,
-										"Value": null,
-										"ErrorMessages": null
+											]
+										}
 									}
 								],
 								"Value": "Yes",
@@ -1486,27 +1283,20 @@
 								"Value": "",
 								"ErrorMessage": "Tell us if anyone who's in control of your organisation is on the Register of Removed Trustees"
 							}
-						],
-						"DataEndpoint": null
+						]
 					}
 				}
 			],
-			"PageOfAnswers": [],
 			"Next": [
 				{
 					"Action": "NextPage",
 					"ReturnId": "3380",
-					"Conditions": [],
-					"ConditionMet": false
+					"Conditions": []
 				}
 			],
-			"Complete": false,
 			"AllowMultipleAnswers": false,
-			"Order": null,
 			"Active": false,
 			"ActivatedByPageId": "3300,3360",
-			"Feedback": null,
-			"HasFeedback": false,
 			"NotRequiredConditions": [
 				{
 					"Field": "SoleTradeOrPartnership",
@@ -1534,7 +1324,6 @@
 					"Hint": "",
 					"Input": {
 						"Type": "ComplexRadio",
-						"InputClasses": null,
 						"Options": [
 							{
 								"FurtherQuestions": [
@@ -1543,12 +1332,10 @@
 										"QuestionTag": null,
 										"Label": "Give us more information",
 										"ShortLabel": "",
-										"InputClasses": null,
 										"QuestionBodyText": "",
 										"Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include:</p><ul class='govuk-list govuk-list--bullet govuk-hint'><li>why you were removed</li><li>if any actions were taken to resolve this</li></ul>",
 										"Input": {
 											"Type": "Textarea",
-											"InputClasses": "",
 											"Options": [],
 											"Validations": [
 												{
@@ -1561,12 +1348,8 @@
 													"Value": "275",
 													"ErrorMessage": "Your answer must be 275 words or less"
 												}
-											],
-											"DataEndpoint": null
-										},
-										"Order": null,
-										"Value": null,
-										"ErrorMessages": null
+											]
+										}
 									}
 								],
 								"Value": "Yes",
@@ -1586,27 +1369,20 @@
 								"Value": "",
 								"ErrorMessage": "Tell us if you are on the Register of Removed Trustees"
 							}
-						],
-						"DataEndpoint": null
+						]
 					}
 				}
 			],
-			"PageOfAnswers": [],
 			"Next": [
 				{
 					"Action": "NextPage",
 					"ReturnId": "3381",
-					"Conditions": [],
-					"ConditionMet": false
+					"Conditions": []
 				}
 			],
-			"Complete": false,
 			"AllowMultipleAnswers": false,
-			"Order": null,
 			"Active": false,
 			"ActivatedByPageId": "3301,3361",
-			"Feedback": null,
-			"HasFeedback": false,
 			"NotRequiredConditions": [
 				{
 					"Field": "SoleTradeOrPartnership",
@@ -1635,7 +1411,6 @@
 					"Hint": "",
 					"Input": {
 						"Type": "ComplexRadio",
-						"InputClasses": null,
 						"Options": [
 							{
 								"FurtherQuestions": [
@@ -1644,12 +1419,10 @@
 										"QuestionTag": null,
 										"Label": "Give us more information",
 										"ShortLabel": "",
-										"InputClasses": null,
 										"QuestionBodyText": "",
 										"Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include:</p><ul class='govuk-list govuk-list--bullet govuk-hint'><li>full names of who this was and the organisations involved</li><li>why they were made bankrupt</li><li>if any actions were taken to resolve this</li></ul>",
 										"Input": {
 											"Type": "Textarea",
-											"InputClasses": "",
 											"Options": [],
 											"Validations": [
 												{
@@ -1662,12 +1435,8 @@
 													"Value": "275",
 													"ErrorMessage": "Your answer must be 275 words or less"
 												}
-											],
-											"DataEndpoint": null
-										},
-										"Order": null,
-										"Value": null,
-										"ErrorMessages": null
+											]
+										}
 									}
 								],
 								"Value": "Yes",
@@ -1687,27 +1456,20 @@
 								"Value": "",
 								"ErrorMessage": "Tell us if anyone who's in control of your organisation or any of its partner organisations been made bankrupt in the last 3 years"
 							}
-						],
-						"DataEndpoint": null
+						]
 					}
 				}
 			],
-			"PageOfAnswers": [],
 			"Next": [
 				{
 					"Action": "ReturnToSection",
 					"ReturnId": "4.1",
-					"Conditions": [],
-					"ConditionMet": false
+					"Conditions": []
 				}
 			],
-			"Complete": false,
 			"AllowMultipleAnswers": false,
-			"Order": null,
 			"Active": false,
 			"ActivatedByPageId": "3300,3370",
-			"Feedback": null,
-			"HasFeedback": false,
 			"NotRequiredConditions": [
 				{
 					"Field": "SoleTradeOrPartnership",
@@ -1735,7 +1497,6 @@
 					"Hint": "",
 					"Input": {
 						"Type": "ComplexRadio",
-						"InputClasses": null,
 						"Options": [
 							{
 								"FurtherQuestions": [
@@ -1744,12 +1505,10 @@
 										"QuestionTag": "CC-People-Bankruptcy-SoleTrader-Information",
 										"Label": "Give us more information",
 										"ShortLabel": "",
-										"InputClasses": null,
 										"QuestionBodyText": "",
 										"Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include:</p><ul class='govuk-list govuk-list--bullet govuk-hint'><li>full names of who this was and the organisations involved</li><li>why they were made bankrupt</li><li>if any actions were taken to resolve this</li></ul>",
 										"Input": {
 											"Type": "Textarea",
-											"InputClasses": "",
 											"Options": [],
 											"Validations": [
 												{
@@ -1762,12 +1521,8 @@
 													"Value": "275",
 													"ErrorMessage": "Your answer must be 275 words or less"
 												}
-											],
-											"DataEndpoint": null
-										},
-										"Order": null,
-										"Value": null,
-										"ErrorMessages": null
+											]
+										}
 									}
 								],
 								"Value": "Yes",
@@ -1787,27 +1542,20 @@
 								"Value": "",
 								"ErrorMessage": "Tell us if you or anyone who's in control of your partner organisations been made bankrupt in the last 3 years"
 							}
-						],
-						"DataEndpoint": null
+						]
 					}
 				}
 			],
-			"PageOfAnswers": [],
 			"Next": [
 				{
 					"Action": "ReturnToSection",
 					"ReturnId": "4.1",
-					"Conditions": [],
-					"ConditionMet": false
+					"Conditions": []
 				}
 			],
-			"Complete": false,
 			"AllowMultipleAnswers": false,
-			"Order": null,
 			"Active": false,
 			"ActivatedByPageId": "3301,3371",
-			"Feedback": null,
-			"HasFeedback": false,
 			"NotRequiredConditions": [
 				{
 					"Field": "SoleTradeOrPartnership",

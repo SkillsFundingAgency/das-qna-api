@@ -2,7 +2,6 @@
     "Title": "Checks on your organisation",
     "LinkTitle": "Checks on your organisation",
     "DisplayType": "Pages",
-    "RequestedFeedbackAnswered": null,
     "Pages": [
         {
             "PageId": "3100",
@@ -21,7 +20,6 @@
                     "Hint": "",
                     "Input": {
                         "Type": "ComplexRadio",
-                        "InputClasses": null,
                         "Options": [
                             {
                                 "FurtherQuestions": [
@@ -30,12 +28,10 @@
                                         "QuestionTag": null,
                                         "Label": "Give us more information",
                                         "ShortLabel": "",
-                                        "InputClasses": null,
                                         "QuestionBodyText": "",
                                         "Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include:</p><ul class='govuk-list govuk-list--bullet govuk-hint'><li>a brief summary of the agreement</li><li>how your organisation will settle the debt</li><li>the date of when the debt will be fully paid off</li></ul>",
                                         "Input": {
                                             "Type": "Textarea",
-                                            "InputClasses": "",
                                             "Options": [],
                                             "Validations": [
                                                 {
@@ -48,12 +44,8 @@
                                                     "Value": "275",
                                                     "ErrorMessage": "Your answer must be 275 words or less"
                                                 }
-                                            ],
-                                            "DataEndpoint": null
-                                        },
-                                        "Order": null,
-                                        "Value": null,
-                                        "ErrorMessages": null
+                                            ]
+                                        }
                                     }
                                 ],
                                 "Value": "Yes",
@@ -73,26 +65,19 @@
                                 "Value": "",
                                 "ErrorMessage": "Tell if your organisation has any composition with creditors"
                             }
-                        ],
-                        "DataEndpoint": null
+                        ]
                     }
                 }
             ],
-            "PageOfAnswers": [],
             "Next": [
                 {
                     "Action": "NextPage",
                     "ReturnId": "3110",
-                    "Conditions": [],
-                    "ConditionMet": false
+                    "Conditions": []
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
-            "Order": null,
             "Active": true,
-            "Feedback": null,
-            "HasFeedback": false,
             "NotRequiredConditions": [],
             "BodyText": ""
         },
@@ -113,7 +98,6 @@
                     "Hint": "",
                     "Input": {
                         "Type": "ComplexRadio",
-                        "InputClasses": null,
                         "Options": [
                             {
                                 "FurtherQuestions": [
@@ -122,12 +106,10 @@
                                         "QuestionTag": null,
                                         "Label": "Give us more information",
                                         "ShortLabel": "",
-                                        "InputClasses": null,
                                         "QuestionBodyText": "",
                                         "Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include:</p><ul class='govuk-list govuk-list--bullet govuk-hint'><li>why your organisation failed to repay funding</li><li>which public body was involved</li><li>if any actions have been taken to resolve this</li></ul>",
                                         "Input": {
                                             "Type": "Textarea",
-                                            "InputClasses": "",
                                             "Options": [],
                                             "Validations": [
                                                 {
@@ -140,12 +122,8 @@
                                                     "Value": "275",
                                                     "ErrorMessage": "Your answer must be 275 words or less"
                                                 }
-                                            ],
-                                            "DataEndpoint": null
-                                        },
-                                        "Order": null,
-                                        "Value": null,
-                                        "ErrorMessages": null
+                                            ]
+                                        }
                                     }
                                 ],
                                 "Value": "Yes",
@@ -165,26 +143,19 @@
                                 "Value": "",
                                 "ErrorMessage": "Tell us if your organisation has failed to pay back funds in the last 3 years"
                             }
-                        ],
-                        "DataEndpoint": null
+                        ]
                     }
                 }
             ],
-            "PageOfAnswers": [],
             "Next": [
                 {
                     "Action": "NextPage",
                     "ReturnId": "3120",
-                    "Conditions": [],
-                    "ConditionMet": false
+                    "Conditions": []
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
-            "Order": null,
             "Active": true,
-            "Feedback": null,
-            "HasFeedback": false,
             "NotRequiredConditions": [],
             "BodyText": ""
         },
@@ -205,7 +176,6 @@
                     "Hint": "",
                     "Input": {
                         "Type": "ComplexRadio",
-                        "InputClasses": null,
                         "Options": [
                             {
                                 "FurtherQuestions": [
@@ -214,12 +184,10 @@
                                         "QuestionTag": null,
                                         "Label": "Give us more information",
                                         "ShortLabel": "",
-                                        "InputClasses": null,
                                         "QuestionBodyText": "",
                                         "Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include:</p><ul class='govuk-list govuk-list--bullet govuk-hint'><li>a brief summary of why the contract was terminated</li><li>which public body was involved</li><li>if any actions have been taken to resolve this</li></ul>",
                                         "Input": {
                                             "Type": "Textarea",
-                                            "InputClasses": "",
                                             "Options": [],
                                             "Validations": [
                                                 {
@@ -232,12 +200,8 @@
                                                     "Value": "275",
                                                     "ErrorMessage": "Your answer must be 275 words or less"
                                                 }
-                                            ],
-                                            "DataEndpoint": null
-                                        },
-                                        "Order": null,
-                                        "Value": null,
-                                        "ErrorMessages": null
+                                            ]
+                                        }
                                     }
                                 ],
                                 "Value": "Yes",
@@ -257,26 +221,19 @@
                                 "Value": "",
                                 "ErrorMessage": "Tell us if your organisation has had a contract terminated early by a public body in the last 3 years"
                             }
-                        ],
-                        "DataEndpoint": null
+                        ]
                     }
                 }
             ],
-            "PageOfAnswers": [],
             "Next": [
                 {
                     "Action": "NextPage",
                     "ReturnId": "3130",
-                    "Conditions": [],
-                    "ConditionMet": false
+                    "Conditions": []
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
-            "Order": null,
             "Active": true,
-            "Feedback": null,
-            "HasFeedback": false,
             "NotRequiredConditions": [],
             "BodyText": ""
         },
@@ -297,7 +254,6 @@
                     "Hint": "",
                     "Input": {
                         "Type": "ComplexRadio",
-                        "InputClasses": null,
                         "Options": [
                             {
                                 "FurtherQuestions": [
@@ -306,12 +262,10 @@
                                         "QuestionTag": null,
                                         "Label": "Give us more information",
                                         "ShortLabel": "",
-                                        "InputClasses": null,
                                         "QuestionBodyText": "",
                                         "Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include:</p><ul class='govuk-list govuk-list--bullet govuk-hint'><li>a brief summary of why your organisation withdrew from a contract</li><li>which public body was involved</li><li>if any actions have been taken to resolve this</li></ul>",
                                         "Input": {
                                             "Type": "Textarea",
-                                            "InputClasses": "",
                                             "Options": [],
                                             "Validations": [
                                                 {
@@ -324,12 +278,8 @@
                                                     "Value": "275",
                                                     "ErrorMessage": "Your answer must be 275 words or less"
                                                 }
-                                            ],
-                                            "DataEndpoint": null
-                                        },
-                                        "Order": null,
-                                        "Value": null,
-                                        "ErrorMessages": null
+                                            ]
+                                        }
                                     }
                                 ],
                                 "Value": "Yes",
@@ -349,26 +299,19 @@
                                 "Value": "",
                                 "ErrorMessage": "Tell us if your organisation has withdrawn from a contract with a public body in the last 3 years"
                             }
-                        ],
-                        "DataEndpoint": null
+                        ]
                     }
                 }
             ],
-            "PageOfAnswers": [],
             "Next": [
                 {
                     "Action": "NextPage",
                     "ReturnId": "3135",
-                    "Conditions": [],
-                    "ConditionMet": false
+                    "Conditions": []
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
-            "Order": null,
             "Active": true,
-            "Feedback": null,
-            "HasFeedback": false,
             "NotRequiredConditions": [],
             "BodyText": ""
         },
@@ -390,7 +333,6 @@
                     "Hint": "",
                     "Input": {
                         "Type": "ComplexRadio",
-                        "InputClasses": null,
                         "Options": [
                             {
                                 "FurtherQuestions": [
@@ -399,12 +341,10 @@
                                         "QuestionTag": "CC-Organisation-RoTO-Information",
                                         "Label": "Give us more information",
                                         "ShortLabel": "",
-                                        "InputClasses": null,
                                         "QuestionBodyText": "",
                                         "Hint": "<p class='govuk-body govuk-hint'>You'll need to include a brief summary of why your organisation was removed.</p>",
                                         "Input": {
                                             "Type": "Textarea",
-                                            "InputClasses": null,
                                             "Options": [],
                                             "Validations": [
                                                 {
@@ -417,12 +357,8 @@
                                                     "Value": "275",
                                                     "ErrorMessage": "Your answer must be 275 words or less"
                                                 }
-                                            ],
-                                            "DataEndpoint": null
-                                        },
-                                        "Order": null,
-                                        "Value": "",
-                                        "ErrorMessages": null
+                                            ]
+                                        }
                                     }
                                 ],
                                 "Value": "Yes",
@@ -442,32 +378,21 @@
                                 "Value": "",
                                 "ErrorMessage": "Tell us if your organisation has been removed from the Register of Training Organisations (RoTO) in the last 3 years"
                             }
-                        ],
-                        "DataEndpoint": null
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                        ]
+                    }
                 }
             ],
-            "PageOfAnswers": [],
             "Next": [
                 {
                     "Action": "NextPage",
                     "ReturnId": "3140",
-                    "Conditions": [],
-                    "ConditionMet": false
+                    "Conditions": []
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
-            "Order": null,
             "Active": true,
             "NotRequiredConditions": [],
             "BodyText": "",
-            "Details": null,
-            "DisplayType": null,
-            "Feedback": null,
             "ActivatedByPageId": null
         },
         {
@@ -487,7 +412,6 @@
                     "Hint": "",
                     "Input": {
                         "Type": "ComplexRadio",
-                        "InputClasses": null,
                         "Options": [
                             {
                                 "FurtherQuestions": [
@@ -496,12 +420,10 @@
                                         "QuestionTag": null,
                                         "Label": "Give us more information",
                                         "ShortLabel": "",
-                                        "InputClasses": null,
                                         "QuestionBodyText": "",
                                         "Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include:</p><ul class='govuk-list govuk-list--bullet govuk-hint'><li>a brief summary of why funding was removed</li><li>if any actions have been taken to resolve this</li></ul>",
                                         "Input": {
                                             "Type": "Textarea",
-                                            "InputClasses": "",
                                             "Options": [],
                                             "Validations": [
                                                 {
@@ -514,12 +436,8 @@
                                                     "Value": "275",
                                                     "ErrorMessage": "Your answer must be 275 words or less"
                                                 }
-                                            ],
-                                            "DataEndpoint": null
-                                        },
-                                        "Order": null,
-                                        "Value": null,
-                                        "ErrorMessages": null
+                                            ]
+                                        }
                                     }
                                 ],
                                 "Value": "Yes",
@@ -539,26 +457,19 @@
                                 "Value": "",
                                 "ErrorMessage": "Tell us if your organisation has had funding removed from any education bodies in the last 3 years"
                             }
-                        ],
-                        "DataEndpoint": null
+                        ]
                     }
                 }
             ],
-            "PageOfAnswers": [],
             "Next": [
                 {
                     "Action": "NextPage",
                     "ReturnId": "3150",
-                    "Conditions": [],
-                    "ConditionMet": false
+                    "Conditions": []
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
-            "Order": null,
             "Active": true,
-            "Feedback": null,
-            "HasFeedback": false,
             "NotRequiredConditions": [],
             "BodyText": ""
         },
@@ -579,7 +490,6 @@
                     "Hint": "",
                     "Input": {
                         "Type": "ComplexRadio",
-                        "InputClasses": null,
                         "Options": [
                             {
                                 "FurtherQuestions": [
@@ -588,12 +498,10 @@
                                         "QuestionTag": null,
                                         "Label": "Give us more information",
                                         "ShortLabel": "",
-                                        "InputClasses": null,
                                         "QuestionBodyText": "",
                                         "Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include:</p><ul class='govuk-list govuk-list--bullet govuk-hint'><li>a brief summary of why your organisation was removed</li><li>if any actions have been taken to resolve this</li></ul>",
                                         "Input": {
                                             "Type": "Textarea",
-                                            "InputClasses": "",
                                             "Options": [],
                                             "Validations": [
                                                 {
@@ -606,12 +514,8 @@
                                                     "Value": "275",
                                                     "ErrorMessage": "Your answer must be 275 words or less"
                                                 }
-                                            ],
-                                            "DataEndpoint": null
-                                        },
-                                        "Order": null,
-                                        "Value": null,
-                                        "ErrorMessages": null
+                                            ]
+                                        }
                                     }
                                 ],
                                 "Value": "Yes",
@@ -631,26 +535,19 @@
                                 "Value": "",
                                 "ErrorMessage": "Tell us if your organisation has been removed from any professional or trade registers in the last 3 years"
                             }
-                        ],
-                        "DataEndpoint": null
+                        ]
                     }
                 }
             ],
-            "PageOfAnswers": [],
             "Next": [
                 {
                     "Action": "NextPage",
                     "ReturnId": "3160",
-                    "Conditions": [],
-                    "ConditionMet": false
+                    "Conditions": []
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
-            "Order": null,
             "Active": true,
-            "Feedback": null,
-            "HasFeedback": false,
             "NotRequiredConditions": [],
             "BodyText": ""
         },
@@ -671,7 +568,6 @@
                     "Hint": "",
                     "Input": {
                         "Type": "ComplexRadio",
-                        "InputClasses": null,
                         "Options": [
                             {
                                 "FurtherQuestions": [
@@ -680,12 +576,10 @@
                                         "QuestionTag": null,
                                         "Label": "Give us more information",
                                         "ShortLabel": "",
-                                        "InputClasses": null,
                                         "QuestionBodyText": "",
                                         "Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include a brief summary of why your organisation was withdrawn involuntarily.</p>",
                                         "Input": {
                                             "Type": "Textarea",
-                                            "InputClasses": "",
                                             "Options": [],
                                             "Validations": [
                                                 {
@@ -698,12 +592,8 @@
                                                     "Value": "275",
                                                     "ErrorMessage": "Your answer must be 275 words or less"
                                                 }
-                                            ],
-                                            "DataEndpoint": null
-                                        },
-                                        "Order": null,
-                                        "Value": null,
-                                        "ErrorMessages": null
+                                            ]
+                                        }
                                     }
                                 ],
                                 "Value": "Yes",
@@ -723,26 +613,19 @@
                                 "Value": "",
                                 "ErrorMessage": "Tell us if your organisation has had involuntary withdrawal from Initial Teacher Training accreditation in the last 3 years"
                             }
-                        ],
-                        "DataEndpoint": null
+                        ]
                     }
                 }
             ],
-            "PageOfAnswers": [],
             "Next": [
                 {
                     "Action": "NextPage",
                     "ReturnId": "3170",
-                    "Conditions": [],
-                    "ConditionMet": false
+                    "Conditions": []
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
-            "Order": null,
             "Active": true,
-            "Feedback": null,
-            "HasFeedback": false,
             "NotRequiredConditions": [],
             "BodyText": ""
         },
@@ -763,7 +646,6 @@
                     "Hint": "",
                     "Input": {
                         "Type": "ComplexRadio",
-                        "InputClasses": null,
                         "Options": [
                             {
                                 "FurtherQuestions": [
@@ -772,12 +654,10 @@
                                         "QuestionTag": null,
                                         "Label": "Give us more information",
                                         "ShortLabel": "",
-                                        "InputClasses": null,
                                         "QuestionBodyText": "",
                                         "Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include a brief summary of why your organisation was removed.</p>",
                                         "Input": {
                                             "Type": "Textarea",
-                                            "InputClasses": "",
                                             "Options": [],
                                             "Validations": [
                                                 {
@@ -790,12 +670,8 @@
                                                     "Value": "275",
                                                     "ErrorMessage": "Your answer must be 275 words or less"
                                                 }
-                                            ],
-                                            "DataEndpoint": null
-                                        },
-                                        "Order": null,
-                                        "Value": null,
-                                        "ErrorMessages": null
+                                            ]
+                                        }
                                     }
                                 ],
                                 "Value": "Yes",
@@ -815,26 +691,19 @@
                                 "Value": "",
                                 "ErrorMessage": "Tell us if your organisation has been removed from any charity register"
                             }
-                        ],
-                        "DataEndpoint": null
+                        ]
                     }
                 }
             ],
-            "PageOfAnswers": [],
             "Next": [
                 {
                     "Action": "NextPage",
                     "ReturnId": "3180",
-                    "Conditions": [],
-                    "ConditionMet": false
+                    "Conditions": []
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
-            "Order": null,
             "Active": true,
-            "Feedback": null,
-            "HasFeedback": false,
             "NotRequiredConditions": [],
             "BodyText": ""
         },
@@ -855,7 +724,6 @@
                     "Hint": "",
                     "Input": {
                         "Type": "ComplexRadio",
-                        "InputClasses": null,
                         "Options": [
                             {
                                 "FurtherQuestions": [
@@ -864,12 +732,10 @@
                                         "QuestionTag": null,
                                         "Label": "Give us more information",
                                         "ShortLabel": "",
-                                        "InputClasses": null,
                                         "QuestionBodyText": "",
                                         "Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include:</p><ul class='govuk-list govuk-list--bullet govuk-hint'><li>what the issues were</li><li>who was involved</li><li>if any actions were taken to resolve this</li></ul>",
                                         "Input": {
                                             "Type": "Textarea",
-                                            "InputClasses": "",
                                             "Options": [],
                                             "Validations": [
                                                 {
@@ -882,12 +748,8 @@
                                                     "Value": "275",
                                                     "ErrorMessage": "Your answer must be 275 words or less"
                                                 }
-                                            ],
-                                            "DataEndpoint": null
-                                        },
-                                        "Order": null,
-                                        "Value": null,
-                                        "ErrorMessages": null
+                                            ]
+                                        }
                                     }
                                 ],
                                 "Value": "Yes",
@@ -907,26 +769,19 @@
                                 "Value": "",
                                 "ErrorMessage": "Tell us if your organisation has been investigated due to safeguarding issues in the last 3 months"
                             }
-                        ],
-                        "DataEndpoint": null
+                        ]
                     }
                 }
             ],
-            "PageOfAnswers": [],
             "Next": [
                 {
                     "Action": "NextPage",
                     "ReturnId": "3190",
-                    "Conditions": [],
-                    "ConditionMet": false
+                    "Conditions": []
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
-            "Order": null,
             "Active": true,
-            "Feedback": null,
-            "HasFeedback": false,
             "NotRequiredConditions": [],
             "BodyText": ""
         },
@@ -947,7 +802,6 @@
                     "Hint": "",
                     "Input": {
                         "Type": "ComplexRadio",
-                        "InputClasses": null,
                         "Options": [
                             {
                                 "FurtherQuestions": [
@@ -956,12 +810,10 @@
                                         "QuestionTag": null,
                                         "Label": "Give us more information",
                                         "ShortLabel": "",
-                                        "InputClasses": null,
                                         "QuestionBodyText": "",
                                         "Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include:</p><ul class='govuk-list govuk-list--bullet govuk-hint'><li>what the issues were</li><li>who was involved</li><li>if any actions were taken to resolve this</li></ul>",
                                         "Input": {
                                             "Type": "Textarea",
-                                            "InputClasses": "",
                                             "Options": [],
                                             "Validations": [
                                                 {
@@ -974,12 +826,8 @@
                                                     "Value": "275",
                                                     "ErrorMessage": "Your answer must be 275 words or less"
                                                 }
-                                            ],
-                                            "DataEndpoint": null
-                                        },
-                                        "Order": null,
-                                        "Value": null,
-                                        "ErrorMessages": null
+                                            ]
+                                        }
                                     }
                                 ],
                                 "Value": "Yes",
@@ -999,26 +847,19 @@
                                 "Value": "",
                                 "ErrorMessage": "Tell us if your organisation has been investigated due to whistleblowing issues in the last 3 months"
                             }
-                        ],
-                        "DataEndpoint": null
+                        ]
                     }
                 }
             ],
-            "PageOfAnswers": [],
             "Next": [
                 {
                     "Action": "NextPage",
                     "ReturnId": "3199",
-                    "Conditions": [],
-                    "ConditionMet": false
+                    "Conditions": []
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
-            "Order": null,
             "Active": true,
-            "Feedback": null,
-            "HasFeedback": false,
             "NotRequiredConditions": [],
             "BodyText": ""
         },
@@ -1039,7 +880,6 @@
                     "Hint": "",
                     "Input": {
                         "Type": "ComplexRadio",
-                        "InputClasses": null,
                         "Options": [
                             {
                                 "FurtherQuestions": [
@@ -1048,12 +888,10 @@
                                         "QuestionTag": null,
                                         "Label": "Give us more information",
                                         "ShortLabel": "",
-                                        "InputClasses": null,
                                         "QuestionBodyText": "",
                                         "Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include:</p><ul class='govuk-list govuk-list--bullet govuk-hint'><li>names of the other organisations</li><li>a brief summary of why this happened - including relevant dates</li><li>outstanding judgements or legal proceedings</li></ul>",
                                         "Input": {
                                             "Type": "Textarea",
-                                            "InputClasses": "",
                                             "Options": [],
                                             "Validations": [
                                                 {
@@ -1066,12 +904,8 @@
                                                     "Value": "275",
                                                     "ErrorMessage": "Your answer must be 275 words or less"
                                                 }
-                                            ],
-                                            "DataEndpoint": null
-                                        },
-                                        "Order": null,
-                                        "Value": null,
-                                        "ErrorMessages": null
+                                            ]
+                                        }
                                     }
                                 ],
                                 "Value": "Yes",
@@ -1091,26 +925,19 @@
                                 "Value": "",
                                 "ErrorMessage": "Tell us if your organisation or any of its partner organisations has been subject to insolvency or winding up proceedings in the last 3 years"
                             }
-                        ],
-                        "DataEndpoint": null
+                        ]
                     }
                 }
             ],
-            "PageOfAnswers": [],
             "Next": [
                 {
                     "Action": "ReturnToSection",
                     "ReturnId": "3.3",
-                    "Conditions": [],
-                    "ConditionMet": false
+                    "Conditions": []
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
-            "Order": null,
             "Active": true,
-            "Feedback": null,
-            "HasFeedback": false,
             "NotRequiredConditions": [],
             "BodyText": ""
         }
