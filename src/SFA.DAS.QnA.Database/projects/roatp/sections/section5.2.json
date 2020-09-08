@@ -2,7 +2,6 @@
     "Title": "Engaging with employers",
     "LinkTitle": "Engaging with employers",
     "DisplayType": "Pages",
-    "RequestedFeedbackAnswered": null,
     "Pages": [{
             "PageId": "5100",
             "SequenceId": null,
@@ -35,24 +34,17 @@
                                 "ErrorMessage": "Tell us if your organisation has engaged with employers to deliver apprenticeship training to their employees"
                             }
                         ]
-                    },
-                    "Order": null
+                    }
                 }
             ],
-            "PageOfAnswers": [],
             "Next": [{
                     "Action": "NextPage",
                     "ReturnId": "5110",
-                    "Conditions": [],
-                    "ConditionMet": false
+                    "Conditions": []
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
-            "Order": null,
             "Active": true,
-            "Feedback": null,
-            "HasFeedback": false,
             "NotRequiredConditions": [],
             "BodyText": ""
         }, {
@@ -81,24 +73,17 @@
                                 "ErrorMessage": "Your answer must be 275 words or less"
                             }
                         ]
-                    },
-                    "Order": null
+                    }
                 }
             ],
-            "PageOfAnswers": [],
             "Next": [{
                     "Action": "NextPage",
                     "ReturnId": "5120",
-                    "Conditions": [],
-                    "ConditionMet": false
+                    "Conditions": []
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
-            "Order": null,
             "Active": true,
-            "Feedback": null,
-            "HasFeedback": false,
             "NotRequiredConditions": [],
             "BodyText": ""
         }, {
@@ -127,13 +112,8 @@
                                 "ErrorMessage": "Enter a full name using 255 characters or less"
                             }
                         ],
-                        "Options": [],
-                        "InputClasses": null,
-                        "DataEndpoint": null
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                        "Options": []
+                    }
                 }, {
                     "QuestionId": "RTE-22-2",
                     "QuestionTag": null,
@@ -157,13 +137,8 @@
                                 "ErrorMessage": "Enter an email using 70 characters or less"
                             }
                         ],
-                        "Options": [],
-                        "InputClasses": null,
-                        "DataEndpoint": null
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                        "Options": []
+                    }
                 }, {
                     "QuestionId": "RTE-22-3",
                     "QuestionTag": null,
@@ -192,24 +167,16 @@
                             }
                         ],
                         "Options": [],
-                        "InputClasses": "govuk-input--width-20",
-                        "DataEndpoint": null
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                        "InputClasses": "govuk-input--width-20"
+                    }
                 }
             ],
-            "PageOfAnswers": [],
             "Next": [{
                     "Action": "NextPage",
                     "ReturnId": "5130",
-                    "Condition": null,
-                    "Conditions": [],
-                    "ConditionMet": false
+                    "Conditions": []
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
             "Active": true,
             "NotRequiredConditions": [],
@@ -241,24 +208,17 @@
                                 "ErrorMessage": "Your answer must be 150 words or less"
                             }
                         ]
-                    },
-                    "Order": null
+                    }
                 }
             ],
-            "PageOfAnswers": [],
             "Next": [{
                     "Action": "ReturnToSection",
                     "ReturnId": "5.3",
-                    "Conditions": [],
-                    "ConditionMet": false
+                    "Conditions": []
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
-            "Order": null,
             "Active": true,
-            "Feedback": null,
-            "HasFeedback": false,
             "NotRequiredConditions": [],
             "BodyText": ""
         }
