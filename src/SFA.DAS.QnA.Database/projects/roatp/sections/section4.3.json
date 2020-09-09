@@ -35,6 +35,7 @@
                     }
                 }
             ],
+			"PageOfAnswers": [],
             "Next": [
                 {
                     "Action": "ReturnToSection",

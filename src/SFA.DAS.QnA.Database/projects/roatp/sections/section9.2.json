@@ -42,6 +42,7 @@
                     }
                 }
             ],
+			"PageOfAnswers": [],
             "Next": [
                 {
                     "Action": "NextPage",
@@ -74,6 +75,7 @@
             "LinkTitle": "Before you submit your application",
             "InfoText": "",
             "Questions": [],
+			"PageOfAnswers": [],
             "Next": [],
             "AllowMultipleAnswers": false,
             "Order": null,

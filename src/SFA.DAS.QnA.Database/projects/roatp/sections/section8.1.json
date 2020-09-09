@@ -11,6 +11,7 @@
             "LinkTitle": "Evaluating apprenticeship training",
             "InfoText": "",
             "Questions": [],
+			"PageOfAnswers": [],
             "Next": [
                 {
                     "Action": "ReturnToSection",

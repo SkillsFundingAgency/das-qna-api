@@ -36,6 +36,7 @@
                     }
                 }
             ],
+			"PageOfAnswers": [],
             "Next": [
                 {
                     "Action": "NextPage",
@@ -111,6 +112,7 @@
                     }
                 }
             ],
+			"PageOfAnswers": [],
             "Next": [
                 {
                     "Action": "NextPage",
@@ -167,6 +169,7 @@
                     }
                 }
             ],
+			"PageOfAnswers": [],
             "Next": [
                 {
                     "Action": "ReturnToSection",

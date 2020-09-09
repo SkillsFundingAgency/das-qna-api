@@ -43,6 +43,7 @@
                     }
                 }
             ],
+			"PageOfAnswers": [],
             "Next": [
                 {
                     "Action": "ReturnToSection",

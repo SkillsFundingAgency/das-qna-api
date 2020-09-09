@@ -37,6 +37,7 @@
                     }
                 }
             ],
+			"PageOfAnswers": [],
             "Next": [{
                     "Action": "NextPage",
                     "ReturnId": "5610",
@@ -84,6 +85,7 @@
                     }
                 }
             ],
+			"PageOfAnswers": [],
             "Next": [{
                     "Action": "ReturnToSection",
                     "ReturnId": "6.1",

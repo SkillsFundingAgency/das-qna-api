@@ -11,6 +11,7 @@
             "LinkTitle": "Delivering apprenticeship training",
             "InfoText": "",
             "Questions": [],
+			"PageOfAnswers": [],
             "Next": [
                 {
                     "Action": "ReturnToSection",
@@ -40,6 +41,7 @@
             "LinkTitle": "Delivering apprenticeship training",
             "InfoText": "",
             "Questions": [],
+			"PageOfAnswers": [],
             "Next": [
                 {
                     "Action": "ReturnToSection",
@@ -69,6 +71,7 @@
             "LinkTitle": "Delivering apprenticeship training",
             "InfoText": "",
             "Questions": [],
+			"PageOfAnswers": [],
             "Next": [
                 {
                     "Action": "ReturnToSection",
