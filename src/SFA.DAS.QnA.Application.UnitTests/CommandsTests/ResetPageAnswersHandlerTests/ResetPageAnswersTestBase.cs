@@ -13,7 +13,7 @@ using SFA.DAS.QnA.Data.Entities;
 namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.ResetPageAnswersHandlerTests
 {
     [TestFixture]
-    public class ResetPageAnswersHandlerTests
+    public class ResetPageAnswersTestBase
     {
         protected Guid ApplicationId;
         protected Guid SectionId;

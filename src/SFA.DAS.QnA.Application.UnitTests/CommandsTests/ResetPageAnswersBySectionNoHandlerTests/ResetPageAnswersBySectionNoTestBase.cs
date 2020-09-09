@@ -10,16 +10,16 @@ using SFA.DAS.QnA.Application.Services;
 using SFA.DAS.QnA.Data;
 using SFA.DAS.QnA.Data.Entities;
 
-namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.ResetPageAnswersBySequenceSectionNumberHandlerTests
+namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.ResetPageAnswersBySectionNoHandlerTests
 {
     [TestFixture]
-    public class ResetPageAnswersBySequenceSectionNumberHandlerTests
+    public class ResetPageAnswersBySectionNoTestBase
     {
         protected Guid ApplicationId;
         protected Guid SectionId;
         protected int SequenceNo;
         protected int SectionNo;
-        protected ResetPageAnswersBySequenceSectionNumberHandler Handler;
+        protected ResetPageAnswersBySectionNoHandler Handler;
         protected GetApplicationDataHandler GetApplicationDataHandler;
         protected GetPageHandler GetPageHandler;
         protected QnaDataContext DataContext;
@@ -28,7 +28,7 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.ResetPageAnswersBySequ
         public async Task SetUp()
         {
             DataContext = DataContextHelpers.GetInMemoryDataContext();
-            Handler = new ResetPageAnswersBySequenceSectionNumberHandler(DataContext, new NotRequiredProcessor(), new TagProcessingService(DataContext));
+            Handler = new ResetPageAnswersBySectionNoHandler(DataContext, new NotRequiredProcessor(), new TagProcessingService(DataContext));
             GetApplicationDataHandler = new GetApplicationDataHandler(DataContext);
             GetPageHandler = new GetPageHandler(DataContext);
 

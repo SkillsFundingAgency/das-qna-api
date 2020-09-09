@@ -13,13 +13,13 @@ using SFA.DAS.QnA.Data.Entities;
 namespace SFA.DAS.QnA.Application.Commands.ResetPageAnswers
 {
 
-    public class ResetPageAnswersBySequenceSectionNumberHandler : SetAnswersBase, IRequestHandler<ResetPageAnswersBySequenceSectionNumberRequest, HandlerResponse<ResetPageAnswersResponse>>
+    public class ResetPageAnswersBySectionNoHandler : SetAnswersBase, IRequestHandler<ResetPageAnswersBySectionNoRequest, HandlerResponse<ResetPageAnswersResponse>>
     {
-        public ResetPageAnswersBySequenceSectionNumberHandler(QnaDataContext dataContext, INotRequiredProcessor notRequiredProcessor, ITagProcessingService tagProcessingService) : base(dataContext, notRequiredProcessor, tagProcessingService, null)
+        public ResetPageAnswersBySectionNoHandler(QnaDataContext dataContext, INotRequiredProcessor notRequiredProcessor, ITagProcessingService tagProcessingService) : base(dataContext, notRequiredProcessor, tagProcessingService, null)
         {
         }
 
-        public async Task<HandlerResponse<ResetPageAnswersResponse>> Handle(ResetPageAnswersBySequenceSectionNumberRequest request, CancellationToken cancellationToken)
+        public async Task<HandlerResponse<ResetPageAnswersResponse>> Handle(ResetPageAnswersBySectionNoRequest request, CancellationToken cancellationToken)
         {
             var section = await _dataContext.ApplicationSections.SingleOrDefaultAsync(sec => sec.SequenceNo == request.SequenceNo && sec.SectionNo == request.SectionNo && sec.ApplicationId == request.ApplicationId, cancellationToken);
             var validationErrorResponse = ValidateRequest(request.PageId, section);

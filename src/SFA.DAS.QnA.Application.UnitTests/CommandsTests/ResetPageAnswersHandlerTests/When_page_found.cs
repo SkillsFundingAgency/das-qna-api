@@ -1,15 +1,15 @@
-﻿using System.Threading;
-using System.Threading.Tasks;
-using FluentAssertions;
-using Newtonsoft.Json.Linq;
-using NUnit.Framework;
-using SFA.DAS.QnA.Application.Commands.ResetPageAnswers;
-using SFA.DAS.QnA.Application.Queries.ApplicationData.GetApplicationData;
-using SFA.DAS.QnA.Application.Queries.Sections.GetPage;
-
-namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.ResetPageAnswersHandlerTests
+﻿namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.ResetPageAnswersHandlerTests
 {
-    public class When_page_found : ResetPageAnswersHandlerTests
+    using System.Threading;
+    using System.Threading.Tasks;
+    using FluentAssertions;
+    using Newtonsoft.Json.Linq;
+    using NUnit.Framework;
+    using SFA.DAS.QnA.Application.Commands.ResetPageAnswers;
+    using SFA.DAS.QnA.Application.Queries.ApplicationData.GetApplicationData;
+    using SFA.DAS.QnA.Application.Queries.Sections.GetPage;
+
+    public class When_page_found : ResetPageAnswersTestBase
     {
         [Test]
         public async Task Then_successful_response()
