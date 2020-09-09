@@ -4,16 +4,16 @@ using System.Threading.Tasks;
 using NUnit.Framework;
 using SFA.DAS.QnA.Api.Types.Page;
 using SFA.DAS.QnA.Application.Commands.ResetPageAnswers;
-using SFA.DAS.QnA.Data;
-using SFA.DAS.QnA.Data.Entities;
 using SFA.DAS.QnA.Application.Queries.ApplicationData.GetApplicationData;
 using SFA.DAS.QnA.Application.Queries.Sections.GetPage;
 using SFA.DAS.QnA.Application.Services;
+using SFA.DAS.QnA.Data;
+using SFA.DAS.QnA.Data.Entities;
 
-namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.ResetPageAnswersTests
+namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.ResetPageAnswersHandlerTests
 {
     [TestFixture]
-    public class ResetPageAnswersTestBase
+    public class ResetPageAnswersHandlerTests
     {
         protected Guid ApplicationId;
         protected Guid SectionId;
