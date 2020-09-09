@@ -22,7 +22,7 @@ namespace SFA.DAS.QnA.Application.Commands.ResetPageAnswers
         public async Task<HandlerResponse<ResetPageAnswersResponse>> Handle(ResetPageAnswersBySectionNoRequest request, CancellationToken cancellationToken)
         {
             var section = await _dataContext.ApplicationSections.SingleOrDefaultAsync(sec => sec.SequenceNo == request.SequenceNo && sec.SectionNo == request.SectionNo && sec.ApplicationId == request.ApplicationId, cancellationToken);
-            var validationErrorResponse = ValidateRequest(request.PageId, section);
+            var validationErrorResponse = ValidateResetPageAnswersRequest(request.PageId, section);
 
             if (validationErrorResponse != null)
             {

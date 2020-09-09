@@ -137,6 +137,29 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
             return null;
         }
 
+        protected HandlerResponse<ResetPageAnswersResponse> ValidateResetPageAnswersRequest(string pageId, ApplicationSection section)
+        {
+            var page = section?.QnAData?.Pages.SingleOrDefault(p => p.PageId == pageId);
+
+            if (page is null)
+            {
+                return new HandlerResponse<ResetPageAnswersResponse>(success: false, message: "Cannot find requested page.");
+            }
+            else if (page.Questions.Any())
+            {
+                if (page.Questions.All(q => "FileUpload".Equals(q.Input?.Type, StringComparison.InvariantCultureIgnoreCase)))
+                {
+                    return new HandlerResponse<ResetPageAnswersResponse>(success: false, message: "This endpoint cannot be used for FileUpload questions. Use Upload / DeleteFile instead.");
+                }
+                else if (page.Questions.Any(q => "FileUpload".Equals(q.Input?.Type, StringComparison.InvariantCultureIgnoreCase)))
+                {
+                    return new HandlerResponse<ResetPageAnswersResponse>(success: false, message: "Pages cannot contain a mixture of FileUploads and other Question Types.");
+                }
+            }
+
+            return null;
+        }
+
         protected static void SetApplicationDataField(Question question, List<Answer> answers, JObject applicationData)
         {
             if (question != null && applicationData != null)
@@ -338,29 +361,6 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
             }
 
             return FindNextRequiredAction(section, nextAction, applicationData);
-        }
-
-        protected HandlerResponse<ResetPageAnswersResponse> ValidateRequest(string pageId, ApplicationSection section)
-        {
-            var page = section?.QnAData?.Pages.SingleOrDefault(p => p.PageId == pageId);
-
-            if (page is null)
-            {
-                return new HandlerResponse<ResetPageAnswersResponse>(success: false, message: "Cannot find requested page.");
-            }
-            else if (page.Questions.Count > 0)
-            {
-                if (page.Questions.All(q => "FileUpload".Equals(q.Input?.Type, StringComparison.InvariantCultureIgnoreCase)))
-                {
-                    return new HandlerResponse<ResetPageAnswersResponse>(success: false, message: "This endpoint cannot be used for FileUpload questions. Use Upload / DeleteFile instead.");
-                }
-                else if (page.Questions.Any(q => "FileUpload".Equals(q.Input?.Type, StringComparison.InvariantCultureIgnoreCase)))
-                {
-                    return new HandlerResponse<ResetPageAnswersResponse>(success: false, message: "Pages cannot contain a mixture of FileUploads and other Question Types.");
-                }
-            }
-
-            return null;
         }
 
         protected void UpdateApplicationData(string pageId, Data.Entities.Application application, ApplicationSection section)
