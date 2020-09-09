@@ -363,65 +363,6 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
             return FindNextRequiredAction(section, nextAction, applicationData);
         }
 
-        protected void UpdateApplicationData(string pageId, Data.Entities.Application application, ApplicationSection section)
-        {
-            if (application != null)
-            {
-                var applicationData = JObject.Parse(application.ApplicationData ?? "{}");
-
-                var page = section?.QnAData?.Pages.SingleOrDefault(p => p.PageId == pageId);
-
-                if (page != null)
-                {
-                    var questionTagsWhichHaveBeenUpdated = new List<string>();
-
-                    foreach (var question in page.Questions)
-                    {
-                        SetApplicationDataField(question, applicationData);
-                        if (!string.IsNullOrWhiteSpace(question.QuestionTag)) questionTagsWhichHaveBeenUpdated.Add(question.QuestionTag);
-
-                        if (question.Input.Options != null)
-                        {
-                            foreach (var option in question.Input.Options.Where(o => o.FurtherQuestions != null))
-                            {
-                                foreach (var furtherQuestion in option.FurtherQuestions)
-                                {
-                                    SetApplicationDataField(furtherQuestion, applicationData);
-                                    if (!string.IsNullOrWhiteSpace(furtherQuestion.QuestionTag)) questionTagsWhichHaveBeenUpdated.Add(furtherQuestion.QuestionTag);
-                                }
-                            }
-                        }
-                    }
-
-                    application.ApplicationData = applicationData.ToString(Formatting.None);
-
-                    SetStatusOfAllPagesBasedOnUpdatedQuestionTags(application, questionTagsWhichHaveBeenUpdated);
-                    _tagProcessingService.ClearDeactivatedTags(application.Id, section.Id);   // <== double check section.Id
-                }
-            }
-        }
-
-        private static void SetApplicationDataField(Question question, JObject applicationData)
-        {
-            if (question != null && applicationData != null)
-            {
-                var questionTag = question.QuestionTag;
-                string questionTagAnswer = null;
-
-                if (!string.IsNullOrWhiteSpace(questionTag))
-                {
-                    if (applicationData.ContainsKey(question.QuestionTag))
-                    {
-                        applicationData[question.QuestionTag] = questionTagAnswer;
-                    }
-                    else
-                    {
-                        applicationData.Add(question.QuestionTag, new JValue(questionTagAnswer));
-                    }
-                }
-            }
-        }
-
         private static bool CheckAllConditionsSatisfied(Condition condition, string questionTag)
         {
             bool allConditionsSatisified = true;
