@@ -12,15 +12,16 @@ using SFA.DAS.QnA.Data.Entities;
 
 namespace SFA.DAS.QnA.Application.Commands.ResetPageAnswers
 {
-    public class ResetPageAnswersHandler : SetAnswersBase, IRequestHandler<ResetPageAnswersRequest, HandlerResponse<ResetPageAnswersResponse>>
+
+    public class ResetPageAnswersBySequenceSectionNumberHandler : SetAnswersBase, IRequestHandler<ResetPageAnswersBySequenceSectionNumberRequest, HandlerResponse<ResetPageAnswersResponse>>
     {
-        public ResetPageAnswersHandler(QnaDataContext dataContext, INotRequiredProcessor notRequiredProcessor, ITagProcessingService tagProcessingService) : base(dataContext, notRequiredProcessor, tagProcessingService, null)
+        public ResetPageAnswersBySequenceSectionNumberHandler(QnaDataContext dataContext, INotRequiredProcessor notRequiredProcessor, ITagProcessingService tagProcessingService) : base(dataContext, notRequiredProcessor, tagProcessingService, null)
         {
         }
 
-        public async Task<HandlerResponse<ResetPageAnswersResponse>> Handle(ResetPageAnswersRequest request, CancellationToken cancellationToken)
+        public async Task<HandlerResponse<ResetPageAnswersResponse>> Handle(ResetPageAnswersBySequenceSectionNumberRequest request, CancellationToken cancellationToken)
         {
-            var section = await _dataContext.ApplicationSections.SingleOrDefaultAsync(sec => sec.Id == request.SectionId && sec.ApplicationId == request.ApplicationId, cancellationToken);
+            var section = await _dataContext.ApplicationSections.SingleOrDefaultAsync(sec => sec.SequenceNo == request.SequenceNo && sec.SectionNo == request.SectionNo && sec.ApplicationId == request.ApplicationId, cancellationToken);
             var validationErrorResponse = ValidateRequest(request.PageId, section);
 
             if (validationErrorResponse != null)
@@ -42,8 +43,5 @@ namespace SFA.DAS.QnA.Application.Commands.ResetPageAnswers
 
             return new HandlerResponse<ResetPageAnswersResponse>(new ResetPageAnswersResponse(true));
         }
-
-       
-
     }
 }

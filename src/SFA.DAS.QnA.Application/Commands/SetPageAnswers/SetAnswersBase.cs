@@ -137,7 +137,7 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
             return null;
         }
 
-        private static void SetApplicationDataField(Question question, List<Answer> answers, JObject applicationData)
+        protected static void SetApplicationDataField(Question question, List<Answer> answers, JObject applicationData)
         {
             if (question != null && applicationData != null)
             {
@@ -340,6 +340,88 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
             return FindNextRequiredAction(section, nextAction, applicationData);
         }
 
+        protected HandlerResponse<ResetPageAnswersResponse> ValidateRequest(string pageId, ApplicationSection section)
+        {
+            var page = section?.QnAData?.Pages.SingleOrDefault(p => p.PageId == pageId);
+
+            if (page is null)
+            {
+                return new HandlerResponse<ResetPageAnswersResponse>(success: false, message: "Cannot find requested page.");
+            }
+            else if (page.Questions.Count > 0)
+            {
+                if (page.Questions.All(q => "FileUpload".Equals(q.Input?.Type, StringComparison.InvariantCultureIgnoreCase)))
+                {
+                    return new HandlerResponse<ResetPageAnswersResponse>(success: false, message: "This endpoint cannot be used for FileUpload questions. Use Upload / DeleteFile instead.");
+                }
+                else if (page.Questions.Any(q => "FileUpload".Equals(q.Input?.Type, StringComparison.InvariantCultureIgnoreCase)))
+                {
+                    return new HandlerResponse<ResetPageAnswersResponse>(success: false, message: "Pages cannot contain a mixture of FileUploads and other Question Types.");
+                }
+            }
+
+            return null;
+        }
+
+        protected void UpdateApplicationData(string pageId, Data.Entities.Application application, ApplicationSection section)
+        {
+            if (application != null)
+            {
+                var applicationData = JObject.Parse(application.ApplicationData ?? "{}");
+
+                var page = section?.QnAData?.Pages.SingleOrDefault(p => p.PageId == pageId);
+
+                if (page != null)
+                {
+                    var questionTagsWhichHaveBeenUpdated = new List<string>();
+
+                    foreach (var question in page.Questions)
+                    {
+                        SetApplicationDataField(question, applicationData);
+                        if (!string.IsNullOrWhiteSpace(question.QuestionTag)) questionTagsWhichHaveBeenUpdated.Add(question.QuestionTag);
+
+                        if (question.Input.Options != null)
+                        {
+                            foreach (var option in question.Input.Options.Where(o => o.FurtherQuestions != null))
+                            {
+                                foreach (var furtherQuestion in option.FurtherQuestions)
+                                {
+                                    SetApplicationDataField(furtherQuestion, applicationData);
+                                    if (!string.IsNullOrWhiteSpace(furtherQuestion.QuestionTag)) questionTagsWhichHaveBeenUpdated.Add(furtherQuestion.QuestionTag);
+                                }
+                            }
+                        }
+                    }
+
+                    application.ApplicationData = applicationData.ToString(Formatting.None);
+
+                    SetStatusOfAllPagesBasedOnUpdatedQuestionTags(application, questionTagsWhichHaveBeenUpdated);
+                    _tagProcessingService.ClearDeactivatedTags(application.Id, section.Id);   // <== double check section.Id
+                }
+            }
+        }
+
+        private static void SetApplicationDataField(Question question, JObject applicationData)
+        {
+            if (question != null && applicationData != null)
+            {
+                var questionTag = question.QuestionTag;
+                string questionTagAnswer = null;
+
+                if (!string.IsNullOrWhiteSpace(questionTag))
+                {
+                    if (applicationData.ContainsKey(question.QuestionTag))
+                    {
+                        applicationData[question.QuestionTag] = questionTagAnswer;
+                    }
+                    else
+                    {
+                        applicationData.Add(question.QuestionTag, new JValue(questionTagAnswer));
+                    }
+                }
+            }
+        }
+
         private static bool CheckAllConditionsSatisfied(Condition condition, string questionTag)
         {
             bool allConditionsSatisified = true;
@@ -416,6 +498,27 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
             page.Complete = true;
         }
 
+        protected void ResetPageAnswers(string pageId, ApplicationSection section)
+        {
+            if (section != null)
+            {
+                // Have to force QnAData a new object and reassign for Entity Framework to pick up changes
+                var qnaData = new QnAData(section.QnAData);
+                var page = qnaData?.Pages.SingleOrDefault(p => p.PageId == pageId);
+
+                if (page != null)
+                {
+                    page.PageOfAnswers = new List<PageOfAnswers>();
+
+                    page.Complete = false;
+                    MarkPageFeedbackAsComplete(page); // As the answer has been 'changed', feedback can be deemed as completed
+
+                    // Assign QnAData back so Entity Framework will pick up changes
+                    section.QnAData = qnaData;
+                }
+            }
+        }
+
         protected void MarkPageFeedbackAsComplete(Page page)
         {
             if (page.HasFeedback)
@@ -423,6 +526,7 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
                 page.Feedback.ForEach(f => f.IsCompleted = true);
             }
         }
+
 
         protected void SetStatusOfNextPagesBasedOnDeemedNextActions(ApplicationSection section, string pageId, Next deemedNextAction, List<Next> deemedCheckboxListNextActions)
         {
