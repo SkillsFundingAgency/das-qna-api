@@ -2,7 +2,6 @@
     "Title": "Supporting apprentices",
     "LinkTitle": "Supporting apprentices",
     "DisplayType": "Pages",
-    "RequestedFeedbackAnswered": null,
     "Pages": [
         {
             "PageId": "6300",
@@ -17,12 +16,10 @@
                     "QuestionTag": null,
                     "Label": "How will your organisation ensure apprentices are supported during their apprenticeship training?",
                     "ShortLabel": "",
-                    "InputClasses": null,
                     "QuestionBodyText": "<p class='govuk-body' id='pat-organisation-transition'>Your answer must include how your organisation will:</p><ul class='govuk-list govuk-list--bullet'><li>have the right people in place to support apprentices</li><li>financially support apprentices - for example, arranging funding for equipment</li></ul></p>",
                     "Hint": "",
                     "Input": {
                         "Type": "Textarea",
-                        "InputClasses": null,
                         "Options": [],
                         "Validations": [
                             {
@@ -35,30 +32,19 @@
                                 "Value": "750",
                                 "ErrorMessage": "Your answer must be 750 characters or less"
                             }
-                        ],
-                        "DataEndpoint": null
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                        ]
+                    }
                 }
             ],
-            "PageOfAnswers": [],
             "Next": [
                 {
                     "Action": "NextPage",
                     "ReturnId": "6310",
-                    "Conditions": [],
-                    "ConditionMet": false
+                    "Conditions": []
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
-            "Order": null,
             "Active": true,
-            "Visible": true,
-            "Feedback": null,
-            "HasFeedback": false,
             "NotRequiredConditions": [
                 {
                     "Field": "ApplyProviderRoute",
@@ -84,12 +70,10 @@
                     "QuestionTag": null,
                     "Label": "How will your organisation support its apprentices?",
                     "ShortLabel": "",
-                    "InputClasses": null,
                     "QuestionBodyText": "<p class='govuk-body'>Select all that apply.</p>",
                     "Hint": "",
                     "Input": {
                         "Type": "CheckboxList",
-                        "InputClasses": null,
                         "Options": [
                             {
                                 "Value": "Though a mentor",
@@ -123,15 +107,10 @@
                                 "Value": "",
                                 "ErrorMessage": "Tell us how your organisation will support its apprentices"
                             }
-                        ],
-                        "DataEndpoint": null
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                        ]
+                    }
                 }
             ],
-            "PageOfAnswers": [],
             "Next": [
                 {
                     "Action": "NextPage",
@@ -146,22 +125,14 @@
                 },
                 {
                     "Action": "ReturnToSection",
-                    "ReturnId": "",
-                    "Condition": null,
-                    "Conditions": [],
-                    "ConditionMet": false
+                    "ReturnId": "6.4",
+                    "Conditions": []
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
-            "Order": null,
             "Active": false,
-            "Visible": true,
-            "Feedback": null,
-            "HasFeedback": false,
             "ActivatedByPageId": "6300",
-            "BodyText": "",
-            "Details": null
+            "BodyText": ""
         },
         {
             "PageId": "6320",
@@ -176,12 +147,10 @@
                     "QuestionTag": null,
                     "Label": "What other ways will your organisation use to support its apprentices?",
                     "ShortLabel": "",
-                    "InputClasses": null,
                     "QuestionBodyText": "",
                     "Hint": "",
                     "Input": {
                         "Type": "Textarea",
-                        "InputClasses": null,
                         "Options": [],
                         "Validations": [
                             {
@@ -194,32 +163,21 @@
                                 "Value": "750",
                                 "ErrorMessage": "Your answer must be 750 characters or less"
                             }
-                        ],
-                        "DataEndpoint": null
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                        ]
+                    }
                 }
             ],
-            "PageOfAnswers": [],
             "Next": [
-			{
+                {
                     "Action": "ReturnToSection",
-                    "ReturnId": "",
-                    "Conditions": [],
-                    "ConditionMet": false
+                    "ReturnId": "6.4",
+                    "Conditions": []
                 }
-				],
-            "Complete": false,
+			],
             "AllowMultipleAnswers": false,
-            "Order": null,
             "Active": false,
             "NotRequiredConditions": [],
             "BodyText": "",
-            "Details": null,
-            "DisplayType": null,
-            "Feedback": null,
             "ActivatedByPageId": "6310"
         }
     ]
