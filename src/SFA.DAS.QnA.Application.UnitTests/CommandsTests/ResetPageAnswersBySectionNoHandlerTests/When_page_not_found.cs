@@ -7,15 +7,13 @@
     using SFA.DAS.QnA.Application.Commands.ResetPageAnswers;
 
     public class When_page_not_found : ResetPageAnswersBySectionNoTestBase
+    {
+        [Test]
+        public async Task Then_validation_error_occurs()
         {
-            [Test]
-            public async Task Then_validation_error_occurs()
-            {
-                var response = await Handler.Handle(new ResetPageAnswersBySectionNoRequest(ApplicationId, SequenceNo, SectionNo, "NOT_FOUND"), CancellationToken.None);
+            var response = await Handler.Handle(new ResetPageAnswersBySectionNoRequest(ApplicationId, SequenceNo, SectionNo, "NOT_FOUND"), CancellationToken.None);
 
-                response.Success.Should().BeFalse();
-            }
+            response.Success.Should().BeFalse();
         }
     }
-
-
+}

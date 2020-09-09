@@ -198,8 +198,6 @@ namespace SFA.DAS.QnA.Application.Commands.Files.UploadFile
             }
         }
 
-        
-
         private static List<Answer> GetAnswersFromRequest(SubmitPageOfFilesRequest request)
         {
             var answers = new List<Answer>();

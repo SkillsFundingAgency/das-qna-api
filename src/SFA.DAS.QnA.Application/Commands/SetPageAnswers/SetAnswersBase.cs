@@ -468,7 +468,6 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
             }
         }
 
-
         protected void SetStatusOfNextPagesBasedOnDeemedNextActions(ApplicationSection section, string pageId, Next deemedNextAction, List<Next> deemedCheckboxListNextActions)
         {
             if (section != null)
