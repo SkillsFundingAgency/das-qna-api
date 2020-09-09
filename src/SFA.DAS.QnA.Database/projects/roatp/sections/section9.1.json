@@ -2,7 +2,6 @@
     "Title": "Application permissions and checks",
     "LinkTitle": "Application permissions and checks",
     "DisplayType": "Pages",
-    "RequestedFeedbackAnswered": null,
     "Pages": [
         {
             "PageId": "9000",
@@ -28,7 +27,6 @@
                                 "ErrorMessage": "Tell us if you have permission from everyone named in this application to use their details"
                             }
                         ],
-                        "InputClasses": null,
                         "Options": [
                             {
                                 "Value": "Yes",
@@ -41,39 +39,28 @@
                                 "HintText": ""
                             }
                         ]
-                    },
-                    "Order": null
+                    }
                 }
             ],
-            "PageOfAnswers": [],
             "Next": [
                 {
                     "Action": "NextPage",
                     "ReturnId": "10005",
-                    "Condition": null,
                     "Conditions": [
                         {
                             "MustEqual": "No",
                             "QuestionId": "FIN-10"
                         }
-                    ],
-                    "ConditionMet": false
+                    ]
                 },
                 {
                     "Action": "NextPage",
                     "ReturnId": "9010",
-                    "Condition": null,
-                    "Conditions": [],
-                    "ConditionMet": false
+                    "Conditions": []
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
-            "Order": null,
             "Active": true,
-            "Visible": true,
-            "Feedback": null,
-            "HasFeedback": false,
             "NotRequiredConditions": [],
             "ActivatedByPageId": null,
             "BodyText": ""
@@ -91,12 +78,10 @@
                     "QuestionTag": "FinishAccuratePersonalDetails",
                     "Label": "Have you checked with everyone named in this application that the details provided for them are accurate?",
                     "ShortLabel": "",
-                    "InputClasses": null,
                     "QuestionBodyText": "",
                     "Hint": "",
                     "Input": {
                         "Type": "Radio",
-                        "InputClasses": null,
                         "Options": [
                             {
                                 "Value": "Yes",
@@ -115,45 +100,31 @@
                                 "Value": "",
                                 "ErrorMessage": "Tell us if you have checked with everyone named in this application that the details provided for them are accurate"
                             }
-                        ],
-                        "DataEndpoint": null
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                        ]
+                    }
                 }
             ],
-            "PageOfAnswers": [],
             "Next": [
                 {
                     "Action": "NextPage",
                     "ReturnId": "10005",
-                    "Condition": null,
                     "Conditions": [
                         {
                             "MustEqual": "No",
                             "QuestionId": "FIN-20"
                         }
-                    ],
-                    "ConditionMet": false
+                    ]
                 },
                 {
                     "Action": "NextPage",
                     "ReturnId": "9020",
-                    "Condition": null,
-                    "Conditions": [],
-                    "ConditionMet": false
+                    "Conditions": []
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
-            "Order": null,
             "Active": true,
             "NotRequiredConditions": [],
             "BodyText": "",
-            "Details": null,
-            "DisplayType": null,
-            "Feedback": null,
             "ActivatedByPageId": null
         },
         {
@@ -169,12 +140,10 @@
                     "QuestionTag": "FinishPermissionSubmitApp",
                     "Label": "Do you have permission from your organisation to submit this application?",
                     "ShortLabel": "",
-                    "InputClasses": null,
                     "QuestionBodyText": "",
                     "Hint": "",
                     "Input": {
                         "Type": "Radio",
-                        "InputClasses": null,
                         "Options": [
                             {
                                 "Value": "Yes",
@@ -193,46 +162,31 @@
                                 "Value": "",
                                 "ErrorMessage": "Tell us if you have permission from your organisation to submit this application"
                             }
-                        ],
-                        "DataEndpoint": null
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                        ]
+                    }
                 }
             ],
-            "PageOfAnswers": [],
             "Next": [
                 {
                     "Action": "NextPage",
                     "ReturnId": "10005",
-                    "Condition": null,
                     "Conditions": [
                         {
                             "QuestionId": "FIN-30",
-                            "QuestionTag": null,
                             "MustEqual": "No"
                         }
-                    ],
-                    "ConditionMet": false
+                    ]
                 },
                 {
                     "Action": "ReturnToSection",
                     "ReturnId": "9.2",
-                    "Condition": null,
-                    "Conditions": [],
-                    "ConditionMet": false
+                    "Conditions": []
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
-            "Order": null,
             "Active": true,
             "NotRequiredConditions": [],
             "BodyText": "",
-            "Details": null,
-            "DisplayType": null,
-            "Feedback": null,
             "ActivatedByPageId": null
         },
         {
@@ -243,17 +197,12 @@
             "LinkTitle": "Before you submit your application",
             "InfoText": "",
             "Questions": [],
-            "PageOfAnswers": [],
             "Next": [],
-            "Complete": true,
             "AllowMultipleAnswers": false,
             "Order": null,
             "Active": false,
             "NotRequiredConditions": [],
             "BodyText": "<p class='govuk-body'>Before you submit your application you must:</p> <p class='govuk-body'> <ul class='govuk-list govuk-list--bullet'><li>have permission from everyone named in the application to use their details</li><li>check with everyone named in the application that the details provided for them are accurate</li><li>have permission from your organisation to submit the application</li></ul></p>",
-            "Details": null,
-            "DisplayType": null,
-            "Feedback": null,
             "ActivatedByPageId": "9000,9010,9020"
         }
     ]
