@@ -2,7 +2,6 @@
     "Title": "Process for evaluating the quality of training delivered",
     "LinkTitle": "Process for evaluating the quality of training delivered",
     "DisplayType": "Pages",
-    "RequestedFeedbackAnswered": null,
     "Pages": [{
             "PageId": "8100",
             "SequenceId": null,
@@ -29,24 +28,17 @@
                                 "ErrorMessage": "Your answer must be 275 words or less"
                             }
                         ]
-                    },
-                    "Order": null
+                    }
                 }
             ],
-            "PageOfAnswers": [],
             "Next": [{
                     "Action": "NextPage",
                     "ReturnId": "8110",
-                    "Conditions": [],
-                    "ConditionMet": false
+                    "Conditions": []
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
-            "Order": null,
             "Active": true,
-            "Feedback": null,
-            "HasFeedback": false,
             "NotRequiredConditions": [],
             "BodyText": ""
         },
@@ -76,24 +68,17 @@
                                 "ErrorMessage": "Your answer must be 275 words or less"
                             }
                         ]
-                    },
-                    "Order": null
+                    }
                 }
             ],
-            "PageOfAnswers": [],
             "Next": [{
                     "Action": "ReturnToSection",
                     "ReturnId": "8.3",
-                    "Conditions": [],
-                    "ConditionMet": false
+                    "Conditions": []
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
-            "Order": null,
             "Active": true,
-            "Feedback": null,
-            "HasFeedback": false,
             "NotRequiredConditions": [],
             "BodyText": ""
         }
