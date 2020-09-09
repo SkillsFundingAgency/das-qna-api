@@ -143,14 +143,18 @@ namespace SFA.DAS.QnA.Api.Controllers
             return resetPageAnswersResponse.Value;
         }
 
-
+        /// <summary>
+        ///     Removes all answers on the page.
+        /// </summary>
+        /// <returns>An object describing if the page has had its answers reset</returns>
+        /// <response code="200">Returns the response</response>
         [HttpPost("{applicationId}/sequences/{sequenceNo}/sections/{sectionNo}/pages/{pageId}/reset")]
         [ProducesResponseType(200)]
         public async Task<ActionResult<ResetPageAnswersResponse>> ResetPageAnswersBySectionNumber(Guid applicationId, int sequenceNo, int sectionNo, string pageId)
         {
             _logger.LogInformation($"Resetting all Answers on page {pageId}");
 
-            var resetPageAnswersResponse = await _mediator.Send(new ResetPageAnswersBySequenceSectionNumberRequest(applicationId, sequenceNo, sectionNo, pageId), CancellationToken.None);
+            var resetPageAnswersResponse = await _mediator.Send(new ResetPageAnswersBySectionNoRequest(applicationId, sequenceNo, sectionNo, pageId), CancellationToken.None);
             if (!resetPageAnswersResponse.Success)
             {
                 _logger.LogError($"Unable to reset answers for sequence {sequenceNo}, section {sectionNo}, page {pageId} | Reason : {resetPageAnswersResponse.Message}");
