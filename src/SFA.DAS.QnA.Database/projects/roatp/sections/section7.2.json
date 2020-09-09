@@ -2,7 +2,6 @@
     "Title": "Overall accountability for apprenticeships",
     "LinkTitle": "Overall accountability for apprenticeships",
     "DisplayType": "",
-    "RequestedFeedbackAnswered": null,
     "Pages": [
         {
             "PageId": "7100",
@@ -33,13 +32,8 @@
                                 "ErrorMessage": "Enter a full name using 255 characters or less"
                             }
                         ],
-                        "Options": [],
-                        "InputClasses": null,
-                        "DataEndpoint": null
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                        "Options": []
+                    }
                 },
                 {
                     "QuestionId": "DAT-10-2",
@@ -66,14 +60,8 @@
                                 "Value": "70",
                                 "ErrorMessage": "Enter an email using 70 characters or less"
                             }
-                        ],
-                        "Options": [],
-                        "InputClasses": null,
-                        "DataEndpoint": null
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                        ]
+                    }
                 },
                 {
                     "QuestionId": "DAT-10-3",
@@ -106,34 +94,21 @@
                                 "ErrorMessage": "Enter a contact number using 20 digits or less"
                             }
                         ],
-                        "Options": [],
-                        "InputClasses": "govuk-input--width-20",
-                        "DataEndpoint": null
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                        "InputClasses": "govuk-input--width-20"
+                    }
                 }
             ],
-            "PageOfAnswers": [],
             "Next": [
                 {
                     "Action": "ReturnToSection",
                     "ReturnId": "7.3",
-                    "Condition": null,
-                    "Conditions": [],
-                    "ConditionMet": false
+                    "Conditions": []
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
-            "Order": null,
             "Active": true,
             "NotRequiredConditions": [],
             "BodyText": "<p class='govuk-body' id='dat-overall-accountability'>This must be someone who's accountable for the overall management and governance of apprenticeships.</p><p class='govuk-body'>We will contact them for all apprenticeship related concerns, issues or queries after your organisation joins the RoATP.</p>",
-            "Details": null,
-            "DisplayType": null,
-            "Feedback": null,
             "ActivatedByPageId": null
         }
     ]

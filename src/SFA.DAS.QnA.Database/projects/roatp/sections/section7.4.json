@@ -2,7 +2,6 @@
     "Title": "Quality and high standards in apprenticeship training",
     "LinkTitle": "Quality and high standards in apprenticeship training",
     "DisplayType": "Pages",
-    "RequestedFeedbackAnswered": null,
     "Pages": [
         {
             "PageId": "7300",
@@ -33,25 +32,18 @@
                                 "ErrorMessage": "The selected file must be a PDF"
                             }
                         ]
-                    },
-                    "Order": null
+                    }
                 }
             ],
-            "PageOfAnswers": [],
             "Next": [
                 {
                     "Action": "NextPage",
                     "ReturnId": "7305",
-                    "Conditions": [],
-                    "ConditionMet": false
+                    "Conditions": []
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
-            "Order": null,
             "Active": true,
-            "Feedback": null,
-            "HasFeedback": false,
             "NotRequiredConditions": [],
             "BodyText": "",
             "ActivatedByPageId": null
@@ -69,12 +61,10 @@
                     "QuestionTag": null,
                     "Label": "Tell us how these expectations for quality and high standards in apprenticeship training are monitored and evaluated",
                     "ShortLabel": "",
-                    "InputClasses": null,
                     "QuestionBodyText": "<p class='govuk-body'>Your answer must include how they're:</p><ul class='govuk-list govuk-list--bullet'><li>reviewed and monitored</li><li>reflected in developing and delivering apprenticeship training programmes</li><li>measured through key performance indicators for the outcomes of apprenticeship training programmes</li><li>used to benchmark apprenticeship training delivery against industry leaders</li></ul>",
                     "Hint": "",
                     "Input": {
                         "Type": "Textarea",
-                        "InputClasses": null,
                         "Options": [],
                         "Validations": [
                             {
@@ -87,32 +77,21 @@
                                 "Value": "275",
                                 "ErrorMessage": "Your answer must be 275 words or less"
                             }
-                        ],
-                        "DataEndpoint": null
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                        ]
+                    }
                 }
             ],
-            "PageOfAnswers": [],
             "Next": [
                 {
                     "Action": "NextPage",
                     "ReturnId": "7310",
-                    "Conditions": [],
-                    "ConditionMet": false
+                    "Conditions": []
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
-            "Order": null,
             "Active": false,
             "NotRequiredConditions": [],
             "BodyText": "",
-            "Details": null,
-            "DisplayType": null,
-            "Feedback": null,
             "ActivatedByPageId": "7300"
         },
         {
@@ -144,13 +123,8 @@
                                 "ErrorMessage": "Enter a full name using 255 characters or less"
                             }
                         ],
-                        "Options": [],
-                        "InputClasses": null,
-                        "DataEndpoint": null
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                        "Options": []
+                    }
                 },
                 {
                     "QuestionId": "DAT-41-2",
@@ -178,13 +152,8 @@
                                 "ErrorMessage": "Enter an email using 70 characters or less"
                             }
                         ],
-                        "Options": [],
-                        "InputClasses": null,
-                        "DataEndpoint": null
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                        "Options": []
+                    }
                 },
                 {
                     "QuestionId": "DAT-41-3",
@@ -218,33 +187,21 @@
                             }
                         ],
                         "Options": [],
-                        "InputClasses": "govuk-input--width-20",
-                        "DataEndpoint": null
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                        "InputClasses": "govuk-input--width-20"
+                    }
                 }
             ],
-            "PageOfAnswers": [],
             "Next": [
                 {
                     "Action": "NextPage",
                     "ReturnId": "7320",
-                    "Condition": null,
-                    "Conditions": [],
-                    "ConditionMet": false
+                    "Conditions": []
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
-            "Order": null,
             "Active": false,
             "NotRequiredConditions": [],
             "BodyText": "",
-            "Details": null,
-            "DisplayType": null,
-            "Feedback": null,
             "ActivatedByPageId": "7305"
         },
         {
@@ -276,25 +233,18 @@
                                 "ErrorMessage": "Your answer must be 275 words or less"
                             }
                         ]
-                    },
-                    "Order": null
+                    }
                 }
             ],
-            "PageOfAnswers": [],
             "Next": [
                 {
                     "Action": "ReturnToSection",
                     "ReturnId": "7.5",
-                    "Conditions": [],
-                    "ConditionMet": false
+                    "Conditions": []
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
-            "Order": null,
             "Active": false,
-            "Feedback": null,
-            "HasFeedback": false,
             "NotRequiredConditions": [],
             "BodyText": "",
             "ActivatedByPageId": "7310"
