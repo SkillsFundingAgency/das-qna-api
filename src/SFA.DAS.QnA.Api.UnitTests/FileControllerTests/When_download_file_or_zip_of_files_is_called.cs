@@ -5,6 +5,7 @@ using FluentAssertions;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using NSubstitute;
 using NUnit.Framework;
 using SFA.DAS.QnA.Api.Controllers;
@@ -16,6 +17,7 @@ namespace SFA.DAS.QnA.Api.UnitTests.FileControllerTests
     [TestFixture]
     public class When_download_file_or_zip_of_files_is_called
     {
+        private ILogger<FileController> _logger;
         private IMediator _mediator;
         private IHttpContextAccessor _httpContextAccessor;
         private FileController _fileController;
@@ -23,9 +25,10 @@ namespace SFA.DAS.QnA.Api.UnitTests.FileControllerTests
         [SetUp]
         public void SetUp()
         {
+            _logger = Substitute.For<ILogger<FileController>>(); ;
             _mediator = Substitute.For<IMediator>();
             _httpContextAccessor = Substitute.For<IHttpContextAccessor>();
-            _fileController = new FileController(_mediator, _httpContextAccessor);
+            _fileController = new FileController(_logger, _mediator, _httpContextAccessor);
         }
 
         [Test]

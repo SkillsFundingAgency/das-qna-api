@@ -4,6 +4,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using SFA.DAS.QnA.Api.Infrastructure;
 using SFA.DAS.QnA.Api.Types.Page;
 using SFA.DAS.QnA.Application.Commands.PageFeedback.CompleteFeedbackWithinSequence;
@@ -16,10 +17,12 @@ namespace SFA.DAS.QnA.Api.Controllers
     [Produces("application/json")]
     public class FeedbackController : Controller
     {
+        private readonly ILogger<FeedbackController> _logger;
         private readonly IMediator _mediator;
 
-        public FeedbackController(IMediator mediator)
+        public FeedbackController(ILogger<FeedbackController> logger, IMediator mediator)
         {
+            _logger = logger;
             _mediator = mediator;
         }
 
@@ -35,7 +38,11 @@ namespace SFA.DAS.QnA.Api.Controllers
         public async Task<ActionResult<Page>> UpsertFeedback(Guid applicationId, Guid sectionId, string pageId, [FromBody] Feedback feedback)
         {
             var upsertFeedbackResponse = await _mediator.Send(new UpsertFeedbackRequest(applicationId, sectionId, pageId, feedback), CancellationToken.None);
-            if (!upsertFeedbackResponse.Success) return BadRequest(new BadRequestError(upsertFeedbackResponse.Message));
+            if (!upsertFeedbackResponse.Success)
+            {
+                _logger.LogError($"Unable to upsert feedback for page {pageId} | Reason : {upsertFeedbackResponse.Message}");
+                return BadRequest(new BadRequestError(upsertFeedbackResponse.Message));
+            }
 
             return upsertFeedbackResponse.Value;
         }
@@ -46,7 +53,11 @@ namespace SFA.DAS.QnA.Api.Controllers
         public async Task<ActionResult<Page>> DeleteFeedback(Guid applicationId, Guid sectionId, string pageId, Guid feedbackId)
         {
             var deleteFeedbackResponse = await _mediator.Send(new DeleteFeedbackRequest(applicationId, sectionId, pageId, feedbackId), CancellationToken.None);
-            if (!deleteFeedbackResponse.Success) return NotFound(new NotFoundError(deleteFeedbackResponse.Message));
+            if (!deleteFeedbackResponse.Success)
+            {
+                _logger.LogError($"Unable to delete feedback for page {pageId} | Reason : {deleteFeedbackResponse.Message}");
+                return NotFound(new NotFoundError(deleteFeedbackResponse.Message));
+            }
 
             return deleteFeedbackResponse.Value;
         }

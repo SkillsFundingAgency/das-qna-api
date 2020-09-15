@@ -25,7 +25,7 @@
         var cssClass = hasConditionalText ? "govuk-radios--conditional" : shouldInlineOptions ? "govuk-radios--inline" : "";
     }
 
-    <div class="govuk-radios @cssClass" data-module="radios">
+    <div class="govuk-radios @cssClass" data-module="govuk-radios">
         @for (int i = 0; i < options.Count; i++)
         {
             var radioChecked = Model.Value == options[i].Value.ToString() ? "checked" : "";
