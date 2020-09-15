@@ -1,8 +1,282 @@
 {
-    "Title": "Notification to withdraw an organisation",
-    "LinkTitle": "Notify to withdraw an application",
-    "DisplayType": "PagesWithSections",
-    "RequestedFeedbackAnswered": null,
-    "Pages": [
-    ]
+	"Title": "Notification to withdraw an organisation",
+	"LinkTitle": "Notify to withdraw an application",
+	"DisplayType": "PagesWithSections",
+	"RequestedFeedbackAnswered": null,
+	"Pages": [
+		{
+			"PageId": "1",
+			"SequenceId": null,
+			"SectionId": null,
+			"Title": "What’s the main reason you want to withdraw from the register?",
+			"LinkTitle": "Reason for withdrawing",
+			"InfoText": "",
+			"Questions": [
+				{
+					"QuestionId": "1",
+					"QuestionTag": null,
+					"Label": "What’s the main reason you want to withdraw from the register?",
+					"ShortLabel": "",
+					"InputClasses": null,
+					"QuestionBodyText": "You can tell us more about why you want to withdraw after you select a reason.",
+					"Hint": "",
+					"Input": {
+						"Type": "ComplexRadio",
+						"InputClasses": null,
+						"Options": [
+							{
+								"FurtherQuestions": [
+									{
+										"QuestionId": "1.1",
+										"QuestionTag": null,
+										"Label": "Enter more details (optional)",
+										"ShortLabel": "",
+										"InputClasses": null,
+										"QuestionBodyText": "",
+										"Hint": "",
+										"Input": {
+											"Type": "Textarea",
+											"InputClasses": null,
+											"Options": [],
+											"Validations": [],
+											"DataEndpoint": null
+										},
+										"Order": null,
+										"Value": "",
+										"ErrorMessages": null
+									}
+								],
+								"Value": "",
+								"Label": "Assessment plan has changed",
+								"HintText": ""
+							},
+							{
+								"FurtherQuestions": [
+									{
+										"QuestionId": "1.2",
+										"QuestionTag": null,
+										"Label": "Enter more details (optional)",
+										"ShortLabel": "",
+										"InputClasses": null,
+										"QuestionBodyText": "",
+										"Hint": "",
+										"Input": {
+											"Type": "Textarea",
+											"InputClasses": null,
+											"Options": [],
+											"Validations": [],
+											"DataEndpoint": null
+										},
+										"Order": null,
+										"Value": "",
+										"ErrorMessages": null
+									}
+								],
+								"Value": "",
+								"Label": "Competitors",
+								"HintText": ""
+							},
+							{
+								"FurtherQuestions": [
+									{
+										"QuestionId": "1.3",
+										"QuestionTag": null,
+										"Label": "<b>Enter more details (optional)</b>",
+										"ShortLabel": "<b>Enter more details (optional)</b>",
+										"InputClasses": null,
+										"QuestionBodyText": "",
+										"Hint": "",
+										"Input": {
+											"Type": "Textarea",
+											"InputClasses": null,
+											"Options": [],
+											"Validations": [],
+											"DataEndpoint": null
+										},
+										"Order": null,
+										"Value": "",
+										"ErrorMessages": null
+									}
+								],
+								"Value": "",
+								"Label": "Conditions of acceptance have changed",
+								"HintText": ""
+							},
+							{
+								"FurtherQuestions": [
+									{
+										"QuestionId": "1.4",
+										"QuestionTag": null,
+										"Label": "",
+										"ShortLabel": "",
+										"InputClasses": null,
+										"QuestionBodyText": "",
+										"Hint": "",
+										"Input": {
+											"Type": "Textarea",
+											"InputClasses": null,
+											"Options": [],
+											"Validations": [],
+											"DataEndpoint": null
+										},
+										"Order": null,
+										"Value": "",
+										"ErrorMessages": null
+									}
+								],
+								"Value": "",
+								"Label": "Costs are too high",
+								"HintText": ""
+							},
+							{
+								"FurtherQuestions": [],
+								"Value": "",
+								"Label": "",
+								"HintText": ""
+							},
+							{
+								"FurtherQuestions": [],
+								"Value": "",
+								"Label": "",
+								"HintText": ""
+							},
+							{
+								"FurtherQuestions": [],
+								"Value": "",
+								"Label": "",
+								"HintText": ""
+							},
+							{
+								"FurtherQuestions": [],
+								"Value": "",
+								"Label": "",
+								"HintText": ""
+							},
+							{
+								"FurtherQuestions": [],
+								"Value": "",
+								"Label": "",
+								"HintText": ""
+							},
+							{
+								"FurtherQuestions": [],
+								"Value": "",
+								"Label": "",
+								"HintText": ""
+							}
+						],
+						"Validations": [],
+						"DataEndpoint": null
+					},
+					"Order": null,
+					"Value": "",
+					"ErrorMessages": null
+				}
+			],
+			"PageOfAnswers": [],
+			"Next": [
+				{
+					"Action": "NextPage",
+					"ReturnId": "2",
+					"Conditions": [],
+					"ConditionMet": false
+				}
+			],
+			"Complete": false,
+			"AllowMultipleAnswers": false,
+			"Order": null,
+			"Active": true,
+			"NotRequiredConditions": [],
+			"BodyText": "",
+			"Details": null,
+			"DisplayType": null,
+			"Feedback": null,
+			"ActivatedByPageId": null
+		},
+		{
+			"PageId": "2",
+			"SequenceId": null,
+			"SectionId": null,
+			"Title": "",
+			"LinkTitle": "Completing assessments",
+			"InfoText": "",
+			"Questions": [],
+			"PageOfAnswers": [],
+			"Next": [],
+			"Complete": false,
+			"AllowMultipleAnswers": false,
+			"Order": null,
+			"Active": true,
+			"NotRequiredConditions": [],
+			"BodyText": "",
+			"Details": null,
+			"DisplayType": null,
+			"Feedback": null,
+			"ActivatedByPageId": null
+		},
+		{
+			"PageId": "3",
+			"SequenceId": null,
+			"SectionId": null,
+			"Title": "",
+			"LinkTitle": "Supporting current learners",
+			"InfoText": "",
+			"Questions": [],
+			"PageOfAnswers": [],
+			"Next": [],
+			"Complete": false,
+			"AllowMultipleAnswers": false,
+			"Order": null,
+			"Active": true,
+			"NotRequiredConditions": [],
+			"BodyText": "",
+			"Details": null,
+			"DisplayType": null,
+			"Feedback": null,
+			"ActivatedByPageId": null
+		},
+		{
+			"PageId": "4",
+			"SequenceId": null,
+			"SectionId": null,
+			"Title": "",
+			"LinkTitle": "Communicating exit",
+			"InfoText": "",
+			"Questions": [],
+			"PageOfAnswers": [],
+			"Next": [],
+			"Complete": false,
+			"AllowMultipleAnswers": false,
+			"Order": null,
+			"Active": true,
+			"NotRequiredConditions": [],
+			"BodyText": "",
+			"Details": null,
+			"DisplayType": null,
+			"Feedback": null,
+			"ActivatedByPageId": null
+		},
+		{
+			"PageId": "5",
+			"SequenceId": null,
+			"SectionId": null,
+			"Title": "",
+			"LinkTitle": "Date of withdrawl",
+			"InfoText": "",
+			"Questions": [],
+			"PageOfAnswers": [],
+			"Next": [],
+			"Complete": false,
+			"AllowMultipleAnswers": false,
+			"Order": null,
+			"Active": true,
+			"NotRequiredConditions": [],
+			"BodyText": "",
+			"Details": null,
+			"DisplayType": null,
+			"Feedback": null,
+			"ActivatedByPageId": null
+		}
+	],
+	"ShowTitleAsCaption": true
 }
