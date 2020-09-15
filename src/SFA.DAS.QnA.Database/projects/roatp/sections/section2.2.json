@@ -2352,7 +2352,7 @@
                     "ShortLabel": "",
                     "InputClasses": null,
                     "QuestionBodyText": "<p class='govuk-body'>Financial statements must include a:</p><ul class='govuk-list govuk-list--bullet'><li>balance sheet - showing the value of everything your organisation owns, owes and is owed on the last day of the financial year</li><li>profit and loss account - showing your organisation's sales, running costs and profit and loss it made over the financial year</li><li>detailed notes about the accounts</li><li>breakdown of creditors and borrowings</li></ul><p class='govuk-body'>If applicable, financial statements should be signed and filed with Companies House or the Charity Commission of England and Wales.</p><p class='govuk-body'>The file must be a PDF and smaller than 5MB.</p>",
-                    "Hint": "",
+                    "Hint": "Upload a file",
                     "Input": {
                         "Type": "FileUpload",
                         "InputClasses": null,
@@ -2581,7 +2581,7 @@
                     "ShortLabel": "",
                     "InputClasses": null,
                     "QuestionBodyText": "<p class='govuk-body'>Financial statements must include a:</p><ul class='govuk-list govuk-list--bullet'><li>balance sheet - showing the value of everything your organisation owns, owes and is owed</li><li>profit and loss account - showing your organisation's sales, running costs and profit and loss it's made</li><li>detailed notes about the accounts</li><li>breakdown of creditors and borrowings</li></ul><p class='govuk-body'>If applicable, financial statements should be signed and filed with Companies House or the Charity Commission of England and Wales.</p><p class='govuk-body'>Each file must be a PDF and smaller than 5MB.</p>",
-                    "Hint": "",
+                    "Hint": "Upload a file",
                     "Input": {
                         "Type": "FileUpload",
                         "InputClasses": null,
@@ -2694,7 +2694,7 @@
                     "ShortLabel": "",
                     "InputClasses": null,
                     "QuestionBodyText": "<p class='govuk-body'>Management accounts must include:</p><ul class='govuk-list govuk-list--bullet'><li>a balance sheet - showing the value of everything your organisation owns, owes and is owed to date</li><li>a cash flow statement</li><li>profit and loss account - showing your organisation's sales, running costs and profit and loss it's made</li><li>detailed notes about any assumptions made</li></ul><p class='govuk-body'>Your management accounts must start from the date your financial statements end.</p><p class='govuk-body'>Each file must be a PDF and smaller than 5MB.</p>",
-                    "Hint": "",
+                    "Hint": "Upload a file",
                     "Input": {
                         "Type": "FileUpload",
                         "InputClasses": null,
@@ -2890,7 +2890,7 @@
                     "ShortLabel": "",
                     "InputClasses": null,
                     "QuestionBodyText": "<p class='govuk-body'>Management accounts must include:</p><ul class='govuk-list govuk-list--bullet'><li>a balance sheet - showing the value of everything your organisation owns, owes and is owed for the last 12 months</li><li>a cash flow statement</li><li>profit and loss account - showing your organisation's sales, running costs and profit and loss it's made</li><li>detailed notes about any assumptions made</li></ul><p class='govuk-body'>Each must be a PDF and smaller than 5MB.</p>",
-                    "Hint": "",
+                    "Hint": "Upload a file",
                     "Input": {
                         "Type": "FileUpload",
                         "InputClasses": null,
@@ -2998,7 +2998,7 @@
                     "ShortLabel": "",
                     "InputClasses": null,
                     "QuestionBodyText": "<p class='govuk-body'>Management accounts must include:</p><ul class='govuk-list govuk-list--bullet'><li>a balance sheet - showing the value of everything your organisation owns, owes and is owed</li><li>a cash flow statement</li><li>profit and loss account - showing your organisation's sales, running costs and profit and loss it's made</li><li>detailed notes about any assumptions made</li></ul><p class='govuk-body'>Each file must be a PDF and smaller than 5MB.</p>",
-                    "Hint": "",
+                    "Hint": "Upload a file",
                     "Input": {
                         "Type": "FileUpload",
                         "InputClasses": null,
@@ -3064,7 +3064,7 @@
                     "ShortLabel": "",
                     "InputClasses": null,
                     "QuestionBodyText": "<p class='govuk-body'>Financial projections must include:</p><ul class='govuk-list govuk-list--bullet'><li>a balance sheet - showing a forecast of everything your organisation will own, owe and be owed</li><li>a profit and loss account - showing a forecast of your organisation's sales, running costs and the profit and loss</li><li>detailed notes about the accounts</li><li>a breakdown of creditors and borrowings</li></ul><p class='govuk-body'>Each file must be a PDF and smaller than 5MB.</p>",
-                    "Hint": "",
+                    "Hint": "Upload a file",
                     "Input": {
                         "Type": "FileUpload",
                         "InputClasses": null,
