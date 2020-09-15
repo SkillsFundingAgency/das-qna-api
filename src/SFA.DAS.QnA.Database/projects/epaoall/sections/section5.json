@@ -8,7 +8,7 @@
 			"PageId": "1",
 			"SequenceId": null,
 			"SectionId": null,
-			"Title": "What’s the main reason you want to withdraw from the register?",
+			"Title": "Reason for withdrawing",
 			"LinkTitle": "Reason for withdrawing",
 			"InfoText": "",
 			"Questions": [
@@ -46,7 +46,7 @@
 										"ErrorMessages": null
 									}
 								],
-								"Value": "",
+								"Value": "AssessmentPlanHasChanged",
 								"Label": "Assessment plan has changed",
 								"HintText": ""
 							},
@@ -72,7 +72,7 @@
 										"ErrorMessages": null
 									}
 								],
-								"Value": "",
+								"Value": "Competitors",
 								"Label": "Competitors",
 								"HintText": ""
 							},
@@ -81,7 +81,7 @@
 									{
 										"QuestionId": "1.3",
 										"QuestionTag": null,
-										"Label": "<b>Enter more details (optional)</b>",
+										"Label": "Enter more details (optional)",
 										"ShortLabel": "<b>Enter more details (optional)</b>",
 										"InputClasses": null,
 										"QuestionBodyText": "",
@@ -98,7 +98,7 @@
 										"ErrorMessages": null
 									}
 								],
-								"Value": "",
+								"Value": "ConditionsOfAcceptanceHaveChanged",
 								"Label": "Conditions of acceptance have changed",
 								"HintText": ""
 							},
@@ -107,7 +107,7 @@
 									{
 										"QuestionId": "1.4",
 										"QuestionTag": null,
-										"Label": "",
+										"Label": "Enter more details (optional)",
 										"ShortLabel": "",
 										"InputClasses": null,
 										"QuestionBodyText": "",
@@ -124,44 +124,164 @@
 										"ErrorMessages": null
 									}
 								],
-								"Value": "",
+								"Value": "CostsAreTooHigh",
 								"Label": "Costs are too high",
 								"HintText": ""
 							},
 							{
-								"FurtherQuestions": [],
-								"Value": "",
-								"Label": "",
+								"FurtherQuestions": [
+									{
+										"QuestionId": "1.5",
+										"QuestionTag": null,
+										"Label": "Enter more details (optional)",
+										"ShortLabel": "",
+										"InputClasses": null,
+										"QuestionBodyText": "",
+										"Hint": "",
+										"Input": {
+											"Type": "Textarea",
+											"InputClasses": null,
+											"Options": [],
+											"Validations": [],
+											"DataEndpoint": null
+										},
+										"Order": null,
+										"Value": "",
+										"ErrorMessages": null
+									}
+								],
+								"Value": "ExternalQualityAssuranceProviderHasChanged",
+								"Label": "External quality assurance provider has changed",
 								"HintText": ""
 							},
 							{
-								"FurtherQuestions": [],
-								"Value": "",
-								"Label": "",
+								"FurtherQuestions": [
+									{
+										"QuestionId": "1.6",
+										"QuestionTag": null,
+										"Label": "Enter more details (optional)",
+										"ShortLabel": "",
+										"InputClasses": null,
+										"QuestionBodyText": "",
+										"Hint": "",
+										"Input": {
+											"Type": "Textarea",
+											"InputClasses": null,
+											"Options": [],
+											"Validations": [],
+											"DataEndpoint": null
+										},
+										"Order": null,
+										"Value": "",
+										"ErrorMessages": null
+									}
+								],
+								"Value": "FundingBandHasChanged",
+								"Label": "Funding band has changed",
 								"HintText": ""
 							},
 							{
-								"FurtherQuestions": [],
-								"Value": "",
-								"Label": "",
+								"FurtherQuestions": [
+									{
+										"QuestionId": "1.7",
+										"QuestionTag": null,
+										"Label": "Enter more details (optional)",
+										"ShortLabel": "",
+										"InputClasses": null,
+										"QuestionBodyText": "",
+										"Hint": "",
+										"Input": {
+											"Type": "Textarea",
+											"InputClasses": null,
+											"Options": [],
+											"Validations": [],
+											"DataEndpoint": null
+										},
+										"Order": null,
+										"Value": "",
+										"ErrorMessages": null
+									}
+								],
+								"Value": "LackOfAssessors",
+								"Label": "Lack of assessors",
 								"HintText": ""
 							},
 							{
-								"FurtherQuestions": [],
-								"Value": "",
-								"Label": "",
+								"FurtherQuestions": [
+									{
+										"QuestionId": "1.8",
+										"QuestionTag": null,
+										"Label": "Enter more details (optional)",
+										"ShortLabel": "",
+										"InputClasses": null,
+										"QuestionBodyText": "",
+										"Hint": "",
+										"Input": {
+											"Type": "Textarea",
+											"InputClasses": null,
+											"Options": [],
+											"Validations": [],
+											"DataEndpoint": null
+										},
+										"Order": null,
+										"Value": "",
+										"ErrorMessages": null
+									}
+								],
+								"Value": "LackOfLearners",
+								"Label": "Lack of learners",
 								"HintText": ""
 							},
 							{
-								"FurtherQuestions": [],
-								"Value": "",
-								"Label": "",
+								"FurtherQuestions": [
+									{
+										"QuestionId": "1.9",
+										"QuestionTag": null,
+										"Label": "Enter more details (optional)",
+										"ShortLabel": "",
+										"InputClasses": null,
+										"QuestionBodyText": "",
+										"Hint": "",
+										"Input": {
+											"Type": "Textarea",
+											"InputClasses": null,
+											"Options": [],
+											"Validations": [],
+											"DataEndpoint": null
+										},
+										"Order": null,
+										"Value": "",
+										"ErrorMessages": null
+									}
+								],
+								"Value": "OrganisationalChanges",
+								"Label": "Organisational changes",
 								"HintText": ""
 							},
 							{
-								"FurtherQuestions": [],
-								"Value": "",
-								"Label": "",
+								"FurtherQuestions": [
+									{
+										"QuestionId": "1.10",
+										"QuestionTag": null,
+										"Label": "Enter more details (optional)",
+										"ShortLabel": "",
+										"InputClasses": null,
+										"QuestionBodyText": "",
+										"Hint": "",
+										"Input": {
+											"Type": "Textarea",
+											"InputClasses": null,
+											"Options": [],
+											"Validations": [],
+											"DataEndpoint": null
+										},
+										"Order": null,
+										"Value": "",
+										"ErrorMessages": null
+									}
+								],
+								"Value": "Other",
+								"Label": "Other",
 								"HintText": ""
 							}
 						],
@@ -197,10 +317,43 @@
 			"PageId": "2",
 			"SequenceId": null,
 			"SectionId": null,
-			"Title": "",
+			"Title": "Completing assessments",
 			"LinkTitle": "Completing assessments",
 			"InfoText": "",
-			"Questions": [],
+			"Questions": [
+				{
+					"QuestionId": "1",
+					"QuestionTag": null,
+					"Label": "Will you complete the end-point assessments for all registered learners?",
+					"ShortLabel": "",
+					"InputClasses": null,
+					"QuestionBodyText": "",
+					"Hint": "",
+					"Input": {
+						"Type": "ComplexRadio",
+						"InputClasses": null,
+						"Options": [
+							{
+								"FurtherQuestions": [],
+								"Value": "Yes",
+								"Label": "Yes",
+								"HintText": ""
+							},
+							{
+								"FurtherQuestions": [],
+								"Value": "No",
+								"Label": "No",
+								"HintText": ""
+							}
+						],
+						"Validations": [],
+						"DataEndpoint": null
+					},
+					"Order": null,
+					"Value": "",
+					"ErrorMessages": null
+				}
+			],
 			"PageOfAnswers": [],
 			"Next": [],
 			"Complete": false,
