@@ -13,7 +13,7 @@
 			"InfoText": "",
 			"Questions": [
 				{
-					"QuestionId": "1",
+					"QuestionId": "WR-01",
 					"QuestionTag": null,
 					"Label": "What’s the main reason you want to withdraw from the register?",
 					"ShortLabel": "",
@@ -27,7 +27,7 @@
 							{
 								"FurtherQuestions": [
 									{
-										"QuestionId": "1.1",
+										"QuestionId": "WR-01.1",
 										"QuestionTag": null,
 										"Label": "Enter more details (optional)",
 										"ShortLabel": "",
@@ -53,7 +53,7 @@
 							{
 								"FurtherQuestions": [
 									{
-										"QuestionId": "1.2",
+										"QuestionId": "WR-01.2",
 										"QuestionTag": null,
 										"Label": "Enter more details (optional)",
 										"ShortLabel": "",
@@ -79,7 +79,7 @@
 							{
 								"FurtherQuestions": [
 									{
-										"QuestionId": "1.3",
+										"QuestionId": "WR-01.3",
 										"QuestionTag": null,
 										"Label": "Enter more details (optional)",
 										"ShortLabel": "<b>Enter more details (optional)</b>",
@@ -105,7 +105,7 @@
 							{
 								"FurtherQuestions": [
 									{
-										"QuestionId": "1.4",
+										"QuestionId": "WR-01.4",
 										"QuestionTag": null,
 										"Label": "Enter more details (optional)",
 										"ShortLabel": "",
@@ -131,7 +131,7 @@
 							{
 								"FurtherQuestions": [
 									{
-										"QuestionId": "1.5",
+										"QuestionId": "WR-01.5",
 										"QuestionTag": null,
 										"Label": "Enter more details (optional)",
 										"ShortLabel": "",
@@ -157,7 +157,7 @@
 							{
 								"FurtherQuestions": [
 									{
-										"QuestionId": "1.6",
+										"QuestionId": "WR-01.6",
 										"QuestionTag": null,
 										"Label": "Enter more details (optional)",
 										"ShortLabel": "",
@@ -183,7 +183,7 @@
 							{
 								"FurtherQuestions": [
 									{
-										"QuestionId": "1.7",
+										"QuestionId": "WR-01.7",
 										"QuestionTag": null,
 										"Label": "Enter more details (optional)",
 										"ShortLabel": "",
@@ -209,7 +209,7 @@
 							{
 								"FurtherQuestions": [
 									{
-										"QuestionId": "1.8",
+										"QuestionId": "WR-01.8",
 										"QuestionTag": null,
 										"Label": "Enter more details (optional)",
 										"ShortLabel": "",
@@ -235,7 +235,7 @@
 							{
 								"FurtherQuestions": [
 									{
-										"QuestionId": "1.9",
+										"QuestionId": "WR-01.9",
 										"QuestionTag": null,
 										"Label": "Enter more details (optional)",
 										"ShortLabel": "",
@@ -261,7 +261,7 @@
 							{
 								"FurtherQuestions": [
 									{
-										"QuestionId": "1.10",
+										"QuestionId": "WR-01.10",
 										"QuestionTag": null,
 										"Label": "Enter more details (optional)",
 										"ShortLabel": "",
@@ -322,12 +322,12 @@
 			"InfoText": "",
 			"Questions": [
 				{
-					"QuestionId": "1",
+					"QuestionId": "WR-02",
 					"QuestionTag": null,
 					"Label": "Will you complete the end-point assessments for all registered learners?",
 					"ShortLabel": "",
 					"InputClasses": null,
-					"QuestionBodyText": "",
+					"QuestionBodyText": "<p class=\"govuk-inset-text\">\nThe pipeline shows that your organisation has {{RegisteredLearners}} registered learners.\n</p>",
 					"Hint": "",
 					"Input": {
 						"Type": "ComplexRadio",
@@ -355,7 +355,30 @@
 				}
 			],
 			"PageOfAnswers": [],
-			"Next": [],
+			"Next": [
+				{
+					"Action": "NextPage",
+					"ReturnId": "3",
+					"Conditions": [
+						{
+							"QuestionId": "WR-02",
+							"MustEqual": "No"
+						}
+					],
+					"ConditionMet": false
+				},
+				{
+					"Action": "NextPage",
+					"ReturnId": "4",
+					"Conditions": [
+						{
+							"QuestionId": "WR-02",
+							"MustEqual": "Yes"
+						}
+					],
+					"ConditionMet": false
+				}
+			],
 			"Complete": false,
 			"AllowMultipleAnswers": false,
 			"Order": null,
@@ -371,33 +394,94 @@
 			"PageId": "3",
 			"SequenceId": null,
 			"SectionId": null,
-			"Title": "",
+			"Title": "Supporting current learners",
 			"LinkTitle": "Supporting current learners",
 			"InfoText": "",
-			"Questions": [],
+			"Questions": [
+				{
+					"QuestionId": "WR-03",
+					"QuestionTag": null,
+					"Label": "How will you support the learners you're not going to assess?",
+					"ShortLabel": "",
+					"InputClasses": null,
+					"QuestionBodyText": "<p class='govuk-body'>Your answer should include:</p><ul class='govuk-list govuk-list--bullet'><li>how you’ll transfer these learners to other EPAOs</li><li>details of any EPAOs you’ve spoken to</li></ul>",
+					"Hint": "",
+					"Input": {
+						"Type": "Textarea",
+						"InputClasses": "govuk-!-width-full",
+						"Options": [],
+						"Validations": [],
+						"DataEndpoint": null
+					},
+					"Order": null,
+					"Value": "",
+					"ErrorMessages": null
+				}
+			],
 			"PageOfAnswers": [],
-			"Next": [],
+			"Next": [
+				{
+					"Action": "NextPage",
+					"ReturnId": "4",
+					"Conditions": [],
+					"ConditionMet": false
+				}
+			],
 			"Complete": false,
 			"AllowMultipleAnswers": false,
 			"Order": null,
-			"Active": true,
-			"NotRequiredConditions": [],
+			"Active": false,
+			"NotRequiredConditions": [
+				{
+					"Field": "WR-02",
+					"IsOneOf": [
+						"Yes"
+					]
+				}
+			],
 			"BodyText": "",
 			"Details": null,
 			"DisplayType": null,
 			"Feedback": null,
-			"ActivatedByPageId": null
+			"ActivatedByPageId": "2"
 		},
 		{
 			"PageId": "4",
 			"SequenceId": null,
 			"SectionId": null,
-			"Title": "",
-			"LinkTitle": "Communicating exit",
+			"Title": "Communicating your exit",
+			"LinkTitle": "Communicating your exit",
 			"InfoText": "",
-			"Questions": [],
+			"Questions": [
+				{
+					"QuestionId": "WR-04",
+					"QuestionTag": null,
+					"Label": "How will you communicate your market exit to customers?",
+					"ShortLabel": "",
+					"InputClasses": null,
+					"QuestionBodyText": "You must tell ESFA that you want to withdraw before you tell your customers.",
+					"Hint": "",
+					"Input": {
+						"Type": "Textarea",
+						"InputClasses": null,
+						"Options": [],
+						"Validations": [],
+						"DataEndpoint": null
+					},
+					"Order": null,
+					"Value": "",
+					"ErrorMessages": null
+				}
+			],
 			"PageOfAnswers": [],
-			"Next": [],
+			"Next": [
+				{
+					"Action": "NextPage",
+					"ReturnId": "5",
+					"Conditions": [],
+					"ConditionMet": false
+				}
+			],
 			"Complete": false,
 			"AllowMultipleAnswers": false,
 			"Order": null,
@@ -413,12 +497,39 @@
 			"PageId": "5",
 			"SequenceId": null,
 			"SectionId": null,
-			"Title": "",
-			"LinkTitle": "Date of withdrawl",
+			"Title": "Date of withdrawal",
+			"LinkTitle": "Date of withdrawal",
 			"InfoText": "",
-			"Questions": [],
+			"Questions": [
+				{
+					"QuestionId": "WR-05",
+					"QuestionTag": null,
+					"Label": "When do you want to withdraw from the register?",
+					"ShortLabel": "",
+					"InputClasses": null,
+					"QuestionBodyText": "The earliest date you can withdraw is {{EarliestDateOfWithdrawal}}.\n\n",
+					"Hint": "",
+					"Input": {
+						"Type": "MonthAndYear",
+						"InputClasses": null,
+						"Options": [],
+						"Validations": [],
+						"DataEndpoint": "http://replace-with-endpoint"
+					},
+					"Order": null,
+					"Value": "",
+					"ErrorMessages": null
+				}
+			],
 			"PageOfAnswers": [],
-			"Next": [],
+			"Next": [
+				{
+					"Action": "ReturnToSection",
+					"ReturnId": "1",
+					"Conditions": [],
+					"ConditionMet": false
+				}
+			],
 			"Complete": false,
 			"AllowMultipleAnswers": false,
 			"Order": null,
