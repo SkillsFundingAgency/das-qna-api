@@ -520,12 +520,11 @@
 					"Label": "When do you want to withdraw from the register?",
 					"ShortLabel": "",
 					"InputClasses": null,
-					"QuestionBodyText": "The earliest date you can withdraw is {{EarliestDateOfWithdrawal}}.\n\n",
+					"QuestionBodyText": "The earliest date you can withdraw is {{EarliestDateOfWithdrawal}}.",
 					"Hint": "",
 					"Input": {
-						"Type": "MonthAndYear",
+						"Type": "Date",
 						"InputClasses": null,
-						"Options": [],
 						"Validations": [],
 						"DataEndpoint": "http://replace-with-endpoint"
 					},
