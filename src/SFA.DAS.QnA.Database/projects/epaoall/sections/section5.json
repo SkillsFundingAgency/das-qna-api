@@ -327,7 +327,7 @@
 					"Label": "Will you complete the end-point assessments for all registered learners?",
 					"ShortLabel": "",
 					"InputClasses": null,
-					"QuestionBodyText": "<p class=\"govuk-inset-text\">\nThe pipeline shows that your organisation has {{RegisteredLearners}} registered learners.\n</p>",
+					"QuestionBodyText": "<p class=\"govuk-inset-text\">The pipeline shows that your organisation has {{RegisteredLearners}} registered learners.</p>",
 					"Hint": "",
 					"Input": {
 						"Type": "ComplexRadio",
@@ -409,7 +409,20 @@
 					"Input": {
 						"Type": "Textarea",
 						"InputClasses": "govuk-!-width-full",
-						"Options": [],
+						"Options": [
+							{
+								"FurtherQuestions": [],
+								"Value": "Yes",
+								"Label": "Yes",
+								"HintText": ""
+							},
+							{
+								"FurtherQuestions": [],
+								"Value": "No",
+								"Label": "No",
+								"HintText": ""
+							}
+						],
 						"Validations": [],
 						"DataEndpoint": null
 					},

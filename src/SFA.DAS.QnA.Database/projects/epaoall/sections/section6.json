@@ -5,7 +5,7 @@
 	"RequestedFeedbackAnswered": null,
 	"Pages": [
 		{
-			"PageId": "1",
+			"PageId": "6",
 			"SequenceId": null,
 			"SectionId": null,
 			"Title": "Reason for withdrawing",
@@ -13,9 +13,9 @@
 			"InfoText": "",
 			"Questions": [
 				{
-					"QuestionId": "WR-01",
+					"QuestionId": "WR-06",
 					"QuestionTag": null,
-					"Label": "What’s the main reason you want to withdraw from the register?",
+					"Label": "What’s the main reason you want to withdraw from assessing this standard?",
 					"ShortLabel": "",
 					"InputClasses": null,
 					"QuestionBodyText": "You can tell us more about why you want to withdraw after you select a reason.",
@@ -27,7 +27,7 @@
 							{
 								"FurtherQuestions": [
 									{
-										"QuestionId": "WR-01.1",
+										"QuestionId": "WR-06.1",
 										"QuestionTag": null,
 										"Label": "Enter more details (optional)",
 										"ShortLabel": "",
@@ -53,7 +53,7 @@
 							{
 								"FurtherQuestions": [
 									{
-										"QuestionId": "WR-01.2",
+										"QuestionId": "WR-06.2",
 										"QuestionTag": null,
 										"Label": "Enter more details (optional)",
 										"ShortLabel": "",
@@ -79,7 +79,7 @@
 							{
 								"FurtherQuestions": [
 									{
-										"QuestionId": "WR-01.3",
+										"QuestionId": "WR-06.3",
 										"QuestionTag": null,
 										"Label": "Enter more details (optional)",
 										"ShortLabel": "<b>Enter more details (optional)</b>",
@@ -105,7 +105,7 @@
 							{
 								"FurtherQuestions": [
 									{
-										"QuestionId": "WR-01.4",
+										"QuestionId": "WR-06.4",
 										"QuestionTag": null,
 										"Label": "Enter more details (optional)",
 										"ShortLabel": "",
@@ -131,7 +131,7 @@
 							{
 								"FurtherQuestions": [
 									{
-										"QuestionId": "WR-01.5",
+										"QuestionId": "WR-06.5",
 										"QuestionTag": null,
 										"Label": "Enter more details (optional)",
 										"ShortLabel": "",
@@ -157,7 +157,7 @@
 							{
 								"FurtherQuestions": [
 									{
-										"QuestionId": "WR-01.6",
+										"QuestionId": "WR-06.6",
 										"QuestionTag": null,
 										"Label": "Enter more details (optional)",
 										"ShortLabel": "",
@@ -183,7 +183,7 @@
 							{
 								"FurtherQuestions": [
 									{
-										"QuestionId": "WR-01.7",
+										"QuestionId": "WR-06.7",
 										"QuestionTag": null,
 										"Label": "Enter more details (optional)",
 										"ShortLabel": "",
@@ -209,7 +209,7 @@
 							{
 								"FurtherQuestions": [
 									{
-										"QuestionId": "WR-01.8",
+										"QuestionId": "WR-06.8",
 										"QuestionTag": null,
 										"Label": "Enter more details (optional)",
 										"ShortLabel": "",
@@ -235,7 +235,7 @@
 							{
 								"FurtherQuestions": [
 									{
-										"QuestionId": "WR-01.9",
+										"QuestionId": "WR-06.9",
 										"QuestionTag": null,
 										"Label": "Enter more details (optional)",
 										"ShortLabel": "",
@@ -261,7 +261,7 @@
 							{
 								"FurtherQuestions": [
 									{
-										"QuestionId": "WR-01.10",
+										"QuestionId": "WR-06.10",
 										"QuestionTag": null,
 										"Label": "Enter more details (optional)",
 										"ShortLabel": "",
@@ -297,7 +297,7 @@
 			"Next": [
 				{
 					"Action": "NextPage",
-					"ReturnId": "2",
+					"ReturnId": "7",
 					"Conditions": [],
 					"ConditionMet": false
 				}
@@ -314,7 +314,7 @@
 			"ActivatedByPageId": null
 		},
 		{
-			"PageId": "2",
+			"PageId": "7",
 			"SequenceId": null,
 			"SectionId": null,
 			"Title": "Completing assessments",
@@ -322,12 +322,12 @@
 			"InfoText": "",
 			"Questions": [
 				{
-					"QuestionId": "WR-02",
+					"QuestionId": "WR-07",
 					"QuestionTag": null,
 					"Label": "Will you complete the end-point assessments for all registered learners?",
 					"ShortLabel": "",
 					"InputClasses": null,
-					"QuestionBodyText": "<p class=\"govuk-inset-text\">\nThe pipeline shows that your organisation has {{RegisteredLearners}} registered learners.\n</p>",
+					"QuestionBodyText": "<p class=\"govuk-inset-text\">The pipeline shows that your organisation has {{RegisteredLearners}} registered learners for {{StandardName}}.</p>",
 					"Hint": "",
 					"Input": {
 						"Type": "ComplexRadio",
@@ -358,10 +358,10 @@
 			"Next": [
 				{
 					"Action": "NextPage",
-					"ReturnId": "3",
+					"ReturnId": "8",
 					"Conditions": [
 						{
-							"QuestionId": "WR-02",
+							"QuestionId": "WR-07",
 							"MustEqual": "No"
 						}
 					],
@@ -369,10 +369,10 @@
 				},
 				{
 					"Action": "NextPage",
-					"ReturnId": "4",
+					"ReturnId": "9",
 					"Conditions": [
 						{
-							"QuestionId": "WR-02",
+							"QuestionId": "WR-07",
 							"MustEqual": "Yes"
 						}
 					],
@@ -391,7 +391,7 @@
 			"ActivatedByPageId": null
 		},
 		{
-			"PageId": "3",
+			"PageId": "8",
 			"SequenceId": null,
 			"SectionId": null,
 			"Title": "Supporting current learners",
@@ -399,7 +399,7 @@
 			"InfoText": "",
 			"Questions": [
 				{
-					"QuestionId": "WR-03",
+					"QuestionId": "WR-08",
 					"QuestionTag": null,
 					"Label": "How will you support the learners you're not going to assess?",
 					"ShortLabel": "",
@@ -422,7 +422,7 @@
 			"Next": [
 				{
 					"Action": "NextPage",
-					"ReturnId": "4",
+					"ReturnId": "9",
 					"Conditions": [],
 					"ConditionMet": false
 				}
@@ -433,7 +433,7 @@
 			"Active": false,
 			"NotRequiredConditions": [
 				{
-					"Field": "WR-02",
+					"Field": "WR-07",
 					"IsOneOf": [
 						"Yes"
 					]
@@ -443,10 +443,10 @@
 			"Details": null,
 			"DisplayType": null,
 			"Feedback": null,
-			"ActivatedByPageId": "2"
+			"ActivatedByPageId": "7"
 		},
 		{
-			"PageId": "4",
+			"PageId": "9",
 			"SequenceId": null,
 			"SectionId": null,
 			"Title": "Communicating your exit",
@@ -454,7 +454,7 @@
 			"InfoText": "",
 			"Questions": [
 				{
-					"QuestionId": "WR-04",
+					"QuestionId": "WR-09",
 					"QuestionTag": null,
 					"Label": "How will you communicate your market exit to customers?",
 					"ShortLabel": "",
@@ -477,7 +477,7 @@
 			"Next": [
 				{
 					"Action": "NextPage",
-					"ReturnId": "5",
+					"ReturnId": "10",
 					"Conditions": [],
 					"ConditionMet": false
 				}
@@ -494,7 +494,7 @@
 			"ActivatedByPageId": null
 		},
 		{
-			"PageId": "5",
+			"PageId": "10",
 			"SequenceId": null,
 			"SectionId": null,
 			"Title": "Date of withdrawal",
@@ -502,9 +502,9 @@
 			"InfoText": "",
 			"Questions": [
 				{
-					"QuestionId": "WR-05",
+					"QuestionId": "WR-10",
 					"QuestionTag": null,
-					"Label": "When do you want to withdraw from the register?",
+					"Label": "When do you want to withdraw from the standard?",
 					"ShortLabel": "",
 					"InputClasses": null,
 					"QuestionBodyText": "The earliest date you can withdraw is {{EarliestDateOfWithdrawal}}.\n\n",
@@ -525,7 +525,7 @@
 			"Next": [
 				{
 					"Action": "ReturnToSection",
-					"ReturnId": "1",
+					"ReturnId": "6",
 					"Conditions": [],
 					"ConditionMet": false
 				}
