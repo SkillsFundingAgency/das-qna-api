@@ -56,20 +56,20 @@
             "Next": [
                 {
                     "Action": "NextPage",
-                    "ReturnId": "90",
+                    "ReturnId": "80",
                     "Conditions": [
                         {
-                            "QuestionTag": "CCTrusteeManualEntry",
+                            "QuestionTag": "UKRLPVerificationCharity",
                             "MustEqual": "TRUE"
                         }
                     ]
                 },
                 {
                     "Action": "NextPage",
-                    "ReturnId": "80",
+                    "ReturnId": "90",
                     "Conditions": [
                         {
-                            "QuestionTag": "UKRLPVerificationCharity",
+                            "QuestionTag": "CCTrusteeManualEntry",
                             "MustEqual": "TRUE"
                         }
                     ]
@@ -82,7 +82,6 @@
             ],
             "AllowMultipleAnswers": false,
             "Active": true,
-            "NotRequiredOrgTypes": [],
             "BodyText": "",
             "NotRequiredConditions": [
                 {
@@ -136,7 +135,6 @@
             ],
             "AllowMultipleAnswers": false,
             "Active": true,
-            "NotRequiredOrgTypes": [],
             "BodyText": "",
             "NotRequiredConditions": [
                 {
@@ -178,7 +176,6 @@
             ],
             "AllowMultipleAnswers": false,
             "Active": false,
-            "NotRequiredOrgTypes": [],
             "BodyText": "",
             "NotRequiredConditions": [
                 {
@@ -258,7 +255,6 @@
             ],
             "AllowMultipleAnswers": false,
             "Active": true,
-            "NotRequiredOrgTypes": [],
             "BodyText": "",
             "NotRequiredConditions": [
                 {
@@ -333,7 +329,6 @@
             ],
             "AllowMultipleAnswers": false,
             "Active": false,
-            "NotRequiredOrgTypes": [],
             "BodyText": "",
             "NotRequiredConditions": [],
             "ActivatedByPageId": "100"
@@ -369,7 +364,6 @@
             ],
             "AllowMultipleAnswers": false,
             "Active": false,
-            "NotRequiredOrgTypes": [],
             "BodyText": "",
             "ActivatedByPageId": "101",
             "NotRequiredConditions": [
@@ -424,7 +418,6 @@
             ],
             "AllowMultipleAnswers": false,
             "Active": false,
-            "NotRequiredOrgTypes": [],
             "BodyText": "",
             "ActivatedByPageId": "101",
             "NotRequiredConditions": [
@@ -490,7 +483,6 @@
             ],
             "AllowMultipleAnswers": false,
             "Active": false,
-            "NotRequiredOrgTypes": [],
             "BodyText": "",
             "ActivatedByPageId": "100",
             "NotRequiredConditions": [
@@ -533,7 +525,6 @@
             ],
             "AllowMultipleAnswers": false,
             "Active": true,                        
-            "NotRequiredOrgTypes": [],
             "BodyText": "",
             "NotRequiredConditions": [
                 {
