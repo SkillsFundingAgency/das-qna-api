@@ -2,7 +2,6 @@
     "Title": "Confirm who's in control",
     "LinkTitle": "Confirm who's in control",
     "DisplayType": "Pages",
-    "RequestedFeedbackAnswered": null,
     "Pages": [
         {
             "PageId": "70",
@@ -85,20 +84,17 @@
                 },
                 {
                     "Action": "NextPage",
-                   "ReturnId": "130",
+                    "ReturnId": "130",
                     "Conditions": [
-						{
-						"QuestionTag": "CHManualEntryRequired",
+                        {
+                            "QuestionTag": "CHManualEntryRequired",
                             "MustEqual": "TRUE"			
-						}
-                    ],
-                    "ConditionMet": false
+                        }
+                    ]
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
             "Active": true,
-            "Visible": true,
             "BodyText": "",
             "NotRequiredConditions": [
                 {
@@ -147,16 +143,13 @@
             "PageOfAnswers": [],
             "Next": [
                 {
-                    "Action": "NextPage",
-                    "ReturnId": null,
-                    "Conditions": [],
-                    "ConditionMet": false
+                    "Action": "ReturnToSection",
+                    "ReturnId": "1.4",
+                    "Conditions": []
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
             "Active": true,
-            "Visible": true,
             "BodyText": "",
             "NotRequiredConditions": [
                 {
@@ -195,16 +188,13 @@
             "PageOfAnswers": [],
             "Next": [
                 {
-                    "Action": "NextPage",
-                    "ReturnId": null,
-                    "Conditions": [],
-                    "ConditionMet": false
+                    "Action": "ReturnToSection",
+                    "ReturnId": "1.4",
+                    "Conditions": []
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
             "Active": true,
-            "Visible": true,
             "BodyText": "",
             "NotRequiredConditions": [
                 {
@@ -272,8 +262,7 @@
                             "QuestionId": "YO-100",
                             "MustEqual": "Partnership"
                         }
-                    ],
-                    "ConditionMet": false
+                    ]
                 },
                 {
                     "Action": "NextPage",
@@ -283,14 +272,11 @@
                             "QuestionId": "YO-100",
                             "MustEqual": "Sole trader"
                         }
-                    ],
-                    "ConditionMet": false
+                    ]
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
             "Active": true,
-            "Visible": true,
             "BodyText": "",
             "NotRequiredConditions": [
                 {
@@ -350,8 +336,7 @@
                             "QuestionId": "YO-101",
                             "MustEqual": "Individual"
                         }
-                    ],
-                    "ConditionMet": false
+                    ]
                 },
                 {
                     "Action": "NextPage",
@@ -361,14 +346,11 @@
                             "QuestionId": "YO-101",
                             "MustEqual": "Organisation"
                         }
-                    ],
-                    "ConditionMet": false
+                    ]
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
             "Active": false,
-            "Visible": true,
             "BodyText": "",
             "NotRequiredConditions": [],
             "ActivatedByPageId": "100"
@@ -397,16 +379,13 @@
             "PageOfAnswers": [],
             "Next": [
                 {
-                    "Action": "NextPage",
-                    "ReturnId": null,
-                    "Conditions": [],
-                    "ConditionMet": false
+                    "Action": "ReturnToSection",
+                    "ReturnId": "1.4",
+                    "Conditions": []
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
             "Active": false,
-            "Visible": true,
             "BodyText": "",
             "ActivatedByPageId": "101",
             "NotRequiredConditions": [
@@ -454,16 +433,13 @@
             "PageOfAnswers": [],
             "Next": [
                 {
-                    "Action": "NextPage",
-                    "ReturnId": null,
-                    "Conditions": [],
-                    "ConditionMet": false
+                    "Action": "ReturnToSection",
+                    "ReturnId": "1.4",
+                    "Conditions": []
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
             "Active": false,
-            "Visible": true,
             "BodyText": "",
             "ActivatedByPageId": "101",
             "NotRequiredConditions": [
@@ -522,16 +498,13 @@
             "PageOfAnswers": [],
             "Next": [
                 {
-                    "Action": "NextPage",
-                    "ReturnId": null,
-                    "Conditions": [],
-                    "ConditionMet": false
+                    "Action": "ReturnToSection",
+                    "ReturnId": "1.4",
+                    "Conditions": []
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
             "Active": false,
-            "Visible": true,
             "BodyText": "",
             "ActivatedByPageId": "100",
             "NotRequiredConditions": [
@@ -596,15 +569,13 @@
                     ]
                 },
                 {
-                    "Action": "NextPage",
-                    "ReturnId": null,
+                    "Action": "ReturnToSection",
+                    "ReturnId": "1.4",
                     "Conditions": []
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
             "Active": false,
-            "Visible": true,
             "BodyText": "",
             "NotRequiredConditions": [
                 {
