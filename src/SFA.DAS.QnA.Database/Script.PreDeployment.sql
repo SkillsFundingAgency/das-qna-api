@@ -10,5 +10,7 @@
 --------------------------------------------------------------------------------------
 */
 
--- Rebuild indexes on all tables, helps keep fragmentation down
-EXEC sp_msforeachtable 'ALTER INDEX ALL ON ? REBUILD'
+-- Rebuild indexes on all application tables, helps keep fragmentation down
+ALTER INDEX ALL ON [Applications] REBUILD;
+ALTER INDEX ALL ON [ApplicationSequences] REBUILD;
+ALTER INDEX ALL ON [ApplicationSections] REBUILD;
