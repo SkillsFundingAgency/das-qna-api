@@ -32,28 +32,20 @@
 					"SectionNo": 4,
 					"SequenceNo": 2,
 					"name": "Apply to assess a standard"
-				}
-			]
-		},
-		{
-			"Description": "EPAO Withdraw Workflow",
-			"Version": "1.0",
-			"Type": "EPAO",
-			"section": [
+				},
 				{
 					"id": "section5",
 					"SectionNo": 5,
 					"SequenceNo": 3,
-					"name": "Withdraw Organisation details"
+					"name": "Organisation withdrawal details"
 				},
 				{
 					"id": "section6",
 					"SectionNo": 6,
 					"SequenceNo": 4,
-					"name": "Withdraw Standard details"
+					"name": "Standard withdrawal details"
 				}
 			]
 		}
-
     ]
 }
