@@ -19,3 +19,9 @@ Post-Deployment Script Template
 :r .\OneOffScripts\APR-1650.sql
 :r .\OneOffScripts\APR-1779.sql
 -- END
+
+
+-- Finally rebuild indexes on all application tables, helps keep fragmentation down
+ALTER INDEX ALL ON [Applications] REBUILD;
+ALTER INDEX ALL ON [ApplicationSequences] REBUILD;
+ALTER INDEX ALL ON [ApplicationSections] REBUILD;
