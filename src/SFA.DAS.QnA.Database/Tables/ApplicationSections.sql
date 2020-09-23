@@ -15,6 +15,9 @@ GO
 CREATE INDEX [IX_ApplicationSections_ApplicationId] ON [ApplicationSections]  ( [ApplicationId] )
 GO
 
+CREATE INDEX [IX_ApplicationSections_SequenceId] ON [ApplicationSections]  ( [SequenceId] )
+GO
+
 CREATE INDEX [IX_ApplicationSections_BySequenceId] ON [ApplicationSections]   ( [ApplicationId], [SequenceId] )
 GO
 
