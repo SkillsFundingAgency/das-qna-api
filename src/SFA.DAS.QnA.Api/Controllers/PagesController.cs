@@ -16,6 +16,7 @@ using SFA.DAS.QnA.Application.Commands.SetPageAnswers;
 using SFA.DAS.QnA.Application.Commands.ResetPageAnswers;
 using SFA.DAS.QnA.Application.Commands.SkipPage;
 using SFA.DAS.QnA.Application.Queries.Sections.GetPage;
+using SFA.DAS.QnA.Application.Queries.Sections.CanUpdatePage;
 
 namespace SFA.DAS.QnA.Api.Controllers
 {
@@ -72,6 +73,48 @@ namespace SFA.DAS.QnA.Api.Controllers
             }
 
             return pageResponse.Value;
+        }
+
+        /// <summary>
+        ///     Check if the requested Page can be updated with a new answer
+        /// </summary>
+        /// <returns>True if the page can be updated, otherwise False</returns>
+        /// <response code="200">Returns a boolean</response>
+        /// <response code="404">If the ApplicationId, SectionId or PageId are invalid</response>
+        [HttpGet("{applicationId}/sections/{sectionId}/pages/{pageId}/canupdate")]
+        [ProducesResponseType(200)]
+        [ProducesResponseType(404)]
+        public async Task<ActionResult<bool>> CanUpdatePage(Guid applicationId, Guid sectionId, string pageId)
+        {
+            var canUpdateResponse = await _mediator.Send(new CanUpdatePageRequest(applicationId, sectionId, pageId), CancellationToken.None);
+            if (!canUpdateResponse.Success)
+            {
+                _logger.LogError($"Unable to find page {pageId} | Reason : {canUpdateResponse.Message}");
+                return NotFound();
+            }
+
+            return canUpdateResponse.Value;
+        }
+
+        /// <summary>
+        ///     Check if the requested Page can be updated with a new answer
+        /// </summary>
+        /// <returns>True if the page can be updated, otherwise False</returns>
+        /// <response code="200">Returns a boolean</response>
+        /// <response code="404">If the ApplicationId, SequenceNo, SectionNo or PageId are invalid</response>
+        [HttpGet("{applicationId}/sequences/{sequenceNo}/sections/{sectionNo}/pages/{pageId}/canupdate")]
+        [ProducesResponseType(200)]
+        [ProducesResponseType(404)]
+        public async Task<ActionResult<bool>> CanUpdatePageBySectionNo(Guid applicationId, int sequenceNo, int sectionNo, string pageId)
+        {
+            var canUpdateResponse = await _mediator.Send(new CanUpdatePageBySectionNoRequest(applicationId, sequenceNo, sectionNo, pageId), CancellationToken.None);
+            if (!canUpdateResponse.Success)
+            {
+                _logger.LogError($"Unable to find page {pageId} | Reason : {canUpdateResponse.Message}");
+                return NotFound();
+            }
+
+            return canUpdateResponse.Value;
         }
 
         /// <summary>
