@@ -6,7 +6,7 @@ using SFA.DAS.QnA.Application.Queries.Sections.GetPage;
 
 namespace SFA.DAS.QnA.Application.UnitTests.QueriesTests.GetPageBySectionNoTests
 {
-    public class When_GetPageBySectionNo_handled_for_non_existant_section : GetPageBySectionNoTestBase
+    public class When_GetPageBySectionNo_handled_for_non_existent_section : GetPageBySectionNoTestBase
     {
         [Test]
         public async Task Then_unsuccessful_response_is_returned()

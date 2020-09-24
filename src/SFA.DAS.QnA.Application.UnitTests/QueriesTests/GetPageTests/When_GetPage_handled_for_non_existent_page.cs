@@ -7,7 +7,7 @@ using SFA.DAS.QnA.Application.Queries.Sections.GetPage;
 
 namespace SFA.DAS.QnA.Application.UnitTests.QueriesTests.GetPageTests
 {
-    public class When_GetPage_handled_for_non_existant_page : GetPageTestBase
+    public class When_GetPage_handled_for_non_existent_page : GetPageTestBase
     {
         [Test]
         public async Task Then_unsuccessful_response_is_returned()

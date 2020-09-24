@@ -6,7 +6,7 @@ using SFA.DAS.QnA.Application.Queries.Sections.CanUpdatePage;
 
 namespace SFA.DAS.QnA.Application.UnitTests.QueriesTests.CanUpdatePageBySectionNoTests
 {
-    public class When_CanUpdatePageBySectionNo_handled_for_non_existant_section : CanUpdatePageBySectionNoTestBase
+    public class When_CanUpdatePageBySectionNo_handled_for_non_existent_section : CanUpdatePageBySectionNoTestBase
     {
         [Test]
         public async Task Then_unsuccessful_response_is_returned()
