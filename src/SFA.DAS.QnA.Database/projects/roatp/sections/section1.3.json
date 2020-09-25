@@ -91,6 +91,11 @@
                             "MustEqual": "TRUE"			
                         }
                     ]
+                },
+				{
+                    "Action": "ReturnToSection",
+                    "ReturnId": "1.4",
+                    "Conditions": []
                 }
             ],
             "AllowMultipleAnswers": false,
