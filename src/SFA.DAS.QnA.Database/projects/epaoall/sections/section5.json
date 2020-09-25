@@ -1,6 +1,6 @@
 {
 	"Title": "Notification to withdraw an organisation",
-	"LinkTitle": "Notify to withdraw an application",
+	"LinkTitle": "Notify to withdraw an organisation",
 	"DisplayType": "Pages",
 	"RequestedFeedbackAnswered": null,
 	"Pages": [
@@ -18,7 +18,7 @@
 					"Label": "What’s the main reason you want to withdraw from the register?",
 					"ShortLabel": "",
 					"InputClasses": null,
-					"QuestionBodyText": "You can tell us more about why you want to withdraw after you select a reason.",
+					"QuestionBodyText": "<p class='govuk-body'>You can tell us more about why you want to withdraw after you select a reason.</p>",
 					"Hint": "",
 					"Input": {
 						"Type": "ComplexRadio",
@@ -472,7 +472,7 @@
 					"Label": "How will you communicate your market exit to customers?",
 					"ShortLabel": "",
 					"InputClasses": null,
-					"QuestionBodyText": "You must tell ESFA that you want to withdraw before you tell your customers.",
+					"QuestionBodyText": "<p class='govuk-body'>You must tell ESFA that you want to withdraw before you tell your customers.</p>",
 					"Hint": "",
 					"Input": {
 						"Type": "Textarea",
@@ -520,7 +520,7 @@
 					"Label": "When do you want to withdraw from the register?",
 					"ShortLabel": "",
 					"InputClasses": null,
-					"QuestionBodyText": "The earliest date you can withdraw is {{EarliestDateOfWithdrawal}}.",
+					"QuestionBodyText": "<p class='govuk-body'>The earliest date you can withdraw is {{EarliestDateOfWithdrawal}}.</p>",
 					"Hint": "",
 					"Input": {
 						"Type": "Date",
