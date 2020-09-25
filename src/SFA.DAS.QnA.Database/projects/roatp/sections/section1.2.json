@@ -431,60 +431,10 @@
                             "MustEqual": "Less than 12 months"
                         }
                     ]
-                },
+                },          
                 {
-                    "Action": "NextPage",
-                    "ReturnId": "130",
-                    "Conditions": [
-                        {
-                            "QuestionTag": "CHManualEntryRequired",
-                            "MustEqual": "TRUE"
-                        }
-                    ]
-                },
-                {
-                    "Action": "NextPage",
-                    "ReturnId": "70",
-                    "Conditions": [
-                        {
-                            "QuestionTag": "UKRLPVerificationCompany",
-                            "MustEqual": "TRUE"
-                        }
-                    ]
-                },
-                {
-                    "Action": "NextPage",
-                    "ReturnId": "90",
-                    "Conditions": [
-                        {
-                            "QuestionTag": "CCTrusteeManualEntry",
-                            "MustEqual": "TRUE"
-                        }
-                    ]
-                },
-                {
-                    "Action": "NextPage",
-                    "ReturnId": "80",
-                    "Conditions": [
-                        {
-                            "QuestionTag": "UKRLPVerificationCharity",
-                            "MustEqual": "TRUE"
-                        }
-                    ]
-                },
-                {
-                    "Action": "NextPage",
-                    "ReturnId": "100",
-                    "Conditions": [
-                        {
-                            "QuestionTag": "UKRLPVerificationSoleTradePartnership",
-                            "MustEqual": "TRUE"
-                        }
-                    ]
-                },
-                {
-                    "Action": "NextPage",
-                    "ReturnId": "140",
+                    "Action": "ReturnToSection",
+                    "ReturnId": "1.3",
                     "Conditions": []
                 }
             ],
@@ -564,58 +514,8 @@
                     ]
                 },
                 {
-                    "Action": "NextPage",
-                    "ReturnId": "130",
-                    "Conditions": [
-                        {
-                            "QuestionTag": "CHManualEntryRequired",
-                            "MustEqual": "TRUE"
-                        }
-                    ]
-                },
-                {
-                    "Action": "NextPage",
-                    "ReturnId": "70",
-                    "Conditions": [
-                        {
-                            "QuestionTag": "UKRLPVerificationCompany",
-                            "MustEqual": "TRUE"
-                        }
-                    ]
-                },
-                {
-                    "Action": "NextPage",
-                    "ReturnId": "90",
-                    "Conditions": [
-                        {
-                            "QuestionTag": "CCTrusteeManualEntry",
-                            "MustEqual": "TRUE"
-                        }
-                    ]
-                },
-                {
-                    "Action": "NextPage",
-                    "ReturnId": "80",
-                    "Conditions": [
-                        {
-                            "QuestionTag": "UKRLPVerificationCharity",
-                            "MustEqual": "TRUE"
-                        }
-                    ]
-                },
-                {
-                    "Action": "NextPage",
-                    "ReturnId": "100",
-                    "Conditions": [
-                        {
-                            "QuestionTag": "UKRLPVerificationSoleTradePartnership",
-                            "MustEqual": "TRUE"
-                        }
-                    ]
-                },
-                {
-                    "Action": "NextPage",
-                    "ReturnId": "140",
+                    "Action": "ReturnToSection",
+                    "ReturnId": "1.3",
                     "Conditions": []
                 }
             ],
@@ -695,58 +595,8 @@
                     ]
                 },
                 {
-                    "Action": "NextPage",
-                    "ReturnId": "130",
-                    "Conditions": [
-                        {
-                            "QuestionTag": "CHManualEntryRequired",
-                            "MustEqual": "TRUE"
-                        }
-                    ]
-                },
-                {
-                    "Action": "NextPage",
-                    "ReturnId": "70",
-                    "Conditions": [
-                        {
-                            "QuestionTag": "UKRLPVerificationCompany",
-                            "MustEqual": "TRUE"
-                        }
-                    ]
-                },
-                {
-                    "Action": "NextPage",
-                    "ReturnId": "90",
-                    "Conditions": [
-                        {
-                            "QuestionTag": "CCTrusteeManualEntry",
-                            "MustEqual": "TRUE"
-                        }
-                    ]
-                },
-                {
-                    "Action": "NextPage",
-                    "ReturnId": "80",
-                    "Conditions": [
-                        {
-                            "QuestionTag": "UKRLPVerificationCharity",
-                            "MustEqual": "TRUE"
-                        }
-                    ]
-                },
-                {
-                    "Action": "NextPage",
-                    "ReturnId": "100",
-                    "Conditions": [
-                        {
-                            "QuestionTag": "UKRLPVerificationSoleTradePartnership",
-                            "MustEqual": "TRUE"
-                        }
-                    ]
-                },
-                {
-                    "Action": "NextPage",
-                    "ReturnId": "140",
+                    "Action": "ReturnToSection",
+                    "ReturnId": "1.3",
                     "Conditions": []
                 }
             ],
