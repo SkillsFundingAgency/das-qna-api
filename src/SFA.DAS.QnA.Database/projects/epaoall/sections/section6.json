@@ -285,7 +285,13 @@
 								"HintText": ""
 							}
 						],
-						"Validations": [],
+						"Validations": [
+							{
+								"Name": "Required",
+								"Value": "",
+								"ErrorMessage": "Please select a reason to withdraw"
+							}
+						],
 						"DataEndpoint": null
 					},
 					"Order": null,
@@ -346,7 +352,13 @@
 								"HintText": ""
 							}
 						],
-						"Validations": [],
+						"Validations": [
+							{
+								"Name": "Required",
+								"Value": "",
+								"ErrorMessage": "Please select whether you will complete end-point assessments"
+							}
+						],
 						"DataEndpoint": null
 					},
 					"Order": null,
@@ -410,7 +422,18 @@
 						"Type": "Textarea",
 						"InputClasses": "govuk-!-width-full",
 						"Options": [],
-						"Validations": [],
+						"Validations": [
+							{
+								"Name": "Required",
+								"Value": "",
+								"ErrorMessage": "Please enter how you will support learners"
+							},
+							{
+								"Name": "MaxWordCount",
+								"Value": "500",
+								"ErrorMessage": "How you support learners  must be 500 words or less"
+							}
+						],
 						"DataEndpoint": null
 					},
 					"Order": null,
@@ -465,7 +488,18 @@
 						"Type": "Textarea",
 						"InputClasses": null,
 						"Options": [],
-						"Validations": [],
+						"Validations": [
+							{
+								"Name": "Required",
+								"Value": "",
+								"ErrorMessage": "Please enter how you communicate your marked exit"
+							},
+							{
+								"Name": "MaxWordCount",
+								"Value": "500",
+								"ErrorMessage": "How you will communicate your market exit must be 500 words or less"
+							}
+						],
 						"DataEndpoint": null
 					},
 					"Order": null,
@@ -512,7 +546,13 @@
 					"Input": {
 						"Type": "Date",
 						"InputClasses": null,
-						"Validations": [],
+						"Validations": [
+							{
+								"Name": "ClientApiCall",
+								"Value": "",
+								"ErrorMessage": "Please enter a date after the earliest withdrawal date"
+							}
+						],
 						"DataEndpoint": "http://replace-with-endpoint"
 					},
 					"Order": null,
