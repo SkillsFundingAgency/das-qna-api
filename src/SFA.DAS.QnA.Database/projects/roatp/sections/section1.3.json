@@ -61,10 +61,6 @@
                         {
                             "QuestionTag": "UKRLPVerificationCharity",
                             "MustEqual": "TRUE"
-                        },
-                        {
-                            "QuestionTag": "CCTrusteeManualEntry",
-                            "MustEqual": ""
                         }
                     ]
                 },
@@ -73,26 +69,12 @@
                     "ReturnId": "90",
                     "Conditions": [
                         {
-                            "QuestionTag": "UKRLPVerificationCharity",
-                            "MustEqual": "TRUE"
-                        },
-                        {
                             "QuestionTag": "CCTrusteeManualEntry",
                             "MustEqual": "TRUE"
                         }
                     ]
                 },
                 {
-                    "Action": "NextPage",
-                    "ReturnId": "130",
-                    "Conditions": [
-                        {
-                            "QuestionTag": "CHManualEntryRequired",
-                            "MustEqual": "TRUE"			
-                        }
-                    ]
-                },
-				{
                     "Action": "ReturnToSection",
                     "ReturnId": "1.4",
                     "Conditions": []
@@ -103,12 +85,10 @@
             "BodyText": "",
             "NotRequiredConditions": [
                 {
-                    "Field": "UKRLPVerificationCompany",
-                    "IsOneOf": [""]
-                },
-                {
-                    "Field": "CHManualEntryRequired",
-                    "IsOneOf": ["TRUE"]
+                    "Field": "UKRLPVerificationCompanyNumber",
+                    "IsOneOf": [
+                        ""
+                    ]
                 }
             ]
         },
@@ -162,10 +142,6 @@
                     "IsOneOf": [
                         ""
                     ]
-                },
-                {
-                    "Field": "CCTrusteeManualEntry",
-                    "IsOneOf": ["TRUE"]
                 }
             ]
         },
@@ -199,7 +175,7 @@
                 }
             ],
             "AllowMultipleAnswers": false,
-            "Active": true,
+            "Active": false,
             "BodyText": "",
             "NotRequiredConditions": [
                 {
@@ -207,12 +183,9 @@
                     "IsOneOf": [
                         ""
                     ]
-                },
-                {
-                    "Field": "CCTrusteeManualEntry",
-                    "IsOneOf": [""]
                 }
-            ]
+            ],
+            "ActivatedByPageId": "80"
         },
         {
             "PageId": "100",
@@ -536,8 +509,7 @@
                     "ShortLabel": "",
                     "QuestionBodyText": "",
                     "Hint": "",
-                    "Input":
-                    {
+                    "Input": {
                         "Type": "TabularData",
                         "Validations": []
                     }
@@ -546,46 +518,32 @@
             "PageOfAnswers": [],
             "Next": [
                 {
-                    "Action": "NextPage",
-                    "ReturnId": "80",
-                    "Conditions": [
-                        {
-                            "QuestionTag": "UKRLPVerificationCharity",
-                            "MustEqual": "TRUE"
-                        },
-                        {
-                            "QuestionTag": "CCTrusteeManualEntry",
-                            "MustEqual": ""
-                        }
-                    ]
-                },
-                {
-                    "Action": "NextPage",
-                    "ReturnId": "90",
-                    "Conditions": [
-                        {
-                            "QuestionTag": "UKRLPVerificationCharity",
-                            "MustEqual": "TRUE"
-                        },
-                        {
-                            "QuestionTag": "CCTrusteeManualEntry",
-                            "MustEqual": "TRUE"
-                        }
-                    ]
-                },
-                {
                     "Action": "ReturnToSection",
                     "ReturnId": "1.4",
                     "Conditions": []
                 }
             ],
             "AllowMultipleAnswers": false,
-            "Active": false,
+            "Active": true,                        
             "BodyText": "",
             "NotRequiredConditions": [
                 {
-                    "Field": "CHManualEntryRequired",
-                    "IsOneOf": [""]
+                    "Field": "UKRLPVerificationCompany",
+                    "IsOneOf": [
+                        "TRUE"
+                    ]
+                },
+                {
+                    "Field": "UKRLPVerificationCharity",
+                    "IsOneOf": [
+                        "TRUE"
+                    ]
+                },
+                {
+                    "Field": "UKRLPVerificationSoleTraderPartnership",
+                    "IsOneOf": [
+                        "TRUE"
+                    ]
                 }
             ]
         }
