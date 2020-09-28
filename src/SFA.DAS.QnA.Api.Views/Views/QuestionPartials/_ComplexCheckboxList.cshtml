@@ -21,7 +21,7 @@
 }
 
 
-<div class="govuk-checkboxes js-checkbox-container" data-module="checkboxes">
+<div class="govuk-checkboxes js-checkbox-container" data-module="govuk-checkboxes">
     @for (int i = 0; i < options.Count; i++)
     {
         var checkboxChecked = (Model.Value != null && Model.Value.Contains(options[i].Value)) ? checkedStatus : "";

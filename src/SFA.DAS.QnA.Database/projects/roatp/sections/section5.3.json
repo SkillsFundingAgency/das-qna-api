@@ -16,7 +16,7 @@
                     "Label": "Upload your organisation's complaints policy",
                     "ShortLabel": "",
                     "QuestionBodyText": "<p class='govuk-body' id='rte-complaints-policy'>This must include:</p><ul class='govuk-list govuk-list--bullet'><li>what a complaint is</li><li>how to raise a complaint</li><li>how long it takes for a complaint to be resolved</li></ul><p class='govuk-body'>The file must be a PDF and smaller than 5MB.</p>",
-                    "Hint": "",
+                    "Hint": "Upload a file",
                     "Input": {
                         "Type": "FileUpload",
                         "Validations": [{

@@ -465,7 +465,7 @@
 			"LinkTitle": "Tell us who's the overall manager for this team",
 			"InfoText": "",
 			"Questions": [{
-					"QuestionId": "DAT-754.1",
+					"QuestionId": "DAT-754-1",
 					"QuestionTag": null,
 					"Label": "Full name",
 					"ShortLabel": "",
@@ -493,7 +493,7 @@
 					"ErrorMessages": null
 				},
 				{
-					"QuestionId": "DAT-754.2",
+					"QuestionId": "DAT-754-2",
 					"QuestionTag": null,
 					"Label": "<h1 class='govuk-heading-l'>How much experience do they have in developing and delivering training?</h1>",
 					"ShortLabel": "",
@@ -762,7 +762,7 @@
 			"LinkTitle": "Tell us who's the overall manager for this team",
 			"InfoText": "",
 			"Questions": [{
-					"QuestionId": "DAT-759.1",
+					"QuestionId": "DAT-759-1",
 					"QuestionTag": null,
 					"Label": "Full name",
 					"ShortLabel": "",
@@ -790,7 +790,7 @@
 					"ErrorMessages": null
 				},
 				{
-					"QuestionId": "DAT-759.2",
+					"QuestionId": "DAT-759-2",
 					"QuestionTag": null,
 					"Label": "<h1 class='govuk-heading-l'>Do they have at least 3 months experience in developing and delivering training?</h1>",
 					"ShortLabel": "",
