@@ -278,6 +278,17 @@
                 },
                 {
                     "Action": "NextPage",
+                    "ReturnId": "220",
+                    "Conditions": [
+                        {
+                            "QuestionId": "",
+                            "QuestionTag": "UKRLPVerificationSoleTraderPartnership",
+                            "MustEqual": "TRUE"
+                        }
+                    ]
+                },
+                {
+                    "Action": "NextPage",
                     "ReturnId": "230",
                     "Conditions": [],
                     "ConditionMet": false
