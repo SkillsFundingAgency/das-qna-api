@@ -27,10 +27,10 @@ namespace SFA.DAS.QnA.Application.Queries.Sections.GetSection
         
         public async Task<HandlerResponse<Section>> Handle(GetSectionBySectionNoRequest request, CancellationToken cancellationToken)
         {
-            var application = await _dataContext.Applications.FirstOrDefaultAsync(app => app.Id == request.ApplicationId, cancellationToken: cancellationToken);
+            var application = await _dataContext.Applications.AsNoTracking().FirstOrDefaultAsync(app => app.Id == request.ApplicationId, cancellationToken: cancellationToken);
             if (application is null) return new HandlerResponse<Section>(false, "Application does not exist");
 
-            var section = await _dataContext.ApplicationSections.FirstOrDefaultAsync(sec => sec.SectionNo == request.SectionNo && sec.SequenceNo == request.SequenceNo && sec.ApplicationId == request.ApplicationId, cancellationToken);
+            var section = await _dataContext.ApplicationSections.AsNoTracking().FirstOrDefaultAsync(sec => sec.SectionNo == request.SectionNo && sec.SequenceNo == request.SequenceNo && sec.ApplicationId == request.ApplicationId, cancellationToken);
             if (section is null) return new HandlerResponse<Section>(false, "Section does not exist");
 
             RemovePages(application, section);

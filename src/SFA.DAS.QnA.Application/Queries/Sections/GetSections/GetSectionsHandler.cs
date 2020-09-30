@@ -27,10 +27,10 @@ namespace SFA.DAS.QnA.Application.Queries.Sections.GetSections
 
         public async Task<HandlerResponse<List<Section>>> Handle(GetSectionsRequest request, CancellationToken cancellationToken)
         {
-            var application = await _dataContext.Applications.SingleOrDefaultAsync(app => app.Id == request.ApplicationId, cancellationToken);
+            var application = await _dataContext.Applications.AsNoTracking().SingleOrDefaultAsync(app => app.Id == request.ApplicationId, cancellationToken);
             if (application is null) return new HandlerResponse<List<Section>>(false, "Application does not exist");
 
-            var sections = await _dataContext.ApplicationSections
+            var sections = await _dataContext.ApplicationSections.AsNoTracking()
                 .Where(seq => seq.ApplicationId == request.ApplicationId)
                 .ToListAsync(cancellationToken: cancellationToken);
 

@@ -20,7 +20,7 @@ namespace SFA.DAS.QnA.Application.Queries.WorkflowSequences.GetWorkflowSequences
         
         public async Task<HandlerResponse<List<WorkflowSequence>>> Handle(GetWorkflowSequencesRequest request, CancellationToken cancellationToken)
         {
-            var sequences = await _dataContext.WorkflowSequences.Where(seq => seq.WorkflowId == request.WorkflowId).ToListAsync(cancellationToken);
+            var sequences = await _dataContext.WorkflowSequences.AsNoTracking().Where(seq => seq.WorkflowId == request.WorkflowId).ToListAsync(cancellationToken);
             
             return !sequences.Any() 
                 ? new HandlerResponse<List<WorkflowSequence>>(success:false, message:"No sequences exist for this Workflow ID") 
