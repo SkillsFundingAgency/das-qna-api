@@ -2,7 +2,6 @@
     "Title": "Confirm who's in control",
     "LinkTitle": "Confirm who's in control",
     "DisplayType": "Pages",
-    "RequestedFeedbackAnswered": null,
     "Pages": [
         {
             "PageId": "70",
@@ -26,8 +25,7 @@
                     "Input": {
                         "Type": "TabularData",
                         "Validations": []
-                    },
-                    "Order": null
+                    }
                 },
                 {
                     "QuestionId": "YO-71",
@@ -39,8 +37,7 @@
                     "Input": {
                         "Type": "TabularData",
                         "Validations": []
-                    },
-                    "Order": null
+                    }
                 },
                 {
                     "QuestionId": "YO-75",
@@ -52,23 +49,11 @@
                     "Input": {
                         "Type": "Hidden",
                         "Validations": []
-                    },
-                    "Order": null
+                    }
                 }
             ],
             "PageOfAnswers": [],
             "Next": [
-                {
-                    "Action": "NextPage",
-                    "ReturnId": "90",
-                    "Conditions": [
-                        {
-                            "QuestionTag": "CCTrusteeManualEntry",
-                            "MustEqual": "TRUE"
-                        }
-                    ],
-                    "ConditionMet": false
-                },
                 {
                     "Action": "NextPage",
                     "ReturnId": "80",
@@ -77,24 +62,26 @@
                             "QuestionTag": "UKRLPVerificationCharity",
                             "MustEqual": "TRUE"
                         }
-                    ],
-                    "ConditionMet": false
+                    ]
                 },
                 {
                     "Action": "NextPage",
-                    "ReturnId": "140",
-                    "Conditions": [],
-                    "ConditionMet": false
+                    "ReturnId": "90",
+                    "Conditions": [
+                        {
+                            "QuestionTag": "CCTrusteeManualEntry",
+                            "MustEqual": "TRUE"
+                        }
+                    ]
+                },
+                {
+                    "Action": "ReturnToSection",
+                    "ReturnId": "1.4",
+                    "Conditions": []
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
-            "Order": null,
             "Active": true,
-            "Visible": true,
-            "Feedback": null,
-            "HasFeedback": false,
-            "NotRequiredOrgTypes": [],
             "BodyText": "",
             "NotRequiredConditions": [
                 {
@@ -123,8 +110,7 @@
                     "Input": {
                         "Type": "TabularData",
                         "Validations": []
-                    },
-                    "Order": null
+                    }
                 },
                 {
                     "QuestionId": "YO-85",
@@ -136,27 +122,19 @@
                     "Input": {
                         "Type": "Hidden",
                         "Validations": []
-                    },
-                    "Order": null
+                    }
                 }
             ],
             "PageOfAnswers": [],
             "Next": [
                 {
-                    "Action": "NextPage",
-                    "ReturnId": "140",
-                    "Conditions": [],
-                    "ConditionMet": false
+                    "Action": "ReturnToSection",
+                    "ReturnId": "1.4",
+                    "Conditions": []
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
-            "Order": null,
             "Active": true,
-            "Visible": true,
-            "Feedback": null,
-            "HasFeedback": false,
-            "NotRequiredOrgTypes": [],
             "BodyText": "",
             "NotRequiredConditions": [
                 {
@@ -185,27 +163,19 @@
                     "Input": {
                         "Type": "Hidden",
                         "Validations": []
-                    },
-                    "Order": null
+                    }
                 }
             ],
             "PageOfAnswers": [],
             "Next": [
                 {
-                    "Action": "NextPage",
-                    "ReturnId": "140",
-                    "Conditions": [],
-                    "ConditionMet": false
+                    "Action": "ReturnToSection",
+                    "ReturnId": "1.4",
+                    "Conditions": []
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
-            "Order": null,
             "Active": false,
-            "Visible": true,
-            "Feedback": null,
-            "HasFeedback": false,
-            "NotRequiredOrgTypes": [],
             "BodyText": "",
             "NotRequiredConditions": [
                 {
@@ -257,8 +227,7 @@
                                 "ErrorMessage": "Tell us what your organisation is"
                             }
                         ]
-                    },
-                    "Order": null
+                    }
                 }
             ],
             "PageOfAnswers": [],
@@ -271,8 +240,7 @@
                             "QuestionId": "YO-100",
                             "MustEqual": "Partnership"
                         }
-                    ],
-                    "ConditionMet": false
+                    ]
                 },
                 {
                     "Action": "NextPage",
@@ -282,18 +250,11 @@
                             "QuestionId": "YO-100",
                             "MustEqual": "Sole trader"
                         }
-                    ],
-                    "ConditionMet": false
+                    ]
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
-            "Order": null,
             "Active": true,
-            "Visible": true,
-            "Feedback": null,
-            "HasFeedback": false,
-            "NotRequiredOrgTypes": [],
             "BodyText": "",
             "NotRequiredConditions": [
                 {
@@ -340,8 +301,7 @@
                                 "ErrorMessage": "Tell us what your organisation's partner is"
                             }
                         ]
-                    },
-                    "Order": null
+                    }
                 }
             ],
             "PageOfAnswers": [],
@@ -354,8 +314,7 @@
                             "QuestionId": "YO-101",
                             "MustEqual": "Individual"
                         }
-                    ],
-                    "ConditionMet": false
+                    ]
                 },
                 {
                     "Action": "NextPage",
@@ -365,18 +324,11 @@
                             "QuestionId": "YO-101",
                             "MustEqual": "Organisation"
                         }
-                    ],
-                    "ConditionMet": false
+                    ]
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
-            "Order": null,
             "Active": false,
-            "Visible": true,
-            "Feedback": null,
-            "HasFeedback": false,
-            "NotRequiredOrgTypes": [],
             "BodyText": "",
             "NotRequiredConditions": [],
             "ActivatedByPageId": "100"
@@ -399,27 +351,19 @@
                     "Input": {
                         "Type": "TabularData",
                         "Validations": []
-                    },
-                    "Order": null
+                    }
                 }
             ],
             "PageOfAnswers": [],
             "Next": [
                 {
-                    "Action": "NextPage",
-                    "ReturnId": "140",
-                    "Conditions": [],
-                    "ConditionMet": false
+                    "Action": "ReturnToSection",
+                    "ReturnId": "1.4",
+                    "Conditions": []
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
-            "Order": null,
             "Active": false,
-            "Visible": true,
-            "Feedback": null,
-            "HasFeedback": false,
-            "NotRequiredOrgTypes": [],
             "BodyText": "",
             "ActivatedByPageId": "101",
             "NotRequiredConditions": [
@@ -461,27 +405,19 @@
                     "Input": {
                         "Type": "TabularData",
                         "Validations": []
-                    },
-                    "Order": null
+                    }
                 }
             ],
             "PageOfAnswers": [],
             "Next": [
                 {
-                    "Action": "NextPage",
-                    "ReturnId": "140",
-                    "Conditions": [],
-                    "ConditionMet": false
+                    "Action": "ReturnToSection",
+                    "ReturnId": "1.4",
+                    "Conditions": []
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
-            "Order": null,
             "Active": false,
-            "Visible": true,
-            "Feedback": null,
-            "HasFeedback": false,
-            "NotRequiredOrgTypes": [],
             "BodyText": "",
             "ActivatedByPageId": "101",
             "NotRequiredConditions": [
@@ -534,27 +470,19 @@
                                 "ErrorMessage": "Enter a date of birth using a month and year that's in the past"
                             }
                         ]
-                    },
-                    "Order": null
+                    }
                 }
             ],
             "PageOfAnswers": [],
             "Next": [
                 {
-                    "Action": "NextPage",
-                    "ReturnId": null,
-                    "Conditions": [],
-                    "ConditionMet": false
+                    "Action": "ReturnToSection",
+                    "ReturnId": "1.4",
+                    "Conditions": []
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
-            "Order": null,
             "Active": false,
-            "Visible": true,
-            "Feedback": null,
-            "HasFeedback": false,
-            "NotRequiredOrgTypes": [],
             "BodyText": "",
             "ActivatedByPageId": "100",
             "NotRequiredConditions": [
@@ -584,27 +512,19 @@
                     "Input": {
                         "Type": "TabularData",
                         "Validations": []
-                    },
-                    "Order": null
+                    }
                 }
             ],
             "PageOfAnswers": [],
             "Next": [
                 {
-                    "Action": "NextPage",
-                    "ReturnId": "140",
-                    "Conditions": [],
-                    "ConditionMet": false
+                    "Action": "ReturnToSection",
+                    "ReturnId": "1.4",
+                    "Conditions": []
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
-            "Order": null,
-            "Active": true,
-            "Visible": true,
-            "Feedback": null,
-            "HasFeedback": false,
-            "NotRequiredOrgTypes": [],
+            "Active": true,                        
             "BodyText": "",
             "NotRequiredConditions": [
                 {

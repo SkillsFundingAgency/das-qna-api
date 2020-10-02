@@ -2,7 +2,6 @@
     "Title": "Policy for professional development of employees",
     "LinkTitle": "Policy for professional development of employees",
     "DisplayType": "Pages",
-    "RequestedFeedbackAnswered": null,
     "Pages": [
         {
             "PageId": "7700",
@@ -17,13 +16,10 @@
                     "QuestionTag": null,
                     "Label": "Upload your organisation's policy for professional development of employees",
                     "ShortLabel": "",
-                    "InputClasses": null,
                     "QuestionBodyText": "<p class='govuk-body'>This must include how your organisation will continuously:</p><ul class='govuk-list govuk-list--bullet'><li>improve its employees sector expertise, skills and performance</li><li>improve its employees teaching and training knowledge, skills and performance</li><li>Improve its employees skills and performance</li><li>ensure learning objectives are tailored to meet employee, customer and organisation needs</li><li>monitor employees professional development</li></ul><p class='govuk-body'>It must also include your organisation's vision for professional development of employees.</p><p class='govuk-body'>The file must be a PDF and smaller than 5MB.</p>",
                     "Hint": "Upload a file",
                     "Input": {
                         "Type": "FileUpload",
-                        "InputClasses": null,
-                        "Options": [],
                         "Validations": [
                             {
                                 "Name": "Required",
@@ -35,39 +31,22 @@
                                 "Value": "pdf",
                                 "ErrorMessage": "The selected file must be a PDF"
                             }
-                        ],
-                        "DataEndpoint": null
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                        ]
+                    }
                 }
             ],
-            "PageOfAnswers": [],
+			"PageOfAnswers": [],
             "Next": [
                 {
                     "Action": "NextPage",
                     "ReturnId": "7710",
-                    "Conditions": [],
-                    "ConditionMet": false
+                    "Conditions": []
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
-            "Order": null,
             "Active": true,
-            "NotRequiredConditions": [
-                {
-                    "Field": "",
-                    "IsOneOf": [
-                        ""
-                    ]
-                }
-            ],
+            "NotRequiredConditions": [],
             "BodyText": "",
-            "Details": null,
-            "DisplayType": null,
-            "Feedback": null,
             "ActivatedByPageId": null
         },
         {
@@ -83,13 +62,10 @@
                     "QuestionTag": null,
                     "Label": "Give an example of how your organisation used this policy to improve employee sector expertise",
                     "ShortLabel": "",
-                    "InputClasses": null,
                     "QuestionBodyText": "<p class='govuk-body'>Your answer must include how your organisation:</p><ul class='govuk-list govuk-list--bullet'><li>ensured employee sector expertise was relevant to apprenticeship training</li><li>ensured employee expertise was up to date in relevant sectors</li><li>maintained employee expertise in relevant sectors - for example, through co-creation of apprenticeship programmes or mentoring</li></ul>",
                     "Hint": "",
                     "Input": {
                         "Type": "Textarea",
-                        "InputClasses": null,
-                        "Options": [],
                         "Validations": [
                             {
                                 "Name": "Required",
@@ -101,32 +77,22 @@
                                 "Value": "275",
                                 "ErrorMessage": "Your answer must be 275 words or less"
                             }
-                        ],
-                        "DataEndpoint": null
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                        ]
+                    }
                 }
             ],
-            "PageOfAnswers": [],
+			"PageOfAnswers": [],
             "Next": [
                 {
                     "Action": "NextPage",
                     "ReturnId": "7720",
-                    "Conditions": [],
-                    "ConditionMet": false
+                    "Conditions": []
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
-            "Order": null,
             "Active": false,
             "NotRequiredConditions": [],
             "BodyText": "",
-            "Details": null,
-            "DisplayType": null,
-            "Feedback": null,
             "ActivatedByPageId": "7700"
         },
         {
@@ -142,13 +108,10 @@
                     "QuestionTag": null,
                     "Label": "Give an example of how your organisation used this policy to maintain employee teaching and training knowledge",
                     "ShortLabel": "",
-                    "InputClasses": null,
                     "QuestionBodyText": "<p class='govuk-body'>Your answer must include how your organisation:</p><ul class='govuk-list govuk-list--bullet'><li>ensured employee's teaching and training knowledge, skills and performance was kept relevant to apprenticeship training</li><li>used teaching and training bodies to ensure employee expertise was up to date</li><li>worked with teaching and training bodies to ensure employee expertise is maintained - for example, through co-creation of apprenticeship programmes or mentoring</li></ul>",
                     "Hint": "",
                     "Input": {
                         "Type": "Textarea",
-                        "InputClasses": null,
-                        "Options": [],
                         "Validations": [
                             {
                                 "Name": "Required",
@@ -160,39 +123,22 @@
                                 "Value": "275",
                                 "ErrorMessage": "Your answer must be 275 words or less"
                             }
-                        ],
-                        "DataEndpoint": null
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                        ]
+                    }
                 }
             ],
-            "PageOfAnswers": [],
+			"PageOfAnswers": [],
             "Next": [
                 {
                     "Action": "ReturnToSection",
-                    "ReturnId": "7.7",
-                    "Conditions": [],
-                    "ConditionMet": false
+                    "ReturnId": "8.1",
+                    "Conditions": []
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
-            "Order": null,
             "Active": false,
-            "NotRequiredConditions": [
-                {
-                    "Field": "",
-                    "IsOneOf": [
-                        ""
-                    ]
-                }
-            ],
+            "NotRequiredConditions": [],
             "BodyText": "",
-            "Details": null,
-            "DisplayType": null,
-            "Feedback": null,
             "ActivatedByPageId": "7710"
         }
     ]

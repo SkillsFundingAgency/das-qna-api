@@ -2,7 +2,6 @@
     "Title": "Continuity plan for apprenticeship training",
     "LinkTitle": "Continuity plan for apprenticeship training",
     "DisplayType": "Pages",
-    "RequestedFeedbackAnswered": null,
     "Pages": [
         {
             "PageId": "4010",
@@ -37,26 +36,20 @@
                                 "ErrorMessage": "The selected file must be a PDF"
                             }
                         ]
-                    },
-                    "Order": null
+                    }
                 }
             ],
-            "PageOfAnswers": [],
+			"PageOfAnswers": [],
             "Next": [
                 {
                     "Action": "ReturnToSection",
                     "ReturnId": "4.3",
-                    "Conditions": [],
-                    "ConditionMet": false
+                    "Conditions": []
                 }
             ],
             "Complete": false,
             "AllowMultipleAnswers": false,
-            "Order": null,
             "Active": true,
-            "Visible": true,
-            "Feedback": null,
-            "HasFeedback": false,
             "NotRequiredConditions": [],
             "ActivatedByPageId": null,
             "BodyText": ""

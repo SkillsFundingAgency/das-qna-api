@@ -2,7 +2,6 @@
     "Title": "Forecasting starts",
     "LinkTitle": "Forecasting starts",
     "DisplayType": "Pages",
-    "RequestedFeedbackAnswered": null,
     "Pages": [
         {
             "PageId": "6400",
@@ -17,12 +16,10 @@
                     "QuestionTag": null,
                     "Label": "How many starts does your organisation forecast in the first 12 months of joining the RoATP?",
                     "ShortLabel": "",
-                    "InputClasses": null,
                     "QuestionBodyText": "",
                     "Hint": "",
                     "Input": {
                         "Type": "Radio",
-                        "InputClasses": null,
                         "Options": [
                             {
                                 "Value": "One to 49",
@@ -56,30 +53,20 @@
                                 "Value": "",
                                 "ErrorMessage": "Tell us how many starts your organisation forecasts in the first 12 months of joining RoATP"
                             }
-                        ],
-                        "DataEndpoint": null
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                        ]
+                    }
                 }
             ],
-            "PageOfAnswers": [],
+			"PageOfAnswers": [],
             "Next": [
                 {
                     "Action": "NextPage",
                     "ReturnId": "6410",
-                    "Conditions": [],
-                    "ConditionMet": false
+                    "Conditions": []
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
-            "Order": null,
             "Active": true,
-            "Visible": true,
-            "Feedback": null,
-            "HasFeedback": false,
             "NotRequiredConditions": [
                 {
                     "Field": "ApplyProviderRoute",
@@ -108,12 +95,10 @@
                     "QuestionTag": null,
                     "Label": "When will your organisation be ready to deliver training against this forecast?",
                     "ShortLabel": "",
-                    "InputClasses": null,
                     "QuestionBodyText": "",
                     "Hint": "",
                     "Input": {
                         "Type": "Radio",
-                        "InputClasses": null,
                         "Options": [
                             {
                                 "Value": "Within the first 3 months of joining the RoATP",
@@ -137,32 +122,22 @@
                                 "Value": "",
                                 "ErrorMessage": "Tell us when your organisation will be ready to deliver training against this forecast"
                             }
-                        ],
-                        "DataEndpoint": null
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                        ]
+                    }
                 }
             ],
-            "PageOfAnswers": [],
+			"PageOfAnswers": [],
             "Next": [
                 {
                     "Action": "NextPage",
                     "ReturnId": "6420",
-                    "Conditions": [],
-                    "ConditionMet": false
+                    "Conditions": []
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
-            "Order": null,
             "Active": false,
             "NotRequiredConditions": [],
             "BodyText": "",
-            "Details": null,
-            "DisplayType": null,
-            "Feedback": null,
             "ActivatedByPageId": "6400"
         },
         {
@@ -178,12 +153,10 @@
                     "QuestionTag": null,
                     "Label": "Will your organisation recruit new staff to deliver training against these forecasts?",
                     "ShortLabel": "",
-                    "InputClasses": null,
                     "QuestionBodyText": "",
                     "Hint": "",
                     "Input": {
                         "Type": "Radio",
-                        "InputClasses": null,
                         "Options": [
                             {
                                 "Value": "Yes",
@@ -202,32 +175,22 @@
                                 "Value": "",
                                 "ErrorMessage": "Tell us if your organisation will recruit new staff to deliver training against these forecasts"
                             }
-                        ],
-                        "DataEndpoint": null
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                        ]
+                    }
                 }
             ],
-            "PageOfAnswers": [],
+			"PageOfAnswers": [],
             "Next": [
                 {
                     "Action": "NextPage",
                     "ReturnId": "6430",
-                    "Conditions": [],
-                    "ConditionMet": false
+                    "Conditions": []
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
-            "Order": null,
             "Active": false,
             "NotRequiredConditions": [],
             "BodyText": "",
-            "Details": null,
-            "DisplayType": null,
-            "Feedback": null,
             "ActivatedByPageId": "6410"
         },
         {
@@ -242,12 +205,10 @@
                     "QuestionTag": null,
                     "Label": "What is the typical ratio of the staff who deliver training to the apprentices?",
                     "ShortLabel": "",
-                    "InputClasses": null,
                     "QuestionBodyText": "",
                     "Hint": "",
                     "Input": {
                         "Type": "Radio",
-                        "InputClasses": null,
                         "Options": [
                             {
                                 "Value": "One trainer between 10 or less apprentices",
@@ -271,32 +232,21 @@
                                 "Value": "",
                                 "ErrorMessage": "Tell us what the typical ratio is of the staff who deliver training to the learners"
                             }
-                        ],
-                        "DataEndpoint": null
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                        ]
+                    }
                 }],
-            "PageOfAnswers": [],
+			"PageOfAnswers": [],
             "Next": [
                 {
                     "Action": "ReturnToSection",
-                    "ReturnId": "",
-                    "Condition": null,
-                    "Conditions": [],
-                    "ConditionMet": false
+                    "ReturnId": "6.5",
+                    "Conditions": []
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
-            "Order": null,
             "Active": false,
             "NotRequiredConditions": [],
             "BodyText": "",
-            "Details": null,
-            "DisplayType": null,
-            "Feedback": null,
             "ActivatedByPageId": "6420"
         }
     ]
