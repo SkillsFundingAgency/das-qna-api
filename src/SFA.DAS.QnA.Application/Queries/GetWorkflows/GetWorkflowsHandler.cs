@@ -24,7 +24,7 @@ namespace SFA.DAS.QnA.Application.Queries.GetWorkflows
         
         public async Task<HandlerResponse<List<Workflow>>> Handle(GetWorkflowsRequest request, CancellationToken cancellationToken)
         {
-            var workflows = await _dataContext.Workflows.Where(w => w.Status == WorkflowStatus.Live).ToListAsync(cancellationToken: cancellationToken);
+            var workflows = await _dataContext.Workflows.AsNoTracking().Where(w => w.Status == WorkflowStatus.Live).ToListAsync(cancellationToken: cancellationToken);
 
             var responses =  _mapper.Map<List<Workflow>>(workflows);
             

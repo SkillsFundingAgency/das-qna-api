@@ -20,7 +20,7 @@ namespace SFA.DAS.QnA.Application.Queries.Projects.GetProjects
         
         public async Task<HandlerResponse<List<Project>>> Handle(GetProjectsRequest request, CancellationToken cancellationToken)
         {
-            var projects = await _dataContext.Projects.ToListAsync(cancellationToken);
+            var projects = await _dataContext.Projects.AsNoTracking().ToListAsync(cancellationToken);
             
             return !projects.Any() 
                 ? new HandlerResponse<List<Project>>(success:false, message:"No Projects exist") 
