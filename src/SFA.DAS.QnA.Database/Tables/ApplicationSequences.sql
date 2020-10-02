@@ -1,9 +1,10 @@
 CREATE TABLE [ApplicationSequences]
 (
-	[Id] [uniqueidentifier] NOT NULL PRIMARY KEY DEFAULT NEWID(),
+	[Id] [uniqueidentifier] NOT NULL DEFAULT NEWID(),
 	[ApplicationId] [uniqueidentifier] NOT NULL,
 	[SequenceNo] [int] NOT NULL,
-	[IsActive] [bit] NOT NULL DEFAULT 0
+	[IsActive] [bit] NOT NULL DEFAULT 0,
+    CONSTRAINT [PK_ApplicationSequences] PRIMARY KEY ( [Id] )
 ) 
 GO
 
