@@ -2,7 +2,6 @@
     "Title": "Your UK ultimate parent company's financial evidence",
     "LinkTitle": "Your UK ultimate parent company's financial evidence",
     "DisplayType": "Pages",
-    "RequestedFeedbackAnswered": null,
     "Pages": [
         {
             "PageId": "2500",
@@ -17,12 +16,10 @@
                     "QuestionTag": "FHAParentHasConsolidatedStatements",
                     "Label": "Does your UK ultimate parent company have consolidated financial statements?",
                     "ShortLabel": "",
-                    "InputClasses": null,
                     "QuestionBodyText": "",
                     "Hint": "",
                     "Input": {
                         "Type": "Radio",
-                        "InputClasses": null,
                         "Options": [
                             {
                                 "Value": "Yes",
@@ -41,15 +38,11 @@
                                 "Value": "",
                                 "ErrorMessage": "Tell us if your UK ultimate parent company has consolidated financial statements"
                             }
-                        ],
-                        "DataEndpoint": null
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                        ]
+                    }
                 }
             ],
-            "PageOfAnswers": [],
+			"PageOfAnswers": [],
             "Next": [
                 {
                     "Action": "NextPage",
@@ -59,8 +52,7 @@
                             "QuestionId": "FH-500",
                             "MustEqual": "Yes"
                         }
-                    ],
-                    "ConditionMet": false
+                    ]
                 },
                 {
                     "Action": "NextPage",
@@ -70,13 +62,10 @@
                             "QuestionId": "FH-500",
                             "MustEqual": "No"
                         }
-                    ],
-                    "ConditionMet": false
+                    ]
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
-            "Order": null,
             "Active": true,
             "NotRequiredConditions": [
                 {
@@ -88,9 +77,6 @@
                 }
             ],
             "BodyText": "",
-            "Details": null,
-            "DisplayType": null,
-            "Feedback": null,
             "ActivatedByPageId": null
         },
         {
@@ -106,12 +92,10 @@
                     "QuestionTag": null,
                     "Label": "Upload your UK ultimate parent company's consolidated financial statements",
                     "ShortLabel": "",
-                    "InputClasses": null,
                     "QuestionBodyText": "<p class='govuk-body'>Consolidated financial statements must include:</p><ul class='govuk-list govuk-list--bullet'><li>a balance sheet - showing the value of everything your organisation owns, owes and is owed on the last day of the financial year</li><li>a cash flow statement</li><li>an income statement</li></ul><p class='govuk-body'>The file must be a PDF and smaller than 5MB.</p>",
                     "Hint": "Upload a file",
                     "Input": {
                         "Type": "FileUpload",
-                        "InputClasses": null,
                         "Options": [],
                         "Validations": [
                             {
@@ -124,26 +108,19 @@
                                 "Value": "pdf",
                                 "ErrorMessage": "The selected file must be a PDF"
                             }
-                        ],
-                        "DataEndpoint": null
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                        ]
+                    }
                 }
             ],
-            "PageOfAnswers": [],
+			"PageOfAnswers": [],
             "Next": [
                 {
                     "Action": "ReturnToSection",
-                    "ReturnId": "2.3",
-                    "Conditions": [],
-                    "ConditionMet": false
+                    "ReturnId": "3.1",
+                    "Conditions": []
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
-            "Order": null,
             "Active": false,
             "NotRequiredConditions": [
                 {
@@ -154,9 +131,6 @@
                 }
             ],
             "BodyText": "",
-            "Details": null,
-            "DisplayType": null,
-            "Feedback": null,
             "ActivatedByPageId": "2500"
         },
         {
@@ -172,12 +146,10 @@
                     "QuestionTag": "FHAParentHasOtherSubsidiaries",
                     "Label": "Does your UK ultimate parent company have other subsidiary companies?",
                     "ShortLabel": "",
-                    "InputClasses": null,
                     "QuestionBodyText": "<p class='govuk-body'>Subsidiary companies must not be dormant.</p>",
                     "Hint": "",
                     "Input": {
                         "Type": "Radio",
-                        "InputClasses": null,
                         "Options": [
                             {
                                 "Value": "Yes",
@@ -196,12 +168,8 @@
                                 "Value": "",
                                 "ErrorMessage": "Tell us if your UK ultimate parent company has other subsidiary companies"
                             }
-                        ],
-                        "DataEndpoint": null
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                        ]
+                    }
                 }
             ],
             "PageOfAnswers": [],
@@ -214,8 +182,7 @@
                             "QuestionId": "FH-520",
                             "MustEqual": "Yes"
                         }
-                    ],
-                    "ConditionMet": false
+                    ]
                 },
                 {
                     "Action": "NextPage",
@@ -225,13 +192,10 @@
                             "QuestionId": "FH-520",
                             "MustEqual": "No"
                         }
-                    ],
-                    "ConditionMet": false
+                    ]
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
-            "Order": null,
             "Active": false,
             "NotRequiredConditions": [
                 {
@@ -246,8 +210,6 @@
                 "Title": "What is a subsidiary company?",
                 "Body": "It's a company controlled by your ultimate parent company."
             },
-            "DisplayType": null,
-            "Feedback": null,
             "ActivatedByPageId": "2500"
         },
         {
@@ -263,19 +225,11 @@
                     "QuestionTag": null,
                     "Label": "Upload a financial statement for all your UK ultimate parent company's subsidiary companies",
                     "ShortLabel": "",
-                    "InputClasses": null,
                     "QuestionBodyText": "<p class='govuk-body'>Subsidiary companies must not be dormant.</p><p class='govuk-body'>Financial statements must include a:</p><ul class='govuk-list govuk-list--bullet'><li>balance sheet - showing the value of everything your organisation owns, owes and is owed on the last day of the financial year</li><li>profit and loss account - showing your organisation's sales, running costs and profit and loss it made over the financial year</li><li>detailed notes about the accounts</li><li>breakdown of creditors and borrowings</li></ul><p class='govuk-body'>If applicable, financial statements should be signed and filed with Companies House or the Charity Commission of England and Wales.</p><p class='govuk-body'>The file must be a PDF and smaller than 5MB.</p>",
                     "Hint": "Upload a file",
                     "Input": {
                         "Type": "FileUpload",
-                        "InputClasses": null,
-                        "Options": [
-                            {
-                                "Value": "",
-                                "Label": "",
-                                "HintText": ""
-                            }
-                        ],
+                        "Options": [],
                         "Validations": [
                             {
                                 "Name": "Required",
@@ -287,26 +241,19 @@
                                 "Value": "pdf",
                                 "ErrorMessage": "The selected file must be a PDF"
                             }
-                        ],
-                        "DataEndpoint": null
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                        ]
+                    }
                 }
             ],
-            "PageOfAnswers": [],
+			"PageOfAnswers": [],
             "Next": [
                 {
                     "Action": "ReturnToSection",
-                    "ReturnId": "2.3",
-                    "Conditions": [],
-                    "ConditionMet": false
+                    "ReturnId": "3.1",
+                    "Conditions": []
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
-            "Order": null,
             "Active": false,
             "NotRequiredConditions": [
                 {
@@ -323,9 +270,6 @@
                 }
             ],
             "BodyText": "",
-            "Details": null,
-            "DisplayType": null,
-            "Feedback": null,
             "ActivatedByPageId": "2520"
         },
         {
@@ -341,12 +285,10 @@
                     "QuestionTag": null,
                     "Label": "Upload your UK ultimate parent company's full financial statements covering the last 12 months",
                     "ShortLabel": "",
-                    "InputClasses": null,
                     "QuestionBodyText": "<p class='govuk-body'>Financial statements must include a:</p><ul class='govuk-list govuk-list--bullet'><li>balance sheet - showing the value of everything your organisation owns, owes and is owed on the last day of the financial year</li><li>profit and loss account - showing your organisation's sales, running costs and profit and loss it made over the financial year</li><li>detailed notes about the accounts</li><li>breakdown of creditors and borrowings</li></ul><p class='govuk-body'>If applicable, financial statements should be signed and filed with Companies House or the Charity Commission of England and Wales</p><p class='govuk-body'>The file should be a PDF and smaller than 5MB.</p>",
                     "Hint": "Upload a file",
                     "Input": {
                         "Type": "FileUpload",
-                        "InputClasses": null,
                         "Options": [],
                         "Validations": [
                             {
@@ -359,26 +301,19 @@
                                 "Value": "pdf",
                                 "ErrorMessage": "The selected file must be a PDF"
                             }
-                        ],
-                        "DataEndpoint": null
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                        ]
+                    }
                 }
             ],
             "PageOfAnswers": [],
             "Next": [
                 {
                     "Action": "ReturnToSection",
-                    "ReturnId": "2.3",
-                    "Conditions": [],
-                    "ConditionMet": false
+                    "ReturnId": "3.1",
+                    "Conditions": []
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
-            "Order": null,
             "Active": false,
             "NotRequiredConditions": [
                 {
@@ -395,9 +330,6 @@
                 }
             ],
             "BodyText": "",
-            "Details": null,
-            "DisplayType": null,
-            "Feedback": null,
             "ActivatedByPageId": "2520"
         }
     ]

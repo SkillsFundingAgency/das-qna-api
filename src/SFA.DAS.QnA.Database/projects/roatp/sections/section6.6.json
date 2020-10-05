@@ -2,7 +2,6 @@
     "Title": "Where will your apprentices be trained",
     "LinkTitle": "Where will your apprentices be trained",
     "DisplayType": "Pages",
-    "RequestedFeedbackAnswered": null,
     "Pages": [
         {
             "PageId": "6600",
@@ -17,36 +16,28 @@
                     "QuestionTag": null,
                     "Label": "Building and Street",
                     "ShortLabel": "",
-                    "InputClasses": null,
                     "QuestionBodyText": "\n",
                     "Hint": "",
                     "Input": {
                         "Type": "Text",
-                        "InputClasses": null,
                         "Validations": [
                             {
                                 "Name": "Required",
                                 "Value": "",
                                 "ErrorMessage": "Enter a building and street"
                             }
-                        ],
-                        "DataEndpoint": null
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                        ]
+                    }
                 },
                 {
                     "QuestionId": "PAT-662",
                     "QuestionTag": null,
                     "Label": "Town or City",
                     "ShortLabel": "",
-                    "InputClasses": null,
                     "QuestionBodyText": "",
                     "Hint": "",
                     "Input": {
                         "Type": "Text",
-                        "InputClasses": null,
                         "Options": [],
                         "Validations": [
                             {
@@ -54,24 +45,18 @@
                                 "Value": "",
                                 "ErrorMessage": "Enter a town or city"
                             }
-                        ],
-                        "DataEndpoint": null
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                        ]
+                    }
                 },
                 {
                     "QuestionId": "PAT-663",
                     "QuestionTag": null,
                     "Label": "County",
                     "ShortLabel": "",
-                    "InputClasses": null,
                     "QuestionBodyText": "",
                     "Hint": "",
                     "Input": {
                         "Type": "Text",
-                        "InputClasses": null,
                         "Options": [],
                         "Validations": [
                             {
@@ -79,24 +64,18 @@
                                 "Value": "",
                                 "ErrorMessage": "Enter a county"
                             }
-                        ],
-                        "DataEndpoint": null
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                        ]
+                    }
                 },
                 {
                     "QuestionId": "PAT-664",
                     "QuestionTag": null,
                     "Label": "Postcode",
                     "ShortLabel": "",
-                    "InputClasses": null,
                     "QuestionBodyText": "",
                     "Hint": "",
                     "Input": {
                         "Type": "Text",
-                        "InputClasses": null,
                         "Options": [],
                         "Validations": [
                             {
@@ -109,30 +88,20 @@
                                 "Value": "([Gg][Ii][Rr] 0[Aa]{2})|((([A-Za-z][0-9]{1,2})|(([A-Za-z][A-Ha-hJ-Yj-y][0-9]{1,2})|(([A-Za-z][0-9][A-Za-z])|([A-Za-z][A-Ha-hJ-Yj-y][0-9][A-Za-z]?))))\\s?[0-9][A-Za-z]{2})",
                                 "ErrorMessage": "Enter a real postcode"
                             }
-                        ],
-                        "DataEndpoint": null
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                        ]
+                    }
                 }
             ],
-            "PageOfAnswers": [],
+			"PageOfAnswers": [],
             "Next": [
                 {
                     "Action": "ReturnToSection",
-                    "ReturnId": "6",
-                    "Conditions": [],
-                    "ConditionMet": false
+                    "ReturnId": "7.1",
+                    "Conditions": []
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
-            "Order": null,
             "Active": true,
-            "Visible": true,
-            "Feedback": null,
-            "HasFeedback": false,
             "NotRequiredConditions": [
                 {
                     "Field": "ApplyProviderRoute",
