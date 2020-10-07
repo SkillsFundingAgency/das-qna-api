@@ -2,7 +2,6 @@
     "Title": "Systems and processes to collect apprenticeship data",
     "LinkTitle": "Systems and processes to collect apprenticeship data",
     "DisplayType": "Pages",
-    "RequestedFeedbackAnswered": null,
     "Pages": [
         {
             "PageId": "8300",
@@ -41,25 +40,19 @@
                                 "ErrorMessage": "Tell us if your organisation has systems and processes in place to collect apprenticeship data"
                             }
                         ]
-                    },
-                    "Order": null
+                    }
                 }
             ],
-            "PageOfAnswers": [],
+			"PageOfAnswers": [],
             "Next": [
                 {
                     "Action": "NextPage",
                     "ReturnId": "8310",
-                    "Conditions": [],
-                    "ConditionMet": false
+                    "Conditions": []
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
-            "Order": null,
             "Active": true,
-            "Feedback": null,
-            "HasFeedback": false,
             "NotRequiredConditions": [],
             "BodyText": ""
         },
@@ -99,25 +92,19 @@
                                 "ErrorMessage": "Tell us if your organisation has systems and processes in place to collect apprenticeship data"
                             }
                         ]
-                    },
-                    "Order": null
+                    }
                 }
             ],
-            "PageOfAnswers": [],
+			"PageOfAnswers": [],
             "Next": [
                 {
                     "Action": "ReturnToSection",
                     "ReturnId": "9.1",
-                    "Conditions": [],
-                    "ConditionMet": false
+                    "Conditions": []
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
-            "Order": null,
             "Active": true,
-            "Feedback": null,
-            "HasFeedback": false,
             "NotRequiredConditions": [],
             "BodyText": ""
         }

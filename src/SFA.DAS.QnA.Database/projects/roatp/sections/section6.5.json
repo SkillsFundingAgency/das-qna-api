@@ -2,7 +2,6 @@
     "Title": "Off the job training",
     "LinkTitle": "Off the job training",
     "DisplayType": "Pages",
-    "RequestedFeedbackAnswered": null,
     "Pages": [
         {
             "PageId": "6500",
@@ -17,12 +16,10 @@
                     "QuestionTag": null,
                     "Label": "What teaching methods will your organisation use to deliver 20% off the job training?",
                     "ShortLabel": "",
-                    "InputClasses": null,
                     "QuestionBodyText": "<p class='govuk-body govuk-hint'>Select all that apply.</p>",
                     "Hint": "",
                     "Input": {
                         "Type": "CheckboxList",
-                        "InputClasses": null,
                         "Options": [
                             {
                                 "Value": "Distance learning - training delivered remotely for example, e-learning or webinars",
@@ -56,26 +53,19 @@
                                 "Value": "",
                                 "ErrorMessage": "Tell us what teaching methods your organisation will use to deliver 20% off the job training"
                             }
-                        ],
-                        "DataEndpoint": null
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                        ]
+                    }
                 }
             ],
-            "PageOfAnswers": [],
+			"PageOfAnswers": [],
             "Next": [
                 {
                     "Action": "NextPage",
                     "ReturnId": "6510",
-                    "Conditions": [],
-                    "ConditionMet": false
+                    "Conditions": []
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
-            "Order": null,
             "Active": true,
             "NotRequiredConditions": [
                 {
@@ -86,9 +76,6 @@
                 }
             ],
             "BodyText": "",
-            "Details": null,
-            "DisplayType": null,
-            "Feedback": null,
             "ActivatedByPageId": null
         },
         {
@@ -104,12 +91,10 @@
                     "QuestionTag": null,
                     "Label": "How will your organisation ensure 20% off the job training is relevant to the specific apprenticeship being delivered?",
                     "ShortLabel": "",
-                    "InputClasses": null,
                     "QuestionBodyText": "<p class='govuk-body' id='pya-equality-policy'>Your answer must include how your organisation will:</p><ul class='govuk-list govuk-list--bullet'><li>use technical and theoretical elements of the apprenticeship to decide the best training method</li><li>ensure training methods suit the employers and apprentices circumstances</li><li>work with employers to define a delivery plan</li><li>ensure its delivery plan is flexible and meets employers and apprentices needs</li><li>choose the right time for off the job training - the apprentice must have had sufficient time to gain the right knowledge and skills before starting off the job training</li></ul>",
                     "Hint": "",
                     "Input": {
                         "Type": "Textarea",
-                        "InputClasses": null,
                         "Options": [],
                         "Validations": [
                             {
@@ -122,32 +107,22 @@
                                 "Value": "275",
                                 "ErrorMessage": "Your answer must be 275 words or less"
                             }
-                        ],
-                        "DataEndpoint": null
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                        ]
+                    }
                 }
             ],
-            "PageOfAnswers": [],
+			"PageOfAnswers": [],
             "Next": [
                 {
                     "Action": "ReturnToSection",
-                    "ReturnId": "",
-                    "Conditions": [],
-                    "ConditionMet": false
+                    "ReturnId": "6.6",
+                    "Conditions": []
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
-            "Order": null,
             "Active": false,
             "NotRequiredConditions": [],
             "BodyText": "",
-            "Details": null,
-            "DisplayType": null,
-            "Feedback": null,
             "ActivatedByPageId": "6500"
         }
     ]

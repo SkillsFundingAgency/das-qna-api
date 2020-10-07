@@ -23,7 +23,7 @@ namespace SFA.DAS.QnA.Application.Queries.Sequences.GetSequences
         
         public async Task<HandlerResponse<List<Sequence>>> Handle(GetSequencesRequest request, CancellationToken cancellationToken)
         {
-            var sequences = await _dataContext.ApplicationSequences
+            var sequences = await _dataContext.ApplicationSequences.AsNoTracking()
                 .Where(seq => seq.ApplicationId == request.ApplicationId)
                 .ToListAsync(cancellationToken: cancellationToken);
 

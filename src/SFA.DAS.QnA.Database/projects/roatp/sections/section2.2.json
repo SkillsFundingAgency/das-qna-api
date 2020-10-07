@@ -2,7 +2,6 @@
     "Title": "Your organisation's financial evidence",
     "LinkTitle": "Your organisation's financial evidence",
     "DisplayType": "Pages",
-    "RequestedFeedbackAnswered": null,
     "Pages": [
         {
             "PageId": "2100",
@@ -17,12 +16,10 @@
                     "QuestionTag": "FHATurnoverOver75m",
                     "Label": "Was your organisation's total annual turnover over &pound;75 million for the last financial year?",
                     "ShortLabel": "",
-                    "InputClasses": null,
                     "QuestionBodyText": "",
                     "Hint": "",
                     "Input": {
-                        "Type": "Radio",
-                        "InputClasses": null,
+                        "Type": "Radio",    
                         "Options": [
                             {
                                 "Value": "Yes",
@@ -41,15 +38,11 @@
                                 "Value": "",
                                 "ErrorMessage": "Tell us if your organisation's total annual turnover was over &pound;75 million for the last financial year"
                             }
-                        ],
-                        "DataEndpoint": null
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                        ]
+                    }
                 }
             ],
-            "PageOfAnswers": [],
+			"PageOfAnswers": [],
             "Next": [
                 {
                     "Action": "NextPage",
@@ -59,8 +52,7 @@
                             "QuestionId": "FH-30",
                             "MustEqual": "Yes"
                         }
-                    ],
-                    "ConditionMet": false
+                    ]
                 },
                 {
                     "Action": "NextPage",
@@ -78,8 +70,7 @@
                             "QuestionTag": "UKRLPVerificationCharity",
                             "MustEqual": "TRUE"
                         }
-                    ],
-                    "ConditionMet": false
+                    ]
                 },
                 {
                     "Action": "NextPage",
@@ -98,8 +89,7 @@
                             "QuestionTag": "UKRLPVerificationCompany",
                             "MustEqual": "TRUE"
                         }
-                    ],
-                    "ConditionMet": false
+                    ]
                 },
                 {
                     "Action": "NextPage",
@@ -118,8 +108,7 @@
                             "MustEqual": "",
                             "Contains": ""
                         }
-                    ],
-                    "ConditionMet": false
+                    ]
                 },
                 {
                     "Action": "NextPage",
@@ -133,8 +122,7 @@
                             "QuestionTag": "SoleTradeOrPartnership",
                             "MustEqual": "Sole trader"
                         }
-                    ],
-                    "ConditionMet": false
+                    ]
                 },
                 {
                     "Action": "NextPage",
@@ -148,8 +136,7 @@
                             "QuestionTag": "SoleTradeOrPartnership",
                             "MustEqual": "Partnership"
                         }
-                    ],
-                    "ConditionMet": false
+                    ]
                 },
                 {
                     "Action": "NextPage",
@@ -159,19 +146,13 @@
                             "QuestionId": "FH-30",
                             "MustEqual": "No"
                         }
-                    ],
-                    "ConditionMet": false
+                    ]
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
-            "Order": null,
             "Active": true,
             "NotRequiredConditions": [],
             "BodyText": "<p class='govuk-body'>You can find your organisation's total annual turnover on its:</p><ul class='govuk-list govuk-list--bullet'><li>'profit and loss statement'</li><li>'income and expenditure account'</li><li>'statement of financial activities'</li></ul>",
-            "Details": null,
-            "DisplayType": null,
-            "Feedback": null,
             "ActivatedByPageId": null
         },
         {
@@ -187,12 +168,10 @@
                     "QuestionTag": "FHAFundingTurnover5pc",
                     "Label": "Does your organisation expect its funding from ESFA to be less than 5% of its total annual turnover?",
                     "ShortLabel": "",
-                    "InputClasses": null,
                     "QuestionBodyText": "",
                     "Hint": "",
                     "Input": {
-                        "Type": "Radio",
-                        "InputClasses": null,
+                        "Type": "Radio",    
                         "Options": [
                             {
                                 "Value": "Yes",
@@ -211,15 +190,11 @@
                                 "Value": "",
                                 "ErrorMessage": "Tell us if your organisation expects its funding from ESFA to be less than 5% of its total annual turnover"
                             }
-                        ],
-                        "DataEndpoint": null
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                        ]
+                    }
                 }
             ],
-            "PageOfAnswers": [],
+			"PageOfAnswers": [],
             "Next": [
                 {
                     "Action": "NextPage",
@@ -229,8 +204,7 @@
                             "QuestionId": "FH-40",
                             "MustEqual": "Yes"
                         }
-                    ],
-                    "ConditionMet": false
+                    ]
                 },
                 {
                     "Action": "NextPage",
@@ -248,8 +222,7 @@
                             "QuestionTag": "UKRLPVerificationCharity",
                             "MustEqual": "TRUE"
                         }
-                    ],
-                    "ConditionMet": false
+                    ]
                 },
                 {
                     "Action": "NextPage",
@@ -268,8 +241,7 @@
                             "QuestionTag": "UKRLPVerificationCompany",
                             "MustEqual": "TRUE"
                         }
-                    ],
-                    "ConditionMet": false
+                    ]
                 },
                 {
                     "Action": "NextPage",
@@ -288,8 +260,7 @@
                             "MustEqual": "",
                             "Contains": ""
                         }
-                    ],
-                    "ConditionMet": false
+                    ]
                 },
                 {
                     "Action": "NextPage",
@@ -303,8 +274,7 @@
                             "QuestionTag": "SoleTradeOrPartnership",
                             "MustEqual": "Sole trader"
                         }
-                    ],
-                    "ConditionMet": false
+                    ]
                 },
                 {
                     "Action": "NextPage",
@@ -318,8 +288,7 @@
                             "QuestionTag": "SoleTradeOrPartnership",
                             "MustEqual": "Partnership"
                         }
-                    ],
-                    "ConditionMet": false
+                    ]
                 },
                 {
                     "Action": "NextPage",
@@ -329,13 +298,10 @@
                             "QuestionId": "FH-40",
                             "MustEqual": "No"
                         }
-                    ],
-                    "ConditionMet": false
+                    ]
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
-            "Order": null,
             "Active": false,
             "NotRequiredConditions": [
                 {
@@ -350,8 +316,6 @@
                 "Title": "Show me an example",
                 "Body": "<p class='govuk-body'>Your organisation's total annual turnover is &pound;80 million and it expects to receive &pound;3 million of funding from the ESFA.</p><p class='govuk-body'>This is less than 5% of its total annual turnover, so the answer is yes.</p>"
             },
-            "DisplayType": null,
-            "Feedback": null,
             "ActivatedByPageId": "2100"
         },
         {
@@ -367,7 +331,6 @@
                     "QuestionTag": null,
                     "Label": "Enter your organisation's total annual turnover for the last financial year",
                     "ShortLabel": "",
-                    "InputClasses": null,
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'profit and loss statement', 'income and expenditure account' or 'statement of financial activities'.",
                     "Input": {
@@ -385,19 +348,14 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null,
                         "InputPrefix": "&pound;"
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                    }
                 },
                 {
                     "QuestionId": "FH-60",
                     "QuestionTag": null,
                     "Label": "Enter your organisation's total depreciation and amortisation charges for the last financial year",
                     "ShortLabel": "",
-                    "InputClasses": null,
                     "QuestionBodyText": "",
                     "Hint": "",
                     "Input": {
@@ -415,19 +373,14 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null,
                         "InputPrefix": "&pound;"
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                    }
                 },
                 {
                     "QuestionId": "FH-70",
                     "QuestionTag": null,
                     "Label": "Enter your organisation's profit or loss for the last financial year",
                     "ShortLabel": "",
-                    "InputClasses": null,
                     "QuestionBodyText": "",
                     "Hint": "Profit or loss is the net amount earned after tax.",
                     "Input": {
@@ -445,19 +398,14 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null,
                         "InputPrefix": "&pound;"
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                    }
                 },
                 {
                     "QuestionId": "FH-80",
                     "QuestionTag": null,
                     "Label": "Enter your organisation's total dividends for the last financial year",
                     "ShortLabel": "",
-                    "InputClasses": null,
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'notes to the accounts'.",
                     "Input": {
@@ -475,19 +423,14 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null,
                         "InputPrefix": "&pound;"
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                    }
                 },
                 {
                     "QuestionId": "FH-90",
                     "QuestionTag": null,
                     "Label": "Enter your organisation's total current assets for the last financial year",
                     "ShortLabel": "",
-                    "InputClasses": null,
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'balance sheet'.",
                     "Input": {
@@ -505,19 +448,14 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null,
                         "InputPrefix": "&pound;"
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                    }
                 },
                 {
                     "QuestionId": "FH-100",
                     "QuestionTag": null,
                     "Label": "Enter your organisation's total current liabilities for the last financial year",
                     "ShortLabel": "",
-                    "InputClasses": null,
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'balance sheet' under 'creditors: amount falling due within one year'.",
                     "Input": {
@@ -535,19 +473,14 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null,
                         "InputPrefix": "&pound;"
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                    }
                 },
                 {
                     "QuestionId": "FH-110",
                     "QuestionTag": null,
                     "Label": "Enter your organisation's total borrowings for the last financial year",
                     "ShortLabel": "",
-                    "InputClasses": null,
                     "QuestionBodyText": "",
                     "Hint": "You will need to add up a total of: <ul class='govuk-list govuk-list--bullet govuk-hint'><li>bank overdraft</li><li>loans</li><li>amounts owed to directors - including director loans and director accounts</li><li>amounts owed to subsidiaries - if your organisation is part of a group</li><li>amounts due under finance leases or hire purchase contracts</li></ul>",
                     "Input": {
@@ -565,19 +498,14 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null,
                         "InputPrefix": "&pound;"
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                    }
                 },
                 {
                     "QuestionId": "FH-120",
                     "QuestionTag": null,
                     "Label": "Enter your organisation's net assets for the last financial year",
                     "ShortLabel": "",
-                    "InputClasses": null,
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'balance sheet'.",
                     "Input": {
@@ -595,12 +523,8 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null,
                         "InputPrefix": "&pound;"
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                    }
                 },
                 {
                     "QuestionId": "FH-130",
@@ -625,26 +549,19 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null,
                         "InputPrefix": "&pound;"
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                    }
                 }
             ],
-            "PageOfAnswers": [],
+			"PageOfAnswers": [],
             "Next": [
                 {
                     "Action": "NextPage",
                     "ReturnId": "2150",
-                    "Conditions": [],
-                    "ConditionMet": false
+                    "Conditions": []
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
-            "Order": null,
             "Active": false,
             "NotRequiredConditions": [
                 {
@@ -673,9 +590,6 @@
                 }
             ],
             "BodyText": "<p class='govuk-body'>For negative numbers, use a negative value. For example, '-1000'.</p>",
-            "Details": null,
-            "DisplayType": null,
-            "Feedback": null,
             "ActivatedByPageId": "2100,2110"
         },
         {
@@ -691,7 +605,6 @@
                     "QuestionTag": null,
                     "Label": "Enter your organisation's total annual turnover for the last financial year",
                     "ShortLabel": "",
-                    "InputClasses": null,
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'profit and loss statement', 'income and expenditure account' or 'statement of financial activities'.",
                     "Input": {
@@ -709,19 +622,14 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null,
                         "InputPrefix": "&pound;"
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                    }
                 },
                 {
                     "QuestionId": "FH-150",
                     "QuestionTag": null,
                     "Label": "Enter your organisation's total depreciation and amortisation charges for the last financial year",
                     "ShortLabel": "",
-                    "InputClasses": null,
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'operating profit note to the accounts'. You'll need to add up all the items under 'note 2' and enter the total figure.",
                     "Input": {
@@ -739,19 +647,14 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null,
                         "InputPrefix": "&pound;"
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                    }
                 },
                 {
                     "QuestionId": "FH-160",
                     "QuestionTag": null,
                     "Label": "Enter your organisation's profit or loss for the last financial year",
                     "ShortLabel": "",
-                    "InputClasses": null,
                     "QuestionBodyText": "",
                     "Hint": "Profit or loss is the net amount earned after tax. You can find this under your organisation's 'profit and loss statement' or under 'net profit' or 'net movement in funds' in its accounts.",
                     "Input": {
@@ -769,19 +672,14 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null,
                         "InputPrefix": "&pound;"
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                    }
                 },
                 {
                     "QuestionId": "FH-170",
                     "QuestionTag": null,
                     "Label": "Enter your organisation's total dividends for the last financial year",
                     "ShortLabel": "",
-                    "InputClasses": null,
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'notes to the accounts'.",
                     "Input": {
@@ -799,19 +697,14 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null,
                         "InputPrefix": "&pound;"
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                    }
                 },
                 {
                     "QuestionId": "FH-180",
                     "QuestionTag": null,
                     "Label": "Enter your organisation's total current assets for the last financial year",
                     "ShortLabel": "",
-                    "InputClasses": null,
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'balance sheet'.",
                     "Input": {
@@ -829,19 +722,14 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null,
                         "InputPrefix": "&pound;"
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                    }
                 },
                 {
                     "QuestionId": "FH-190",
                     "QuestionTag": null,
                     "Label": "Enter your organisation's total current liabilities for the last financial year",
                     "ShortLabel": "",
-                    "InputClasses": null,
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'balance sheet' under 'creditors: amount falling due within one year'.",
                     "Input": {
@@ -859,19 +747,14 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null,
                         "InputPrefix": "&pound;"
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                    }
                 },
                 {
                     "QuestionId": "FH-200",
                     "QuestionTag": null,
                     "Label": "Enter your organisation's total borrowings for the last financial year",
                     "ShortLabel": "",
-                    "InputClasses": null,
                     "QuestionBodyText": "",
                     "Hint": "You will need to add up a total of: <ul class='govuk-list govuk-list--bullet govuk-hint'><li>bank overdraft</li><li>loans</li><li>amounts owed to directors - including director loans and director accounts</li><li>amounts owed to subsidiaries - if your organisation is part of a group</li><li>amounts due under finance leases or hire purchase contracts</li></ul>",
                     "Input": {
@@ -889,19 +772,14 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null,
                         "InputPrefix": "&pound;"
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                    }
                 },
                 {
                     "QuestionId": "FH-210",
                     "QuestionTag": null,
                     "Label": "Enter your organisation's net assets for the last financial year",
                     "ShortLabel": "",
-                    "InputClasses": null,
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'balance sheet' under 'the sum of all assets less all liabilities'.",
                     "Input": {
@@ -919,12 +797,8 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null,
                         "InputPrefix": "&pound;"
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                    }
                 },
                 {
                     "QuestionId": "FH-220",
@@ -949,26 +823,19 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null,
                         "InputPrefix": "&pound;"
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                    }
                 }
             ],
-            "PageOfAnswers": [],
+			"PageOfAnswers": [],
             "Next": [
                 {
                     "Action": "NextPage",
                     "ReturnId": "2150",
-                    "Conditions": [],
-                    "ConditionMet": false
+                    "Conditions": []
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
-            "Order": null,
             "Active": false,
             "NotRequiredConditions": [
                 {
@@ -991,9 +858,6 @@
                 }
             ],
             "BodyText": "<p class='govuk-body'>For negative numbers, use a negative value. For example, '-1000'.</p>",
-            "Details": null,
-            "DisplayType": null,
-            "Feedback": null,
             "ActivatedByPageId": "2100,2110"
         },
         {
@@ -1009,7 +873,6 @@
                     "QuestionTag": null,
                     "Label": "Enter your organisation's total annual turnover for the last financial year",
                     "ShortLabel": "",
-                    "InputClasses": null,
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'profit and loss statement', 'income and expenditure account' or 'statement of financial activities'.",
                     "Input": {
@@ -1027,19 +890,14 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null,
                         "InputPrefix": "&pound;"
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                    }
                 },
                 {
                     "QuestionId": "FH-150",
                     "QuestionTag": null,
                     "Label": "Enter your organisation's total depreciation and amortisation charges for the last financial year",
                     "ShortLabel": "",
-                    "InputClasses": null,
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'operating profit note to the accounts'. You'll need to add up all the items under 'note 2' and enter the total figure.",
                     "Input": {
@@ -1057,19 +915,14 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null,
                         "InputPrefix": "&pound;"
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                    }
                 },
                 {
                     "QuestionId": "FH-160",
                     "QuestionTag": null,
                     "Label": "Enter your organisation's profit or loss for the last financial year",
                     "ShortLabel": "",
-                    "InputClasses": null,
                     "QuestionBodyText": "",
                     "Hint": "Profit or loss is the net amount earned after tax. You can find this on your organisation's 'profit and loss statement'.",
                     "Input": {
@@ -1087,19 +940,14 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null,
                         "InputPrefix": "&pound;"
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                    }
                 },
                 {
                     "QuestionId": "FH-170",
                     "QuestionTag": null,
                     "Label": "Enter your organisation's total dividends for the last financial year",
                     "ShortLabel": "",
-                    "InputClasses": null,
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'notes to the accounts'.",
                     "Input": {
@@ -1117,19 +965,14 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null,
                         "InputPrefix": "&pound;"
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                    }
                 },
                 {
                     "QuestionId": "FH-180",
                     "QuestionTag": null,
                     "Label": "Enter your organisation's total current assets for the last financial year",
                     "ShortLabel": "",
-                    "InputClasses": null,
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'balance sheet'.",
                     "Input": {
@@ -1147,19 +990,15 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null,
                         "InputPrefix": "&pound;"
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                    }
                 },
                 {
                     "QuestionId": "FH-190",
                     "QuestionTag": null,
                     "Label": "Enter your organisation's total current liabilities for the last financial year",
                     "ShortLabel": "",
-                    "InputClasses": null,
+
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'balance sheet' under 'creditors: amount falling due within one year'.",
                     "Input": {
@@ -1177,19 +1016,14 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null,
                         "InputPrefix": "&pound;"
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                    }
                 },
                 {
                     "QuestionId": "FH-200",
                     "QuestionTag": null,
                     "Label": "Enter your organisation's total borrowings for the last financial year",
                     "ShortLabel": "",
-                    "InputClasses": null,
                     "QuestionBodyText": "",
                     "Hint": "You will need to add up a total of: <ul class='govuk-list govuk-list--bullet govuk-hint'><li>bank overdraft</li><li>loans</li><li>amounts owed to directors - including director loans and director accounts</li><li>amounts owed to subsidiaries - if your organisation is part of a group</li><li>amounts due under finance leases or hire purchase contracts</li></ul>",
                     "Input": {
@@ -1207,19 +1041,14 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null,
                         "InputPrefix": "&pound;"
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                    }
                 },
                 {
                     "QuestionId": "FH-210",
                     "QuestionTag": null,
                     "Label": "Enter your organisation's net assets for the last financial year",
                     "ShortLabel": "",
-                    "InputClasses": null,
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'balance sheet' under 'the sum of all assets less all liabilities'.",
                     "Input": {
@@ -1237,12 +1066,8 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null,
                         "InputPrefix": "&pound;"
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                    }
                 },
                 {
                     "QuestionId": "FH-220",
@@ -1267,26 +1092,19 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null,
                         "InputPrefix": "&pound;"
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                    }
                 }
             ],
-            "PageOfAnswers": [],
+			"PageOfAnswers": [],
             "Next": [
                 {
                     "Action": "NextPage",
                     "ReturnId": "2150",
-                    "Conditions": [],
-                    "ConditionMet": false
+                    "Conditions": []
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
-            "Order": null,
             "Active": false,
             "NotRequiredConditions": [
                 {
@@ -1309,9 +1127,6 @@
                 }
             ],
             "BodyText": "<p class='govuk-body'>For negative numbers, use a negative value. For example, '-1000'.</p>",
-            "Details": null,
-            "DisplayType": null,
-            "Feedback": null,
             "ActivatedByPageId": "2100,2110"
         },
         {
@@ -1327,7 +1142,6 @@
                     "QuestionTag": null,
                     "Label": "Enter your organisation's total annual turnover for the last financial year",
                     "ShortLabel": "",
-                    "InputClasses": null,
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'profit and loss statement', 'income and expenditure account' or 'statement of financial activities'.",
                     "Input": {
@@ -1345,19 +1159,14 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null,
                         "InputPrefix": "&pound;"
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                    }
                 },
                 {
                     "QuestionId": "FH-150",
                     "QuestionTag": null,
                     "Label": "Enter your organisation's total depreciation and amortisation charges for the last financial year",
                     "ShortLabel": "",
-                    "InputClasses": null,
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'operating profit note to the accounts'. You'll need to add up all the items under 'note 2' and enter the total figure.",
                     "Input": {
@@ -1375,19 +1184,14 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null,
                         "InputPrefix": "&pound;"
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                    }
                 },
                 {
                     "QuestionId": "FH-160",
                     "QuestionTag": null,
                     "Label": "Enter your organisation's profit or loss for the last financial year",
                     "ShortLabel": "",
-                    "InputClasses": null,
                     "QuestionBodyText": "",
                     "Hint": "Profit or loss is the net amount earned after tax. You can find this under 'net profit' or 'net movement in funds' in your organisation's accounts.",
                     "Input": {
@@ -1405,19 +1209,15 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null,
                         "InputPrefix": "&pound;"
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                    }
                 },
                 {
                     "QuestionId": "FH-170",
                     "QuestionTag": null,
                     "Label": "Enter your organisation's total dividends for the last financial year",
                     "ShortLabel": "",
-                    "InputClasses": null,
+
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'notes to the accounts'.",
                     "Input": {
@@ -1435,19 +1235,14 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null,
                         "InputPrefix": "&pound;"
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                    }
                 },
                 {
                     "QuestionId": "FH-180",
                     "QuestionTag": null,
                     "Label": "Enter your organisation's total current assets for the last financial year",
                     "ShortLabel": "",
-                    "InputClasses": null,
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'balance sheet'.",
                     "Input": {
@@ -1465,19 +1260,14 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null,
                         "InputPrefix": "&pound;"
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                    }
                 },
                 {
                     "QuestionId": "FH-190",
                     "QuestionTag": null,
                     "Label": "Enter your organisation's total current liabilities for the last financial year",
                     "ShortLabel": "",
-                    "InputClasses": null,
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'balance sheet' under 'creditors: amount falling due within one year'.",
                     "Input": {
@@ -1495,19 +1285,14 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null,
                         "InputPrefix": "&pound;"
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                    }
                 },
                 {
                     "QuestionId": "FH-200",
                     "QuestionTag": null,
                     "Label": "Enter your organisation's total borrowings for the last financial year",
                     "ShortLabel": "",
-                    "InputClasses": null,
                     "QuestionBodyText": "",
                     "Hint": "You will need to add up a total of: <ul class='govuk-list govuk-list--bullet govuk-hint'><li>bank overdraft</li><li>loans</li><li>amounts owed to directors - including director loans and director accounts</li><li>amounts owed to subsidiaries - if your organisation is part of a group</li><li>amounts due under finance leases or hire purchase contracts</li></ul>",
                     "Input": {
@@ -1525,19 +1310,14 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null,
                         "InputPrefix": "&pound;"
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                    }
                 },
                 {
                     "QuestionId": "FH-210",
                     "QuestionTag": null,
                     "Label": "Enter your organisation's net assets for the last financial year",
                     "ShortLabel": "",
-                    "InputClasses": null,
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'balance sheet' under 'the sum of all assets less all liabilities'.",
                     "Input": {
@@ -1555,12 +1335,8 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null,
                         "InputPrefix": "&pound;"
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                    }
                 },
                 {
                     "QuestionId": "FH-220",
@@ -1585,26 +1361,19 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null,
                         "InputPrefix": "&pound;"
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                    }
                 }
             ],
-            "PageOfAnswers": [],
+			"PageOfAnswers": [],
             "Next": [
                 {
                     "Action": "NextPage",
                     "ReturnId": "2150",
-                    "Conditions": [],
-                    "ConditionMet": false
+                    "Conditions": []
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
-            "Order": null,
             "Active": false,
             "NotRequiredConditions": [
                 {
@@ -1627,9 +1396,6 @@
                 }
             ],
             "BodyText": "<p class='govuk-body'>For negative numbers, use a negative value. For example, '-1000'.</p>",
-            "Details": null,
-            "DisplayType": null,
-            "Feedback": null,
             "ActivatedByPageId": "2100,2110"
         },
         {
@@ -1645,7 +1411,6 @@
                     "QuestionTag": null,
                     "Label": "Enter your organisation's total annual turnover for the last financial year",
                     "ShortLabel": "",
-                    "InputClasses": null,
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'profit and loss statement', 'income and expenditure account' or 'statement of financial activities'.",
                     "Input": {
@@ -1663,19 +1428,14 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null,
                         "InputPrefix": "&pound;"
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                    }
                 },
                 {
                     "QuestionId": "FH-240",
                     "QuestionTag": null,
                     "Label": "Enter your organisation's total depreciation and amortisation charges for the last financial year",
                     "ShortLabel": "",
-                    "InputClasses": null,
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'operating profit note to the accounts'. You'll need to add up all the items under 'expenditure' and enter the total figure.",
                     "Input": {
@@ -1693,19 +1453,14 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null,
                         "InputPrefix": "&pound;"
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                    }
                 },
                 {
                     "QuestionId": "FH-250",
                     "QuestionTag": null,
                     "Label": "Enter your organisation's profit or loss for the last financial year",
                     "ShortLabel": "",
-                    "InputClasses": null,
                     "QuestionBodyText": "",
                     "Hint": "Profit or loss is the net amount earned after tax. You can find this under 'net profit' in your organisation accounts.",
                     "Input": {
@@ -1723,19 +1478,14 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null,
                         "InputPrefix": "&pound;"
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                    }
                 },
                 {
                     "QuestionId": "FH-260",
                     "QuestionTag": null,
                     "Label": "Enter your organisation's total dividends for the last financial year",
                     "ShortLabel": "",
-                    "InputClasses": null,
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'notes to the accounts'.",
                     "Input": {
@@ -1753,19 +1503,14 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null,
                         "InputPrefix": "&pound;"
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                    }
                 },
                 {
                     "QuestionId": "FH-270",
                     "QuestionTag": null,
                     "Label": "Enter your organisation's total current assets for the last financial year",
                     "ShortLabel": "",
-                    "InputClasses": null,
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'balance sheet'.",
                     "Input": {
@@ -1783,19 +1528,15 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null,
                         "InputPrefix": "&pound;"
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                    }
                 },
                 {
                     "QuestionId": "FH-280",
                     "QuestionTag": null,
                     "Label": "Enter your organisation's total current liabilities for the last financial year",
                     "ShortLabel": "",
-                    "InputClasses": null,
+
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'balance sheet' under 'creditors: amount falling due within one year'.",
                     "Input": {
@@ -1813,19 +1554,14 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null,
                         "InputPrefix": "&pound;"
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                    }
                 },
                 {
                     "QuestionId": "FH-290",
                     "QuestionTag": null,
                     "Label": "Enter your organisation's total borrowings for the last financial year",
                     "ShortLabel": "",
-                    "InputClasses": null,
                     "QuestionBodyText": "",
                     "Hint": "You will need to add up a total of: <ul class='govuk-list govuk-list--bullet govuk-hint'><li>bank overdraft</li><li>loans</li><li>amounts owed to directors - including director loans and director accounts</li><li>amounts owed to subsidiaries - if your organisation is part of a group</li><li>amounts due under finance leases or hire purchase contracts</li></ul>",
                     "Input": {
@@ -1843,19 +1579,14 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null,
                         "InputPrefix": "&pound;"
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                    }
                 },
                 {
                     "QuestionId": "FH-300",
                     "QuestionTag": null,
                     "Label": "Enter your organisation's net assets for the last financial year",
                     "ShortLabel": "",
-                    "InputClasses": null,
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'balance sheet' under the 'capital account balance'.",
                     "Input": {
@@ -1873,12 +1604,8 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null,
                         "InputPrefix": "&pound;"
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                    }
                 },
                 {
                     "QuestionId": "FH-310",
@@ -1903,26 +1630,19 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null,
                         "InputPrefix": "&pound;"
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                    }
                 }
             ],
-            "PageOfAnswers": [],
+			"PageOfAnswers": [],
             "Next": [
                 {
                     "Action": "NextPage",
                     "ReturnId": "2150",
-                    "Conditions": [],
-                    "ConditionMet": false
+                    "Conditions": []
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
-            "Order": null,
             "Active": false,
             "NotRequiredConditions": [
                 {
@@ -1939,9 +1659,6 @@
                 }
             ],
             "BodyText": "<p class='govuk-body'>For negative numbers, use a negative value. For example, '-1000'.</p>",
-            "Details": null,
-            "DisplayType": null,
-            "Feedback": null,
             "ActivatedByPageId": "2100,2110"
         },
         {
@@ -1957,7 +1674,6 @@
                     "QuestionTag": null,
                     "Label": "Enter your organisation's total annual turnover for the last financial year",
                     "ShortLabel": "",
-                    "InputClasses": null,
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'profit and loss statement', 'income and expenditure account' or 'statement of financial activities'.",
                     "Input": {
@@ -1975,19 +1691,14 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null,
                         "InputPrefix": "&pound;"
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                    }
                 },
                 {
                     "QuestionId": "FH-240",
                     "QuestionTag": null,
                     "Label": "Enter your organisation's total depreciation and amortisation charges for the last financial year",
                     "ShortLabel": "",
-                    "InputClasses": null,
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'operating profit note to the accounts'. You'll need to add up all the items under 'expenditure' and enter the total figure.",
                     "Input": {
@@ -2005,19 +1716,14 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null,
                         "InputPrefix": "&pound;"
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                    }
                 },
                 {
                     "QuestionId": "FH-250",
                     "QuestionTag": null,
                     "Label": "Enter your organisation's profit or loss for the last financial year",
                     "ShortLabel": "",
-                    "InputClasses": null,
                     "QuestionBodyText": "",
                     "Hint": "Profit or loss is the net amount earned after tax.",
                     "Input": {
@@ -2035,19 +1741,14 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null,
                         "InputPrefix": "&pound;"
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                    }
                 },
                 {
                     "QuestionId": "FH-260",
                     "QuestionTag": null,
                     "Label": "Enter your organisation's total dividends for the last financial year",
                     "ShortLabel": "",
-                    "InputClasses": null,
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'notes to the accounts'.",
                     "Input": {
@@ -2065,19 +1766,14 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null,
                         "InputPrefix": "&pound;"
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                    }
                 },
                 {
                     "QuestionId": "FH-270",
                     "QuestionTag": null,
                     "Label": "Enter your organisation's total current assets for the last financial year",
                     "ShortLabel": "",
-                    "InputClasses": null,
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'balance sheet'.",
                     "Input": {
@@ -2095,19 +1791,15 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null,
                         "InputPrefix": "&pound;"
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                    }
                 },
                 {
                     "QuestionId": "FH-280",
                     "QuestionTag": null,
                     "Label": "Enter your organisation's total current liabilities for the last financial year",
                     "ShortLabel": "",
-                    "InputClasses": null,
+
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'balance sheet' under 'creditors: amount falling due within one year'.",
                     "Input": {
@@ -2125,19 +1817,14 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null,
                         "InputPrefix": "&pound;"
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                    }
                 },
                 {
                     "QuestionId": "FH-290",
                     "QuestionTag": null,
                     "Label": "Enter your organisation's total borrowings for the last financial year",
                     "ShortLabel": "",
-                    "InputClasses": null,
                     "QuestionBodyText": "",
                     "Hint": "You will need to add up a total of: <ul class='govuk-list govuk-list--bullet govuk-hint'><li>bank overdraft</li><li>loans</li><li>amounts owed to directors - including director loans and director accounts</li><li>amounts owed to subsidiaries - if your organisation is part of a group</li><li>amounts due under finance leases or hire purchase contracts</li></ul>",
                     "Input": {
@@ -2155,19 +1842,14 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null,
                         "InputPrefix": "&pound;"
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                    }
                 },
                 {
                     "QuestionId": "FH-300",
                     "QuestionTag": null,
                     "Label": "Enter your organisation's net assets for the last financial year",
                     "ShortLabel": "",
-                    "InputClasses": null,
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'balance sheet' under the 'capital account balance'.",
                     "Input": {
@@ -2185,12 +1867,8 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null,
                         "InputPrefix": "&pound;"
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                    }
                 },
                 {
                     "QuestionId": "FH-310",
@@ -2215,26 +1893,19 @@
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                             }
                         ],
-                        "DataEndpoint": null,
                         "InputPrefix": "&pound;"
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                    }
                 }
             ],
-            "PageOfAnswers": [],
+			"PageOfAnswers": [],
             "Next": [
                 {
                     "Action": "NextPage",
                     "ReturnId": "2150",
-                    "Conditions": [],
-                    "ConditionMet": false
+                    "Conditions": []
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
-            "Order": null,
             "Active": false,
             "NotRequiredConditions": [
                 {
@@ -2251,9 +1922,6 @@
                 }
             ],
             "BodyText": "<p class='govuk-body'>For negative numbers, use a negative value. For example, '-1000'.</p>",
-            "Details": null,
-            "DisplayType": null,
-            "Feedback": null,
             "ActivatedByPageId": "2100,2110"
         },
         {
@@ -2269,12 +1937,10 @@
                     "QuestionTag": "FHAHas12MonthsStatements",
                     "Label": "Has your organisation produced its latest full financial statements covering a minimum of 12 months?",
                     "ShortLabel": "",
-                    "InputClasses": null,
                     "QuestionBodyText": "",
                     "Hint": "",
                     "Input": {
-                        "Type": "Radio",
-                        "InputClasses": null,
+                        "Type": "Radio",    
                         "Options": [
                             {
                                 "Value": "Yes",
@@ -2293,15 +1959,11 @@
                                 "Value": "",
                                 "ErrorMessage": "Tell us if your organisation has produced full financial statements covering a minimum of 12 months"
                             }
-                        ],
-                        "DataEndpoint": null
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                        ]
+                    }
                 }
             ],
-            "PageOfAnswers": [],
+			"PageOfAnswers": [],
             "Next": [
                 {
                     "Action": "NextPage",
@@ -2311,8 +1973,7 @@
                             "QuestionId": "FHA-320",
                             "MustEqual": "Yes"
                         }
-                    ],
-                    "ConditionMet": false
+                    ]
                 },
                 {
                     "Action": "NextPage",
@@ -2322,19 +1983,13 @@
                             "QuestionId": "FHA-320",
                             "MustEqual": "No"
                         }
-                    ],
-                    "ConditionMet": false
+                    ]
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
-            "Order": null,
             "Active": false,
             "NotRequiredConditions": [],
             "BodyText": "",
-            "Details": null,
-            "DisplayType": null,
-            "Feedback": null,
             "ActivatedByPageId": "2110,2120,2130,2131,2132,2140,2141"
         },
         {
@@ -2350,12 +2005,10 @@
                     "QuestionTag": "FHA12MonthsFinancialStatements",
                     "Label": "Upload your organisation's latest full financial statements covering a minimum of 12 months",
                     "ShortLabel": "",
-                    "InputClasses": null,
                     "QuestionBodyText": "<p class='govuk-body'>Financial statements must include a:</p><ul class='govuk-list govuk-list--bullet'><li>balance sheet - showing the value of everything your organisation owns, owes and is owed on the last day of the financial year</li><li>profit and loss account - showing your organisation's sales, running costs and profit and loss it made over the financial year</li><li>detailed notes about the accounts</li><li>breakdown of creditors and borrowings</li></ul><p class='govuk-body'>If applicable, financial statements should be signed and filed with Companies House or the Charity Commission of England and Wales.</p><p class='govuk-body'>The file must be a PDF and smaller than 5MB.</p>",
                     "Hint": "Upload a file",
                     "Input": {
-                        "Type": "FileUpload",
-                        "InputClasses": null,
+                        "Type": "FileUpload",    
                         "Options": [],
                         "Validations": [
                             {
@@ -2368,26 +2021,19 @@
                                 "Value": "pdf",
                                 "ErrorMessage": "The selected file must be a PDF"
                             }
-                        ],
-                        "DataEndpoint": null
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                        ]
+                    }
                 }
             ],
-            "PageOfAnswers": [],
+			"PageOfAnswers": [],
             "Next": [
                 {
                     "Action": "NextPage",
                     "ReturnId": "2260",
-                    "Conditions": [],
-                    "ConditionMet": false
+                    "Conditions": []
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
-            "Order": null,
             "Active": false,
             "NotRequiredConditions": [
                 {
@@ -2398,9 +2044,6 @@
                 }
             ],
             "BodyText": "",
-            "Details": null,
-            "DisplayType": null,
-            "Feedback": null,
             "ActivatedByPageId": "2150"
         },
         {
@@ -2416,12 +2059,10 @@
                     "QuestionTag": "FHAPartialFinancialStatements",
                     "Label": "Has your organisation produced financial statements covering any period within the last 12 months?",
                     "ShortLabel": "",
-                    "InputClasses": null,
                     "QuestionBodyText": "",
                     "Hint": "",
                     "Input": {
-                        "Type": "Radio",
-                        "InputClasses": null,
+                        "Type": "Radio",    
                         "Options": [
                             {
                                 "Value": "Yes",
@@ -2440,15 +2081,11 @@
                                 "Value": "",
                                 "ErrorMessage": "Tell us if your organisation has produced financial statements covering any period within the last 12 months"
                             }
-                        ],
-                        "DataEndpoint": null
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                        ]
+                    }
                 }
             ],
-            "PageOfAnswers": [],
+			"PageOfAnswers": [],
             "Next": [
                 {
                     "Action": "NextPage",
@@ -2458,8 +2095,7 @@
                             "QuestionId": "FH-340",
                             "MustEqual": "Yes"
                         }
-                    ],
-                    "ConditionMet": false
+                    ]
                 },
                 {
                     "Action": "NextPage",
@@ -2473,8 +2109,7 @@
                             "QuestionTag": "ApplyProviderRoute",
                             "MustEqual": "1"
                         }
-                    ],
-                    "ConditionMet": false
+                    ]
                 },
                 {
                     "Action": "NextPage",
@@ -2488,8 +2123,7 @@
                             "QuestionTag": "ApplyProviderRoute",
                             "MustEqual": "2"
                         }
-                    ],
-                    "ConditionMet": false
+                    ]
                 },
                 {
                     "Action": "NextPage",
@@ -2503,13 +2137,10 @@
                             "QuestionTag": "ApplyProviderRoute",
                             "MustEqual": "3"
                         }
-                    ],
-                    "ConditionMet": false
+                    ]
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
-            "Order": null,
             "Active": false,
             "NotRequiredConditions": [
                 {
@@ -2520,9 +2151,6 @@
                 }
             ],
             "BodyText": "",
-            "Details": null,
-            "DisplayType": null,
-            "Feedback": null,
             "ActivatedByPageId": "2150"
         },
         {
@@ -2533,18 +2161,15 @@
             "LinkTitle": "What you need to upload",
             "InfoText": "",
             "Questions": [],
-            "PageOfAnswers": [],
+			"PageOfAnswers": [],
             "Next": [
                 {
                     "Action": "NextPage",
                     "ReturnId": "2190",
-                    "Conditions": [],
-                    "ConditionMet": false
+                    "Conditions": []
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
-            "Order": null,
             "Active": false,
             "NotRequiredConditions": [
                 {
@@ -2561,9 +2186,6 @@
                 }
             ],
             "BodyText": "<p class='govuk-body'>You'll need to upload your organisation's:</p><ul class='govuk-list govuk-list--bullet'><li>financial statements covering any period within the last 12 months</li><li>management accounts covering the remaining period to date</li></ul><p class='govuk-body'>Your management accounts must start from the date your financial statements end.</p><p class='govuk-body'>For example, if your financial statements end on 31 January, your management accounts must start on 1 February.</p>",
-            "Details": null,
-            "DisplayType": null,
-            "Feedback": null,
             "ActivatedByPageId": "2170"
         },
         {
@@ -2579,12 +2201,10 @@
                     "QuestionTag": null,
                     "Label": "Upload your organisation's financial statements covering any period within the last 12 months",
                     "ShortLabel": "",
-                    "InputClasses": null,
                     "QuestionBodyText": "<p class='govuk-body'>Financial statements must include a:</p><ul class='govuk-list govuk-list--bullet'><li>balance sheet - showing the value of everything your organisation owns, owes and is owed</li><li>profit and loss account - showing your organisation's sales, running costs and profit and loss it's made</li><li>detailed notes about the accounts</li><li>breakdown of creditors and borrowings</li></ul><p class='govuk-body'>If applicable, financial statements should be signed and filed with Companies House or the Charity Commission of England and Wales.</p><p class='govuk-body'>Each file must be a PDF and smaller than 5MB.</p>",
                     "Hint": "Upload a file",
                     "Input": {
-                        "Type": "FileUpload",
-                        "InputClasses": null,
+                        "Type": "FileUpload",    
                         "Options": [],
                         "Validations": [
                             {
@@ -2597,26 +2217,19 @@
                                 "Value": "pdf",
                                 "ErrorMessage": "The selected file must be a PDF"
                             }
-                        ],
-                        "DataEndpoint": null
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                        ]
+                    }
                 }
             ],
-            "PageOfAnswers": [],
+			"PageOfAnswers": [],
             "Next": [
                 {
                     "Action": "NextPage",
                     "ReturnId": "2200",
-                    "Conditions": [],
-                    "ConditionMet": false
+                    "Conditions": []
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
-            "Order": null,
             "Active": false,
             "NotRequiredConditions": [
                 {
@@ -2633,9 +2246,6 @@
                 }
             ],
             "BodyText": "",
-            "Details": null,
-            "DisplayType": null,
-            "Feedback": null,
             "ActivatedByPageId": "2180"
         },
         {
@@ -2646,18 +2256,15 @@
             "LinkTitle": "What you need to upload",
             "InfoText": "",
             "Questions": [],
-            "PageOfAnswers": [],
+			"PageOfAnswers": [],
             "Next": [
                 {
                     "Action": "NextPage",
                     "ReturnId": "2200",
-                    "Conditions": [],
-                    "ConditionMet": false
+                    "Conditions": []
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
-            "Order": null,
             "Active": false,
             "NotRequiredConditions": [
                 {
@@ -2674,9 +2281,6 @@
                 }
             ],
             "BodyText": "<p class='govuk-body'>You'll need to upload your organisation's full management accounts for the last 12 months.</p>",
-            "Details": null,
-            "DisplayType": null,
-            "Feedback": null,
             "ActivatedByPageId": "2170"
         },
         {
@@ -2692,12 +2296,10 @@
                     "QuestionTag": null,
                     "Label": "Upload your organisation's management accounts covering the remaining period to date",
                     "ShortLabel": "",
-                    "InputClasses": null,
                     "QuestionBodyText": "<p class='govuk-body'>Management accounts must include:</p><ul class='govuk-list govuk-list--bullet'><li>a balance sheet - showing the value of everything your organisation owns, owes and is owed to date</li><li>a cash flow statement</li><li>profit and loss account - showing your organisation's sales, running costs and profit and loss it's made</li><li>detailed notes about any assumptions made</li></ul><p class='govuk-body'>Your management accounts must start from the date your financial statements end.</p><p class='govuk-body'>Each file must be a PDF and smaller than 5MB.</p>",
                     "Hint": "Upload a file",
                     "Input": {
-                        "Type": "FileUpload",
-                        "InputClasses": null,
+                        "Type": "FileUpload",    
                         "Options": [],
                         "Validations": [
                             {
@@ -2710,26 +2312,19 @@
                                 "Value": "pdf",
                                 "ErrorMessage": "The selected file must be a PDF"
                             }
-                        ],
-                        "DataEndpoint": null
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                        ]
+                    }
                 }
             ],
-            "PageOfAnswers": [],
+			"PageOfAnswers": [],
             "Next": [
                 {
                     "Action": "NextPage",
                     "ReturnId": "2260",
-                    "Conditions": [],
-                    "ConditionMet": false
+                    "Conditions": []
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
-            "Order": null,
             "Active": false,
             "NotRequiredConditions": [
                 {
@@ -2740,9 +2335,6 @@
                 }
             ],
             "BodyText": "",
-            "Details": null,
-            "DisplayType": null,
-            "Feedback": null,
             "ActivatedByPageId": "2170,2190,2195"
         },
         {
@@ -2758,12 +2350,10 @@
                     "QuestionTag": "FHAHas12MonthsManagementAccs",
                     "Label": "Has your organisation produced full management accounts covering the last 12 months?",
                     "ShortLabel": "",
-                    "InputClasses": null,
                     "QuestionBodyText": "",
                     "Hint": "",
                     "Input": {
-                        "Type": "Radio",
-                        "InputClasses": null,
+                        "Type": "Radio",    
                         "Options": [
                             {
                                 "Value": "Yes",
@@ -2782,15 +2372,11 @@
                                 "Value": "",
                                 "ErrorMessage": "Tell us if your organisation has produced full management accounts covering the last 12 months"
                             }
-                        ],
-                        "DataEndpoint": null
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                        ]
+                    }
                 }
             ],
-            "PageOfAnswers": [],
+			"PageOfAnswers": [],
             "Next": [
                 {
                     "Action": "NextPage",
@@ -2800,8 +2386,7 @@
                             "QuestionId": "FH-370",
                             "MustEqual": "Yes"
                         }
-                    ],
-                    "ConditionMet": false
+                    ]
                 },
                 {
                     "Action": "NextPage",
@@ -2811,13 +2396,10 @@
                             "QuestionId": "FH-370",
                             "MustEqual": "No"
                         }
-                    ],
-                    "ConditionMet": false
+                    ]
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
-            "Order": null,
             "Active": false,
             "NotRequiredConditions": [
                 {
@@ -2835,9 +2417,6 @@
                 }
             ],
             "BodyText": "",
-            "Details": null,
-            "DisplayType": null,
-            "Feedback": null,
             "ActivatedByPageId": "2170"
         },
         {
@@ -2848,18 +2427,15 @@
             "LinkTitle": "What you need to upload",
             "InfoText": "",
             "Questions": [],
-            "PageOfAnswers": [],
+			"PageOfAnswers": [],
             "Next": [
                 {
                     "Action": "NextPage",
                     "ReturnId": "2225",
-                    "Conditions": [],
-                    "ConditionMet": false
+                    "Conditions": []
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
-            "Order": null,
             "Active": false,
             "NotRequiredConditions": [
                 {
@@ -2870,9 +2446,6 @@
                 }
             ],
             "BodyText": "<p class='govuk-body'>You'll need to upload your organisation's full management accounts for the last 12 months.</p>",
-            "Details": null,
-            "DisplayType": null,
-            "Feedback": null,
             "ActivatedByPageId": "2210"
         },
         {
@@ -2888,12 +2461,10 @@
                     "QuestionTag": null,
                     "Label": "Upload your organisation's full management accounts for the last 12 months",
                     "ShortLabel": "",
-                    "InputClasses": null,
                     "QuestionBodyText": "<p class='govuk-body'>Management accounts must include:</p><ul class='govuk-list govuk-list--bullet'><li>a balance sheet - showing the value of everything your organisation owns, owes and is owed for the last 12 months</li><li>a cash flow statement</li><li>profit and loss account - showing your organisation's sales, running costs and profit and loss it's made</li><li>detailed notes about any assumptions made</li></ul><p class='govuk-body'>Each must be a PDF and smaller than 5MB.</p>",
                     "Hint": "Upload a file",
                     "Input": {
-                        "Type": "FileUpload",
-                        "InputClasses": null,
+                        "Type": "FileUpload",    
                         "Options": [],
                         "Validations": [
                             {
@@ -2906,26 +2477,19 @@
                                 "Value": "pdf",
                                 "ErrorMessage": "The selected file must be a PDF"
                             }
-                        ],
-                        "DataEndpoint": null
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                        ]
+                    }
                 }
             ],
-            "PageOfAnswers": [],
+			"PageOfAnswers": [],
             "Next": [
                 {
                     "Action": "NextPage",
                     "ReturnId": "2260",
-                    "Conditions": [],
-                    "ConditionMet": false
+                    "Conditions": []
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
-            "Order": null,
             "Active": false,
             "NotRequiredConditions": [
                 {
@@ -2943,9 +2507,6 @@
                 }
             ],
             "BodyText": "",
-            "Details": null,
-            "DisplayType": null,
-            "Feedback": null,
             "ActivatedByPageId": "2220"
         },
         {
@@ -2956,18 +2517,15 @@
             "LinkTitle": "What you need to upload",
             "InfoText": "",
             "Questions": [],
-            "PageOfAnswers": [],
+			"PageOfAnswers": [],
             "Next": [
                 {
                     "Action": "NextPage",
                     "ReturnId": "2240",
-                    "Conditions": [],
-                    "ConditionMet": false
+                    "Conditions": []
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
-            "Order": null,
             "Active": false,
             "NotRequiredConditions": [
                 {
@@ -2978,9 +2536,6 @@
                 }
             ],
             "BodyText": "<p class='govuk-body'>You'll need to upload your organisation's:</p><ul class='govuk-list govuk-list--bullet'><li>management accounts covering at least 3 months within the last 12 months to show active trading</li><li>financial projections covering the remaining period</li></ul><p class='govuk-body'>Management accounts and financial projections must cover a 12-month period in total.</p>",
-            "Details": null,
-            "DisplayType": null,
-            "Feedback": null,
             "ActivatedByPageId": "2210"
         },
         {
@@ -2996,12 +2551,10 @@
                     "QuestionTag": null,
                     "Label": "Upload your organisation's management accounts covering at least 3 months within the last 12 months",
                     "ShortLabel": "",
-                    "InputClasses": null,
                     "QuestionBodyText": "<p class='govuk-body'>Management accounts must include:</p><ul class='govuk-list govuk-list--bullet'><li>a balance sheet - showing the value of everything your organisation owns, owes and is owed</li><li>a cash flow statement</li><li>profit and loss account - showing your organisation's sales, running costs and profit and loss it's made</li><li>detailed notes about any assumptions made</li></ul><p class='govuk-body'>Each file must be a PDF and smaller than 5MB.</p>",
                     "Hint": "Upload a file",
                     "Input": {
-                        "Type": "FileUpload",
-                        "InputClasses": null,
+                        "Type": "FileUpload",    
                         "Options": [],
                         "Validations": [
                             {
@@ -3014,26 +2567,19 @@
                                 "Value": "pdf",
                                 "ErrorMessage": "The selected file must be a PDF"
                             }
-                        ],
-                        "DataEndpoint": null
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                        ]
+                    }
                 }
             ],
-            "PageOfAnswers": [],
+			"PageOfAnswers": [],
             "Next": [
                 {
                     "Action": "NextPage",
                     "ReturnId": "2250",
-                    "Conditions": [],
-                    "ConditionMet": false
+                    "Conditions": []
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
-            "Order": null,
             "Active": false,
             "NotRequiredConditions": [
                 {
@@ -3044,9 +2590,6 @@
                 }
             ],
             "BodyText": "",
-            "Details": null,
-            "DisplayType": null,
-            "Feedback": null,
             "ActivatedByPageId": "2230"
         },
         {
@@ -3062,12 +2605,10 @@
                     "QuestionTag": null,
                     "Label": "Upload your organisation's financial projections covering the remaining period",
                     "ShortLabel": "",
-                    "InputClasses": null,
                     "QuestionBodyText": "<p class='govuk-body'>Financial projections must include:</p><ul class='govuk-list govuk-list--bullet'><li>a balance sheet - showing a forecast of everything your organisation will own, owe and be owed</li><li>a profit and loss account - showing a forecast of your organisation's sales, running costs and the profit and loss</li><li>detailed notes about the accounts</li><li>a breakdown of creditors and borrowings</li></ul><p class='govuk-body'>Each file must be a PDF and smaller than 5MB.</p>",
                     "Hint": "Upload a file",
                     "Input": {
-                        "Type": "FileUpload",
-                        "InputClasses": null,
+                        "Type": "FileUpload",    
                         "Options": [],
                         "Validations": [
                             {
@@ -3080,26 +2621,19 @@
                                 "Value": "pdf",
                                 "ErrorMessage": "The selected file must be a PDF"
                             }
-                        ],
-                        "DataEndpoint": null
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                        ]
+                    }
                 }
             ],
-            "PageOfAnswers": [],
+			"PageOfAnswers": [],
             "Next": [
                 {
                     "Action": "NextPage",
                     "ReturnId": "2260",
-                    "Conditions": [],
-                    "ConditionMet": false
+                    "Conditions": []
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
-            "Order": null,
             "Active": false,
             "NotRequiredConditions": [
                 {
@@ -3110,9 +2644,6 @@
                 }
             ],
             "BodyText": "",
-            "Details": null,
-            "DisplayType": null,
-            "Feedback": null,
             "ActivatedByPageId": "2240"
         },
         {
@@ -3128,12 +2659,10 @@
                     "QuestionTag": null,
                     "Label": "Who prepared the answers and uploads in this section?",
                     "ShortLabel": "",
-                    "InputClasses": null,
                     "QuestionBodyText": "<p class='govuk-hint'>Select all that apply.</p>",
                     "Hint": "",
                     "Input": {
-                        "Type": "CheckboxList",
-                        "InputClasses": null,
+                        "Type": "CheckboxList",    
                         "Options": [
                             {
                                 "Value": "An employee in your organisation",
@@ -3162,32 +2691,22 @@
                                 "Value": "",
                                 "ErrorMessage": "Tell us who prepared the answers and uploads in this section"
                             }
-                        ],
-                        "DataEndpoint": null
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                        ]
+                    }
                 }
             ],
-            "PageOfAnswers": [],
+			"PageOfAnswers": [],
             "Next": [
                 {
                     "Action": "ReturnToSection",
-                    "ReturnId": "2.2",
-                    "Conditions": [],
-                    "ConditionMet": false
+                    "ReturnId": "2.3",
+                    "Conditions": []
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
-            "Order": null,
             "Active": false,
             "NotRequiredConditions": [],
             "BodyText": "",
-            "Details": null,
-            "DisplayType": null,
-            "Feedback": null,
             "ActivatedByPageId": "2160,2200,2220,2250"
         }
     ]

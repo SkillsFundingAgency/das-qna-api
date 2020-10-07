@@ -18,7 +18,7 @@ namespace SFA.DAS.QnA.Application.Queries.WorkflowSections.GetWorkflowSection
         
         public async Task<HandlerResponse<WorkflowSection>> Handle(GetWorkflowSectionRequest request, CancellationToken cancellationToken)
         {
-            var section = await _dataContext.WorkflowSections.SingleOrDefaultAsync(sec => sec.Id == request.SectionId && sec.ProjectId == request.ProjectId, cancellationToken);
+            var section = await _dataContext.WorkflowSections.AsNoTracking().SingleOrDefaultAsync(sec => sec.Id == request.SectionId && sec.ProjectId == request.ProjectId, cancellationToken);
             return section is null 
                 ? new HandlerResponse<WorkflowSection>(success: false, message: "Project or WorkflowSection does not exist") 
                 : new HandlerResponse<WorkflowSection>(section);

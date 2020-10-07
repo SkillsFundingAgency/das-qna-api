@@ -20,7 +20,7 @@ namespace SFA.DAS.QnA.Application.Queries.WorkflowSections.GetWorkflowSections
         
         public async Task<HandlerResponse<List<WorkflowSection>>> Handle(GetWorkflowSectionsRequest request, CancellationToken cancellationToken)
         {
-            var sections = await _dataContext.WorkflowSections.Where(sec => sec.ProjectId == request.ProjectId).ToListAsync(cancellationToken);
+            var sections = await _dataContext.WorkflowSections.AsNoTracking().Where(sec => sec.ProjectId == request.ProjectId).ToListAsync(cancellationToken);
             return !sections.Any() 
                 ? new HandlerResponse<List<WorkflowSection>>(success:false, message:"No sections exist for this Project ID") 
                 : new HandlerResponse<List<WorkflowSection>>(sections);

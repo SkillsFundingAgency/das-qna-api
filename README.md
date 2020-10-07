@@ -69,7 +69,7 @@ or
 
 - Get the das-qna-api configuration json file from [das-employer-config](https://github.com/SkillsFundingAgency/das-employer-config/blob/master/das-qna-api/SFA.DAS.QnA.Api.json); which is a non-public repository.
 - Create a Configuration table in your (Development) local Azure Storage account.
-- Add a row to the Configuration table with fields: PartitionKey: LOCAL, RowKey: SFA.DAS.QnA.API_1.0, Data: {{The contents of the local config json file}}.
+- Add a row to the Configuration table with fields: PartitionKey: LOCAL, RowKey: SFA.DAS.QnA.Api_1.0, Data: {{The contents of the local config json file}}.
 - Update Configuration SFA.DAS.QnA.API_1.0, Data { "SqlConnectionstring":"Server={{local instance name}};Initial Catalog={{database name}};Trusted_Connection=True;" }
 
 ##### Run the solution
