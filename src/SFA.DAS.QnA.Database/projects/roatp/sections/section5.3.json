@@ -2,7 +2,6 @@
     "Title": "Complaints policy",
     "LinkTitle": "Complaints policy",
     "DisplayType": "Pages",
-    "RequestedFeedbackAnswered": null,
     "Pages": [{
             "PageId": "5200",
             "SequenceId": null,
@@ -29,19 +28,17 @@
                                 "ErrorMessage": "The selected file must be a PDF"
                             }
                         ]
-                    },
-                    "Order": null
+                    }
                 }
             ],
-            "PageOfAnswers": [],
+			"PageOfAnswers": [],
             "Next": [{
                     "Action": "NextPage",
                     "ReturnId": "5210",
                     "Conditions": [{
                             "QuestionTag": "HasWebsite",
                             "MustEqual": "Yes"
-                        }],
-                    "ConditionMet": false
+                        }]
                 },
                 {
                     "Action": "NextPage",
@@ -49,22 +46,16 @@
                     "Conditions": [{
                             "QuestionTag": "UKRLPNoWebsite",
                             "MustEqual": ""
-                        }],
-                    "ConditionMet": false
+                        }]
                 },
                 {
                     "Action": "ReturnToSection",
                     "ReturnId": "5.4",
-                    "Conditions": [],
-                    "ConditionMet": false
+                    "Conditions": []
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
-            "Order": null,
             "Active": true,
-            "Feedback": null,
-            "HasFeedback": false,
             "NotRequiredConditions": [],
             "BodyText": ""
         }, {
@@ -97,24 +88,18 @@
                                 "ErrorMessage": "Enter a website link using 100 characters or less"
                             }
                         ]
-                    },
-                    "Order": null
+                    }
                 }
             ],
-            "PageOfAnswers": [],
+			"PageOfAnswers": [],
             "Next": [{
                     "Action": "ReturnToSection",
                     "ReturnId": "5.4",
-                    "Conditions": [],
-                    "ConditionMet": false
+                    "Conditions": []
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
-            "Order": null,
             "Active": false,
-            "Feedback": null,
-            "HasFeedback": false,
             "NotRequiredConditions": [],
             "BodyText": "",
             "ActivatedByPageId": "5200"

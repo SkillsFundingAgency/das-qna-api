@@ -2,7 +2,6 @@
     "Title": "Management hierarchy for apprenticeships",
     "LinkTitle": "Management hierarchy for apprenticeships",
     "DisplayType": "",
-    "RequestedFeedbackAnswered": null,
     "Pages": [
       {
           "PageId": "7200",
@@ -22,27 +21,19 @@
                   "Input": {
                       "Type": "TabularData",
                       "Validations": []
-                  },
-                  "Order": null
+                  }
               }
           ],
-          "PageOfAnswers": [],
+		  "PageOfAnswers": [],
           "Next": [
               {
                   "Action": "NextSection",
-                  "ReturnId": "7.3",
-                  "Conditions": [],
-                  "ConditionMet": false
+                  "ReturnId": "7.4",
+                  "Conditions": []
               }
           ],
-          "Complete": false,
           "AllowMultipleAnswers": false,
-          "Order": null,
           "Active": true,
-          "Visible": true,
-          "Feedback": null,
-          "HasFeedback": false,
-          "NotRequiredOrgTypes": [],
           "BodyText": "",
           "NotRequiredConditions": []
       }

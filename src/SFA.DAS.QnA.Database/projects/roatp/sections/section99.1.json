@@ -2,7 +2,6 @@
     "Title": "Conditions of acceptance",
     "LinkTitle": "Conditions of acceptance",
     "DisplayType": "Pages",
-    "RequestedFeedbackAnswered": null,
     "Pages": [
         {
             "PageId": "999999",
@@ -22,26 +21,19 @@
                     "Input": {
                         "Type": "Text",
                         "Validations": []
-                    },
-                    "Order": null
+                    }
                 }
             ],
-            "PageOfAnswers": [],
+			"PageOfAnswers": [],
             "Next": [
                 {
-                    "Action": "NextPage",
-                    "ReturnId": "3",
-                    "Conditions": [],
-                    "ConditionMet": false
+                    "Action": "ReturnToSection",
+                    "ReturnId": "",
+                    "Conditions": []
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
-            "Order": null,
             "Active": true,
-            "Visible": true,
-            "Feedback": null,
-            "HasFeedback": false,
             "NotRequiredConditions": [],
             "ActivatedByPageId": null,
             "BodyText": ""

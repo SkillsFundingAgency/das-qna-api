@@ -2,7 +2,6 @@
 	"Title": "Introduction and what you'll need <span class='govuk-visually-hidden'> for protecting your apprentices</span>",
 	"LinkTitle": "Introduction and what you'll need",
 	"DisplayType": "Pages",
-	"RequestedFeedbackAnswered": null,
     "Pages": [
         {
             "PageId": "4000",
@@ -12,22 +11,16 @@
             "LinkTitle": "link title",
             "InfoText": "",
             "Questions": [],
-            "PageOfAnswers": [],
+			"PageOfAnswers": [],
             "Next": [
                 {
                     "Action": "ReturnToSection",
                     "ReturnId": "4.2",
-                    "Conditions": [],
-                    "ConditionMet": false
+                    "Conditions": []
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
-            "Order": null,
             "Active": true,
-            "Visible": true,
-            "Feedback": null,
-            "HasFeedback": false,
 			"NotRequiredConditions": [
 				{
 					"Field": "ApplyProviderRoute",
@@ -47,22 +40,16 @@
             "LinkTitle": "link title",
             "InfoText": "",
             "Questions": [],
-            "PageOfAnswers": [],
+			"PageOfAnswers": [],
             "Next": [
                 {
                     "Action": "ReturnToSection",
                     "ReturnId": "4.2",
-                    "Conditions": [],
-                    "ConditionMet": false
+                    "Conditions": []
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
-            "Order": null,
             "Active": true,
-            "Visible": true,
-            "Feedback": null,
-            "HasFeedback": false,
 			"NotRequiredConditions": [
 				{
 					"Field": "ApplyProviderRoute",
@@ -82,22 +69,16 @@
             "LinkTitle": "link title",
             "InfoText": "",
             "Questions": [],
-            "PageOfAnswers": [],
+			"PageOfAnswers": [],
             "Next": [
                 {
                     "Action": "ReturnToSection",
                     "ReturnId": "4.2",
-                    "Conditions": [],
-                    "ConditionMet": false
+                    "Conditions": []
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
-            "Order": null,
             "Active": true,
-            "Visible": true,
-            "Feedback": null,
-            "HasFeedback": false,
             "NotRequiredConditions": [
 				{
 					"Field": "ApplyProviderRoute",
