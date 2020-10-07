@@ -16,6 +16,9 @@
         },
         "sharedBackEndAppServicePlanName": {
             "type": "string"
+        }, 
+        "sharedBackEndSubnetResourceId": {
+            "type": "string"
         },
         "sharedBackEndAppServicePlanResourceGroupName": {
             "type": "string"
@@ -196,6 +199,9 @@
                     },
                     "appServicePlanResourceGroup": {
                         "value": "[parameters('sharedBackEndAppServicePlanResourceGroupName')]"
+                    },
+                    "subnetResourceId": {
+                        "value": "[parameters('sharedBackEndSubnetResourceId')]"
                     },
                     "appServiceAppSettings": {
                         "value": [
