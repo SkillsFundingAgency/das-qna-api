@@ -29,79 +29,79 @@ namespace SFA.DAS.QnA.Application.Queries.Sections.GetSections
             _logger = logger;
         }
 
-        public async Task<HandlerResponse<List<Section>>> Handle(GetSectionsRequest request, CancellationToken cancellationToken)
-        {
-            var stopwatch = Stopwatch.StartNew();
-
-            var application = await _dataContext.Applications.AsNoTracking().SingleOrDefaultAsync(app => app.Id == request.ApplicationId, cancellationToken);
-            if (application is null) return new HandlerResponse<List<Section>>(false, "Application does not exist");
-
-            var sections = await _dataContext.ApplicationSections.AsNoTracking()
-                .Where(seq => seq.ApplicationId == request.ApplicationId)
-                .ToListAsync(cancellationToken: cancellationToken);
-
-            var mappedSections = _mapper.Map<List<Section>>(sections);
-
-            foreach (var section in mappedSections)
-            {
-                RemovePages(application, section);
-            }
-
-            _logger.LogInformation($"Original GetSectionsHandler total execution time: {stopwatch.ElapsedMilliseconds} ms");
-
-            return new HandlerResponse<List<Section>>(mappedSections);
-        }
-
-
         //public async Task<HandlerResponse<List<Section>>> Handle(GetSectionsRequest request, CancellationToken cancellationToken)
         //{
+        //    var stopwatch = Stopwatch.StartNew();
+
         //    var application = await _dataContext.Applications.AsNoTracking().SingleOrDefaultAsync(app => app.Id == request.ApplicationId, cancellationToken);
         //    if (application is null) return new HandlerResponse<List<Section>>(false, "Application does not exist");
 
+        //    var sections = await _dataContext.ApplicationSections.AsNoTracking()
+        //        .Where(seq => seq.ApplicationId == request.ApplicationId)
+        //        .ToListAsync(cancellationToken: cancellationToken);
 
-        //    var workflowSequences = _dataContext.WorkflowSequences.Where(x => x.WorkflowId == application.WorkflowId);
-        //    var sectionIds = workflowSequences.Select(x => x.SectionId).ToList();
-        //    var workflowSections = await _dataContext.WorkflowSections.Where(x => sectionIds.Contains(x.Id)).ToListAsync(cancellationToken);
+        //    var mappedSections = _mapper.Map<List<Section>>(sections);
 
-        //    var sections = new List<Section>();
-        //    foreach (var sequence in workflowSequences)
-        //    {
-        //        foreach (var ws in workflowSections.Where(x => sequence.SectionId == x.Id))
-        //        {
-        //            sections.Add(new Section
-        //            {
-        //                ApplicationId = request.ApplicationId,
-        //                DisplayType = ws.DisplayType,
-        //                Id = ws.Id,
-        //                LinkTitle = ws.LinkTitle,
-        //                QnAData = ws.QnAData,
-        //                SectionNo = sequence.SectionNo,
-        //                SequenceNo = sequence.SequenceNo,
-        //                Status = "", //todo: how to get status?
-        //                Title = ws.Title
-        //            });
-        //        }
-        //    }
-
-        //    foreach (var section in sections)
+        //    foreach (var section in mappedSections)
         //    {
         //        RemovePages(application, section);
         //    }
 
+        //    _logger.LogInformation($"Original GetSectionsHandler total execution time: {stopwatch.ElapsedMilliseconds} ms");
 
-        //    //var sections = await _dataContext.ApplicationSections.AsNoTracking()
-        //    //    .Where(seq => seq.ApplicationId == request.ApplicationId)
-        //    //    .ToListAsync(cancellationToken: cancellationToken);
-
-        //    //var mappedSections = _mapper.Map<List<Section>>(sections);
-
-        //    //foreach (var section in mappedSections)
-        //    //{
-        //    //    RemovePages(application, section);
-        //    //}
-
-        //    return new HandlerResponse<List<Section>>(sections);
+        //    return new HandlerResponse<List<Section>>(mappedSections);
         //}
+
+
+        public async Task<HandlerResponse<List<Section>>> Handle(GetSectionsRequest request, CancellationToken cancellationToken)
+        {
+            var application = await _dataContext.Applications.AsNoTracking().SingleOrDefaultAsync(app => app.Id == request.ApplicationId, cancellationToken);
+            if (application is null) return new HandlerResponse<List<Section>>(false, "Application does not exist");
+
+
+            var workflowSequences = _dataContext.WorkflowSequences.Where(x => x.WorkflowId == application.WorkflowId);
+            var sectionIds = workflowSequences.Select(x => x.SectionId).ToList();
+            var workflowSections = await _dataContext.WorkflowSections.Where(x => sectionIds.Contains(x.Id)).ToListAsync(cancellationToken);
+
+            var sections = new List<Section>();
+            foreach (var sequence in workflowSequences)
+            {
+                foreach (var ws in workflowSections.Where(x => sequence.SectionId == x.Id))
+                {
+                    sections.Add(new Section
+                    {
+                        ApplicationId = request.ApplicationId,
+                        DisplayType = ws.DisplayType,
+                        Id = ws.Id,
+                        LinkTitle = ws.LinkTitle,
+                        QnAData = ws.QnAData,
+                        SectionNo = sequence.SectionNo,
+                        SequenceNo = sequence.SequenceNo,
+                        Status = "", //todo: how to get status?
+                        Title = ws.Title
+                    });
+                }
+            }
+
+            foreach (var section in sections)
+            {
+                RemovePages(application, section);
+            }
+
+
+            //var sections = await _dataContext.ApplicationSections.AsNoTracking()
+            //    .Where(seq => seq.ApplicationId == request.ApplicationId)
+            //    .ToListAsync(cancellationToken: cancellationToken);
+
+            //var mappedSections = _mapper.Map<List<Section>>(sections);
+
+            //foreach (var section in mappedSections)
+            //{
+            //    RemovePages(application, section);
+            //}
+
+            return new HandlerResponse<List<Section>>(sections);
+        }
 
         private void RemovePages(Data.Entities.Application application, Section section)
         {

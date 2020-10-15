@@ -29,34 +29,6 @@ namespace SFA.DAS.QnA.Application.Queries.Sections.GetSequenceSections
             _logger = logger;
         }
 
-        public async Task<HandlerResponse<List<Section>>> Handle(GetSequenceSectionsRequest request, CancellationToken cancellationToken)
-        {
-            var stopwatch = Stopwatch.StartNew();
-
-            var application = await _dataContext.Applications.AsNoTracking().FirstOrDefaultAsync(app => app.Id == request.ApplicationId, cancellationToken: cancellationToken);
-            if (application is null) return new HandlerResponse<List<Section>>(false, "Application does not exist");
-
-            var applicationSections = await _dataContext.ApplicationSections.AsNoTracking()
-                .Where(section => section.SequenceId == request.SequenceId)
-                .ToListAsync(cancellationToken: cancellationToken);
-
-            var sections = _mapper.Map<List<Section>>(applicationSections);
-
-            if (!sections.Any())
-            {
-                return new HandlerResponse<List<Section>>(false, "Sequence does not exist");
-            }
-
-            foreach (var section in sections)
-            {
-                RemovePages(application, section);
-            }
-
-            _logger.LogInformation($"Original GetSequenceSectionsHandler total execution time: {stopwatch.ElapsedMilliseconds} ms");
-
-            return new HandlerResponse<List<Section>>(sections);
-        }
-
         //public async Task<HandlerResponse<List<Section>>> Handle(GetSequenceSectionsRequest request, CancellationToken cancellationToken)
         //{
         //    var stopwatch = Stopwatch.StartNew();
@@ -64,29 +36,11 @@ namespace SFA.DAS.QnA.Application.Queries.Sections.GetSequenceSections
         //    var application = await _dataContext.Applications.AsNoTracking().FirstOrDefaultAsync(app => app.Id == request.ApplicationId, cancellationToken: cancellationToken);
         //    if (application is null) return new HandlerResponse<List<Section>>(false, "Application does not exist");
 
-        //    var workflowSequences = _dataContext.WorkflowSequences.Where(x => x.WorkflowId == application.WorkflowId && x.Id == request.SequenceId);
-        //    var sectionIds = workflowSequences.Select(x => x.SectionId).ToList();
-        //    var workflowSections = await _dataContext.WorkflowSections.Where(x => sectionIds.Contains(x.Id)).ToListAsync(cancellationToken);
+        //    var applicationSections = await _dataContext.ApplicationSections.AsNoTracking()
+        //        .Where(section => section.SequenceId == request.SequenceId)
+        //        .ToListAsync(cancellationToken: cancellationToken);
 
-        //    var sections = new List<Section>();
-        //    foreach (var sequence in workflowSequences)
-        //    {
-        //        foreach (var ws in workflowSections.Where(x => sequence.SectionId == x.Id))
-        //        {
-        //            sections.Add(new Section
-        //            {
-        //                ApplicationId = request.ApplicationId,
-        //                DisplayType = ws.DisplayType,
-        //                Id = ws.Id,
-        //                LinkTitle = ws.LinkTitle,
-        //                QnAData = ws.QnAData,
-        //                SectionNo = sequence.SectionNo,
-        //                SequenceNo = sequence.SequenceNo,
-        //                Status = "", //todo: how to get status?
-        //                Title = ws.Title
-        //            });
-        //        }
-        //    }
+        //    var sections = _mapper.Map<List<Section>>(applicationSections);
 
         //    if (!sections.Any())
         //    {
@@ -98,11 +52,60 @@ namespace SFA.DAS.QnA.Application.Queries.Sections.GetSequenceSections
         //        RemovePages(application, section);
         //    }
 
-        //    stopwatch.Stop();
-        //    _logger.LogInformation($"New GetSequenceSectionsHandler total execution time: {stopwatch.ElapsedMilliseconds} ms");
+        //    _logger.LogInformation($"Original GetSequenceSectionsHandler total execution time: {stopwatch.ElapsedMilliseconds} ms");
 
         //    return new HandlerResponse<List<Section>>(sections);
         //}
+
+        public async Task<HandlerResponse<List<Section>>> Handle(GetSequenceSectionsRequest request, CancellationToken cancellationToken)
+        {
+            var stopwatch = Stopwatch.StartNew();
+
+            var application = await _dataContext.Applications.AsNoTracking().FirstOrDefaultAsync(app => app.Id == request.ApplicationId, cancellationToken: cancellationToken);
+            if (application is null) return new HandlerResponse<List<Section>>(false, "Application does not exist");
+
+            var requestedSequence = _dataContext.WorkflowSequences.Single(x => x.WorkflowId == application.WorkflowId && x.Id == request.SequenceId);
+            var sequenceNo = requestedSequence.SequenceNo;
+
+            var workflowSequences = _dataContext.WorkflowSequences.Where(x => x.WorkflowId == application.WorkflowId && x.SequenceNo == sequenceNo);
+
+            var sectionIds = workflowSequences.Select(x => x.SectionId).ToList();
+            var workflowSections = await _dataContext.WorkflowSections.Where(x => sectionIds.Contains(x.Id)).ToListAsync(cancellationToken);
+
+            var sections = new List<Section>();
+            foreach (var s in workflowSequences)
+            {
+                var ws = workflowSections.Single(x => x.Id == s.SectionId);
+
+                sections.Add(new Section
+                {
+                    ApplicationId = request.ApplicationId,
+                    DisplayType = ws.DisplayType,
+                    Id = ws.Id,
+                    LinkTitle = ws.LinkTitle,
+                    QnAData = ws.QnAData,
+                    SectionNo = s.SectionNo,
+                    SequenceNo = sequenceNo,
+                    Status = "", //todo: how to get status?
+                    Title = ws.Title
+                });
+            }
+
+            if (!sections.Any())
+            {
+                return new HandlerResponse<List<Section>>(false, "Sequence does not exist");
+            }
+
+            foreach (var section in sections)
+            {
+                RemovePages(application, section);
+            }
+
+            stopwatch.Stop();
+            _logger.LogInformation($"New GetSequenceSectionsHandler total execution time: {stopwatch.ElapsedMilliseconds} ms");
+
+            return new HandlerResponse<List<Section>>(sections);
+        }
 
         private void RemovePages(Data.Entities.Application application, Section section)
         {
