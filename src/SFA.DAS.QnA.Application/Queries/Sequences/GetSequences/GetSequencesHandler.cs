@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
@@ -48,14 +49,22 @@ namespace SFA.DAS.QnA.Application.Queries.Sequences.GetSequences
 
             var groupedSequences = workflowSequences.GroupBy(seq => new { seq.SequenceNo, seq.IsActive }).ToList();
 
-            var newApplicationSequences = groupedSequences.Select(seq => new ApplicationSequence
+            var newApplicationSequences = new List<ApplicationSequence>();
+            foreach (var groupItem in groupedSequences)
             {
-                Id = workflowSequences.Single(x => x.SequenceNo == seq.Key.SequenceNo && x.IsActive == seq.Key.IsActive).Id,
-                ApplicationId = request.ApplicationId,
-                SequenceNo = seq.Key.SequenceNo,
-                IsActive = seq.Key.IsActive
-            }).ToList();
+                var wfs = workflowSequences.First(x =>
+                    x.SequenceNo == groupItem.Key.SequenceNo && x.IsActive == groupItem.Key.IsActive);
 
+                var sequence = new ApplicationSequence
+                {
+                    Id = wfs.Id,
+                    ApplicationId = request.ApplicationId,
+                    SequenceNo = groupItem.Key.SequenceNo,
+                    IsActive = groupItem.Key.IsActive
+                };
+
+                newApplicationSequences.Add(sequence);
+            }
 
             var mappedSequences = _mapper.Map<List<Sequence>>(newApplicationSequences);
             return new HandlerResponse<List<Sequence>>(mappedSequences);
