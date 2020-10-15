@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -29,6 +30,8 @@ namespace SFA.DAS.QnA.Application.Commands.StartApplication
 
         public async Task<HandlerResponse<StartApplicationResponse>> Handle(StartApplicationRequest request, CancellationToken cancellationToken)
         {
+            var stopwatch = Stopwatch.StartNew();
+
             var latestWorkflow = await _dataContext.Workflows.AsNoTracking()
                 .SingleOrDefaultAsync(w => w.Type == request.WorkflowType && w.Status == "Live", cancellationToken);
 
@@ -64,6 +67,8 @@ namespace SFA.DAS.QnA.Application.Commands.StartApplication
 
             await CopyWorkflows(cancellationToken, newApplication);
             await _dataContext.SaveChangesAsync(cancellationToken);
+
+            _logger.LogInformation($"Elapsed: {stopwatch.ElapsedMilliseconds} ms");
 
             _logger.LogInformation($"Successfully created new Application. Application Id = {newApplication.Id} | Workflow = {request.WorkflowType}");
             return new HandlerResponse<StartApplicationResponse>(new StartApplicationResponse {ApplicationId = newApplication.Id});
