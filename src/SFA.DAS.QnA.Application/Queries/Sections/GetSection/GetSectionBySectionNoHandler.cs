@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using AutoMapper;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
@@ -30,12 +31,58 @@ namespace SFA.DAS.QnA.Application.Queries.Sections.GetSection
             var application = await _dataContext.Applications.AsNoTracking().FirstOrDefaultAsync(app => app.Id == request.ApplicationId, cancellationToken: cancellationToken);
             if (application is null) return new HandlerResponse<Section>(false, "Application does not exist");
 
-            var section = await _dataContext.ApplicationSections.AsNoTracking().FirstOrDefaultAsync(sec => sec.SectionNo == request.SectionNo && sec.SequenceNo == request.SequenceNo && sec.ApplicationId == request.ApplicationId, cancellationToken);
-            if (section is null) return new HandlerResponse<Section>(false, "Section does not exist");
+            //var section = await _dataContext.ApplicationSections.AsNoTracking().FirstOrDefaultAsync(sec => sec.SectionNo == request.SectionNo && sec.SequenceNo == request.SequenceNo && sec.ApplicationId == request.ApplicationId, cancellationToken);
+            //if (section is null) return new HandlerResponse<Section>(false, "Section does not exist");
+
+            var workflowSequences = _dataContext.WorkflowSequences.Where(x => x.WorkflowId == application.WorkflowId);
+            var sectionIds = workflowSequences.Select(x => x.SectionId).ToList();
+            var workflowSections = await _dataContext.WorkflowSections.Where(x => sectionIds.Contains(x.Id)).ToListAsync(cancellationToken);
+
+            var sections = new List<Section>();
+            foreach (var sequence in workflowSequences)
+            {
+                foreach (var ws in workflowSections.Where(x => sequence.SectionId == x.Id))
+                {
+                    sections.Add(new Section
+                    {
+                        ApplicationId = request.ApplicationId,
+                        DisplayType = ws.DisplayType,
+                        Id = ws.Id,
+                        LinkTitle = ws.LinkTitle,
+                        QnAData = ws.QnAData,
+                        SectionNo = sequence.SectionNo,
+                        SequenceNo = sequence.SequenceNo,
+                        Status = "", //todo: how to get status?
+                        Title = ws.Title
+                    });
+                }
+            }
+
+            var section = sections.Single(x => x.SectionNo == request.SectionNo && x.SequenceNo == request.SequenceNo);
 
             RemovePages(application, section);
 
             return new HandlerResponse<Section>(_mapper.Map<Section>(section));
+        }
+
+        private void RemovePages(Data.Entities.Application application, Section section)
+        {
+            var applicationData = JObject.Parse(application.ApplicationData);
+
+            RemovePagesBasedOnNotRequiredConditions(section, applicationData);
+            RemoveInactivePages(section);
+        }
+
+        private static void RemoveInactivePages(Section section)
+        {
+            section.QnAData.Pages.RemoveAll(p => !p.Active);
+        }
+
+        private void RemovePagesBasedOnNotRequiredConditions(Section section, JObject applicationData)
+        {
+            section.QnAData.Pages =
+                _notRequiredProcessor.PagesWithoutNotRequired(section.QnAData.Pages, applicationData).ToList();
+
         }
 
         private   void RemovePages(Data.Entities.Application application, ApplicationSection section)

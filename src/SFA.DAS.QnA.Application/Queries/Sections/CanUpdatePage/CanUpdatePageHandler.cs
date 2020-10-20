@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -19,13 +20,28 @@ namespace SFA.DAS.QnA.Application.Queries.Sections.CanUpdatePage
         
         public async Task<HandlerResponse<bool>> Handle(CanUpdatePageRequest request, CancellationToken cancellationToken)
         {
-            var section = await _dataContext.ApplicationSections.FirstOrDefaultAsync(sec => sec.Id == request.SectionId && sec.ApplicationId == request.ApplicationId, cancellationToken);
-            if (section is null) return new HandlerResponse<bool>(false, "Section does not exist");
+            var application = await _dataContext.Applications.AsNoTracking().SingleOrDefaultAsync(app => app.Id == request.ApplicationId, cancellationToken);
+            if (application is null) return new HandlerResponse<bool>(false, "Application does not exist");
+
+            var workflowSequences = _dataContext.WorkflowSequences.Where(x => x.WorkflowId == application.WorkflowId);
+            var section = _dataContext.WorkflowSections.Single(x => x.Id == request.SectionId);
 
             var page = section.QnAData.Pages.FirstOrDefault(p => p.PageId == request.PageId);
             if (page is null) return new HandlerResponse<bool>(false, "Page does not exist");
             
             return new HandlerResponse<bool>(page.Active);
         }
+
+        //public async Task<HandlerResponse<bool>> Handle(CanUpdatePageRequest request, CancellationToken cancellationToken)
+        //{
+        //    var section = await _dataContext.ApplicationSections.FirstOrDefaultAsync(sec => sec.Id == request.SectionId && sec.ApplicationId == request.ApplicationId, cancellationToken);
+        //    if (section is null) return new HandlerResponse<bool>(false, "Section does not exist");
+
+        //    var page = section.QnAData.Pages.FirstOrDefault(p => p.PageId == request.PageId);
+        //    if (page is null) return new HandlerResponse<bool>(false, "Page does not exist");
+
+        //    return new HandlerResponse<bool>(page.Active);
+        //}
+
     }
 }
