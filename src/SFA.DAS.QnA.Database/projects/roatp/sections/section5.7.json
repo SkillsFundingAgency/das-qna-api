@@ -2,7 +2,6 @@
     "Title": "Working with subcontractors",
     "LinkTitle": "Working with subcontractors",
     "DisplayType": "Pages",
-    "RequestedFeedbackAnswered": null,
     "Pages": [{
             "PageId": "5600",
             "SequenceId": null,
@@ -35,33 +34,26 @@
                                 "ErrorMessage": "Tell us if your organisation expects to use subcontractors in the first 12 months of joining RoATP"
                             }
                         ]
-                    },
-                    "Order": null
+                    }
                 }
             ],
-            "PageOfAnswers": [],
+			"PageOfAnswers": [],
             "Next": [{
                     "Action": "NextPage",
                     "ReturnId": "5610",
                     "Conditions": [{
                             "QuestionId": "RTE-70",
                             "MustEqual": "Yes"
-                        }],
-                    "ConditionMet": false
+                        }]
                 },
                 {
                     "Action": "ReturnToSection",
                     "ReturnId": "6.1",
-                    "Conditions": [],
-                    "ConditionMet": false
+                    "Conditions": []
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
-            "Order": null,
             "Active": true,
-            "Feedback": null,
-            "HasFeedback": false,
             "NotRequiredConditions": [],
             "BodyText": ""
         }, {
@@ -90,24 +82,18 @@
                                 "ErrorMessage": "Your answer must be 275 words or less"
                             }
                         ]
-                    },
-                    "Order": null
+                    }
                 }
             ],
-            "PageOfAnswers": [],
+			"PageOfAnswers": [],
             "Next": [{
                     "Action": "ReturnToSection",
                     "ReturnId": "6.1",
-                    "Conditions": [],
-                    "ConditionMet": false
+                    "Conditions": []
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
-            "Order": null,
             "Active": false,
-            "Feedback": null,
-            "HasFeedback": false,
             "NotRequiredConditions": [],
             "BodyText": "",
             "ActivatedByPageId": "5600"

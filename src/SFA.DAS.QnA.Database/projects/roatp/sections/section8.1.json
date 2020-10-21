@@ -2,7 +2,6 @@
     "Title": "Introduction and what you'll need <span class='govuk-visually-hidden'> for evaluating apprenticeship training</span>",
     "LinkTitle": "Introduction and what you'll need",
     "DisplayType": "Pages",
-    "RequestedFeedbackAnswered": null,
     "Pages": [
         {
             "PageId": "8000",
@@ -12,21 +11,16 @@
             "LinkTitle": "Evaluating apprenticeship training",
             "InfoText": "",
             "Questions": [],
-            "PageOfAnswers": [],
+			"PageOfAnswers": [],
             "Next": [
                 {
                     "Action": "ReturnToSection",
                     "ReturnId": "8.2",
-                    "Conditions": [],
-                    "ConditionMet": false
+                    "Conditions": []
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
-            "Order": null,
             "Active": true,
-            "Feedback": null,
-            "HasFeedback": false,
             "NotRequiredConditions": [{
                     "Field": "ApplyProviderRoute",
                     "IsOneOf": ["3"]
@@ -48,16 +42,11 @@
                 {
                     "Action": "ReturnToSection",
                     "ReturnId": "8.2",
-                    "Conditions": [],
-                    "ConditionMet": false
+                    "Conditions": []
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
-            "Order": null,
             "Active": true,
-            "Feedback": null,
-            "HasFeedback": false,
             "NotRequiredConditions": [{
                     "Field": "ApplyProviderRoute",
                     "IsOneOf": ["1", "2"]

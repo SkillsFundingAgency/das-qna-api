@@ -2,7 +2,6 @@
     "Title": "Contract for services template",
     "LinkTitle": "Contract for services template",
     "DisplayType": "Pages",
-    "RequestedFeedbackAnswered": null,
     "Pages": [{
             "PageId": "5300",
             "SequenceId": null,
@@ -29,24 +28,18 @@
                                 "ErrorMessage": "The selected file must be a PDF"
                             }
                         ]
-                    },
-                    "Order": null
+                    }
                 }
             ],
-            "PageOfAnswers": [],
+			"PageOfAnswers": [],
             "Next": [{
                     "Action": "ReturnToSection",
                     "ReturnId": "5.5",
-                    "Conditions": [],
-                    "ConditionMet": false
+                    "Conditions": []
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
-            "Order": null,
             "Active": true,
-            "Feedback": null,
-            "HasFeedback": false,
             "NotRequiredConditions": [],
             "BodyText": ""
         }

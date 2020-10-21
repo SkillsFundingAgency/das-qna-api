@@ -2,7 +2,6 @@
     "Title": "Acting as a subcontractor",
     "LinkTitle": "Acting as a subcontractor",
     "DisplayType": "Pages",
-    "RequestedFeedbackAnswered": null,
     "Pages": [
         {
             "PageId": "4050",
@@ -22,7 +21,6 @@
                     "Input":
                     {
                         "Type": "Radio",
-                        "InputClasses": null,
                         "Options": [
                             {
                                 "Value": "Yes",
@@ -41,33 +39,23 @@
                                 "Value": "",
                                 "ErrorMessage": "Tell us if your organisation will follow its lead provider's policies and plans"
                             }
-                        ],
-                        "DataEndpoint": null
-                    },
-                    "Order": null,
-                    "Value": "",
-                    "ErrorMessages": null
+                        ]
+                    }
                 }
             ],
-            "PageOfAnswers": [],
+			"PageOfAnswers": [],
             "Next": [
                 {
                     "Action": "ReturnToSection",
                     "ReturnId": "5.1",
-                    "Conditions": [],
-                    "ConditionMet": false
+                    "Conditions": []
                 }
             ],
-            "Complete": false,
             "AllowMultipleAnswers": false,
-            "Order": null,
             "Active": true,
-            "Visible": true,
-            "Feedback": null,
-            "HasFeedback": false,
             "NotRequiredConditions": [],
             "BodyText": "",
-			"Details": {
+            "Details": {
               "Title": "What is a lead provider?",
               "Body": "<p class='govuk-body'>A lead provider is a main or employer provider who has a direct contractual relationship with ESFA.</p>"
           }

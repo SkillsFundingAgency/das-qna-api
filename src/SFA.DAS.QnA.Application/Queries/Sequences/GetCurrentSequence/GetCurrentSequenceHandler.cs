@@ -21,10 +21,10 @@ namespace SFA.DAS.QnA.Application.Queries.Sequences.GetCurrentSequence
         
         public async Task<HandlerResponse<Sequence>> Handle(GetCurrentSequenceRequest request, CancellationToken cancellationToken)
         {
-            var application = await _dataContext.Applications.SingleOrDefaultAsync(app => app.Id == request.ApplicationId, cancellationToken);
+            var application = await _dataContext.Applications.AsNoTracking().SingleOrDefaultAsync(app => app.Id == request.ApplicationId, cancellationToken);
             if (application is null) return new HandlerResponse<Sequence>(false, "Application does not exist");
             
-            var currentSequence = await _dataContext.ApplicationSequences.FirstOrDefaultAsync(seq => seq.ApplicationId == request.ApplicationId && seq.IsActive, cancellationToken);
+            var currentSequence = await _dataContext.ApplicationSequences.AsNoTracking().FirstOrDefaultAsync(seq => seq.ApplicationId == request.ApplicationId && seq.IsActive, cancellationToken);
 
             return new HandlerResponse<Sequence>(_mapper.Map<Sequence>(currentSequence));  
         }
