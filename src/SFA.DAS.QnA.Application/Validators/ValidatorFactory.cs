@@ -34,8 +34,6 @@ namespace SFA.DAS.QnA.Application.Validators
 
                         if (validator != null)
                         {
-                            // if the inputValidation.Value = "{{SomeThing}}" then we would get "Something" from ApplicationData
-                            
                             validator.ValidationDefinition = inputValidation;
                             validators[validatorName] = validator;
                         }
