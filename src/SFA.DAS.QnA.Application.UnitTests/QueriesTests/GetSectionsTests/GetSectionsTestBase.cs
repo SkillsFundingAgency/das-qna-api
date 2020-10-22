@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
+using NSubstitute;
 using NUnit.Framework;
 using SFA.DAS.QnA.Api.Types.Page;
 using SFA.DAS.QnA.Application.Queries.Sections.GetSections;
@@ -48,7 +50,7 @@ namespace SFA.DAS.QnA.Application.UnitTests.QueriesTests.GetSectionsTests
 
             var mapper = new Mapper(new MapperConfiguration(config => { config.AddMaps(AppDomain.CurrentDomain.GetAssemblies()); }));
 
-            Handler = new GetSectionsHandler(context, mapper, new NotRequiredProcessor());
+            Handler = new GetSectionsHandler(context, mapper, new NotRequiredProcessor(), Substitute.For<ILogger<GetSectionsHandler>>());
         }
     }
 }

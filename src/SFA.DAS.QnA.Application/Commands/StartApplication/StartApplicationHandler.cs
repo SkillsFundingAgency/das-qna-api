@@ -65,7 +65,7 @@ namespace SFA.DAS.QnA.Application.Commands.StartApplication
                 return new HandlerResponse<StartApplicationResponse>(false, $"WorkflowType '{request.WorkflowType}' does not exist.");
             }
 
-            //await CopyWorkflows(cancellationToken, newApplication);
+            await CopyWorkflows(cancellationToken, newApplication);
             await _dataContext.SaveChangesAsync(cancellationToken);
 
             _logger.LogInformation($"Elapsed: {stopwatch.ElapsedMilliseconds} ms");
