@@ -38,9 +38,9 @@ namespace SFA.DAS.QnA.Application.Commands.StartApplication
             if (latestWorkflow is null)
             {
                 _logger.LogError($"Workflow type {request.WorkflowType} does not exist");
-                return new HandlerResponse<StartApplicationResponse>(false, $"Workflow Type does not exist."); 
+                return new HandlerResponse<StartApplicationResponse>(false, $"Workflow Type does not exist.");
             }
-            
+
             try
             {
                 _applicationDataIsInvalid = !_applicationDataValidator.IsValid(latestWorkflow.ApplicationDataSchema, request.ApplicationData);
@@ -50,16 +50,16 @@ namespace SFA.DAS.QnA.Application.Commands.StartApplication
                 _logger.LogError("Supplied ApplicationData is not valid JSON");
                 return new HandlerResponse<StartApplicationResponse>(false, $"Supplied ApplicationData is not valid JSON.");
             }
-            
+
             if (_applicationDataIsInvalid)
             {
                 _logger.LogError("Supplied ApplicationData is not valid using Project's Schema");
                 return new HandlerResponse<StartApplicationResponse>(false, $"Supplied ApplicationData is not valid using Project's Schema.");
             }
-            
+
             var newApplication = await CreateNewApplication(request, latestWorkflow, cancellationToken, request.ApplicationData);
 
-            if (newApplication is null) 
+            if (newApplication is null)
             {
                 _logger.LogError($"Workflow type {request.WorkflowType} does not exist");
                 return new HandlerResponse<StartApplicationResponse>(false, $"WorkflowType '{request.WorkflowType}' does not exist.");
@@ -71,7 +71,7 @@ namespace SFA.DAS.QnA.Application.Commands.StartApplication
             _logger.LogInformation($"Elapsed: {stopwatch.ElapsedMilliseconds} ms");
 
             _logger.LogInformation($"Successfully created new Application. Application Id = {newApplication.Id} | Workflow = {request.WorkflowType}");
-            return new HandlerResponse<StartApplicationResponse>(new StartApplicationResponse {ApplicationId = newApplication.Id});
+            return new HandlerResponse<StartApplicationResponse>(new StartApplicationResponse { ApplicationId = newApplication.Id });
         }
 
         private async Task<Data.Entities.Application> CreateNewApplication(StartApplicationRequest request, Workflow latestWorkflow, CancellationToken cancellationToken, string applicationData)
@@ -97,7 +97,7 @@ namespace SFA.DAS.QnA.Application.Commands.StartApplication
             var workflowSequences = await _dataContext.WorkflowSequences.AsNoTracking()
                 .Where(seq => seq.WorkflowId == newApplication.WorkflowId).ToListAsync(cancellationToken);
 
-            var groupedSequences = workflowSequences.GroupBy(seq => new {seq.SequenceNo, seq.IsActive}).ToList();
+            var groupedSequences = workflowSequences.GroupBy(seq => new { seq.SequenceNo, seq.IsActive }).ToList();
 
             var newApplicationSequences = groupedSequences.Select(seq => new ApplicationSequence
             {
@@ -112,7 +112,16 @@ namespace SFA.DAS.QnA.Application.Commands.StartApplication
             var sectionIds = groupedSequences.SelectMany(seq => seq).Select(seq => seq.SectionId).ToList();
 
             var workflowSections = await _dataContext.WorkflowSections.AsNoTracking()
-                .Where(sec => sectionIds.Contains(sec.Id)).ToListAsync(cancellationToken: cancellationToken);
+                .Where(sec => sectionIds.Contains(sec.Id))
+                .Select(sec => new WorkflowSection
+                {
+                    DisplayType = sec.DisplayType,
+                    Id = sec.Id,
+                    LinkTitle = sec.LinkTitle,
+                    ProjectId = sec.ProjectId,
+                    Title = sec.Title
+                })
+                .ToListAsync(cancellationToken: cancellationToken);
 
             var newApplicationSections = new List<ApplicationSection>();
             foreach (var sequence in groupedSequences)
@@ -131,7 +140,7 @@ namespace SFA.DAS.QnA.Application.Commands.StartApplication
                         LinkTitle = workflowSection.LinkTitle,
                         ApplicationId = newApplication.Id,
                         DisplayType = workflowSection.DisplayType,
-                        QnAData = workflowSection.QnAData,
+                        QnAData = new ApplicationSection().QnAData, //workflowSection.QnAData,
                         SectionNo = sectionDetails.SectionNo,
                         SequenceNo = sectionDetails.SequenceNo
                     };
