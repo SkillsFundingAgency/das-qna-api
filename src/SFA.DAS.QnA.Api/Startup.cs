@@ -21,6 +21,7 @@ using SFA.DAS.QnA.Application.Commands;
 using SFA.DAS.QnA.Application.Commands.Files;
 using SFA.DAS.QnA.Application.Commands.Files.UploadFile;
 using SFA.DAS.QnA.Application.Commands.StartApplication;
+using SFA.DAS.QnA.Application.Repositories;
 using SFA.DAS.QnA.Application.Services;
 using SFA.DAS.QnA.Application.Validators;
 using SFA.DAS.QnA.Configuration.Config;
@@ -88,6 +89,7 @@ namespace SFA.DAS.QnA.Api
                     });
             }
 
+
             services.RegisterAllTypes<IValidator>(new[] { typeof(IValidator).Assembly });
             services.AddTransient<IValidatorFactory, ValidatorFactory>();
             services.AddTransient<IAnswerValidator, AnswerValidator>();
@@ -104,7 +106,8 @@ namespace SFA.DAS.QnA.Api
             services.AddDbContext<QnaDataContext>(options => options.UseSqlServer(config.Value.SqlConnectionstring,providerOptions => providerOptions.EnableRetryOnFailure()));
 
             services.AddEntityFrameworkSqlServer();
-
+            services.AddTransient<IApplicationAnswersRepository, ApplicationAnswersRepository>();
+            services.AddTransient<IApplicationSectionService, ApplicationSectionService>();
             services.AddMvc(setup => {
                 if (!_hostingEnvironment.IsDevelopment())
                 {

@@ -50,7 +50,7 @@ namespace SFA.DAS.QnA.Application.UnitTests.QueriesTests.GetSectionsTests
 
             var mapper = new Mapper(new MapperConfiguration(config => { config.AddMaps(AppDomain.CurrentDomain.GetAssemblies()); }));
 
-            Handler = new GetSectionsHandler(context, mapper, new NotRequiredProcessor(), Substitute.For<ILogger<GetSectionsHandler>>());
+            Handler = new GetSectionsHandler(Substitute.For<IApplicationSectionService>(), mapper, new NotRequiredProcessor(), Substitute.For<ILogger<GetSectionsHandler>>());
         }
     }
 }
