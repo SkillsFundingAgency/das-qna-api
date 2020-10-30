@@ -1,12 +1,9 @@
-﻿
-namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.ResetPageAnswersTests
+﻿namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.ResetPageAnswersHandlerTests
 {
-    using System.Collections.Generic;
     using System.Threading;
     using System.Threading.Tasks;
     using FluentAssertions;
     using NUnit.Framework;
-    using SFA.DAS.QnA.Api.Types.Page;
     using SFA.DAS.QnA.Application.Commands.ResetPageAnswers;
 
     public class When_page_not_found : ResetPageAnswersTestBase

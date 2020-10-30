@@ -198,27 +198,6 @@ namespace SFA.DAS.QnA.Application.Commands.Files.UploadFile
             }
         }
 
-        private static void SetApplicationDataField(Question question, List<Answer> answers, JObject applicationData)
-        {
-            if (question != null && applicationData != null)
-            {
-                var questionTag = question.QuestionTag;
-                var questionTagAnswer = answers?.SingleOrDefault(a => a.QuestionId == question.QuestionId)?.Value;
-
-                if (!string.IsNullOrWhiteSpace(questionTag))
-                {
-                    if (applicationData.ContainsKey(questionTag))
-                    {
-                        applicationData[questionTag] = questionTagAnswer;
-                    }
-                    else
-                    {
-                        applicationData.Add(questionTag, new JValue(questionTagAnswer));
-                    }
-                }
-            }
-        }
-
         private static List<Answer> GetAnswersFromRequest(SubmitPageOfFilesRequest request)
         {
             var answers = new List<Answer>();
