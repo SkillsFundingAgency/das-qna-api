@@ -28,8 +28,7 @@ namespace SFA.DAS.QnA.Data
                     v => JsonConvert.SerializeObject(v,
                         new JsonSerializerSettings {NullValueHandling = NullValueHandling.Ignore}),
                     v => JsonConvert.DeserializeObject<QnAData>(v,
-                        new JsonSerializerSettings {NullValueHandling = NullValueHandling.Ignore}));
-        }
+                        new JsonSerializerSettings {NullValueHandling = NullValueHandling.Ignore})); }
         
         public DbSet<Workflow> Workflows { get; set; }
         public DbSet<WorkflowSection> WorkflowSections { get; set; }
@@ -38,5 +37,6 @@ namespace SFA.DAS.QnA.Data
         public DbSet<ApplicationSequence> ApplicationSequences { get; set; }
         public DbSet<ApplicationSection> ApplicationSections { get; set; }
         public DbSet<Project> Projects { get; set; }
+        public DbSet<ApplicationAnswer> ApplicationAnswers { get; set; }
     }
 }
