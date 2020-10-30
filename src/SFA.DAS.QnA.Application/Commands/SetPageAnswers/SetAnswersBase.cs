@@ -1,10 +1,12 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using SFA.DAS.QnA.Api.Types;
 using SFA.DAS.QnA.Api.Types.Page;
+using SFA.DAS.QnA.Application.Repositories;
 using SFA.DAS.QnA.Application.Services;
 using SFA.DAS.QnA.Data;
 using SFA.DAS.QnA.Data.Entities;
@@ -17,19 +19,25 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
         protected readonly INotRequiredProcessor _notRequiredProcessor;
         protected readonly ITagProcessingService _tagProcessingService;
         protected readonly IAnswerValidator _answerValidator;
+        protected IApplicationAnswersRepository ApplicationAnswersRepository { get; }
 
-        public SetAnswersBase(QnaDataContext dataContext, INotRequiredProcessor notRequiredProcessor, ITagProcessingService tagProcessingService, IAnswerValidator answerValidator)
+        public SetAnswersBase(QnaDataContext dataContext, INotRequiredProcessor notRequiredProcessor, ITagProcessingService tagProcessingService, IAnswerValidator answerValidator, IApplicationAnswersRepository applicationAnswersRepository)
         {
             _dataContext = dataContext;
             _notRequiredProcessor = notRequiredProcessor;
             _tagProcessingService = tagProcessingService;
             _answerValidator = answerValidator;
+            ApplicationAnswersRepository = applicationAnswersRepository ?? throw new ArgumentNullException(nameof(applicationAnswersRepository));
         }
 
-        protected void SaveAnswersIntoPage(ApplicationSection section, string pageId, List<Answer> submittedAnswers)
+        protected async Task SaveAnswersIntoPage(ApplicationSection section, string pageId, List<Answer> submittedAnswers)
         {
             if (section != null)
             {
+                await ApplicationAnswersRepository.StoreApplicationAnswers(section.ApplicationId, section.Id, pageId,
+                    submittedAnswers);
+
+                //TODO: Change to persist the state separately, no need for the application section anymore
                 // Have to force QnAData a new object and reassign for Entity Framework to pick up changes
                 var qnaData = new QnAData(section.QnAData);
                 var page = qnaData?.Pages.SingleOrDefault(p => p.PageId == pageId);

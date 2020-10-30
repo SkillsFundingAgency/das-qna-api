@@ -8,6 +8,7 @@ using System;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using SFA.DAS.QnA.Application.Repositories;
 using SFA.DAS.QnA.Application.Services;
 
 namespace SFA.DAS.QnA.Application.Commands.SkipPage
@@ -16,7 +17,8 @@ namespace SFA.DAS.QnA.Application.Commands.SkipPage
     {
 
 
-        public SkipPageBySectionNoHandler(QnaDataContext dataContext, INotRequiredProcessor notRequiredProcessor, ITagProcessingService tagProcessingService) : base(dataContext, notRequiredProcessor, tagProcessingService, null)
+        public SkipPageBySectionNoHandler(QnaDataContext dataContext, INotRequiredProcessor notRequiredProcessor, ITagProcessingService tagProcessingService, IApplicationAnswersRepository applicationAnswersRepository) 
+            : base(dataContext, notRequiredProcessor, tagProcessingService, null, applicationAnswersRepository)
         {
 
         }

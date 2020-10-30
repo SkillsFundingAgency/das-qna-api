@@ -16,6 +16,7 @@ using SFA.DAS.QnA.Application.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.Internal;
 using System.Text;
+using SFA.DAS.QnA.Application.Repositories;
 
 namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.SubmitPageOfFilesHandlerTests
 {
@@ -50,7 +51,7 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.SubmitPageOfFilesHandl
             var fileContentValidator = Substitute.For<IFileContentValidator>();
             fileContentValidator.Validate(Arg.Any<IFormFileCollection>()).Returns(new List<KeyValuePair<string, string>>());
 
-            Handler = new SubmitPageOfFilesHandler(DataContext, fileStorageConfig, encryptionService, validator, fileContentValidator, NotRequiredProcessor,TagProcessingService);
+            Handler = new SubmitPageOfFilesHandler(DataContext, fileStorageConfig, encryptionService, validator, fileContentValidator, NotRequiredProcessor,TagProcessingService, Substitute.For<IApplicationAnswersRepository>());
 
             ApplicationId = Guid.NewGuid();
             SectionId = Guid.NewGuid();

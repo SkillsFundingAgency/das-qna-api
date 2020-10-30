@@ -6,6 +6,7 @@ using NUnit.Framework;
 using SFA.DAS.QnA.Api.Types.Page;
 using SFA.DAS.QnA.Application.Commands.SetPageAnswers;
 using SFA.DAS.QnA.Application.Commands;
+using SFA.DAS.QnA.Application.Repositories;
 using SFA.DAS.QnA.Application.Services;
 using SFA.DAS.QnA.Data;
 using SFA.DAS.QnA.Data.Entities;
@@ -31,7 +32,7 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.SetPageAnswersTests
 
             validator.Validate(Arg.Any<List<Answer>>(), Arg.Any<Page>()).Returns(new List<KeyValuePair<string, string>>());
             
-            Handler = new SetPageAnswersHandler(DataContext, validator, NotRequiredProcessor, TagProcessingService);
+            Handler = new SetPageAnswersHandler(DataContext, validator, NotRequiredProcessor, TagProcessingService, Substitute.For<IApplicationAnswersRepository>());
 
             ApplicationId = Guid.NewGuid();
             SectionId = Guid.NewGuid();

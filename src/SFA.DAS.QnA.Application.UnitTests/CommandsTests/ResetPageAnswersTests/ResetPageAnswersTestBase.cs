@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using NSubstitute;
 using NUnit.Framework;
 using SFA.DAS.QnA.Api.Types.Page;
 using SFA.DAS.QnA.Application.Commands.ResetPageAnswers;
@@ -8,6 +9,7 @@ using SFA.DAS.QnA.Data;
 using SFA.DAS.QnA.Data.Entities;
 using SFA.DAS.QnA.Application.Queries.ApplicationData.GetApplicationData;
 using SFA.DAS.QnA.Application.Queries.Sections.GetPage;
+using SFA.DAS.QnA.Application.Repositories;
 using SFA.DAS.QnA.Application.Services;
 
 namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.ResetPageAnswersTests
@@ -26,7 +28,7 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.ResetPageAnswersTests
         public async Task SetUp()
         {
             DataContext = DataContextHelpers.GetInMemoryDataContext();
-            Handler = new ResetPageAnswersHandler(DataContext, new NotRequiredProcessor(),new TagProcessingService(DataContext));
+            Handler = new ResetPageAnswersHandler(DataContext, new NotRequiredProcessor(),new TagProcessingService(DataContext),Substitute.For<IApplicationAnswersRepository>());
             GetApplicationDataHandler = new GetApplicationDataHandler(DataContext);
             GetPageHandler = new GetPageHandler(DataContext);
 

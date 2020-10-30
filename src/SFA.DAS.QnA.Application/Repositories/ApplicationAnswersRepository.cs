@@ -14,6 +14,7 @@ namespace SFA.DAS.QnA.Application.Repositories
         Task<List<Answer>> GetPageAnswers(Guid applicationId, Guid sectionId, string pageId);
         Task<List<ApplicationAnswer>> GetSectionAnswers(Guid applicationId, Guid sectionId);
         Task<List<ApplicationAnswer>> GetApplicationAnswers(Guid applicationId);
+        Task StoreApplicationAnswers(Guid applicationId, Guid sectionId, string pageId, List<Answer> answers);
     }
 
     public class ApplicationAnswersRepository : IApplicationAnswersRepository
@@ -52,6 +53,13 @@ namespace SFA.DAS.QnA.Application.Repositories
             return await _dataContext.ApplicationAnswers
                 .Where(a => a.ApplicationId == applicationId)
                 .ToListAsync();
+        }
+
+        public async Task StoreApplicationAnswers(Guid applicationId, Guid sectionId, string pageId, List<Answer> answers)
+        {
+            var deleteSql = $"Delete from ApplicationAnswers where ApplicationId = '{applicationId}' and SectionId = '{sectionId}' and PageId = '{pageId}'";//TODO: use sproc
+            await _dataContext.Database.ExecuteSqlCommandAsync(deleteSql);
+            await _dataContext.ApplicationAnswers.AddRangeAsync(answers.Select(answer => new ApplicationAnswer{PageId = pageId, SectionId = sectionId, Value = answer.Value, QuestionId = answer.QuestionId, ApplicationId = applicationId}));
         }
     }
 }

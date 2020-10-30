@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using System.Net.Http.Headers;
 using System.Threading;
@@ -6,6 +7,7 @@ using MediatR;
 using Microsoft.EntityFrameworkCore;
 using SFA.DAS.QnA.Api.Types;
 using SFA.DAS.QnA.Api.Types.Page;
+using SFA.DAS.QnA.Application.Repositories;
 using SFA.DAS.QnA.Application.Services;
 using SFA.DAS.QnA.Data;
 using SFA.DAS.QnA.Data.Entities;
@@ -14,7 +16,11 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
 {
     public class SetPageAnswersHandler : SetAnswersBase, IRequestHandler<SetPageAnswersRequest, HandlerResponse<SetPageAnswersResponse>>
     {
-        public SetPageAnswersHandler(QnaDataContext dataContext, IAnswerValidator answerValidator, INotRequiredProcessor notRequiredProcessor, ITagProcessingService tagProcessingService) : base(dataContext, notRequiredProcessor, tagProcessingService, answerValidator)
+        //public SetPageAnswersHandler(QnaDataContext dataContext, IAnswerValidator answerValidator, INotRequiredProcessor notRequiredProcessor, ITagProcessingService tagProcessingService) : base(dataContext, notRequiredProcessor, tagProcessingService, answerValidator)
+        //{
+        //}
+        public SetPageAnswersHandler(QnaDataContext dataContext,   IAnswerValidator answerValidator, INotRequiredProcessor notRequiredProcessor, ITagProcessingService tagProcessingService, IApplicationAnswersRepository applicationAnswersRepository) :
+            base(dataContext, notRequiredProcessor, tagProcessingService, answerValidator, applicationAnswersRepository)
         {
         }
 
@@ -49,26 +55,28 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
             var application = await _dataContext.Applications.AsNoTracking().FirstOrDefaultAsync(app => app.Id == request.ApplicationId, cancellationToken: cancellationToken);
             if (application is null) return new HandlerResponse<SetPageAnswersResponse>(false, "Application does not exist");
 
-            var workflowSection = _dataContext.WorkflowSections.Single(x => x.Id == request.SectionId);
 
-            var page = workflowSection.QnAData.Pages.Single(x => x.PageId == request.PageId);
-
-            //todo: save page answers somewhere
+            var workflowSection = await _dataContext.WorkflowSections.Where(x => x.Id == request.SectionId)
+                .Join(_dataContext.WorkflowSequences.Where(seq => seq.SectionId == request.SectionId),
+                    section => section.Id, sequence => sequence.SectionId,
+                    (section, sequence) => new {Sequence = sequence, Section = section})
+                .FirstOrDefaultAsync(cancellationToken);
+                
+            var page = workflowSection.Section.QnAData.Pages.FirstOrDefault(x => x.PageId == request.PageId);
 
             var applicationSection = new ApplicationSection
             {
                 ApplicationId = request.ApplicationId,
-                DisplayType = workflowSection.DisplayType,
-                Id = workflowSection.Id,
-                LinkTitle = workflowSection.LinkTitle,
-                QnAData = workflowSection.QnAData,
-                SectionNo = 0, // ?????
-                SequenceNo = 0, // ?????
-                Title = workflowSection.Title
+                DisplayType = workflowSection.Section.DisplayType,
+                Id = workflowSection.Section.Id,
+                LinkTitle = workflowSection.Section.LinkTitle,
+                QnAData = workflowSection.Section.QnAData,
+                SectionNo = workflowSection.Sequence.SectionNo,
+                SequenceNo = workflowSection.Sequence.SequenceNo, 
+                Title = workflowSection.Section.Title
             };
-            
-            
-            //SaveAnswersIntoPage(section, request.PageId, request.Answers);
+
+            await SaveAnswersIntoPage(applicationSection, request.PageId, request.Answers);
 
             //var application = await _dataContext.Applications.SingleOrDefaultAsync(app => app.Id == request.ApplicationId, cancellationToken);
             //UpdateApplicationData(request.PageId, request.Answers, section, application);

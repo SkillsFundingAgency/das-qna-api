@@ -10,6 +10,7 @@ using Newtonsoft.Json.Linq;
 using SFA.DAS.QnA.Api.Types;
 using SFA.DAS.QnA.Api.Types.Page;
 using SFA.DAS.QnA.Application.Commands.SetPageAnswers;
+using SFA.DAS.QnA.Application.Repositories;
 using SFA.DAS.QnA.Application.Services;
 using SFA.DAS.QnA.Data;
 using SFA.DAS.QnA.Data.Entities;
@@ -18,13 +19,39 @@ namespace SFA.DAS.QnA.Application.Commands.ResetPageAnswers
 {
     public class ResetPageAnswersHandler : SetAnswersBase, IRequestHandler<ResetPageAnswersRequest, HandlerResponse<ResetPageAnswersResponse>>
     {
-        public ResetPageAnswersHandler(QnaDataContext dataContext, INotRequiredProcessor notRequiredProcessor, ITagProcessingService tagProcessingService) : base(dataContext, notRequiredProcessor, tagProcessingService, null)
+        public ResetPageAnswersHandler(QnaDataContext dataContext, INotRequiredProcessor notRequiredProcessor, ITagProcessingService tagProcessingService,  IApplicationAnswersRepository applicationAnswersRepository) 
+            : base(dataContext, notRequiredProcessor, tagProcessingService, null, applicationAnswersRepository)
         {
         }
 
         public async Task<HandlerResponse<ResetPageAnswersResponse>> Handle(ResetPageAnswersRequest request, CancellationToken cancellationToken)
         {
-            var section = await _dataContext.ApplicationSections.SingleOrDefaultAsync(sec => sec.Id == request.SectionId && sec.ApplicationId == request.ApplicationId, cancellationToken);
+            var application = await _dataContext.Applications.AsNoTracking().FirstOrDefaultAsync(app => app.Id == request.ApplicationId, cancellationToken: cancellationToken);
+            if (application is null) return new HandlerResponse<ResetPageAnswersResponse>(false, "Application does not exist");
+
+
+            var sequenceSection = await _dataContext.WorkflowSections
+                .Join(_dataContext.WorkflowSequences,
+                    wsec => wsec.Id,
+                    wseq => wseq.SectionId,
+                    (sec, sequence) => new {Section = sec, Sequence = sequence})
+                .Where(x => x.Section.Id == request.SectionId && x.Sequence.WorkflowId == application.WorkflowId)
+                .FirstOrDefaultAsync(cancellationToken);
+
+
+            var page = sequenceSection.Section.QnAData.Pages.FirstOrDefault(x => x.PageId == request.PageId);
+
+            var section = new ApplicationSection
+            {
+                ApplicationId = request.ApplicationId,
+                DisplayType = sequenceSection.Section.DisplayType,
+                Id = sequenceSection.Section.Id,
+                LinkTitle = sequenceSection.Section.LinkTitle,
+                QnAData = sequenceSection.Section.QnAData,
+                SectionNo = sequenceSection.Sequence.SectionNo,
+                SequenceNo = sequenceSection.Sequence.SequenceNo,
+                Title = sequenceSection.Section.Title
+            };
             var validationErrorResponse = ValidateRequest(request, section);
 
             if (validationErrorResponse != null)
@@ -34,7 +61,6 @@ namespace SFA.DAS.QnA.Application.Commands.ResetPageAnswers
 
             ResetPageAnswers(request, section);
 
-            var application = await _dataContext.Applications.SingleOrDefaultAsync(app => app.Id == request.ApplicationId, cancellationToken);
             UpdateApplicationData(request, application, section);
 
             var nextAction = GetNextActionForPage(section, application, request.PageId);
@@ -45,6 +71,30 @@ namespace SFA.DAS.QnA.Application.Commands.ResetPageAnswers
             await _dataContext.SaveChangesAsync(cancellationToken);
 
             return new HandlerResponse<ResetPageAnswersResponse>(new ResetPageAnswersResponse(true));
+
+
+
+            //var section = await _dataContext.ApplicationSections.SingleOrDefaultAsync(sec => sec.Id == request.SectionId && sec.ApplicationId == request.ApplicationId, cancellationToken);
+            //var validationErrorResponse = ValidateRequest(request, section);
+
+            //if (validationErrorResponse != null)
+            //{
+            //    return validationErrorResponse;
+            //}
+
+            //ResetPageAnswers(request, section);
+
+            //var application = await _dataContext.Applications.SingleOrDefaultAsync(app => app.Id == request.ApplicationId, cancellationToken);
+            //UpdateApplicationData(request, application, section);
+
+            //var nextAction = GetNextActionForPage(section, application, request.PageId);
+            //var checkboxListAllNexts = GetCheckboxListMatchingNextActionsForPage(section, application, request.PageId);
+
+            //SetStatusOfNextPagesBasedOnDeemedNextActions(section, request.PageId, nextAction, checkboxListAllNexts);
+
+            //await _dataContext.SaveChangesAsync(cancellationToken);
+
+            //return new HandlerResponse<ResetPageAnswersResponse>(new ResetPageAnswersResponse(true));
         }
 
         private HandlerResponse<ResetPageAnswersResponse> ValidateRequest(ResetPageAnswersRequest request, ApplicationSection section)
@@ -74,6 +124,8 @@ namespace SFA.DAS.QnA.Application.Commands.ResetPageAnswers
         {
             if (section != null)
             {
+                
+
                 // Have to force QnAData a new object and reassign for Entity Framework to pick up changes
                 var qnaData = new QnAData(section.QnAData);
                 var page = qnaData?.Pages.SingleOrDefault(p => p.PageId == request.PageId);

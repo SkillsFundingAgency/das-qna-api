@@ -2,9 +2,11 @@ using System;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using NSubstitute;
 using NUnit.Framework;
 using SFA.DAS.QnA.Api.Types.Page;
 using SFA.DAS.QnA.Application.Commands.SetPageAnswers;
+using SFA.DAS.QnA.Application.Repositories;
 using SFA.DAS.QnA.Application.Services;
 using SFA.DAS.QnA.Data;
 using SFA.DAS.QnA.Data.Entities;
@@ -28,7 +30,7 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.FindNextRequiredAction
 
             NotRequiredProcessor = new NotRequiredProcessor();
             TagProcessingService = new TagProcessingService(QnaDataContext);
-            SetAnswersBase = new SetAnswersBase(QnaDataContext, NotRequiredProcessor, TagProcessingService, null);
+            SetAnswersBase = new SetAnswersBase(QnaDataContext, NotRequiredProcessor, TagProcessingService, null, Substitute.For<IApplicationAnswersRepository>());
 
             ApplicationId = Guid.NewGuid();
 
