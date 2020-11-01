@@ -65,7 +65,7 @@ namespace SFA.DAS.QnA.Application.Commands.StartApplication
                 return new HandlerResponse<StartApplicationResponse>(false, $"WorkflowType '{request.WorkflowType}' does not exist.");
             }
 
-            await CopyWorkflows(cancellationToken, newApplication);
+            //await CopyWorkflows(cancellationToken, newApplication);
             await _dataContext.SaveChangesAsync(cancellationToken);
 
             _logger.LogInformation($"Elapsed: {stopwatch.ElapsedMilliseconds} ms");
@@ -113,14 +113,6 @@ namespace SFA.DAS.QnA.Application.Commands.StartApplication
 
             var workflowSections = await _dataContext.WorkflowSections.AsNoTracking()
                 .Where(sec => sectionIds.Contains(sec.Id))
-                .Select(sec => new WorkflowSection
-                {
-                    DisplayType = sec.DisplayType,
-                    Id = sec.Id,
-                    LinkTitle = sec.LinkTitle,
-                    ProjectId = sec.ProjectId,
-                    Title = sec.Title
-                })
                 .ToListAsync(cancellationToken: cancellationToken);
 
             var newApplicationSections = new List<ApplicationSection>();
@@ -140,7 +132,7 @@ namespace SFA.DAS.QnA.Application.Commands.StartApplication
                         LinkTitle = workflowSection.LinkTitle,
                         ApplicationId = newApplication.Id,
                         DisplayType = workflowSection.DisplayType,
-                        QnAData = new ApplicationSection().QnAData, //workflowSection.QnAData,
+                        QnAData = workflowSection.QnAData,
                         SectionNo = sectionDetails.SectionNo,
                         SequenceNo = sectionDetails.SequenceNo
                     };
