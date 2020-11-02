@@ -84,16 +84,76 @@ namespace SFA.DAS.QnA.Application.Services
 
         public async Task<List<Section>> GetApplicationSections(Guid applicationId, CancellationToken cancellationToken)
         {
-            var application = await _dataContext.Applications.AsNoTracking().FirstOrDefaultAsync(app => app.Id == applicationId, cancellationToken);
-            if (application is null)
-                //log error here
+            //var application = await _dataContext.Applications.AsNoTracking().FirstOrDefaultAsync(app => app.Id == applicationId, cancellationToken);
+            //if (application is null)
+            //    //log error here
+            //    return null;
+
+            var workflowId = await _dataContext.Applications
+                .Where(x => x.Id == applicationId)
+                .Select(x => x.WorkflowId)
+                .FirstOrDefaultAsync(cancellationToken);
+
+            if (workflowId == Guid.Empty)
                 return null;
 
+            var workflowSequencesTask = _dataContext.WorkflowSequences.Where(wseq => wseq.WorkflowId == workflowId)
+                .Join(_dataContext.WorkflowSections,
+                    wseq => wseq.SectionId,
+                    wsec => wsec.Id,
+                    (sequence, section) => new
+                    {
+                        SequenceNo = sequence.SequenceNo,
+                        SectionNo = sequence.SectionNo,
+                        Section = section
+                    })
+                .ToListAsync();
+            var answersTask = _answersRepository.GetApplicationAnswers(applicationId);
+            Task.WaitAll(new Task[] { workflowSequencesTask, answersTask }, cancellationToken);
+
             //TODO: add Sequence ID to application section to get rid of this call?
-            var workflowSequences = await _dataContext.WorkflowSequences
-                .Where(x => x.WorkflowId == application.WorkflowId)
-                .ToListAsync(cancellationToken);
-            return await GetApplicationSections(application, workflowSequences, cancellationToken);
+            //var workflowSequences = await _dataContext.WorkflowSequences
+            //    .Where(x => x.WorkflowId == application.WorkflowId)
+            //    .ToListAsync(cancellationToken);
+            //return await GetApplicationSections(application, workflowSequences, cancellationToken);
+
+            var workflowSequences = workflowSequencesTask.Result;
+            var answers = answersTask.Result;
+            //TODO: get the state for the pages
+
+            var sections = new List<Section>();
+            foreach (var sequence in workflowSequences)
+            {
+                var ws = sequence.Section;
+                var sectionPagesOfAnswers = answers.Where(a => a.SectionId == ws.Id).ToList();
+                var section = new Section
+                {
+                    ApplicationId = applicationId,
+                    DisplayType = ws.DisplayType,
+                    Id = ws.Id,
+                    LinkTitle = ws.LinkTitle,
+                    QnAData = ws.QnAData,
+                    SectionNo = sequence.SectionNo,
+                    SequenceNo = sequence.SequenceNo,
+                    Status = "", //todo: how to get status?
+                    Title = ws.Title
+                };
+                sections.Add(section);
+                foreach (var page in section.QnAData.Pages)
+                {
+                    var pageAnswers = sectionPagesOfAnswers.Where(pa => pa.PageId == page.PageId)
+                        .ToList();
+                    if (!pageAnswers.Any())
+                        continue;
+                    page.PageOfAnswers =
+                        new List<PageOfAnswers>(new[] { new PageOfAnswers { Answers = pageAnswers.Select(pa => new Answer { Value = pa.Value, QuestionId = pa.QuestionId }).ToList() } });
+                    page.Complete = true;
+                    page.Feedback?.ForEach(feedback => feedback.IsCompleted = true);
+                }
+                //RemovePages(application, section);
+
+            }
+            return sections;
         }
 
         public async Task<List<Section>> GetApplicationSections(Guid applicationId, Guid sequenceId, CancellationToken cancellationToken)
