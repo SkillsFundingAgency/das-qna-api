@@ -6,6 +6,7 @@ CREATE TABLE [WorkflowSections]
 	[Title] [nvarchar](250) NOT NULL,
 	[LinkTitle] [nvarchar](250) NOT NULL,
 	[DisplayType] [nvarchar](50) NOT NULL,
+	[ConfigurationData] nvarchar (max) null,
 CONSTRAINT [PK_WorkflowSections] PRIMARY KEY ([Id])
 ) 
 GO

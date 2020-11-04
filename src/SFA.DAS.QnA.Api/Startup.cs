@@ -104,7 +104,7 @@ namespace SFA.DAS.QnA.Api
             services.AddMediatR(AppDomain.CurrentDomain.GetAssemblies());
 
             services.AddDbContext<QnaDataContext>(options => options.UseSqlServer(config.Value.SqlConnectionstring,providerOptions => providerOptions.EnableRetryOnFailure()));
-
+            services.AddScoped<QnADataContextFactory>();
             services.AddEntityFrameworkSqlServer();
             services.AddTransient<IApplicationAnswersRepository, ApplicationAnswersRepository>();
             services.AddTransient<IApplicationSectionService, ApplicationSectionService>();

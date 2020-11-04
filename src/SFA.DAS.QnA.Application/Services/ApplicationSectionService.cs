@@ -9,10 +9,24 @@ using SFA.DAS.QnA.Api.Types;
 using SFA.DAS.QnA.Api.Types.Page;
 using SFA.DAS.QnA.Application.Queries.Sequences.GetSequence;
 using SFA.DAS.QnA.Application.Repositories;
+using SFA.DAS.QnA.Configuration.Config;
 using SFA.DAS.QnA.Data;
 
 namespace SFA.DAS.QnA.Application.Services
 {
+    public class QnADataContextFactory
+    {
+        private readonly DbContextOptions<QnaDataContext> _options;
+
+        public QnADataContextFactory(DbContextOptions<QnaDataContext> options)
+        {
+            _options = options ?? throw new ArgumentNullException(nameof(options));
+        }
+
+        public QnaDataContext Create() => new QnaDataContext(_options);
+    }
+
+
     public interface IApplicationSectionService
     {
         Task<List<Section>> GetApplicationSections(Guid applicationId, CancellationToken cancellationToken);
@@ -28,47 +42,62 @@ namespace SFA.DAS.QnA.Application.Services
         private readonly QnaDataContext _dataContext;
         private readonly IApplicationAnswersRepository _answersRepository;
         private readonly INotRequiredProcessor _notRequiredProcessor;
+        private readonly QnADataContextFactory _factory;
 
-        public ApplicationSectionService(QnaDataContext dataContext, IApplicationAnswersRepository answersRepository, INotRequiredProcessor notRequiredProcessor)
+        public ApplicationSectionService(QnaDataContext dataContext, IApplicationAnswersRepository answersRepository, INotRequiredProcessor notRequiredProcessor, QnADataContextFactory factory)
         {
             _dataContext = dataContext ?? throw new ArgumentNullException(nameof(dataContext));
             _answersRepository = answersRepository ?? throw new ArgumentNullException(nameof(answersRepository));
             _notRequiredProcessor = notRequiredProcessor ?? throw new ArgumentNullException(nameof(notRequiredProcessor));
+            _factory = factory ?? throw new ArgumentNullException(nameof(factory));
         }
+
+        
 
         public async Task<Section> GetApplicationSection(Guid applicationId, Guid sectionId, CancellationToken cancellationToken)
         {
-            var application = await _dataContext.Applications.AsNoTracking().FirstOrDefaultAsync(app => app.Id == applicationId, cancellationToken);
-            if (application is null)
-                //log error here
-                return null;
+            var applicationTask = _dataContext.Applications.AsNoTracking().FirstOrDefaultAsync(app => app.Id == applicationId, cancellationToken);
 
-            var workflowSequence = await _dataContext.WorkflowSequences.FirstOrDefaultAsync(sequence=> sequence.SectionId == sectionId);
-            if (workflowSequence == null)
-                return null;
+            var sequenceDataContext = _factory.Create();
+            var sequenceTask = sequenceDataContext.WorkflowSequences
+                .AsNoTracking()
+                .FirstOrDefaultAsync(x => x.SectionId == sectionId, cancellationToken);
 
+            var sectionDataContext = _factory.Create();
+            var sectionTask = sectionDataContext.WorkflowSections
+                .AsNoTracking()
+                .FirstOrDefaultAsync(x => x.Id == sectionId, cancellationToken);
 
-            var workflowSection = await _dataContext.WorkflowSections.FirstOrDefaultAsync(section => section.Id == sectionId);
-            if (workflowSection == null)
-                return null;
+            var answersDataContext = _factory.Create();
+            var answersTask = answersDataContext.ApplicationAnswers
+                .AsNoTracking()
+                .Where(a => a.ApplicationId == applicationId &&
+                            a.SectionId == sectionId)
+                .ToListAsync(cancellationToken);
 
-            var sectionPagesOfAnswers = await _answersRepository.GetSectionAnswers(applicationId, sectionId);
+            Task.WaitAll(new Task[] { applicationTask, answersTask, sequenceTask, sectionTask});
+            var sequence = sequenceTask.Result;
+            var section = sectionTask.Result;
+            var answers = answersTask.Result;
+            var application = applicationTask.Result;
+
+            //TODO: Check the results of the db calls
 
             var applicationSection = new Section
             {
                 ApplicationId = application.Id,
-                DisplayType = workflowSection.DisplayType,
-                Id = workflowSection.Id,
-                LinkTitle = workflowSection.LinkTitle,
-                QnAData = workflowSection.QnAData,
-                SectionNo = workflowSequence.SectionNo,
-                SequenceNo = workflowSequence.SequenceNo,
+                DisplayType = section.DisplayType,
+                Id = section.Id,
+                LinkTitle = section.LinkTitle,
+                QnAData = section.QnAData,
+                SectionNo = sequence.SectionNo,
+                SequenceNo = sequence.SequenceNo,
                 Status = "", //todo: how to get status?
-                Title = workflowSection.Title
+                Title = section.Title
             };
             foreach (var page in applicationSection.QnAData.Pages)
             {
-                var pageAnswers = sectionPagesOfAnswers.Where(pa => pa.PageId == page.PageId)
+                var pageAnswers = answers.Where(pa => pa.PageId == page.PageId)
                     .ToList();
                 if (!pageAnswers.Any())
                     continue;

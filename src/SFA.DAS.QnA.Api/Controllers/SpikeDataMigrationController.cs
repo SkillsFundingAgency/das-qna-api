@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using SFA.DAS.QnA.Api.Types;
+using SFA.DAS.QnA.Api.Types.Page;
 using SFA.DAS.QnA.Data;
 using SFA.DAS.QnA.Data.Entities;
 
@@ -15,7 +16,7 @@ namespace SFA.DAS.QnA.Api.Controllers
     [Route("migration")]
     [Produces("application/json")]
     [ApiController]
-    public class SpikeDataMigrationController: ControllerBase
+    public class SpikeDataMigrationController : ControllerBase
     {
         private readonly QnaDataContext _dataContext;
         private readonly ILogger<ApplicationController> _logger;
@@ -49,7 +50,7 @@ namespace SFA.DAS.QnA.Api.Controllers
 
             //Get the sequences and sections for the workflow
             var workflowSequences = await _dataContext.WorkflowSequences.Where(wfs => wfs.WorkflowId == workflow.Id)
-                .Join(_dataContext.WorkflowSections, sequence => sequence.SectionId, section => section.Id, (sequence, section)=> new { Sequence = sequence, Section = section })
+                .Join(_dataContext.WorkflowSections, sequence => sequence.SectionId, section => section.Id, (sequence, section) => new { Sequence = sequence, Section = section })
                 .ToListAsync();
 
             //get the application sections
@@ -72,7 +73,7 @@ namespace SFA.DAS.QnA.Api.Controllers
                 {
                     _logger.LogWarning(
                         $"Application section mismatch with workflow section.  Sequence NO: {workflowSequence.Sequence.SequenceNo}, Section no: {workflowSequence.Sequence.SectionNo}, Sequence id: {workflowSequence.Sequence.Id}");
-                //    continue;
+                    //    continue;
                 }
 
 
@@ -95,6 +96,46 @@ namespace SFA.DAS.QnA.Api.Controllers
 
             var deleteSql = $"Delete from ApplicationAnswers where ApplicationId = '{applicationId}'";
             await _dataContext.Database.ExecuteSqlCommandAsync(deleteSql);
+            await _dataContext.SaveChangesAsync();
+            return Ok("");
+        }
+
+        [HttpPost("workflows/{workflowId}")]
+        [ProducesResponseType((int)HttpStatusCode.Created)]
+        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
+        public async Task<ActionResult> MigrateWorkflowPageConfigurations(Guid workFlowId)
+        {
+            var workflowSequences = await _dataContext.WorkflowSequences
+                .Where(wfs => wfs.WorkflowId == workFlowId)
+                .ToListAsync();
+
+            var sectionIDs = workflowSequences.Select(seq => seq.SectionId)
+                .ToArray();
+
+            var workflowSections = await _dataContext.WorkflowSections
+                .Where(sec => sectionIDs.Contains(sec.Id))
+                .ToListAsync();
+
+            foreach (var workflowSection in workflowSections)
+            {
+                workflowSection.ConfigurationData = new QnAData();
+                workflowSection.ConfigurationData.Pages = workflowSection.QnAData.Pages.Select(page => new Page
+                {
+                    SectionId = page.SectionId,
+                    Title = page.Title,
+                    ActivatedByPageId = page.ActivatedByPageId,
+                    AllowMultipleAnswers = page.AllowMultipleAnswers,
+                    //Details = page.Details,
+                    DisplayType = page.DisplayType,
+                    Next = page.Next,
+                    NotRequiredConditions = page.NotRequiredConditions,
+                    Order = page.Order,
+                    PageId = page.PageId,
+                    SequenceId = page.SequenceId
+                }).ToList();
+            }
+
+
             await _dataContext.SaveChangesAsync();
             return Ok("");
         }
