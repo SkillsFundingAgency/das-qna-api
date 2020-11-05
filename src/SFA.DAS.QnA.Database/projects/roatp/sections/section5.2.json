@@ -183,7 +183,7 @@
             "AllowMultipleAnswers": false,
             "Active": true,
             "NotRequiredConditions": [],
-            "BodyText": "<p class='govuk-body' id='rte-managing-employers-who'>This should be someone who has the overall responsibility and can make decisions independently.</p><p class='govuk-body'>We'll only contact them if there is a concern.</p>",
+            "BodyText": "<p class='govuk-body' id='rte-managing-employers-who'>This must be someone who has the overall responsibility and can make decisions independently.</p><p class='govuk-body'>We'll only contact them if there is a concern.</p>",
             "ActivatedByPageId": ""
         }, {
             "PageId": "5130",
