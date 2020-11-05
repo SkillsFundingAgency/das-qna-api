@@ -323,8 +323,8 @@
 			"PageId": "2",
 			"SequenceId": null,
 			"SectionId": null,
-			"Title": "Completing assessments",
-			"LinkTitle": "Completing assessments",
+			"Title": "Completing assessments for registered learners",
+			"LinkTitle": "Completing assessments for registered learners",
 			"InfoText": "",
 			"Questions": [
 				{
@@ -485,8 +485,8 @@
 			"PageId": "4",
 			"SequenceId": null,
 			"SectionId": null,
-			"Title": "Communicating your exit",
-			"LinkTitle": "Communicating your exit",
+			"Title": "Communicating your market exit to customers",
+			"LinkTitle": "Communicating your market exit to customers",
 			"InfoText": "",
 			"Questions": [
 				{
@@ -544,8 +544,8 @@
 			"PageId": "5",
 			"SequenceId": null,
 			"SectionId": null,
-			"Title": "Date of withdrawal",
-			"LinkTitle": "Date of withdrawal",
+			"Title": "Withdrawal date",
+			"LinkTitle": "Withdrawal date",
 			"InfoText": "",
 			"Questions": [
 				{
