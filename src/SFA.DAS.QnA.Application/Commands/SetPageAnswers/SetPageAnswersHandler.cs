@@ -19,8 +19,8 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
         //public SetPageAnswersHandler(QnaDataContext dataContext, IAnswerValidator answerValidator, INotRequiredProcessor notRequiredProcessor, ITagProcessingService tagProcessingService) : base(dataContext, notRequiredProcessor, tagProcessingService, answerValidator)
         //{
         //}
-        public SetPageAnswersHandler(QnaDataContext dataContext,   IAnswerValidator answerValidator, INotRequiredProcessor notRequiredProcessor, ITagProcessingService tagProcessingService, IApplicationAnswersRepository applicationAnswersRepository) :
-            base(dataContext, notRequiredProcessor, tagProcessingService, answerValidator, applicationAnswersRepository)
+        public SetPageAnswersHandler(QnaDataContext dataContext,   IAnswerValidator answerValidator, INotRequiredProcessor notRequiredProcessor, ITagProcessingService tagProcessingService, IApplicationAnswersRepository applicationAnswersRepository, IWorkflowRepository workflowRepository) :
+            base(dataContext, notRequiredProcessor, tagProcessingService, answerValidator, applicationAnswersRepository, workflowRepository)
         {
         }
 

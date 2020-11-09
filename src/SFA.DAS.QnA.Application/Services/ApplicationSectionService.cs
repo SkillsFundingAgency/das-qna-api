@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -11,6 +12,7 @@ using SFA.DAS.QnA.Application.Queries.Sequences.GetSequence;
 using SFA.DAS.QnA.Application.Repositories;
 using SFA.DAS.QnA.Configuration.Config;
 using SFA.DAS.QnA.Data;
+using SFA.DAS.QnA.Data.Entities;
 
 namespace SFA.DAS.QnA.Application.Services
 {
@@ -43,43 +45,39 @@ namespace SFA.DAS.QnA.Application.Services
         private readonly IApplicationAnswersRepository _answersRepository;
         private readonly INotRequiredProcessor _notRequiredProcessor;
         private readonly QnADataContextFactory _factory;
+        private readonly IWorkflowRepository _workflowRepository;
+        private readonly IApplicationRepository _applicationRepository;
 
-        public ApplicationSectionService(QnaDataContext dataContext, IApplicationAnswersRepository answersRepository, INotRequiredProcessor notRequiredProcessor, QnADataContextFactory factory)
+        public ApplicationSectionService(QnaDataContext dataContext, IApplicationAnswersRepository answersRepository, 
+            INotRequiredProcessor notRequiredProcessor, QnADataContextFactory factory, 
+            IWorkflowRepository workflowRepository, IApplicationRepository applicationRepository)
         {
             _dataContext = dataContext ?? throw new ArgumentNullException(nameof(dataContext));
             _answersRepository = answersRepository ?? throw new ArgumentNullException(nameof(answersRepository));
             _notRequiredProcessor = notRequiredProcessor ?? throw new ArgumentNullException(nameof(notRequiredProcessor));
             _factory = factory ?? throw new ArgumentNullException(nameof(factory));
+            _workflowRepository = workflowRepository ?? throw new ArgumentNullException(nameof(workflowRepository));
+            _applicationRepository = applicationRepository ?? throw new ArgumentNullException(nameof(applicationRepository));
         }
 
-        
 
         public async Task<Section> GetApplicationSection(Guid applicationId, Guid sectionId, CancellationToken cancellationToken)
         {
-            var applicationTask = _dataContext.Applications.AsNoTracking().FirstOrDefaultAsync(app => app.Id == applicationId, cancellationToken);
-
-            var sequenceDataContext = _factory.Create();
-            var sequenceTask = sequenceDataContext.WorkflowSequences
-                .AsNoTracking()
-                .FirstOrDefaultAsync(x => x.SectionId == sectionId, cancellationToken);
-
-            var sectionDataContext = _factory.Create();
-            var sectionTask = sectionDataContext.WorkflowSections
-                .AsNoTracking()
-                .FirstOrDefaultAsync(x => x.Id == sectionId, cancellationToken);
-
+            var applicationTask = _applicationRepository.GetApplication(applicationId);
+            var sectionTask = _workflowRepository.GetWorkflowSection(sectionId);
             var answersDataContext = _factory.Create();
             var answersTask = answersDataContext.ApplicationAnswers
                 .AsNoTracking()
                 .Where(a => a.ApplicationId == applicationId &&
                             a.SectionId == sectionId)
                 .ToListAsync(cancellationToken);
-
-            Task.WaitAll(new Task[] { applicationTask, answersTask, sequenceTask, sectionTask});
-            var sequence = sequenceTask.Result;
+            var sectionStateTask = _applicationRepository.GetApplicationSectionPageStates(applicationId, sectionId);
+            Task.WaitAll(new Task[] { applicationTask, answersTask, sectionTask, sectionStateTask });
+            //var sequence = sequenceTask.Result;
             var section = sectionTask.Result;
             var answers = answersTask.Result;
             var application = applicationTask.Result;
+            var sectionState = sectionStateTask.Result;
 
             //TODO: Check the results of the db calls
 
@@ -90,8 +88,8 @@ namespace SFA.DAS.QnA.Application.Services
                 Id = section.Id,
                 LinkTitle = section.LinkTitle,
                 QnAData = section.QnAData,
-                SectionNo = sequence.SectionNo,
-                SequenceNo = sequence.SequenceNo,
+                //SectionNo = sequence.SectionNo,
+                //SequenceNo = sequence.SequenceNo,
                 Status = "", //todo: how to get status?
                 Title = section.Title
             };
@@ -99,61 +97,110 @@ namespace SFA.DAS.QnA.Application.Services
             {
                 var pageAnswers = answers.Where(pa => pa.PageId == page.PageId)
                     .ToList();
-                if (!pageAnswers.Any())
-                    continue;
-                page.PageOfAnswers =
-                    new List<PageOfAnswers>(new[] { new PageOfAnswers { Answers = pageAnswers.Select(pa => new Answer { Value = pa.Value, QuestionId = pa.QuestionId }).ToList() } });
-                page.Complete = true;
-                page.Feedback?.ForEach(feedback => feedback.IsCompleted = true);
+                if (pageAnswers.Any())
+                {
+                    page.PageOfAnswers =
+                        new List<PageOfAnswers>(new[] { new PageOfAnswers { Answers = pageAnswers.Select(pa => new Answer { Value = pa.Value, QuestionId = pa.QuestionId }).ToList() } });
+                    page.Complete = true;
+                    page.Feedback?.ForEach(feedback => feedback.IsCompleted = true);
+                }
+
+                var pageState = sectionState.FirstOrDefault(x => x.PageId == page.PageId);
+                if (pageState != null)
+                {
+                    page.Complete = pageState.Complete;
+                    page.Active = pageState.Active;
+                    page.NotRequired = pageState.NotRequired;
+                }
             }
             RemovePages(application, applicationSection);
             return applicationSection;
-
         }
 
         public async Task<List<Section>> GetApplicationSections(Guid applicationId, CancellationToken cancellationToken)
         {
-            //var application = await _dataContext.Applications.AsNoTracking().FirstOrDefaultAsync(app => app.Id == applicationId, cancellationToken);
-            //if (application is null)
-            //    //log error here
-            //    return null;
+            try
+            {
+                var application = await _applicationRepository.GetApplication(applicationId);
+                if (application is null)
+                    //log error here
+                    return null;
 
-            var workflowId = await _dataContext.Applications
-                .Where(x => x.Id == applicationId)
-                .Select(x => x.WorkflowId)
-                .FirstOrDefaultAsync(cancellationToken);
 
-            if (workflowId == Guid.Empty)
+                var workflowSequences = await _workflowRepository.GetWorkflowSections(application.WorkflowId); //workflowSequencesTask.Result;
+                var answers = await _answersRepository.GetApplicationAnswers(applicationId); //answersTask.Result;
+                var pageStates = await _applicationRepository.GetApplicationSectionPageStates(applicationId);
+
+                var sections = new List<Section>();
+                foreach (var sequence in workflowSequences)
+                {
+                    var ws = sequence;
+                    var section = new Section
+                    {
+                        ApplicationId = applicationId,
+                        DisplayType = ws.DisplayType,
+                        Id = ws.Id,
+                        LinkTitle = ws.LinkTitle,
+                        QnAData = ws.QnAData,
+                        //SectionNo = sequence.SectionNo,
+                        //SequenceNo = sequence.SequenceNo,
+                        Status = "", //todo: how to get status?
+                        Title = ws.Title
+                    };
+                    sections.Add(section);
+                    var sectionPagesOfAnswers = answers.Where(a => a.SectionId == ws.Id).ToList();
+                    foreach (var page in section.QnAData.Pages)
+                    {
+                        var pageAnswers = sectionPagesOfAnswers.Where(pa => pa.PageId == page.PageId)
+                            .ToList();
+                        if (pageAnswers.Any())
+                        {
+                            page.PageOfAnswers =
+                                new List<PageOfAnswers>(new[] { new PageOfAnswers { Answers = pageAnswers.Select(pa => new Answer { Value = pa.Value, QuestionId = pa.QuestionId }).ToList() } });
+                            page.Complete = true;
+                            page.Feedback?.ForEach(feedback => feedback.IsCompleted = true);
+                        }
+
+                        var pageState = pageStates.FirstOrDefault(x => x.PageId == page.PageId);
+                        if (pageState != null)
+                        {
+                            page.Complete = pageState.Complete;
+                            page.Active = pageState.Active;
+                            page.NotRequired = pageState.NotRequired;
+                        }
+                    }
+                    RemovePages(application, section);
+                }
+                return sections;
+
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
+
+        public async Task<List<Section>> GetApplicationSections(Guid applicationId, Guid sequenceId, CancellationToken cancellationToken)
+        {
+            var application = await _applicationRepository.GetApplication(applicationId);
+            if (application is null)
+                //log error here
                 return null;
 
-            var workflowSequencesTask = _dataContext.WorkflowSequences.Where(wseq => wseq.WorkflowId == workflowId)
-                .Join(_dataContext.WorkflowSections,
-                    wseq => wseq.SectionId,
-                    wsec => wsec.Id,
-                    (sequence, section) => new
-                    {
-                        SequenceNo = sequence.SequenceNo,
-                        SectionNo = sequence.SectionNo,
-                        Section = section
-                    })
-                .ToListAsync();
+            var workflowSectionsTask = _workflowRepository.GetWorkflowSections(application.WorkflowId, sequenceId);
             var answersTask = _answersRepository.GetApplicationAnswers(applicationId);
-            Task.WaitAll(new Task[] { workflowSequencesTask, answersTask }, cancellationToken);
+            var pageStatesTask = _applicationRepository.GetApplicationSectionPageStates(applicationId);
+            Task.WaitAll(new Task[] { workflowSectionsTask, answersTask, pageStatesTask }, cancellationToken);
 
-            //TODO: add Sequence ID to application section to get rid of this call?
-            //var workflowSequences = await _dataContext.WorkflowSequences
-            //    .Where(x => x.WorkflowId == application.WorkflowId)
-            //    .ToListAsync(cancellationToken);
-            //return await GetApplicationSections(application, workflowSequences, cancellationToken);
 
-            var workflowSequences = workflowSequencesTask.Result;
+            var workflowSections = workflowSectionsTask.Result;
             var answers = answersTask.Result;
-            //TODO: get the state for the pages
+            var pageStates = pageStatesTask.Result;
 
             var sections = new List<Section>();
-            foreach (var sequence in workflowSequences)
+            foreach (var workflowSection in workflowSections)
             {
-                var ws = sequence.Section;
+                var ws = workflowSection;
                 var sectionPagesOfAnswers = answers.Where(a => a.SectionId == ws.Id).ToList();
                 var section = new Section
                 {
@@ -162,8 +209,8 @@ namespace SFA.DAS.QnA.Application.Services
                     Id = ws.Id,
                     LinkTitle = ws.LinkTitle,
                     QnAData = ws.QnAData,
-                    SectionNo = sequence.SectionNo,
-                    SequenceNo = sequence.SequenceNo,
+                    //SectionNo = sequence.SectionNo,
+                    //SequenceNo = sequence.SequenceNo,
                     Status = "", //todo: how to get status?
                     Title = ws.Title
                 };
@@ -172,84 +219,25 @@ namespace SFA.DAS.QnA.Application.Services
                 {
                     var pageAnswers = sectionPagesOfAnswers.Where(pa => pa.PageId == page.PageId)
                         .ToList();
-                    if (!pageAnswers.Any())
-                        continue;
-                    page.PageOfAnswers =
-                        new List<PageOfAnswers>(new[] { new PageOfAnswers { Answers = pageAnswers.Select(pa => new Answer { Value = pa.Value, QuestionId = pa.QuestionId }).ToList() } });
-                    page.Complete = true;
-                    page.Feedback?.ForEach(feedback => feedback.IsCompleted = true);
-                }
-                //RemovePages(application, section);
-
-            }
-            return sections;
-        }
-
-        public async Task<List<Section>> GetApplicationSections(Guid applicationId, Guid sequenceId, CancellationToken cancellationToken)
-        {
-            var application = await _dataContext.Applications.AsNoTracking().FirstOrDefaultAsync(app => app.Id == applicationId, cancellationToken);
-            if (application is null)
-                //log error here
-                return null;
-
-            //why do we have to query for the sequence number to then get all sequences with same sequence number
-            var sequenceNumber = await _dataContext.WorkflowSequences
-                .Where(ws => ws.Id == sequenceId)
-                .Select(ws => ws.SequenceNo)
-                .FirstOrDefaultAsync(cancellationToken);
-
-            var workflowSequences = await _dataContext.WorkflowSequences.Where(ws => ws.SequenceNo == sequenceNumber).ToListAsync(cancellationToken);
-            return await GetApplicationSections(application, workflowSequences, cancellationToken);
-        }
-
-        private async Task<List<Section>> GetApplicationSections(Data.Entities.Application application,
-            List<WorkflowSequence> workflowSequences, CancellationToken cancellationToken)
-        {
-            var sectionIds = workflowSequences.Select(x => x.SectionId).ToList();
-            var workflowSectionsTask = _dataContext.WorkflowSections.Where(x => sectionIds.Contains(x.Id)).ToListAsync(cancellationToken);
-            var answersTask = _answersRepository.GetApplicationAnswers(application.Id);
-            Task.WaitAll(new Task[] { workflowSectionsTask, answersTask }, cancellationToken);
-
-            var workflowSections = workflowSectionsTask.Result;
-            var answers = answersTask.Result;
-            //TODO: get the state for the pages
-
-            var sections = new List<Section>();
-            foreach (var sequence in workflowSequences)
-            {
-                foreach (var ws in workflowSections.Where(x => sequence.SectionId == x.Id))
-                {
-                    var sectionPagesOfAnswers = answers.Where(a => a.SectionId == ws.Id).ToList();
-
-                    var section = new Section
+                    if (pageAnswers.Any())
                     {
-                        ApplicationId = application.Id,
-                        DisplayType = ws.DisplayType,
-                        Id = ws.Id,
-                        LinkTitle = ws.LinkTitle,
-                        QnAData = ws.QnAData,
-                        SectionNo = sequence.SectionNo,
-                        SequenceNo = sequence.SequenceNo,
-                        Status = "", //todo: how to get status?
-                        Title = ws.Title
-                    };
-                    sections.Add(section);
-                    foreach (var page in section.QnAData.Pages)
-                    {
-                        var pageAnswers = sectionPagesOfAnswers.Where(pa => pa.PageId == page.PageId)
-                            .ToList();
-                        if (!pageAnswers.Any())
-                            continue;
                         page.PageOfAnswers =
-                            new List<PageOfAnswers>(new[] { new PageOfAnswers { Answers = pageAnswers.Select(pa => new Answer{Value = pa.Value, QuestionId = pa.QuestionId}).ToList() } });
+                            new List<PageOfAnswers>(new[] { new PageOfAnswers { Answers = pageAnswers.Select(pa => new Answer { Value = pa.Value, QuestionId = pa.QuestionId }).ToList() } });
                         page.Complete = true;
                         page.Feedback?.ForEach(feedback => feedback.IsCompleted = true);
                     }
-                    RemovePages(application, section);
+
+                    var pageState = pageStates.FirstOrDefault(x => x.PageId == page.PageId);
+                    if (pageState != null)
+                    {
+                        page.Complete = pageState.Complete;
+                        page.Active = pageState.Active;
+                        page.NotRequired = pageState.NotRequired;
+                    }
                 }
+                RemovePages(application, section);
             }
             return sections;
-
         }
 
         private void RemovePages(Data.Entities.Application application, Section section)

@@ -1,4 +1,5 @@
 using System;
+using System.ComponentModel.Design;
 
 namespace SFA.DAS.QnA.Data.Entities
 {

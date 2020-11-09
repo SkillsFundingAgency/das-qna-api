@@ -1,12 +1,14 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Logging;
 using NSubstitute;
 using NUnit.Framework;
 using SFA.DAS.QnA.Api.Types;
 using SFA.DAS.QnA.Api.Types.Page;
 using SFA.DAS.QnA.Application.Commands.StartApplication;
+using SFA.DAS.QnA.Application.Repositories;
 using SFA.DAS.QnA.Data;
 using SFA.DAS.QnA.Data.Entities;
 
@@ -27,7 +29,8 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.StartApplicationTests
             var applicationDataValidator = Substitute.For<IApplicationDataValidator>();
             applicationDataValidator.IsValid("","").ReturnsForAnyArgs(true);
             var logger = Substitute.For<ILogger<StartApplicationHandler>>();
-            Handler = new StartApplicationHandler(DataContext, applicationDataValidator, logger);
+            var cache = Substitute.For<IMemoryCache>();
+            Handler = new StartApplicationHandler(DataContext, applicationDataValidator, logger, new WorkflowRepository(DataContext, cache));
 
             WorkflowId = Guid.NewGuid();
 

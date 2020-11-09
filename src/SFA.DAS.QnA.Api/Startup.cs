@@ -108,6 +108,8 @@ namespace SFA.DAS.QnA.Api
             services.AddEntityFrameworkSqlServer();
             services.AddTransient<IApplicationAnswersRepository, ApplicationAnswersRepository>();
             services.AddTransient<IApplicationSectionService, ApplicationSectionService>();
+            services.AddTransient<IWorkflowRepository, WorkflowRepository>();
+            services.AddTransient<IApplicationRepository, ApplicationRepository>();
             services.AddMvc(setup => {
                 if (!_hostingEnvironment.IsDevelopment())
                 {

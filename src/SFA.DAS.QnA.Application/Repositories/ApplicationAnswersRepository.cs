@@ -17,6 +17,7 @@ namespace SFA.DAS.QnA.Application.Repositories
         Task StoreApplicationAnswers(Guid applicationId, Guid sectionId, string pageId, List<Answer> answers);
     }
 
+
     public class ApplicationAnswersRepository : IApplicationAnswersRepository
     {
         private readonly QnaDataContext _dataContext;
@@ -29,6 +30,7 @@ namespace SFA.DAS.QnA.Application.Repositories
         public async Task<List<Answer>> GetPageAnswers(Guid applicationId, Guid sectionId, string pageId)
         {
             return await _dataContext.ApplicationAnswers
+                .AsNoTracking()
                 .Where(a => a.ApplicationId == applicationId &&
                             a.SectionId == sectionId && 
                             a.PageId == pageId)
@@ -43,6 +45,7 @@ namespace SFA.DAS.QnA.Application.Repositories
         public async Task<List<ApplicationAnswer>> GetSectionAnswers(Guid applicationId, Guid sectionId)
         {
             return await _dataContext.ApplicationAnswers
+                .AsNoTracking()
                 .Where(a => a.ApplicationId == applicationId &&
                             a.SectionId == sectionId)
                 .ToListAsync();

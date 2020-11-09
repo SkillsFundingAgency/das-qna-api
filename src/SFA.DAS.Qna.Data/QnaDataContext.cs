@@ -21,7 +21,7 @@ namespace SFA.DAS.QnA.Data
                         new JsonSerializerSettings {NullValueHandling = NullValueHandling.Ignore}),
                     v => JsonConvert.DeserializeObject<QnAData>(v,
                         new JsonSerializerSettings {NullValueHandling = NullValueHandling.Ignore}));
-            
+
             modelBuilder.Entity<WorkflowSection>()
                 .Property(c => c.QnAData)
                 .HasConversion(
@@ -48,5 +48,6 @@ namespace SFA.DAS.QnA.Data
         public DbSet<ApplicationSection> ApplicationSections { get; set; }
         public DbSet<Project> Projects { get; set; }
         public DbSet<ApplicationAnswer> ApplicationAnswers { get; set; }
+        public DbSet<ApplicationPageState> ApplicationPageStates { get; set; }
     }
 }

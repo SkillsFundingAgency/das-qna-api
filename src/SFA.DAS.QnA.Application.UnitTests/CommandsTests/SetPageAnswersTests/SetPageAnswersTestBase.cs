@@ -32,7 +32,7 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.SetPageAnswersTests
 
             validator.Validate(Arg.Any<List<Answer>>(), Arg.Any<Page>()).Returns(new List<KeyValuePair<string, string>>());
             
-            Handler = new SetPageAnswersHandler(DataContext, validator, NotRequiredProcessor, TagProcessingService, Substitute.For<IApplicationAnswersRepository>());
+            Handler = new SetPageAnswersHandler(DataContext, validator, NotRequiredProcessor, TagProcessingService, Substitute.For<IApplicationAnswersRepository>(), Substitute.For<IWorkflowRepository>());
 
             ApplicationId = Guid.NewGuid();
             SectionId = Guid.NewGuid();

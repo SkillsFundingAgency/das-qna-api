@@ -80,6 +80,7 @@
     <Build Include="Tables\WorkflowSections.sql" />
     <Build Include="Tables\WorkflowSequences.sql" />
     <Build Include="Tables\ApplicationAnswers.sql" />
+    <Build Include="Tables\ApplicationPageStates.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ApplicationDataSchema\Assessor.json" />

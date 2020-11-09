@@ -19,8 +19,8 @@ namespace SFA.DAS.QnA.Application.Commands.ResetPageAnswers
 {
     public class ResetPageAnswersHandler : SetAnswersBase, IRequestHandler<ResetPageAnswersRequest, HandlerResponse<ResetPageAnswersResponse>>
     {
-        public ResetPageAnswersHandler(QnaDataContext dataContext, INotRequiredProcessor notRequiredProcessor, ITagProcessingService tagProcessingService,  IApplicationAnswersRepository applicationAnswersRepository) 
-            : base(dataContext, notRequiredProcessor, tagProcessingService, null, applicationAnswersRepository)
+        public ResetPageAnswersHandler(QnaDataContext dataContext, INotRequiredProcessor notRequiredProcessor, ITagProcessingService tagProcessingService,  IApplicationAnswersRepository applicationAnswersRepository, IWorkflowRepository workflowRepository) 
+            : base(dataContext, notRequiredProcessor, tagProcessingService, null, applicationAnswersRepository, workflowRepository)
         {
         }
 

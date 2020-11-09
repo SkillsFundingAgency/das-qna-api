@@ -28,7 +28,7 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.ResetPageAnswersTests
         public async Task SetUp()
         {
             DataContext = DataContextHelpers.GetInMemoryDataContext();
-            Handler = new ResetPageAnswersHandler(DataContext, new NotRequiredProcessor(),new TagProcessingService(DataContext),Substitute.For<IApplicationAnswersRepository>());
+            Handler = new ResetPageAnswersHandler(DataContext, new NotRequiredProcessor(),new TagProcessingService(DataContext),Substitute.For<IApplicationAnswersRepository>(), Substitute.For<IWorkflowRepository>());
             GetApplicationDataHandler = new GetApplicationDataHandler(DataContext);
             GetPageHandler = new GetPageHandler(DataContext);
 

@@ -92,11 +92,33 @@ namespace SFA.DAS.QnA.Api.Controllers
                         .ToList();
                     await _dataContext.ApplicationAnswers.AddRangeAsync(answers);
                 }
+
+                await _dataContext.ApplicationPageStates.AddRangeAsync(applicationSection.QnAData.Pages.Select(x => new ApplicationPageState
+                {
+                    ApplicationId = applicationId,
+                    SectionId = workflowSequence.Section.Id,
+                    PageId = x.PageId,
+                    Complete = x.Complete,
+                    Active = x.Active,
+                    NotRequired = x.NotRequired
+                }));
             }
 
             var deleteSql = $"Delete from ApplicationAnswers where ApplicationId = '{applicationId}'";
             await _dataContext.Database.ExecuteSqlCommandAsync(deleteSql);
-            await _dataContext.SaveChangesAsync();
+            deleteSql = $"Delete from ApplicationPageStates where ApplicationId = '{applicationId}'";
+            await _dataContext.Database.ExecuteSqlCommandAsync(deleteSql);
+            try
+            {
+                await _dataContext.SaveChangesAsync();
+
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex,$"Failed to save the changes. Error: {ex.Message}");
+
+            }
+
             return Ok("");
         }
 

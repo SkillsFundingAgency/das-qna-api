@@ -9,6 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using SFA.DAS.QnA.Api.Types;
+using SFA.DAS.QnA.Application.Repositories;
 using SFA.DAS.QnA.Data;
 using SFA.DAS.QnA.Data.Entities;
 
@@ -19,21 +20,22 @@ namespace SFA.DAS.QnA.Application.Commands.StartApplication
         private readonly QnaDataContext _dataContext;
         private readonly IApplicationDataValidator _applicationDataValidator;
         private readonly ILogger<StartApplicationHandler> _logger;
+        private readonly IWorkflowRepository _workflowRepository;
         private bool _applicationDataIsInvalid;
 
-        public StartApplicationHandler(QnaDataContext dataContext, IApplicationDataValidator applicationDataValidator, ILogger<StartApplicationHandler> logger)
+        public StartApplicationHandler(QnaDataContext dataContext, IApplicationDataValidator applicationDataValidator, ILogger<StartApplicationHandler> logger, IWorkflowRepository workflowRepository)
         {
             _dataContext = dataContext;
             _applicationDataValidator = applicationDataValidator;
             _logger = logger;
+            _workflowRepository = workflowRepository ?? throw new ArgumentNullException(nameof(workflowRepository));
         }
 
         public async Task<HandlerResponse<StartApplicationResponse>> Handle(StartApplicationRequest request, CancellationToken cancellationToken)
         {
             var stopwatch = Stopwatch.StartNew();
 
-            var latestWorkflow = await _dataContext.Workflows.AsNoTracking()
-                .SingleOrDefaultAsync(w => w.Type == request.WorkflowType && w.Status == "Live", cancellationToken);
+            var latestWorkflow = await _workflowRepository.GetWorkflow(request.WorkflowType);
 
             if (latestWorkflow is null)
             {
@@ -43,7 +45,7 @@ namespace SFA.DAS.QnA.Application.Commands.StartApplication
 
             try
             {
-                _applicationDataIsInvalid = !_applicationDataValidator.IsValid(latestWorkflow.ApplicationDataSchema, request.ApplicationData);
+                _applicationDataIsInvalid = !_applicationDataValidator.IsValid(latestWorkflow.ApplicationDataSchema, request.ApplicationData);  //Is this really needed?
             }
             catch (JsonReaderException)
             {
@@ -85,7 +87,7 @@ namespace SFA.DAS.QnA.Application.Commands.StartApplication
                 ApplicationData = applicationData
             };
 
-            _dataContext.Applications.Add(newApplication);
+            await _dataContext.Applications.AddAsync(newApplication, cancellationToken);
             _logger.LogInformation($"Created Application entity: {newApplication.Id}");
 
             return newApplication;
