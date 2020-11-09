@@ -19,8 +19,8 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
         //public SetPageAnswersHandler(QnaDataContext dataContext, IAnswerValidator answerValidator, INotRequiredProcessor notRequiredProcessor, ITagProcessingService tagProcessingService) : base(dataContext, notRequiredProcessor, tagProcessingService, answerValidator)
         //{
         //}
-        public SetPageAnswersHandler(QnaDataContext dataContext,   IAnswerValidator answerValidator, INotRequiredProcessor notRequiredProcessor, ITagProcessingService tagProcessingService, IApplicationAnswersRepository applicationAnswersRepository, IWorkflowRepository workflowRepository) :
-            base(dataContext, notRequiredProcessor, tagProcessingService, answerValidator, applicationAnswersRepository, workflowRepository)
+        public SetPageAnswersHandler(QnaDataContext dataContext,   IAnswerValidator answerValidator, INotRequiredProcessor notRequiredProcessor, ITagProcessingService tagProcessingService, IApplicationAnswersRepository applicationAnswersRepository, IWorkflowRepository workflowRepository, IApplicationRepository applicationRepository) :
+            base(dataContext, notRequiredProcessor, tagProcessingService, answerValidator, applicationAnswersRepository, workflowRepository, applicationRepository)
         {
         }
 
@@ -52,41 +52,37 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
 
         public async Task<HandlerResponse<SetPageAnswersResponse>> Handle(SetPageAnswersRequest request, CancellationToken cancellationToken)
         {
-            var application = await _dataContext.Applications.AsNoTracking().FirstOrDefaultAsync(app => app.Id == request.ApplicationId, cancellationToken: cancellationToken);
+            var application = await ApplicationRepository.GetApplication(request.ApplicationId);
             if (application is null) return new HandlerResponse<SetPageAnswersResponse>(false, "Application does not exist");
 
 
-            var workflowSection = await _dataContext.WorkflowSections.Where(x => x.Id == request.SectionId)
-                .Join(_dataContext.WorkflowSequences.Where(seq => seq.SectionId == request.SectionId),
-                    section => section.Id, sequence => sequence.SectionId,
-                    (section, sequence) => new {Sequence = sequence, Section = section})
-                .FirstOrDefaultAsync(cancellationToken);
+            var workflowSection = await WorkflowRepository.GetWorkflowSection(request.SectionId);
                 
-            var page = workflowSection.Section.QnAData.Pages.FirstOrDefault(x => x.PageId == request.PageId);
+            var page = workflowSection.QnAData.Pages.FirstOrDefault(x => x.PageId == request.PageId);
 
             var applicationSection = new ApplicationSection
             {
                 ApplicationId = request.ApplicationId,
-                DisplayType = workflowSection.Section.DisplayType,
-                Id = workflowSection.Section.Id,
-                LinkTitle = workflowSection.Section.LinkTitle,
-                QnAData = workflowSection.Section.QnAData,
-                SectionNo = workflowSection.Sequence.SectionNo,
-                SequenceNo = workflowSection.Sequence.SequenceNo, 
-                Title = workflowSection.Section.Title
+                DisplayType = workflowSection.DisplayType,
+                Id = workflowSection.Id,
+                LinkTitle = workflowSection.LinkTitle,
+                QnAData = new QnAData(workflowSection.QnAData),
+                //SectionNo = workflowSection.Sequence.SectionNo,
+                //SequenceNo = workflowSection.Sequence.SequenceNo, 
+                Title = workflowSection.Title
             };
 
             await SaveAnswersIntoPage(applicationSection, request.PageId, request.Answers);
 
-            //var application = await _dataContext.Applications.SingleOrDefaultAsync(app => app.Id == request.ApplicationId, cancellationToken);
-            //UpdateApplicationData(request.PageId, request.Answers, section, application);
+            UpdateApplicationData(request.PageId, request.Answers, applicationSection, application);
 
             var nextAction = GetNextActionForPage(applicationSection, application, request.PageId);
-            //var checkboxListAllNexts = GetCheckboxListMatchingNextActionsForPage(section, application, request.PageId);
+            var checkboxListAllNexts = GetCheckboxListMatchingNextActionsForPage(applicationSection, application, request.PageId);
 
-            //SetStatusOfNextPagesBasedOnDeemedNextActions(section, request.PageId, nextAction, checkboxListAllNexts);
-
-            //await _dataContext.SaveChangesAsync(cancellationToken);
+            SetStatusOfNextPagesBasedOnDeemedNextActions(applicationSection, request.PageId, nextAction, checkboxListAllNexts);
+            await ApplicationRepository.StoreApplicationSectionPageStates(applicationSection.ApplicationId,
+                applicationSection.Id, applicationSection.QnAData.Pages, false);
+            await _dataContext.SaveChangesAsync(cancellationToken);
 
             return new HandlerResponse<SetPageAnswersResponse>(new SetPageAnswersResponse(nextAction.Action, nextAction.ReturnId));
         }

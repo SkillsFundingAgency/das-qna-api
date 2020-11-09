@@ -26,8 +26,8 @@ namespace SFA.DAS.QnA.Application.Commands.Files.UploadFile
         private readonly IFileContentValidator _fileContentValidator;
 
         public SubmitPageOfFilesHandler(QnaDataContext dataContext, IOptions<FileStorageConfig> fileStorageConfig, IEncryptionService encryptionService, IAnswerValidator answerValidator, IFileContentValidator fileContentValidator, 
-            INotRequiredProcessor notRequiredProcessor, ITagProcessingService tagProcessingService, IApplicationAnswersRepository applicationAnswersRepository, IWorkflowRepository workflowRepository) : 
-            base(dataContext, notRequiredProcessor, tagProcessingService, answerValidator, applicationAnswersRepository, workflowRepository)
+            INotRequiredProcessor notRequiredProcessor, ITagProcessingService tagProcessingService, IApplicationAnswersRepository applicationAnswersRepository, IWorkflowRepository workflowRepository, IApplicationRepository applicationRepository) : 
+            base(dataContext, notRequiredProcessor, tagProcessingService, answerValidator, applicationAnswersRepository, workflowRepository, applicationRepository)
         {
             _fileStorageConfig = fileStorageConfig;
             _encryptionService = encryptionService;

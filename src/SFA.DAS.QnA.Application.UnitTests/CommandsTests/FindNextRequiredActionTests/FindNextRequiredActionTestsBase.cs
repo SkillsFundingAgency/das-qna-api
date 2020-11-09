@@ -30,7 +30,7 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.FindNextRequiredAction
 
             NotRequiredProcessor = new NotRequiredProcessor();
             TagProcessingService = new TagProcessingService(QnaDataContext);
-            SetAnswersBase = new SetAnswersBase(QnaDataContext, NotRequiredProcessor, TagProcessingService, null, Substitute.For<IApplicationAnswersRepository>(), Substitute.For<IWorkflowRepository>());
+            SetAnswersBase = new SetAnswersBase(QnaDataContext, NotRequiredProcessor, TagProcessingService, null, Substitute.For<IApplicationAnswersRepository>(), Substitute.For<IWorkflowRepository>(), Substitute.For<IApplicationRepository>());
 
             ApplicationId = Guid.NewGuid();
 

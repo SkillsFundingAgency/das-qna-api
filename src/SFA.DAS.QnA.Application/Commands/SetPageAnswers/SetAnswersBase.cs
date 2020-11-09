@@ -20,63 +20,30 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
         protected readonly INotRequiredProcessor _notRequiredProcessor;
         protected readonly ITagProcessingService _tagProcessingService;
         protected readonly IAnswerValidator _answerValidator;
-        private readonly IWorkflowRepository _workflowRepository;
+        protected IWorkflowRepository WorkflowRepository { get; }
+        protected IApplicationRepository ApplicationRepository { get; }
         protected IApplicationAnswersRepository ApplicationAnswersRepository { get; }
 
-        public SetAnswersBase(QnaDataContext dataContext, INotRequiredProcessor notRequiredProcessor, ITagProcessingService tagProcessingService, IAnswerValidator answerValidator, IApplicationAnswersRepository applicationAnswersRepository, IWorkflowRepository workflowRepository)
+        public SetAnswersBase(QnaDataContext dataContext, INotRequiredProcessor notRequiredProcessor, ITagProcessingService tagProcessingService, 
+            IAnswerValidator answerValidator, IApplicationAnswersRepository applicationAnswersRepository, IWorkflowRepository workflowRepository,
+            IApplicationRepository applicationRepository)
         {
             _dataContext = dataContext;
             _notRequiredProcessor = notRequiredProcessor;
             _tagProcessingService = tagProcessingService;
             _answerValidator = answerValidator;
-            _workflowRepository = workflowRepository ?? throw new ArgumentNullException(nameof(workflowRepository));
+            WorkflowRepository = workflowRepository ?? throw new ArgumentNullException(nameof(workflowRepository));
+            ApplicationRepository = applicationRepository ?? throw new ArgumentNullException(nameof(applicationRepository));
             ApplicationAnswersRepository = applicationAnswersRepository ?? throw new ArgumentNullException(nameof(applicationAnswersRepository));
         }
 
-        //protected async Task SaveAnswersAndPageState(Guid applicationId, Guid workflowSectionId, string pageId, List<Answer> submittedAnswers)
-        //{
-        //    await ApplicationAnswersRepository.StoreApplicationAnswers(applicationId, workflowSectionId, pageId, submittedAnswers);
-        //    var sectionState = await _dataContext.ApplicationSectionStates.FirstOrDefaultAsync(x =>
-        //        x.ApplicationId == applicationId && x.WorkflowSectionId == workflowSectionId);
-        //    if (sectionState == null)
-        //    {
-        //        var workflowSection = await _workflowRepository.GetWorkflowSection(workflowSectionId);
-        //        if(workflowSection == null )
-        //            throw new InvalidOperationException($"Workflow section not found: {workflowSectionId}");
-        //        sectionState = new ApplicationSectionState
-        //        {
-        //            ApplicationId = applicationId,
-        //            WorkflowSectionId = workflowSectionId,
-        //            QnAData = new QnAData
-        //            {
-        //                Pages = workflowSection.QnAData.Pages.Select(page => new Page
-        //                {
-        //                    SectionId = page.SectionId,
-        //                    PageId = page.PageId,
-        //                    Active = page.Active,
-        //                    Complete = page.Complete,
-        //                    NotRequired = page.NotRequired
-        //                }).ToList()
-        //            }  
-        //        };
-        //        await _dataContext.ApplicationSectionStates.AddAsync(sectionState);
-        //    }
-
-        //    MarkPageAsComplete(page);
-        //    MarkPageFeedbackAsComplete(page);
-
-
-        //    await _dataContext.SaveChangesAsync();
-        //}
-
-
-        
+       
         protected async Task SaveAnswersIntoPage(ApplicationSection section, string pageId, List<Answer> submittedAnswers)
         {
             if (section != null)
             {
-                //await ApplicationAnswersRepository.StoreApplicationAnswers(section.ApplicationId, section.Id, pageId,
-                //    submittedAnswers);
+                await ApplicationAnswersRepository.StoreApplicationAnswers(section.ApplicationId, section.Id, pageId,
+                    submittedAnswers);
 
                 //TODO: Change to persist the state separately, no need for the application section anymore
                 // Have to force QnAData a new object and reassign for Entity Framework to pick up changes
@@ -101,6 +68,7 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
         {
             if (application != null)
             {
+                _dataContext.Applications.Attach(application);
                 var applicationData = JObject.Parse(application.ApplicationData ?? "{}");
 
                 var page = section?.QnAData?.Pages.SingleOrDefault(p => p.PageId == pageId);

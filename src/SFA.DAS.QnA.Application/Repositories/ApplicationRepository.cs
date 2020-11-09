@@ -17,6 +17,10 @@ namespace SFA.DAS.QnA.Application.Repositories
         Task<List<ApplicationSection>> GetApplicationSections(Guid applicationId);
         Task<List<ApplicationPageState>> GetApplicationSectionPageStates(Guid applicationId);
         Task<List<ApplicationPageState>> GetApplicationSectionPageStates(Guid applicationId, Guid sectionId);
+        Task StoreApplicationSectionPageState(Guid applicationId, Guid sectionId, Page page, bool saveChanges = true);
+
+        Task StoreApplicationSectionPageStates(Guid applicationId, Guid sectionId, List<Page> pages,
+            bool saveChanges = true);
     }
 
     public class ApplicationRepository : IApplicationRepository
@@ -89,6 +93,23 @@ namespace SFA.DAS.QnA.Application.Repositories
                 Active = page.Active,
                 NotRequired = page.NotRequired
             }));
+            if (saveChanges)
+                await _qnaDataContext.SaveChangesAsync();
+        }
+
+        public async Task StoreApplicationSectionPageState(Guid applicationId, Guid sectionId, Page page, bool saveChanges = true)
+        {
+            var deleteSql = $"delete from ApplicationPageStates where ApplicationId='{applicationId}' and SectionId='{sectionId}' and PageId = '{page.PageId}'";
+            await _qnaDataContext.Database.ExecuteSqlCommandAsync(deleteSql);
+            await _qnaDataContext.ApplicationPageStates.AddAsync(new ApplicationPageState
+            {
+                SectionId = sectionId,
+                PageId = page.PageId,
+                ApplicationId = applicationId,
+                Complete = page.Complete,
+                Active = page.Active,
+                NotRequired = page.NotRequired
+            });
             if (saveChanges)
                 await _qnaDataContext.SaveChangesAsync();
         }

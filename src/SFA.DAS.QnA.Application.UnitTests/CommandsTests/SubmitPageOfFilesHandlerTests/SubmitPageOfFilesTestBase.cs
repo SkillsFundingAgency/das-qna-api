@@ -51,7 +51,7 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.SubmitPageOfFilesHandl
             var fileContentValidator = Substitute.For<IFileContentValidator>();
             fileContentValidator.Validate(Arg.Any<IFormFileCollection>()).Returns(new List<KeyValuePair<string, string>>());
 
-            Handler = new SubmitPageOfFilesHandler(DataContext, fileStorageConfig, encryptionService, validator, fileContentValidator, NotRequiredProcessor,TagProcessingService, Substitute.For<IApplicationAnswersRepository>(), Substitute.For<IWorkflowRepository>());
+            Handler = new SubmitPageOfFilesHandler(DataContext, fileStorageConfig, encryptionService, validator, fileContentValidator, NotRequiredProcessor,TagProcessingService, Substitute.For<IApplicationAnswersRepository>(), Substitute.For<IWorkflowRepository>(), Substitute.For<IApplicationRepository>());
 
             ApplicationId = Guid.NewGuid();
             SectionId = Guid.NewGuid();
