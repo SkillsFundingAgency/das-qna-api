@@ -15,7 +15,7 @@
 				{
 					"QuestionId": "WR-01",
 					"QuestionTag": null,
-					"Label": "What’s the main reason you want to withdraw from the register?",
+					"Label": "What's the main reason you want to withdraw from the register?",
 					"ShortLabel": "",
 					"InputClasses": null,
 					"QuestionBodyText": "<p class='govuk-body'>You can tell us more about why you want to withdraw after you select a reason.</p>",
@@ -416,7 +416,7 @@
 					"Label": "How will you support the learners you're not going to assess?",
 					"ShortLabel": "",
 					"InputClasses": null,
-					"QuestionBodyText": "<p class='govuk-body'>Your answer should include:</p><ul class='govuk-list govuk-list--bullet'><li>how you'll transfer these learners to other EPAOs</li><li>details of any EPAOs you’ve spoken to</li></ul>",
+					"QuestionBodyText": "<p class='govuk-body'>Your answer should include:</p><ul class='govuk-list govuk-list--bullet'><li>how you'll transfer these learners to other EPAOs</li><li>details of any EPAOs you've spoken to</li></ul>",
 					"Hint": "",
 					"Input": {
 						"Type": "Textarea",
