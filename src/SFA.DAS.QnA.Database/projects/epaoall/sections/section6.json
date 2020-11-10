@@ -15,7 +15,7 @@
 				{
 					"QuestionId": "WR-06",
 					"QuestionTag": null,
-					"Label": "'What's the main reason you want to withdraw from assessing this standard?",
+					"Label": "What's the main reason you want to withdraw from assessing this standard?",
 					"ShortLabel": "",
 					"InputClasses": null,
 					"QuestionBodyText": "<p class='govuk-body'>You can tell us more about why you want to withdraw after you select a reason.</p>",
