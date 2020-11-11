@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -33,47 +34,57 @@ namespace SFA.DAS.QnA.Application.Commands.StartApplication
 
         public async Task<HandlerResponse<StartApplicationResponse>> Handle(StartApplicationRequest request, CancellationToken cancellationToken)
         {
-            var stopwatch = Stopwatch.StartNew();
-
-            var latestWorkflow = await _workflowRepository.GetWorkflow(request.WorkflowType);
-
-            if (latestWorkflow is null)
-            {
-                _logger.LogError($"Workflow type {request.WorkflowType} does not exist");
-                return new HandlerResponse<StartApplicationResponse>(false, $"Workflow Type does not exist.");
-            }
-
             try
             {
-                _applicationDataIsInvalid = !_applicationDataValidator.IsValid(latestWorkflow.ApplicationDataSchema, request.ApplicationData);  //Is this really needed?
+                var stopwatch = Stopwatch.StartNew();
+
+                var latestWorkflow = await _workflowRepository.GetWorkflow(request.WorkflowType);
+
+                if (latestWorkflow is null)
+                {
+                    _logger.LogError($"Workflow type {request.WorkflowType} does not exist");
+                    return new HandlerResponse<StartApplicationResponse>(false, $"Workflow Type does not exist.");
+                }
+
+                /*
+                TODO: need to find a way around the following exception The free-quota limit of 1000 schema validations per hour has been reached. Please visit http://www.newtonsoft.com/jsonschema to upgrade to a commercial license.
+                try
+                {
+                    _applicationDataIsInvalid =!_applicationDataValidator.IsValid(latestWorkflow.ApplicationDataSchema, request.ApplicationData);  //Is this really needed?
+                }
+                catch (JsonReaderException)
+                {
+                    _logger.LogError("Supplied ApplicationData is not valid JSON");
+                    return new HandlerResponse<StartApplicationResponse>(false, $"Supplied ApplicationData is not valid JSON.");
+                }
+
+                if (_applicationDataIsInvalid)
+                {
+                    _logger.LogError("Supplied ApplicationData is not valid using Project's Schema");
+                    return new HandlerResponse<StartApplicationResponse>(false, $"Supplied ApplicationData is not valid using Project's Schema.");
+                }
+                */
+                var newApplication = await CreateNewApplication(request, latestWorkflow, cancellationToken, request.ApplicationData);
+
+                if (newApplication is null)
+                {
+                    _logger.LogError($"Workflow type {request.WorkflowType} does not exist");
+                    return new HandlerResponse<StartApplicationResponse>(false, $"WorkflowType '{request.WorkflowType}' does not exist.");
+                }
+
+                //await CopyWorkflows(cancellationToken, newApplication);
+                await _dataContext.SaveChangesAsync(cancellationToken);
+
+                _logger.LogInformation($"Elapsed: {stopwatch.ElapsedMilliseconds} ms");
+
+                _logger.LogInformation($"Successfully created new Application. Application Id = {newApplication.Id} | Workflow = {request.WorkflowType}");
+                return new HandlerResponse<StartApplicationResponse>(new StartApplicationResponse { ApplicationId = newApplication.Id });
             }
-            catch (JsonReaderException)
+            catch (Exception e)
             {
-                _logger.LogError("Supplied ApplicationData is not valid JSON");
-                return new HandlerResponse<StartApplicationResponse>(false, $"Supplied ApplicationData is not valid JSON.");
+                await File.AppendAllTextAsync($"C:\\temp\\QnA\\{Guid.NewGuid():D}.txt", $"Error: {e.Message}\n\r{e}");
+                throw;
             }
-
-            if (_applicationDataIsInvalid)
-            {
-                _logger.LogError("Supplied ApplicationData is not valid using Project's Schema");
-                return new HandlerResponse<StartApplicationResponse>(false, $"Supplied ApplicationData is not valid using Project's Schema.");
-            }
-
-            var newApplication = await CreateNewApplication(request, latestWorkflow, cancellationToken, request.ApplicationData);
-
-            if (newApplication is null)
-            {
-                _logger.LogError($"Workflow type {request.WorkflowType} does not exist");
-                return new HandlerResponse<StartApplicationResponse>(false, $"WorkflowType '{request.WorkflowType}' does not exist.");
-            }
-
-            //await CopyWorkflows(cancellationToken, newApplication);
-            await _dataContext.SaveChangesAsync(cancellationToken);
-
-            _logger.LogInformation($"Elapsed: {stopwatch.ElapsedMilliseconds} ms");
-
-            _logger.LogInformation($"Successfully created new Application. Application Id = {newApplication.Id} | Workflow = {request.WorkflowType}");
-            return new HandlerResponse<StartApplicationResponse>(new StartApplicationResponse { ApplicationId = newApplication.Id });
         }
 
         private async Task<Data.Entities.Application> CreateNewApplication(StartApplicationRequest request, Workflow latestWorkflow, CancellationToken cancellationToken, string applicationData)
