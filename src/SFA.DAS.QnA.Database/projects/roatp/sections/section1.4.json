@@ -192,7 +192,7 @@
             "Next": [
                 {
                     "Action": "NextPage",
-                    "ReturnId": "161",
+                    "ReturnId": "160",
                     "Conditions": [
                         {
                             "QuestionId": "YO-150",
@@ -203,67 +203,12 @@
                 },
                 {
                     "Action": "NextPage",
-                    "ReturnId": "171",
+                    "ReturnId": "170",
                     "Conditions": [
                         {
                             "QuestionId": "YO-150",
                             "QuestionTag": null,
                             "MustEqual": "A public body"
-                        }
-                    ]
-                },
-                {
-                    "Action": "NextPage",
-                    "ReturnId": "220",
-                    "Conditions": [
-                        {
-                            "QuestionId": "",
-                            "QuestionTag": "CHManualEntryRequired",
-                            "MustEqual": "TRUE"
-                        }
-                    ]
-                },
-                {
-                    "Action": "NextPage",
-                    "ReturnId": "220",
-                    "Conditions": [
-                        {
-                            "QuestionId": "",
-                            "QuestionTag": "UKRLPVerificationCompany",
-                            "MustEqual": "TRUE"
-                        }
-                    ]
-                },
-                {
-                    "Action": "NextPage",
-                    "ReturnId": "220",
-                    "Conditions": [
-                        {
-                            "QuestionId": "",
-                            "QuestionTag": "CCTrusteeManualEntry",
-                            "MustEqual": "TRUE"
-                        }
-                    ]
-                },
-                {
-                    "Action": "NextPage",
-                    "ReturnId": "220",
-                    "Conditions": [
-                        {
-                            "QuestionId": "",
-                            "QuestionTag": "UKRLPVerificationCharity",
-                            "MustEqual": "TRUE"
-                        }
-                    ]
-                },
-                {
-                    "Action": "NextPage",
-                    "ReturnId": "220",
-                    "Conditions": [
-                        {
-                            "QuestionId": "",
-                            "QuestionTag": "UKRLPVerificationSoleTraderPartnership",
-                            "MustEqual": "TRUE"
                         }
                     ]
                 },
@@ -297,7 +242,7 @@
             "Questions": [
                 {
                     "QuestionId": "YO-160",
-                    "QuestionTag": "OrganisationEducationInstituteMainSupporting",
+                    "QuestionTag": "OrganisationEducationInstitute",
                     "Label": "What type of educational institute is your organisation?",
                     "ShortLabel": "",
                     "QuestionBodyText": "",
@@ -450,173 +395,7 @@
             "AllowMultipleAnswers": false,
             "Active": false,
             "NotRequiredConditions": [],
-            "ActivatedByPageId": "140",
-            "BodyText": ""
-        },
-        {
-            "PageId": "161",
-            "SequenceId": null,
-            "SectionId": null,
-            "Title": "What type of educational institute is your organisation?",
-            "LinkTitle": "What type of educational institute is your organisation?",
-            "InfoText": "",
-            "Questions": [
-                {
-                    "QuestionId": "YO-161",
-                    "QuestionTag": "OrganisationEducationInstituteEmployer",
-                    "Label": "What type of educational institute is your organisation?",
-                    "ShortLabel": "",
-                    "QuestionBodyText": "",
-                    "Hint": "",
-                    "Input": {
-                        "Type": "Radio",
-                        "Options": [
-                            {
-                                "Label": "Academy",
-                                "Value": "Academy",
-                                "FurtherQuestions": []
-                            },
-                            {
-                                "Label": "Further Education Institute",
-                                "Value": "Further Education Institute",
-                                "FurtherQuestions": []
-                            },
-                            {
-                                "Label": "General Further Education College",
-                                "Value": "General Further Education College",
-                                "FurtherQuestions": []
-                            },
-                            {
-                                "Label": "Higher Education Institute",
-                                "Value": "Higher Education Institute",
-                                "FurtherQuestions": []
-                            },
-                            {
-                                "Label": "Multi-Academy Trust",
-                                "Value": "Multi-Academy Trust",
-                                "FurtherQuestions": []
-                            },
-                            {
-                                "Label": "National College",
-                                "Value": "National College",
-                                "FurtherQuestions": []
-                            },
-                            {
-                                "Label": "School",
-                                "Value": "School",
-                                "FurtherQuestions": []
-                            },
-                            {
-                                "Label": "Sixth Form College",
-                                "Value": "Sixth Form College",
-                                "FurtherQuestions": []
-                            }
-                        ],
-                        "Validations": [
-                            {
-                                "Name": "Required",
-                                "Value": "",
-                                "ErrorMessage": "Tell us what type of educational institute your organisation is"
-                            }
-                        ]
-                    }
-                }
-            ],
-            "PageOfAnswers": [],
-            "Next": [
-                {
-                    "Action": "NextPage",
-                    "ReturnId": "201",
-                    "Conditions": [
-                        {
-                            "QuestionId": "YO-161",
-                            "QuestionTag": null,
-                            "MustEqual": "Academy"
-                        }
-                    ]
-                },
-                {
-                    "Action": "NextPage",
-                    "ReturnId": "220",
-                    "Conditions": [
-                        {
-                            "QuestionId": "YO-161",
-                            "QuestionTag": null,
-                            "MustEqual": "Further Education Institute"
-                        }
-                    ]
-                },
-                {
-                    "Action": "NextPage",
-                    "ReturnId": "211",
-                    "Conditions": [
-                        {
-                            "QuestionId": "YO-161",
-                            "QuestionTag": null,
-                            "MustEqual": "General Further Education College"
-                        }
-                    ]
-                },
-                {
-                    "Action": "NextPage",
-                    "ReturnId": "220",
-                    "Conditions": [
-                        {
-                            "QuestionId": "YO-161",
-                            "QuestionTag": null,
-                            "MustEqual": "Higher Education Institute"
-                        }
-                    ]
-                },
-                {
-                    "Action": "NextPage",
-                    "ReturnId": "201",
-                    "Conditions": [
-                        {
-                            "QuestionId": "YO-161",
-                            "QuestionTag": null,
-                            "MustEqual": "Multi-Academy Trust"
-                        }
-                    ]
-                },
-                {
-                    "Action": "NextPage",
-                    "ReturnId": "211",
-                    "Conditions": [
-                        {
-                            "QuestionId": "YO-161",
-                            "QuestionTag": null,
-                            "MustEqual": "National College"
-                        }
-                    ]
-                },
-                {
-                    "Action": "NextPage",
-                    "ReturnId": "181",
-                    "Conditions": [
-                        {
-                            "QuestionId": "YO-161",
-                            "QuestionTag": null,
-                            "MustEqual": "School"
-                        }
-                    ]
-                },
-                {
-                    "Action": "NextPage",
-                    "ReturnId": "211",
-                    "Conditions": [
-                        {
-                            "QuestionId": "YO-161",
-                            "QuestionTag": null,
-                            "MustEqual": "Sixth Form College"
-                        }
-                    ]
-                }
-            ],
-            "AllowMultipleAnswers": false,
-            "Active": false,
-            "NotRequiredConditions": [],
-            "ActivatedByPageId": "150",
+            "ActivatedByPageId": "140,150",
             "BodyText": ""
         },
         {
@@ -694,107 +473,7 @@
             "AllowMultipleAnswers": false,
             "Active": false,
             "NotRequiredConditions": [],
-            "ActivatedByPageId": "140",
-            "BodyText": ""
-        },
-        {
-            "PageId": "171",
-            "SequenceId": null,
-            "SectionId": null,
-            "Title": "What type of public body is your organisation?",
-            "LinkTitle": "What type of public body is your organisation?",
-            "InfoText": "",
-            "Questions": [
-                {
-                    "QuestionId": "YO-171",
-                    "QuestionTag": null,
-                    "Label": "What type of public body is your organisation?",
-                    "ShortLabel": "",
-                    "QuestionBodyText": "",
-                    "Hint": "",
-                    "Input": {
-                        "Type": "Radio",
-                        "Options": [
-                            {
-                                "Label": "Executive agency",
-                                "Value": "Executive agency",
-                                "FurtherQuestions": []
-                            },
-                            {
-                                "Label": "Fire authority",
-                                "Value": "Fire authority",
-                                "FurtherQuestions": []
-                            },
-                            {
-                                "Label": "Government department",
-                                "Value": "Government department",
-                                "FurtherQuestions": []
-                            },
-                            {
-                                "Label": "Local authority",
-                                "Value": "Local authority",
-                                "FurtherQuestions": []
-                            },
-                            {
-                                "Label": "NHS Trust",
-                                "Value": "NHS Trust",
-                                "FurtherQuestions": []
-                            },
-                            {
-                                "Label": "Non-departmental public body (NDPB)",
-                                "Value": "Non-departmental public body (NDPB)",
-                                "FurtherQuestions": []
-                            },
-                            {
-                                "Label": "Police",
-                                "Value": "Police",
-                                "FurtherQuestions": []
-                            }
-                        ],
-                        "Validations": [
-                            {
-                                "Name": "Required",
-                                "Value": "",
-                                "ErrorMessage": "Tell us what type of public body your organisation is"
-                            }
-                        ]
-                    }
-                }
-            ],
-            "PageOfAnswers": [],
-            "Next": [
-                {
-                    "Action": "NextPage",
-                    "ReturnId": "220",
-                    "Conditions": [
-                        {
-                            "QuestionId": "",
-                            "QuestionTag": "UKRLPVerificationCompany",
-                            "MustEqual": "TRUE"
-                        }
-                    ]
-                },
-                {
-                    "Action": "NextPage",
-                    "ReturnId": "220",
-                    "Conditions": [
-                        {
-                            "QuestionId": "",
-                            "QuestionTag": "UKRLPVerificationCharity",
-                            "MustEqual": "TRUE"
-                        }
-                    ]
-                },
-                {
-                    "Action": "NextPage",
-                    "ReturnId": "230",
-                    "Conditions": []
-                }
-            ],
-            "AllowMultipleAnswers": false,
-            "Active": false,
-            "NotRequiredConditions": [],
-            "ActivatedByPageId": "150",
+            "ActivatedByPageId": "140,150",
             "BodyText": ""
         },
         {
@@ -807,7 +486,7 @@
             "Questions": [
                 {
                     "QuestionId": "YO-180",
-                    "QuestionTag": "OrganisationSchoolMS",
+                    "QuestionTag": "OrganisationSchool",
                     "Label": "What type of school is your organisation?",
                     "ShortLabel": "",
                     "QuestionBodyText": "",
@@ -861,7 +540,7 @@
             "Active": false,
             "NotRequiredConditions": [
                 {
-                    "Field": "OrganisationEducationInstituteMainSupporting",
+                    "Field": "OrganisationEducationInstitute",
                     "IsOneOf": [
                         "Academy",
                         "Further Education Institute",
@@ -877,107 +556,6 @@
             "BodyText": ""
         },
         {
-            "PageId": "181",
-            "SequenceId": null,
-            "SectionId": null,
-            "Title": "What type of school is your organisation?",
-            "LinkTitle": "What type of school is your organisation?",
-            "InfoText": "",
-            "Questions": [
-                {
-                    "QuestionId": "YO-181",
-                    "QuestionTag": "OrganisationSchoolEmp",
-                    "Label": "What type of school is your organisation?",
-                    "ShortLabel": "",
-                    "QuestionBodyText": "",
-                    "Hint": "",
-                    "Input": {
-                        "Type": "Radio",
-                        "Options": [
-                            {
-                                "Label": "Free school",
-                                "Value": "Free school"
-                            },
-                            {
-                                "Label": "Local Education Authority (LEA) school",
-                                "Value": "Local Education Authority (LEA) school"
-                            },
-                            {
-                                "Label": "None of the above",
-                                "Value": "None of the above"
-                            }
-                        ],
-                        "Validations": [
-                            {
-                                "Name": "Required",
-                                "Value": "",
-                                "ErrorMessage": "Tell us what type of school your organisation is"
-                            }
-                        ]
-                    }
-                }
-            ],
-            "PageOfAnswers": [],
-            "Next": [
-                {
-                    "Action": "NextPage",
-                    "ReturnId": "201",
-                    "Conditions": [
-                        {
-                            "QuestionId": "YO-181",
-                            "QuestionTag": null,
-                            "MustEqual": "Free school"
-                        }
-                    ]
-                },
-                {
-                    "Action": "NextPage",
-                    "ReturnId": "220",
-                    "Conditions": [
-                        {
-                            "QuestionId": "",
-                            "QuestionTag": "UKRLPVerificationCompany",
-                            "MustEqual": "TRUE"
-                        }
-                    ]
-                },
-                {
-                    "Action": "NextPage",
-                    "ReturnId": "220",
-                    "Conditions": [
-                        {
-                            "QuestionId": "",
-                            "QuestionTag": "UKRLPVerificationCharity",
-                            "MustEqual": "TRUE"
-                        }
-                    ]
-                },
-                {
-                    "Action": "NextPage",
-                    "ReturnId": "230",
-                    "Conditions": []
-                }
-            ],
-            "AllowMultipleAnswers": false,
-            "Active": false,            
-            "NotRequiredConditions": [
-                {
-                    "Field": "OrganisationEducationInstituteEmployer",
-                    "IsOneOf": [
-                        "Academy",
-                        "Further Education Institute",
-                        "General Further Education College",
-                        "Higher Education Institute",
-                        "Multi-Academy Trust",
-                        "National College",
-                        "Sixth Form College"
-                    ]
-                }
-            ],
-            "ActivatedByPageId": "161",
-            "BodyText": ""
-        },
-        {
             "PageId": "200",
             "SequenceId": null,
             "SectionId": null,
@@ -987,7 +565,7 @@
             "Questions": [
                 {
                     "QuestionId": "YO-200",
-                    "QuestionTag": "OrganisationRegisteredESFAMS",
+                    "QuestionTag": "OrganisationRegisteredESFA",
                     "Label": "Is your organisation registered and receiving funding from ESFA?",
                     "ShortLabel": "",
                     "QuestionBodyText": "",
@@ -1026,7 +604,7 @@
             "Active": false,
             "NotRequiredConditions": [
                 {
-                    "Field": "OrganisationEducationInstituteMainSupporting",
+                    "Field": "OrganisationEducationInstitute",
                     "IsOneOf": [
                         "General Further Education College",
                         "Higher Education Institute",
@@ -1035,7 +613,7 @@
                     ]
                 },
                 {
-                    "Field": "OrganisationSchoolMS",
+                    "Field": "OrganisationSchool",
                     "IsOneOf": [
                         "Local Education Authority (LEA) school",
                         "None of the above"
@@ -1043,96 +621,6 @@
                 }
             ],
             "ActivatedByPageId": "160",
-            "BodyText": ""
-        },
-        {
-            "PageId": "201",
-            "SequenceId": null,
-            "SectionId": null,
-            "Title": "Is your organisation already registered with ESFA?",
-            "LinkTitle": "Is your organisation already registered with ESFA?",
-            "InfoText": "",
-            "Questions": [
-                {
-                    "QuestionId": "YO-201",
-                    "QuestionTag": "OrganisationRegisteredESFAEmp",
-                    "Label": "Is your organisation already registered with ESFA?",
-                    "ShortLabel": "",
-                    "QuestionBodyText": "",
-                    "Hint": "",
-                    "Input": {
-                        "Type": "Radio",
-                        "Options": [
-                            {
-                                "Label": "Yes",
-                                "Value": "Yes"
-                            },
-                            {
-                                "Label": "No",
-                                "Value": "No"
-                            }
-                        ],
-                        "Validations": [
-                            {
-                                "Name": "Required",
-                                "Value": "",
-                                "ErrorMessage": "Tell us if your organisation is already registered with ESFA"
-                            }
-                        ]
-                    }
-                }
-            ],
-            "PageOfAnswers": [],
-            "Next": [
-                {
-                    "Action": "NextPage",
-                    "ReturnId": "220",
-                    "Conditions": [
-                        {
-                            "QuestionId": "",
-                            "QuestionTag": "UKRLPVerificationCompany",
-                            "MustEqual": "TRUE"
-                        }
-                    ]
-                },
-                {
-                    "Action": "NextPage",
-                    "ReturnId": "220",
-                    "Conditions": [
-                        {
-                            "QuestionId": "",
-                            "QuestionTag": "UKRLPVerificationCharity",
-                            "MustEqual": "TRUE"
-                        }
-                    ]
-                },
-                {
-                    "Action": "NextPage",
-                    "ReturnId": "230",
-                    "Conditions": []
-                }
-            ],
-            "AllowMultipleAnswers": false,
-            "Active": false,
-            "NotRequiredConditions": [
-                {
-                    "Field": "OrganisationEducationInstituteEmployer",
-                    "IsOneOf": [
-                        "General Further Education College",
-                        "Higher Education Institute",
-                        "National College",
-                        "Sixth Form College"
-                    ]
-                },
-                {
-                    "Field": "OrganisationSchoolEmp",
-                    "IsOneOf": [
-                        "Local Education Authority (LEA) school",
-                        "None of the above"
-                    ]
-                }
-            ],
-            "ActivatedByPageId": "161",
             "BodyText": ""
         },
         {
@@ -1145,7 +633,7 @@
             "Questions": [
                 {
                     "QuestionId": "YO-210",
-                    "QuestionTag": "OrganisationFundedESFAMS",
+                    "QuestionTag": "OrganisationFundedESFA",
                     "Label": "Is your organisation receiving funding from ESFA?",
                     "ShortLabel": "",
                     "QuestionBodyText": "",
@@ -1184,7 +672,7 @@
             "Active": false,
             "NotRequiredConditions": [
                 {
-                    "Field": "OrganisationEducationInstituteMainSupporting",
+                    "Field": "OrganisationEducationInstitute",
                     "IsOneOf": [
                         "Academy",
                         "Further Education Institute",
@@ -1195,161 +683,6 @@
                 }
             ],
             "ActivatedByPageId": "160",
-            "BodyText": ""
-        },
-        {
-            "PageId": "211",
-            "SequenceId": null,
-            "SectionId": null,
-            "Title": "Is your organisation receiving funding from ESFA?",
-            "LinkTitle": "Is your organisation receiving funding from ESFA?",
-            "InfoText": "",
-            "Questions": [
-                {
-                    "QuestionId": "YO-211",
-                    "QuestionTag": "OrganisationFundedESFAEmp",
-                    "Label": "Is your organisation receiving funding from ESFA?",
-                    "ShortLabel": "",
-                    "QuestionBodyText": "",
-                    "Hint": "",
-                    "Input": {
-                        "Type": "Radio",
-                        "Options": [
-                            {
-                                "Label": "Yes",
-                                "Value": "Yes"
-                            },
-                            {
-                                "Label": "No",
-                                "Value": "No"
-                            }
-                        ],
-                        "Validations": [
-                            {
-                                "Name": "Required",
-                                "Value": "",
-                                "ErrorMessage": "Tell us if your organisation is receiving funding from ESFA"
-                            }
-                        ]
-                    }
-                }
-            ],
-            "PageOfAnswers": [],
-            "Next": [
-                {
-                    "Action": "NextPage",
-                    "ReturnId": "220",
-                    "Conditions": [
-                        {
-                            "QuestionId": "",
-                            "QuestionTag": "UKRLPVerificationCompany",
-                            "MustEqual": "TRUE"
-                        }
-                    ]
-                },
-                {
-                    "Action": "NextPage",
-                    "ReturnId": "220",
-                    "Conditions": [
-                        {
-                            "QuestionId": "",
-                            "QuestionTag": "UKRLPVerificationCharity",
-                            "MustEqual": "TRUE"
-                        }
-                    ]
-                },
-                {
-                    "Action": "NextPage",
-                    "ReturnId": "230",
-                    "Conditions": []
-                }
-            ],
-            "AllowMultipleAnswers": false,
-            "Active": false,
-            "NotRequiredConditions": [
-                {
-                    "Field": "OrganisationEducationInstituteEmployer",
-                    "IsOneOf": [
-                        "Academy",
-                        "Further Education Institute",
-                        "Higher Education Institute",
-                        "Multi-Academy Trust",
-                        "School"
-                    ]
-                }
-            ],
-            "ActivatedByPageId": "161",
-            "BodyText": ""
-        },
-        {
-            "PageId": "220",
-            "SequenceId": null,
-            "SectionId": null,
-            "Title": "How will your organisation train its apprentices?",
-            "LinkTitle": "How will your organisation train its apprentices?",
-            "InfoText": "",
-            "Details": {
-                "Title": "What is a connected company or charity?",
-                "Details": "<p class='govuk-body'>A connected company is part of the same group and has the same ultimate parent company as your organisation.</p><p class='govuk-body'>A connected charity is part of the same group of charities and has a majority of the same controlling trustees as your organisation.</p>"
-            },
-            "Questions": [
-                {
-                    "QuestionId": "YO-220",
-                    "QuestionTag": null,
-                    "Label": "How will your organisation train its apprentices?",
-                    "ShortLabel": "",
-                    "QuestionBodyText": "",
-                    "Hint": "",
-                    "Input": {
-                        "Type": "Radio",
-                        "Options": [
-                            {
-                                "Label": "In your organisation",
-                                "Value": "In your organisation"
-                            },
-                            {
-                                "Label": "In connected companies or charities",
-                                "Value": "In connected companies or charities"
-                            },
-                            {
-                                "Label": "In your organisation and connected companies or charities",
-                                "Value": "In your organisation and connected companies or charities"
-                            }
-                        ],
-                        "Validations": [
-                            {
-                                "Name": "Required",
-                                "Value": "",
-                                "ErrorMessage": "Tell us how your organisation will train its apprentices"
-                            }
-                        ]
-                    }
-                }
-            ],
-            "PageOfAnswers": [],
-            "Next": [
-                {
-                    "Action": "NextPage",
-                    "ReturnId": "230",
-                    "Conditions": []
-                }
-            ],
-            "AllowMultipleAnswers": false,
-            "Active": false,
-            "NotRequiredConditions": [
-                {
-                    "Field": "OrganisationTypeMainSupporting",
-                    "IsOneOf": [
-                        "A Group Training Association",
-                        "A public body",
-                        "An Apprenticeship Training Agency",
-                        "An educational institute",
-                        "An employer training apprentices in other organisations",
-                        "An Independent Training Provider"
-                    ]
-                }
-            ],
-            "ActivatedByPageId": "150,161,170,171,181,201,211",
             "BodyText": ""
         },
         {
@@ -1416,7 +749,7 @@
             "AllowMultipleAnswers": false,
             "Active": false,
             "NotRequiredConditions": [],
-            "ActivatedByPageId": "140,160,170,171,180,181,200,201,210,211,220",
+            "ActivatedByPageId": "140,160,170,180,200,210",
             "BodyText": ""
         }
     ]
