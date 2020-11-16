@@ -177,27 +177,27 @@
 				"name": "Type of apprenticeship training"
 			},
 			{
-				"id": "section6.3",
-				"SequenceNo": 6,
-				"SectionNo": 3,
-				"name": "Supporting apprentices"
-			},
-			{
 				"id": "section6.4",
 				"SequenceNo": 6,
 				"SectionNo": 4,
-				"name": "Forcasting starts"
+				"name": "Supporting apprentices"
 			},
 			{
 				"id": "section6.5",
 				"SequenceNo": 6,
 				"SectionNo": 5,
-				"name": "Off the job training"
+				"name": "Forcasting starts"
 			},
 			{
 				"id": "section6.6",
 				"SequenceNo": 6,
 				"SectionNo": 6,
+				"name": "Off the job training"
+			},
+			{
+				"id": "section6.7",
+				"SequenceNo": 6,
+				"SectionNo": 7,
 				"name": "Where apprentices will be trained"
 			},
 			{

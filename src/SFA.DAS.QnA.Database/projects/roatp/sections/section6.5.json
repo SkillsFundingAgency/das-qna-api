@@ -1,49 +1,49 @@
 {
-    "Title": "Off the job training",
-    "LinkTitle": "Off the job training",
+    "Title": "Forecasting starts",
+    "LinkTitle": "Forecasting starts",
     "DisplayType": "Pages",
     "Pages": [
         {
-            "PageId": "6500",
+            "PageId": "6400",
             "SequenceId": null,
             "SectionId": null,
-            "Title": "What teaching methods will your organisation use to deliver 20% off the job training?",
-            "LinkTitle": "Deliver 20% OTJ",
-            "InfoText": "<p class='govuk-body'>Find out more about <a class='govuk-link' href='https://www.gov.uk/government/publications/apprenticeships-off-the-job-training' target='_blank'>apprenticeship off the job training (opens in a new window or tab)</a>.</p>",
+            "Title": "Forecasting starts",
+            "LinkTitle": "Forecasting starts",
+            "InfoText": "",
             "Questions": [
                 {
-                    "QuestionId": "PAT-650",
+                    "QuestionId": "PAT-640",
                     "QuestionTag": null,
-                    "Label": "What teaching methods will your organisation use to deliver 20% off the job training?",
+                    "Label": "How many starts does your organisation forecast in the first 12 months of joining the RoATP?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body govuk-hint'>Select all that apply.</p>",
+                    "QuestionBodyText": "",
                     "Hint": "",
                     "Input": {
-                        "Type": "CheckboxList",
+                        "Type": "Radio",
                         "Options": [
                             {
-                                "Value": "Distance learning - training delivered remotely for example, e-learning or webinars",
-                                "Label": "Distance learning - training delivered remotely for example, e-learning or webinars",
+                                "Value": "One to 49",
+                                "Label": "One to 49",
                                 "HintText": ""
                             },
                             {
-                                "Value": "Self-directed distance learning - where the apprentice works alone with online material",
-                                "Label": "Self-directed distance learning - where the apprentice works alone with online material",
+                                "Value": "50 to 99",
+                                "Label": "50 to 99",
                                 "HintText": ""
                             },
                             {
-                                "Value": "Learning support and written assignments",
-                                "Label": "Learning support and written assignments",
+                                "Value": "100 to 149",
+                                "Label": "100 to 149",
                                 "HintText": ""
                             },
                             {
-                                "Value": "Practical training - for example, shadowing, mentoring or industry visits",
-                                "Label": "Practical training - for example, shadowing, mentoring or industry visits",
+                                "Value": "150 to 249",
+                                "Label": "150 to 249",
                                 "HintText": ""
                             },
                             {
-                                "Value": "Teaching of theory - for example, lectures, role-play or simulation exercises",
-                                "Label": "Teaching of theory - for example, lectures, role-play or simulation exercises",
+                                "Value": "250 or more",
+                                "Label": "250 or more",
                                 "HintText": ""
                             }
                         ],
@@ -51,7 +51,7 @@
                             {
                                 "Name": "Required",
                                 "Value": "",
-                                "ErrorMessage": "Tell us what teaching methods your organisation will use to deliver 20% off the job training"
+                                "ErrorMessage": "Tell us how many starts your organisation forecasts in the first 12 months of joining RoATP"
                             }
                         ]
                     }
@@ -61,7 +61,7 @@
             "Next": [
                 {
                     "Action": "NextPage",
-                    "ReturnId": "6510",
+                    "ReturnId": "6410",
                     "Conditions": []
                 }
             ],
@@ -75,37 +75,52 @@
                     ]
                 }
             ],
+            "ActivatedByPageId": null,
             "BodyText": "",
-            "ActivatedByPageId": null
+            "Details": {
+                "Title": "What is a 'start'?",
+                "Body": "A 'start' is an apprentice who will start their apprenticeship after your organisation joins the RoATP."
+            }
         },
         {
-            "PageId": "6510",
+            "PageId": "6410",
             "SequenceId": null,
             "SectionId": null,
-            "Title": "How will your organisation ensure 20% off the job training is relevant to the specific apprenticeship being delivered?",
-            "LinkTitle": "Ensure OTJ Relevant",
+            "Title": "Forecasting starts",
+            "LinkTitle": "Ready to deliver against starts",
             "InfoText": "",
             "Questions": [
                 {
-                    "QuestionId": "PAT-651",
+                    "QuestionId": "PAT-641",
                     "QuestionTag": null,
-                    "Label": "How will your organisation ensure 20% off the job training is relevant to the specific apprenticeship being delivered?",
+                    "Label": "When will your organisation be ready to deliver training against this forecast?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body' id='pya-equality-policy'>Your answer must include how your organisation will:</p><ul class='govuk-list govuk-list--bullet'><li>use technical and theoretical elements of the apprenticeship to decide the best training method</li><li>ensure training methods suit the employers and apprentices circumstances</li><li>work with employers to define a delivery plan</li><li>ensure its delivery plan is flexible and meets employers and apprentices needs</li><li>choose the right time for off the job training - the apprentice must have had sufficient time to gain the right knowledge and skills before starting off the job training</li></ul>",
+                    "QuestionBodyText": "",
                     "Hint": "",
                     "Input": {
-                        "Type": "Textarea",
-                        "Options": [],
+                        "Type": "Radio",
+                        "Options": [
+                            {
+                                "Value": "Within the first 3 months of joining the RoATP",
+                                "Label": "Within the first 3 months of joining the RoATP",
+                                "HintText": ""
+                            },
+                            {
+                                "Value": "Between the first 3 to 6 months of joining the RoATP",
+                                "Label": "Between the first 3 to 6 months of joining the RoATP",
+                                "HintText": ""
+                            },
+                            {
+                                "Value": "Between the first 6 to 12 months of joining the RoATP",
+                                "Label": "Between the first 6 to 12 months of joining the RoATP",
+                                "HintText": ""
+                            }
+                        ],
                         "Validations": [
                             {
                                 "Name": "Required",
                                 "Value": "",
-                                "ErrorMessage": "Tell us how your organisation will ensure 20% off the job training is relevant to the specific apprenticeship being delivered"
-                            },
-                            {
-                                "Name": "MaxWordCount",
-                                "Value": "275",
-                                "ErrorMessage": "Your answer must be 275 words or less"
+                                "ErrorMessage": "Tell us when your organisation will be ready to deliver training against this forecast"
                             }
                         ]
                     }
@@ -114,8 +129,8 @@
 			"PageOfAnswers": [],
             "Next": [
                 {
-                    "Action": "ReturnToSection",
-                    "ReturnId": "6.6",
+                    "Action": "NextPage",
+                    "ReturnId": "6420",
                     "Conditions": []
                 }
             ],
@@ -123,7 +138,116 @@
             "Active": false,
             "NotRequiredConditions": [],
             "BodyText": "",
-            "ActivatedByPageId": "6500"
+            "ActivatedByPageId": "6400"
+        },
+        {
+            "PageId": "6420",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "Forecasting starts",
+            "LinkTitle": "Recruit staff to deliver",
+            "InfoText": "",
+            "Questions": [
+                {
+                    "QuestionId": "PAT-642",
+                    "QuestionTag": null,
+                    "Label": "Will your organisation recruit new staff to deliver training against these forecasts?",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "Radio",
+                        "Options": [
+                            {
+                                "Value": "Yes",
+                                "Label": "Yes",
+                                "HintText": ""
+                            },
+                            {
+                                "Value": "No",
+                                "Label": "No",
+                                "HintText": ""
+                            }
+                        ],
+                        "Validations": [
+                            {
+                                "Name": "Required",
+                                "Value": "",
+                                "ErrorMessage": "Tell us if your organisation will recruit new staff to deliver training against these forecasts"
+                            }
+                        ]
+                    }
+                }
+            ],
+			"PageOfAnswers": [],
+            "Next": [
+                {
+                    "Action": "NextPage",
+                    "ReturnId": "6430",
+                    "Conditions": []
+                }
+            ],
+            "AllowMultipleAnswers": false,
+            "Active": false,
+            "NotRequiredConditions": [],
+            "BodyText": "",
+            "ActivatedByPageId": "6410"
+        },
+        {
+            "PageId": "6430",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "Forecasting starts",
+            "LinkTitle": "Staff Apprentice Ratio",
+            "InfoText": "",
+            "Questions": [{
+                    "QuestionId": "PAT-643",
+                    "QuestionTag": null,
+                    "Label": "What is the typical ratio of the staff who deliver training to the apprentices?",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "Radio",
+                        "Options": [
+                            {
+                                "Value": "One trainer between 10 or less apprentices",
+                                "Label": "One trainer between 10 or less apprentices",
+                                "HintText": ""
+                            },
+                            {
+                                "Value": "One trainer between 11 to 29 apprentices",
+                                "Label": "One trainer between 11 to 29 apprentices",
+                                "HintText": ""
+                            },
+                            {
+                                "Value": "One trainer between 30 or more apprentices",
+                                "Label": "One trainer between 30 or more apprentices",
+                                "HintText": ""
+                            }
+                        ],
+                        "Validations": [
+                            {
+                                "Name": "Required",
+                                "Value": "",
+                                "ErrorMessage": "Tell us what the typical ratio is of the staff who deliver training to the learners"
+                            }
+                        ]
+                    }
+                }],
+			"PageOfAnswers": [],
+            "Next": [
+                {
+                    "Action": "ReturnToSection",
+                    "ReturnId": "6.5",
+                    "Conditions": []
+                }
+            ],
+            "AllowMultipleAnswers": false,
+            "Active": false,
+            "NotRequiredConditions": [],
+            "BodyText": "",
+            "ActivatedByPageId": "6420"
         }
     ]
 }
