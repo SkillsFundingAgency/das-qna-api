@@ -1,4 +1,9 @@
 {
+    "Title": "Training apprentices",
+    "LinkTitle": "Training apprentices",
+    "DisplayType": "Pages",
+    "Pages": [
+        {
             "PageId": "6300",
             "SequenceId": null,
             "SectionId": null,
@@ -57,3 +62,5 @@
             "ActivatedByPageId": "",
             "BodyText": ""
         }
+    ]
+}
