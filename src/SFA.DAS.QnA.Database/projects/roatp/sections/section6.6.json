@@ -4,7 +4,7 @@
     "DisplayType": "Pages",
     "Pages": [
         {
-            "PageId": "6500",
+            "PageId": "6600",
             "SequenceId": null,
             "SectionId": null,
             "Title": "What teaching methods will your organisation use to deliver 20% off the job training?",
@@ -12,7 +12,7 @@
             "InfoText": "<p class='govuk-body'>Find out more about <a class='govuk-link' href='https://www.gov.uk/government/publications/apprenticeships-off-the-job-training' target='_blank'>apprenticeship off the job training (opens in a new window or tab)</a>.</p>",
             "Questions": [
                 {
-                    "QuestionId": "PAT-650",
+                    "QuestionId": "PAT-660",
                     "QuestionTag": null,
                     "Label": "What teaching methods will your organisation use to deliver 20% off the job training?",
                     "ShortLabel": "",
@@ -61,7 +61,7 @@
             "Next": [
                 {
                     "Action": "NextPage",
-                    "ReturnId": "6510",
+                    "ReturnId": "6610",
                     "Conditions": []
                 }
             ],
@@ -79,7 +79,7 @@
             "ActivatedByPageId": null
         },
         {
-            "PageId": "6510",
+            "PageId": "6610",
             "SequenceId": null,
             "SectionId": null,
             "Title": "How will your organisation ensure 20% off the job training is relevant to the specific apprenticeship being delivered?",
@@ -87,7 +87,7 @@
             "InfoText": "",
             "Questions": [
                 {
-                    "QuestionId": "PAT-651",
+                    "QuestionId": "PAT-661",
                     "QuestionTag": null,
                     "Label": "How will your organisation ensure 20% off the job training is relevant to the specific apprenticeship being delivered?",
                     "ShortLabel": "",
@@ -115,7 +115,7 @@
             "Next": [
                 {
                     "Action": "ReturnToSection",
-                    "ReturnId": "6.6",
+                    "ReturnId": "6.7",
                     "Conditions": []
                 }
             ],
@@ -123,7 +123,7 @@
             "Active": false,
             "NotRequiredConditions": [],
             "BodyText": "",
-            "ActivatedByPageId": "6500"
+            "ActivatedByPageId": "6600"
         }
     ]
 }

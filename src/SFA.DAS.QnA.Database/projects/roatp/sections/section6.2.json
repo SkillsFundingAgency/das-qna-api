@@ -4,7 +4,7 @@
     "DisplayType": "Pages",
     "Pages": [
         {
-            "PageId": "6020",
+            "PageId": "6201",
             "SequenceId": null,
             "SectionId": null,
             "Title": "Type of apprenticeship training",
@@ -57,7 +57,7 @@
             "Next": [
                 {
                     "Action": "NextPage",
-                    "ReturnId": "6030",
+                    "ReturnId": "6230",
                     "Conditions": [
                         {
                             "QuestionId": "PAT-21",
@@ -71,7 +71,7 @@
                 },
                 {
                     "Action": "NextPage",
-                    "ReturnId": "6050",
+                    "ReturnId": "6250",
                     "Conditions": [
                         {
                             "QuestionId": "PAT-21",
@@ -93,7 +93,7 @@
             "BodyText": ""
         },
         {
-            "PageId": "6022",
+            "PageId": "6202",
             "SequenceId": null,
             "SectionId": null,
             "Title": "Type of apprenticeship training",
@@ -146,7 +146,7 @@
             "Next": [
                 {
                     "Action": "NextPage",
-                    "ReturnId": "6030",
+                    "ReturnId": "6230",
                     "Conditions": [
                         {
                             "QuestionId": "PAT-22",
@@ -160,7 +160,7 @@
                 },
                 {
                     "Action": "NextPage",
-                    "ReturnId": "6050",
+                    "ReturnId": "6250",
                     "Conditions": [
                         {
                             "QuestionId": "PAT-22",
@@ -182,7 +182,7 @@
             "BodyText": ""
         },
         {
-            "PageId": "6023",
+            "PageId": "6203",
             "SequenceId": null,
             "SectionId": null,
             "Title": "Type of apprenticeship training",
@@ -250,7 +250,7 @@
             "Next": [
                 {
                     "Action": "NextPage",
-                    "ReturnId": "6200",
+                    "ReturnId": "6230",
                     "Conditions": [
                         {
                             "QuestionId": "PAT-23",
@@ -264,7 +264,7 @@
                 },
                 {
                     "Action": "NextPage",
-                    "ReturnId": "6200",
+                    "ReturnId": "6230",
                     "Conditions": [
                         {
                             "QuestionId": "PAT-23",
@@ -278,7 +278,7 @@
                 },
                 {
                     "Action": "NextPage",
-                    "ReturnId": "6060",
+                    "ReturnId": "6260",
                     "Conditions": [
                         {
                             "QuestionId": "PAT-23",
@@ -292,7 +292,7 @@
                 },
                 {
                     "Action": "NextPage",
-                    "ReturnId": "6060",
+                    "ReturnId": "6260",
                     "Conditions": [
                         {
                             "QuestionId": "PAT-23",
@@ -328,7 +328,7 @@
             "BodyText": ""
         },
         {
-            "PageId": "6030",
+            "PageId": "6230",
             "SequenceId": null,
             "SectionId": null,
             "Title": "Application standards",
@@ -340,7 +340,7 @@
                     "QuestionTag": null,
                     "Label": "How is your organisation ensuring it's ready to deliver training in apprenticeship standards?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body' id='pya-equality-policy'>Your answer must include how your organisation has:</p><ul class='govuk-list govuk-list--bullet'><li>commitment and approval from senior managers to deliver apprenticeship standards</li><li>a governance group in place to monitor delivery of training</li><li>an implementation plan specific to apprenticeship training </li><li>resources that support the delivery of apprenticeship standards</li></ul>",
+                    "QuestionBodyText": "<p class='govuk-body'>Your answer must include how your organisation has:</p><ul class='govuk-list govuk-list--bullet'><li>commitment and approval from senior managers to deliver apprenticeship standards</li><li>a governance group in place to monitor delivery of training</li><li>an implementation plan specific to apprenticeship training </li><li>resources that support the delivery of apprenticeship standards</li></ul>",
                     "Hint": "",
                     "Input": {
                         "Type": "Textarea",
@@ -363,22 +363,32 @@
 			"PageOfAnswers": [],
             "Next": [
                 {
+                    "Action": "ReturnToSection",
+                    "ReturnId": "6.3",
+                    "Conditions": [
+                        {
+                            "QuestionTag": "ApplyProviderRoute",
+                            "MustEqual": "3"
+                        }
+                    ]
+                },
+                {
                     "Action": "NextPage",
-                    "ReturnId": "6900",
+                    "ReturnId": "6270",
                     "Conditions": []
                 }
             ],
             "AllowMultipleAnswers": false,
             "Active": false,
-            "ActivatedByPageId": "6020,6022",
+            "ActivatedByPageId": "6201,6202,6203",
             "BodyText": ""
         },
         {
-            "PageId": "6050",
+            "PageId": "6250",
             "SequenceId": null,
             "SectionId": null,
-            "Title": "Application frameworks",
-            "LinkTitle": "Application frameworks",
+            "Title": "Apprenticeship frameworks",
+            "LinkTitle": "Apprenticeship frameworks",
             "InfoText": "",
             "Questions": [
                 {
@@ -386,7 +396,7 @@
                     "QuestionTag": null,
                     "Label": "Offering apprenticeship frameworks",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body' id='pat-offering-apprenticeship-frameworks'>Apprenticeship frameworks will be replaced by apprenticeship standards by 1 August 2020. </p><p class='govuk-body govuk-!-font-weight-bold'>Does your organisation have a plan to transition from apprenticeship frameworks to apprenticeship standards?</p><p class='govuk-body'>Find out more on <a href='https://www.gov.uk/government/publications/removal-of-apprenticeship-frameworks' class='govuk-link' target='_blank'>the withdrawal of apprenticeship frameworks  (opens in a new window or tab)</a>.</p>",
+                    "QuestionBodyText": "<p class='govuk-body'>Apprenticeship frameworks will be replaced by apprenticeship standards by 1 August 2020. </p><p class='govuk-body govuk-!-font-weight-bold'>Does your organisation have a plan to transition from apprenticeship frameworks to apprenticeship standards?</p><p class='govuk-body'>Find out more on <a href='https://www.gov.uk/government/publications/removal-of-apprenticeship-frameworks' class='govuk-link' target='_blank'>the withdrawal of apprenticeship frameworks  (opens in a new window or tab)</a>.</p>",
                     "Hint": "",
                     "Input": {
                         "Type": "Radio",
@@ -416,7 +426,7 @@
             "Next": [
                 {
                     "Action": "NextPage",
-                    "ReturnId": "6052",
+                    "ReturnId": "6252",
                     "Conditions": [
                         {
                             "QuestionId": "PAT-50",
@@ -426,7 +436,7 @@
                 },
                 {
                     "Action": "NextPage",
-                    "ReturnId": "6054",
+                    "ReturnId": "6254",
                     "Conditions": [
                         {
                             "QuestionId": "PAT-50",
@@ -456,11 +466,11 @@
                     ]
                 }
             ],
-            "ActivatedByPageId": "6020,6022",
+            "ActivatedByPageId": "6201,6202",
             "BodyText": ""
         },
         {
-            "PageId": "6052",
+            "PageId": "6252",
             "SequenceId": null,
             "SectionId": null,
             "Title": "",
@@ -472,7 +482,7 @@
                     "QuestionTag": null,
                     "Label": "How will your organisation transition from apprenticeship frameworks to apprenticeship standards?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body' id='pat-organisation-transition'>Your answer must include how your organisation has:</p><ul class='govuk-list govuk-list--bullet'><li>get commitment and approval from senior managers to deliver apprenticeship standards</li><li>have a governance group in place to monitor delivery of training</li><li>have an implementation plan specific to apprenticeship training</li><li>have resources that support the delivery of apprenticeship standards</li></ul></p>\n<p class='govuk-body'>Your answer must also include when your organisation will do this.</p>",
+                    "QuestionBodyText": "<p class='govuk-body'>Your answer must include how your organisation has:</p><ul class='govuk-list govuk-list--bullet'><li>get commitment and approval from senior managers to deliver apprenticeship standards</li><li>have a governance group in place to monitor delivery of training</li><li>have an implementation plan specific to apprenticeship training</li><li>have resources that support the delivery of apprenticeship standards</li></ul></p>\n<p class='govuk-body'>Your answer must also include when your organisation will do this.</p>",
                     "Hint": "",
                     "Input": {
                         "Type": "Textarea",
@@ -506,7 +516,7 @@
             "Next": [
                 {
                     "Action": "NextPage",
-                    "ReturnId": "6900",
+                    "ReturnId": "6270",
                     "Conditions": []
                 },
                 {
@@ -515,11 +525,11 @@
                     "Conditions": []
                 }
             ],
-            "ActivatedByPageId": "6050",
+            "ActivatedByPageId": "6250",
             "BodyText": ""
         },
         {
-            "PageId": "6054",
+            "PageId": "6254",
             "SequenceId": null,
             "SectionId": null,
             "Title": "Why will your organisation only deliver apprenticeship frameworks?",
@@ -555,7 +565,7 @@
             "Next": [
                 {
                     "Action": "NextPage",
-                    "ReturnId": "6800",
+                    "ReturnId": "6280",
                     "Conditions": [
                         {
                             "QuestionTag": "ApplyProviderRoute",
@@ -565,7 +575,7 @@
                 },
                 {
                     "Action": "NextPage",
-                    "ReturnId": "6800",
+                    "ReturnId": "6280",
                     "Conditions": [
                         {
                             "QuestionTag": "ApplyProviderRoute",
@@ -589,11 +599,11 @@
                     ]
                 }
             ],
-            "ActivatedByPageId": "6050",
+            "ActivatedByPageId": "6250",
             "BodyText": ""
         },
         {
-            "PageId": "6060",
+            "PageId": "6260",
             "SequenceId": null,
             "SectionId": null,
             "Title": "Application frameworks",
@@ -605,7 +615,7 @@
                     "QuestionTag": null,
                     "Label": "Offering apprenticeship frameworks",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body' id='pat-offering-apprenticeship-frameworks'>Apprenticeship frameworks will be replaced by apprenticeship standards by 1 August 2020. </p><p class='govuk-body' >Does your organisation have a plan to transition from apprenticeship frameworks to apprenticeship standards?</p><p class='govuk-body'>Find out more on <a href='https://www.gov.uk/government/publications/removal-of-apprenticeship-frameworks' class='govuk-link' target='_blank'>the withdrawal of apprenticeship frameworks  (opens in a new window or tab)</a>.</p>",
+                    "QuestionBodyText": "<p class='govuk-body'>Apprenticeship frameworks will be replaced by apprenticeship standards by 1 August 2020. </p><p class='govuk-body' >Does your organisation have a plan to transition from apprenticeship frameworks to apprenticeship standards?</p><p class='govuk-body'>Find out more on <a href='https://www.gov.uk/government/publications/removal-of-apprenticeship-frameworks' class='govuk-link' target='_blank'>the withdrawal of apprenticeship frameworks  (opens in a new window or tab)</a>.</p>",
                     "Hint": "",
                     "Input": {
                         "Type": "Radio",
@@ -635,7 +645,7 @@
             "Next": [
                 {
                     "Action": "NextPage",
-                    "ReturnId": "6062",
+                    "ReturnId": "6262",
                     "Conditions": [
                         {
                             "QuestionId": "PAT-60",
@@ -645,7 +655,7 @@
                 },
                 {
                     "Action": "NextPage",
-                    "ReturnId": "6064",
+                    "ReturnId": "6264",
                     "Conditions": [
                         {
                             "QuestionId": "PAT-60",
@@ -698,11 +708,11 @@
                     ]
                 }
             ],
-            "ActivatedByPageId": "6023",
+            "ActivatedByPageId": "6203",
             "BodyText": ""
         },
         {
-            "PageId": "6062",
+            "PageId": "6262",
             "SequenceId": null,
             "SectionId": null,
             "Title": "",
@@ -714,7 +724,7 @@
                     "QuestionTag": null,
                     "Label": "How will your organisation transition from apprenticeship frameworks to apprenticeship standards?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body' id='pat-organisation-transition'>Your answer must include how your organisation has:</p><ul class='govuk-list govuk-list--bullet'><li>get commitment and approval from senior managers to deliver apprenticeship standards</li><li>have a governance group in place to monitor delivery of training</li><li>have an implementation plan specific to apprenticeship training</li><li>have resources that support the delivery of apprenticeship standards</li></ul></p>\n<p class='govuk-body'>Your answer must also include when your organisation will do this.</p>",
+                    "QuestionBodyText": "<p class='govuk-body'>Your answer must include how your organisation has:</p><ul class='govuk-list govuk-list--bullet'><li>get commitment and approval from senior managers to deliver apprenticeship standards</li><li>have a governance group in place to monitor delivery of training</li><li>have an implementation plan specific to apprenticeship training</li><li>have resources that support the delivery of apprenticeship standards</li></ul></p>\n<p class='govuk-body'>Your answer must also include when your organisation will do this.</p>",
                     "Hint": "",
                     "Input": {
                         "Type": "Textarea",
@@ -749,15 +759,15 @@
             "Next": [
                 {
                     "Action": "NextPage",
-                    "ReturnId": "6900",
+                    "ReturnId": "6270",
                     "Conditions": []
                 }
             ],
-            "ActivatedByPageId": "6060",
+            "ActivatedByPageId": "6260",
             "BodyText": ""
         },
         {
-            "PageId": "6064",
+            "PageId": "6264",
             "SequenceId": null,
             "SectionId": null,
             "Title": "Why will your organisation only deliver apprenticeship frameworks?",
@@ -808,23 +818,23 @@
                     ]
                 }
             ],
-            "ActivatedByPageId": "6060",
+            "ActivatedByPageId": "6260",
             "BodyText": ""
         },
         {
-            "PageId": "6200",
+            "PageId": "6270",
             "SequenceId": null,
             "SectionId": null,
-            "Title": "Application standards",
-            "LinkTitle": "Application standards",
+            "Title": "How will your organisation engage with end-point assessment organisations (EPAO's)?",
+            "LinkTitle": "How will your organisation engage with end-point assessment organisations (EPAO's)?",
             "InfoText": "",
             "Questions": [
                 {
-                    "QuestionId": "PAT-620",
+                    "QuestionId": "PAT-70",
                     "QuestionTag": null,
-                    "Label": "How is your organisation ensuring it's ready to deliver training in apprenticeship standards?",
+                    "Label": "How will your organisation engage with end-point assessment organisations (EPAO's)?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body' id='pya-equality-policy'>Your answer must include how your organisation has:</p><ul class='govuk-list govuk-list--bullet'><li>commitment and approval from senior managers to deliver apprenticeship standards</li><li>a governance group in place to monitor delivery of training</li><li>an implementation plan specific to apprenticeship training </li><li>resources that support the delivery of apprenticeship standards</li></ul>",
+                    "QuestionBodyText": "<p class='govuk-body'>Your answer must include how your organisation will:</p><ul class='govuk-list govuk-list--bullet'><li>find EPAO's for relevant apprenticeship standards</li><li>contact EPAO's</li><li>engage employers in the process of choosing an EPAO</li><li>confirm a contract or service agreement with EPAO's</li></ul></p>\n<p class='govuk-body'>You'll also need to include what information your organisation will ask from an EPAO to ensure they are suitable.</p>",
                     "Hint": "",
                     "Input": {
                         "Type": "Textarea",
@@ -833,7 +843,7 @@
                             {
                                 "Name": "Required",
                                 "Value": "",
-                                "ErrorMessage": "Tell us how your organisation is ensuring it's ready to deliver training in apprenticeship standards"
+                                "ErrorMessage": "Tell us how your organisation will engage with end-point assessment organisations (EPAO's)"
                             },
                             {
                                 "Name": "MaxWordCount",
@@ -847,6 +857,34 @@
 			"PageOfAnswers": [],
             "Next": [
                 {
+                    "Action": "NextPage",
+                    "ReturnId": "6280",
+                    "Conditions": [
+                        {
+                            "QuestionTag": "ApplyProviderRoute",
+                            "MustEqual": "2"
+                        },
+                        {
+                            "QuestionTag": "PATTypeOfTrainingMainEmployer",
+                            "Contains": "Apprenticeship frameworks"
+                        }
+                    ]
+                },
+                {
+                    "Action": "NextPage",
+                    "ReturnId": "6280",
+                    "Conditions": [
+                        {
+                            "QuestionTag": "ApplyProviderRoute",
+                            "MustEqual": "1"
+                        },
+                        {
+                            "QuestionTag": "PATTypeOfTrainingMainEmployer",
+                            "Contains": "Apprenticeship frameworks"
+                        }
+                    ]
+                },
+                {
                     "Action": "ReturnToSection",
                     "ReturnId": "6.3",
                     "Conditions": []
@@ -854,11 +892,19 @@
             ],
             "AllowMultipleAnswers": false,
             "Active": false,
-            "ActivatedByPageId": "6023",
+            "NotRequiredConditions": [
+                {
+                    "Field": "ApplyProviderRoute",
+                    "IsOneOf": [
+                        "3"
+                    ]
+                }
+            ],
+            "ActivatedByPageId": "6230,6252",
             "BodyText": ""
         },
         {
-            "PageId": "6800",
+            "PageId": "6280",
             "SequenceId": null,
             "SectionId": null,
             "Title": "How does your organisation plan to engage and work with awarding bodies?",
@@ -866,11 +912,11 @@
             "InfoText": "",
             "Questions": [
                 {
-                    "QuestionId": "PAT-800",
+                    "QuestionId": "PAT-80",
                     "QuestionTag": null,
                     "Label": "How does your organisation plan to engage and work with awarding bodies?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body' id='pat-organisation-transition'>Your answer must include how your organisation will:</p><ul class='govuk-list govuk-list--bullet'><li>find awarding bodies for relevant apprenticeship frameworks</li><li>contact awarding bodies</li><li>get relevant information from awarding bodies</li><li>engage employers in the process of choosing an awarding body</li><li>confirm a contract or service agreement with awarding bodies</li></ul></p>\n<p class='govuk-body'>You'll also need to include what information your organisation will ask from an awarding body to ensure they are suitable.</p>",
+                    "QuestionBodyText": "<p class='govuk-body'>Your answer must include how your organisation will:</p><ul class='govuk-list govuk-list--bullet'><li>find awarding bodies for relevant apprenticeship frameworks</li><li>contact awarding bodies</li><li>get relevant information from awarding bodies</li><li>engage employers in the process of choosing an awarding body</li><li>confirm a contract or service agreement with awarding bodies</li></ul></p>\n<p class='govuk-body'>You'll also need to include what information your organisation will ask from an awarding body to ensure they are suitable.</p>",
                     "Hint": "",
                     "Input": {
                         "Type": "Textarea",
@@ -908,93 +954,7 @@
                     ]
                 }
             ],
-            "ActivatedByPageId": "6054,6900",
-            "BodyText": ""
-        },
-        {
-            "PageId": "6900",
-            "SequenceId": null,
-            "SectionId": null,
-            "Title": "How will your organisation engage with end-point assessment organisations (EPAO's)?",
-            "LinkTitle": "How will your organisation engage with end-point assessment organisations (EPAO's)?",
-            "InfoText": "",
-            "Questions": [
-                {
-                    "QuestionId": "PAT-900",
-                    "QuestionTag": null,
-                    "Label": "How will your organisation engage with end-point assessment organisations (EPAO's)?",
-                    "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body' id='pat-organisation-transition'>Your answer must include how your organisation will:</p><ul class='govuk-list govuk-list--bullet'><li>find EPAO's for relevant apprenticeship standards</li><li>contact EPAO's</li><li>engage employers in the process of choosing an EPAO</li><li>confirm a contract or service agreement with EPAO's</li></ul></p>\n<p class='govuk-body'>You'll also need to include what information your organisation will ask from an EPAO to ensure they are suitable.</p>",
-                    "Hint": "",
-                    "Input": {
-                        "Type": "Textarea",
-                        "Options": [],
-                        "Validations": [
-                            {
-                                "Name": "Required",
-                                "Value": "",
-                                "ErrorMessage": "Tell us how your organisation will engage with end-point assessment organisations (EPAO's)"
-                            },
-                            {
-                                "Name": "MaxWordCount",
-                                "Value": "275",
-                                "ErrorMessage": "Your answer must be 275 words or less"
-                            }
-                        ]
-                    }
-                }
-            ],
-			"PageOfAnswers": [],
-            "Next": [
-                {
-                    "Action": "NextPage",
-                    "ReturnId": "6800",
-                    "Conditions": [
-                        {
-                            "QuestionId": null,
-                            "QuestionTag": "ApplyProviderRoute",
-                            "MustEqual": "2"
-                        },
-                        {
-                            "QuestionId": null,
-                            "QuestionTag": "PATTypeOfTrainingMainEmployer",
-                            "Contains": "Apprenticeship frameworks"
-                        }
-                    ]
-                },
-                {
-                    "Action": "NextPage",
-                    "ReturnId": "6800",
-                    "Conditions": [
-                        {
-                            "QuestionId": null,
-                            "QuestionTag": "ApplyProviderRoute",
-                            "MustEqual": "1"
-                        },
-                        {
-                            "QuestionId": null,
-                            "QuestionTag": "PATTypeOfTrainingMainEmployer",
-                            "Contains": "Apprenticeship frameworks"
-                        }
-                    ]
-                },
-                {
-                    "Action": "ReturnToSection",
-                    "ReturnId": "6.3",
-                    "Conditions": []
-                }
-            ],
-            "AllowMultipleAnswers": false,
-            "Active": false,
-            "NotRequiredConditions": [
-                {
-                    "Field": "ApplyProviderRoute",
-                    "IsOneOf": [
-                        "3"
-                    ]
-                }
-            ],
-            "ActivatedByPageId": "6030,6052",
+            "ActivatedByPageId": "6254,6270",
             "BodyText": ""
         }
     ]

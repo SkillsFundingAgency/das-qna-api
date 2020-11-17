@@ -4,7 +4,7 @@
     "DisplayType": "Pages",
     "Pages": [
         {
-            "PageId": "6600",
+            "PageId": "6700",
             "SequenceId": null,
             "SectionId": null,
             "Title": "Where will your apprentices be trained?",
@@ -12,11 +12,11 @@
             "InfoText": "",
             "Questions": [
                 {
-                    "QuestionId": "PAT-660",
+                    "QuestionId": "PAT-670",
                     "QuestionTag": null,
                     "Label": "Building and Street",
                     "ShortLabel": "",
-                    "QuestionBodyText": "\n",
+                    "QuestionBodyText": "",
                     "Hint": "",
                     "Input": {
                         "Type": "Text",
@@ -30,7 +30,7 @@
                     }
                 },
                 {
-                    "QuestionId": "PAT-662",
+                    "QuestionId": "PAT-671",
                     "QuestionTag": null,
                     "Label": "Town or City",
                     "ShortLabel": "",
@@ -49,7 +49,7 @@
                     }
                 },
                 {
-                    "QuestionId": "PAT-663",
+                    "QuestionId": "PAT-672",
                     "QuestionTag": null,
                     "Label": "County",
                     "ShortLabel": "",
@@ -68,7 +68,7 @@
                     }
                 },
                 {
-                    "QuestionId": "PAT-664",
+                    "QuestionId": "PAT-673",
                     "QuestionTag": null,
                     "Label": "Postcode",
                     "ShortLabel": "",

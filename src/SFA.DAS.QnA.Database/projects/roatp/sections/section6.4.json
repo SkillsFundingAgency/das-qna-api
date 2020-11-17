@@ -4,7 +4,7 @@
     "DisplayType": "Pages",
     "Pages": [
         {
-            "PageId": "6300",
+            "PageId": "6400",
             "SequenceId": null,
             "SectionId": null,
             "Title": "How will your organisation ensure apprentices are supported during their apprenticeship training?",
@@ -12,7 +12,7 @@
             "InfoText": "",
             "Questions": [
                 {
-                    "QuestionId": "PAT-630",
+                    "QuestionId": "PAT-640",
                     "QuestionTag": null,
                     "Label": "How will your organisation ensure apprentices are supported during their apprenticeship training?",
                     "ShortLabel": "",
@@ -40,7 +40,7 @@
             "Next": [
                 {
                     "Action": "NextPage",
-                    "ReturnId": "6310",
+                    "ReturnId": "6410",
                     "Conditions": []
                 }
             ],
@@ -59,7 +59,7 @@
             "BodyText": ""
         },
         {
-            "PageId": "6310",
+            "PageId": "6410",
             "SequenceId": null,
             "SectionId": null,
             "Title": "How will your organisation support its apprentices?",
@@ -67,7 +67,7 @@
             "InfoText": "",
             "Questions": [
                 {
-                    "QuestionId": "PAT-631",
+                    "QuestionId": "PAT-641",
                     "QuestionTag": null,
                     "Label": "How will your organisation support its apprentices?",
                     "ShortLabel": "",
@@ -116,7 +116,7 @@
             "Next": [
                 {
                     "Action": "NextPage",
-                    "ReturnId": "6320",
+                    "ReturnId": "6420",
                     "Conditions": [
                         {
                             "QuestionId": "PAT-631",
@@ -127,17 +127,17 @@
                 },
                 {
                     "Action": "ReturnToSection",
-                    "ReturnId": "6.4",
+                    "ReturnId": "6.5",
                     "Conditions": []
                 }
             ],
             "AllowMultipleAnswers": false,
             "Active": false,
-            "ActivatedByPageId": "6300",
+            "ActivatedByPageId": "6400",
             "BodyText": ""
         },
         {
-            "PageId": "6320",
+            "PageId": "6420",
             "SequenceId": null,
             "SectionId": null,
             "Title": "",
@@ -145,7 +145,7 @@
             "InfoText": "",
             "Questions": [
                 {
-                    "QuestionId": "PAT-632",
+                    "QuestionId": "PAT-642",
                     "QuestionTag": null,
                     "Label": "What other ways will your organisation use to support its apprentices?",
                     "ShortLabel": "",
@@ -173,7 +173,7 @@
             "Next": [
                 {
                     "Action": "ReturnToSection",
-                    "ReturnId": "6.4",
+                    "ReturnId": "6.5",
                     "Conditions": []
                 }
 			],
@@ -181,7 +181,7 @@
             "Active": false,
             "NotRequiredConditions": [],
             "BodyText": "",
-            "ActivatedByPageId": "6310"
+            "ActivatedByPageId": "6410"
         }
     ]
 }
