@@ -177,6 +177,12 @@
 				"name": "Type of apprenticeship training"
 			},
 			{
+				"id": "section6.3",
+				"SequenceNo": 6,
+				"SectionNo": 3,
+				"name": "Training apprentices"
+			},
+			{
 				"id": "section6.4",
 				"SequenceNo": 6,
 				"SectionNo": 4,
