@@ -98,7 +98,7 @@
                     "QuestionBodyText": "",
                     "Hint": "",
                     "Input": {
-                        "Type": "	",
+                        "Type": "Radio",
                         "Options": [
                             {
                                 "Value": "Within the first 3 months of joining the RoATP",
