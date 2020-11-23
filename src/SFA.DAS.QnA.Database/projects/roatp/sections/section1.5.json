@@ -63,7 +63,14 @@
             ],
             "AllowMultipleAnswers": false,
             "Active": true,
-            "NotRequiredConditions": [],
+            "NotRequiredConditions": [
+                {
+                    "Field": "ApplyProviderRoute",
+                    "IsOneOf": [
+                        "2", "3"
+                    ]
+                }
+            ],
             "BodyText": "",
             "ActivatedByPageId": null
         },
@@ -128,7 +135,7 @@
                 }
             ],
             "AllowMultipleAnswers": false,
-            "Active": false,
+            "Active": true,
             "HasFeedback": false,
             "NotRequiredConditions": [
                 {
@@ -1274,7 +1281,7 @@
                 }
             ],
             "AllowMultipleAnswers": false,
-            "Active": false,
+            "Active": true,
             "NotRequiredConditions": [
                 {
                     "Field": "ApplyProviderRoute",
