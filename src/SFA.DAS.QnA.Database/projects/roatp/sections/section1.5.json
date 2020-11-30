@@ -63,7 +63,14 @@
             ],
             "AllowMultipleAnswers": false,
             "Active": true,
-            "NotRequiredConditions": [],
+            "NotRequiredConditions": [
+                {
+                    "Field": "ApplyProviderRoute",
+                    "IsOneOf": [
+                        "2", "3"
+                    ]
+                }
+            ],
             "BodyText": "",
             "ActivatedByPageId": null
         },
@@ -128,7 +135,7 @@
                 }
             ],
             "AllowMultipleAnswers": false,
-            "Active": false,
+            "Active": true,
             "HasFeedback": false,
             "NotRequiredConditions": [
                 {
@@ -996,7 +1003,7 @@
             "Active": false,
             "NotRequiredConditions": [
                 {
-                    "Field": "OrganisationEducationInstituteMainSupporting",
+                    "Field": "OrganisationEducationInstitute",
                     "IsOneOf": [
                         "General Further Education College",
                         "Higher Education Institute",
@@ -1005,14 +1012,14 @@
                     ]
                 },
                 {
-                    "Field": "OrganisationSchoolMS",
+                    "Field": "OrganisationSchool",
                     "IsOneOf": [
                         "Local Education Authority (LEA) school",
                         "None of the above"
                     ]
                 },
                 {
-                    "Field": "OrganisationEducationInstituteEmployer",
+                    "Field": "OrganisationEducationInstitute",
                     "IsOneOf": [
                         "General Further Education College",
                         "Higher Education Institute",
@@ -1112,7 +1119,7 @@
                     ]
                 },
                 {
-                    "Field": "OrganisationSchoolEmp",
+                    "Field": "OrganisationSchool",
                     "IsOneOf": [
                         "Local Education Authority (LEA) school",
                         "None of the above"
@@ -1274,7 +1281,7 @@
                 }
             ],
             "AllowMultipleAnswers": false,
-            "Active": false,
+            "Active": true,
             "NotRequiredConditions": [
                 {
                     "Field": "ApplyProviderRoute",
