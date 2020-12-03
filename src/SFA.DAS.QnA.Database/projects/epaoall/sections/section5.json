@@ -8,8 +8,8 @@
 			"PageId": "1",
 			"SequenceId": null,
 			"SectionId": null,
-			"Title": "Reason for withdrawing",
-			"LinkTitle": "Reason for withdrawing",
+			"Title": "What's the main reason you want to withdraw from the register?",
+			"LinkTitle": "What's the main reason you want to withdraw from the register?",
 			"InfoText": "",
 			"Questions": [
 				{
