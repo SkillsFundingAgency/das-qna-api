@@ -263,7 +263,7 @@
 									{
 										"QuestionId": "WR-06.10",
 										"QuestionTag": null,
-										"Label": "Enter more details (optional)",
+										"Label": "Enter the reason",
 										"ShortLabel": "",
 										"InputClasses": null,
 										"QuestionBodyText": "",
@@ -272,7 +272,13 @@
 											"Type": "Textarea",
 											"InputClasses": null,
 											"Options": [],
-											"Validations": [],
+											"Validations": [
+												{
+													"Name": "Required",
+													"Value": "",
+													"ErrorMessage": "Enter the reason why you want to withdraw"
+												}
+											],
 											"DataEndpoint": null
 										},
 										"Order": null,
@@ -289,7 +295,7 @@
 							{
 								"Name": "Required",
 								"Value": "",
-								"ErrorMessage": "Please select a reason to withdraw"
+								"ErrorMessage": "Select the main reason you want to withdraw from assessing this standard"
 							}
 						],
 						"DataEndpoint": null
