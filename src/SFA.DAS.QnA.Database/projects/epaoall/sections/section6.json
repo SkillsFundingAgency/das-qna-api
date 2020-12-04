@@ -492,7 +492,7 @@
 							{
 								"Name": "Required",
 								"Value": "",
-								"ErrorMessage": "Enter how you’ll communicate your market exit to customers"
+								"ErrorMessage": "Enter how you'll communicate your market exit to customers"
 							},
 							{
 								"Name": "MaxWordCount",
