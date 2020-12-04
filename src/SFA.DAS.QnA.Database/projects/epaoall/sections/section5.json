@@ -485,7 +485,7 @@
 			"PageId": "4",
 			"SequenceId": null,
 			"SectionId": null,
-			"Title": "Communicating your market exit to customers",
+			"Title": "How will you communicate your market exit to customers?",
 			"LinkTitle": "Communicating your market exit to customers",
 			"InfoText": "",
 			"Questions": [
@@ -505,12 +505,12 @@
 							{
 								"Name": "Required",
 								"Value": "",
-								"ErrorMessage": "Please enter how you will communicate your market exit"
+								"ErrorMessage": "Enter how you’ll communicate your market exit to customers"
 							},
 							{
 								"Name": "MaxWordCount",
 								"Value": "500",
-								"ErrorMessage": "How you will communicate your market exit must be 500 words or less"
+								"ErrorMessage": "Your answer must be 500 words or less"
 							}
 						],
 						"DataEndpoint": null
