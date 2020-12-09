@@ -13,6 +13,10 @@ namespace SFA.DAS.QnA.Application.UnitTests.Validators.DateValidatorTests
         [TestCase("01,01,0001", true)]
         [TestCase("01,11,2019", true)]
         [TestCase("31,12,9999", true)]
+        [TestCase("32,12,2020", false)]
+        [TestCase("31,13,2020", false)]
+        [TestCase("29,02,2020", true)]
+        [TestCase("29,02,2021", false)]
         public void Then_correct_errors_are_returned(string input, bool isValid)
         {
             var validator = new DateValidator

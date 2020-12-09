@@ -74,6 +74,16 @@
         "ContactGivenName": {
             "minLength": 1
         },
+        "EarliestDateOfWithdrawal": {
+            "oneOf": [
+                {
+                    "type": "string"
+                },
+                {
+                    "type": "null"
+                }
+            ]
+        },
         "CompanySummary": {
             "oneOf": [
                 {

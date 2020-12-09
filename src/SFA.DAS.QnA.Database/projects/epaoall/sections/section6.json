@@ -531,7 +531,7 @@
 			"PageId": "10",
 			"SequenceId": null,
 			"SectionId": null,
-			"Title": "Withdrawal date",
+			"Title": "When do you want to withdraw from the standard?",
 			"LinkTitle": "Withdrawal date",
 			"InfoText": "",
 			"Questions": [
@@ -541,19 +541,29 @@
 					"Label": "When do you want to withdraw from the standard?",
 					"ShortLabel": "",
 					"InputClasses": null,
-					"QuestionBodyText": "<p class='govuk-body'>The earliest date you can withdraw is {{EarliestDateOfWithdrawal}}.</p>",
+					"QuestionBodyText": "<p class='govuk-body'>If you have at least 1 registered learner, the earliest date you can withdraw is <span class='das-no-wrap'>{{EarliestDateOfWithdrawal:d MMM yyyy}}</span>.</p>",
 					"Hint": "",
 					"Input": {
 						"Type": "Date",
 						"InputClasses": null,
 						"Validations": [
 							{
-								"Name": "ClientApiCall",
+								"Name": "Required",
 								"Value": "",
-								"ErrorMessage": "Please enter a date after the earliest withdrawal date"
+								"ErrorMessage": "Enter a date"
+							},
+							{
+								"Name": "Date",
+								"Value": "",
+								"ErrorMessage": "Enter a valid date"
+							},
+							{
+								"Name": "DateInFuture",
+								"Value": "",
+								"ErrorMessage": "The date must in the future"
 							}
 						],
-						"DataEndpoint": "http://replace-with-endpoint"
+						"DataEndpoint": null
 					},
 					"Order": null,
 					"Value": "",
