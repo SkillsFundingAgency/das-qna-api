@@ -417,7 +417,6 @@
 					"ShortLabel": "",
 					"InputClasses": null,
 					"QuestionBodyText": "<p class='govuk-body'>Your answer must include:</p><ul class='govuk-list govuk-list--bullet'><li>how you'll transfer these learners to other EPAOs</li><li>details of any EPAOs you've spoken to</li><li>If you have no registered learners, enter 'not applicable'.</li></ul>",
-					"\",": null,
 					"Hint": "",
 					"Input": {
 						"Type": "Textarea",
