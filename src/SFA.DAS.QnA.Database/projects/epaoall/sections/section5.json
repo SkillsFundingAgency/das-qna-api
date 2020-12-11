@@ -423,30 +423,30 @@
 						"Type": "Textarea",
 						"InputClasses": "govuk-!-width-full",
 						"Options": [
-						{
-							"FurtherQuestions": [],
-							"Value": "Yes",
-							"Label": "Yes",
-							"HintText": ""
-						},
-						{
-							"FurtherQuestions": [],
-							"Value": "No",
-							"Label": "No",
-							"HintText": ""
-						}
+							{
+								"FurtherQuestions": [],
+								"Value": "Yes",
+								"Label": "Yes",
+								"HintText": ""
+							},
+							{
+								"FurtherQuestions": [],
+								"Value": "No",
+								"Label": "No",
+								"HintText": ""
+							}
 						],
 						"Validations": [
-						{
-							"Name": "Required",
-							"Value": "",
-							"ErrorMessage": "Enter how you'll support the learners you are not going to assess"
-						},
-						{
-							"Name": "MaxWordCount",
-							"Value": "500",
-							"ErrorMessage": "Your answer must be 500 words or less"
-						}
+							{
+								"Name": "Required",
+								"Value": "",
+								"ErrorMessage": "Enter how you'll support the learners you are not going to assess"
+							},
+							{
+								"Name": "MaxWordCount",
+								"Value": "500",
+								"ErrorMessage": "Your answer must be 500 words or less"
+							}
 						],
 						"DataEndpoint": null
 					},
