@@ -411,43 +411,43 @@
 			"InfoText": "",
 			"Questions": [
 				{
-				"QuestionId": "WR-08",
-				"QuestionTag": null,
-				"Label": "How will you support the learners you are not going to assess?",
-				"ShortLabel": "",
-				"InputClasses": null,
-				"QuestionBodyText": "<p class='govuk-body'>Your answer must include:</p><ul class='govuk-list govuk-list--bullet'><li>how you'll transfer these learners to other EPAOs</li><li>details of any EPAOs you've spoken to</li><li>If you have no registered learners, enter 'not applicable'.</li></ul>",
-				"Hint": "",
-				"Input": {
-					"Type": "Textarea",
-					"InputClasses": "govuk-!-width-full",
-					"Options": [],
-					"Validations": [
-					{
-						"Name": "Required",
-						"Value": "",
-						"ErrorMessage": "Enter how you'll support the learners you are not going to assess"
+					"QuestionId": "WR-08",
+					"QuestionTag": null,
+					"Label": "How will you support the learners you are not going to assess?",
+					"ShortLabel": "",
+					"InputClasses": null,
+					"QuestionBodyText": "<p class='govuk-body'>Your answer must include:</p><ul class='govuk-list govuk-list--bullet'><li>how you'll transfer these learners to other EPAOs</li><li>details of any EPAOs you've spoken to</li><li>If you have no registered learners, enter 'not applicable'.</li></ul>",
+					"Hint": "",
+					"Input": {
+						"Type": "Textarea",
+						"InputClasses": "govuk-!-width-full",
+						"Options": [],
+						"Validations": [
+						{
+							"Name": "Required",
+							"Value": "",
+							"ErrorMessage": "Enter how you'll support the learners you are not going to assess"
+						},
+						{
+							"Name": "MaxWordCount",
+							"Value": "500",
+							"ErrorMessage": "Your answer must be 500 words or less"
+						}
+						],
+						"DataEndpoint": null
 					},
-					{
-						"Name": "MaxWordCount",
-						"Value": "500",
-						"ErrorMessage": "Your answer must be 500 words or less"
-					}
-					],
-					"DataEndpoint": null
-				},
-				"Order": null,
-				"Value": "",
-				"ErrorMessages": null
+					"Order": null,
+					"Value": "",
+					"ErrorMessages": null
 				}
 			],
 			"PageOfAnswers": [],
 			"Next": [
 				{
-				"Action": "NextPage",
-				"ReturnId": "9",
-				"Conditions": [],
-				"ConditionMet": false
+					"Action": "NextPage",
+					"ReturnId": "9",
+					"Conditions": [],
+					"ConditionMet": false
 				}
 			],
 			"Complete": false,
@@ -456,10 +456,10 @@
 			"Active": false,
 			"NotRequiredConditions": [
 				{
-				"Field": "WR-07",
-				"IsOneOf": [
-					"Yes"
-				]
+					"Field": "WR-07",
+					"IsOneOf": [
+						"Yes"
+					]
 				}
 			],
 			"BodyText": "",
