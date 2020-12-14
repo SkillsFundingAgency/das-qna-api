@@ -58,7 +58,8 @@ namespace SFA.DAS.QnA.Application.Commands
         private void ValidateQuestion(Question question, List<KeyValuePair<string, string>> validationErrors, Answer answerToThisQuestion)
         {
             var validators = _validatorFactory.Build(question);
-            if (answerToThisQuestion is null || answerToThisQuestion.Value == "")
+
+            if (answerToThisQuestion is null || question.Input.GetEmptyAnswerValues().Contains(answerToThisQuestion.Value))
             {
                 if (!validators.Any(v => v.GetType().Name.EndsWith("RequiredValidator"))) return;
                 
