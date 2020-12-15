@@ -74,6 +74,16 @@
         "ContactGivenName": {
             "minLength": 1
         },
+        "PipelinesCount": {
+            "oneOf": [
+                {
+                    "type": "integer"
+                },
+                {
+                    "type": "null"
+                }
+            ]
+        },
         "CompanySummary": {
             "oneOf": [
                 {
