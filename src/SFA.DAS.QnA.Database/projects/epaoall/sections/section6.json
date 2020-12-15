@@ -8,7 +8,7 @@
 			"PageId": "6",
 			"SequenceId": null,
 			"SectionId": null,
-			"Title": "Reason for withdrawing",
+			"Title": "What's the main reason you want to withdraw from assessing this standard?",
 			"LinkTitle": "Reason for withdrawing",
 			"InfoText": "",
 			"Questions": [
@@ -263,7 +263,7 @@
 									{
 										"QuestionId": "WR-06.10",
 										"QuestionTag": null,
-										"Label": "Enter more details (optional)",
+										"Label": "Enter the reason",
 										"ShortLabel": "",
 										"InputClasses": null,
 										"QuestionBodyText": "",
@@ -272,7 +272,13 @@
 											"Type": "Textarea",
 											"InputClasses": null,
 											"Options": [],
-											"Validations": [],
+											"Validations": [
+												{
+													"Name": "Required",
+													"Value": "",
+													"ErrorMessage": "Enter the reason why you want to withdraw"
+												}
+											],
 											"DataEndpoint": null
 										},
 										"Order": null,
@@ -289,7 +295,7 @@
 							{
 								"Name": "Required",
 								"Value": "",
-								"ErrorMessage": "Please select a reason to withdraw"
+								"ErrorMessage": "Select the main reason you want to withdraw from assessing this standard"
 							}
 						],
 						"DataEndpoint": null
@@ -323,7 +329,7 @@
 			"PageId": "7",
 			"SequenceId": null,
 			"SectionId": null,
-			"Title": "Completing assessments for registered learners",
+			"Title": "Will you complete the end-point assessments for all registered learners?",
 			"LinkTitle": "Completing assessments for registered learners",
 			"InfoText": "",
 			"Questions": [
@@ -333,7 +339,7 @@
 					"Label": "Will you complete the end-point assessments for all registered learners?",
 					"ShortLabel": "",
 					"InputClasses": null,
-					"QuestionBodyText": "<p class=\"govuk-inset-text\">The pipeline shows that your organisation has {{RegisteredLearners}} registered learners for {{StandardName}}.</p>",
+					"QuestionBodyText": "<p class=\"govuk-body\">The pipeline shows that your organisation has {{PipelinesCount}} registered learners.</p><p class=\"govuk-body\">This number may vary because of data changes on the individualised learner record (ILR) and certification service.</p><p class=\"govuk-body\">If you know your organisation has 0 registered learners, select 'No'.</p>",
 					"Hint": "",
 					"Input": {
 						"Type": "ComplexRadio",
@@ -356,7 +362,7 @@
 							{
 								"Name": "Required",
 								"Value": "",
-								"ErrorMessage": "Please select whether you will complete end-point assessments"
+								"ErrorMessage": "Select yes if you'll complete the end-point assessments for all registered learners"
 							}
 						],
 						"DataEndpoint": null
@@ -406,17 +412,17 @@
 			"PageId": "8",
 			"SequenceId": null,
 			"SectionId": null,
-			"Title": "Supporting current learners",
+			"Title": "How will you support the learners you are not going to assess?",
 			"LinkTitle": "Supporting current learners",
 			"InfoText": "",
 			"Questions": [
 				{
 					"QuestionId": "WR-08",
 					"QuestionTag": null,
-					"Label": "How will you support the learners you're not going to assess?",
+					"Label": "How will you support the learners you are not going to assess?",
 					"ShortLabel": "",
 					"InputClasses": null,
-					"QuestionBodyText": "<p class='govuk-body'>Your answer should include:</p><ul class='govuk-list govuk-list--bullet'><li>how you'll transfer these learners to other EPAOs</li><li>details of any EPAOs you've spoken to</li></ul>",
+					"QuestionBodyText": "<p class='govuk-body'>Your answer must include:</p><ul class='govuk-list govuk-list--bullet'><li>how you'll transfer these learners to other EPAOs</li><li>details of any EPAOs you've spoken to</li><li>If you have no registered learners, enter 'not applicable'.</li></ul>",
 					"Hint": "",
 					"Input": {
 						"Type": "Textarea",
@@ -426,12 +432,12 @@
 							{
 								"Name": "Required",
 								"Value": "",
-								"ErrorMessage": "Please enter how you will support learners"
+								"ErrorMessage": "Enter how you'll support the learners you are not going to assess"
 							},
 							{
 								"Name": "MaxWordCount",
 								"Value": "500",
-								"ErrorMessage": "How you support learners  must be 500 words or less"
+								"ErrorMessage": "Your answer must be 500 words or less"
 							}
 						],
 						"DataEndpoint": null
@@ -472,7 +478,7 @@
 			"PageId": "9",
 			"SequenceId": null,
 			"SectionId": null,
-			"Title": "Communicating your market exit to customers",
+			"Title": "How will you communicate your market exit to customers?",
 			"LinkTitle": "Communicating your market exit to customers",
 			"InfoText": "",
 			"Questions": [
@@ -492,12 +498,12 @@
 							{
 								"Name": "Required",
 								"Value": "",
-								"ErrorMessage": "Please enter how you communicate your marked exit"
+								"ErrorMessage": "Enter how you'll communicate your market exit to customers"
 							},
 							{
 								"Name": "MaxWordCount",
 								"Value": "500",
-								"ErrorMessage": "How you will communicate your market exit must be 500 words or less"
+								"ErrorMessage": "Your answer must be 500 words or less"
 							}
 						],
 						"DataEndpoint": null

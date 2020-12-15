@@ -82,6 +82,16 @@
                 {
                     "type": "null"
                 }
+             ]
+        },
+        "PipelinesCount": {
+            "oneOf": [
+                {
+                    "type": "integer"
+                },
+                {
+                    "type": "null"
+                }
             ]
         },
         "CompanySummary": {
