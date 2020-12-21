@@ -28,8 +28,8 @@ namespace SFA.DAS.QnA.Application.Services
             var pagesActive = pages.Where(p => p.Active);
             var pagesInactive = pages.Where(p => !p.Active);
 
-            var deactivatedTags = (from page in pagesInactive from question in page.Questions.Where(p => !string.IsNullOrEmpty(p.QuestionTag)) select question.QuestionTag).ToList();
-            var activeTags = (from page in pagesActive from question in page.Questions.Where(p => !string.IsNullOrEmpty(p.QuestionTag)) select question.QuestionTag).ToList();
+            var deactivatedTags = (from page in pagesInactive from question in page.Questions.Where(p => !string.IsNullOrEmpty(p.QuestionTag)) select question.QuestionTag).Distinct().ToList();
+            var activeTags = (from page in pagesActive from question in page.Questions.Where(p => !string.IsNullOrEmpty(p.QuestionTag)) select question.QuestionTag).Distinct().ToList();
 
             // remove any activetags within deactivatedTags as some branches use tagnames twice for distinct branches
             foreach (var tag in activeTags.Where(tag => deactivatedTags.Contains(tag)))
