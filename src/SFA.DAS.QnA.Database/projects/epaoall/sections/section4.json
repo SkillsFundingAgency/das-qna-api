@@ -1706,7 +1706,7 @@
             "Questions": [
                 {
                     "QuestionId": "W_DEL-04",
-                    "QuestionTag": "effective_from",
+                    "QuestionTag": null,
                     "Label": "If your application is successful, can you start an end-point assessment on the day you join the register?",
                     "ShortLabel": "Providing services straight away",
                     "InputClasses": null,
@@ -1726,7 +1726,7 @@
                                 "FurtherQuestions": [
                                     {
                                         "QuestionId": "W_DEL-04.1",
-                                        "QuestionTag": null,
+                                        "QuestionTag": "effective_from",
                                         "Label": "When will you be ready to do your first assessment?",
                                         "ShortLabel": "When will you be ready to do your first assessment?",
                                         "InputClasses": null,
