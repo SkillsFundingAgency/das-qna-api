@@ -439,24 +439,36 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
             page.Complete = true;
         }
 
-        protected void ResetPageAnswers(string pageId, ApplicationSection section)
+        protected void ResetPageAnswers(string pageId, Data.Entities.Application application, ApplicationSection section, bool completeFeedback = true, bool removeFeedback = false)
         {
             if (section != null)
             {
-                // Have to force QnAData a new object and reassign for Entity Framework to pick up changes
-                var qnaData = new QnAData(section.QnAData);
-                var page = qnaData?.Pages.SingleOrDefault(p => p.PageId == pageId);
+                var page = section.QnAData?.Pages.SingleOrDefault(p => p.PageId == pageId);
 
                 if (page != null)
                 {
                     page.PageOfAnswers = new List<PageOfAnswers>();
-
                     page.Complete = false;
-                    MarkPageFeedbackAsComplete(page); // As the answer has been 'changed', feedback can be deemed as completed
+                    
+                    if(removeFeedback)
+                    {
+                        RemovePageFeedback(page);
+                    }
+                    else if (completeFeedback)
+                    {
+                        MarkPageFeedbackAsComplete(page);
+                    }
 
-                    // Assign QnAData back so Entity Framework will pick up changes
-                    section.QnAData = qnaData;
+                    // Assign QnAData using a new object so Entity Framework will pick up changes
+                    section.QnAData = new QnAData(section.QnAData);
                 }
+
+                UpdateApplicationData(pageId, new List<Answer>(), section, application);
+
+                var nextAction = GetNextActionForPage(section, application, pageId);
+                var checkboxListAllNexts = GetCheckboxListMatchingNextActionsForPage(section, application, pageId);
+
+                SetStatusOfNextPagesBasedOnDeemedNextActions(section, pageId, nextAction, checkboxListAllNexts);
             }
         }
 
@@ -465,6 +477,14 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
             if (page.HasFeedback)
             {
                 page.Feedback.ForEach(f => f.IsCompleted = true);
+            }
+        }
+
+        protected void RemovePageFeedback(Page page)
+        {
+            if (page.HasFeedback)
+            {
+                page.Feedback = new List<Feedback>();
             }
         }
 
