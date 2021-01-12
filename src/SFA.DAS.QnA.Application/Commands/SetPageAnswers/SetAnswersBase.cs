@@ -160,6 +160,16 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
             return null;
         }
 
+        protected HandlerResponse<ResetSectionAnswersResponse> ValidateSectionAnswersRequest(ApplicationSection section)
+        {
+            if (section is null)
+            {
+                return new HandlerResponse<ResetSectionAnswersResponse>(success: false, message: "The section does not exist.");
+            }
+
+            return null;
+        }
+
         protected static void SetApplicationDataField(Question question, List<Answer> answers, JObject applicationData)
         {
             if (question != null && applicationData != null)

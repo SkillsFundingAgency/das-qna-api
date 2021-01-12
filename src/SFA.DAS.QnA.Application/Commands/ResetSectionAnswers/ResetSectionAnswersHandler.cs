@@ -26,6 +26,12 @@ namespace SFA.DAS.QnA.Application.Commands.ResetPageAnswers
         {
             var application = await _dataContext.Applications.SingleOrDefaultAsync(app => app.Id == request.ApplicationId, cancellationToken);
             var section = await _dataContext.ApplicationSections.SingleOrDefaultAsync(sec => sec.SequenceNo == request.SequenceNo && sec.SectionNo == request.SectionNo && sec.ApplicationId == request.ApplicationId, cancellationToken);
+            var validationErrorResponse = ValidateSectionAnswersRequest(section);
+
+            if (validationErrorResponse != null)
+            {
+                return validationErrorResponse;
+            }
 
             foreach (var page in section.QnAData.Pages)
             {
