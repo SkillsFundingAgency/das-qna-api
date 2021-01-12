@@ -406,61 +406,61 @@
             "LinkTitle": "What type of public body is your organisation?",
             "InfoText": "",
             "Questions": [
-                {
-                    "QuestionId": "YO-170",
-                    "QuestionTag": null,
-                    "Label": "What type of public body is your organisation?",
-                    "ShortLabel": "",
-                    "QuestionBodyText": "",
-                    "Hint": "",
-                    "Input": {
-                        "Type": "Radio",
-                        "Options": [
-                            {
-                                "Label": "Executive agency",
-                                "Value": "Executive agency",
-                                "FurtherQuestions": []
-                            },
-                            {
-                                "Label": "Fire authority",
-                                "Value": "Fire authority",
-                                "FurtherQuestions": []
-                            },
-                            {
-                                "Label": "Government department",
-                                "Value": "Government department",
-                                "FurtherQuestions": []
-                            },
-                            {
-                                "Label": "Local authority",
-                                "Value": "Local authority",
-                                "FurtherQuestions": []
-                            },
-                            {
-                                "Label": "NHS Trust",
-                                "Value": "NHS Trust",
-                                "FurtherQuestions": []
-                            },
-                            {
-                                "Label": "Non-departmental public body (NDPB)",
-                                "Value": "Non-departmental public body (NDPB)",
-                                "FurtherQuestions": []
-                            },
-                            {
-                                "Label": "Police",
-                                "Value": "Police",
-                                "FurtherQuestions": []
-                            }
-                        ],
-                        "Validations": [
-                            {
-                                "Name": "Required",
-                                "Value": "",
-                                "ErrorMessage": "Tell us what type of public body your organisation is"
-                            }
-                        ]
+              {
+                "QuestionId": "YO-170",
+                "QuestionTag": "OrganisationPublicBody",
+                "Label": "What type of public body is your organisation?",
+                "ShortLabel": "",
+                "QuestionBodyText": "",
+                "Hint": "",
+                "Input": {
+                  "Type": "Radio",
+                  "Options": [
+                    {
+                      "Label": "Executive agency",
+                      "Value": "Executive agency",
+                      "FurtherQuestions": []
+                    },
+                    {
+                      "Label": "Fire authority",
+                      "Value": "Fire authority",
+                      "FurtherQuestions": []
+                    },
+                    {
+                      "Label": "Government department",
+                      "Value": "Government department",
+                      "FurtherQuestions": []
+                    },
+                    {
+                      "Label": "Local authority",
+                      "Value": "Local authority",
+                      "FurtherQuestions": []
+                    },
+                    {
+                      "Label": "NHS Trust",
+                      "Value": "NHS Trust",
+                      "FurtherQuestions": []
+                    },
+                    {
+                      "Label": "Non-departmental public body (NDPB)",
+                      "Value": "Non-departmental public body (NDPB)",
+                      "FurtherQuestions": []
+                    },
+                    {
+                      "Label": "Police",
+                      "Value": "Police",
+                      "FurtherQuestions": []
                     }
+                  ],
+                  "Validations": [
+                    {
+                      "Name": "Required",
+                      "Value": "",
+                      "ErrorMessage": "Tell us what type of public body your organisation is"
+                    }
+                  ]
                 }
+              }
             ],
             "PageOfAnswers": [],
             "Next": [
