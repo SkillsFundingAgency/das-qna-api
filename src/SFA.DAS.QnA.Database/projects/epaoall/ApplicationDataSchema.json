@@ -74,6 +74,26 @@
         "ContactGivenName": {
             "minLength": 1
         },
+        "EarliestDateOfWithdrawal": {
+            "oneOf": [
+                {
+                    "type": "string"
+                },
+                {
+                    "type": "null"
+                }
+             ]
+        },
+        "PipelinesCount": {
+            "oneOf": [
+                {
+                    "type": "integer"
+                },
+                {
+                    "type": "null"
+                }
+            ]
+        },
         "CompanySummary": {
             "oneOf": [
                 {
