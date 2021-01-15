@@ -18,16 +18,15 @@ namespace SFA.DAS.QnA.Application.Commands.ResetPageAnswers
 
         public async Task<HandlerResponse<ResetPageAnswersResponse>> Handle(ResetPageAnswersBySectionNoRequest request, CancellationToken cancellationToken)
         {
-            var application = await _dataContext.Applications.SingleOrDefaultAsync(app => app.Id == request.ApplicationId, cancellationToken);
             var section = await _dataContext.ApplicationSections.SingleOrDefaultAsync(sec => sec.SequenceNo == request.SequenceNo && sec.SectionNo == request.SectionNo && sec.ApplicationId == request.ApplicationId, cancellationToken);
             var validationErrorResponse = ValidateResetPageAnswersRequest(request.PageId, section);
-
+            
             if (validationErrorResponse != null)
             {
                 return validationErrorResponse;
             }
-
-            ResetPageAnswers(request.PageId, application, section);
+            
+            await ResetPageAnswers(request.PageId, request.ApplicationId, section, cancellationToken);
 
             await _dataContext.SaveChangesAsync(cancellationToken);
 

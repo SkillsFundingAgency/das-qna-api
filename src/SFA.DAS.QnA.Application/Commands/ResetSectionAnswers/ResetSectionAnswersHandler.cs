@@ -24,7 +24,6 @@ namespace SFA.DAS.QnA.Application.Commands.ResetPageAnswers
 
         public async Task<HandlerResponse<ResetSectionAnswersResponse>> Handle(ResetSectionAnswersRequest request, CancellationToken cancellationToken)
         {
-            var application = await _dataContext.Applications.SingleOrDefaultAsync(app => app.Id == request.ApplicationId, cancellationToken);
             var section = await _dataContext.ApplicationSections.SingleOrDefaultAsync(sec => sec.SequenceNo == request.SequenceNo && sec.SectionNo == request.SectionNo && sec.ApplicationId == request.ApplicationId, cancellationToken);
             var validationErrorResponse = ValidateSectionAnswersRequest(section);
 
@@ -51,7 +50,7 @@ namespace SFA.DAS.QnA.Application.Commands.ResetPageAnswers
                     }
                 }
 
-                ResetPageAnswers(page.PageId, application, section, true, true);
+                await ResetPageAnswers(page.PageId, request.ApplicationId, section, cancellationToken, true, true);
             }
 
             await _dataContext.SaveChangesAsync(cancellationToken);

@@ -1,6 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using SFA.DAS.QnA.Api.Types;
@@ -449,7 +452,7 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
             page.Complete = true;
         }
 
-        protected void ResetPageAnswers(string pageId, Data.Entities.Application application, ApplicationSection section, bool completeFeedback = true, bool removeFeedback = false)
+        protected async Task ResetPageAnswers(string pageId, Guid applicationId, ApplicationSection section, CancellationToken cancellationToken, bool completeFeedback = true, bool removeFeedback = false)
         {
             if (section != null)
             {
@@ -473,6 +476,7 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
                     section.QnAData = new QnAData(section.QnAData);
                 }
 
+                var application = await _dataContext.Applications.SingleOrDefaultAsync(app => app.Id == applicationId, cancellationToken);
                 UpdateApplicationData(pageId, new List<Answer>(), section, application);
 
                 var nextAction = GetNextActionForPage(section, application, pageId);
