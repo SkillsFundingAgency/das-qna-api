@@ -63,7 +63,7 @@ namespace SFA.DAS.QnA.Application.Commands.Files.UploadFile
             {
                 return new HandlerResponse<SetPageAnswersResponse>(success: false, message: "Cannot find requested page.");
             }
-            else if (request.Files is null || !request.Files.Any())
+            else if (request.Files is null)
             {
                 return new HandlerResponse<SetPageAnswersResponse>(success: false, message: "No files specified.");
             }
@@ -191,7 +191,7 @@ namespace SFA.DAS.QnA.Application.Commands.Files.UploadFile
                     }
 
                     application.ApplicationData = applicationData.ToString(Formatting.None);
-                    
+
                     SetStatusOfAllPagesBasedOnUpdatedQuestionTags(application, questionTagsWhichHaveBeenUpdated);
                     _tagProcessingService.ClearDeactivatedTags(application.Id, request.SectionId);
                 }

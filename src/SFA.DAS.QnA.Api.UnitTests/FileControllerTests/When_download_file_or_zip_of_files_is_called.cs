@@ -19,7 +19,6 @@ namespace SFA.DAS.QnA.Api.UnitTests.FileControllerTests
     {
         private ILogger<FileController> _logger;
         private IMediator _mediator;
-        private IHttpContextAccessor _httpContextAccessor;
         private FileController _fileController;
 
         [SetUp]
@@ -27,8 +26,7 @@ namespace SFA.DAS.QnA.Api.UnitTests.FileControllerTests
         {
             _logger = Substitute.For<ILogger<FileController>>(); ;
             _mediator = Substitute.For<IMediator>();
-            _httpContextAccessor = Substitute.For<IHttpContextAccessor>();
-            _fileController = new FileController(_logger, _mediator, _httpContextAccessor);
+            _fileController = new FileController(_logger, _mediator);
         }
 
         [Test]
