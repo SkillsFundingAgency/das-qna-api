@@ -10,6 +10,9 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.SubmitPageOfFilesHandl
     public class When_files_specified_is_empty : SubmitPageOfFilesTestBase
     {
         [Test]
+#if (!DEBUG)
+        [Ignore("Must be tested on local DEV machine as it uses local Azure storage")]
+#endif
         public async Task Then_validation_passes()
         {
             var files = new FormFileCollection();
