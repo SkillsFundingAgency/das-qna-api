@@ -9,6 +9,9 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.SubmitPageOfFilesHandl
     public class When_files_specified_is_null : SubmitPageOfFilesTestBase
     {
         [Test]
+#if (!DEBUG)
+        [Ignore("Must be tested on local DEV machine as it uses local Azure storage")]
+#endif
         public async Task Then_return_no_files_specified_message()
         {
             var response = await Handler.Handle(new SubmitPageOfFilesRequest(ApplicationId, SectionId, "1", null), CancellationToken.None);
