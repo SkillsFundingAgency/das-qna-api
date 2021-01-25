@@ -542,7 +542,22 @@
                 {
                     "Action": "ReturnToSection",
                     "ReturnId": "2.1",
-                    "Conditions": []
+                    "Conditions": [
+                        {
+                            "QuestionId": "YO-290",
+                            "MustEqual": "No"
+                        }
+                    ]
+                },
+                {
+                    "Action": "NextPage",
+                    "ReturnId": "292",
+                    "Conditions": [
+                        {
+                            "QuestionId": "YO-290",
+                            "MustEqual": "Yes"
+                        }
+                    ]
                 }
             ],
             "AllowMultipleAnswers": false,
@@ -556,6 +571,152 @@
                 }
             ],
             "ActivatedByPageId": "260",
+            "BodyText": ""
+        },
+        {
+            "PageId": "292",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "Has your organisation had 2 consecutive monitoring visits with the grade 'insufficient progress'?",
+            "LinkTitle": "Has your organisation had 2 consecutive monitoring visits with the grade 'insufficient progress'?",
+            "InfoText": "",
+            "Questions": [
+                {
+                    "QuestionId": "YO-292",
+                    "QuestionTag": null,
+                    "Label": "Has your organisation had 2 consecutive monitoring visits with the grade 'insufficient progress'?",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "Radio",
+                        "Options": [
+                            {
+                                "Label": "Yes",
+                                "Value": "Yes"
+                            },
+                            {
+                                "Label": "No",
+                                "Value": "No"
+                            }
+                        ],
+                        "Validations": [
+                            {
+                                "Name": "Required",
+                                "Value": "",
+                                "ErrorMessage": "Tell us if your organisation has had 2 consecutive monitoring visits with the grade 'insufficient progress'"
+                            }
+                        ]
+                    }
+                }
+            ],
+            "PageOfAnswers": [],
+            "Next": [
+                {
+                    "Action": "ReturnToSection",
+                    "ReturnId": "2.1",
+                    "Conditions": [
+                        {
+                            "QuestionId": "YO-292",
+                            "MustEqual": "No"
+                        }
+                    ]
+                },
+                {
+                    "Action": "NextPage",
+                    "ReturnId": "294",
+                    "Conditions": [
+                        {
+                            "QuestionId": "YO-292",
+                            "MustEqual": "Yes"
+                        }
+                    ]
+                }
+            ],
+            "AllowMultipleAnswers": false,
+            "Active": false,
+            "NotRequiredConditions": [
+                {
+                    "Field": "ApplyProviderRoute",
+                    "IsOneOf": [
+                        "3"
+                    ]
+                }
+            ],
+            "ActivatedByPageId": "290",
+            "BodyText": ""
+        },
+        {
+            "PageId": "294",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "Was the most recent monitoring visit within the last 18 months?",
+            "LinkTitle": "Was the most recent monitoring visit within the last 18 months?",
+            "InfoText": "",
+            "Questions": [
+                {
+                    "QuestionId": "YO-294",
+                    "QuestionTag": null,
+                    "Label": "Was the most recent monitoring visit within the last 18 months?",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "Radio",
+                        "Options": [
+                            {
+                                "Label": "Yes",
+                                "Value": "Yes"
+                            },
+                            {
+                                "Label": "No",
+                                "Value": "No"
+                            }
+                        ],
+                        "Validations": [
+                            {
+                                "Name": "Required",
+                                "Value": "",
+                                "ErrorMessage": "Tell us if the most recent monitoring visit was within the last 18 months"
+                            }
+                        ]
+                    }
+                }
+            ],
+            "PageOfAnswers": [],
+            "Next": [
+                {
+                    "Action": "ReturnToSection",
+                    "ReturnId": "2.1",
+                    "Conditions": [
+                        {
+                            "QuestionId": "YO-294",
+                            "MustEqual": "No"
+                        }
+                    ]
+                },
+                {
+                    "Action": "NextPage",
+                    "ReturnId": "10010",
+                    "Conditions": [
+                        {
+                            "QuestionId": "YO-294",
+                            "MustEqual": "Yes"
+                        }
+                    ]
+                }
+            ],
+            "AllowMultipleAnswers": false,
+            "Active": false,
+            "NotRequiredConditions": [
+                {
+                    "Field": "ApplyProviderRoute",
+                    "IsOneOf": [
+                        "3"
+                    ]
+                }
+            ],
+            "ActivatedByPageId": "292",
             "BodyText": ""
         },
         {
@@ -1379,6 +1540,29 @@
             ],
             "ActivatedByPageId": "311",
             "BodyText": "<p class='govuk-body'>This is because your organisation got an 'inadequate' grade within the last 3 years.</p><p class='govuk-body'><a href='https://www.gov.uk' class='govuk-link'>Back to GOV.UK</a></p>"
+        },
+        {
+            "PageId": "10010",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "Your organisation is not eligible to apply to join RoATP",
+            "LinkTitle": "Your organisation is not eligible to apply to join RoATP",
+            "InfoText": "",
+            "Questions": [],
+            "PageOfAnswers": [],
+            "Next": [],
+            "AllowMultipleAnswers": false,
+            "Active": false,
+            "NotRequiredConditions": [
+                {
+                    "Field": "ApplyProviderRoute",
+                    "IsOneOf": [
+                        "3"
+                    ]
+                }
+            ],
+            "ActivatedByPageId": "294",
+            "BodyText": "<p class='govuk-body'>This is because your organisation got an 'insufficient progress' grade in its most recent monitoring visit within the last 18 months.</p><p class='govuk-body'><a href='https://www.gov.uk' class='govuk-link'>Back to GOV.UK</a></p>"
         }
     ]
 }
