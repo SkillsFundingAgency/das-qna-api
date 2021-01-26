@@ -375,14 +375,14 @@
             "PageId": "50",
             "SequenceId": null,
             "SectionId": null,
-            "Title": "How long has your organisation been trading for?",
-            "LinkTitle": "How long has your organisation been trading for?",
+            "Title": "How long has your organisation been actively trading?",
+            "LinkTitle": "How long has your organisation been actively trading?",
             "InfoText": "",
             "Questions": [
                 {
                     "QuestionId": "YO-50",
                     "QuestionTag": null,
-                    "Label": "How long has your organisation been trading for?",
+                    "Label": "How long has your organisation been actively trading?",
                     "ShortLabel": "",
                     "QuestionBodyText": "<p class='govuk-body'>This is when your organisation has done at least one of the following things:</p> <ul class='govuk-list govuk-list--bullet'> <li>carried out a business activity - such as a trade or professional activity</li>\n<li>bought or sold goods or services with a view to making a profit or surplus</li> <li>provided chargeable services</li> </ul> <p class='govuk-body'>Actively trading does not include start-up or set-up costs.</p>",
                     "Hint": "",
@@ -414,7 +414,7 @@
                             {
                                 "Name": "Required",
                                 "Value": "",
-                                "ErrorMessage": "Tell us how long your organisation has been trading for"
+                                "ErrorMessage": "Tell us how long your organisation has been actively trading"
                             }
                         ]
                     }
@@ -456,14 +456,14 @@
             "PageId": "51",
             "SequenceId": null,
             "SectionId": null,
-            "Title": "How long has your organisation been trading for?",
-            "LinkTitle": "How long has your organisation been trading for?",
+            "Title": "How long has your organisation been actively trading?",
+            "LinkTitle": "How long has your organisation been actively trading?",
             "InfoText": "",
             "Questions": [
                 {
                     "QuestionId": "YO-51",
                     "QuestionTag": null,
-                    "Label": "How long has your organisation been trading for?",
+                    "Label": "How long has your organisation been actively trading?",
                     "ShortLabel": "",
                     "QuestionBodyText": "<p class='govuk-body'>This is when your organisation has done at least one of the following things:</p> <ul class='govuk-list govuk-list--bullet'> <li>carried out a business activity - such as a trade or professional activity</li>\n<li>bought or sold goods or services with a view to making a profit or surplus</li> <li>provided chargeable services</li> </ul> <p class='govuk-body'>Actively trading does not include start-up or set-up costs.</p>",
                     "Hint": "",
@@ -495,7 +495,7 @@
                             {
                                 "Name": "Required",
                                 "Value": "",
-                                "ErrorMessage": "Tell us how long your organisation has been trading for"
+                                "ErrorMessage": "Tell us how long your organisation has been actively trading"
                             }
                         ]
                     }
@@ -537,14 +537,14 @@
             "PageId": "60",
             "SequenceId": null,
             "SectionId": null,
-            "Title": "How long has your organisation been trading for?",
-            "LinkTitle": "How long has your organisation been trading for?",
+            "Title": "How long has your organisation been actively trading?",
+            "LinkTitle": "How long has your organisation been actively trading?",
             "InfoText": "",
             "Questions": [
                 {
                     "QuestionId": "YO-60",
                     "QuestionTag": null,
-                    "Label": "How long has your organisation been trading for?",
+                    "Label": "How long has your organisation been actively trading?",
                     "ShortLabel": "",
                     "QuestionBodyText": "<p class='govuk-body'>This is when your organisation has done at least one of the following things:</p> <ul class='govuk-list govuk-list--bullet'> <li>carried out a business activity - such as a trade or professional activity</li>\n<li>bought or sold goods or services with a view to making a profit or surplus</li> <li>provided chargeable services</li> </ul> <p class='govuk-body'>Actively trading does not include start-up or set-up costs.</p>",
                     "Hint": "",
@@ -576,7 +576,7 @@
                             {
                                 "Name": "Required",
                                 "Value": "",
-                                "ErrorMessage": "Tell us how long your organisation has been trading for"
+                                "ErrorMessage": "Tell us how long your organisation has been actively trading"
                             }
                         ]
                     }
@@ -627,7 +627,7 @@
                     "QuestionTag": null,
                     "Label": "Your organisation is not eligible to apply to join RoATP",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body'>To apply as a main provider, your organisation must have been trading for at least 12 months.</p><p class='govuk-body'>You can try again once your organisation has enough trading history.</p><p class='govuk-body'><a href='https://www.gov.uk' class='govuk-link'>Back to GOV.UK</a></p>",
+                    "QuestionBodyText": "<p class='govuk-body'>To apply as a main provider, your organisation must have been actively trading for at least 12 months.</p><p class='govuk-body'>You can try again once your organisation has enough trading history.</p><p class='govuk-body'><a href='https://www.gov.uk' class='govuk-link'>Back to GOV.UK</a></p>",
                     "Hint": "",
                     "Input": {
                         "Type": "Hidden",
@@ -656,7 +656,7 @@
                     "QuestionTag": null,
                     "Label": "Your organisation is not eligible to apply to join RoATP",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body'>To apply as an employer provider, your organisation must have been trading for at least 12 months.</p><p class='govuk-body'>You can try again once your organisation has enough trading history.</p><p class='govuk-body'><a href='https://www.gov.uk' class='govuk-link'>Back to GOV.UK</a></p>",
+                    "QuestionBodyText": "<p class='govuk-body'>To apply as an employer provider, your organisation must have been actively trading for at least 12 months.</p><p class='govuk-body'>You can try again once your organisation has enough trading history.</p><p class='govuk-body'><a href='https://www.gov.uk' class='govuk-link'>Back to GOV.UK</a></p>",
                     "Hint": "",
                     "Input": {
                         "Type": "Hidden",
@@ -685,7 +685,7 @@
                     "QuestionTag": null,
                     "Label": "Your organisation is not eligible to apply to join RoATP",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body'>To apply as a supporting provider, your organisation must have been trading for at least 3 months.</p><p class='govuk-body'>You can try again once your organisation has enough trading history.</p><p class='govuk-body'><a href='https://www.gov.uk' class='govuk-link'>Back to GOV.UK</a></p>",
+                    "QuestionBodyText": "<p class='govuk-body'>To apply as a supporting provider, your organisation must have been actively trading for at least 3 months.</p><p class='govuk-body'>You can try again once your organisation has enough trading history.</p><p class='govuk-body'><a href='https://www.gov.uk' class='govuk-link'>Back to GOV.UK</a></p>",
                     "Hint": "",
                     "Input": {
                         "Type": "Hidden",
