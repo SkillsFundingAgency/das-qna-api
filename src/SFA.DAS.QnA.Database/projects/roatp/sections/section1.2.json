@@ -424,7 +424,7 @@
             "Next": [
                 {
                     "Action": "NextPage",
-                    "ReturnId": "10001",
+                    "ReturnId": "55",
                     "Conditions": [
                         {
                             "QuestionId": "YO-50",
@@ -505,7 +505,7 @@
             "Next": [
                 {
                     "Action": "NextPage",
-                    "ReturnId": "10002",
+                    "ReturnId": "56",
                     "Conditions": [
                         {
                             "QuestionId": "YO-51",
@@ -531,6 +531,148 @@
                 }
             ],
             "ActivatedByPageId": "30,40",
+            "BodyText": ""
+        },
+        {
+            "PageId": "55",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "Is your organisation a rail franchise operator?",
+            "LinkTitle": "Is your organisation a rail franchise operator?",
+            "InfoText": "",
+            "Questions": [
+                {
+                    "QuestionId": "YO-55",
+                    "QuestionTag": null,
+                    "Label": "Is your organisation a rail franchise operator?",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "<p class='govuk-body'>This means your organisation has a rail franchise license and can act on behalf of the Department for Transport.</p>",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "Radio",
+                        "Options": [
+                            {
+                                "Label": "Yes",
+                                "Value": "Yes",
+                                "FurtherQuestions": []
+                            },
+                            {
+                                "Label": "No",
+                                "Value": "No",
+                                "FurtherQuestions": []
+                            }
+                        ],
+                        "Validations": [
+                            {
+                                "Name": "Required",
+                                "Value": "",
+                                "ErrorMessage": "Tell us if your organisation is a rail franchise operator"
+                            }
+                        ]
+                    }
+                }
+            ],
+            "PageOfAnswers": [],
+            "Next": [
+                {
+                    "Action": "NextPage",
+                    "ReturnId": "10001",
+                    "Conditions": [
+                        {
+                            "QuestionId": "YO-55",
+                            "MustEqual": "No"
+                        }
+                    ]
+                },
+                {
+                    "Action": "ReturnToSection",
+                    "ReturnId": "1.3",
+                    "Conditions": []
+                }
+            ],
+            "AllowMultipleAnswers": false,
+            "Active": false,
+            "NotRequiredConditions": [
+                {
+                    "Field": "ApplyProviderRoute",
+                    "IsOneOf": [
+                       "2",
+                        "3"
+                    ]
+                }
+            ],
+            "ActivatedByPageId": "50",
+            "BodyText": ""
+        },
+        {
+            "PageId": "56",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "Is your organisation a rail franchise operator?",
+            "LinkTitle": "Is your organisation a rail franchise operator?",
+            "InfoText": "",
+            "Questions": [
+                {
+                    "QuestionId": "YO-56",
+                    "QuestionTag": null,
+                    "Label": "Is your organisation a rail franchise operator?",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "<p class='govuk-body'>This means your organisation has a rail franchise license and can act on behalf of the Department for Transport.</p>",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "Radio",
+                        "Options": [
+                            {
+                                "Label": "Yes",
+                                "Value": "Yes",
+                                "FurtherQuestions": []
+                            },
+                            {
+                                "Label": "No",
+                                "Value": "No",
+                                "FurtherQuestions": []
+                            }
+                        ],
+                        "Validations": [
+                            {
+                                "Name": "Required",
+                                "Value": "",
+                                "ErrorMessage": "Tell us if your organisation is a rail franchise operator"
+                            }
+                        ]
+                    }
+                }
+            ],
+            "PageOfAnswers": [],
+            "Next": [
+                {
+                    "Action": "NextPage",
+                    "ReturnId": "10002",
+                    "Conditions": [
+                        {
+                            "QuestionId": "YO-56",
+                            "MustEqual": "No"
+                        }
+                    ]
+                },
+                {
+                    "Action": "ReturnToSection",
+                    "ReturnId": "1.3",
+                    "Conditions": []
+                }
+            ],
+            "AllowMultipleAnswers": false,
+            "Active": false,
+            "NotRequiredConditions": [
+                {
+                    "Field": "ApplyProviderRoute",
+                    "IsOneOf": [
+                        "1",
+                        "3"
+                    ]
+                }
+            ],
+            "ActivatedByPageId": "51",
             "BodyText": ""
         },
         {
@@ -586,7 +728,7 @@
             "Next": [
                 {
                     "Action": "NextPage",
-                    "ReturnId": "10003",
+                    "ReturnId": "65",
                     "Conditions": [
                         {
                             "QuestionId": "YO-60",
@@ -612,6 +754,77 @@
                 }
             ],
             "ActivatedByPageId": "30,40",
+            "BodyText": ""
+        },
+        {
+            "PageId": "65",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "Is your organisation a rail franchise operator?",
+            "LinkTitle": "Is your organisation a rail franchise operator?",
+            "InfoText": "",
+            "Questions": [
+                {
+                    "QuestionId": "YO-65",
+                    "QuestionTag": null,
+                    "Label": "Is your organisation a rail franchise operator?",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "<p class='govuk-body'>This means your organisation has a rail franchise license and can act on behalf of the Department for Transport.</p>",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "Radio",
+                        "Options": [
+                            {
+                                "Label": "Yes",
+                                "Value": "Yes",
+                                "FurtherQuestions": []
+                            },
+                            {
+                                "Label": "No",
+                                "Value": "No",
+                                "FurtherQuestions": []
+                            }
+                        ],
+                        "Validations": [
+                            {
+                                "Name": "Required",
+                                "Value": "",
+                                "ErrorMessage": "Tell us if your organisation is a rail franchise operator"
+                            }
+                        ]
+                    }
+                }
+            ],
+            "PageOfAnswers": [],
+            "Next": [
+                {
+                    "Action": "NextPage",
+                    "ReturnId": "10003",
+                    "Conditions": [
+                        {
+                            "QuestionId": "YO-65",
+                            "MustEqual": "No"
+                        }
+                    ]
+                },
+                {
+                    "Action": "ReturnToSection",
+                    "ReturnId": "1.3",
+                    "Conditions": []
+                }
+            ],
+            "AllowMultipleAnswers": false,
+            "Active": false,
+            "NotRequiredConditions": [
+                {
+                    "Field": "ApplyProviderRoute",
+                    "IsOneOf": [
+                        "1",
+                        "2"
+                    ]
+                }
+            ],
+            "ActivatedByPageId": "60",
             "BodyText": ""
         },
         {
