@@ -1,6 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using SFA.DAS.QnA.Api.Types;
@@ -155,6 +158,16 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
                 {
                     return new HandlerResponse<ResetPageAnswersResponse>(success: false, message: "Pages cannot contain a mixture of FileUploads and other Question Types.");
                 }
+            }
+
+            return null;
+        }
+
+        protected HandlerResponse<ResetSectionAnswersResponse> ValidateSectionAnswersRequest(ApplicationSection section)
+        {
+            if (section is null)
+            {
+                return new HandlerResponse<ResetSectionAnswersResponse>(success: false, message: "The section does not exist.");
             }
 
             return null;
@@ -439,24 +452,37 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
             page.Complete = true;
         }
 
-        protected void ResetPageAnswers(string pageId, ApplicationSection section)
+        protected async Task ResetPageAnswers(string pageId, Guid applicationId, ApplicationSection section, CancellationToken cancellationToken, bool completeFeedback = true, bool removeFeedback = false)
         {
             if (section != null)
             {
-                // Have to force QnAData a new object and reassign for Entity Framework to pick up changes
-                var qnaData = new QnAData(section.QnAData);
-                var page = qnaData?.Pages.SingleOrDefault(p => p.PageId == pageId);
+                var page = section.QnAData?.Pages.SingleOrDefault(p => p.PageId == pageId);
 
                 if (page != null)
                 {
                     page.PageOfAnswers = new List<PageOfAnswers>();
-
                     page.Complete = false;
-                    MarkPageFeedbackAsComplete(page); // As the answer has been 'changed', feedback can be deemed as completed
+                    
+                    if(removeFeedback)
+                    {
+                        RemovePageFeedback(page);
+                    }
+                    else if (completeFeedback)
+                    {
+                        MarkPageFeedbackAsComplete(page);
+                    }
 
-                    // Assign QnAData back so Entity Framework will pick up changes
-                    section.QnAData = qnaData;
+                    // Assign QnAData using a new object so Entity Framework will pick up changes
+                    section.QnAData = new QnAData(section.QnAData);
                 }
+
+                var application = await _dataContext.Applications.SingleOrDefaultAsync(app => app.Id == applicationId, cancellationToken);
+                UpdateApplicationData(pageId, new List<Answer>(), section, application);
+
+                var nextAction = GetNextActionForPage(section, application, pageId);
+                var checkboxListAllNexts = GetCheckboxListMatchingNextActionsForPage(section, application, pageId);
+
+                SetStatusOfNextPagesBasedOnDeemedNextActions(section, pageId, nextAction, checkboxListAllNexts);
             }
         }
 
@@ -465,6 +491,14 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
             if (page.HasFeedback)
             {
                 page.Feedback.ForEach(f => f.IsCompleted = true);
+            }
+        }
+
+        protected void RemovePageFeedback(Page page)
+        {
+            if (page.HasFeedback)
+            {
+                page.Feedback = new List<Feedback>();
             }
         }
 
