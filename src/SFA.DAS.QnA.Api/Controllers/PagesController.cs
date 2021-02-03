@@ -210,6 +210,29 @@ namespace SFA.DAS.QnA.Api.Controllers
         }
 
         /// <summary>
+        ///     Removes all answers on the section.
+        /// </summary>
+        /// <returns>An object describing if the section has had its answers reset</returns>
+        /// <response code="200">Returns the response</response>
+        [HttpPost("{applicationId}/sequences/{sequenceNo}/sections/{sectionNo}/reset")]
+        [ProducesResponseType(200)]
+        public async Task<ActionResult<ResetSectionAnswersResponse>> ResetSectionAnswers(Guid applicationId, int sequenceNo, int sectionNo)
+        {
+            _logger.LogInformation($"Resetting all Answers on sequence {sequenceNo}, section {sectionNo} for application {applicationId}");
+
+            var resetSectionAnswersResponse = await _mediator.Send(new ResetSectionAnswersRequest(applicationId, sequenceNo, sectionNo), CancellationToken.None);
+            if (!resetSectionAnswersResponse.Success)
+            {
+                _logger.LogError($"Unable to reset answers for sequence {sequenceNo}, section {sectionNo}, for application {applicationId} | Reason : {resetSectionAnswersResponse.Message}");
+                return BadRequest(new BadRequestError(resetSectionAnswersResponse.Message));
+            }
+
+            _logger.LogInformation($"Response from ResetPageAnswersBySectionNumber: {JsonConvert.SerializeObject(resetSectionAnswersResponse.Value)}");
+
+            return resetSectionAnswersResponse.Value;
+        }
+
+        /// <summary>
         ///     Adds an answer on a page that allows multiple sets of answers
         /// </summary>
         /// <returns>An object describing validity</returns>
