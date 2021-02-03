@@ -18,19 +18,27 @@ namespace SFA.DAS.QnA.Api.Controllers
     {
         private readonly ILogger<FileController> _logger;
         private readonly IMediator _mediator;
-        private readonly IHttpContextAccessor _contextAccessor;
 
-        public FileController(ILogger<FileController> logger, IMediator mediator, IHttpContextAccessor contextAccessor)
+        public FileController(ILogger<FileController> logger, IMediator mediator)
         {
             _logger = logger;
             _mediator = mediator;
-            _contextAccessor = contextAccessor;
         }
         
         [HttpPost("{applicationId}/sections/{sectionId}/pages/{pageId}/upload")]
         public async Task<ActionResult<SetPageAnswersResponse>> Upload(Guid applicationId, Guid sectionId, string pageId)
         {
-            var uploadResult = await _mediator.Send(new SubmitPageOfFilesRequest(applicationId, sectionId, pageId, _contextAccessor.HttpContext.Request.Form.Files));
+            IFormFileCollection files;
+            try
+            {
+                files = HttpContext.Request.Form.Files;
+            }
+            catch
+            {
+                files = null;
+            }
+
+            var uploadResult = await _mediator.Send(new SubmitPageOfFilesRequest(applicationId, sectionId, pageId, files));
 
             if (!uploadResult.Success)
             {

@@ -67,7 +67,7 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.SubmitPageOfFilesHandl
                             PageId = "1",
                             Questions = new List<Question>{new Question(){QuestionId = "Q1", Input = new Input { Type = "FileUpload" } }},
                             PageOfAnswers = new List<PageOfAnswers>(),
-                            Next = new List<Next>(),
+                            Next = new List<Next>{ new Next { } },
                             Active = true
                         }
                     }
