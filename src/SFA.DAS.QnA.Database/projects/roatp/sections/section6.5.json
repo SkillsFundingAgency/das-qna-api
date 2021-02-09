@@ -109,11 +109,6 @@
                                 "Value": "Between the first 3 to 6 months of joining the RoATP",
                                 "Label": "Between the first 3 to 6 months of joining the RoATP",
                                 "HintText": ""
-                            },
-                            {
-                                "Value": "Between the first 6 to 12 months of joining the RoATP",
-                                "Label": "Between the first 6 to 12 months of joining the RoATP",
-                                "HintText": ""
                             }
                         ],
                         "Validations": [
