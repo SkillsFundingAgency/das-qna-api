@@ -107,6 +107,59 @@
 			"InfoText": "",
 			"Questions": [{
 					"QuestionId": "DAT-7610-1",
+					"QuestionTag": "DATAgricultureHowManyStarts",
+					"Label": "Full name",
+					"ShortLabel": "",
+					"QuestionBodyText": "",
+					"Hint": "",
+					"Input": {
+						"Type": "Text",
+						"Validations": [{
+								"Name": "Required",
+								"Value": "",
+								"ErrorMessage": "Enter number of starts in this sector"
+							},
+							  {
+								"Name": "Number",
+								"Value": null,
+								"ErrorMessage": "Enter number of starts in this sector using only numbers"
+							  },
+							  {
+								"Name": "MaxLength",
+								"Value": 3,
+								"ErrorMessage": "Enter number of starts in this sector using 3 digits or less"
+							  }
+						]
+					}
+				}
+			],
+			"PageOfAnswers": [],
+			"Next": [{
+				"Action": "NextPage",
+				"ReturnId": "7610B",
+				"Conditions": []
+			}],
+			"AllowMultipleAnswers": false,
+			"Active": true,
+			"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Agriculture&comma; environmental and animal care"
+				]
+			}],
+			"BodyText": "How many starts does your organisation forecast in the 'Agriculture, environmental and animal care' sector in the first 12 months of joining the RoATP?",
+			"DisplayType": "PagesWithSections",
+			"ActivatedByPageId": null
+		},
+		{
+			"PageId": "7610B",
+			"SequenceId": null,
+			"SectionId": null,
+			"Title": "2. Add the most experienced employee for each sector",
+			"LinkTitle": "Agriculture, environmental and animal care",
+			"InfoText": "",
+			"Questions": [{
+					"QuestionId": "DAT-7610B-1",
 					"QuestionTag": "DATAgricultureFullName",
 					"Label": "Full name",
 					"ShortLabel": "",
@@ -128,7 +181,7 @@
 					}
 				},
 				{
-					"QuestionId": "DAT-7610-2",
+					"QuestionId": "DAT-7610B-2",
 					"QuestionTag": null,
 					"Label": "Job role",
 					"ShortLabel": "",
@@ -150,7 +203,7 @@
 					}
 				},
 				{
-					"QuestionId": "DAT-7610-3",
+					"QuestionId": "DAT-7610B-3",
 					"QuestionTag": null,
 					"Label": "Time in role (years and months)",
 					"ShortLabel": "",
@@ -179,7 +232,7 @@
 				"Conditions": []
 			}],
 			"AllowMultipleAnswers": false,
-			"Active": true,
+			"Active": false,
 			"NotRequiredConditions": [{
 				"Field": "SectorsChosen",
 				"DoesNotContain": [
@@ -187,8 +240,8 @@
 				]
 			}],
 			"BodyText": "Who's the most experienced employee in the 'Agriculture, environmental and animal care' sector?",
-			"DisplayType": "PagesWithSections",
-			"ActivatedByPageId": null
+			"DisplayType": "OtherPagesInPagesWithSections",
+			"ActivatedByPageId": "7610"
 		},
 		{
 			"PageId": "7611",
@@ -494,7 +547,7 @@
 			"NotRequiredConditions": [],
 			"BodyText": "{{DATAgricultureFullName}}'s experience in the 'Agriculture, environmental and animal care' sector",
 			"DisplayType": "OtherPagesInPagesWithSections",
-			"ActivatedByPageId": "7610"
+			"ActivatedByPageId": "7610B"
 		},
 		{
 			"PageId": "7612",
