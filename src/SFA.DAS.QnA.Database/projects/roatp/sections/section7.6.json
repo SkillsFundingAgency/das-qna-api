@@ -3521,6 +3521,55 @@
 		"ActivatedByPageId": "7632"
 	},
 	{
+			"PageId": "7635A", 
+			"SequenceId": null,
+			"SectionId": null,
+			"Title": "2. Delivering training in sectors",
+			"LinkTitle": "Creative and design",   
+			"InfoText": "",
+			"Questions": [{
+					"QuestionId": "DAT-7635A-1", 
+					"QuestionTag": "DATCreativeHowManyStarts", 
+					"Label": "How many starts does your organisation forecast in the 'Creative and design' sector in the first 12 months of joining the RoATP?", 
+					"ShortLabel": "",
+					"QuestionBodyText": "",
+					"Hint": "Enter number of starts",
+					"Input": {
+						"Type": "Text",
+						"InputClasses": "govuk-input--width-4",
+						"Validations": [{
+								"Name": "Required",
+								"Value": "",
+								"ErrorMessage": "Enter number of starts in this sector"
+							},
+							  {
+								"Name": "Regex",
+								"Value": "^[0]*[1-9]{1}[0-9]{0,2}$",
+								"ErrorMessage": "Enter number of starts in this sector using 3 digits or less"
+							  }
+						]
+					}
+				}
+			],
+			"PageOfAnswers": [],
+			"Next": [{
+				"Action": "NextPage",
+				"ReturnId": "7635",    
+				"Conditions": []
+			}],
+			"AllowMultipleAnswers": false,
+			"Active": true,
+			"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Creative and design"   
+				]
+			}],
+			"BodyText": "", 
+			"DisplayType": "PagesWithSections",   
+			"ActivatedByPageId": null
+		},
+		{
 		"PageId": "7635",
 		"SequenceId": null,
 		"SectionId": null,
@@ -3601,7 +3650,7 @@
 			"Conditions": []
 		}],
 		"AllowMultipleAnswers": false,
-		"Active": true,
+		"Active": false,
 		"NotRequiredConditions": [{
 			"Field": "SectorsChosen",
 			"DoesNotContain": [
@@ -3609,8 +3658,8 @@
 			]
 		}],
 		"BodyText": "Who's the most experienced employee in the 'Creative and design' sector?",
-		"DisplayType": "PagesWithSections",
-		"ActivatedByPageId": null
+		"DisplayType": "OtherPagesInPagesWithSections",
+		"ActivatedByPageId": "7635A"
 	},
 	{
 		"PageId": "7636",
@@ -4155,6 +4204,55 @@
 		"ActivatedByPageId": "7637"
 	},
 	{
+			"PageId": "7640A", 
+			"SequenceId": null,
+			"SectionId": null,
+			"Title": "2. Delivering training in sectors",
+			"LinkTitle": "Digital",   
+			"InfoText": "",
+			"Questions": [{
+					"QuestionId": "DAT-7640A-1", 
+					"QuestionTag": "DATDigitalHowManyStarts", 
+					"Label": "How many starts does your organisation forecast in the 'Digital' sector in the first 12 months of joining the RoATP?", 
+					"ShortLabel": "",
+					"QuestionBodyText": "",
+					"Hint": "Enter number of starts",
+					"Input": {
+						"Type": "Text",
+						"InputClasses": "govuk-input--width-4",
+						"Validations": [{
+								"Name": "Required",
+								"Value": "",
+								"ErrorMessage": "Enter number of starts in this sector"
+							},
+							  {
+								"Name": "Regex",
+								"Value": "^[0]*[1-9]{1}[0-9]{0,2}$",
+								"ErrorMessage": "Enter number of starts in this sector using 3 digits or less"
+							  }
+						]
+					}
+				}
+			],
+			"PageOfAnswers": [],
+			"Next": [{
+				"Action": "NextPage",
+				"ReturnId": "7640",    
+				"Conditions": []
+			}],
+			"AllowMultipleAnswers": false,
+			"Active": true,
+			"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Digital"  
+				]
+			}],
+			"BodyText": "", 
+			"DisplayType": "PagesWithSections",   
+			"ActivatedByPageId": null
+		},
+		{
 		"PageId": "7640",
 		"SequenceId": null,
 		"SectionId": null,
@@ -4235,7 +4333,7 @@
 			"Conditions": []
 		}],
 		"AllowMultipleAnswers": false,
-		"Active": true,
+		"Active": false,
 		"NotRequiredConditions": [{
 			"Field": "SectorsChosen",
 			"DoesNotContain": [
@@ -4243,8 +4341,8 @@
 			]
 		}],
 		"BodyText": "Who's the most experienced employee in the 'Digital' sector?",
-		"DisplayType": "PagesWithSections",
-		"ActivatedByPageId": null
+		"DisplayType": "OtherPagesInPagesWithSections",
+		"ActivatedByPageId": "7640A"
 	},
 	{
 		"PageId": "7641",
@@ -4789,6 +4887,55 @@
 		"ActivatedByPageId": "7642"
 	},
 	{
+			"PageId": "7645A", 
+			"SequenceId": null,
+			"SectionId": null,
+			"Title": "2. Delivering training in sectors",
+			"LinkTitle": "Education and childcare",   
+			"InfoText": "",
+			"Questions": [{
+					"QuestionId": "DAT-7645A-1",
+					"QuestionTag": "DATEducationHowManyStarts", 
+					"Label": "How many starts does your organisation forecast in the 'Education and childcare' sector in the first 12 months of joining the RoATP?", 
+					"ShortLabel": "",
+					"QuestionBodyText": "",
+					"Hint": "Enter number of starts",
+					"Input": {
+						"Type": "Text",
+						"InputClasses": "govuk-input--width-4",
+						"Validations": [{
+								"Name": "Required",
+								"Value": "",
+								"ErrorMessage": "Enter number of starts in this sector"
+							},
+							  {
+								"Name": "Regex",
+								"Value": "^[0]*[1-9]{1}[0-9]{0,2}$",
+								"ErrorMessage": "Enter number of starts in this sector using 3 digits or less"
+							  }
+						]
+					}
+				}
+			],
+			"PageOfAnswers": [],
+			"Next": [{
+				"Action": "NextPage",
+				"ReturnId": "7645",    
+				"Conditions": []
+			}],
+			"AllowMultipleAnswers": false,
+			"Active": true,
+			"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Education and childcare"   
+				]
+			}],
+			"BodyText": "", 
+			"DisplayType": "PagesWithSections",   
+			"ActivatedByPageId": null
+		},
+		{
 		"PageId": "7645",
 		"SequenceId": null,
 		"SectionId": null,
@@ -4869,7 +5016,7 @@
 			"Conditions": []
 		}],
 		"AllowMultipleAnswers": false,
-		"Active": true,
+		"Active": false,
 		"NotRequiredConditions": [{
 			"Field": "SectorsChosen",
 			"DoesNotContain": [
@@ -4877,8 +5024,8 @@
 			]
 		}],
 		"BodyText": "Who's the most experienced employee in the 'Education and childcare' sector?",
-		"DisplayType": "PagesWithSections",
-		"ActivatedByPageId": null
+		"DisplayType": "OtherPagesInPagesWithSections",
+		"ActivatedByPageId": "7645A"
 	},
 	{
 		"PageId": "7646",
@@ -5424,6 +5571,55 @@
 		"ActivatedByPageId": "7647"
 	},
 	{
+			"PageId": "7650A", 
+			"SequenceId": null,
+			"SectionId": null,
+			"Title": "2. Delivering training in sectors",
+			"LinkTitle": "Engineering and manufacturing",   
+			"InfoText": "",
+			"Questions": [{
+					"QuestionId": "DAT-7650A-1", 
+					"QuestionTag": "DATEngineeringHowManyStarts", 
+					"Label": "How many starts does your organisation forecast in the 'Engineering and manufacturing' sector in the first 12 months of joining the RoATP?",
+					"ShortLabel": "",
+					"QuestionBodyText": "",
+					"Hint": "Enter number of starts",
+					"Input": {
+						"Type": "Text",
+						"InputClasses": "govuk-input--width-4",
+						"Validations": [{
+								"Name": "Required",
+								"Value": "",
+								"ErrorMessage": "Enter number of starts in this sector"
+							},
+							  {
+								"Name": "Regex",
+								"Value": "^[0]*[1-9]{1}[0-9]{0,2}$",
+								"ErrorMessage": "Enter number of starts in this sector using 3 digits or less"
+							  }
+						]
+					}
+				}
+			],
+			"PageOfAnswers": [],
+			"Next": [{
+				"Action": "NextPage",
+				"ReturnId": "7650",    
+				"Conditions": []
+			}],
+			"AllowMultipleAnswers": false,
+			"Active": true,
+			"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Engineering and manufacturing"   
+				]
+			}],
+			"BodyText": "", 
+			"DisplayType": "PagesWithSections",   
+			"ActivatedByPageId": null
+		},
+		{
 		"PageId": "7650",
 		"SequenceId": null,
 		"SectionId": null,
@@ -5504,7 +5700,7 @@
 			"Conditions": []
 		}],
 		"AllowMultipleAnswers": false,
-		"Active": true,
+		"Active": false,
 		"NotRequiredConditions": [{
 			"Field": "SectorsChosen",
 			"DoesNotContain": [
@@ -5512,8 +5708,8 @@
 			]
 		}],
 		"BodyText": "Who's the most experienced employee in the 'Engineering and manufacturing' sector?",
-		"DisplayType": "PagesWithSections",
-		"ActivatedByPageId": null
+		"DisplayType": "OtherPagesInPagesWithSections",
+		"ActivatedByPageId": "7650A"
 	},
 	{
 		"PageId": "7651",
@@ -6058,6 +6254,55 @@
 		"ActivatedByPageId": "7652"
 	},
 	{
+			"PageId": "7655A", 
+			"SequenceId": null,
+			"SectionId": null,
+			"Title": "2. Delivering training in sectors",
+			"LinkTitle": "Hair and Beauty",   
+			"InfoText": "",
+			"Questions": [{
+					"QuestionId": "DAT-7655A-1",
+					"QuestionTag": "DATHairAndBeautyHowManyStarts", 
+					"Label": "How many starts does your organisation forecast in the 'Hair and Beauty' sector in the first 12 months of joining the RoATP?", 
+					"ShortLabel": "",
+					"QuestionBodyText": "",
+					"Hint": "Enter number of starts",
+					"Input": {
+						"Type": "Text",
+						"InputClasses": "govuk-input--width-4",
+						"Validations": [{
+								"Name": "Required",
+								"Value": "",
+								"ErrorMessage": "Enter number of starts in this sector"
+							},
+							  {
+								"Name": "Regex",
+								"Value": "^[0]*[1-9]{1}[0-9]{0,2}$",
+								"ErrorMessage": "Enter number of starts in this sector using 3 digits or less"
+							  }
+						]
+					}
+				}
+			],
+			"PageOfAnswers": [],
+			"Next": [{
+				"Action": "NextPage",
+				"ReturnId": "7655",    
+				"Conditions": []
+			}],
+			"AllowMultipleAnswers": false,
+			"Active": true,
+			"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Hair and Beauty"   
+				]
+			}],
+			"BodyText": "", 
+			"DisplayType": "PagesWithSections",   
+			"ActivatedByPageId": null
+		},
+		{
 		"PageId": "7655",
 		"SequenceId": null,
 		"SectionId": null,
@@ -6138,7 +6383,7 @@
 			"Conditions": []
 		}],
 		"AllowMultipleAnswers": false,
-		"Active": true,
+		"Active": false,
 		"NotRequiredConditions": [{
 			"Field": "SectorsChosen",
 			"DoesNotContain": [
@@ -6146,8 +6391,8 @@
 			]
 		}],
 		"BodyText": "Who's the most experienced employee in the 'Hair and Beauty' sector?",
-		"DisplayType": "PagesWithSections",
-		"ActivatedByPageId": null
+		"DisplayType": "OtherPagesInPagesWithSections",
+		"ActivatedByPageId": "7655A"
 	},
 	{
 		"PageId": "7656",
