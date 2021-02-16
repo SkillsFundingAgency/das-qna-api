@@ -17,7 +17,7 @@
 				"ShortLabel": "",
 				"Hint": "Select all that apply.",
 				"Input": {
-					"Type": "CheckBoxList",
+					"Type": "CheckboxList",
 					"Options": [{
 							"Value": "Agriculture&comma; environmental and animal care",
 							"Label": "Agriculture, environmental and animal care"
@@ -129,6 +129,7 @@
 					}
 				}
 			],
+			"PageOfAnswers": [],
 			"PageOfAnswers": [],
 			"Next": [{
 				"Action": "NextPage",
@@ -628,7 +629,7 @@
 					"QuestionBodyText": "",
 					"Hint": "",
 					"Input": {
-						"Type": "ComplexCheckBoxList",
+						"Type": "ComplexCheckboxList",
 						"Options": [{
 								"Value": "Classroom-based training",
 								"Label": "Classroom-based training",
@@ -1312,7 +1313,7 @@
 				"QuestionBodyText": "",
 				"Hint": "",
 				"Input": {
-					"Type": "ComplexCheckBoxList",
+					"Type": "ComplexCheckboxList",
 					"Options": [{
 							"Value": "Classroom-based training",
 							"Label": "Classroom-based training",
@@ -1995,7 +1996,7 @@
 				"QuestionBodyText": "",
 				"Hint": "",
 				"Input": {
-					"Type": "ComplexCheckBoxList",
+					"Type": "ComplexCheckboxList",
 					"Options": [{
 							"Value": "Classroom-based training",
 							"Label": "Classroom-based training",
@@ -2678,7 +2679,7 @@
 				"QuestionBodyText": "",
 				"Hint": "",
 				"Input": {
-					"Type": "ComplexCheckBoxList",
+					"Type": "ComplexCheckboxList",
 					"Options": [{
 							"Value": "Classroom-based training",
 							"Label": "Classroom-based training",
@@ -3361,7 +3362,7 @@
 				"QuestionBodyText": "",
 				"Hint": "",
 				"Input": {
-					"Type": "ComplexCheckBoxList",
+					"Type": "ComplexCheckboxList",
 					"Options": [{
 							"Value": "Classroom-based training",
 							"Label": "Classroom-based training",
@@ -4044,7 +4045,7 @@
 				"QuestionBodyText": "",
 				"Hint": "",
 				"Input": {
-					"Type": "ComplexCheckBoxList",
+					"Type": "ComplexCheckboxList",
 					"Options": [{
 							"Value": "Classroom-based training",
 							"Label": "Classroom-based training",
@@ -4727,7 +4728,7 @@
 				"QuestionBodyText": "",
 				"Hint": "",
 				"Input": {
-					"Type": "ComplexCheckBoxList",
+					"Type": "ComplexCheckboxList",
 					"Options": [{
 							"Value": "Classroom-based training",
 							"Label": "Classroom-based training",
@@ -5411,7 +5412,7 @@
 				"QuestionBodyText": "",
 				"Hint": "",
 				"Input": {
-					"Type": "ComplexCheckBoxList",
+					"Type": "ComplexCheckboxList",
 					"Options": [{
 							"Value": "Classroom-based training",
 							"Label": "Classroom-based training",
@@ -6094,7 +6095,7 @@
 				"QuestionBodyText": "",
 				"Hint": "",
 				"Input": {
-					"Type": "ComplexCheckBoxList",
+					"Type": "ComplexCheckboxList",
 					"Options": [{
 							"Value": "Classroom-based training",
 							"Label": "Classroom-based training",
@@ -6777,7 +6778,7 @@
 				"QuestionBodyText": "",
 				"Hint": "",
 				"Input": {
-					"Type": "ComplexCheckBoxList",
+					"Type": "ComplexCheckboxList",
 					"Options": [{
 							"Value": "Classroom-based training",
 							"Label": "Classroom-based training",
@@ -6937,6 +6938,55 @@
 		"ActivatedByPageId": "7657"
 	},
 	{
+			"PageId": "7660A", 
+			"SequenceId": null,
+			"SectionId": null,
+			"Title": "2. Delivering training in sectors",
+			"LinkTitle": "Health and science",   
+			"InfoText": "",
+			"Questions": [{
+					"QuestionId": "DAT-7660A-1", 
+					"QuestionTag": "DATHealthAndScienceHowManyStarts",
+					"Label": "How many starts does your organisation forecast in the 'Health and science' sector in the first 12 months of joining the RoATP?", 
+					"ShortLabel": "",
+					"QuestionBodyText": "",
+					"Hint": "Enter number of starts",
+					"Input": {
+						"Type": "Text",
+						"InputClasses": "govuk-input--width-4",
+						"Validations": [{
+								"Name": "Required",
+								"Value": "",
+								"ErrorMessage": "Enter number of starts in this sector"
+							},
+							  {
+								"Name": "Regex",
+								"Value": "^[0]*[1-9]{1}[0-9]{0,2}$",
+								"ErrorMessage": "Enter number of starts in this sector using 3 digits or less"
+							  }
+						]
+					}
+				}
+			],
+			"PageOfAnswers": [],
+			"Next": [{
+				"Action": "NextPage",
+				"ReturnId": "7660",    
+				"Conditions": []
+			}],
+			"AllowMultipleAnswers": false,
+			"Active": true,
+			"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Health and science"   
+				]
+			}],
+			"BodyText": "", 
+			"DisplayType": "PagesWithSections",   
+			"ActivatedByPageId": null
+		},
+		{
 		"PageId": "7660",
 		"SequenceId": null,
 		"SectionId": null,
@@ -7017,7 +7067,7 @@
 			"Conditions": []
 		}],
 		"AllowMultipleAnswers": false,
-		"Active": true,
+		"Active": false,
 		"NotRequiredConditions": [{
 			"Field": "SectorsChosen",
 			"DoesNotContain": [
@@ -7025,8 +7075,8 @@
 			]
 		}],
 		"BodyText": "Who's the most experienced employee in the 'Health and Science' sector?",
-		"DisplayType": "PagesWithSections",
-		"ActivatedByPageId": null
+		"DisplayType": "OtherPagesInPagesWithSections",
+		"ActivatedByPageId": "7660A"
 	},
 	{
 		"PageId": "7661",
@@ -7411,7 +7461,7 @@
 				"QuestionBodyText": "",
 				"Hint": "",
 				"Input": {
-					"Type": "ComplexCheckBoxList",
+					"Type": "ComplexCheckboxList",
 					"Options": [{
 							"Value": "Classroom-based training",
 							"Label": "Classroom-based training",
@@ -7571,11 +7621,60 @@
 		"ActivatedByPageId": "7662"
 	},
 	{
+			"PageId": "7665A", 
+			"SequenceId": null,
+			"SectionId": null,
+			"Title": "2. Delivering training in sectors",
+			"LinkTitle": "Legal, finance and accounting",   
+			"InfoText": "",
+			"Questions": [{
+					"QuestionId": "DAT-7665A-1", 
+					"QuestionTag": "DATLegalHowManyStarts", 
+					"Label": "How many starts does your organisation forecast in the 'Legal, finance and accounting' sector in the first 12 months of joining the RoATP?", 
+					"ShortLabel": "",
+					"QuestionBodyText": "",
+					"Hint": "Enter number of starts",
+					"Input": {
+						"Type": "Text",
+						"InputClasses": "govuk-input--width-4",
+						"Validations": [{
+								"Name": "Required",
+								"Value": "",
+								"ErrorMessage": "Enter number of starts in this sector"
+							},
+							  {
+								"Name": "Regex",
+								"Value": "^[0]*[1-9]{1}[0-9]{0,2}$",
+								"ErrorMessage": "Enter number of starts in this sector using 3 digits or less"
+							  }
+						]
+					}
+				}
+			],
+			"PageOfAnswers": [],
+			"Next": [{
+				"Action": "NextPage",
+				"ReturnId": "7665",    
+				"Conditions": []
+			}],
+			"AllowMultipleAnswers": false,
+			"Active": true,
+			"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Legal&comma; finance and accounting"   
+				]
+			}],
+			"BodyText": "", 
+			"DisplayType": "PagesWithSections",   
+			"ActivatedByPageId": null
+		},
+		{
 		"PageId": "7665",
 		"SequenceId": null,
 		"SectionId": null,
 		"Title": "2. Delivering training in sectors",
-		"LinkTitle": "Legal, finance and accounting",
+		"LinkTitle": "Legal&comma; finance and accounting",
 		"InfoText": "",
 		"Questions": [{
 				"QuestionId": "DAT-7665-1",
@@ -7651,7 +7750,7 @@
 			"Conditions": []
 		}],
 		"AllowMultipleAnswers": false,
-		"Active": true,
+		"Active": false,
 		"NotRequiredConditions": [{
 			"Field": "SectorsChosen",
 			"DoesNotContain": [
@@ -7659,8 +7758,8 @@
 			]
 		}],
 		"BodyText": "Who's the most experienced employee in the 'Legal, finance and accounting' sector?",
-		"DisplayType": "PagesWithSections",
-		"ActivatedByPageId": null
+		"DisplayType": "OtherPagesInPagesWithSections",
+		"ActivatedByPageId": "7665A"
 	},
 	{
 		"PageId": "7666",
@@ -8045,7 +8144,7 @@
 				"QuestionBodyText": "",
 				"Hint": "",
 				"Input": {
-					"Type": "ComplexCheckBoxList",
+					"Type": "ComplexCheckboxList",
 					"Options": [{
 							"Value": "Classroom-based training",
 							"Label": "Classroom-based training",
@@ -8205,6 +8304,55 @@
 		"ActivatedByPageId": "7667"
 	},
 	{
+			"PageId": "7670A", 
+			"SequenceId": null,
+			"SectionId": null,
+			"Title": "2. Delivering training in sectors",
+			"LinkTitle": "Protective services",   
+			"InfoText": "",
+			"Questions": [{
+					"QuestionId": "DAT-7670A-1",
+					"QuestionTag": "DATProtectiveServicesHowManyStarts", 
+					"Label": "How many starts does your organisation forecast in the 'Protective services' sector in the first 12 months of joining the RoATP?", 
+					"ShortLabel": "",
+					"QuestionBodyText": "",
+					"Hint": "Enter number of starts",
+					"Input": {
+						"Type": "Text",
+						"InputClasses": "govuk-input--width-4",
+						"Validations": [{
+								"Name": "Required",
+								"Value": "",
+								"ErrorMessage": "Enter number of starts in this sector"
+							},
+							  {
+								"Name": "Regex",
+								"Value": "^[0]*[1-9]{1}[0-9]{0,2}$",
+								"ErrorMessage": "Enter number of starts in this sector using 3 digits or less"
+							  }
+						]
+					}
+				}
+			],
+			"PageOfAnswers": [],
+			"Next": [{
+				"Action": "NextPage",
+				"ReturnId": "7670",    
+				"Conditions": []
+			}],
+			"AllowMultipleAnswers": false,
+			"Active": true,
+			"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Protective services"   
+				]
+			}],
+			"BodyText": "", 
+			"DisplayType": "PagesWithSections",   
+			"ActivatedByPageId": null
+		},
+		{
 		"PageId": "7670",
 		"SequenceId": null,
 		"SectionId": null,
@@ -8285,7 +8433,7 @@
 			"Conditions": []
 		}],
 		"AllowMultipleAnswers": false,
-		"Active": true,
+		"Active": false,
 		"NotRequiredConditions": [{
 			"Field": "SectorsChosen",
 			"DoesNotContain": [
@@ -8293,8 +8441,8 @@
 			]
 		}],
 		"BodyText": "Who's the most experienced employee in the 'Protective services' sector?",
-		"DisplayType": "PagesWithSections",
-		"ActivatedByPageId": null
+		"DisplayType": "OtherPagesInPagesWithSections",
+		"ActivatedByPageId": "7670A"
 	},
 	{
 		"PageId": "7671",
@@ -8679,7 +8827,7 @@
 				"QuestionBodyText": "",
 				"Hint": "",
 				"Input": {
-					"Type": "ComplexCheckBoxList",
+					"Type": "ComplexCheckboxList",
 					"Options": [{
 							"Value": "Classroom-based training",
 							"Label": "Classroom-based training",
@@ -8839,6 +8987,55 @@
 		"ActivatedByPageId": "7672"
 	},
 	{
+			"PageId": "7675A", 
+			"SequenceId": null,
+			"SectionId": null,
+			"Title": "2. Delivering training in sectors",
+			"LinkTitle": "Sales, marketing and procurement",   
+			"InfoText": "",
+			"Questions": [{
+					"QuestionId": "DAT-7675A-1", 
+					"QuestionTag": "DATSalesHowManyStarts", 
+					"Label": "How many starts does your organisation forecast in the 'Sales, marketing and procurement' sector in the first 12 months of joining the RoATP?", 
+					"ShortLabel": "",
+					"QuestionBodyText": "",
+					"Hint": "Enter number of starts",
+					"Input": {
+						"Type": "Text",
+						"InputClasses": "govuk-input--width-4",
+						"Validations": [{
+								"Name": "Required",
+								"Value": "",
+								"ErrorMessage": "Enter number of starts in this sector"
+							},
+							  {
+								"Name": "Regex",
+								"Value": "^[0]*[1-9]{1}[0-9]{0,2}$",
+								"ErrorMessage": "Enter number of starts in this sector using 3 digits or less"
+							  }
+						]
+					}
+				}
+			],
+			"PageOfAnswers": [],
+			"Next": [{
+				"Action": "NextPage",
+				"ReturnId": "7675",    
+				"Conditions": []
+			}],
+			"AllowMultipleAnswers": false,
+			"Active": true,
+			"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Sales&comma; marketing and procurement"   
+				]
+			}],
+			"BodyText": "", 
+			"DisplayType": "PagesWithSections",   
+			"ActivatedByPageId": null
+		},
+		{
 		"PageId": "7675",
 		"SequenceId": null,
 		"SectionId": null,
@@ -8919,7 +9116,7 @@
 			"Conditions": []
 		}],
 		"AllowMultipleAnswers": false,
-		"Active": true,
+		"Active": false,
 		"NotRequiredConditions": [{
 			"Field": "SectorsChosen",
 			"DoesNotContain": [
@@ -8927,8 +9124,8 @@
 			]
 		}],
 		"BodyText": "Who's the most experienced employee in the 'Sales, marketing and procurement' sector?",
-		"DisplayType": "PagesWithSections",
-		"ActivatedByPageId": null
+		"DisplayType": "OtherPagesInPagesWithSections",
+		"ActivatedByPageId": "7675A"
 	},
 	{
 		"PageId": "7676",
@@ -9313,7 +9510,7 @@
 				"QuestionBodyText": "",
 				"Hint": "",
 				"Input": {
-					"Type": "ComplexCheckBoxList",
+					"Type": "ComplexCheckboxList",
 					"Options": [{
 							"Value": "Classroom-based training",
 							"Label": "Classroom-based training",
@@ -9473,6 +9670,55 @@
 		"ActivatedByPageId": "7677"
 	},
 	{
+			"PageId": "7680A", 
+			"SequenceId": null,
+			"SectionId": null,
+			"Title": "2. Delivering training in sectors",
+			"LinkTitle": "Transport and logistics",  
+			"InfoText": "",
+			"Questions": [{
+					"QuestionId": "DAT-7680A-1", 
+					"QuestionTag": "DATTransportHowManyStarts", 
+					"Label": "How many starts does your organisation forecast in the 'Transport and logistics' sector in the first 12 months of joining the RoATP?", 
+					"ShortLabel": "",
+					"QuestionBodyText": "",
+					"Hint": "Enter number of starts",
+					"Input": {
+						"Type": "Text",
+						"InputClasses": "govuk-input--width-4",
+						"Validations": [{
+								"Name": "Required",
+								"Value": "",
+								"ErrorMessage": "Enter number of starts in this sector"
+							},
+							  {
+								"Name": "Regex",
+								"Value": "^[0]*[1-9]{1}[0-9]{0,2}$",
+								"ErrorMessage": "Enter number of starts in this sector using 3 digits or less"
+							  }
+						]
+					}
+				}
+			],
+			"PageOfAnswers": [],
+			"Next": [{
+				"Action": "NextPage",
+				"ReturnId": "7680",    
+				"Conditions": []
+			}],
+			"AllowMultipleAnswers": false,
+			"Active": true,
+			"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Transport and logistics"   
+				]
+			}],
+			"BodyText": "", 
+			"DisplayType": "PagesWithSections",   
+			"ActivatedByPageId": null
+		},
+		{
 		"PageId": "7680",
 		"SequenceId": null,
 		"SectionId": null,
@@ -9553,7 +9799,7 @@
 			"Conditions": []
 		}],
 		"AllowMultipleAnswers": false,
-		"Active": true,
+		"Active": false,
 		"NotRequiredConditions": [{
 			"Field": "SectorsChosen",
 			"DoesNotContain": [
@@ -9561,8 +9807,8 @@
 			]
 		}],
 		"BodyText": "Who's the most experienced employee in the 'Transport and logistics' sector?",
-		"DisplayType": "PagesWithSections",
-		"ActivatedByPageId": null
+		"DisplayType": "OtherPagesInPagesWithSections",
+		"ActivatedByPageId": "7680A"
 	},
 	{
 		"PageId": "7681",
@@ -9947,7 +10193,7 @@
 				"QuestionBodyText": "",
 				"Hint": "",
 				"Input": {
-					"Type": "ComplexCheckBoxList",
+					"Type": "ComplexCheckboxList",
 					"Options": [{
 							"Value": "Classroom-based training",
 							"Label": "Classroom-based training",
