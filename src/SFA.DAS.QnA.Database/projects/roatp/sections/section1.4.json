@@ -8,7 +8,7 @@
             "SequenceId": null,
             "SectionId": null,
             "Title": "What is your organisation?",
-            "LinkTitle": "Main/Supporting - What is your organisation?",
+            "LinkTitle": "What is your organisation?",
             "InfoText": "",
             "Questions": [
                 {
@@ -50,12 +50,16 @@
                                 "Label": "An Independent Training Provider",
                                 "Value": "An Independent Training Provider",
                                 "FurtherQuestions": []
+                            },
+                            {
+                                "Label": "A rail franchise operator",
+                                "Value": "A rail franchise operator",
+                                "FurtherQuestions": []
                             }
                         ],
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": "",
                                 "ErrorMessage": "Tell us what your organisation is"
                             }
                         ]
@@ -70,7 +74,6 @@
                     "Conditions": [
                         {
                             "QuestionId": "YO-140",
-                            "QuestionTag": null,
                             "MustEqual": "An educational institute"
                         }
                     ]
@@ -81,7 +84,6 @@
                     "Conditions": [
                         {
                             "QuestionId": "YO-140",
-                            "QuestionTag": null,
                             "MustEqual": "An employer training apprentices in other organisations"
                         }
                     ]
@@ -92,7 +94,6 @@
                     "Conditions": [
                         {
                             "QuestionId": "YO-140",
-                            "QuestionTag": null,
                             "MustEqual": "A public body"
                         }
                     ]
@@ -103,7 +104,6 @@
                     "Conditions": [
                         {
                             "QuestionId": "YO-140",
-                            "QuestionTag": null,
                             "MustEqual": "An Apprenticeship Training Agency"
                         }
                     ]
@@ -114,7 +114,6 @@
                     "Conditions": [
                         {
                             "QuestionId": "YO-140",
-                            "QuestionTag": null,
                             "MustEqual": "An Independent Training Provider"
                         }
                     ]
@@ -125,13 +124,21 @@
                     "Conditions": [
                         {
                             "QuestionId": "YO-140",
-                            "QuestionTag": null,
                             "MustEqual": "A Group Training Association"
+                        }
+                    ]
+                },
+                {
+                    "Action": "NextPage",
+                    "ReturnId": "230",
+                    "Conditions": [
+                        {
+                            "QuestionId": "YO-140",
+                            "MustEqual": "A rail franchise operator"
                         }
                     ]
                 }
             ],
-            "AllowMultipleAnswers": false,
             "Active": true,            
             "NotRequiredConditions": [
                 {
@@ -141,7 +148,6 @@
                     ]
                 }
             ],
-            "ActivatedByPageId": null,
             "BodyText": ""
         },
         {
@@ -149,7 +155,7 @@
             "SequenceId": null,
             "SectionId": null,
             "Title": "What is your organisation?",
-            "LinkTitle": "Employer - What is your organisation?",
+            "LinkTitle": "What is your organisation?",
             "InfoText": "",
             "Questions": [
                 {
@@ -173,6 +179,11 @@
                                 "FurtherQuestions": []
                             },
                             {
+                                "Label": "A rail franchise operator",
+                                "Value": "A rail franchise operator",
+                                "FurtherQuestions": []
+                            },
+                            {
                                 "Label": "None of the above",
                                 "Value": "None of the above",
                                 "FurtherQuestions": []
@@ -181,7 +192,6 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": "",
                                 "ErrorMessage": "Tell us what your organisation is"
                             }
                         ]
@@ -196,7 +206,6 @@
                     "Conditions": [
                         {
                             "QuestionId": "YO-150",
-                            "QuestionTag": null,
                             "MustEqual": "An educational institute"
                         }
                     ]
@@ -207,7 +216,6 @@
                     "Conditions": [
                         {
                             "QuestionId": "YO-150",
-                            "QuestionTag": null,
                             "MustEqual": "A public body"
                         }
                     ]
@@ -218,7 +226,6 @@
                     "Conditions": []
                 }
             ],
-            "AllowMultipleAnswers": false,
             "Active": true,
             "NotRequiredConditions": [
                 {
@@ -294,7 +301,6 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": "",
                                 "ErrorMessage": "Tell us what type of educational institute your organisation is"
                             }
                         ]
@@ -309,7 +315,6 @@
                     "Conditions": [
                         {
                             "QuestionId": "YO-160",
-                            "QuestionTag": null,
                             "MustEqual": "Academy"
                         }
                     ]
@@ -320,7 +325,6 @@
                     "Conditions": [
                         {
                             "QuestionId": "YO-160",
-                            "QuestionTag": null,
                             "MustEqual": "Further Education Institute"
                         }
                     ]
@@ -331,7 +335,6 @@
                     "Conditions": [
                         {
                             "QuestionId": "YO-160",
-                            "QuestionTag": null,
                             "MustEqual": "General Further Education College"
                         }
                     ]
@@ -342,7 +345,6 @@
                     "Conditions": [
                         {
                             "QuestionId": "YO-160",
-                            "QuestionTag": null,
                             "MustEqual": "Higher Education Institute"
                         }
                     ]
@@ -353,7 +355,6 @@
                     "Conditions": [
                         {
                             "QuestionId": "YO-160",
-                            "QuestionTag": null,
                             "MustEqual": "Multi-Academy Trust"
                         }
                     ]
@@ -364,7 +365,6 @@
                     "Conditions": [
                         {
                             "QuestionId": "YO-160",
-                            "QuestionTag": null,
                             "MustEqual": "National College"
                         }
                     ]
@@ -375,7 +375,6 @@
                     "Conditions": [
                         {
                             "QuestionId": "YO-160",
-                            "QuestionTag": null,
                             "MustEqual": "School"
                         }
                     ]
@@ -386,13 +385,11 @@
                     "Conditions": [
                         {
                             "QuestionId": "YO-160",
-                            "QuestionTag": null,
                             "MustEqual": "Sixth Form College"
                         }
                     ]
                 }
             ],
-            "AllowMultipleAnswers": false,
             "Active": false,
             "NotRequiredConditions": [],
             "ActivatedByPageId": "140,150",
@@ -455,7 +452,6 @@
                   "Validations": [
                     {
                       "Name": "Required",
-                      "Value": "",
                       "ErrorMessage": "Tell us what type of public body your organisation is"
                     }
                   ]
@@ -470,7 +466,6 @@
                     "Conditions": []
                 }
             ],
-            "AllowMultipleAnswers": false,
             "Active": false,
             "NotRequiredConditions": [],
             "ActivatedByPageId": "140,150",
@@ -510,7 +505,6 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": "",
                                 "ErrorMessage": "Tell us what type of school your organisation is"
                             }
                         ]
@@ -525,7 +519,6 @@
                     "Conditions": [
                         {
                             "QuestionId": "YO-180",
-                            "QuestionTag": null,
                             "MustEqual": "Free school"
                         }
                     ]
@@ -536,7 +529,6 @@
                     "Conditions": []
                 }
             ],
-            "AllowMultipleAnswers": false,
             "Active": false,
             "NotRequiredConditions": [
                 {
@@ -585,7 +577,6 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": "",
                                 "ErrorMessage": "Tell us if your organisation is registered and receiving funding from ESFA"
                             }
                         ]
@@ -600,7 +591,6 @@
                     "Conditions": []
                 }
             ],
-            "AllowMultipleAnswers": false,
             "Active": false,
             "NotRequiredConditions": [
                 {
@@ -653,7 +643,6 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": "",
                                 "ErrorMessage": "Tell us if your organisation is receiving funding from ESFA"
                             }
                         ]
@@ -668,7 +657,6 @@
                     "Conditions": []
                 }
             ],
-            "AllowMultipleAnswers": false,
             "Active": false,
             "NotRequiredConditions": [
                 {
@@ -715,7 +703,6 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": "",
                                 "ErrorMessage": "Tell us if your organisation is monitored and supported by the Office of Students"
                             }
                         ]
@@ -730,7 +717,6 @@
                     "Conditions": []
                 }
             ],
-            "AllowMultipleAnswers": false,
             "Active": false,
             "NotRequiredConditions": [
                 {
@@ -795,7 +781,6 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": "",
                                 "ErrorMessage": "Tell us how you would describe your organisation"
                             }
                         ]
@@ -810,7 +795,6 @@
                     "Conditions": []
                 }
             ],
-            "AllowMultipleAnswers": false,
             "Active": false,
             "NotRequiredConditions": [],
             "ActivatedByPageId": "140,150,160,170,180,200,210,220",
