@@ -96,6 +96,59 @@
                         ],
                         "InputClasses": "govuk-input--width-20"
                     }
+                },
+				{
+                    "QuestionId": "DAT-10-4",
+                    "QuestionTag": null,
+                    "Label": "Is this person part of any other organisations?",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "ComplexRadio",
+                        "Options": [
+                            {
+                                "Label": "Yes",
+                                "Value": "Yes",
+                                "FurtherQuestions": [
+                                    {
+                                        "QuestionId": "DAT-10-4-1",
+                                        "Label": "Enter the names of all these organisations",
+										"Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You also need to include which of these organisations may receive funding directly from ESFA or as a subcontractor.</p>",
+                                        "Input": {
+                                            "Type": "Textarea",
+                                            "InputClasses": "",
+                                            "Options": [],
+                                            "Validations": [
+                                                {
+                                                    "Name": "Required",
+                                                    "Value": "",
+                                                    "ErrorMessage": "Enter the names of all these organisations"
+                                                },
+                                                {
+                                                    "Name": "MaxLength",
+                                                    "Value": "750",
+                                                    "ErrorMessage": "Enter the names of all these organisations using 750 characters or less"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "Label": "No",
+                                "Value": "No",
+                                "FurtherQuestions": []
+                            }
+                        ],
+                        "Validations": [
+                            {
+                                "Name": "Required",
+                                "Value": "",
+                                "ErrorMessage": "Tell us if this person is part of any other organisations"
+                            }
+                        ]
+                    }
                 }
             ],
 			"PageOfAnswers": [],
