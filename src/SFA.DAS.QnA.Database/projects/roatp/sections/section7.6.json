@@ -639,7 +639,12 @@
 			}],
 			"AllowMultipleAnswers": false,
 			"Active": false,
-			"NotRequiredConditions": [],
+			"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Agriculture&comma; environmental and animal care"
+				]
+			}],
 			"BodyText": "{{DATAgricultureFullName}}'s experience in the 'Agriculture, environmental and animal care' sector",
 			"DisplayType": "OtherPagesInPagesWithSections",
 			"ActivatedByPageId": "7610"
@@ -707,7 +712,12 @@
 			],
 			"AllowMultipleAnswers": false,
 			"Active": false,
-			"NotRequiredConditions": [],
+			"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Agriculture&comma; environmental and animal care"
+				]
+			}],
 			"BodyText": "{{DATAgricultureFullName}}'s experience in the 'Agriculture, environmental and animal care' sector",
 			"DisplayType": "OtherPagesInPagesWithSections",
 			"ActivatedByPageId": "7611"
@@ -882,7 +892,12 @@
 			}],
 			"AllowMultipleAnswers": false,
 			"Active": false,
-			"NotRequiredConditions": [],
+			"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Agriculture&comma; environmental and animal care"
+				]
+			}],
 			"BodyText": "{{DATAgricultureFullName}}'s experience in the 'Agriculture, environmental and animal care' sector",
 			"DisplayType": "OtherPagesInPagesWithSections",
 			"ActivatedByPageId": "7612"
@@ -1427,7 +1442,12 @@
 			"Conditions": []
 		}],
 		"AllowMultipleAnswers": false,
-		"NotRequiredConditions": [],
+		"NotRequiredConditions": [{
+			"Field": "SectorsChosen",
+			"DoesNotContain": [
+				"Business and administration"
+			]
+		}],
 		"BodyText": "{{DATBusinessFullName}}'s experience in the 'Business and administration' sector",
 		"DisplayType": "OtherPagesInPagesWithSections",
 		"ActivatedByPageId": "7615"
@@ -1491,7 +1511,12 @@
 			}
 		],
 		"AllowMultipleAnswers": false,
-		"NotRequiredConditions": [],
+		"NotRequiredConditions": [{
+			"Field": "SectorsChosen",
+			"DoesNotContain": [
+				"Business and administration"
+			]
+		}],
 		"BodyText": "{{DATBusinessFullName}}'s experience in the 'Business and administration' sector",
 		"DisplayType": "OtherPagesInPagesWithSections",
 		"ActivatedByPageId": "7616"
@@ -1664,7 +1689,12 @@
 			"Conditions": []
 		}],
 		"AllowMultipleAnswers": false,
-		"NotRequiredConditions": [],
+		"NotRequiredConditions": [{
+			"Field": "SectorsChosen",
+			"DoesNotContain": [
+				"Business and administration"
+			]
+		}],
 		"BodyText": "{{DATBusinessFullName}}'s experience in the 'Business and administration' sector",
 		"DisplayType": "OtherPagesInPagesWithSections",
 		"ActivatedByPageId": "7617"
@@ -1900,11 +1930,11 @@
 		"AllowMultipleAnswers": false,
 		"Active": false,
 		"NotRequiredConditions": [{
-			"Field": "SectorsChosen",
-			"DoesNotContain": [
-				"Care services"
-			]
-		}],
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Care Services"   
+				]
+			}],
 		"BodyText": "Who's the most experienced employee in the 'Care Services' sector?",
 		"DisplayType": "OtherPagesInPagesWithSections",
 		"ActivatedByPageId": "7620B"
@@ -2209,7 +2239,12 @@
 			"Conditions": []
 		}],
 		"AllowMultipleAnswers": false,
-		"NotRequiredConditions": [],
+		"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Care Services"   
+				]
+			}],
 		"BodyText": "{{DATCareServicesFullName}}'s experience in the 'Care Services' sector",
 		"DisplayType": "OtherPagesInPagesWithSections",
 		"ActivatedByPageId": "7620"
@@ -2273,7 +2308,12 @@
 			}
 		],
 		"AllowMultipleAnswers": false,
-		"NotRequiredConditions": [],
+		"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Care Services"   
+				]
+			}],
 		"BodyText": "{{DATCareServicesFullName}}'s experience in the 'Care Services' sector",
 		"DisplayType": "OtherPagesInPagesWithSections",
 		"ActivatedByPageId": "7621"
@@ -2446,7 +2486,12 @@
 			"Conditions": []
 		}],
 		"AllowMultipleAnswers": false,
-		"NotRequiredConditions": [],
+		"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Care Services"   
+				]
+			}],
 		"BodyText": "{{DATCareServicesFullName}}'s experience in the 'Care Services' sector",
 		"DisplayType": "OtherPagesInPagesWithSections",
 		"ActivatedByPageId": "7622"
@@ -2991,7 +3036,12 @@
 			"Conditions": []
 		}],
 		"AllowMultipleAnswers": false,
-		"NotRequiredConditions": [],
+		"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Catering and hospitality"   
+				]
+			}],
 		"BodyText": "{{DATCateringFullName}}'s experience in the 'Catering and hospitality' sector",
 		"DisplayType": "OtherPagesInPagesWithSections",
 		"ActivatedByPageId": "7625"
@@ -3055,7 +3105,12 @@
 			}
 		],
 		"AllowMultipleAnswers": false,
-		"NotRequiredConditions": [],
+		"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Catering and hospitality"   
+				]
+			}],
 		"BodyText": "{{DATCateringFullName}}'s experience in the 'Catering and hospitality' sector",
 		"DisplayType": "OtherPagesInPagesWithSections",
 		"ActivatedByPageId": "7626"
@@ -3228,7 +3283,12 @@
 			"Conditions": []
 		}],
 		"AllowMultipleAnswers": false,
-		"NotRequiredConditions": [],
+		"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Catering and hospitality"   
+				]
+			}],
 		"BodyText": "{{DATCateringFullName}}'s experience in the 'Catering and hospitality' sector",
 		"DisplayType": "OtherPagesInPagesWithSections",
 		"ActivatedByPageId": "7627"
@@ -3773,7 +3833,12 @@
 			"Conditions": []
 		}],
 		"AllowMultipleAnswers": false,
-		"NotRequiredConditions": [],
+		"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Construction"   
+				]
+			}],
 		"BodyText": "{{DATConstructionFullName}}'s experience in the 'Construction' sector",
 		"DisplayType": "OtherPagesInPagesWithSections",
 		"ActivatedByPageId": "7630"
@@ -3837,7 +3902,12 @@
 			}
 		],
 		"AllowMultipleAnswers": false,
-		"NotRequiredConditions": [],
+		"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Construction"   
+				]
+			}],
 		"BodyText": "{{DATConstructionFullName}}'s experience in the 'Construction' sector",
 		"DisplayType": "OtherPagesInPagesWithSections",
 		"ActivatedByPageId": "7631"
@@ -4010,7 +4080,12 @@
 			"Conditions": []
 		}],
 		"AllowMultipleAnswers": false,
-		"NotRequiredConditions": [],
+		"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Construction"   
+				]
+			}],
 		"BodyText": "{{DATConstructionFullName}}'s experience in the 'Construction' sector",
 		"DisplayType": "OtherPagesInPagesWithSections",
 		"ActivatedByPageId": "7632"
@@ -4555,7 +4630,12 @@
 			"Conditions": []
 		}],
 		"AllowMultipleAnswers": false,
-		"NotRequiredConditions": [],
+		"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Creative and design"   
+				]
+			}],
 		"BodyText": "{{DATCreativeFullName}}'s experience in the 'Creative and design' sector",
 		"DisplayType": "OtherPagesInPagesWithSections",
 		"ActivatedByPageId": "7635"
@@ -4619,7 +4699,12 @@
 			}
 		],
 		"AllowMultipleAnswers": false,
-		"NotRequiredConditions": [],
+		"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Creative and design"   
+				]
+			}],
 		"BodyText": "{{DATCreativeFullName}}'s experience in the 'Creative and design' sector",
 		"DisplayType": "OtherPagesInPagesWithSections",
 		"ActivatedByPageId": "7636"
@@ -4792,7 +4877,12 @@
 			"Conditions": []
 		}],
 		"AllowMultipleAnswers": false,
-		"NotRequiredConditions": [],
+		"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Creative and design"   
+				]
+			}],
 		"BodyText": "{{DATCreativeFullName}}'s experience in the 'Creative and design' sector",
 		"DisplayType": "OtherPagesInPagesWithSections",
 		"ActivatedByPageId": "7637"
@@ -5337,7 +5427,12 @@
 			"Conditions": []
 		}],
 		"AllowMultipleAnswers": false,
-		"NotRequiredConditions": [],
+		"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Digital"  
+				]
+			}],
 		"BodyText": "{{DATDigitalFullName}}'s experience in the 'Digital' sector",
 		"DisplayType": "OtherPagesInPagesWithSections",
 		"ActivatedByPageId": "7640"
@@ -5401,7 +5496,12 @@
 			}
 		],
 		"AllowMultipleAnswers": false,
-		"NotRequiredConditions": [],
+		"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Digital"  
+				]
+			}],
 		"BodyText": "{{DATDigitalFullName}}'s experience in the 'Digital' sector",
 		"DisplayType": "OtherPagesInPagesWithSections",
 		"ActivatedByPageId": "7641"
@@ -5574,7 +5674,12 @@
 			"Conditions": []
 		}],
 		"AllowMultipleAnswers": false,
-		"NotRequiredConditions": [],
+		"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Digital"  
+				]
+			}],
 		"BodyText": "{{DATDigitalFullName}}'s experience in the 'Digital' sector",
 		"DisplayType": "OtherPagesInPagesWithSections",
 		"ActivatedByPageId": "7642"
@@ -6119,7 +6224,12 @@
 			"Conditions": []
 		}],
 		"AllowMultipleAnswers": false,
-		"NotRequiredConditions": [],
+		"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Education and childcare"   
+				]
+			}],
 		"BodyText": "{{DATEducationFullName}}'s experience in the 'Education and childcare' sector",
 		"DisplayType": "OtherPagesInPagesWithSections",
 		"ActivatedByPageId": "7645"
@@ -6184,7 +6294,12 @@
 			}
 		],
 		"AllowMultipleAnswers": false,
-		"NotRequiredConditions": [],
+		"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Education and childcare"   
+				]
+			}],
 		"BodyText": "{{DATEducationFullName}}'s experience in the 'Education and childcare' sector",
 		"DisplayType": "OtherPagesInPagesWithSections",
 		"ActivatedByPageId": "7646"
@@ -6357,7 +6472,12 @@
 			"Conditions": []
 		}],
 		"AllowMultipleAnswers": false,
-		"NotRequiredConditions": [],
+		"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Education and childcare"   
+				]
+			}],
 		"BodyText": "{{DATEducationFullName}}'s experience in the 'Education and childcare' sector",
 		"DisplayType": "OtherPagesInPagesWithSections",
 		"ActivatedByPageId": "7647"
@@ -6902,7 +7022,12 @@
 			"Conditions": []
 		}],
 		"AllowMultipleAnswers": false,
-		"NotRequiredConditions": [],
+		"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Engineering and manufacturing"   
+				]
+			}],
 		"BodyText": "{{DATEngineeringFullName}}'s experience in the 'Engineering and manufacturing' sector",
 		"DisplayType": "OtherPagesInPagesWithSections",
 		"ActivatedByPageId": "7650"
@@ -6966,7 +7091,12 @@
 			}
 		],
 		"AllowMultipleAnswers": false,
-		"NotRequiredConditions": [],
+		"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Engineering and manufacturing"   
+				]
+			}],
 		"BodyText": "{{DATEngineeringFullName}}'s experience in the 'Engineering and manufacturing' sector",
 		"DisplayType": "OtherPagesInPagesWithSections",
 		"ActivatedByPageId": "7651"
@@ -7139,7 +7269,12 @@
 			"Conditions": []
 		}],
 		"AllowMultipleAnswers": false,
-		"NotRequiredConditions": [],
+		"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Engineering and manufacturing"   
+				]
+			}],
 		"BodyText": "{{DATEngineeringFullName}}'s experience in the 'Engineering and manufacturing' sector",
 		"DisplayType": "OtherPagesInPagesWithSections",
 		"ActivatedByPageId": "7652"
@@ -7684,7 +7819,12 @@
 			"Conditions": []
 		}],
 		"AllowMultipleAnswers": false,
-		"NotRequiredConditions": [],
+		"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Hair and Beauty"   
+				]
+			}],
 		"BodyText": "{{DATHairAndBeautyFullName}}'s experience in the 'Hair and Beauty' sector",
 		"DisplayType": "OtherPagesInPagesWithSections",
 		"ActivatedByPageId": "7655"
@@ -7748,7 +7888,12 @@
 			}
 		],
 		"AllowMultipleAnswers": false,
-		"NotRequiredConditions": [],
+		"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Hair and Beauty"   
+				]
+			}],
 		"BodyText": "{{DATHairAndBeautyFullName}}'s experience in the 'Hair and Beauty' sector",
 		"DisplayType": "OtherPagesInPagesWithSections",
 		"ActivatedByPageId": "7656"
@@ -7921,7 +8066,12 @@
 			"Conditions": []
 		}],
 		"AllowMultipleAnswers": false,
-		"NotRequiredConditions": [],
+		"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Hair and Beauty"   
+				]
+			}],
 		"BodyText": "{{DATHairAndBeautyFullName}}'s experience in the 'Hair and Beauty' sector",
 		"DisplayType": "OtherPagesInPagesWithSections",
 		"ActivatedByPageId": "7657"
@@ -8466,7 +8616,12 @@
 			"Conditions": []
 		}],
 		"AllowMultipleAnswers": false,
-		"NotRequiredConditions": [],
+		"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Health and science"   
+				]
+			}],
 		"BodyText": "{{DATHealthAndScienceFullName}}'s experience in the 'Health and science' sector",
 		"DisplayType": "OtherPagesInPagesWithSections",
 		"ActivatedByPageId": "7660"
@@ -8530,7 +8685,12 @@
 			}
 		],
 		"AllowMultipleAnswers": false,
-		"NotRequiredConditions": [],
+		"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Health and science"   
+				]
+			}],
 		"BodyText": "{{DATHealthAndScienceFullName}}'s experience in the 'Health and science' sector",
 		"DisplayType": "OtherPagesInPagesWithSections",
 		"ActivatedByPageId": "7661"
@@ -8703,7 +8863,12 @@
 			"Conditions": []
 		}],
 		"AllowMultipleAnswers": false,
-		"NotRequiredConditions": [],
+		"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Health and science"   
+				]
+			}],
 		"BodyText": "{{DATHealthAndScienceFullName}}'s experience in the 'Health and science' sector",
 		"DisplayType": "OtherPagesInPagesWithSections",
 		"ActivatedByPageId": "7662"
@@ -9248,7 +9413,12 @@
 			"Conditions": []
 		}],
 		"AllowMultipleAnswers": false,
-		"NotRequiredConditions": [],
+		"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Legal&comma; finance and accounting"   
+				]
+			}],
 		"BodyText": "{{DATLegalFullName}}'s experience in the 'Legal, finance and accounting' sector",
 		"DisplayType": "OtherPagesInPagesWithSections",
 		"ActivatedByPageId": "7665"
@@ -9312,7 +9482,12 @@
 			}
 		],
 		"AllowMultipleAnswers": false,
-		"NotRequiredConditions": [],
+		"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Legal&comma; finance and accounting"   
+				]
+			}],
 		"BodyText": "{{DATLegalFullName}}'s experience in the 'Legal, finance and accounting' sector",
 		"DisplayType": "OtherPagesInPagesWithSections",
 		"ActivatedByPageId": "7666"
@@ -9485,7 +9660,12 @@
 			"Conditions": []
 		}],
 		"AllowMultipleAnswers": false,
-		"NotRequiredConditions": [],
+		"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Legal&comma; finance and accounting"   
+				]
+			}],
 		"BodyText": "{{DATLegalFullName}}'s experience in the 'Legal, finance and accounting' sector",
 		"DisplayType": "OtherPagesInPagesWithSections",
 		"ActivatedByPageId": "7667"
@@ -10030,7 +10210,12 @@
 			"Conditions": []
 		}],
 		"AllowMultipleAnswers": false,
-		"NotRequiredConditions": [],
+		"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Protective services"   
+				]
+			}],
 		"BodyText": "{{DATProtectiveServicesFullName}}'s experience in the 'Protective services' sector",
 		"DisplayType": "OtherPagesInPagesWithSections",
 		"ActivatedByPageId": "7670"
@@ -10094,7 +10279,12 @@
 			}
 		],
 		"AllowMultipleAnswers": false,
-		"NotRequiredConditions": [],
+		"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Protective services"   
+				]
+			}],
 		"BodyText": "{{DATProtectiveServicesFullName}}'s experience in the 'Protective services' sector",
 		"DisplayType": "OtherPagesInPagesWithSections",
 		"ActivatedByPageId": "7671"
@@ -10267,7 +10457,12 @@
 			"Conditions": []
 		}],
 		"AllowMultipleAnswers": false,
-		"NotRequiredConditions": [],
+		"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Protective services"   
+				]
+			}],
 		"BodyText": "{{DATProtectiveServicesFullName}}'s experience in the 'Protective services' sector",
 		"DisplayType": "OtherPagesInPagesWithSections",
 		"ActivatedByPageId": "7672"
@@ -10812,7 +11007,12 @@
 			"Conditions": []
 		}],
 		"AllowMultipleAnswers": false,
-		"NotRequiredConditions": [],
+		"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Sales&comma; marketing and procurement"   
+				]
+			}],
 		"BodyText": "{{DATSalesFullName}}'s experience in the 'Sales, marketing and procurement' sector",
 		"DisplayType": "OtherPagesInPagesWithSections",
 		"ActivatedByPageId": "7675"
@@ -10876,7 +11076,12 @@
 			}
 		],
 		"AllowMultipleAnswers": false,
-		"NotRequiredConditions": [],
+		"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Sales&comma; marketing and procurement"   
+				]
+			}],
 		"BodyText": "{{DATSalesFullName}}'s experience in the 'Sales, marketing and procurement' sector",
 		"DisplayType": "OtherPagesInPagesWithSections",
 		"ActivatedByPageId": "7676"
@@ -11049,7 +11254,12 @@
 			"Conditions": []
 		}],
 		"AllowMultipleAnswers": false,
-		"NotRequiredConditions": [],
+		"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Sales&comma; marketing and procurement"   
+				]
+			}],
 		"BodyText": "{{DATSalesFullName}}'s experience in the 'Sales, marketing and procurement' sector",
 		"DisplayType": "OtherPagesInPagesWithSections",
 		"ActivatedByPageId": "7677"
@@ -11594,7 +11804,12 @@
 			"Conditions": []
 		}],
 		"AllowMultipleAnswers": false,
-		"NotRequiredConditions": [],
+		"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Transport and logistics"   
+				]
+			}],
 		"BodyText": "{{DATTransportFullName}}'s experience in the 'Transport and logistics' sector",
 		"DisplayType": "OtherPagesInPagesWithSections",
 		"ActivatedByPageId": "7680"
@@ -11658,7 +11873,12 @@
 			}
 		],
 		"AllowMultipleAnswers": false,
-		"NotRequiredConditions": [],
+		"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Transport and logistics"   
+				]
+			}],
 		"BodyText": "{{DATTransportFullName}}'s experience in the 'Transport and logistics' sector",
 		"DisplayType": "OtherPagesInPagesWithSections",
 		"ActivatedByPageId": "7681"
@@ -11831,7 +12051,12 @@
 			"Conditions": []
 		}],
 		"AllowMultipleAnswers": false,
-		"NotRequiredConditions": [],
+		"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Transport and logistics"   
+				]
+			}],
 		"BodyText": "{{DATTransportFullName}}'s experience in the 'Transport and logistics' sector",
 		"DisplayType": "OtherPagesInPagesWithSections",
 		"ActivatedByPageId": "7682"
