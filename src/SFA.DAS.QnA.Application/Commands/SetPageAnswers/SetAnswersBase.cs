@@ -388,8 +388,7 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
             
             if (!string.IsNullOrEmpty(condition.Contains))
             {
-                var listOfAnswers = questionTag
-                    .Split(",", StringSplitOptions.RemoveEmptyEntries);
+                var listOfAnswers = string.IsNullOrWhiteSpace(questionTag) ? new string[] { } : questionTag.Split(",", StringSplitOptions.RemoveEmptyEntries);
                 if (!listOfAnswers.Contains(condition.Contains))
                 {
                     allConditionsSatisified = false;
