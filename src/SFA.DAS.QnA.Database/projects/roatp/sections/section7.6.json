@@ -268,6 +268,56 @@
 							}
 						]
 					}
+				},
+				{
+					"QuestionId": "DAT-7610-4",
+					"QuestionTag": null,
+					"Label": "Is this person part of any other organisations?",
+					"ShortLabel": "",
+					"QuestionBodyText": "",
+					"Hint": "",
+					"Input": {
+						"Type": "ComplexRadio",
+						"Options": [{
+								"Value": "Yes",
+								"Label": "Yes",
+								"HintText": "",
+								"FurtherQuestions": [{
+									"QuestionId": "DAT-7610-4-1",
+									"QuestionTag": null,
+									"Label": "Enter the names of all these organisations",
+									"ShortLabel": "",
+									"QuestionBodyText": "",
+									"Hint": "You also need to include which of these organisations may receive funding directly from ESFA or as a subcontractor.",
+									"Input": {
+										"Type": "Textarea",
+										"Options": [],
+										"Validations": [{
+												"Name": "Required",
+												"Value": "",
+												"ErrorMessage": "Enter the names of all these organisations"
+											},
+											{
+												"Name": "MaxLength",
+												"Value": "750",
+												"ErrorMessage": "Enter the names of all these organisations using 750 characters or less"
+											}
+										]
+									}
+								}]
+							},
+							{
+								"Value": "No",
+								"Label": "No",
+								"HintText": ""
+							}
+						],
+						"Validations": [{
+							"Name": "Required",
+							"Value": "",
+							"ErrorMessage": "Tell us if this person is part of any other organisations"
+						}]
+					}
 				}
 			],
 			"PageOfAnswers": [],
@@ -589,7 +639,12 @@
 			}],
 			"AllowMultipleAnswers": false,
 			"Active": false,
-			"NotRequiredConditions": [],
+			"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Agriculture&comma; environmental and animal care"
+				]
+			}],
 			"BodyText": "{{DATAgricultureFullName}}'s experience in the 'Agriculture, environmental and animal care' sector",
 			"DisplayType": "OtherPagesInPagesWithSections",
 			"ActivatedByPageId": "7610"
@@ -657,7 +712,12 @@
 			],
 			"AllowMultipleAnswers": false,
 			"Active": false,
-			"NotRequiredConditions": [],
+			"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Agriculture&comma; environmental and animal care"
+				]
+			}],
 			"BodyText": "{{DATAgricultureFullName}}'s experience in the 'Agriculture, environmental and animal care' sector",
 			"DisplayType": "OtherPagesInPagesWithSections",
 			"ActivatedByPageId": "7611"
@@ -832,7 +892,12 @@
 			}],
 			"AllowMultipleAnswers": false,
 			"Active": false,
-			"NotRequiredConditions": [],
+			"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Agriculture&comma; environmental and animal care"
+				]
+			}],
 			"BodyText": "{{DATAgricultureFullName}}'s experience in the 'Agriculture, environmental and animal care' sector",
 			"DisplayType": "OtherPagesInPagesWithSections",
 			"ActivatedByPageId": "7612"
@@ -1007,7 +1072,57 @@
 						}
 					]
 				}
-			}
+			},
+				{
+					"QuestionId": "DAT-7615-4",
+					"QuestionTag": null,
+					"Label": "Is this person part of any other organisations?",
+					"ShortLabel": "",
+					"QuestionBodyText": "",
+					"Hint": "",
+					"Input": {
+						"Type": "ComplexRadio",
+						"Options": [{
+								"Value": "Yes",
+								"Label": "Yes",
+								"HintText": "",
+								"FurtherQuestions": [{
+									"QuestionId": "DAT-7615-4-1",
+									"QuestionTag": null,
+									"Label": "Enter the names of all these organisations",
+									"ShortLabel": "",
+									"QuestionBodyText": "",
+									"Hint": "You also need to include which of these organisations may receive funding directly from ESFA or as a subcontractor.",
+									"Input": {
+										"Type": "Textarea",
+										"Options": [],
+										"Validations": [{
+												"Name": "Required",
+												"Value": "",
+												"ErrorMessage": "Enter the names of all these organisations"
+											},
+											{
+												"Name": "MaxLength",
+												"Value": "750",
+												"ErrorMessage": "Enter the names of all these organisations using 750 characters or less"
+											}
+										]
+									}
+								}]
+							},
+							{
+								"Value": "No",
+								"Label": "No",
+								"HintText": ""
+							}
+						],
+						"Validations": [{
+							"Name": "Required",
+							"Value": "",
+							"ErrorMessage": "Tell us if this person is part of any other organisations"
+						}]
+					}
+				}
 		],
 		"PageOfAnswers": [],
 		"Next": [{
@@ -1327,7 +1442,12 @@
 			"Conditions": []
 		}],
 		"AllowMultipleAnswers": false,
-		"NotRequiredConditions": [],
+		"NotRequiredConditions": [{
+			"Field": "SectorsChosen",
+			"DoesNotContain": [
+				"Business and administration"
+			]
+		}],
 		"BodyText": "{{DATBusinessFullName}}'s experience in the 'Business and administration' sector",
 		"DisplayType": "OtherPagesInPagesWithSections",
 		"ActivatedByPageId": "7615"
@@ -1391,7 +1511,12 @@
 			}
 		],
 		"AllowMultipleAnswers": false,
-		"NotRequiredConditions": [],
+		"NotRequiredConditions": [{
+			"Field": "SectorsChosen",
+			"DoesNotContain": [
+				"Business and administration"
+			]
+		}],
 		"BodyText": "{{DATBusinessFullName}}'s experience in the 'Business and administration' sector",
 		"DisplayType": "OtherPagesInPagesWithSections",
 		"ActivatedByPageId": "7616"
@@ -1564,7 +1689,12 @@
 			"Conditions": []
 		}],
 		"AllowMultipleAnswers": false,
-		"NotRequiredConditions": [],
+		"NotRequiredConditions": [{
+			"Field": "SectorsChosen",
+			"DoesNotContain": [
+				"Business and administration"
+			]
+		}],
 		"BodyText": "{{DATBusinessFullName}}'s experience in the 'Business and administration' sector",
 		"DisplayType": "OtherPagesInPagesWithSections",
 		"ActivatedByPageId": "7617"
@@ -1739,7 +1869,57 @@
 						}
 					]
 				}
-			}
+			},
+				{
+					"QuestionId": "DAT-7620-4",
+					"QuestionTag": null,
+					"Label": "Is this person part of any other organisations?",
+					"ShortLabel": "",
+					"QuestionBodyText": "",
+					"Hint": "",
+					"Input": {
+						"Type": "ComplexRadio",
+						"Options": [{
+								"Value": "Yes",
+								"Label": "Yes",
+								"HintText": "",
+								"FurtherQuestions": [{
+									"QuestionId": "DAT-7620-4-1",
+									"QuestionTag": null,
+									"Label": "Enter the names of all these organisations",
+									"ShortLabel": "",
+									"QuestionBodyText": "",
+									"Hint": "You also need to include which of these organisations may receive funding directly from ESFA or as a subcontractor.",
+									"Input": {
+										"Type": "Textarea",
+										"Options": [],
+										"Validations": [{
+												"Name": "Required",
+												"Value": "",
+												"ErrorMessage": "Enter the names of all these organisations"
+											},
+											{
+												"Name": "MaxLength",
+												"Value": "750",
+												"ErrorMessage": "Enter the names of all these organisations using 750 characters or less"
+											}
+										]
+									}
+								}]
+							},
+							{
+								"Value": "No",
+								"Label": "No",
+								"HintText": ""
+							}
+						],
+						"Validations": [{
+							"Name": "Required",
+							"Value": "",
+							"ErrorMessage": "Tell us if this person is part of any other organisations"
+						}]
+					}
+				}
 		],
 		"PageOfAnswers": [],
 		"Next": [{
@@ -1750,11 +1930,11 @@
 		"AllowMultipleAnswers": false,
 		"Active": false,
 		"NotRequiredConditions": [{
-			"Field": "SectorsChosen",
-			"DoesNotContain": [
-				"Care services"
-			]
-		}],
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Care Services"   
+				]
+			}],
 		"BodyText": "Who's the most experienced employee in the 'Care Services' sector?",
 		"DisplayType": "OtherPagesInPagesWithSections",
 		"ActivatedByPageId": "7620B"
@@ -2059,7 +2239,12 @@
 			"Conditions": []
 		}],
 		"AllowMultipleAnswers": false,
-		"NotRequiredConditions": [],
+		"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Care Services"   
+				]
+			}],
 		"BodyText": "{{DATCareServicesFullName}}'s experience in the 'Care Services' sector",
 		"DisplayType": "OtherPagesInPagesWithSections",
 		"ActivatedByPageId": "7620"
@@ -2123,7 +2308,12 @@
 			}
 		],
 		"AllowMultipleAnswers": false,
-		"NotRequiredConditions": [],
+		"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Care Services"   
+				]
+			}],
 		"BodyText": "{{DATCareServicesFullName}}'s experience in the 'Care Services' sector",
 		"DisplayType": "OtherPagesInPagesWithSections",
 		"ActivatedByPageId": "7621"
@@ -2296,7 +2486,12 @@
 			"Conditions": []
 		}],
 		"AllowMultipleAnswers": false,
-		"NotRequiredConditions": [],
+		"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Care Services"   
+				]
+			}],
 		"BodyText": "{{DATCareServicesFullName}}'s experience in the 'Care Services' sector",
 		"DisplayType": "OtherPagesInPagesWithSections",
 		"ActivatedByPageId": "7622"
@@ -2471,7 +2666,57 @@
 						}
 					]
 				}
-			}
+			},
+				{
+					"QuestionId": "DAT-7625-4",
+					"QuestionTag": null,
+					"Label": "Is this person part of any other organisations?",
+					"ShortLabel": "",
+					"QuestionBodyText": "",
+					"Hint": "",
+					"Input": {
+						"Type": "ComplexRadio",
+						"Options": [{
+								"Value": "Yes",
+								"Label": "Yes",
+								"HintText": "",
+								"FurtherQuestions": [{
+									"QuestionId": "DAT-7625-4-1",
+									"QuestionTag": null,
+									"Label": "Enter the names of all these organisations",
+									"ShortLabel": "",
+									"QuestionBodyText": "",
+									"Hint": "You also need to include which of these organisations may receive funding directly from ESFA or as a subcontractor.",
+									"Input": {
+										"Type": "Textarea",
+										"Options": [],
+										"Validations": [{
+												"Name": "Required",
+												"Value": "",
+												"ErrorMessage": "Enter the names of all these organisations"
+											},
+											{
+												"Name": "MaxLength",
+												"Value": "750",
+												"ErrorMessage": "Enter the names of all these organisations using 750 characters or less"
+											}
+										]
+									}
+								}]
+							},
+							{
+								"Value": "No",
+								"Label": "No",
+								"HintText": ""
+							}
+						],
+						"Validations": [{
+							"Name": "Required",
+							"Value": "",
+							"ErrorMessage": "Tell us if this person is part of any other organisations"
+						}]
+					}
+				}
 		],
 		"PageOfAnswers": [],
 		"Next": [{
@@ -2791,7 +3036,12 @@
 			"Conditions": []
 		}],
 		"AllowMultipleAnswers": false,
-		"NotRequiredConditions": [],
+		"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Catering and hospitality"   
+				]
+			}],
 		"BodyText": "{{DATCateringFullName}}'s experience in the 'Catering and hospitality' sector",
 		"DisplayType": "OtherPagesInPagesWithSections",
 		"ActivatedByPageId": "7625"
@@ -2855,7 +3105,12 @@
 			}
 		],
 		"AllowMultipleAnswers": false,
-		"NotRequiredConditions": [],
+		"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Catering and hospitality"   
+				]
+			}],
 		"BodyText": "{{DATCateringFullName}}'s experience in the 'Catering and hospitality' sector",
 		"DisplayType": "OtherPagesInPagesWithSections",
 		"ActivatedByPageId": "7626"
@@ -3028,7 +3283,12 @@
 			"Conditions": []
 		}],
 		"AllowMultipleAnswers": false,
-		"NotRequiredConditions": [],
+		"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Catering and hospitality"   
+				]
+			}],
 		"BodyText": "{{DATCateringFullName}}'s experience in the 'Catering and hospitality' sector",
 		"DisplayType": "OtherPagesInPagesWithSections",
 		"ActivatedByPageId": "7627"
@@ -3203,7 +3463,57 @@
 						}
 					]
 				}
-			}
+			},
+				{
+					"QuestionId": "DAT-7630-4",
+					"QuestionTag": null,
+					"Label": "Is this person part of any other organisations?",
+					"ShortLabel": "",
+					"QuestionBodyText": "",
+					"Hint": "",
+					"Input": {
+						"Type": "ComplexRadio",
+						"Options": [{
+								"Value": "Yes",
+								"Label": "Yes",
+								"HintText": "",
+								"FurtherQuestions": [{
+									"QuestionId": "DAT-7630-4-1",
+									"QuestionTag": null,
+									"Label": "Enter the names of all these organisations",
+									"ShortLabel": "",
+									"QuestionBodyText": "",
+									"Hint": "You also need to include which of these organisations may receive funding directly from ESFA or as a subcontractor.",
+									"Input": {
+										"Type": "Textarea",
+										"Options": [],
+										"Validations": [{
+												"Name": "Required",
+												"Value": "",
+												"ErrorMessage": "Enter the names of all these organisations"
+											},
+											{
+												"Name": "MaxLength",
+												"Value": "750",
+												"ErrorMessage": "Enter the names of all these organisations using 750 characters or less"
+											}
+										]
+									}
+								}]
+							},
+							{
+								"Value": "No",
+								"Label": "No",
+								"HintText": ""
+							}
+						],
+						"Validations": [{
+							"Name": "Required",
+							"Value": "",
+							"ErrorMessage": "Tell us if this person is part of any other organisations"
+						}]
+					}
+				}
 		],
 		"PageOfAnswers": [],
 		"Next": [{
@@ -3523,7 +3833,12 @@
 			"Conditions": []
 		}],
 		"AllowMultipleAnswers": false,
-		"NotRequiredConditions": [],
+		"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Construction"   
+				]
+			}],
 		"BodyText": "{{DATConstructionFullName}}'s experience in the 'Construction' sector",
 		"DisplayType": "OtherPagesInPagesWithSections",
 		"ActivatedByPageId": "7630"
@@ -3587,7 +3902,12 @@
 			}
 		],
 		"AllowMultipleAnswers": false,
-		"NotRequiredConditions": [],
+		"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Construction"   
+				]
+			}],
 		"BodyText": "{{DATConstructionFullName}}'s experience in the 'Construction' sector",
 		"DisplayType": "OtherPagesInPagesWithSections",
 		"ActivatedByPageId": "7631"
@@ -3760,7 +4080,12 @@
 			"Conditions": []
 		}],
 		"AllowMultipleAnswers": false,
-		"NotRequiredConditions": [],
+		"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Construction"   
+				]
+			}],
 		"BodyText": "{{DATConstructionFullName}}'s experience in the 'Construction' sector",
 		"DisplayType": "OtherPagesInPagesWithSections",
 		"ActivatedByPageId": "7632"
@@ -3935,7 +4260,57 @@
 						}
 					]
 				}
-			}
+			},
+				{
+					"QuestionId": "DAT-7635-4",
+					"QuestionTag": null,
+					"Label": "Is this person part of any other organisations?",
+					"ShortLabel": "",
+					"QuestionBodyText": "",
+					"Hint": "",
+					"Input": {
+						"Type": "ComplexRadio",
+						"Options": [{
+								"Value": "Yes",
+								"Label": "Yes",
+								"HintText": "",
+								"FurtherQuestions": [{
+									"QuestionId": "DAT-7635-4-1",
+									"QuestionTag": null,
+									"Label": "Enter the names of all these organisations",
+									"ShortLabel": "",
+									"QuestionBodyText": "",
+									"Hint": "You also need to include which of these organisations may receive funding directly from ESFA or as a subcontractor.",
+									"Input": {
+										"Type": "Textarea",
+										"Options": [],
+										"Validations": [{
+												"Name": "Required",
+												"Value": "",
+												"ErrorMessage": "Enter the names of all these organisations"
+											},
+											{
+												"Name": "MaxLength",
+												"Value": "750",
+												"ErrorMessage": "Enter the names of all these organisations using 750 characters or less"
+											}
+										]
+									}
+								}]
+							},
+							{
+								"Value": "No",
+								"Label": "No",
+								"HintText": ""
+							}
+						],
+						"Validations": [{
+							"Name": "Required",
+							"Value": "",
+							"ErrorMessage": "Tell us if this person is part of any other organisations"
+						}]
+					}
+				}
 		],
 		"PageOfAnswers": [],
 		"Next": [{
@@ -4255,7 +4630,12 @@
 			"Conditions": []
 		}],
 		"AllowMultipleAnswers": false,
-		"NotRequiredConditions": [],
+		"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Creative and design"   
+				]
+			}],
 		"BodyText": "{{DATCreativeFullName}}'s experience in the 'Creative and design' sector",
 		"DisplayType": "OtherPagesInPagesWithSections",
 		"ActivatedByPageId": "7635"
@@ -4319,7 +4699,12 @@
 			}
 		],
 		"AllowMultipleAnswers": false,
-		"NotRequiredConditions": [],
+		"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Creative and design"   
+				]
+			}],
 		"BodyText": "{{DATCreativeFullName}}'s experience in the 'Creative and design' sector",
 		"DisplayType": "OtherPagesInPagesWithSections",
 		"ActivatedByPageId": "7636"
@@ -4492,7 +4877,12 @@
 			"Conditions": []
 		}],
 		"AllowMultipleAnswers": false,
-		"NotRequiredConditions": [],
+		"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Creative and design"   
+				]
+			}],
 		"BodyText": "{{DATCreativeFullName}}'s experience in the 'Creative and design' sector",
 		"DisplayType": "OtherPagesInPagesWithSections",
 		"ActivatedByPageId": "7637"
@@ -4667,7 +5057,57 @@
 						}
 					]
 				}
-			}
+			},
+				{
+					"QuestionId": "DAT-7640-4",
+					"QuestionTag": null,
+					"Label": "Is this person part of any other organisations?",
+					"ShortLabel": "",
+					"QuestionBodyText": "",
+					"Hint": "",
+					"Input": {
+						"Type": "ComplexRadio",
+						"Options": [{
+								"Value": "Yes",
+								"Label": "Yes",
+								"HintText": "",
+								"FurtherQuestions": [{
+									"QuestionId": "DAT-7640-4-1",
+									"QuestionTag": null,
+									"Label": "Enter the names of all these organisations",
+									"ShortLabel": "",
+									"QuestionBodyText": "",
+									"Hint": "You also need to include which of these organisations may receive funding directly from ESFA or as a subcontractor.",
+									"Input": {
+										"Type": "Textarea",
+										"Options": [],
+										"Validations": [{
+												"Name": "Required",
+												"Value": "",
+												"ErrorMessage": "Enter the names of all these organisations"
+											},
+											{
+												"Name": "MaxLength",
+												"Value": "750",
+												"ErrorMessage": "Enter the names of all these organisations using 750 characters or less"
+											}
+										]
+									}
+								}]
+							},
+							{
+								"Value": "No",
+								"Label": "No",
+								"HintText": ""
+							}
+						],
+						"Validations": [{
+							"Name": "Required",
+							"Value": "",
+							"ErrorMessage": "Tell us if this person is part of any other organisations"
+						}]
+					}
+				}
 		],
 		"PageOfAnswers": [],
 		"Next": [{
@@ -4987,7 +5427,12 @@
 			"Conditions": []
 		}],
 		"AllowMultipleAnswers": false,
-		"NotRequiredConditions": [],
+		"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Digital"  
+				]
+			}],
 		"BodyText": "{{DATDigitalFullName}}'s experience in the 'Digital' sector",
 		"DisplayType": "OtherPagesInPagesWithSections",
 		"ActivatedByPageId": "7640"
@@ -5051,7 +5496,12 @@
 			}
 		],
 		"AllowMultipleAnswers": false,
-		"NotRequiredConditions": [],
+		"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Digital"  
+				]
+			}],
 		"BodyText": "{{DATDigitalFullName}}'s experience in the 'Digital' sector",
 		"DisplayType": "OtherPagesInPagesWithSections",
 		"ActivatedByPageId": "7641"
@@ -5224,7 +5674,12 @@
 			"Conditions": []
 		}],
 		"AllowMultipleAnswers": false,
-		"NotRequiredConditions": [],
+		"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Digital"  
+				]
+			}],
 		"BodyText": "{{DATDigitalFullName}}'s experience in the 'Digital' sector",
 		"DisplayType": "OtherPagesInPagesWithSections",
 		"ActivatedByPageId": "7642"
@@ -5399,7 +5854,57 @@
 						}
 					]
 				}
-			}
+			},
+				{
+					"QuestionId": "DAT-7645-4",
+					"QuestionTag": null,
+					"Label": "Is this person part of any other organisations?",
+					"ShortLabel": "",
+					"QuestionBodyText": "",
+					"Hint": "",
+					"Input": {
+						"Type": "ComplexRadio",
+						"Options": [{
+								"Value": "Yes",
+								"Label": "Yes",
+								"HintText": "",
+								"FurtherQuestions": [{
+									"QuestionId": "DAT-7645-4-1",
+									"QuestionTag": null,
+									"Label": "Enter the names of all these organisations",
+									"ShortLabel": "",
+									"QuestionBodyText": "",
+									"Hint": "You also need to include which of these organisations may receive funding directly from ESFA or as a subcontractor.",
+									"Input": {
+										"Type": "Textarea",
+										"Options": [],
+										"Validations": [{
+												"Name": "Required",
+												"Value": "",
+												"ErrorMessage": "Enter the names of all these organisations"
+											},
+											{
+												"Name": "MaxLength",
+												"Value": "750",
+												"ErrorMessage": "Enter the names of all these organisations using 750 characters or less"
+											}
+										]
+									}
+								}]
+							},
+							{
+								"Value": "No",
+								"Label": "No",
+								"HintText": ""
+							}
+						],
+						"Validations": [{
+							"Name": "Required",
+							"Value": "",
+							"ErrorMessage": "Tell us if this person is part of any other organisations"
+						}]
+					}
+				}
 		],
 		"PageOfAnswers": [],
 		"Next": [{
@@ -5719,7 +6224,12 @@
 			"Conditions": []
 		}],
 		"AllowMultipleAnswers": false,
-		"NotRequiredConditions": [],
+		"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Education and childcare"   
+				]
+			}],
 		"BodyText": "{{DATEducationFullName}}'s experience in the 'Education and childcare' sector",
 		"DisplayType": "OtherPagesInPagesWithSections",
 		"ActivatedByPageId": "7645"
@@ -5784,7 +6294,12 @@
 			}
 		],
 		"AllowMultipleAnswers": false,
-		"NotRequiredConditions": [],
+		"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Education and childcare"   
+				]
+			}],
 		"BodyText": "{{DATEducationFullName}}'s experience in the 'Education and childcare' sector",
 		"DisplayType": "OtherPagesInPagesWithSections",
 		"ActivatedByPageId": "7646"
@@ -5957,7 +6472,12 @@
 			"Conditions": []
 		}],
 		"AllowMultipleAnswers": false,
-		"NotRequiredConditions": [],
+		"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Education and childcare"   
+				]
+			}],
 		"BodyText": "{{DATEducationFullName}}'s experience in the 'Education and childcare' sector",
 		"DisplayType": "OtherPagesInPagesWithSections",
 		"ActivatedByPageId": "7647"
@@ -6132,7 +6652,57 @@
 						}
 					]
 				}
-			}
+			},
+				{
+					"QuestionId": "DAT-7650-4",
+					"QuestionTag": null,
+					"Label": "Is this person part of any other organisations?",
+					"ShortLabel": "",
+					"QuestionBodyText": "",
+					"Hint": "",
+					"Input": {
+						"Type": "ComplexRadio",
+						"Options": [{
+								"Value": "Yes",
+								"Label": "Yes",
+								"HintText": "",
+								"FurtherQuestions": [{
+									"QuestionId": "DAT-7650-4-1",
+									"QuestionTag": null,
+									"Label": "Enter the names of all these organisations",
+									"ShortLabel": "",
+									"QuestionBodyText": "",
+									"Hint": "You also need to include which of these organisations may receive funding directly from ESFA or as a subcontractor.",
+									"Input": {
+										"Type": "Textarea",
+										"Options": [],
+										"Validations": [{
+												"Name": "Required",
+												"Value": "",
+												"ErrorMessage": "Enter the names of all these organisations"
+											},
+											{
+												"Name": "MaxLength",
+												"Value": "750",
+												"ErrorMessage": "Enter the names of all these organisations using 750 characters or less"
+											}
+										]
+									}
+								}]
+							},
+							{
+								"Value": "No",
+								"Label": "No",
+								"HintText": ""
+							}
+						],
+						"Validations": [{
+							"Name": "Required",
+							"Value": "",
+							"ErrorMessage": "Tell us if this person is part of any other organisations"
+						}]
+					}
+				}
 		],
 		"PageOfAnswers": [],
 		"Next": [{
@@ -6452,7 +7022,12 @@
 			"Conditions": []
 		}],
 		"AllowMultipleAnswers": false,
-		"NotRequiredConditions": [],
+		"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Engineering and manufacturing"   
+				]
+			}],
 		"BodyText": "{{DATEngineeringFullName}}'s experience in the 'Engineering and manufacturing' sector",
 		"DisplayType": "OtherPagesInPagesWithSections",
 		"ActivatedByPageId": "7650"
@@ -6516,7 +7091,12 @@
 			}
 		],
 		"AllowMultipleAnswers": false,
-		"NotRequiredConditions": [],
+		"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Engineering and manufacturing"   
+				]
+			}],
 		"BodyText": "{{DATEngineeringFullName}}'s experience in the 'Engineering and manufacturing' sector",
 		"DisplayType": "OtherPagesInPagesWithSections",
 		"ActivatedByPageId": "7651"
@@ -6689,7 +7269,12 @@
 			"Conditions": []
 		}],
 		"AllowMultipleAnswers": false,
-		"NotRequiredConditions": [],
+		"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Engineering and manufacturing"   
+				]
+			}],
 		"BodyText": "{{DATEngineeringFullName}}'s experience in the 'Engineering and manufacturing' sector",
 		"DisplayType": "OtherPagesInPagesWithSections",
 		"ActivatedByPageId": "7652"
@@ -6815,7 +7400,57 @@
 						}
 					]
 				}
-			}
+			},
+				{
+					"QuestionId": "DAT-7655-4",
+					"QuestionTag": null,
+					"Label": "Is this person part of any other organisations?",
+					"ShortLabel": "",
+					"QuestionBodyText": "",
+					"Hint": "",
+					"Input": {
+						"Type": "ComplexRadio",
+						"Options": [{
+								"Value": "Yes",
+								"Label": "Yes",
+								"HintText": "",
+								"FurtherQuestions": [{
+									"QuestionId": "DAT-7655-4-1",
+									"QuestionTag": null,
+									"Label": "Enter the names of all these organisations",
+									"ShortLabel": "",
+									"QuestionBodyText": "",
+									"Hint": "You also need to include which of these organisations may receive funding directly from ESFA or as a subcontractor.",
+									"Input": {
+										"Type": "Textarea",
+										"Options": [],
+										"Validations": [{
+												"Name": "Required",
+												"Value": "",
+												"ErrorMessage": "Enter the names of all these organisations"
+											},
+											{
+												"Name": "MaxLength",
+												"Value": "750",
+												"ErrorMessage": "Enter the names of all these organisations using 750 characters or less"
+											}
+										]
+									}
+								}]
+							},
+							{
+								"Value": "No",
+								"Label": "No",
+								"HintText": ""
+							}
+						],
+						"Validations": [{
+							"Name": "Required",
+							"Value": "",
+							"ErrorMessage": "Tell us if this person is part of any other organisations"
+						}]
+					}
+				}
 		],
 		"PageOfAnswers": [],
 		"Next": [{
@@ -7184,7 +7819,12 @@
 			"Conditions": []
 		}],
 		"AllowMultipleAnswers": false,
-		"NotRequiredConditions": [],
+		"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Hair and Beauty"   
+				]
+			}],
 		"BodyText": "{{DATHairAndBeautyFullName}}'s experience in the 'Hair and Beauty' sector",
 		"DisplayType": "OtherPagesInPagesWithSections",
 		"ActivatedByPageId": "7655"
@@ -7248,7 +7888,12 @@
 			}
 		],
 		"AllowMultipleAnswers": false,
-		"NotRequiredConditions": [],
+		"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Hair and Beauty"   
+				]
+			}],
 		"BodyText": "{{DATHairAndBeautyFullName}}'s experience in the 'Hair and Beauty' sector",
 		"DisplayType": "OtherPagesInPagesWithSections",
 		"ActivatedByPageId": "7656"
@@ -7421,7 +8066,12 @@
 			"Conditions": []
 		}],
 		"AllowMultipleAnswers": false,
-		"NotRequiredConditions": [],
+		"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Hair and Beauty"   
+				]
+			}],
 		"BodyText": "{{DATHairAndBeautyFullName}}'s experience in the 'Hair and Beauty' sector",
 		"DisplayType": "OtherPagesInPagesWithSections",
 		"ActivatedByPageId": "7657"
@@ -7596,7 +8246,57 @@
 						}
 					]
 				}
-			}
+			},
+				{
+					"QuestionId": "DAT-7660-4",
+					"QuestionTag": null,
+					"Label": "Is this person part of any other organisations?",
+					"ShortLabel": "",
+					"QuestionBodyText": "",
+					"Hint": "",
+					"Input": {
+						"Type": "ComplexRadio",
+						"Options": [{
+								"Value": "Yes",
+								"Label": "Yes",
+								"HintText": "",
+								"FurtherQuestions": [{
+									"QuestionId": "DAT-7660-4-1",
+									"QuestionTag": null,
+									"Label": "Enter the names of all these organisations",
+									"ShortLabel": "",
+									"QuestionBodyText": "",
+									"Hint": "You also need to include which of these organisations may receive funding directly from ESFA or as a subcontractor.",
+									"Input": {
+										"Type": "Textarea",
+										"Options": [],
+										"Validations": [{
+												"Name": "Required",
+												"Value": "",
+												"ErrorMessage": "Enter the names of all these organisations"
+											},
+											{
+												"Name": "MaxLength",
+												"Value": "750",
+												"ErrorMessage": "Enter the names of all these organisations using 750 characters or less"
+											}
+										]
+									}
+								}]
+							},
+							{
+								"Value": "No",
+								"Label": "No",
+								"HintText": ""
+							}
+						],
+						"Validations": [{
+							"Name": "Required",
+							"Value": "",
+							"ErrorMessage": "Tell us if this person is part of any other organisations"
+						}]
+					}
+				}
 		],
 		"PageOfAnswers": [],
 		"Next": [{
@@ -7916,7 +8616,12 @@
 			"Conditions": []
 		}],
 		"AllowMultipleAnswers": false,
-		"NotRequiredConditions": [],
+		"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Health and science"   
+				]
+			}],
 		"BodyText": "{{DATHealthAndScienceFullName}}'s experience in the 'Health and science' sector",
 		"DisplayType": "OtherPagesInPagesWithSections",
 		"ActivatedByPageId": "7660"
@@ -7980,7 +8685,12 @@
 			}
 		],
 		"AllowMultipleAnswers": false,
-		"NotRequiredConditions": [],
+		"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Health and science"   
+				]
+			}],
 		"BodyText": "{{DATHealthAndScienceFullName}}'s experience in the 'Health and science' sector",
 		"DisplayType": "OtherPagesInPagesWithSections",
 		"ActivatedByPageId": "7661"
@@ -8153,7 +8863,12 @@
 			"Conditions": []
 		}],
 		"AllowMultipleAnswers": false,
-		"NotRequiredConditions": [],
+		"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Health and science"   
+				]
+			}],
 		"BodyText": "{{DATHealthAndScienceFullName}}'s experience in the 'Health and science' sector",
 		"DisplayType": "OtherPagesInPagesWithSections",
 		"ActivatedByPageId": "7662"
@@ -8328,7 +9043,57 @@
 						}
 					]
 				}
-			}
+			},
+				{
+					"QuestionId": "DAT-7665-4",
+					"QuestionTag": null,
+					"Label": "Is this person part of any other organisations?",
+					"ShortLabel": "",
+					"QuestionBodyText": "",
+					"Hint": "",
+					"Input": {
+						"Type": "ComplexRadio",
+						"Options": [{
+								"Value": "Yes",
+								"Label": "Yes",
+								"HintText": "",
+								"FurtherQuestions": [{
+									"QuestionId": "DAT-7665-4-1",
+									"QuestionTag": null,
+									"Label": "Enter the names of all these organisations",
+									"ShortLabel": "",
+									"QuestionBodyText": "",
+									"Hint": "You also need to include which of these organisations may receive funding directly from ESFA or as a subcontractor.",
+									"Input": {
+										"Type": "Textarea",
+										"Options": [],
+										"Validations": [{
+												"Name": "Required",
+												"Value": "",
+												"ErrorMessage": "Enter the names of all these organisations"
+											},
+											{
+												"Name": "MaxLength",
+												"Value": "750",
+												"ErrorMessage": "Enter the names of all these organisations using 750 characters or less"
+											}
+										]
+									}
+								}]
+							},
+							{
+								"Value": "No",
+								"Label": "No",
+								"HintText": ""
+							}
+						],
+						"Validations": [{
+							"Name": "Required",
+							"Value": "",
+							"ErrorMessage": "Tell us if this person is part of any other organisations"
+						}]
+					}
+				}
 		],
 		"PageOfAnswers": [],
 		"Next": [{
@@ -8648,7 +9413,12 @@
 			"Conditions": []
 		}],
 		"AllowMultipleAnswers": false,
-		"NotRequiredConditions": [],
+		"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Legal&comma; finance and accounting"   
+				]
+			}],
 		"BodyText": "{{DATLegalFullName}}'s experience in the 'Legal, finance and accounting' sector",
 		"DisplayType": "OtherPagesInPagesWithSections",
 		"ActivatedByPageId": "7665"
@@ -8712,7 +9482,12 @@
 			}
 		],
 		"AllowMultipleAnswers": false,
-		"NotRequiredConditions": [],
+		"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Legal&comma; finance and accounting"   
+				]
+			}],
 		"BodyText": "{{DATLegalFullName}}'s experience in the 'Legal, finance and accounting' sector",
 		"DisplayType": "OtherPagesInPagesWithSections",
 		"ActivatedByPageId": "7666"
@@ -8885,7 +9660,12 @@
 			"Conditions": []
 		}],
 		"AllowMultipleAnswers": false,
-		"NotRequiredConditions": [],
+		"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Legal&comma; finance and accounting"   
+				]
+			}],
 		"BodyText": "{{DATLegalFullName}}'s experience in the 'Legal, finance and accounting' sector",
 		"DisplayType": "OtherPagesInPagesWithSections",
 		"ActivatedByPageId": "7667"
@@ -9060,7 +9840,57 @@
 						}
 					]
 				}
-			}
+			},
+				{
+					"QuestionId": "DAT-7670-4",
+					"QuestionTag": null,
+					"Label": "Is this person part of any other organisations?",
+					"ShortLabel": "",
+					"QuestionBodyText": "",
+					"Hint": "",
+					"Input": {
+						"Type": "ComplexRadio",
+						"Options": [{
+								"Value": "Yes",
+								"Label": "Yes",
+								"HintText": "",
+								"FurtherQuestions": [{
+									"QuestionId": "DAT-7670-4-1",
+									"QuestionTag": null,
+									"Label": "Enter the names of all these organisations",
+									"ShortLabel": "",
+									"QuestionBodyText": "",
+									"Hint": "You also need to include which of these organisations may receive funding directly from ESFA or as a subcontractor.",
+									"Input": {
+										"Type": "Textarea",
+										"Options": [],
+										"Validations": [{
+												"Name": "Required",
+												"Value": "",
+												"ErrorMessage": "Enter the names of all these organisations"
+											},
+											{
+												"Name": "MaxLength",
+												"Value": "750",
+												"ErrorMessage": "Enter the names of all these organisations using 750 characters or less"
+											}
+										]
+									}
+								}]
+							},
+							{
+								"Value": "No",
+								"Label": "No",
+								"HintText": ""
+							}
+						],
+						"Validations": [{
+							"Name": "Required",
+							"Value": "",
+							"ErrorMessage": "Tell us if this person is part of any other organisations"
+						}]
+					}
+				}
 		],
 		"PageOfAnswers": [],
 		"Next": [{
@@ -9380,7 +10210,12 @@
 			"Conditions": []
 		}],
 		"AllowMultipleAnswers": false,
-		"NotRequiredConditions": [],
+		"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Protective services"   
+				]
+			}],
 		"BodyText": "{{DATProtectiveServicesFullName}}'s experience in the 'Protective services' sector",
 		"DisplayType": "OtherPagesInPagesWithSections",
 		"ActivatedByPageId": "7670"
@@ -9444,7 +10279,12 @@
 			}
 		],
 		"AllowMultipleAnswers": false,
-		"NotRequiredConditions": [],
+		"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Protective services"   
+				]
+			}],
 		"BodyText": "{{DATProtectiveServicesFullName}}'s experience in the 'Protective services' sector",
 		"DisplayType": "OtherPagesInPagesWithSections",
 		"ActivatedByPageId": "7671"
@@ -9617,7 +10457,12 @@
 			"Conditions": []
 		}],
 		"AllowMultipleAnswers": false,
-		"NotRequiredConditions": [],
+		"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Protective services"   
+				]
+			}],
 		"BodyText": "{{DATProtectiveServicesFullName}}'s experience in the 'Protective services' sector",
 		"DisplayType": "OtherPagesInPagesWithSections",
 		"ActivatedByPageId": "7672"
@@ -9792,7 +10637,57 @@
 						}
 					]
 				}
-			}
+			},
+				{
+					"QuestionId": "DAT-7675-4",
+					"QuestionTag": null,
+					"Label": "Is this person part of any other organisations?",
+					"ShortLabel": "",
+					"QuestionBodyText": "",
+					"Hint": "",
+					"Input": {
+						"Type": "ComplexRadio",
+						"Options": [{
+								"Value": "Yes",
+								"Label": "Yes",
+								"HintText": "",
+								"FurtherQuestions": [{
+									"QuestionId": "DAT-7675-4-1",
+									"QuestionTag": null,
+									"Label": "Enter the names of all these organisations",
+									"ShortLabel": "",
+									"QuestionBodyText": "",
+									"Hint": "You also need to include which of these organisations may receive funding directly from ESFA or as a subcontractor.",
+									"Input": {
+										"Type": "Textarea",
+										"Options": [],
+										"Validations": [{
+												"Name": "Required",
+												"Value": "",
+												"ErrorMessage": "Enter the names of all these organisations"
+											},
+											{
+												"Name": "MaxLength",
+												"Value": "750",
+												"ErrorMessage": "Enter the names of all these organisations using 750 characters or less"
+											}
+										]
+									}
+								}]
+							},
+							{
+								"Value": "No",
+								"Label": "No",
+								"HintText": ""
+							}
+						],
+						"Validations": [{
+							"Name": "Required",
+							"Value": "",
+							"ErrorMessage": "Tell us if this person is part of any other organisations"
+						}]
+					}
+				}
 		],
 		"PageOfAnswers": [],
 		"Next": [{
@@ -10112,7 +11007,12 @@
 			"Conditions": []
 		}],
 		"AllowMultipleAnswers": false,
-		"NotRequiredConditions": [],
+		"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Sales&comma; marketing and procurement"   
+				]
+			}],
 		"BodyText": "{{DATSalesFullName}}'s experience in the 'Sales, marketing and procurement' sector",
 		"DisplayType": "OtherPagesInPagesWithSections",
 		"ActivatedByPageId": "7675"
@@ -10176,7 +11076,12 @@
 			}
 		],
 		"AllowMultipleAnswers": false,
-		"NotRequiredConditions": [],
+		"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Sales&comma; marketing and procurement"   
+				]
+			}],
 		"BodyText": "{{DATSalesFullName}}'s experience in the 'Sales, marketing and procurement' sector",
 		"DisplayType": "OtherPagesInPagesWithSections",
 		"ActivatedByPageId": "7676"
@@ -10349,7 +11254,12 @@
 			"Conditions": []
 		}],
 		"AllowMultipleAnswers": false,
-		"NotRequiredConditions": [],
+		"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Sales&comma; marketing and procurement"   
+				]
+			}],
 		"BodyText": "{{DATSalesFullName}}'s experience in the 'Sales, marketing and procurement' sector",
 		"DisplayType": "OtherPagesInPagesWithSections",
 		"ActivatedByPageId": "7677"
@@ -10524,7 +11434,57 @@
 						}
 					]
 				}
-			}
+			},
+				{
+					"QuestionId": "DAT-7680-4",
+					"QuestionTag": null,
+					"Label": "Is this person part of any other organisations?",
+					"ShortLabel": "",
+					"QuestionBodyText": "",
+					"Hint": "",
+					"Input": {
+						"Type": "ComplexRadio",
+						"Options": [{
+								"Value": "Yes",
+								"Label": "Yes",
+								"HintText": "",
+								"FurtherQuestions": [{
+									"QuestionId": "DAT-7680-4-1",
+									"QuestionTag": null,
+									"Label": "Enter the names of all these organisations",
+									"ShortLabel": "",
+									"QuestionBodyText": "",
+									"Hint": "You also need to include which of these organisations may receive funding directly from ESFA or as a subcontractor.",
+									"Input": {
+										"Type": "Textarea",
+										"Options": [],
+										"Validations": [{
+												"Name": "Required",
+												"Value": "",
+												"ErrorMessage": "Enter the names of all these organisations"
+											},
+											{
+												"Name": "MaxLength",
+												"Value": "750",
+												"ErrorMessage": "Enter the names of all these organisations using 750 characters or less"
+											}
+										]
+									}
+								}]
+							},
+							{
+								"Value": "No",
+								"Label": "No",
+								"HintText": ""
+							}
+						],
+						"Validations": [{
+							"Name": "Required",
+							"Value": "",
+							"ErrorMessage": "Tell us if this person is part of any other organisations"
+						}]
+					}
+				}
 		],
 		"PageOfAnswers": [],
 		"Next": [{
@@ -10844,7 +11804,12 @@
 			"Conditions": []
 		}],
 		"AllowMultipleAnswers": false,
-		"NotRequiredConditions": [],
+		"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Transport and logistics"   
+				]
+			}],
 		"BodyText": "{{DATTransportFullName}}'s experience in the 'Transport and logistics' sector",
 		"DisplayType": "OtherPagesInPagesWithSections",
 		"ActivatedByPageId": "7680"
@@ -10908,7 +11873,12 @@
 			}
 		],
 		"AllowMultipleAnswers": false,
-		"NotRequiredConditions": [],
+		"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Transport and logistics"   
+				]
+			}],
 		"BodyText": "{{DATTransportFullName}}'s experience in the 'Transport and logistics' sector",
 		"DisplayType": "OtherPagesInPagesWithSections",
 		"ActivatedByPageId": "7681"
@@ -11081,7 +12051,12 @@
 			"Conditions": []
 		}],
 		"AllowMultipleAnswers": false,
-		"NotRequiredConditions": [],
+		"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Transport and logistics"   
+				]
+			}],
 		"BodyText": "{{DATTransportFullName}}'s experience in the 'Transport and logistics' sector",
 		"DisplayType": "OtherPagesInPagesWithSections",
 		"ActivatedByPageId": "7682"
