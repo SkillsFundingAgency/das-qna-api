@@ -1,13 +1,13 @@
 {
-	"Title": "Your sectors and employees",
+	"Title": "Sectors and employee experience",
 	"LinkTitle": "Sectors and employee experience",
 	"DisplayType": "PagesWithSections",
 	"Pages": [{
 			"PageId": "7600",
 			"SequenceId": null,
 			"SectionId": null,
-			"Title": "1. Sectors",
-			"LinkTitle": "Choose your organisation's sectors",
+			"Title": "1. Your organisation's sectors",
+			"LinkTitle": "Choose sectors",
 			"InfoText": "",
 			"Questions": [{
 				"QuestionId": "DAT-7600",
@@ -17,7 +17,7 @@
 				"ShortLabel": "",
 				"Hint": "Select all that apply.",
 				"Input": {
-					"Type": "CheckBoxList",
+					"Type": "CheckboxList",
 					"Options": [{
 							"Value": "Agriculture&comma; environmental and animal care",
 							"Label": "Agriculture, environmental and animal care"
@@ -99,10 +99,108 @@
 			"ActivatedByPageId": null
 		},
 		{
+			"PageId": "7610A",
+			"SequenceId": null,
+			"SectionId": null,
+			"Title": "2. Delivering training in sectors",
+			"LinkTitle": "Agriculture, environmental and animal care",
+			"InfoText": "",
+			"Questions": [{
+					"QuestionId": "DAT-7610A-1",
+					"QuestionTag": "DATAgricultureHowManyStarts",
+					"Label": "How many starts does your organisation forecast in the 'Agriculture, environmental and animal care' sector in the first 12 months of joining the RoATP?",
+					"ShortLabel": "",
+					"QuestionBodyText": "",
+					"Hint": "Enter number of starts",
+					"Input": {
+						"Type": "Text",
+						"InputClasses": "govuk-input--width-4",
+						"Validations": [{
+								"Name": "Required",
+								"Value": "",
+								"ErrorMessage": "Enter number of starts in this sector"
+							},
+							  {
+								"Name": "Regex",
+								"Value": "^[0]*[1-9]{1}[0-9]{0,2}$",
+								"ErrorMessage": "Enter number of starts in this sector using 3 digits or less"
+							  }
+						]
+					}
+				}
+			],
+			"PageOfAnswers": [],
+			"Next": [{
+				"Action": "NextPage",
+				"ReturnId": "7610B",
+				"Conditions": []
+			}],
+			"AllowMultipleAnswers": false,
+			"Active": true,
+			"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Agriculture&comma; environmental and animal care"
+				]
+			}],
+			"BodyText": "",
+			"DisplayType": "PagesWithSections",
+			"ActivatedByPageId": null
+		},
+		{
+			"PageId": "7610B",
+			"SequenceId": null,
+			"SectionId": null,
+			"Title": "2. Delivering training in sectors",
+			"LinkTitle": "Agriculture, environmental and animal care",
+			"InfoText": "",
+			"Questions": [{
+					"QuestionId": "DAT-7610B-1",
+					"QuestionTag": "DATAgricultureHowManyEmployees",
+					"Label": "How many employees will deliver training in the 'Agriculture, environmental and animal care' sector?",
+					"ShortLabel": "",
+					"QuestionBodyText": "",
+					"Hint": "Enter number of employees",
+					"Input": {
+						"Type": "Text",
+						"InputClasses": "govuk-input--width-4",
+						"Validations": [{
+								"Name": "Required",
+								"Value": "",
+								"ErrorMessage": "Enter number of employees in this sector"
+							},
+							  {
+								"Name": "Regex",
+								"Value": "^[0]*[1-9]{1}[0-9]{0,2}$",
+								"ErrorMessage": "Enter number of employees in this sector using 3 digits or less"
+							  }
+						]
+					}
+				}
+			],
+			"PageOfAnswers": [],
+			"Next": [{
+				"Action": "NextPage",
+				"ReturnId": "7610",
+				"Conditions": []
+			}],
+			"AllowMultipleAnswers": false,
+			"Active": false,
+			"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Agriculture&comma; environmental and animal care"
+				]
+			}],
+			"BodyText": "",
+			"DisplayType": "OtherPagesInPagesWithSections",
+			"ActivatedByPageId": "7610A"
+		},
+		{
 			"PageId": "7610",
 			"SequenceId": null,
 			"SectionId": null,
-			"Title": "2. Add the most experienced employee for each sector",
+			"Title": "2. Delivering training in sectors",
 			"LinkTitle": "Agriculture, environmental and animal care",
 			"InfoText": "",
 			"Questions": [{
@@ -179,7 +277,7 @@
 				"Conditions": []
 			}],
 			"AllowMultipleAnswers": false,
-			"Active": true,
+			"Active": false,
 			"NotRequiredConditions": [{
 				"Field": "SectorsChosen",
 				"DoesNotContain": [
@@ -187,14 +285,14 @@
 				]
 			}],
 			"BodyText": "Who's the most experienced employee in the 'Agriculture, environmental and animal care' sector?",
-			"DisplayType": "PagesWithSections",
-			"ActivatedByPageId": null
+			"DisplayType": "OtherPagesInPagesWithSections",
+			"ActivatedByPageId": "7610B"
 		},
 		{
 			"PageId": "7611",
 			"SequenceId": null,
 			"SectionId": null,
-			"Title": "2. Add the most experienced employee for each sector",
+			"Title": "2. Delivering training in sectors",
 			"LinkTitle": "{{DATAgricultureFullName}}'s experience in the 'Agriculture, environmental and animal care' sector",
 			"InfoText": "",
 			"Questions": [{
@@ -500,7 +598,7 @@
 			"PageId": "7612",
 			"SequenceId": null,
 			"SectionId": null,
-			"Title": "2. Add the most experienced employee for each sector",
+			"Title": "2. Delivering training in sectors",
 			"LinkTitle": "{{DATAgricultureFullName}}'s experience in the 'Agriculture, environmental and animal care' sector",
 			"InfoText": "",
 			"Questions": [{
@@ -568,7 +666,7 @@
 			"PageId": "7613",
 			"SequenceId": null,
 			"SectionId": null,
-			"Title": "2. Add the most experienced employee for each sector",
+			"Title": "2. Delivering training in sectors",
 			"LinkTitle": "{{DATAgricultureFullName}}'s experience in the 'Agriculture, environmental and animal care' sector",
 			"InfoText": "",
 			"Questions": [{
@@ -579,7 +677,7 @@
 					"QuestionBodyText": "",
 					"Hint": "",
 					"Input": {
-						"Type": "ComplexCheckBoxList",
+						"Type": "ComplexCheckboxList",
 						"Options": [{
 								"Value": "Classroom-based training",
 								"Label": "Classroom-based training",
@@ -740,10 +838,108 @@
 			"ActivatedByPageId": "7612"
 		},
 		{
+			"PageId": "7615A",
+			"SequenceId": null,
+			"SectionId": null,
+			"Title": "2. Delivering training in sectors",
+			"LinkTitle": "Business and administration",
+			"InfoText": "",
+			"Questions": [{
+					"QuestionId": "DAT-7615A-1",
+					"QuestionTag": "DATBusinessHowManyStarts",
+					"Label": "How many starts does your organisation forecast in the 'Business and administration' sector in the first 12 months of joining the RoATP?",
+					"ShortLabel": "",
+					"QuestionBodyText": "",
+					"Hint": "Enter number of starts",
+					"Input": {
+						"Type": "Text",
+						"InputClasses": "govuk-input--width-4",
+						"Validations": [{
+								"Name": "Required",
+								"Value": "",
+								"ErrorMessage": "Enter number of starts in this sector"
+							},
+							  {
+								"Name": "Regex",
+								"Value": "^[0]*[1-9]{1}[0-9]{0,2}$",
+								"ErrorMessage": "Enter number of starts in this sector using 3 digits or less"
+							  }
+						]
+					}
+				}
+			],
+			"PageOfAnswers": [],
+			"Next": [{
+				"Action": "NextPage",
+				"ReturnId": "7615B",
+				"Conditions": []
+			}],
+			"AllowMultipleAnswers": false,
+			"Active": true,
+			"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Business and administration"
+				]
+			}],
+			"BodyText": "",
+			"DisplayType": "PagesWithSections",
+			"ActivatedByPageId": null
+		},
+		{
+			"PageId": "7615B",  
+			"SequenceId": null,
+			"SectionId": null,
+			"Title": "2. Delivering training in sectors",
+			"LinkTitle": "Business and administration", 
+			"InfoText": "",
+			"Questions": [{
+					"QuestionId": "DAT-7615B-1",
+					"QuestionTag": "DATBusinessHowManyEmployees", 
+					"Label": "How many employees will deliver training in the 'Business and administration' sector?",   
+					"ShortLabel": "",
+					"QuestionBodyText": "",
+					"Hint": "Enter number of employees",
+					"Input": {
+						"Type": "Text",
+						"InputClasses": "govuk-input--width-4",
+						"Validations": [{
+								"Name": "Required",
+								"Value": "",
+								"ErrorMessage": "Enter number of employees in this sector"
+							},
+							  {
+								"Name": "Regex",
+								"Value": "^[0]*[1-9]{1}[0-9]{0,2}$",
+								"ErrorMessage": "Enter number of employees in this sector using 3 digits or less"
+							  }
+						]
+					}
+				}
+			],
+			"PageOfAnswers": [],
+			"Next": [{
+				"Action": "NextPage",
+				"ReturnId": "7615",    
+				"Conditions": []
+			}],
+			"AllowMultipleAnswers": false,
+			"Active": false,
+			"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Business and administration"  
+				]
+			}],
+			"BodyText": "",
+			"DisplayType": "OtherPagesInPagesWithSections",
+			"ActivatedByPageId": "7615A"   
+		},
+		{
 		"PageId": "7615",
 		"SequenceId": null,
 		"SectionId": null,
-		"Title": "2. Add the most experienced employee for each sector",
+		"Title": "2. Delivering training in sectors",
 		"LinkTitle": "Business and administration",
 		"InfoText": "",
 		"Questions": [{
@@ -820,7 +1016,7 @@
 			"Conditions": []
 		}],
 		"AllowMultipleAnswers": false,
-		"Active": true,
+		"Active": false,
 		"NotRequiredConditions": [{
 			"Field": "SectorsChosen",
 			"DoesNotContain": [
@@ -828,14 +1024,14 @@
 			]
 		}],
 		"BodyText": "Who's the most experienced employee in the 'Business and administration' sector?",
-		"DisplayType": "PagesWithSections",
-		"ActivatedByPageId": null
+		"DisplayType": "OtherPagesInPagesWithSections",
+		"ActivatedByPageId": "7615B"
 	},
 	{
 		"PageId": "7616",
 		"SequenceId": null,
 		"SectionId": null,
-		"Title": "2. Add the most experienced employee for each sector",
+		"Title": "2. Delivering training in sectors",
 		"LinkTitle": "{{DATBusinessFullName}}'s experience in the 'Business and administration' sector",
 		"InfoText": "",
 		"Questions": [{
@@ -1139,7 +1335,7 @@
 		"PageId": "7617",
 		"SequenceId": null,
 		"SectionId": null,
-		"Title": "2. Add the most experienced employee for each sector",
+		"Title": "2. Delivering training in sectors",
 		"LinkTitle": "{{DATBusinessFullName}}'s experience in the 'Business and administration' sector",
 		"InfoText": "",
 		"Questions": [{
@@ -1203,7 +1399,7 @@
 		"PageId": "7618",
 		"SequenceId": null,
 		"SectionId": null,
-		"Title": "2. Add the most experienced employee for each sector",
+		"Title": "2. Delivering training in sectors",
 		"LinkTitle": "{{DATBusinessFullName}}'s experience in the 'Business and administration' sector",
 		"InfoText": "",
 		"Questions": [{
@@ -1214,7 +1410,7 @@
 				"QuestionBodyText": "",
 				"Hint": "",
 				"Input": {
-					"Type": "ComplexCheckBoxList",
+					"Type": "ComplexCheckboxList",
 					"Options": [{
 							"Value": "Classroom-based training",
 							"Label": "Classroom-based training",
@@ -1374,10 +1570,108 @@
 		"ActivatedByPageId": "7617"
 	},
 	{
+			"PageId": "7620A",
+			"SequenceId": null,
+			"SectionId": null,
+			"Title": "2. Delivering training in sectors",
+			"LinkTitle": "Care Services",   
+			"InfoText": "",
+			"Questions": [{
+					"QuestionId": "DAT-7620A-1", 
+					"QuestionTag": "DATCareServicesHowManyStarts", 
+					"Label": "How many starts does your organisation forecast in the 'Care Services' sector in the first 12 months of joining the RoATP?", 
+					"ShortLabel": "",
+					"QuestionBodyText": "",
+					"Hint": "Enter number of starts",
+					"Input": {
+						"Type": "Text",
+						"InputClasses": "govuk-input--width-4",
+						"Validations": [{
+								"Name": "Required",
+								"Value": "",
+								"ErrorMessage": "Enter number of starts in this sector"
+							},
+							  {
+								"Name": "Regex",
+								"Value": "^[0]*[1-9]{1}[0-9]{0,2}$",
+								"ErrorMessage": "Enter number of starts in this sector using 3 digits or less"
+							  }
+						]
+					}
+				}
+			],
+			"PageOfAnswers": [],
+			"Next": [{
+				"Action": "NextPage",
+				"ReturnId": "7620B",    
+				"Conditions": []
+			}],
+			"AllowMultipleAnswers": false,
+			"Active": true,
+			"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Care Services"   
+				]
+			}],
+			"BodyText": "", 
+			"DisplayType": "PagesWithSections",   
+			"ActivatedByPageId": null
+		},
+		{
+			"PageId": "7620B",  
+			"SequenceId": null,
+			"SectionId": null,
+			"Title": "2. Delivering training in sectors",
+			"LinkTitle": "Care services", 
+			"InfoText": "",
+			"Questions": [{
+					"QuestionId": "DAT-7620B-1", 
+					"QuestionTag": "DATCareServicesHowManyEmployees", 
+					"Label": "How many employees will deliver training in the 'Care services' sector?",   
+					"ShortLabel": "",
+					"QuestionBodyText": "",
+					"Hint": "Enter number of employees",
+					"Input": {
+						"Type": "Text",
+						"InputClasses": "govuk-input--width-4",
+						"Validations": [{
+								"Name": "Required",
+								"Value": "",
+								"ErrorMessage": "Enter number of employees in this sector"
+							},
+							  {
+								"Name": "Regex",
+								"Value": "^[0]*[1-9]{1}[0-9]{0,2}$",
+								"ErrorMessage": "Enter number of employees in this sector using 3 digits or less"
+							  }
+						]
+					}
+				}
+			],
+			"PageOfAnswers": [],
+			"Next": [{
+				"Action": "NextPage",
+				"ReturnId": "7620",    
+				"Conditions": []
+			}],
+			"AllowMultipleAnswers": false,
+			"Active": false,
+			"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Care services"  
+				]
+			}],
+			"BodyText": "",
+			"DisplayType": "OtherPagesInPagesWithSections",
+			"ActivatedByPageId": "7620A"   
+		},
+		{
 		"PageId": "7620",
 		"SequenceId": null,
 		"SectionId": null,
-		"Title": "2. Add the most experienced employee for each sector",
+		"Title": "2. Delivering training in sectors",
 		"LinkTitle": "Care Services",
 		"InfoText": "",
 		"Questions": [{
@@ -1454,7 +1748,7 @@
 			"Conditions": []
 		}],
 		"AllowMultipleAnswers": false,
-		"Active": true,
+		"Active": false,
 		"NotRequiredConditions": [{
 			"Field": "SectorsChosen",
 			"DoesNotContain": [
@@ -1462,14 +1756,14 @@
 			]
 		}],
 		"BodyText": "Who's the most experienced employee in the 'Care Services' sector?",
-		"DisplayType": "PagesWithSections",
-		"ActivatedByPageId": null
+		"DisplayType": "OtherPagesInPagesWithSections",
+		"ActivatedByPageId": "7620B"
 	},
 	{
 		"PageId": "7621",
 		"SequenceId": null,
 		"SectionId": null,
-		"Title": "2. Add the most experienced employee for each sector",
+		"Title": "2. Delivering training in sectors",
 		"LinkTitle": "{{DATCareServicesFullName}}'s experience in the 'Care Services' sector",
 		"InfoText": "",
 		"Questions": [{
@@ -1773,7 +2067,7 @@
 		"PageId": "7622",
 		"SequenceId": null,
 		"SectionId": null,
-		"Title": "2. Add the most experienced employee for each sector",
+		"Title": "2. Delivering training in sectors",
 		"LinkTitle": "{{DATCareServicesFullName}}'s experience in the 'Care Services' sector",
 		"InfoText": "",
 		"Questions": [{
@@ -1837,7 +2131,7 @@
 		"PageId": "7623",
 		"SequenceId": null,
 		"SectionId": null,
-		"Title": "2. Add the most experienced employee for each sector",
+		"Title": "2. Delivering training in sectors",
 		"LinkTitle": "{{DATCareServicesFullName}}'s experience in the 'Care Services' sector",
 		"InfoText": "",
 		"Questions": [{
@@ -1848,7 +2142,7 @@
 				"QuestionBodyText": "",
 				"Hint": "",
 				"Input": {
-					"Type": "ComplexCheckBoxList",
+					"Type": "ComplexCheckboxList",
 					"Options": [{
 							"Value": "Classroom-based training",
 							"Label": "Classroom-based training",
@@ -2008,10 +2302,108 @@
 		"ActivatedByPageId": "7622"
 	},
 	{
+			"PageId": "7625A", 
+			"SequenceId": null,
+			"SectionId": null,
+			"Title": "2. Delivering training in sectors",
+			"LinkTitle": "Catering and hospitality",   
+			"InfoText": "",
+			"Questions": [{
+					"QuestionId": "DAT-7625A-1", 
+					"QuestionTag": "DATCateringHowManyStarts", 
+					"Label": "How many starts does your organisation forecast in the 'Catering and hospitality' sector in the first 12 months of joining the RoATP?",
+					"ShortLabel": "",
+					"QuestionBodyText": "",
+					"Hint": "Enter number of starts",
+					"Input": {
+						"Type": "Text",
+						"InputClasses": "govuk-input--width-4",
+						"Validations": [{
+								"Name": "Required",
+								"Value": "",
+								"ErrorMessage": "Enter number of starts in this sector"
+							},
+							  {
+								"Name": "Regex",
+								"Value": "^[0]*[1-9]{1}[0-9]{0,2}$",
+								"ErrorMessage": "Enter number of starts in this sector using 3 digits or less"
+							  }
+						]
+					}
+				}
+			],
+			"PageOfAnswers": [],
+			"Next": [{
+				"Action": "NextPage",
+				"ReturnId": "7625B",    
+				"Conditions": []
+			}],
+			"AllowMultipleAnswers": false,
+			"Active": true,
+			"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Catering and hospitality"   
+				]
+			}],
+			"BodyText": "", 
+			"DisplayType": "PagesWithSections",   
+			"ActivatedByPageId": null
+		},
+		{
+			"PageId": "7625B",  
+			"SequenceId": null,
+			"SectionId": null,
+			"Title": "2. Delivering training in sectors",
+			"LinkTitle": "Catering and hospitality", 
+			"InfoText": "",
+			"Questions": [{
+					"QuestionId": "DAT-7625B-1", 
+					"QuestionTag": "DATCateringHowManyEmployees", 
+					"Label": "How many employees will deliver training in the 'Catering and hospitality' sector?",   
+					"ShortLabel": "",
+					"QuestionBodyText": "",
+					"Hint": "Enter number of employees",
+					"Input": {
+						"Type": "Text",
+						"InputClasses": "govuk-input--width-4",
+						"Validations": [{
+								"Name": "Required",
+								"Value": "",
+								"ErrorMessage": "Enter number of employees in this sector"
+							},
+							  {
+								"Name": "Regex",
+								"Value": "^[0]*[1-9]{1}[0-9]{0,2}$",
+								"ErrorMessage": "Enter number of employees in this sector using 3 digits or less"
+							  }
+						]
+					}
+				}
+			],
+			"PageOfAnswers": [],
+			"Next": [{
+				"Action": "NextPage",
+				"ReturnId": "7625",    
+				"Conditions": []
+			}],
+			"AllowMultipleAnswers": false,
+			"Active": false,
+			"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Catering and hospitality"  
+				]
+			}],
+			"BodyText": "",
+			"DisplayType": "OtherPagesInPagesWithSections",
+			"ActivatedByPageId": "7625A"   
+		},
+	{
 		"PageId": "7625",
 		"SequenceId": null,
 		"SectionId": null,
-		"Title": "2. Add the most experienced employee for each sector",
+		"Title": "2. Delivering training in sectors",
 		"LinkTitle": "Catering and hospitality",
 		"InfoText": "",
 		"Questions": [{
@@ -2088,7 +2480,7 @@
 			"Conditions": []
 		}],
 		"AllowMultipleAnswers": false,
-		"Active": true,
+		"Active": false,
 		"NotRequiredConditions": [{
 			"Field": "SectorsChosen",
 			"DoesNotContain": [
@@ -2096,14 +2488,14 @@
 			]
 		}],
 		"BodyText": "Who's the most experienced employee in the 'Catering and hospitality' sector?",
-		"DisplayType": "PagesWithSections",
-		"ActivatedByPageId": null
+		"DisplayType": "OtherPagesInPagesWithSections",
+		"ActivatedByPageId": "7625B"
 	},
 	{
 		"PageId": "7626",
 		"SequenceId": null,
 		"SectionId": null,
-		"Title": "2. Add the most experienced employee for each sector",
+		"Title": "2. Delivering training in sectors",
 		"LinkTitle": "{{DATCateringFullName}}'s experience in the 'Catering and hospitality' sector",
 		"InfoText": "",
 		"Questions": [{
@@ -2407,7 +2799,7 @@
 		"PageId": "7627",
 		"SequenceId": null,
 		"SectionId": null,
-		"Title": "2. Add the most experienced employee for each sector",
+		"Title": "2. Delivering training in sectors",
 		"LinkTitle": "{{DATCateringFullName}}'s experience in the 'Catering and hospitality' sector",
 		"InfoText": "",
 		"Questions": [{
@@ -2471,7 +2863,7 @@
 		"PageId": "7628",
 		"SequenceId": null,
 		"SectionId": null,
-		"Title": "2. Add the most experienced employee for each sector",
+		"Title": "2. Delivering training in sectors",
 		"LinkTitle": "{{DATCateringFullName}}'s experience in the 'Catering and hospitality' sector",
 		"InfoText": "",
 		"Questions": [{
@@ -2482,7 +2874,7 @@
 				"QuestionBodyText": "",
 				"Hint": "",
 				"Input": {
-					"Type": "ComplexCheckBoxList",
+					"Type": "ComplexCheckboxList",
 					"Options": [{
 							"Value": "Classroom-based training",
 							"Label": "Classroom-based training",
@@ -2642,10 +3034,108 @@
 		"ActivatedByPageId": "7627"
 	},
 	{
+			"PageId": "7630A", 
+			"SequenceId": null,
+			"SectionId": null,
+			"Title": "2. Delivering training in sectors",
+			"LinkTitle": "Construction",   
+			"InfoText": "",
+			"Questions": [{
+					"QuestionId": "DAT-7630A-1", 
+					"QuestionTag": "DATConstructionHowManyStarts", 
+					"Label": "How many starts does your organisation forecast in the 'Construction' sector in the first 12 months of joining the RoATP?", 
+					"ShortLabel": "",
+					"QuestionBodyText": "",
+					"Hint": "Enter number of starts",
+					"Input": {
+						"Type": "Text",
+						"InputClasses": "govuk-input--width-4",
+						"Validations": [{
+								"Name": "Required",
+								"Value": "",
+								"ErrorMessage": "Enter number of starts in this sector"
+							},
+							  {
+								"Name": "Regex",
+								"Value": "^[0]*[1-9]{1}[0-9]{0,2}$",
+								"ErrorMessage": "Enter number of starts in this sector using 3 digits or less"
+							  }
+						]
+					}
+				}
+			],
+			"PageOfAnswers": [],
+			"Next": [{
+				"Action": "NextPage",
+				"ReturnId": "7630B",    
+				"Conditions": []
+			}],
+			"AllowMultipleAnswers": false,
+			"Active": true,
+			"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Construction"   
+				]
+			}],
+			"BodyText": "", 
+			"DisplayType": "PagesWithSections",   
+			"ActivatedByPageId": null
+		},
+		{
+			"PageId": "7630B",  
+			"SequenceId": null,
+			"SectionId": null,
+			"Title": "2. Delivering training in sectors",
+			"LinkTitle": "Construction",
+			"InfoText": "",
+			"Questions": [{
+					"QuestionId": "DAT-7630B-1", 
+					"QuestionTag": "DATConstructionHowManyEmployees", 
+					"Label": "How many employees will deliver training in the 'Construction' sector?",   
+					"ShortLabel": "",
+					"QuestionBodyText": "",
+					"Hint": "Enter number of employees",
+					"Input": {
+						"Type": "Text",
+						"InputClasses": "govuk-input--width-4",
+						"Validations": [{
+								"Name": "Required",
+								"Value": "",
+								"ErrorMessage": "Enter number of employees in this sector"
+							},
+							  {
+								"Name": "Regex",
+								"Value": "^[0]*[1-9]{1}[0-9]{0,2}$",
+								"ErrorMessage": "Enter number of employees in this sector using 3 digits or less"
+							  }
+						]
+					}
+				}
+			],
+			"PageOfAnswers": [],
+			"Next": [{
+				"Action": "NextPage",
+				"ReturnId": "7630",    
+				"Conditions": []
+			}],
+			"AllowMultipleAnswers": false,
+			"Active": false,
+			"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Construction"  
+				]
+			}],
+			"BodyText": "",
+			"DisplayType": "OtherPagesInPagesWithSections",
+			"ActivatedByPageId": "7630A"  
+		},
+	{
 		"PageId": "7630",
 		"SequenceId": null,
 		"SectionId": null,
-		"Title": "2. Add the most experienced employee for each sector",
+		"Title": "2. Delivering training in sectors",
 		"LinkTitle": "Construction",
 		"InfoText": "",
 		"Questions": [{
@@ -2722,7 +3212,7 @@
 			"Conditions": []
 		}],
 		"AllowMultipleAnswers": false,
-		"Active": true,
+		"Active": false,
 		"NotRequiredConditions": [{
 			"Field": "SectorsChosen",
 			"DoesNotContain": [
@@ -2730,14 +3220,14 @@
 			]
 		}],
 		"BodyText": "Who's the most experienced employee in the 'Construction' sector?",
-		"DisplayType": "PagesWithSections",
-		"ActivatedByPageId": null
+		"DisplayType": "OtherPagesInPagesWithSections",
+		"ActivatedByPageId": "7630B"
 	},
 	{
 		"PageId": "7631",
 		"SequenceId": null,
 		"SectionId": null,
-		"Title": "2. Add the most experienced employee for each sector",
+		"Title": "2. Delivering training in sectors",
 		"LinkTitle": "{{DATConstructionFullName}}'s experience in the 'Construction' sector",
 		"InfoText": "",
 		"Questions": [{
@@ -3041,7 +3531,7 @@
 		"PageId": "7632",
 		"SequenceId": null,
 		"SectionId": null,
-		"Title": "2. Add the most experienced employee for each sector",
+		"Title": "2. Delivering training in sectors",
 		"LinkTitle": "{{DATConstructionFullName}}'s experience in the 'Construction' sector",
 		"InfoText": "",
 		"Questions": [{
@@ -3105,7 +3595,7 @@
 		"PageId": "7633",
 		"SequenceId": null,
 		"SectionId": null,
-		"Title": "2. Add the most experienced employee for each sector",
+		"Title": "2. Delivering training in sectors",
 		"LinkTitle": "{{DATConstructionFullName}}'s experience in the 'Construction' sector",
 		"InfoText": "",
 		"Questions": [{
@@ -3116,7 +3606,7 @@
 				"QuestionBodyText": "",
 				"Hint": "",
 				"Input": {
-					"Type": "ComplexCheckBoxList",
+					"Type": "ComplexCheckboxList",
 					"Options": [{
 							"Value": "Classroom-based training",
 							"Label": "Classroom-based training",
@@ -3276,10 +3766,108 @@
 		"ActivatedByPageId": "7632"
 	},
 	{
+			"PageId": "7635A", 
+			"SequenceId": null,
+			"SectionId": null,
+			"Title": "2. Delivering training in sectors",
+			"LinkTitle": "Creative and design",   
+			"InfoText": "",
+			"Questions": [{
+					"QuestionId": "DAT-7635A-1", 
+					"QuestionTag": "DATCreativeHowManyStarts", 
+					"Label": "How many starts does your organisation forecast in the 'Creative and design' sector in the first 12 months of joining the RoATP?", 
+					"ShortLabel": "",
+					"QuestionBodyText": "",
+					"Hint": "Enter number of starts",
+					"Input": {
+						"Type": "Text",
+						"InputClasses": "govuk-input--width-4",
+						"Validations": [{
+								"Name": "Required",
+								"Value": "",
+								"ErrorMessage": "Enter number of starts in this sector"
+							},
+							  {
+								"Name": "Regex",
+								"Value": "^[0]*[1-9]{1}[0-9]{0,2}$",
+								"ErrorMessage": "Enter number of starts in this sector using 3 digits or less"
+							  }
+						]
+					}
+				}
+			],
+			"PageOfAnswers": [],
+			"Next": [{
+				"Action": "NextPage",
+				"ReturnId": "7635B",    
+				"Conditions": []
+			}],
+			"AllowMultipleAnswers": false,
+			"Active": true,
+			"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Creative and design"   
+				]
+			}],
+			"BodyText": "", 
+			"DisplayType": "PagesWithSections",   
+			"ActivatedByPageId": null
+		},
+		{
+			"PageId": "7635B",  
+			"SequenceId": null,
+			"SectionId": null,
+			"Title": "2. Delivering training in sectors",
+			"LinkTitle": "Creative and design", 
+			"InfoText": "",
+			"Questions": [{
+					"QuestionId": "DAT-7635B-1", 
+					"QuestionTag": "DATCreativeHowManyEmployees", 
+					"Label": "How many employees will deliver training in the 'Creative and design' sector?",   
+					"ShortLabel": "",
+					"QuestionBodyText": "",
+					"Hint": "Enter number of employees",
+					"Input": {
+						"Type": "Text",
+						"InputClasses": "govuk-input--width-4",
+						"Validations": [{
+								"Name": "Required",
+								"Value": "",
+								"ErrorMessage": "Enter number of employees in this sector"
+							},
+							  {
+								"Name": "Regex",
+								"Value": "^[0]*[1-9]{1}[0-9]{0,2}$",
+								"ErrorMessage": "Enter number of employees in this sector using 3 digits or less"
+							  }
+						]
+					}
+				}
+			],
+			"PageOfAnswers": [],
+			"Next": [{
+				"Action": "NextPage",
+				"ReturnId": "7635",    
+				"Conditions": []
+			}],
+			"AllowMultipleAnswers": false,
+			"Active": false,
+			"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Creative and design"  
+				]
+			}],
+			"BodyText": "",
+			"DisplayType": "OtherPagesInPagesWithSections",
+			"ActivatedByPageId": "7635A" 
+		},
+		{
 		"PageId": "7635",
 		"SequenceId": null,
 		"SectionId": null,
-		"Title": "2. Add the most experienced employee for each sector",
+		"Title": "2. Delivering training in sectors",
 		"LinkTitle": "Creative and design",
 		"InfoText": "",
 		"Questions": [{
@@ -3356,7 +3944,7 @@
 			"Conditions": []
 		}],
 		"AllowMultipleAnswers": false,
-		"Active": true,
+		"Active": false,
 		"NotRequiredConditions": [{
 			"Field": "SectorsChosen",
 			"DoesNotContain": [
@@ -3364,14 +3952,14 @@
 			]
 		}],
 		"BodyText": "Who's the most experienced employee in the 'Creative and design' sector?",
-		"DisplayType": "PagesWithSections",
-		"ActivatedByPageId": null
+		"DisplayType": "OtherPagesInPagesWithSections",
+		"ActivatedByPageId": "7635B"
 	},
 	{
 		"PageId": "7636",
 		"SequenceId": null,
 		"SectionId": null,
-		"Title": "2. Add the most experienced employee for each sector",
+		"Title": "2. Delivering training in sectors",
 		"LinkTitle": "{{DATCreativeFullName}}'s experience in the 'Creative and design' sector",
 		"InfoText": "",
 		"Questions": [{
@@ -3675,7 +4263,7 @@
 		"PageId": "7637",
 		"SequenceId": null,
 		"SectionId": null,
-		"Title": "2. Add the most experienced employee for each sector",
+		"Title": "2. Delivering training in sectors",
 		"LinkTitle": "{{DATCreativeFullName}}'s experience in the 'Creative and design' sector",
 		"InfoText": "",
 		"Questions": [{
@@ -3739,7 +4327,7 @@
 		"PageId": "7638",
 		"SequenceId": null,
 		"SectionId": null,
-		"Title": "2. Add the most experienced employee for each sector",
+		"Title": "2. Delivering training in sectors",
 		"LinkTitle": "{{DATCreativeFullName}}'s experience in the 'Creative and design' sector",
 		"InfoText": "",
 		"Questions": [{
@@ -3750,7 +4338,7 @@
 				"QuestionBodyText": "",
 				"Hint": "",
 				"Input": {
-					"Type": "ComplexCheckBoxList",
+					"Type": "ComplexCheckboxList",
 					"Options": [{
 							"Value": "Classroom-based training",
 							"Label": "Classroom-based training",
@@ -3910,10 +4498,108 @@
 		"ActivatedByPageId": "7637"
 	},
 	{
+			"PageId": "7640A", 
+			"SequenceId": null,
+			"SectionId": null,
+			"Title": "2. Delivering training in sectors",
+			"LinkTitle": "Digital",   
+			"InfoText": "",
+			"Questions": [{
+					"QuestionId": "DAT-7640A-1", 
+					"QuestionTag": "DATDigitalHowManyStarts", 
+					"Label": "How many starts does your organisation forecast in the 'Digital' sector in the first 12 months of joining the RoATP?", 
+					"ShortLabel": "",
+					"QuestionBodyText": "",
+					"Hint": "Enter number of starts",
+					"Input": {
+						"Type": "Text",
+						"InputClasses": "govuk-input--width-4",
+						"Validations": [{
+								"Name": "Required",
+								"Value": "",
+								"ErrorMessage": "Enter number of starts in this sector"
+							},
+							  {
+								"Name": "Regex",
+								"Value": "^[0]*[1-9]{1}[0-9]{0,2}$",
+								"ErrorMessage": "Enter number of starts in this sector using 3 digits or less"
+							  }
+						]
+					}
+				}
+			],
+			"PageOfAnswers": [],
+			"Next": [{
+				"Action": "NextPage",
+				"ReturnId": "7640B",    
+				"Conditions": []
+			}],
+			"AllowMultipleAnswers": false,
+			"Active": true,
+			"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Digital"  
+				]
+			}],
+			"BodyText": "", 
+			"DisplayType": "PagesWithSections",   
+			"ActivatedByPageId": null
+		},
+		{
+			"PageId": "7640B",  
+			"SequenceId": null,
+			"SectionId": null,
+			"Title": "2. Delivering training in sectors",
+			"LinkTitle": "Digital", 
+			"InfoText": "",
+			"Questions": [{
+					"QuestionId": "DAT-7640B-1", 
+					"QuestionTag": "DATDigitalHowManyEmployees", 
+					"Label": "How many employees will deliver training in the 'Digital' sector?",   
+					"ShortLabel": "",
+					"QuestionBodyText": "",
+					"Hint": "Enter number of employees",
+					"Input": {
+						"Type": "Text",
+						"InputClasses": "govuk-input--width-4",
+						"Validations": [{
+								"Name": "Required",
+								"Value": "",
+								"ErrorMessage": "Enter number of employees in this sector"
+							},
+							  {
+								"Name": "Regex",
+								"Value": "^[0]*[1-9]{1}[0-9]{0,2}$",
+								"ErrorMessage": "Enter number of employees in this sector using 3 digits or less"
+							  }
+						]
+					}
+				}
+			],
+			"PageOfAnswers": [],
+			"Next": [{
+				"Action": "NextPage",
+				"ReturnId": "7640",    
+				"Conditions": []
+			}],
+			"AllowMultipleAnswers": false,
+			"Active": false,
+			"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Digital"  
+				]
+			}],
+			"BodyText": "",
+			"DisplayType": "OtherPagesInPagesWithSections",
+			"ActivatedByPageId": "7640A"   
+		},
+		{
 		"PageId": "7640",
 		"SequenceId": null,
 		"SectionId": null,
-		"Title": "2. Add the most experienced employee for each sector",
+		"Title": "2. Delivering training in sectors",
 		"LinkTitle": "Digital",
 		"InfoText": "",
 		"Questions": [{
@@ -3990,7 +4676,7 @@
 			"Conditions": []
 		}],
 		"AllowMultipleAnswers": false,
-		"Active": true,
+		"Active": false,
 		"NotRequiredConditions": [{
 			"Field": "SectorsChosen",
 			"DoesNotContain": [
@@ -3998,14 +4684,14 @@
 			]
 		}],
 		"BodyText": "Who's the most experienced employee in the 'Digital' sector?",
-		"DisplayType": "PagesWithSections",
-		"ActivatedByPageId": null
+		"DisplayType": "OtherPagesInPagesWithSections",
+		"ActivatedByPageId": "7640B"
 	},
 	{
 		"PageId": "7641",
 		"SequenceId": null,
 		"SectionId": null,
-		"Title": "2. Add the most experienced employee for each sector",
+		"Title": "2. Delivering training in sectors",
 		"LinkTitle": "{{DATDigitalFullName}}'s experience in the 'Digital' sector",
 		"InfoText": "",
 		"Questions": [{
@@ -4309,7 +4995,7 @@
 		"PageId": "7642",
 		"SequenceId": null,
 		"SectionId": null,
-		"Title": "2. Add the most experienced employee for each sector",
+		"Title": "2. Delivering training in sectors",
 		"LinkTitle": "{{DATDigitalFullName}}'s experience in the 'Digital' sector",
 		"InfoText": "",
 		"Questions": [{
@@ -4373,7 +5059,7 @@
 		"PageId": "7643",
 		"SequenceId": null,
 		"SectionId": null,
-		"Title": "2. Add the most experienced employee for each sector",
+		"Title": "2. Delivering training in sectors",
 		"LinkTitle": "{{DATDigitalFullName}}'s experience in the 'Digital' sector",
 		"InfoText": "",
 		"Questions": [{
@@ -4384,7 +5070,7 @@
 				"QuestionBodyText": "",
 				"Hint": "",
 				"Input": {
-					"Type": "ComplexCheckBoxList",
+					"Type": "ComplexCheckboxList",
 					"Options": [{
 							"Value": "Classroom-based training",
 							"Label": "Classroom-based training",
@@ -4544,10 +5230,108 @@
 		"ActivatedByPageId": "7642"
 	},
 	{
+			"PageId": "7645A", 
+			"SequenceId": null,
+			"SectionId": null,
+			"Title": "2. Delivering training in sectors",
+			"LinkTitle": "Education and childcare",   
+			"InfoText": "",
+			"Questions": [{
+					"QuestionId": "DAT-7645A-1",
+					"QuestionTag": "DATEducationHowManyStarts", 
+					"Label": "How many starts does your organisation forecast in the 'Education and childcare' sector in the first 12 months of joining the RoATP?", 
+					"ShortLabel": "",
+					"QuestionBodyText": "",
+					"Hint": "Enter number of starts",
+					"Input": {
+						"Type": "Text",
+						"InputClasses": "govuk-input--width-4",
+						"Validations": [{
+								"Name": "Required",
+								"Value": "",
+								"ErrorMessage": "Enter number of starts in this sector"
+							},
+							  {
+								"Name": "Regex",
+								"Value": "^[0]*[1-9]{1}[0-9]{0,2}$",
+								"ErrorMessage": "Enter number of starts in this sector using 3 digits or less"
+							  }
+						]
+					}
+				}
+			],
+			"PageOfAnswers": [],
+			"Next": [{
+				"Action": "NextPage",
+				"ReturnId": "7645B",   
+				"Conditions": []
+			}],
+			"AllowMultipleAnswers": false,
+			"Active": true,
+			"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Education and childcare"   
+				]
+			}],
+			"BodyText": "", 
+			"DisplayType": "PagesWithSections",   
+			"ActivatedByPageId": null
+		},
+		{
+			"PageId": "7645B",  
+			"SequenceId": null,
+			"SectionId": null,
+			"Title": "2. Delivering training in sectors",
+			"LinkTitle": "Education and childcare", 
+			"InfoText": "",
+			"Questions": [{
+					"QuestionId": "DAT-7645B-1", 
+					"QuestionTag": "DATEducationHowManyEmployees", 
+					"Label": "How many employees will deliver training in the 'Education and childcare' sector?",   
+					"ShortLabel": "",
+					"QuestionBodyText": "",
+					"Hint": "Enter number of employees",
+					"Input": {
+						"Type": "Text",
+						"InputClasses": "govuk-input--width-4",
+						"Validations": [{
+								"Name": "Required",
+								"Value": "",
+								"ErrorMessage": "Enter number of employees in this sector"
+							},
+							  {
+								"Name": "Regex",
+								"Value": "^[0]*[1-9]{1}[0-9]{0,2}$",
+								"ErrorMessage": "Enter number of employees in this sector using 3 digits or less"
+							  }
+						]
+					}
+				}
+			],
+			"PageOfAnswers": [],
+			"Next": [{
+				"Action": "NextPage",
+				"ReturnId": "7645",    
+				"Conditions": []
+			}],
+			"AllowMultipleAnswers": false,
+			"Active": false,
+			"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Education and childcare"  
+				]
+			}],
+			"BodyText": "",
+			"DisplayType": "OtherPagesInPagesWithSections",
+			"ActivatedByPageId": "7645A"   
+		},
+		{
 		"PageId": "7645",
 		"SequenceId": null,
 		"SectionId": null,
-		"Title": "2. Add the most experienced employee for each sector",
+		"Title": "2. Delivering training in sectors",
 		"LinkTitle": "Education and childcare",
 		"InfoText": "",
 		"Questions": [{
@@ -4624,7 +5408,7 @@
 			"Conditions": []
 		}],
 		"AllowMultipleAnswers": false,
-		"Active": true,
+		"Active": false,
 		"NotRequiredConditions": [{
 			"Field": "SectorsChosen",
 			"DoesNotContain": [
@@ -4632,14 +5416,14 @@
 			]
 		}],
 		"BodyText": "Who's the most experienced employee in the 'Education and childcare' sector?",
-		"DisplayType": "PagesWithSections",
-		"ActivatedByPageId": null
+		"DisplayType": "OtherPagesInPagesWithSections",
+		"ActivatedByPageId": "7645B"
 	},
 	{
 		"PageId": "7646",
 		"SequenceId": null,
 		"SectionId": null,
-		"Title": "2. Add the most experienced employee for each sector",
+		"Title": "2. Delivering training in sectors",
 		"LinkTitle": "{{DATEducationFullName}}'s experience in the 'Education and childcare' sector",
 		"InfoText": "",
 		"Questions": [{
@@ -4944,7 +5728,7 @@
 		"PageId": "7647",
 		"SequenceId": null,
 		"SectionId": null,
-		"Title": "2. Add the most experienced employee for each sector",
+		"Title": "2. Delivering training in sectors",
 		"LinkTitle": "{{DATEducationFullName}}'s experience in the 'Education and childcare' sector",
 		"InfoText": "",
 		"Questions": [{
@@ -5008,7 +5792,7 @@
 		"PageId": "7648",
 		"SequenceId": null,
 		"SectionId": null,
-		"Title": "2. Add the most experienced employee for each sector",
+		"Title": "2. Delivering training in sectors",
 		"LinkTitle": "{{DATEducationFullName}}'s experience in the 'Education and childcare' sector",
 		"InfoText": "",
 		"Questions": [{
@@ -5019,7 +5803,7 @@
 				"QuestionBodyText": "",
 				"Hint": "",
 				"Input": {
-					"Type": "ComplexCheckBoxList",
+					"Type": "ComplexCheckboxList",
 					"Options": [{
 							"Value": "Classroom-based training",
 							"Label": "Classroom-based training",
@@ -5179,10 +5963,108 @@
 		"ActivatedByPageId": "7647"
 	},
 	{
+			"PageId": "7650A", 
+			"SequenceId": null,
+			"SectionId": null,
+			"Title": "2. Delivering training in sectors",
+			"LinkTitle": "Engineering and manufacturing",   
+			"InfoText": "",
+			"Questions": [{
+					"QuestionId": "DAT-7650A-1", 
+					"QuestionTag": "DATEngineeringHowManyStarts", 
+					"Label": "How many starts does your organisation forecast in the 'Engineering and manufacturing' sector in the first 12 months of joining the RoATP?",
+					"ShortLabel": "",
+					"QuestionBodyText": "",
+					"Hint": "Enter number of starts",
+					"Input": {
+						"Type": "Text",
+						"InputClasses": "govuk-input--width-4",
+						"Validations": [{
+								"Name": "Required",
+								"Value": "",
+								"ErrorMessage": "Enter number of starts in this sector"
+							},
+							  {
+								"Name": "Regex",
+								"Value": "^[0]*[1-9]{1}[0-9]{0,2}$",
+								"ErrorMessage": "Enter number of starts in this sector using 3 digits or less"
+							  }
+						]
+					}
+				}
+			],
+			"PageOfAnswers": [],
+			"Next": [{
+				"Action": "NextPage",
+				"ReturnId": "7650B",    
+				"Conditions": []
+			}],
+			"AllowMultipleAnswers": false,
+			"Active": true,
+			"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Engineering and manufacturing"   
+				]
+			}],
+			"BodyText": "", 
+			"DisplayType": "PagesWithSections",   
+			"ActivatedByPageId": null
+		},
+		{
+			"PageId": "7650B",  
+			"SequenceId": null,
+			"SectionId": null,
+			"Title": "2. Delivering training in sectors",
+			"LinkTitle": "Engineering and manufacturing", 
+			"InfoText": "",
+			"Questions": [{
+					"QuestionId": "DAT-7650B-1", 
+					"QuestionTag": "DATEngineeringHowManyEmployees", 
+					"Label": "How many employees will deliver training in the 'Engineering and manufacturing' sector?",   
+					"ShortLabel": "",
+					"QuestionBodyText": "",
+					"Hint": "Enter number of employees",
+					"Input": {
+						"Type": "Text",
+						"InputClasses": "govuk-input--width-4",
+						"Validations": [{
+								"Name": "Required",
+								"Value": "",
+								"ErrorMessage": "Enter number of employees in this sector"
+							},
+							  {
+								"Name": "Regex",
+								"Value": "^[0]*[1-9]{1}[0-9]{0,2}$",
+								"ErrorMessage": "Enter number of employees in this sector using 3 digits or less"
+							  }
+						]
+					}
+				}
+			],
+			"PageOfAnswers": [],
+			"Next": [{
+				"Action": "NextPage",
+				"ReturnId": "7650",    
+				"Conditions": []
+			}],
+			"AllowMultipleAnswers": false,
+			"Active": false,
+			"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Engineering and manufacturing"  
+				]
+			}],
+			"BodyText": "",
+			"DisplayType": "OtherPagesInPagesWithSections",
+			"ActivatedByPageId": "7650A"   
+		},
+		{
 		"PageId": "7650",
 		"SequenceId": null,
 		"SectionId": null,
-		"Title": "2. Add the most experienced employee for each sector",
+		"Title": "2. Delivering training in sectors",
 		"LinkTitle": "Engineering and manufacturing",
 		"InfoText": "",
 		"Questions": [{
@@ -5259,7 +6141,7 @@
 			"Conditions": []
 		}],
 		"AllowMultipleAnswers": false,
-		"Active": true,
+		"Active": false,
 		"NotRequiredConditions": [{
 			"Field": "SectorsChosen",
 			"DoesNotContain": [
@@ -5267,14 +6149,14 @@
 			]
 		}],
 		"BodyText": "Who's the most experienced employee in the 'Engineering and manufacturing' sector?",
-		"DisplayType": "PagesWithSections",
-		"ActivatedByPageId": null
+		"DisplayType": "OtherPagesInPagesWithSections",
+		"ActivatedByPageId": "7650B"
 	},
 	{
 		"PageId": "7651",
 		"SequenceId": null,
 		"SectionId": null,
-		"Title": "2. Add the most experienced employee for each sector",
+		"Title": "2. Delivering training in sectors",
 		"LinkTitle": "{{DATEngineeringFullName}}'s experience in the 'Engineering and manufacturing' sector",
 		"InfoText": "",
 		"Questions": [{
@@ -5578,7 +6460,7 @@
 		"PageId": "7652",
 		"SequenceId": null,
 		"SectionId": null,
-		"Title": "2. Add the most experienced employee for each sector",
+		"Title": "2. Delivering training in sectors",
 		"LinkTitle": "{{DATEngineeringFullName}}'s experience in the 'Engineering and manufacturing' sector",
 		"InfoText": "",
 		"Questions": [{
@@ -5642,7 +6524,7 @@
 		"PageId": "7653",
 		"SequenceId": null,
 		"SectionId": null,
-		"Title": "2. Add the most experienced employee for each sector",
+		"Title": "2. Delivering training in sectors",
 		"LinkTitle": "{{DATEngineeringFullName}}'s experience in the 'Engineering and manufacturing' sector",
 		"InfoText": "",
 		"Questions": [{
@@ -5653,7 +6535,7 @@
 				"QuestionBodyText": "",
 				"Hint": "",
 				"Input": {
-					"Type": "ComplexCheckBoxList",
+					"Type": "ComplexCheckboxList",
 					"Options": [{
 							"Value": "Classroom-based training",
 							"Label": "Classroom-based training",
@@ -5813,10 +6695,59 @@
 		"ActivatedByPageId": "7652"
 	},
 	{
+			"PageId": "7655A", 
+			"SequenceId": null,
+			"SectionId": null,
+			"Title": "2. Delivering training in sectors",
+			"LinkTitle": "Hair and Beauty",   
+			"InfoText": "",
+			"Questions": [{
+					"QuestionId": "DAT-7655A-1",
+					"QuestionTag": "DATHairAndBeautyHowManyStarts", 
+					"Label": "How many starts does your organisation forecast in the 'Hair and Beauty' sector in the first 12 months of joining the RoATP?", 
+					"ShortLabel": "",
+					"QuestionBodyText": "",
+					"Hint": "Enter number of starts",
+					"Input": {
+						"Type": "Text",
+						"InputClasses": "govuk-input--width-4",
+						"Validations": [{
+								"Name": "Required",
+								"Value": "",
+								"ErrorMessage": "Enter number of starts in this sector"
+							},
+							  {
+								"Name": "Regex",
+								"Value": "^[0]*[1-9]{1}[0-9]{0,2}$",
+								"ErrorMessage": "Enter number of starts in this sector using 3 digits or less"
+							  }
+						]
+					}
+				}
+			],
+			"PageOfAnswers": [],
+			"Next": [{
+				"Action": "NextPage",
+				"ReturnId": "7655B",    
+				"Conditions": []
+			}],
+			"AllowMultipleAnswers": false,
+			"Active": true,
+			"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Hair and Beauty"   
+				]
+			}],
+			"BodyText": "", 
+			"DisplayType": "PagesWithSections",   
+			"ActivatedByPageId": null
+		},
+		{
 		"PageId": "7655",
 		"SequenceId": null,
 		"SectionId": null,
-		"Title": "2. Add the most experienced employee for each sector",
+		"Title": "2. Delivering training in sectors",
 		"LinkTitle": "Hair and Beauty",
 		"InfoText": "",
 		"Questions": [{
@@ -5893,7 +6824,7 @@
 			"Conditions": []
 		}],
 		"AllowMultipleAnswers": false,
-		"Active": true,
+		"Active": false,
 		"NotRequiredConditions": [{
 			"Field": "SectorsChosen",
 			"DoesNotContain": [
@@ -5901,14 +6832,63 @@
 			]
 		}],
 		"BodyText": "Who's the most experienced employee in the 'Hair and Beauty' sector?",
-		"DisplayType": "PagesWithSections",
-		"ActivatedByPageId": null
+		"DisplayType": "OtherPagesInPagesWithSections",
+		"ActivatedByPageId": "7655B"
 	},
+		{
+			"PageId": "7655B",  
+			"SequenceId": null,
+			"SectionId": null,
+			"Title": "2. Delivering training in sectors",
+			"LinkTitle": "Hair and Beauty", 
+			"InfoText": "",
+			"Questions": [{
+					"QuestionId": "DAT-7655B-1", 
+					"QuestionTag": "DATHairAndBeautyHowManyEmployees", 
+					"Label": "How many employees will deliver training in the 'Hair and Beauty' sector?",   
+					"ShortLabel": "",
+					"QuestionBodyText": "",
+					"Hint": "Enter number of employees",
+					"Input": {
+						"Type": "Text",
+						"InputClasses": "govuk-input--width-4",
+						"Validations": [{
+								"Name": "Required",
+								"Value": "",
+								"ErrorMessage": "Enter number of employees in this sector"
+							},
+							  {
+								"Name": "Regex",
+								"Value": "^[0]*[1-9]{1}[0-9]{0,2}$",
+								"ErrorMessage": "Enter number of employees in this sector using 3 digits or less"
+							  }
+						]
+					}
+				}
+			],
+			"PageOfAnswers": [],
+			"Next": [{
+				"Action": "NextPage",
+				"ReturnId": "7655",    
+				"Conditions": []
+			}],
+			"AllowMultipleAnswers": false,
+			"Active": false,
+			"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Hair and Beauty"  
+				]
+			}],
+			"BodyText": "",
+			"DisplayType": "OtherPagesInPagesWithSections",
+			"ActivatedByPageId": "7655A"   
+		},
 	{
 		"PageId": "7656",
 		"SequenceId": null,
 		"SectionId": null,
-		"Title": "2. Add the most experienced employee for each sector",
+		"Title": "2. Delivering training in sectors",
 		"LinkTitle": "{{DATHairAndBeautyFullName}}'s experience in the 'Hair and Beauty' sector",
 		"InfoText": "",
 		"Questions": [{
@@ -6212,7 +7192,7 @@
 		"PageId": "7657",
 		"SequenceId": null,
 		"SectionId": null,
-		"Title": "2. Add the most experienced employee for each sector",
+		"Title": "2. Delivering training in sectors",
 		"LinkTitle": "{{DATHairAndBeautyFullName}}'s experience in the 'Hair and Beauty' sector",
 		"InfoText": "",
 		"Questions": [{
@@ -6276,7 +7256,7 @@
 		"PageId": "7658",
 		"SequenceId": null,
 		"SectionId": null,
-		"Title": "2. Add the most experienced employee for each sector",
+		"Title": "2. Delivering training in sectors",
 		"LinkTitle": "{{DATHairAndBeautyFullName}}'s experience in the 'Hair and Beauty' sector",
 		"InfoText": "",
 		"Questions": [{
@@ -6287,7 +7267,7 @@
 				"QuestionBodyText": "",
 				"Hint": "",
 				"Input": {
-					"Type": "ComplexCheckBoxList",
+					"Type": "ComplexCheckboxList",
 					"Options": [{
 							"Value": "Classroom-based training",
 							"Label": "Classroom-based training",
@@ -6447,11 +7427,109 @@
 		"ActivatedByPageId": "7657"
 	},
 	{
+			"PageId": "7660A", 
+			"SequenceId": null,
+			"SectionId": null,
+			"Title": "2. Delivering training in sectors",
+			"LinkTitle": "Health and science",   
+			"InfoText": "",
+			"Questions": [{
+					"QuestionId": "DAT-7660A-1", 
+					"QuestionTag": "DATHealthAndScienceHowManyStarts",
+					"Label": "How many starts does your organisation forecast in the 'Health and science' sector in the first 12 months of joining the RoATP?", 
+					"ShortLabel": "",
+					"QuestionBodyText": "",
+					"Hint": "Enter number of starts",
+					"Input": {
+						"Type": "Text",
+						"InputClasses": "govuk-input--width-4",
+						"Validations": [{
+								"Name": "Required",
+								"Value": "",
+								"ErrorMessage": "Enter number of starts in this sector"
+							},
+							  {
+								"Name": "Regex",
+								"Value": "^[0]*[1-9]{1}[0-9]{0,2}$",
+								"ErrorMessage": "Enter number of starts in this sector using 3 digits or less"
+							  }
+						]
+					}
+				}
+			],
+			"PageOfAnswers": [],
+			"Next": [{
+				"Action": "NextPage",
+				"ReturnId": "7660B",    
+				"Conditions": []
+			}],
+			"AllowMultipleAnswers": false,
+			"Active": true,
+			"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Health and science"   
+				]
+			}],
+			"BodyText": "", 
+			"DisplayType": "PagesWithSections",   
+			"ActivatedByPageId": null
+		},
+		{
+			"PageId": "7660B",  
+			"SequenceId": null,
+			"SectionId": null,
+			"Title": "2. Delivering training in sectors",
+			"LinkTitle": "Health and science", 
+			"InfoText": "",
+			"Questions": [{
+					"QuestionId": "DAT-7660B-1", 
+					"QuestionTag": "DATHealthAndScienceHowManyEmployees", 
+					"Label": "How many employees will deliver training in the 'Health and science' sector?",   
+					"ShortLabel": "",
+					"QuestionBodyText": "",
+					"Hint": "Enter number of employees",
+					"Input": {
+						"Type": "Text",
+						"InputClasses": "govuk-input--width-4",
+						"Validations": [{
+								"Name": "Required",
+								"Value": "",
+								"ErrorMessage": "Enter number of employees in this sector"
+							},
+							  {
+								"Name": "Regex",
+								"Value": "^[0]*[1-9]{1}[0-9]{0,2}$",
+								"ErrorMessage": "Enter number of employees in this sector using 3 digits or less"
+							  }
+						]
+					}
+				}
+			],
+			"PageOfAnswers": [],
+			"Next": [{
+				"Action": "NextPage",
+				"ReturnId": "7660",    
+				"Conditions": []
+			}],
+			"AllowMultipleAnswers": false,
+			"Active": false,
+			"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Health and science"  
+				]
+			}],
+			"BodyText": "",
+			"DisplayType": "OtherPagesInPagesWithSections",
+			"ActivatedByPageId": "7660A"   
+		},
+		{
 		"PageId": "7660",
 		"SequenceId": null,
 		"SectionId": null,
-		"Title": "2. Add the most experienced employee for each sector",
-		"LinkTitle": "Health and Science",
+		"Title": "2. Delivering training in sectors",
+		"LinkTitle": "Health and science",
 		"InfoText": "",
 		"Questions": [{
 				"QuestionId": "DAT-7660-1",
@@ -6527,23 +7605,23 @@
 			"Conditions": []
 		}],
 		"AllowMultipleAnswers": false,
-		"Active": true,
+		"Active": false,
 		"NotRequiredConditions": [{
 			"Field": "SectorsChosen",
 			"DoesNotContain": [
 				"Health and science"
 			]
 		}],
-		"BodyText": "Who's the most experienced employee in the 'Health and Science' sector?",
-		"DisplayType": "PagesWithSections",
-		"ActivatedByPageId": null
+		"BodyText": "Who's the most experienced employee in the 'Health and science' sector?",
+		"DisplayType": "OtherPagesInPagesWithSections",
+		"ActivatedByPageId": "7660B"
 	},
 	{
 		"PageId": "7661",
 		"SequenceId": null,
 		"SectionId": null,
-		"Title": "2. Add the most experienced employee for each sector",
-		"LinkTitle": "{{DATHealthAndScienceFullName}}'s experience in the 'Health and Science' sector",
+		"Title": "2. Delivering training in sectors",
+		"LinkTitle": "{{DATHealthAndScienceFullName}}'s experience in the 'Health and science' sector",
 		"InfoText": "",
 		"Questions": [{
 				"QuestionId": "DAT-76611",
@@ -6839,15 +7917,15 @@
 		}],
 		"AllowMultipleAnswers": false,
 		"NotRequiredConditions": [],
-		"BodyText": "{{DATHealthAndScienceFullName}}'s experience in the 'Health and Science' sector",
+		"BodyText": "{{DATHealthAndScienceFullName}}'s experience in the 'Health and science' sector",
 		"DisplayType": "OtherPagesInPagesWithSections",
 		"ActivatedByPageId": "7660"
 	}, {
 		"PageId": "7662",
 		"SequenceId": null,
 		"SectionId": null,
-		"Title": "2. Add the most experienced employee for each sector",
-		"LinkTitle": "{{DATHealthAndScienceFullName}}'s experience in the 'Health and Science' sector",
+		"Title": "2. Delivering training in sectors",
+		"LinkTitle": "{{DATHealthAndScienceFullName}}'s experience in the 'Health and science' sector",
 		"InfoText": "",
 		"Questions": [{
 			"QuestionId": "DAT-76621",
@@ -6903,15 +7981,15 @@
 		],
 		"AllowMultipleAnswers": false,
 		"NotRequiredConditions": [],
-		"BodyText": "{{DATHealthAndScienceFullName}}'s experience in the 'Health and Science' sector",
+		"BodyText": "{{DATHealthAndScienceFullName}}'s experience in the 'Health and science' sector",
 		"DisplayType": "OtherPagesInPagesWithSections",
 		"ActivatedByPageId": "7661"
 	}, {
 		"PageId": "7663",
 		"SequenceId": null,
 		"SectionId": null,
-		"Title": "2. Add the most experienced employee for each sector",
-		"LinkTitle": "{{DATHealthAndScienceFullName}}'s experience in the 'Health and Science' sector",
+		"Title": "2. Delivering training in sectors",
+		"LinkTitle": "{{DATHealthAndScienceFullName}}'s experience in the 'Health and science' sector",
 		"InfoText": "",
 		"Questions": [{
 				"QuestionId": "DAT-76631",
@@ -6921,7 +7999,7 @@
 				"QuestionBodyText": "",
 				"Hint": "",
 				"Input": {
-					"Type": "ComplexCheckBoxList",
+					"Type": "ComplexCheckboxList",
 					"Options": [{
 							"Value": "Classroom-based training",
 							"Label": "Classroom-based training",
@@ -7076,16 +8154,114 @@
 		}],
 		"AllowMultipleAnswers": false,
 		"NotRequiredConditions": [],
-		"BodyText": "{{DATHealthAndScienceFullName}}'s experience in the 'Health and Science' sector",
+		"BodyText": "{{DATHealthAndScienceFullName}}'s experience in the 'Health and science' sector",
 		"DisplayType": "OtherPagesInPagesWithSections",
 		"ActivatedByPageId": "7662"
 	},
 	{
+			"PageId": "7665A", 
+			"SequenceId": null,
+			"SectionId": null,
+			"Title": "2. Delivering training in sectors",
+			"LinkTitle": "Legal, finance and accounting",   
+			"InfoText": "",
+			"Questions": [{
+					"QuestionId": "DAT-7665A-1", 
+					"QuestionTag": "DATLegalHowManyStarts", 
+					"Label": "How many starts does your organisation forecast in the 'Legal, finance and accounting' sector in the first 12 months of joining the RoATP?", 
+					"ShortLabel": "",
+					"QuestionBodyText": "",
+					"Hint": "Enter number of starts",
+					"Input": {
+						"Type": "Text",
+						"InputClasses": "govuk-input--width-4",
+						"Validations": [{
+								"Name": "Required",
+								"Value": "",
+								"ErrorMessage": "Enter number of starts in this sector"
+							},
+							  {
+								"Name": "Regex",
+								"Value": "^[0]*[1-9]{1}[0-9]{0,2}$",
+								"ErrorMessage": "Enter number of starts in this sector using 3 digits or less"
+							  }
+						]
+					}
+				}
+			],
+			"PageOfAnswers": [],
+			"Next": [{
+				"Action": "NextPage",
+				"ReturnId": "7665B",    
+				"Conditions": []
+			}],
+			"AllowMultipleAnswers": false,
+			"Active": true,
+			"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Legal&comma; finance and accounting"   
+				]
+			}],
+			"BodyText": "", 
+			"DisplayType": "PagesWithSections",   
+			"ActivatedByPageId": null
+		},
+		{
+			"PageId": "7665B", 
+			"SequenceId": null,
+			"SectionId": null,
+			"Title": "2. Delivering training in sectors",
+			"LinkTitle": "Legal, finance and accounting", 
+			"InfoText": "",
+			"Questions": [{
+					"QuestionId": "DAT-7665B-1", 
+					"QuestionTag": "DATLegalHowManyEmployees", 
+					"Label": "How many employees will deliver training in the 'Legal, finance and accounting' sector?",   
+					"ShortLabel": "",
+					"QuestionBodyText": "",
+					"Hint": "Enter number of employees",
+					"Input": {
+						"Type": "Text",
+						"InputClasses": "govuk-input--width-4",
+						"Validations": [{
+								"Name": "Required",
+								"Value": "",
+								"ErrorMessage": "Enter number of employees in this sector"
+							},
+							  {
+								"Name": "Regex",
+								"Value": "^[0]*[1-9]{1}[0-9]{0,2}$",
+								"ErrorMessage": "Enter number of employees in this sector using 3 digits or less"
+							  }
+						]
+					}
+				}
+			],
+			"PageOfAnswers": [],
+			"Next": [{
+				"Action": "NextPage",
+				"ReturnId": "7665",    
+				"Conditions": []
+			}],
+			"AllowMultipleAnswers": false,
+			"Active": false,
+			"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Legal&comma; finance and accounting"  
+				]
+			}],
+			"BodyText": "",
+			"DisplayType": "OtherPagesInPagesWithSections",
+			"ActivatedByPageId": "7665A"   
+		},
+		{
 		"PageId": "7665",
 		"SequenceId": null,
 		"SectionId": null,
-		"Title": "2. Add the most experienced employee for each sector",
-		"LinkTitle": "Legal, finance and accounting",
+		"Title": "2. Delivering training in sectors",
+		"LinkTitle": "Legal&comma; finance and accounting",
 		"InfoText": "",
 		"Questions": [{
 				"QuestionId": "DAT-7665-1",
@@ -7161,7 +8337,7 @@
 			"Conditions": []
 		}],
 		"AllowMultipleAnswers": false,
-		"Active": true,
+		"Active": false,
 		"NotRequiredConditions": [{
 			"Field": "SectorsChosen",
 			"DoesNotContain": [
@@ -7169,14 +8345,14 @@
 			]
 		}],
 		"BodyText": "Who's the most experienced employee in the 'Legal, finance and accounting' sector?",
-		"DisplayType": "PagesWithSections",
-		"ActivatedByPageId": null
+		"DisplayType": "OtherPagesInPagesWithSections",
+		"ActivatedByPageId": "7665B"
 	},
 	{
 		"PageId": "7666",
 		"SequenceId": null,
 		"SectionId": null,
-		"Title": "2. Add the most experienced employee for each sector",
+		"Title": "2. Delivering training in sectors",
 		"LinkTitle": "{{DATLegalFullName}}'s experience in the 'Legal, finance and accounting' sector",
 		"InfoText": "",
 		"Questions": [{
@@ -7480,7 +8656,7 @@
 		"PageId": "7667",
 		"SequenceId": null,
 		"SectionId": null,
-		"Title": "2. Add the most experienced employee for each sector",
+		"Title": "2. Delivering training in sectors",
 		"LinkTitle": "{{DATLegalFullName}}'s experience in the 'Legal, finance and accounting' sector",
 		"InfoText": "",
 		"Questions": [{
@@ -7544,7 +8720,7 @@
 		"PageId": "7668",
 		"SequenceId": null,
 		"SectionId": null,
-		"Title": "2. Add the most experienced employee for each sector",
+		"Title": "2. Delivering training in sectors",
 		"LinkTitle": "{{DATLegalFullName}}'s experience in the 'Legal, finance and accounting' sector",
 		"InfoText": "",
 		"Questions": [{
@@ -7555,7 +8731,7 @@
 				"QuestionBodyText": "",
 				"Hint": "",
 				"Input": {
-					"Type": "ComplexCheckBoxList",
+					"Type": "ComplexCheckboxList",
 					"Options": [{
 							"Value": "Classroom-based training",
 							"Label": "Classroom-based training",
@@ -7715,10 +8891,108 @@
 		"ActivatedByPageId": "7667"
 	},
 	{
+			"PageId": "7670A", 
+			"SequenceId": null,
+			"SectionId": null,
+			"Title": "2. Delivering training in sectors",
+			"LinkTitle": "Protective services",   
+			"InfoText": "",
+			"Questions": [{
+					"QuestionId": "DAT-7670A-1",
+					"QuestionTag": "DATProtectiveServicesHowManyStarts", 
+					"Label": "How many starts does your organisation forecast in the 'Protective services' sector in the first 12 months of joining the RoATP?", 
+					"ShortLabel": "",
+					"QuestionBodyText": "",
+					"Hint": "Enter number of starts",
+					"Input": {
+						"Type": "Text",
+						"InputClasses": "govuk-input--width-4",
+						"Validations": [{
+								"Name": "Required",
+								"Value": "",
+								"ErrorMessage": "Enter number of starts in this sector"
+							},
+							  {
+								"Name": "Regex",
+								"Value": "^[0]*[1-9]{1}[0-9]{0,2}$",
+								"ErrorMessage": "Enter number of starts in this sector using 3 digits or less"
+							  }
+						]
+					}
+				}
+			],
+			"PageOfAnswers": [],
+			"Next": [{
+				"Action": "NextPage",
+				"ReturnId": "7670B",    
+				"Conditions": []
+			}],
+			"AllowMultipleAnswers": false,
+			"Active": true,
+			"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Protective services"   
+				]
+			}],
+			"BodyText": "", 
+			"DisplayType": "PagesWithSections",   
+			"ActivatedByPageId": null
+		},
+		{
+			"PageId": "7670B", 
+			"SequenceId": null,
+			"SectionId": null,
+			"Title": "2. Delivering training in sectors",
+			"LinkTitle": "Protective services", 
+			"InfoText": "",
+			"Questions": [{
+					"QuestionId": "DAT-7670B-1", 
+					"QuestionTag": "DATProtectiveServicesHowManyEmployees", 
+					"Label": "How many employees will deliver training in the 'Protective services' sector?",   
+					"ShortLabel": "",
+					"QuestionBodyText": "",
+					"Hint": "Enter number of employees",
+					"Input": {
+						"Type": "Text",
+						"InputClasses": "govuk-input--width-4",
+						"Validations": [{
+								"Name": "Required",
+								"Value": "",
+								"ErrorMessage": "Enter number of employees in this sector"
+							},
+							  {
+								"Name": "Regex",
+								"Value": "^[0]*[1-9]{1}[0-9]{0,2}$",
+								"ErrorMessage": "Enter number of employees in this sector using 3 digits or less"
+							  }
+						]
+					}
+				}
+			],
+			"PageOfAnswers": [],
+			"Next": [{
+				"Action": "NextPage",
+				"ReturnId": "7670",    
+				"Conditions": []
+			}],
+			"AllowMultipleAnswers": false,
+			"Active": false,
+			"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Protective services" 
+				]
+			}],
+			"BodyText": "",
+			"DisplayType": "OtherPagesInPagesWithSections",
+			"ActivatedByPageId": "7670A"  
+		},
+		{
 		"PageId": "7670",
 		"SequenceId": null,
 		"SectionId": null,
-		"Title": "2. Add the most experienced employee for each sector",
+		"Title": "2. Delivering training in sectors",
 		"LinkTitle": "Protective services",
 		"InfoText": "",
 		"Questions": [{
@@ -7795,7 +9069,7 @@
 			"Conditions": []
 		}],
 		"AllowMultipleAnswers": false,
-		"Active": true,
+		"Active": false,
 		"NotRequiredConditions": [{
 			"Field": "SectorsChosen",
 			"DoesNotContain": [
@@ -7803,14 +9077,14 @@
 			]
 		}],
 		"BodyText": "Who's the most experienced employee in the 'Protective services' sector?",
-		"DisplayType": "PagesWithSections",
-		"ActivatedByPageId": null
+		"DisplayType": "OtherPagesInPagesWithSections",
+		"ActivatedByPageId": "7670B"
 	},
 	{
 		"PageId": "7671",
 		"SequenceId": null,
 		"SectionId": null,
-		"Title": "2. Add the most experienced employee for each sector",
+		"Title": "2. Delivering training in sectors",
 		"LinkTitle": "{{DATProtectiveServicesFullName}}'s experience in the 'Protective services' sector",
 		"InfoText": "",
 		"Questions": [{
@@ -8114,7 +9388,7 @@
 		"PageId": "7672",
 		"SequenceId": null,
 		"SectionId": null,
-		"Title": "2. Add the most experienced employee for each sector",
+		"Title": "2. Delivering training in sectors",
 		"LinkTitle": "{{DATProtectiveServicesFullName}}'s experience in the 'Protective services' sector",
 		"InfoText": "",
 		"Questions": [{
@@ -8178,7 +9452,7 @@
 		"PageId": "7673",
 		"SequenceId": null,
 		"SectionId": null,
-		"Title": "2. Add the most experienced employee for each sector",
+		"Title": "2. Delivering training in sectors",
 		"LinkTitle": "{{DATProtectiveServicesFullName}}'s experience in the 'Protective services' sector",
 		"InfoText": "",
 		"Questions": [{
@@ -8189,7 +9463,7 @@
 				"QuestionBodyText": "",
 				"Hint": "",
 				"Input": {
-					"Type": "ComplexCheckBoxList",
+					"Type": "ComplexCheckboxList",
 					"Options": [{
 							"Value": "Classroom-based training",
 							"Label": "Classroom-based training",
@@ -8349,10 +9623,108 @@
 		"ActivatedByPageId": "7672"
 	},
 	{
+			"PageId": "7675A", 
+			"SequenceId": null,
+			"SectionId": null,
+			"Title": "2. Delivering training in sectors",
+			"LinkTitle": "Sales, marketing and procurement",   
+			"InfoText": "",
+			"Questions": [{
+					"QuestionId": "DAT-7675A-1", 
+					"QuestionTag": "DATSalesHowManyStarts", 
+					"Label": "How many starts does your organisation forecast in the 'Sales, marketing and procurement' sector in the first 12 months of joining the RoATP?", 
+					"ShortLabel": "",
+					"QuestionBodyText": "",
+					"Hint": "Enter number of starts",
+					"Input": {
+						"Type": "Text",
+						"InputClasses": "govuk-input--width-4",
+						"Validations": [{
+								"Name": "Required",
+								"Value": "",
+								"ErrorMessage": "Enter number of starts in this sector"
+							},
+							  {
+								"Name": "Regex",
+								"Value": "^[0]*[1-9]{1}[0-9]{0,2}$",
+								"ErrorMessage": "Enter number of starts in this sector using 3 digits or less"
+							  }
+						]
+					}
+				}
+			],
+			"PageOfAnswers": [],
+			"Next": [{
+				"Action": "NextPage",
+				"ReturnId": "7675B",    
+				"Conditions": []
+			}],
+			"AllowMultipleAnswers": false,
+			"Active": true,
+			"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Sales&comma; marketing and procurement"   
+				]
+			}],
+			"BodyText": "", 
+			"DisplayType": "PagesWithSections",   
+			"ActivatedByPageId": null
+		},
+		{
+			"PageId": "7675B",  
+			"SequenceId": null,
+			"SectionId": null,
+			"Title": "2. Delivering training in sectors",
+			"LinkTitle": "Sales, marketing and procurement", 
+			"InfoText": "",
+			"Questions": [{
+					"QuestionId": "DAT-7675B-1", 
+					"QuestionTag": "DATSalesHowManyEmployees", 
+					"Label": "How many employees will deliver training in the 'Sales, marketing and procurement' sector?",   
+					"ShortLabel": "",
+					"QuestionBodyText": "",
+					"Hint": "Enter number of employees",
+					"Input": {
+						"Type": "Text",
+						"InputClasses": "govuk-input--width-4",
+						"Validations": [{
+								"Name": "Required",
+								"Value": "",
+								"ErrorMessage": "Enter number of employees in this sector"
+							},
+							  {
+								"Name": "Regex",
+								"Value": "^[0]*[1-9]{1}[0-9]{0,2}$",
+								"ErrorMessage": "Enter number of employees in this sector using 3 digits or less"
+							  }
+						]
+					}
+				}
+			],
+			"PageOfAnswers": [],
+			"Next": [{
+				"Action": "NextPage",
+				"ReturnId": "7675",    
+				"Conditions": []
+			}],
+			"AllowMultipleAnswers": false,
+			"Active": false,
+			"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Sales&comma; marketing and procurement"  
+				]
+			}],
+			"BodyText": "",
+			"DisplayType": "OtherPagesInPagesWithSections",
+			"ActivatedByPageId": "7675A"   
+		},
+		{
 		"PageId": "7675",
 		"SequenceId": null,
 		"SectionId": null,
-		"Title": "2. Add the most experienced employee for each sector",
+		"Title": "2. Delivering training in sectors",
 		"LinkTitle": "Sales, marketing and procurement",
 		"InfoText": "",
 		"Questions": [{
@@ -8429,7 +9801,7 @@
 			"Conditions": []
 		}],
 		"AllowMultipleAnswers": false,
-		"Active": true,
+		"Active": false,
 		"NotRequiredConditions": [{
 			"Field": "SectorsChosen",
 			"DoesNotContain": [
@@ -8437,14 +9809,14 @@
 			]
 		}],
 		"BodyText": "Who's the most experienced employee in the 'Sales, marketing and procurement' sector?",
-		"DisplayType": "PagesWithSections",
-		"ActivatedByPageId": null
+		"DisplayType": "OtherPagesInPagesWithSections",
+		"ActivatedByPageId": "7675B"
 	},
 	{
 		"PageId": "7676",
 		"SequenceId": null,
 		"SectionId": null,
-		"Title": "2. Add the most experienced employee for each sector",
+		"Title": "2. Delivering training in sectors",
 		"LinkTitle": "{{DATSalesFullName}}'s experience in the 'Sales, marketing and procurement' sector",
 		"InfoText": "",
 		"Questions": [{
@@ -8748,7 +10120,7 @@
 		"PageId": "7677",
 		"SequenceId": null,
 		"SectionId": null,
-		"Title": "2. Add the most experienced employee for each sector",
+		"Title": "2. Delivering training in sectors",
 		"LinkTitle": "{{DATSalesFullName}}'s experience in the 'Sales, marketing and procurement' sector",
 		"InfoText": "",
 		"Questions": [{
@@ -8812,7 +10184,7 @@
 		"PageId": "7678",
 		"SequenceId": null,
 		"SectionId": null,
-		"Title": "2. Add the most experienced employee for each sector",
+		"Title": "2. Delivering training in sectors",
 		"LinkTitle": "{{DATSalesFullName}}'s experience in the 'Sales, marketing and procurement' sector",
 		"InfoText": "",
 		"Questions": [{
@@ -8823,7 +10195,7 @@
 				"QuestionBodyText": "",
 				"Hint": "",
 				"Input": {
-					"Type": "ComplexCheckBoxList",
+					"Type": "ComplexCheckboxList",
 					"Options": [{
 							"Value": "Classroom-based training",
 							"Label": "Classroom-based training",
@@ -8983,10 +10355,108 @@
 		"ActivatedByPageId": "7677"
 	},
 	{
+			"PageId": "7680A", 
+			"SequenceId": null,
+			"SectionId": null,
+			"Title": "2. Delivering training in sectors",
+			"LinkTitle": "Transport and logistics",  
+			"InfoText": "",
+			"Questions": [{
+					"QuestionId": "DAT-7680A-1", 
+					"QuestionTag": "DATTransportHowManyStarts", 
+					"Label": "How many starts does your organisation forecast in the 'Transport and logistics' sector in the first 12 months of joining the RoATP?", 
+					"ShortLabel": "",
+					"QuestionBodyText": "",
+					"Hint": "Enter number of starts",
+					"Input": {
+						"Type": "Text",
+						"InputClasses": "govuk-input--width-4",
+						"Validations": [{
+								"Name": "Required",
+								"Value": "",
+								"ErrorMessage": "Enter number of starts in this sector"
+							},
+							  {
+								"Name": "Regex",
+								"Value": "^[0]*[1-9]{1}[0-9]{0,2}$",
+								"ErrorMessage": "Enter number of starts in this sector using 3 digits or less"
+							  }
+						]
+					}
+				}
+			],
+			"PageOfAnswers": [],
+			"Next": [{
+				"Action": "NextPage",
+				"ReturnId": "7680B",    
+				"Conditions": []
+			}],
+			"AllowMultipleAnswers": false,
+			"Active": true,
+			"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Transport and logistics"   
+				]
+			}],
+			"BodyText": "", 
+			"DisplayType": "PagesWithSections",   
+			"ActivatedByPageId": null
+		},
+		{
+			"PageId": "7680B",  
+			"SequenceId": null,
+			"SectionId": null,
+			"Title": "2. Delivering training in sectors",
+			"LinkTitle": "Transport and logistics", 
+			"InfoText": "",
+			"Questions": [{
+					"QuestionId": "DAT-7680B-1", 
+					"QuestionTag": "DATTransportHowManyEmployees", 
+					"Label": "How many employees will deliver training in the 'Transport and logistics' sector?",   
+					"ShortLabel": "",
+					"QuestionBodyText": "",
+					"Hint": "Enter number of employees",
+					"Input": {
+						"Type": "Text",
+						"InputClasses": "govuk-input--width-4",
+						"Validations": [{
+								"Name": "Required",
+								"Value": "",
+								"ErrorMessage": "Enter number of employees in this sector"
+							},
+							  {
+								"Name": "Regex",
+								"Value": "^[0]*[1-9]{1}[0-9]{0,2}$",
+								"ErrorMessage": "Enter number of employees in this sector using 3 digits or less"
+							  }
+						]
+					}
+				}
+			],
+			"PageOfAnswers": [],
+			"Next": [{
+				"Action": "NextPage",
+				"ReturnId": "7680",    
+				"Conditions": []
+			}],
+			"AllowMultipleAnswers": false,
+			"Active": false,
+			"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Transport and logistics"  
+				]
+			}],
+			"BodyText": "",
+			"DisplayType": "OtherPagesInPagesWithSections",
+			"ActivatedByPageId": "7680A"   
+		},
+		{
 		"PageId": "7680",
 		"SequenceId": null,
 		"SectionId": null,
-		"Title": "2. Add the most experienced employee for each sector",
+		"Title": "2. Delivering training in sectors",
 		"LinkTitle": "Transport and logistics",
 		"InfoText": "",
 		"Questions": [{
@@ -9063,7 +10533,7 @@
 			"Conditions": []
 		}],
 		"AllowMultipleAnswers": false,
-		"Active": true,
+		"Active": false,
 		"NotRequiredConditions": [{
 			"Field": "SectorsChosen",
 			"DoesNotContain": [
@@ -9071,14 +10541,14 @@
 			]
 		}],
 		"BodyText": "Who's the most experienced employee in the 'Transport and logistics' sector?",
-		"DisplayType": "PagesWithSections",
-		"ActivatedByPageId": null
+		"DisplayType": "OtherPagesInPagesWithSections",
+		"ActivatedByPageId": "7680B"
 	},
 	{
 		"PageId": "7681",
 		"SequenceId": null,
 		"SectionId": null,
-		"Title": "2. Add the most experienced employee for each sector",
+		"Title": "2. Delivering training in sectors",
 		"LinkTitle": "{{DATTransportFullName}}'s experience in the 'Transport and logistics' sector",
 		"InfoText": "",
 		"Questions": [{
@@ -9382,7 +10852,7 @@
 		"PageId": "7682",
 		"SequenceId": null,
 		"SectionId": null,
-		"Title": "2. Add the most experienced employee for each sector",
+		"Title": "2. Delivering training in sectors",
 		"LinkTitle": "{{DATTransportFullName}}'s experience in the 'Transport and logistics' sector",
 		"InfoText": "",
 		"Questions": [{
@@ -9446,7 +10916,7 @@
 		"PageId": "7683",
 		"SequenceId": null,
 		"SectionId": null,
-		"Title": "2. Add the most experienced employee for each sector",
+		"Title": "2. Delivering training in sectors",
 		"LinkTitle": "{{DATTransportFullName}}'s experience in the 'Transport and logistics' sector",
 		"InfoText": "",
 		"Questions": [{
@@ -9457,7 +10927,7 @@
 				"QuestionBodyText": "",
 				"Hint": "",
 				"Input": {
-					"Type": "ComplexCheckBoxList",
+					"Type": "ComplexCheckboxList",
 					"Options": [{
 							"Value": "Classroom-based training",
 							"Label": "Classroom-based training",
