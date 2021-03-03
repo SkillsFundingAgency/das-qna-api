@@ -25,10 +25,13 @@ DECLARE @ProjectDef VARCHAR(100),
          @ProjectName VARCHAR(100),
          @ProjectDesc VARCHAR(100),
          @ProjectId UNIQUEIDENTIFIER,
+         @ProjectWorkflows VARCHAR(MAX),
          @ApplicationDataSchema VARCHAR(MAX),
-         @JSON VARCHAR(MAX);
+         @JSON VARCHAR(MAX),
+         @QJSON VARCHAR(MAX);
 
-DECLARE @Workflows VARCHAR(MAX),
+DECLARE @WorkflowIndex INT,
+         @Workflows VARCHAR(MAX),
          @WorkflowExists INT,
          @WorkflowUpdate INT,
          @WorkflowId UNIQUEIDENTIFIER,
@@ -103,194 +106,209 @@ BEGIN
 		SET @ParmDefinition = '@project VARCHAR(MAX) OUTPUT';
 		EXECUTE sp_executesql @SQLString, @ParmDefinition, @project = @JSON OUTPUT;
 
-		-- extract project and workflow  (Note currently only handling ONE Workflow per project)
-		SELECT @ProjectName = JSON_VALUE(@JSON,'$.Name'),  @ProjectDesc = JSON_VALUE(@JSON,'$.Description'), @Workflows = JSON_QUERY(@JSON,'$.Workflows[0]')
-		-- extract workflow(s)
-		SELECT @WorkflowDescription = JSON_VALUE(@Workflows,'$.Description'), @WorkflowVersion = JSON_VALUE(@Workflows,'$.Version'), @WorkflowType = JSON_VALUE(@Workflows,'$.Type')
+		-- extract project and workflow  
+        SELECT @ProjectName = JSON_VALUE(@JSON,'$.Name'),  @ProjectDesc = JSON_VALUE(@JSON,'$.Description');
+            
+        -- load the Workflows
+        SET @WorkflowIndex = 0;
+        -- loop  thorugh the workflows
+        WHILE @WorkflowIndex >= 0
+        BEGIN
+            -- get the first/next workflow from project.
+            PRINT 'Get Workflow '+RTRIM(CONVERT(char,@WorkflowIndex))+' for project '+@ProjectName
+            SELECT @Workflows = JSON_QUERY(@JSON,'$.Workflows['+RTRIM(convert(char,@WorkflowIndex))+']');
 
-		-- check if project exists
-		SELECT @ProjectExists = COUNT(*) FROM projects WHERE Name = @ProjectName
+            IF @Workflows IS NULL
+                    BREAK;
+                    
+            PRINT 'Configure Workflow '+RTRIM(CONVERT(char,@WorkflowIndex))            
+            -- extract workflow(s)
+            SELECT @WorkflowDescription = JSON_VALUE(@Workflows,'$.Description'), @WorkflowVersion = JSON_VALUE(@Workflows,'$.Version'), @WorkflowType = JSON_VALUE(@Workflows,'$.Type');
 
-		-- Get the ApplicationDataSchema
-		IF @LoadBLOB = 1
-			SET @SQLString = 'SELECT @ad = BulkColumn
-			FROM OPENROWSET
-			(BULK '''+@ProjectLocation+'ApplicationDataSchema.json'', DATA_SOURCE = ''BlobStorage'', SINGLE_CLOB) 
-			AS ad';
-		ELSE
-			SET @SQLString = 'SELECT @ad = BulkColumn
-			FROM OPENROWSET
-			(BULK '''+@ProjectLocation+'ApplicationDataSchema.json'', SINGLE_CLOB) 
-			AS ad';
-				
-		SET @ParmDefinition = '@ad VARCHAR(MAX) OUTPUT';
-		EXECUTE sp_executesql @SQLString, @ParmDefinition, @ad = @ApplicationDataSchema OUTPUT;
-			
-		IF @ProjectExists = 0 
-		BEGIN
-		-- Need to create the "Project"
-		
-			INSERT INTO projects (Name, Description, ApplicationDataSchema, CreatedAt, CreatedBy)
-				VALUES (@ProjectName, @ProjectDesc, @ApplicationDataSchema, GETUTCDATE(), 'Deployment');
-		END
-		ELSE
-		BEGIN
-		-- Update the the "Project"
-			UPDATE projects SET ApplicationDataSchema = @ApplicationDataSchema
-			WHERE Name = @ProjectName;
-		END
-		-- get project id (back)
-		SELECT @ProjectId = Id FROM projects WHERE Name = @ProjectName
+            -- check if project exists
+            SELECT @ProjectExists = COUNT(*) FROM projects WHERE Name = @ProjectName
+
+            -- Get the ApplicationDataSchema
+            IF @LoadBLOB = 1
+                SET @SQLString = 'SELECT @ad = BulkColumn
+                FROM OPENROWSET
+                (BULK '''+@ProjectLocation+'ApplicationDataSchema.json'', DATA_SOURCE = ''BlobStorage'', SINGLE_CLOB) 
+                AS ad';
+            ELSE
+                SET @SQLString = 'SELECT @ad = BulkColumn
+                FROM OPENROWSET
+                (BULK '''+@ProjectLocation+'ApplicationDataSchema.json'', SINGLE_CLOB) 
+                AS ad';
+                    
+            SET @ParmDefinition = '@ad VARCHAR(MAX) OUTPUT';
+            EXECUTE sp_executesql @SQLString, @ParmDefinition, @ad = @ApplicationDataSchema OUTPUT;
+                
+            IF @ProjectExists = 0 
+            BEGIN
+            -- Need to create the "Project"
+            
+                INSERT INTO projects (Name, Description, ApplicationDataSchema, CreatedAt, CreatedBy)
+                    VALUES (@ProjectName, @ProjectDesc, @ApplicationDataSchema, GETUTCDATE(), 'Deployment');
+            END
+            ELSE
+            BEGIN
+            -- Update the the "Project"
+                UPDATE projects SET ApplicationDataSchema = @ApplicationDataSchema
+                WHERE Name = @ProjectName;
+            END
+            -- get project id (back)
+            SELECT @ProjectId = Id FROM projects WHERE Name = @ProjectName
 
 
-		SELECT @WorkflowExists = COUNT(*) 
-		FROM [Workflows]
-		WHERE [ProjectId] = @ProjectId 
-		  AND [Description] = @WorkFlowDescription
-		  AND [Version] = @WorkFlowVersion;
-	  
-		IF @WorkflowExists = 0 
-		BEGIN	  
-		-- Need to create the "Workflow"
-		
-			INSERT INTO [Workflows] ([ProjectId], [Description], [Version], [Type], [Status], [CreatedAt] ,[CreatedBy], [ApplicationDataSchema])
-			SELECT p1.Id ProjectId, @WorkFlowDescription, @WorkFlowVersion, @WorkFlowType, 'Draft', [CreatedAt] ,[CreatedBy], [ApplicationDataSchema]
-			FROM projects p1
-			WHERE Name = @ProjectName;
+            SELECT @WorkflowExists = COUNT(*) 
+            FROM [Workflows]
+            WHERE [ProjectId] = @ProjectId 
+              AND [Description] = @WorkFlowDescription
+              AND [Version] = @WorkFlowVersion;
+          
+            IF @WorkflowExists = 0 
+            BEGIN	  
+            -- Need to create the "Workflow"
+            
+                INSERT INTO [Workflows] ([ProjectId], [Description], [Version], [Type], [Status], [CreatedAt] ,[CreatedBy], [ApplicationDataSchema])
+                SELECT p1.Id ProjectId, @WorkFlowDescription, @WorkFlowVersion, @WorkFlowType, 'Draft', [CreatedAt] ,[CreatedBy], [ApplicationDataSchema]
+                FROM projects p1
+                WHERE Name = @ProjectName;
 
-		END
-		BEGIN
-		-- Update the "Workflow" - if needed
-			SELECT @WorkflowUpdate = COUNT(*) 
-			FROM [Workflows]
-			WHERE [ProjectId] = @ProjectId 
-			  AND [Description] = @WorkFlowDescription
-			  AND [Version] = @WorkFlowVersion
-			  AND [ApplicationDataSchema] = @ApplicationDataSchema;
-			  
-			IF @WorkflowUpdate = 0
-			BEGIN
-				UPDATE [Workflows] 
-				SET [ApplicationDataSchema] = @ApplicationDataSchema, UpdatedAt = GETUTCDATE(), UpdatedBy = 'Deployment'
-				WHERE ProjectId = @ProjectId AND [Description] = @WorkFlowDescription AND [Version] = @WorkFlowVersion;
-			END
-		END
-	
-		-- get workflow id (back)
-		SELECT @WorkflowId = Id 
-		 FROM [Workflows]
-		WHERE ProjectId = @ProjectId 
-		  AND [Description] = @WorkFlowDescription
-		  AND [Version] = @WorkFlowVersion
+            END
+            BEGIN
+            -- Update the "Workflow" - if needed
+                SELECT @WorkflowUpdate = COUNT(*) 
+                FROM [Workflows]
+                WHERE [ProjectId] = @ProjectId 
+                  AND [Description] = @WorkFlowDescription
+                  AND [Version] = @WorkFlowVersion
+                  AND [ApplicationDataSchema] = @ApplicationDataSchema;
+                  
+                IF @WorkflowUpdate = 0
+                BEGIN
+                    UPDATE [Workflows] 
+                    SET [ApplicationDataSchema] = @ApplicationDataSchema, UpdatedAt = GETUTCDATE(), UpdatedBy = 'Deployment'
+                    WHERE ProjectId = @ProjectId AND [Description] = @WorkFlowDescription AND [Version] = @WorkFlowVersion;
+                END
+            END
+        
+            -- get workflow id (back)
+            SELECT @WorkflowId = Id 
+             FROM [Workflows]
+            WHERE ProjectId = @ProjectId 
+              AND [Description] = @WorkFlowDescription
+              AND [Version] = @WorkFlowVersion
 
-		-- load the Sequences and Sections
-		SET @sectionIndex = 0;
-		-- loop  thorugh the sections
-		WHILE @sectionIndex >= 0
-		BEGIN
-		-- get the first/next section from workflow.
-			SELECT @sections = JSON_QUERY(@Workflows,'$.section['+RTRIM(convert(char,@sectionIndex))+']');
-		
-			IF @sections IS NULL
-				BREAK;
-			
-			SELECT @sectionNo = JSON_VALUE(@sections ,'$.SectionNo'), @sequenceNo = JSON_VALUE(@sections ,'$.SequenceNo'), @sectionFileId = JSON_VALUE(@sections ,'$.id')+'.json';
-			-- Is section (de)Active - default Active = true
-			SELECT @sectionIsActive = ISNULL(JSON_VALUE(@sections, '$.IsActive'),1);
+            -- load the Sequences and Sections
+            SET @sectionIndex = 0;
+            -- loop  thorugh the sections
+            WHILE @sectionIndex >= 0
+            BEGIN
+            -- get the first/next section from workflow.
+                SELECT @sections = JSON_QUERY(@Workflows,'$.section['+RTRIM(convert(char,@sectionIndex))+']');
+            
+                IF @sections IS NULL
+                    BREAK;
+                
+                SELECT @sectionNo = JSON_VALUE(@sections ,'$.SectionNo'), @sequenceNo = JSON_VALUE(@sections ,'$.SequenceNo'), @sectionFileId = JSON_VALUE(@sections ,'$.id')+'.json';
+                -- Is section (de)Active - default Active = true
+                SELECT @sectionIsActive = ISNULL(JSON_VALUE(@sections, '$.IsActive'),1);
 
-			PRINT 'Configure Sequence '+RTRIM(CONVERT(char,@sequenceNo))+' Section '+RTRIM(CONVERT(char,@sectionNo));
+                PRINT 'Configure Sequence '+RTRIM(CONVERT(char,@sequenceNo))+' Section '+RTRIM(CONVERT(char,@sectionNo));
 
-			SELECT @sequenceExists = COUNT(*) 
-			FROM [WorkflowSequences]
-			WHERE [WorkflowId] = @WorkflowId AND [SequenceNo] = @sequenceNo AND [SectionNo] = @sectionNo;
+                SELECT @sequenceExists = COUNT(*) 
+                FROM [WorkflowSequences]
+                WHERE [WorkflowId] = @WorkflowId AND [SequenceNo] = @sequenceNo AND [SectionNo] = @sectionNo;
 
-			IF @sequenceExists = 0
-			BEGIN
-				PRINT 'Insert Workflow for Sequence '+RTRIM(CONVERT(char,@sequenceNo))+' Section '+RTRIM(CONVERT(char,@sectionNo));
-				INSERT INTO [WorkflowSequences] (Workflowid, SequenceNo, SectionNo, SectionId, IsActive)
-				VALUES ( @WorkflowId, @sequenceNo, @sectionNo, NEWID(), @sectionIsActive);
-			END
-			ELSE
-			BEGIN
-				UPDATE [WorkflowSequences] 
-				SET IsActive = @sectionIsActive
-				WHERE [WorkflowId] = @WorkflowId AND [SequenceNo] = @sequenceNo AND [SectionNo] = @sectionNo;
-			END
+                IF @sequenceExists = 0
+                BEGIN
+                    PRINT 'Insert Workflow for Sequence '+RTRIM(CONVERT(char,@sequenceNo))+' Section '+RTRIM(CONVERT(char,@sectionNo));
+                    INSERT INTO [WorkflowSequences] (Workflowid, SequenceNo, SectionNo, SectionId, IsActive)
+                    VALUES ( @WorkflowId, @sequenceNo, @sectionNo, NEWID(), @sectionIsActive);
+                END
+                ELSE
+                BEGIN
+                    UPDATE [WorkflowSequences] 
+                    SET IsActive = @sectionIsActive
+                    WHERE [WorkflowId] = @WorkflowId AND [SequenceNo] = @sequenceNo AND [SectionNo] = @sectionNo;
+                END
 
-			-- get section id 
-			SELECT @sectionId = [SectionId] 
-			FROM [WorkflowSequences]
-			WHERE [WorkflowId] = @WorkflowId AND [SequenceNo] = @sequenceNo AND [SectionNo] = @sectionNo;
+                -- get section id 
+                SELECT @sectionId = [SectionId] 
+                FROM [WorkflowSequences]
+                WHERE [WorkflowId] = @WorkflowId AND [SequenceNo] = @sequenceNo AND [SectionNo] = @sectionNo;
 
-			PRINT 'Load Sequence '+RTRIM(CONVERT(char,@sequenceNo))+' Section '+RTRIM(CONVERT(char,@sectionNo));
-			IF @LoadBLOB = 1
-				SET @SQLString = 'SELECT @qnaData = BulkColumn
-				FROM OPENROWSET
-				(BULK '''+@ProjectLocation+'sections/'+@sectionFileId+''', DATA_SOURCE = ''BlobStorage'', SINGLE_CLOB) 
-				AS qnaData';
-			ELSE
-				SET @SQLString = 'SELECT @qnaData = BulkColumn
-				FROM OPENROWSET
-				(BULK '''+@ProjectLocation+'sections\'+@sectionFileId+''', SINGLE_CLOB) 
-				AS qnaData';
+                PRINT 'Load Sequence '+RTRIM(CONVERT(char,@sequenceNo))+' Section '+RTRIM(CONVERT(char,@sectionNo));
+                IF @LoadBLOB = 1
+                    SET @SQLString = 'SELECT @qnaData = BulkColumn
+                    FROM OPENROWSET
+                    (BULK '''+@ProjectLocation+'sections/'+@sectionFileId+''', DATA_SOURCE = ''BlobStorage'', SINGLE_CLOB) 
+                    AS qnaData';
+                ELSE
+                    SET @SQLString = 'SELECT @qnaData = BulkColumn
+                    FROM OPENROWSET
+                    (BULK '''+@ProjectLocation+'sections\'+@sectionFileId+''', SINGLE_CLOB) 
+                    AS qnaData';
 
-			SET @ParmDefinition = '@qnaData VARCHAR(MAX) OUTPUT';
-			EXECUTE sp_executesql @SQLString, @ParmDefinition, @qnaData = @JSON OUTPUT;
-		
-			-- get the Section details
-			SELECT @SectionTitle = JSON_VALUE(@JSON,'$.Title'),  @SectionLinkTitle = JSON_VALUE(@JSON,'$.LinkTitle'), @SectionDisplayType = JSON_VALUE(@JSON,'$.DisplayType')
-		
-			MERGE INTO [Workflowsections] ws1
-			USING (SELECT @sectionId sectionId) upd
-			ON (ws1.Id = upd.sectionId)
-			WHEN MATCHED THEN 
-				UPDATE SET QnAData = @JSON, [Title] = @SectionTitle, [LinkTitle] = @SectionLinkTitle, [DisplayType] = @SectionDisplayType
-			WHEN NOT MATCHED THEN
-				INSERT (Id, ProjectId, QnAData, Title, LinkTitle, DisplayType)
-				VALUES (@sectionId, @ProjectId, @JSON, @SectionTitle, @SectionLinkTitle, @SectionDisplayType);
+                SET @ParmDefinition = '@qnaData VARCHAR(MAX) OUTPUT';
+                EXECUTE sp_executesql @SQLString, @ParmDefinition, @qnaData = @QJSON OUTPUT;
+            
+                -- get the Section details
+                SELECT @SectionTitle = JSON_VALUE(@QJSON,'$.Title'),  @SectionLinkTitle = JSON_VALUE(@QJSON,'$.LinkTitle'), @SectionDisplayType = JSON_VALUE(@QJSON,'$.DisplayType')
+            
+                MERGE INTO [Workflowsections] ws1
+                USING (SELECT @sectionId sectionId) upd
+                ON (ws1.Id = upd.sectionId)
+                WHEN MATCHED THEN 
+                    UPDATE SET QnAData = @QJSON, [Title] = @SectionTitle, [LinkTitle] = @SectionLinkTitle, [DisplayType] = @SectionDisplayType
+                WHEN NOT MATCHED THEN
+                    INSERT (Id, ProjectId, QnAData, Title, LinkTitle, DisplayType)
+                    VALUES (@sectionId, @ProjectId, @QJSON, @SectionTitle, @SectionLinkTitle, @SectionDisplayType);
 
-			SET @sectionIndex = @sectionIndex + 1;
-		END
+                SET @sectionIndex = @sectionIndex + 1;
+            END
 
-		-- tidyup
-		IF @WorkflowExists = 0 
-		-- have created a new workflow
-		BEGIN
-			UPDATE Workflows SET Status = 'Dead' WHERE [Id] != @WorkflowId AND [Type] = @WorkflowType AND [ProjectId] = @ProjectId
-			UPDATE Workflows SET Status = 'Live' WHERE [Id] = @WorkflowId
-		END
-		ELSE 
-		BEGIN
-			-- Tidy up any sections that exist in the database but not in projects.json
-			
-			SELECT @AllSections = section FROM OPENJSON(@Workflows)
-			WITH (
-					[section] NVARCHAR(MAX) AS JSON
-				)
+            -- tidyup
+            IF @WorkflowExists = 0 
+            -- have created a new workflow
+            BEGIN
+                UPDATE Workflows SET Status = 'Dead' WHERE [Id] != @WorkflowId AND [Type] = @WorkflowType AND [ProjectId] = @ProjectId
+                UPDATE Workflows SET Status = 'Live' WHERE [Id] = @WorkflowId
+            END
+            ELSE 
+            BEGIN
+                -- Tidy up any sections that exist in the database but not in projects.json
+                
+                SELECT @AllSections = section FROM OPENJSON(@Workflows)
+                WITH (
+                        [section] NVARCHAR(MAX) AS JSON
+                    )
 
-			INSERT INTO @ObsoleteSections
-			SELECT Id, SectionId, ws.SequenceNo, ws.SectionNo FROM dbo.WorkflowSequences ws 
-			LEFT JOIN OPENJSON(@AllSections) 
-			WITH
-				(
-					[SequenceNo] INT,
-					[SectionNo] INT
-				)
-			jws
-			ON jws.SequenceNo = ws.SequenceNo
-			AND jws.SectionNo = ws.SectionNo
-			WHERE WorkflowId = @WorkflowId
-			AND jws.SequenceNo IS NULL
-			AND jws.SectionNo IS NULL
-			
-			SELECT @ObsoleteSectionsCount = COUNT(*) FROM @ObsoleteSections
-			PRINT 'Obsolete sections to be removed : ' + CONVERT(char,@ObsoleteSectionsCount)
-						
-			DELETE FROM dbo.WorkflowSections WHERE Id IN (SELECT SectionId FROM @ObsoleteSections)
+                INSERT INTO @ObsoleteSections
+                SELECT Id, SectionId, ws.SequenceNo, ws.SectionNo FROM dbo.WorkflowSequences ws 
+                LEFT JOIN OPENJSON(@AllSections) 
+                WITH
+                    (
+                        [SequenceNo] INT,
+                        [SectionNo] INT
+                    )
+                jws
+                ON jws.SequenceNo = ws.SequenceNo
+                AND jws.SectionNo = ws.SectionNo
+                WHERE WorkflowId = @WorkflowId
+                AND jws.SequenceNo IS NULL
+                AND jws.SectionNo IS NULL
+                
+                SELECT @ObsoleteSectionsCount = COUNT(*) FROM @ObsoleteSections
+                PRINT 'Obsolete sections to be removed : ' + CONVERT(char,@ObsoleteSectionsCount)
+                            
+                DELETE FROM dbo.WorkflowSections WHERE Id IN (SELECT SectionId FROM @ObsoleteSections)
 
-			DELETE FROM dbo.WorkflowSequences WHERE WorkflowId = @WorkflowId AND Id IN (SELECT Id FROM @ObsoleteSections)
-		END
-				
+                DELETE FROM dbo.WorkflowSequences WHERE WorkflowId = @WorkflowId AND Id IN (SELECT Id FROM @ObsoleteSections)
+            END
+            SET @WorkflowIndex = @WorkflowIndex + 1;
+        END
 
 		SET @ProjectIndex = @ProjectIndex + 1;
 	END
