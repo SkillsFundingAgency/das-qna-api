@@ -24,7 +24,7 @@
                                 "FurtherQuestions": [
                                     {
                                         "QuestionId": "RTE-20-1",
-                                        "QuestionTag": "",
+                                        "QuestionTag": null,
                                         "Label": "Who have you engaged with?",
                                         "ShortLabel": "",
                                         "QuestionBodyText": "",
