@@ -16,7 +16,7 @@
                     "QuestionTag": null,
                     "Label": "How will your organisation ensure apprentices are supported during their apprenticeship training?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body' id='pat-organisation-transition'>Your answer must include how your organisation will:</p><ul class='govuk-list govuk-list--bullet'><li>have the right people in place to support apprentices</li><li>financially support apprentices - for example, arranging funding for equipment</li></ul></p>",
+                    "QuestionBodyText": "<p class='govuk-body'>Your answer must include how your organisation will:</p><ul class='govuk-list govuk-list--bullet'><li>have the right people in place to support apprentices</li><li>regularly check apprentice progress</li><li>financially support apprentices - for example, arranging funding for equipment</li></ul></p>",
                     "Hint": "",
                     "Input": {
                         "Type": "Textarea",
