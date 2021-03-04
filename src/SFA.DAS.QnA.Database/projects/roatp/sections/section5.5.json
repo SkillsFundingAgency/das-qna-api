@@ -84,7 +84,7 @@
         "Active": true,
         "NotRequiredConditions": [],
         "ActivatedByPageId": "5400",
-        "BodyText": "<p class='govuk-body'>This means you or your organisation cannot make an application to join the RoAPT.</p><p class='govuk-body'><a href='https://www.gov.uk' class='govuk-link'>Back to GOV.UK</a></p>"
+        "BodyText": "<p class='govuk-body'>This means you or your organisation cannot make an application to join the RoATP.</p><p class='govuk-body'><a href='https://www.gov.uk' class='govuk-link'>Back to GOV.UK</a></p>"
       }
     ]
 }
