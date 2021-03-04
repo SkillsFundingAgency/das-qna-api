@@ -3,57 +3,88 @@
     "LinkTitle": "Commitment statement template",
     "DisplayType": "Pages",
     "Pages": [
-        {
-            "PageId": "5400",
-            "SequenceId": null,
-            "SectionId": null,
-            "Title": "Commitment statement template",
-            "LinkTitle": "Commitment statement template",
-            "InfoText": "",
-            "Questions": [
+      {
+        "PageId": "5400",
+        "SequenceId": null,
+        "SectionId": null,
+        "Title": "Commitment statement template",
+        "LinkTitle": "Commitment statement template",
+        "InfoText": "",
+        "Questions": [
+          {
+            "QuestionId": "RTE-50",
+            "QuestionTag": null,
+            "Label": "Do you agree to use ESFA's commitment statement template?",
+            "ShortLabel": "",
+            "QuestionBodyText": "<p class='govuk-body' id='rte-commitment-statement-template-info'>Find out more about the commitment statement in <a href='https://www.gov.uk/guidance/apprenticeship-funding-rules-for-training-providers/what-is-an-apprenticeship#rule-p65' class='govuk-link' target='_blank'>the apprenticeship funding rules (opens in a new tab).</a></p><p class='govuk-body' id='rte-commitment-statement'>Your organisation must use ESFA's commitment statement template.</p><p class='govuk-body' id='rte-commitment-statement-template-download'><a href='https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/824331/Apprenticeship_commitment_statement_template.xlsx' class='govuk-link'>Download ESFA's commitment statement template</a></p>",
+            "Hint": "",
+            "Input": {
+              "Type": "Radio",
+              "Options": [
+                {
+                  "Label": "Yes",
+                  "Value": "Yes",
+                  "FurtherQuestions": null
+                },
+                {
+                  "Label": "No",
+                  "Value": "No",
+                  "FurtherQuestions": null
+                }
+              ],
+              "Validations": [
+                {
+                  "Name": "Required",
+                  "Value": "",
+                  "ErrorMessage": "Tell us if you agree to use ESFA's commitment statement template"
+                }
+              ]
+            }
+          }
+        ],
+        "PageOfAnswers": [],
+        "Next": [
+          {
+            "Action": "NextPage",
+            "ReturnId": "10020",
+            "Conditions": [
               {
                 "QuestionId": "RTE-50",
-                "QuestionTag": null,
-                "Label": "Do you agree to use ESFA's commitment statement template?",
-                "ShortLabel": "",
-                "QuestionBodyText": "<p class='govuk-body' id='rte-commitment-statement-template-info'> Find out more about the commitment statement in <a href='https://www.gov.uk/guidance/apprenticeship-funding-rules-for-training-providers/what-is-an-apprenticeship#rule-p65' class='govuk-link' target='_blank'>the apprenticeship funding rules (opens in a new tab).</a></p><p class='govuk-body' id='rte-commitment-statement'>Your organisation must use ESFA's commitment statement template.</p><p class='govuk-body' id='rte-commitment-statement-template-download'><a href='https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/824331/Apprenticeship_commitment_statement_template.xlsx' class='govuk-link'>Download ESFA's commitment statement template</a></p>",
-                "Hint": "",
-                "Input": {
-                  "Type": "Radio",
-                  "Options": [
-                    {
-                      "Label": "Yes",
-                      "Value": "Yes",
-                      "FurtherQuestions": null
-                    },
-                    {
-                      "Label": "No",
-                      "Value": "No",
-                      "FurtherQuestions": null
-                    }
-                  ],
-                  "Validations": [
-                    {
-                      "Name": "Required",
-                      "Value": "",
-                      "ErrorMessage": "Tell us if you agree to use ESFA's commitment statement template"
-                    }
-                  ]
-                }
+                "MustEqual": "No"
               }
-            ],
-			"PageOfAnswers": [],
-            "Next": [
-                {
-                    "Action": "ReturnToSection",
-                    "ReturnId": "5.6",
-                    "Conditions": []
-                }
-            ],
-            "AllowMultipleAnswers": false,
-            "Active": true,
-            "NotRequiredConditions": [],
-            "BodyText": ""
-        }
+            ]
+          },
+          {
+            "Action": "ReturnToSection",
+            "ReturnId": "5.6",
+            "Conditions": [
+              {
+                "QuestionId": "RTE-50",
+                "MustEqual": "Yes"
+              }
+            ]
+          }
+        ],
+        "AllowMultipleAnswers": false,
+        "Active": true,
+        "NotRequiredConditions": [],
+        "BodyText": ""
+      },
+      {
+        "PageId": "10020",
+        "SequenceId": null,
+        "SectionId": null,
+        "Title": "You do not agree to use ESFA's commitment statement template",
+        "LinkTitle": "You do not agree to use ESFA's commitment statement template",
+        "InfoText": "",
+        "Questions": [],
+        "PageOfAnswers": [],
+        "Next": [],
+        "AllowMultipleAnswers": false,
+        "Active": true,
+        "NotRequiredConditions": [],
+        "ActivatedByPageId": "5400",
+        "BodyText": "<p class='govuk-body'>This means you or your organisation cannot make an application to join the RoAPT.</p><p class='govuk-body'><a href='https://www.gov.uk' class='govuk-link'>Back to GOV.UK</a></p>"
+      }
     ]
 }
