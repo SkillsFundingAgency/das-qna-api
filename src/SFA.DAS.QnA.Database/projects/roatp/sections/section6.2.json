@@ -834,7 +834,7 @@
                     "QuestionTag": null,
                     "Label": "How will your organisation engage with end-point assessment organisations (EPAO's)?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body'>Your answer must include how your organisation will:</p><ul class='govuk-list govuk-list--bullet'><li>find EPAO's for relevant apprenticeship standards</li><li>contact EPAO's</li><li>engage employers in the process of choosing an EPAO</li><li>confirm a contract or service agreement with EPAO's</li><li>engage EPAOs throughout the apprenticeship journey</li><li>ensure the EPAO is suitable, by including what information you will ask from them</li><li>ensure End Point Assessments are booked within the timescales published in <a href="https://www.gov.uk/guidance/apprenticeship-funding-rules">the apprenticeship funding rules</a></li></ul></p>",
+                    "QuestionBodyText": "<p class='govuk-body'>Your answer must include how your organisation will:</p><ul class='govuk-list govuk-list--bullet'><li>find EPAO's for relevant apprenticeship standards</li><li>contact EPAO's</li><li>engage employers in the process of choosing an EPAO</li><li>confirm a contract or service agreement with EPAO's</li><li>engage EPAOs throughout the apprenticeship journey</li><li>ensure the EPAO is suitable, by including what information you will ask from them</li><li>ensure End Point Assessments are booked within the timescales published in <a href='https://www.gov.uk/guidance/apprenticeship-funding-rules' class='govuk-link' target='_blank'>the apprenticeship funding rules</a></li></ul></p>",
                     "Hint": "",
                     "Input": {
                         "Type": "Textarea",
