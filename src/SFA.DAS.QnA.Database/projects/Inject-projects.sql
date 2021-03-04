@@ -86,7 +86,7 @@ BEGIN
 		ELSE
 		BEGIN
 			SET @ProjectLocation = @ProjectLocation + 'projects\' + @ProjectDef +'\';
-			PRINT 'Loading from File Storage'+@ProjectLocation;
+			PRINT 'Loading from File Storage: '+@ProjectLocation;
 		END
 	
 		-- inject project
@@ -111,19 +111,23 @@ BEGIN
             
         -- load the Workflows
         SET @WorkflowIndex = 0;
-        -- loop  thorugh the workflows
+        -- loop  through the workflows
         WHILE @WorkflowIndex >= 0
         BEGIN
             -- get the first/next workflow from project.
-            PRINT 'Get Workflow '+RTRIM(CONVERT(char,@WorkflowIndex))+' for project '+@ProjectName
+            PRINT 'Getting Workflow at index '+RTRIM(CONVERT(char,@WorkflowIndex))+' for project '+@ProjectName
             SELECT @Workflows = JSON_QUERY(@JSON,'$.Workflows['+RTRIM(convert(char,@WorkflowIndex))+']');
 
             IF @Workflows IS NULL
+                BEGIN
+					PRINT 'Nothing found'
                     BREAK;
-                    
-            PRINT 'Configure Workflow '+RTRIM(CONVERT(char,@WorkflowIndex))            
+				END
+                                
             -- extract workflow(s)
             SELECT @WorkflowDescription = JSON_VALUE(@Workflows,'$.Description'), @WorkflowVersion = JSON_VALUE(@Workflows,'$.Version'), @WorkflowType = JSON_VALUE(@Workflows,'$.Type');
+			
+            PRINT 'Configuring Workflow '+RTRIM(CONVERT(char,@WorkflowDescription))+' '+RTRIM(CONVERT(char,@WorkflowVersion))
 
             -- check if project exists
             SELECT @ProjectExists = COUNT(*) FROM projects WHERE Name = @ProjectName
