@@ -58,6 +58,61 @@
             "ActivatedByPageId": null,
             "BodyText": ""
         },
+		{
+            "PageId": "6405",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "How will your organisation ensure apprentices are supported during their apprenticeship training?",
+            "LinkTitle": "How will your organisation ensure apprentices are supported during their apprenticeship training?",
+            "InfoText": "",
+            "Questions": [
+                {
+                    "QuestionId": "PAT-6405",
+                    "QuestionTag": null,
+                    "Label": "How will your organisation ensure apprentices are supported during their apprenticeship training?",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "<p class='govuk-body'>Your answer must include how your organisation will:</p><ul class='govuk-list govuk-list--bullet'><li>have the right people in place to support apprentices</li><li>regularly check apprentice progress</li></ul></p>",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "Textarea",
+                        "Options": [],
+                        "Validations": [
+                            {
+                                "Name": "Required",
+                                "Value": "",
+                                "ErrorMessage": "Tell us how your organisation will ensure apprentices are supported during their apprenticeship training"
+                            },
+                            {
+                                "Name": "MaxLength",
+                                "Value": "275",
+                                "ErrorMessage": "Your answer must be 275 characters or less"
+                            }
+                        ]
+                    }
+                }
+            ],
+			"PageOfAnswers": [],
+            "Next": [
+                {
+                    "Action": "ReturnToSection",
+                    "ReturnId": "6.5",
+                    "Conditions": []
+                }
+            ],
+            "AllowMultipleAnswers": false,
+            "Active": true,
+            "NotRequiredConditions": [
+                {
+                    "Field": "ApplyProviderRoute",
+                    "IsOneOf": [
+                        "2",
+                        "3"
+                    ]
+                }
+            ],
+            "ActivatedByPageId": null,
+            "BodyText": ""
+        },
         {
             "PageId": "6410",
             "SequenceId": null,
