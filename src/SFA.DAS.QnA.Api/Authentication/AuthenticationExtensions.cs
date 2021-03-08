@@ -21,7 +21,7 @@ namespace SFA.DAS.QnA.Api.Authentication
                 auth.Authority = $"https://login.microsoftonline.com/{azureActiveDirectoryConfiguration.Tenant}";
                 auth.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
                 {
-                    ValidAudiences = azureActiveDirectoryConfiguration.Identifier.Split(",")
+                    ValidAudiences = azureActiveDirectoryConfiguration.ValidAudiences.Split(",")
                 };
             });
 
