@@ -1912,6 +1912,11 @@
                                                     "Name": "Date",
                                                     "Value": "",
                                                     "ErrorMessage": "Date must be correct"
+                                                },
+                                                {
+                                                    "Name": "DateInFuture",
+                                                    "Value": "",
+                                                    "ErrorMessage": "Date must be in the future"
                                                 }
                                             ],
                                             "DataEndpoint": null
@@ -1954,14 +1959,7 @@
             "AllowMultipleAnswers": false,
             "Order": null,
             "Active": true,
-            "NotRequiredConditions": [
-                {
-                    "Field": "ApplicationType",
-                    "IsOneOf": [
-                        "version"
-                    ]
-                }
-            ],
+            "NotRequiredConditions": [],
             "BodyText": "",
             "Details": null,
             "DisplayType": null,
