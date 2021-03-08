@@ -12,7 +12,7 @@ namespace SFA.DAS.QnA.Api.Authorization
 
             services.AddAuthorization(x =>
             {
-                x.AddPolicy("default", policy =>
+                x.AddPolicy("Default", policy =>
                 {
                     if (isDevelopment)
                     {
@@ -21,10 +21,11 @@ namespace SFA.DAS.QnA.Api.Authorization
                     else
                     {
                         policy.RequireAuthenticatedUser();
+                        policy.RequireRole("Default");
                     }
                 });
 
-                x.DefaultPolicy = x.GetPolicy("default");
+                x.DefaultPolicy = x.GetPolicy("Default");
             });
 
             if (isDevelopment)
