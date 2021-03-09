@@ -28,7 +28,7 @@
                                 "ErrorMessage": "Tell us how your organisation will ensure apprentices are supported during their apprenticeship training"
                             },
                             {
-                                "Name": "MaxWordLength",
+                                "Name": "MaxWordCount",
                                 "Value": "275",
                                 "ErrorMessage": "Your answer must be 275 words or less"
                             }
@@ -83,7 +83,7 @@
                                 "ErrorMessage": "Tell us how your organisation will ensure apprentices are supported during their apprenticeship training"
                             },
                             {
-                                "Name": "MaxWordLength",
+                                "Name": "MaxWordCount",
                                 "Value": "275",
                                 "ErrorMessage": "Your answer must be 275 words or less"
                             }
@@ -216,7 +216,7 @@
                                 "ErrorMessage": "Tell us what other ways your organisation will use to support its apprentices"
                             },
                             {
-                                "Name": "MaxWordLength",
+                                "Name": "MaxWordCount",
                                 "Value": "275",
                                 "ErrorMessage": "Your answer must be 275 words or less"
                             }
