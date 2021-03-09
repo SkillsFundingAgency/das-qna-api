@@ -52,13 +52,71 @@
             "Active": true,
             "NotRequiredConditions": [],
             "BodyText": ""
-        }, {
+        }, 
+		{
             "PageId": "5560",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "English and maths assessments",
+            "LinkTitle": "English and maths assessments",
+            "InfoText": "",
+            "Questions": [{
+                    "QuestionId": "RTE-66",
+                    "Label": "Where will you deliver the assessments in English and maths?",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "CheckBoxList",
+                        "Options": [{
+                                "Label": "Digital workplace assessment",
+                                "Value": "Digital workplace assessment"
+                            }, 
+							{
+                                "Label": "Paper-based workplace assessment",
+                                "Value": "Paper-based workplace assessment"
+                            }, 
+							{
+                                "Label": "Training centre",
+                                "Value": "Training centre"
+                            }, 
+							{
+                                "Label": "Remote venue",
+                                "Value": "Remote venue"
+                            }, 
+							{
+                                "Label": "Not decided yet (new providers only)",
+                                "Value": "Not decided yet (new providers only)"
+                            }
+                        ],
+                        "Validations": [{
+                                "Name": "Required",
+                                "Value": "",
+                                "ErrorMessage": "Tell us where you will deliver English and Maths assessments"
+                            }
+                        ]
+                    }
+                }],
+			"PageOfAnswers": [],
+            "Next": [{
+                    "Action": "NextPage",
+                    "ReturnId": "5570",
+                    "Conditions": []
+                }
+            ],
+            "AllowMultipleAnswers": false,
+            "Active": false,
+            "NotRequiredConditions": [],
+            "BodyText": "<p class='govuk-body'>Select all that apply.</p>",
+            "ActivatedByPageId": "5550"
+        },
+		{
+            "PageId": "5570",
             "SequenceId": null,
             "SectionId": null,
             "Title": "English and maths assessments holding page",
             "LinkTitle": "English and maths assessments",
-            "InfoText": "<p>holding page for next question in this section</p>",
+            "InfoText": "<p>holding page for next question in this section - how</p>",
             "Questions": [],
 			"PageOfAnswers": [],
             "Next": [{
@@ -71,7 +129,7 @@
             "Active": false,
             "NotRequiredConditions": [],
             "BodyText": "",
-            "ActivatedByPageId": "5550"
+            "ActivatedByPageId": "5560"
         }
     ]
 }
