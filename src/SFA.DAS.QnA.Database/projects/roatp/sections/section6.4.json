@@ -28,9 +28,9 @@
                                 "ErrorMessage": "Tell us how your organisation will ensure apprentices are supported during their apprenticeship training"
                             },
                             {
-                                "Name": "MaxLength",
-                                "Value": "750",
-                                "ErrorMessage": "Your answer must be 750 characters or less"
+                                "Name": "MaxWordLength",
+                                "Value": "275",
+                                "ErrorMessage": "Your answer must be 275 words or less"
                             }
                         ]
                     }
@@ -83,9 +83,9 @@
                                 "ErrorMessage": "Tell us how your organisation will ensure apprentices are supported during their apprenticeship training"
                             },
                             {
-                                "Name": "MaxLength",
+                                "Name": "MaxWordLength",
                                 "Value": "275",
-                                "ErrorMessage": "Your answer must be 275 characters or less"
+                                "ErrorMessage": "Your answer must be 275 words or less"
                             }
                         ]
                     }
@@ -216,9 +216,9 @@
                                 "ErrorMessage": "Tell us what other ways your organisation will use to support its apprentices"
                             },
                             {
-                                "Name": "MaxLength",
-                                "Value": "750",
-                                "ErrorMessage": "Your answer must be 750 characters or less"
+                                "Name": "MaxWordLength",
+                                "Value": "275",
+                                "ErrorMessage": "Your answer must be 275 words or less"
                             }
                         ]
                     }
