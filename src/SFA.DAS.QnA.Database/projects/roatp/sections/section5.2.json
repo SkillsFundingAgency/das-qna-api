@@ -17,11 +17,36 @@
                     "QuestionBodyText": "",
                     "Hint": "",
                     "Input": {
-                        "Type": "Radio",
+                        "Type": "ComplexRadio",
                         "Options": [{
                                 "Label": "Yes",
                                 "Value": "Yes",
-                                "FurtherQuestions": null
+                                "FurtherQuestions": [
+                                    {
+                                        "QuestionId": "RTE-20-1",
+                                        "QuestionTag": null,
+                                        "Label": "Who have you engaged with?",
+                                        "ShortLabel": "",
+                                        "QuestionBodyText": "",
+                                        "Hint": "",
+                                        "Input": {
+                                            "Type": "Textarea",
+                                            "Options": [],
+                                            "Validations": [
+                                                {
+                                                    "Name": "Required",
+                                                    "Value": "",
+                                                    "ErrorMessage": "Tell us who you've engaged with"
+                                                },
+                                                {
+                                                    "Name": "MaxWordCount",
+                                                    "Value": "275",
+                                                    "ErrorMessage": "Your answer must be 275 words or less"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
                             }, {
                                 "Label": "No",
                                 "Value": "No",
