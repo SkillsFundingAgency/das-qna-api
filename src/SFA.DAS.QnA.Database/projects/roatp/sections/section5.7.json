@@ -116,8 +116,33 @@
             "SectionId": null,
             "Title": "English and maths assessments holding page",
             "LinkTitle": "English and maths assessments",
-            "InfoText": "<p>holding page for next question in this section - how</p>",
-            "Questions": [],
+            "InfoText": "",
+			 "Details": {
+                "Title": "What is a significant event",
+                "Body": "<p class='govuk-body'>It's when something happens which impacts the delivery of training and assessments. This includes things like a training location being unavailable or a loss of systems and data.</p>"
+            },
+            "Questions": [{
+                    "QuestionId": "RTE-67",
+                    "QuestionTag": null,
+                    "Label": "How will you continue to deliver English and maths training and assessments if there's a significant event?",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "<p class='govuk-body' id='rte-managing-employers'>Your answer must include how your organisation will:</p><ul class='govuk-list govuk-list--bullet'><li>continue to deliver training and assessments without delays</li><li>provide a different location, if needed</li><li>manage transportation needs</li><li>use different methods of communication</li><li>have a list of emergency contacts numbers, ESFA must be listed</li></ul>",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "Textarea",
+                        "Validations": [{
+                                "Name": "Required",
+                                "Value": "",
+                                "ErrorMessage": "Tell us how you will continue to deliver English and maths training and assessments if there's a significant event"
+                            }, {
+                                "Name": "MaxWordCount",
+                                "Value": "275",
+                                "ErrorMessage": "Your answer must be 275 words or less"
+                            }
+                        ]
+                    }
+                }
+            ],
 			"PageOfAnswers": [],
             "Next": [{
                     "Action": "ReturnToSection",
