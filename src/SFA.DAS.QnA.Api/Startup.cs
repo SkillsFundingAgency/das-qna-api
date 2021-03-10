@@ -15,6 +15,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Logging;
+using SFA.DAS.QnA.Api.Authentication;
+using SFA.DAS.QnA.Api.Authorization;
 using SFA.DAS.QnA.Api.Infrastructure;
 using SFA.DAS.QnA.Application;
 using SFA.DAS.QnA.Application.Commands;
@@ -57,36 +59,15 @@ namespace SFA.DAS.QnA.Api
         {
             services.AddOptions();
             services.Configure<QnAConfig>(Configuration.GetSection("QnA"));
-            services.Configure<AuthenticationConfig>(Configuration.GetSection("ApiAuthentication"));
+            services.Configure<AzureActiveDirectoryConfiguration>(Configuration.GetSection("AzureActiveDirectoryConfiguration"));
             services.Configure<FileStorageConfig>(Configuration.GetSection("FileStorage"));
             var serviceProvider = services.BuildServiceProvider();
             var config = serviceProvider.GetService<IOptions<QnAConfig>>();
 
             IdentityModelEventSource.ShowPII = true; 
 
-            if (!_hostingEnvironment.IsDevelopment())
-            {
-                var azureActiveDirectoryConfiguration =
-                    serviceProvider.GetService<IOptions<AuthenticationConfig>>();
-                services.AddAuthorization(o =>
-                {
-                    o.AddPolicy("default", policy => { policy.RequireAuthenticatedUser(); });
-                });
-                services.AddAuthentication(auth => { auth.DefaultScheme = JwtBearerDefaults.AuthenticationScheme; })
-                    .AddJwtBearer(auth =>
-                    {
-                        auth.Authority =
-                            $"https://login.microsoftonline.com/{azureActiveDirectoryConfiguration.Value.TenantId}";
-                        auth.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
-                        {
-                            ValidAudiences = new List<string>
-                            {
-                                azureActiveDirectoryConfiguration.Value.Audience,
-                                azureActiveDirectoryConfiguration.Value.ClientId.ToString()
-                            }
-                        };
-                    });
-            }
+            services.AddApiAuthorization(_hostingEnvironment);
+            services.AddApiAuthentication(serviceProvider);
 
             services.RegisterAllTypes<IValidator>(new[] { typeof(IValidator).Assembly });
             services.AddTransient<IValidatorFactory, ValidatorFactory>();
