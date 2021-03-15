@@ -35,7 +35,7 @@
                         "Validations": [{
                                 "Name": "Required",
                                 "Value": "",
-                                "ErrorMessage": "Tell us how you will deliver English and Maths assessments"
+                                "ErrorMessage": "Tell us how you will deliver English and maths assessments"
                             }
                         ]
                     }
@@ -92,7 +92,7 @@
                         "Validations": [{
                                 "Name": "Required",
                                 "Value": "",
-                                "ErrorMessage": "Tell us where you will deliver English and Maths assessments"
+                                "ErrorMessage": "Tell us where you will deliver English and maths assessments"
                             }
                         ]
                     }
