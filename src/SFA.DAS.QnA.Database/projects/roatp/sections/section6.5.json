@@ -216,8 +216,13 @@
                                 "HintText": ""
                             },
                             {
-                                "Value": "One trainer between 30 or more apprentices",
-                                "Label": "One trainer between 30 or more apprentices",
+                                "Value": "One trainer between 30 to 49 apprentices",
+                                "Label": "One trainer between 30 to 49 apprentices",
+                                "HintText": ""
+                            },
+                            {
+                                "Value": "One trainer between 50 or more apprentices",
+                                "Label": "One trainer between 50 or more apprentices",
                                 "HintText": ""
                             }
                         ],
