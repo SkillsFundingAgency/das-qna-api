@@ -132,8 +132,8 @@
                         "Type": "CheckboxList",
                         "Options": [
                             {
-                                "Value": "Though a mentor",
-                                "Label": "Though a mentor",
+                                "Value": "Through a mentor",
+                                "Label": "Through a mentor",
                                 "HintText": ""
                             },
                             {
