@@ -55,7 +55,7 @@
                     "QuestionTag": null,
                     "Label": "How has your organisation made improvements using its process for evaluating the quality of training delivered?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body' id='eat-improving-training'>Give us an example including:</p><ul class='govuk-list govuk-list--bullet'><li>how an issue was identified</li><li>what improvements were made</li><li>who was involved in implementing the improvements</li><li>the overall outcome</li><li>how success was measured</li></ul>",
+                    "QuestionBodyText": "<p class='govuk-body' id='eat-improving-training'>Give us an example including:</p><ul class='govuk-list govuk-list--bullet'><li>how an issue was identified</li><li>what improvements were made</li><li>who was involved in implementing the improvements</li><li>the overall outcome</li><li>how success was measured</li><li>the impact on apprentices</li></ul>",
                     "Hint": "",
                     "Input": {
                         "Type": "Textarea",
