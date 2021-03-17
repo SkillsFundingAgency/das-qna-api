@@ -64,7 +64,7 @@
                     "QuestionId": "RTE-66",
                     "Label": "Where will you deliver the assessments in English and maths?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "",
+                     "QuestionBodyText": "<p class='govuk-body govuk-hint'>Select all that apply.</p>",
                     "Hint": "",
                     "Input": {
                         "Type": "CheckBoxList",
@@ -107,7 +107,7 @@
             "AllowMultipleAnswers": false,
             "Active": false,
             "NotRequiredConditions": [],
-            "BodyText": "<p class='govuk-body'>Select all that apply.</p>",
+            "BodyText": "",
             "ActivatedByPageId": "5550"
         },
 		{
