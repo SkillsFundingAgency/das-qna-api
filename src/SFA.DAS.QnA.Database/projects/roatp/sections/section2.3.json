@@ -396,11 +396,6 @@
                         "Options": [],
                         "Validations": [
                             {
-                                "Name": "Required",
-                                "Value": "",
-                                "ErrorMessage": "Select your UK ultimate parent company's full financial statements covering the last 12 months"
-                            },
-                            {
                                 "Name": "FileType",
                                 "Value": "pdf",
                                 "ErrorMessage": "The selected file must be a PDF"
