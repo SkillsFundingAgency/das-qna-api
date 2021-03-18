@@ -138,8 +138,7 @@
             "Questions": [
                 {
 				  "QuestionId": "EAT-80",
-				  "QuestionTag": null,
-				  "Label": "Full Name",
+				  "Label": "Full name",
 				  "ShortLabel": "",
 				  "QuestionBodyText": "",
 				  "Hint": "",
