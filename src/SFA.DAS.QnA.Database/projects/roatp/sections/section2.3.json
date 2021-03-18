@@ -268,26 +268,78 @@
             "PageId": "2530",
             "SequenceId": null,
             "SectionId": null,
-            "Title": "Upload a financial statement for all your UK ultimate parent company's subsidiary companies",
-            "LinkTitle": "Upload a financial statement for all your UK ultimate parent company's subsidiary companies",
-            "InfoText": "<div class='govuk-warning-text'> <span class='govuk-warning-text__icon' aria-hidden='true'>!</span> <strong class='govuk-warning-text__text'> <span class='govuk-warning-text__assistive'>Warning</span>Financial statements must not be abbreviated, filleted or for a micro entity.</strong> </div>",
+            "Title": "Upload a financial statement for all your UK ultimate parent company's active subsidiary companies",
+            "LinkTitle": "Upload a financial statement for all your UK ultimate parent company's active subsidiary companies",
+            "InfoText": "<div class='govuk-warning-text'> <span class='govuk-warning-text__icon' aria-hidden='true'>!</span> <strong class='govuk-warning-text__text'> <span class='govuk-warning-text__assistive'>Warning</span>Financial statement uploads must not be abbreviated, filleted or accounts for a micro entity.</strong> </div>",
             "Questions": [
                 {
                     "QuestionId": "FH-530",
                     "QuestionTag": null,
-                    "Label": "Upload a financial statement for all your UK ultimate parent company's subsidiary companies",
+                    "Label": "Upload a financial statement for all your UK ultimate parent company's active subsidiary companies",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body'>Subsidiary companies must not be dormant.</p><p class='govuk-body'>Financial statements must include a:</p><ul class='govuk-list govuk-list--bullet'><li>balance sheet - showing the value of everything your organisation owns, owes and is owed on the last day of the financial year</li><li>profit and loss account - showing your organisation's sales, running costs and profit and loss it made over the financial year</li><li>detailed notes about the accounts</li><li>breakdown of creditors and borrowings</li></ul><p class='govuk-body'>If applicable, financial statements should be signed and filed with Companies House or the Charity Commission of England and Wales.</p><p class='govuk-body'>The file must be a PDF and smaller than 5MB.</p>",
+                    "QuestionBodyText": "<p class='govuk-body'>Subsidiary companies must not be dormant.</p><p class='govuk-body'>Financial statements must include a:</p><ul class='govuk-list govuk-list--bullet'><li>balance sheet - showing the value of everything your active subsidiaries owns, owes and are owed on the last day of the financial year</li><li>profit and loss account - showing your organisation's sales, running costs and profit or loss it made over the financial year</li><li>detailed notes about the accounts</li><li>breakdown of creditors, other creditors and borrowings</li></ul><p class='govuk-body'>If applicable, financial statements should be signed and filed with Companies House or the Charity Commission of England and Wales, Scottish Charities Regulator or other regulatory body.</p><p class='govuk-body'>You can upload a maximum of 4 files.</p><p class='govuk-body'>The file must be a PDF and smaller than 5MB.</p>",
                     "Hint": "Upload a file",
                     "Input": {
                         "Type": "FileUpload",
                         "Options": [],
                         "Validations": [
                             {
-                                "Name": "Required",
-                                "Value": "",
-                                "ErrorMessage": "Select a financial statement for all your UK ultimate parent company's subsidiary companies"
-                            },
+                                "Name": "FileType",
+                                "Value": "pdf",
+                                "ErrorMessage": "The selected file must be a PDF"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "QuestionId": "FH-531",
+                    "QuestionTag": "",
+                    "Label": "",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "FileUpload",    
+                        "Options": [],
+                        "Validations": [
+                            {
+                                "Name": "FileType",
+                                "Value": "pdf",
+                                "ErrorMessage": "The selected file must be a PDF"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "QuestionId": "FH-532",
+                    "QuestionTag": "",
+                    "Label": "",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "FileUpload",    
+                        "Options": [],
+                        "Validations": [
+                            {
+                                "Name": "FileType",
+                                "Value": "pdf",
+                                "ErrorMessage": "The selected file must be a PDF"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "QuestionId": "FH-533",
+                    "QuestionTag": "",
+                    "Label": "",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "FileUpload",    
+                        "Options": [],
+                        "Validations": [
                             {
                                 "Name": "FileType",
                                 "Value": "pdf",
