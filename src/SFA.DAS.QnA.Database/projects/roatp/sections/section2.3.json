@@ -85,24 +85,76 @@
             "SectionId": null,
             "Title": "Upload your UK ultimate parent company's consolidated financial statements",
             "LinkTitle": "Upload your UK ultimate parent company's consolidated financial statements",
-            "InfoText": "<div class='govuk-warning-text'> <span class='govuk-warning-text__icon' aria-hidden='true'>!</span> <strong class='govuk-warning-text__text'> <span class='govuk-warning-text__assistive'>Warning</span>Consolidated financial statements must not be abbreviated, filleted or for a micro entity.</strong> </div>",
+            "InfoText": "<div class='govuk-warning-text'> <span class='govuk-warning-text__icon' aria-hidden='true'>!</span> <strong class='govuk-warning-text__text'> <span class='govuk-warning-text__assistive'>Warning</span>Consolidated financial statements must not be abbreviated, filleted or accounts for a micro entity.</strong> </div>",
             "Questions": [
                 {
                     "QuestionId": "FH-510",
                     "QuestionTag": null,
                     "Label": "Upload your UK ultimate parent company's consolidated financial statements",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body'>Consolidated financial statements must include:</p><ul class='govuk-list govuk-list--bullet'><li>a balance sheet - showing the value of everything your organisation owns, owes and is owed on the last day of the financial year</li><li>a cash flow statement</li><li>an income statement</li></ul><p class='govuk-body'>The file must be a PDF and smaller than 5MB.</p>",
+                    "QuestionBodyText": "<p class='govuk-body'>Consolidated financial statements must include:</p><ul class='govuk-list govuk-list--bullet'><li>a balance sheet - showing the value of everything your organisation owns, owes and is owed on the last day of the financial year</li><li>a cash flow statement</li><li>an income statement</li></ul><p class='govuk-body'>You can upload a maximum of 4 files.</p><p class='govuk-body'>Each file must be a PDF and smaller than 5MB.</p>",
                     "Hint": "Upload a file",
                     "Input": {
                         "Type": "FileUpload",
                         "Options": [],
                         "Validations": [
                             {
-                                "Name": "Required",
-                                "Value": "",
-                                "ErrorMessage": "Select your UK ultimate parent company's consolidated financial statements"
-                            },
+                                "Name": "FileType",
+                                "Value": "pdf",
+                                "ErrorMessage": "The selected file must be a PDF"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "QuestionId": "FH-511",
+                    "QuestionTag": "",
+                    "Label": "",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "FileUpload",    
+                        "Options": [],
+                        "Validations": [
+                            {
+                                "Name": "FileType",
+                                "Value": "pdf",
+                                "ErrorMessage": "The selected file must be a PDF"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "QuestionId": "FH-512",
+                    "QuestionTag": "",
+                    "Label": "",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "FileUpload",    
+                        "Options": [],
+                        "Validations": [
+                            {
+                                "Name": "FileType",
+                                "Value": "pdf",
+                                "ErrorMessage": "The selected file must be a PDF"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "QuestionId": "FH-513",
+                    "QuestionTag": "",
+                    "Label": "",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "FileUpload",    
+                        "Options": [],
+                        "Validations": [
                             {
                                 "Name": "FileType",
                                 "Value": "pdf",
