@@ -2758,17 +2758,69 @@
                     "QuestionTag": null,
                     "Label": "Upload your organisation's management accounts covering at least 3 months within the last 12 months",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body'>Management accounts must include:</p><ul class='govuk-list govuk-list--bullet'><li>a balance sheet - showing the value of everything your organisation owns, owes and is owed</li><li>a cash flow statement</li><li>profit and loss account - showing your organisation's sales, running costs and profit and loss it's made</li><li>detailed notes about any assumptions made</li></ul><p class='govuk-body'>Each file must be a PDF and smaller than 5MB.</p>",
+                    "QuestionBodyText": "<p class='govuk-body'>Management accounts must include:</p><ul class='govuk-list govuk-list--bullet'><li>a balance sheet - showing the value of everything your organisation owns, owes and is owed</li><li>a cash flow statement</li><li>profit and loss account - showing your organisation's sales, running costs and profit or loss it's made</li><li>detailed notes about any assumptions made</li></ul><p class='govuk-body'>You can upload a maximum of 4 files.</p><p class='govuk-body'>Each file must be a PDF and smaller than 5MB.</p>",
                     "Hint": "Upload a file",
                     "Input": {
                         "Type": "FileUpload",    
                         "Options": [],
                         "Validations": [
                             {
-                                "Name": "Required",
-                                "Value": "",
-                                "ErrorMessage": "Select your organisation's management accounts covering at least 3 months within the last 12 months"
-                            },
+                                "Name": "FileType",
+                                "Value": "pdf",
+                                "ErrorMessage": "The selected file must be a PDF"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "QuestionId": "FH-391",
+                    "QuestionTag": "",
+                    "Label": "",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "FileUpload",    
+                        "Options": [],
+                        "Validations": [
+                            {
+                                "Name": "FileType",
+                                "Value": "pdf",
+                                "ErrorMessage": "The selected file must be a PDF"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "QuestionId": "FH-392",
+                    "QuestionTag": "",
+                    "Label": "",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "FileUpload",    
+                        "Options": [],
+                        "Validations": [
+                            {
+                                "Name": "FileType",
+                                "Value": "pdf",
+                                "ErrorMessage": "The selected file must be a PDF"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "QuestionId": "FH-393",
+                    "QuestionTag": "",
+                    "Label": "",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "FileUpload",    
+                        "Options": [],
+                        "Validations": [
                             {
                                 "Name": "FileType",
                                 "Value": "pdf",
@@ -2812,17 +2864,69 @@
                     "QuestionTag": null,
                     "Label": "Upload your organisation's financial projections covering the remaining period",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body'>Financial projections must include:</p><ul class='govuk-list govuk-list--bullet'><li>a balance sheet - showing a forecast of everything your organisation will own, owe and be owed</li><li>a profit and loss account - showing a forecast of your organisation's sales, running costs and the profit and loss</li><li>detailed notes about the accounts</li><li>a breakdown of creditors and borrowings</li></ul><p class='govuk-body'>Each file must be a PDF and smaller than 5MB.</p>",
+                    "QuestionBodyText": "<p class='govuk-body'>Financial projections must include:</p><ul class='govuk-list govuk-list--bullet'><li>a balance sheet - showing a forecast of everything your organisation will own, owe and be owed</li><li>a profit and loss account - showing a forecast of your organisation's sales, running costs and the profit or loss</li><li>detailed notes about the accounts</li><li>a breakdown of creditors, other creditors and borrowings</li></ul><p class='govuk-body'>You can upload a maximum of 4 files.</p><p class='govuk-body'>Each file must be a PDF and smaller than 5MB.</p>",
                     "Hint": "Upload a file",
                     "Input": {
                         "Type": "FileUpload",    
                         "Options": [],
                         "Validations": [
                             {
-                                "Name": "Required",
-                                "Value": "",
-                                "ErrorMessage": "Select your organisation's financial projections covering the remaining period"
-                            },
+                                "Name": "FileType",
+                                "Value": "pdf",
+                                "ErrorMessage": "The selected file must be a PDF"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "QuestionId": "FH-401",
+                    "QuestionTag": "",
+                    "Label": "",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "FileUpload",    
+                        "Options": [],
+                        "Validations": [
+                            {
+                                "Name": "FileType",
+                                "Value": "pdf",
+                                "ErrorMessage": "The selected file must be a PDF"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "QuestionId": "FH-402",
+                    "QuestionTag": "",
+                    "Label": "",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "FileUpload",    
+                        "Options": [],
+                        "Validations": [
+                            {
+                                "Name": "FileType",
+                                "Value": "pdf",
+                                "ErrorMessage": "The selected file must be a PDF"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "QuestionId": "FH-403",
+                    "QuestionTag": "",
+                    "Label": "",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "FileUpload",    
+                        "Options": [],
+                        "Validations": [
                             {
                                 "Name": "FileType",
                                 "Value": "pdf",
