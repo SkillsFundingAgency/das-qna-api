@@ -1998,6 +1998,7 @@
             "Title": "Upload your organisation's latest full financial statements covering a minimum of 12 months",
             "LinkTitle": "Upload your organisation's latest full financial statements covering a minimum of 12 months",
             "InfoText": "<div class='govuk-warning-text'> <span class='govuk-warning-text__icon' aria-hidden='true'>!</span> <strong class='govuk-warning-text__text'> <span class='govuk-warning-text__assistive'>Warning</span>Financial statement uploads must not be abbreviated, filleted or accounts for a micro entity.</strong> </div>",
+            "DisplayType": "MultipleFileUpload",
             "Questions": [
                 {
                     "QuestionId": "FH-330",
@@ -2246,6 +2247,7 @@
             "Title": "Upload your organisation's financial statements covering any period within the last 12 months",
             "LinkTitle": "Upload your organisation's financial statements covering any period within the last 12 months",
             "InfoText": "<div class='govuk-warning-text'> <span class='govuk-warning-text__icon' aria-hidden='true'>!</span> <strong class='govuk-warning-text__text'> <span class='govuk-warning-text__assistive'>Warning</span>Financial statement uploads must not be abbreviated, filleted or accounts for a micro entity.</strong> </div>",
+            "DisplayType": "MultipleFileUpload",
             "Questions": [
                 {
                     "QuestionId": "FH-350",
@@ -2393,6 +2395,7 @@
             "Title": "Upload your organisation's management accounts covering the remaining period to date",
             "LinkTitle": "Upload your organisation's management accounts covering the remaining period to date",
             "InfoText": "",
+            "DisplayType": "MultipleFileUpload",
             "Questions": [
                 {
                     "QuestionId": "FH-360",
@@ -2610,6 +2613,7 @@
             "Title": "Upload your organisation's full management accounts for the last 12 months",
             "LinkTitle": "Upload your organisation's full management accounts for the last 12 months",
             "InfoText": "",
+            "DisplayType": "MultipleFileUpload",
             "Questions": [
                 {
                     "QuestionId": "FH-380",
@@ -2751,6 +2755,7 @@
             "SectionId": null,
             "Title": "Upload your organisation's management accounts covering at least 3 months within the last 12 months",
             "LinkTitle": "Upload your organisation's management accounts covering at least 3 months within the last 12 months",
+            "DisplayType": "MultipleFileUpload",
             "InfoText": "",
             "Questions": [
                 {
@@ -2858,6 +2863,7 @@
             "Title": "Upload your organisation's financial projections covering the remaining period",
             "LinkTitle": "Upload your organisation's financial projections covering the remaining period",
             "InfoText": "",
+            "DisplayType": "MultipleFileUpload",
             "Questions": [
                 {
                     "QuestionId": "FH-400",

@@ -86,6 +86,7 @@
             "Title": "Upload your UK ultimate parent company's consolidated financial statements",
             "LinkTitle": "Upload your UK ultimate parent company's consolidated financial statements",
             "InfoText": "<div class='govuk-warning-text'> <span class='govuk-warning-text__icon' aria-hidden='true'>!</span> <strong class='govuk-warning-text__text'> <span class='govuk-warning-text__assistive'>Warning</span>Consolidated financial statements must not be abbreviated, filleted or accounts for a micro entity.</strong> </div>",
+            "DisplayType": "MultipleFileUpload",
             "Questions": [
                 {
                     "QuestionId": "FH-510",
@@ -271,6 +272,7 @@
             "Title": "Upload a financial statement for all your UK ultimate parent company's active subsidiary companies",
             "LinkTitle": "Upload a financial statement for all your UK ultimate parent company's active subsidiary companies",
             "InfoText": "<div class='govuk-warning-text'> <span class='govuk-warning-text__icon' aria-hidden='true'>!</span> <strong class='govuk-warning-text__text'> <span class='govuk-warning-text__assistive'>Warning</span>Financial statement uploads must not be abbreviated, filleted or accounts for a micro entity.</strong> </div>",
+            "DisplayType": "MultipleFileUpload",
             "Questions": [
                 {
                     "QuestionId": "FH-530",
@@ -383,6 +385,7 @@
             "Title": "Upload your UK ultimate parent company's full financial statements covering the last 12 months",
             "LinkTitle": "Upload your UK ultimate parent company's full financial statements covering the last 12 months",
             "InfoText": "<div class='govuk-warning-text'> <span class='govuk-warning-text__icon' aria-hidden='true'>!</span> <strong class='govuk-warning-text__text'> <span class='govuk-warning-text__assistive'>Warning</span>Financial statement uploads must not be abbreviated, filleted or accounts for a micro entity.</strong> </div>",
+            "DisplayType": "MultipleFileUpload",
             "Questions": [
                 {
                     "QuestionId": "FH-540",
