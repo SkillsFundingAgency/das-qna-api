@@ -94,7 +94,7 @@
                     "Label": "Upload your UK ultimate parent company's consolidated financial statements",
                     "ShortLabel": "",
                     "QuestionBodyText": "<p class='govuk-body'>Consolidated financial statements must include:</p><ul class='govuk-list govuk-list--bullet'><li>a balance sheet - showing the value of everything your organisation owns, owes and is owed on the last day of the financial year</li><li>a cash flow statement</li><li>an income statement</li></ul><p class='govuk-body'>You can upload a maximum of 4 files.</p><p class='govuk-body'>Each file must be a PDF and smaller than 5MB.</p>",
-                    "Hint": "Upload a file",
+                    "Hint": "",
                     "Input": {
                         "Type": "FileUpload",
                         "Options": [],
@@ -280,7 +280,7 @@
                     "Label": "Upload a financial statement for all your UK ultimate parent company's active subsidiary companies",
                     "ShortLabel": "",
                     "QuestionBodyText": "<p class='govuk-body'>Subsidiary companies must not be dormant.</p><p class='govuk-body'>Financial statements must include a:</p><ul class='govuk-list govuk-list--bullet'><li>balance sheet - showing the value of everything your active subsidiaries owns, owes and are owed on the last day of the financial year</li><li>profit and loss account - showing your organisation's sales, running costs and profit or loss it made over the financial year</li><li>detailed notes about the accounts</li><li>breakdown of creditors, other creditors and borrowings</li></ul><p class='govuk-body'>If applicable, financial statements should be signed and filed with Companies House or the Charity Commission of England and Wales, Scottish Charities Regulator or other regulatory body.</p><p class='govuk-body'>You can upload a maximum of 4 files.</p><p class='govuk-body'>The file must be a PDF and smaller than 5MB.</p>",
-                    "Hint": "Upload a file",
+                    "Hint": "",
                     "Input": {
                         "Type": "FileUpload",
                         "Options": [],
@@ -393,7 +393,7 @@
                     "Label": "Upload your UK ultimate parent company's full financial statements covering the last 12 months",
                     "ShortLabel": "",
                     "QuestionBodyText": "<p class='govuk-body'>Financial statements must include a:</p><ul class='govuk-list govuk-list--bullet'><li>balance sheet - showing the value of everything your organisation owns, owes and is owed on the last day of the financial year</li><li>profit and loss account - showing your organisation's sales, running costs and profit or loss it made over the financial year</li><li>detailed notes about the accounts</li><li>breakdown of creditors, other creditors and borrowings</li></ul><p class='govuk-body'>If applicable, financial statements should be signed and filed with Companies House or the Charity Commission of England and Wales, Scottish Charities Regulator or other regulatory body.</p><p class='govuk-body'>You can upload a maximum of 4 files.</p><p class='govuk-body'>Each file should be a PDF and smaller than 5MB.</p>",
-                    "Hint": "Upload a file",
+                    "Hint": "",
                     "Input": {
                         "Type": "FileUpload",
                         "Options": [],
