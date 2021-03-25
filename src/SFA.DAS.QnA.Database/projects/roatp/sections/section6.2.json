@@ -16,8 +16,8 @@
                     "QuestionTag": "PATTypeOfTrainingMainEmployer",
                     "Label": "What type of apprenticeship training will your organisation offer?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body'>Select all that apply.</p>",
-                    "Hint": "",
+                    "QuestionBodyText": "<p class='govuk-body'>Apprenticeship frameworks were replaced by apprenticeship standards on 1 August 2020. </p><p class='govuk-body'>Existing apprentices on frameworks will still be able to complete the framework, providing they started on or before 31 July 2020.</p>",
+                    "Hint": "Select all that apply.",
                     "Input": {
                         "Type": "CheckboxList",
                         "Options": [
@@ -105,8 +105,8 @@
                     "QuestionTag": "PATTypeOfTrainingMainEmployer",
                     "Label": "What type of apprenticeship training will your organisation offer?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body'>Select all that apply.</p>",
-                    "Hint": "",
+                    "QuestionBodyText": "<p class='govuk-body'>Apprenticeship frameworks were replaced by apprenticeship standards on 1 August 2020. </p><p class='govuk-body'>Existing apprentices on frameworks will still be able to complete the framework, providing they started on or before 31 July 2020.</p>",
+                    "Hint": "Select all that apply. ",
                     "Input": {
                         "Type": "CheckboxList",
                         "Options": [
@@ -194,8 +194,8 @@
                     "QuestionTag": "PATTypeOfTrainingSupporting",
                     "Label": "What type of apprenticeship training will your organisation offer?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body'>Select all that apply.</p>",
-                    "Hint": "",
+                    "QuestionBodyText": "<p class='govuk-body'>Apprenticeship frameworks were replaced by apprenticeship standards on 1 August 2020. </p><p class='govuk-body'>Existing apprentices on frameworks will still be able to complete the framework, providing they started on or before 31 July 2020.</p>",
+                    "Hint": "Select all that apply.",
                     "Input": {
                         "Type": "CheckboxList",
                         "Options": [
