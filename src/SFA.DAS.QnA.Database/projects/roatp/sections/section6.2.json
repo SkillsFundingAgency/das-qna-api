@@ -338,9 +338,9 @@
                 {
                     "QuestionId": "PAT-30",
                     "QuestionTag": null,
-                    "Label": "How is your organisation ensuring it's ready to deliver training in apprenticeship standards?",
+                    "Label": "Tell us how your organisation is ready to deliver training in apprenticeship standards",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body'>Your answer must include how your organisation has:</p><ul class='govuk-list govuk-list--bullet'><li>commitment and approval from senior managers to deliver apprenticeship standards</li><li>a governance group in place to monitor delivery of training</li><li>an implementation plan specific to apprenticeship training </li><li>resources that support the delivery of apprenticeship standards</li></ul>",
+                    "QuestionBodyText": "<p class='govuk-body'>You must include how your organisation has:</p><ul class='govuk-list govuk-list--bullet'><li>commitment and approval from senior managers to deliver apprenticeship standards</li><li>a governance group in place to monitor delivery of training</li><li>an implementation plan specific to apprenticeship training </li><li>resources that support the delivery of apprenticeship standards</li></ul>",
                     "Hint": "",
                     "Input": {
                         "Type": "Textarea",
@@ -394,9 +394,9 @@
                 {
                     "QuestionId": "PAT-50",
                     "QuestionTag": null,
-                    "Label": "Offering apprenticeship frameworks",
+                    "Label": "Does your organisation have a plan to transition from apprenticeship frameworks to apprenticeship standards?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body'>Apprenticeship frameworks will be replaced by apprenticeship standards by 1 August 2020. </p><p class='govuk-body govuk-!-font-weight-bold'>Does your organisation have a plan to transition from apprenticeship frameworks to apprenticeship standards?</p><p class='govuk-body'>Find out more on <a href='https://www.gov.uk/government/publications/removal-of-apprenticeship-frameworks' class='govuk-link' target='_blank'>the withdrawal of apprenticeship frameworks  (opens in a new window or tab)</a>.</p>",
+                    "QuestionBodyText": "<p class='govuk-body'>Apprenticeship frameworks will be replaced by apprenticeship standards by 1 August 2020. </p><p class='govuk-body'>Existing apprentices on frameworks will still be able to complete the framework, providing they started on or before 31 July 2020.</p><p class='govuk-body'>Find out more on <a href='https://www.gov.uk/government/publications/removal-of-apprenticeship-frameworks' class='govuk-link' target='_blank'>the withdrawal of apprenticeship frameworks  (opens in a new window or tab)</a>.</p>",
                     "Hint": "",
                     "Input": {
                         "Type": "Radio",
@@ -482,7 +482,7 @@
                     "QuestionTag": null,
                     "Label": "How will your organisation transition from apprenticeship frameworks to apprenticeship standards?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body'>Your answer must include how your organisation has:</p><ul class='govuk-list govuk-list--bullet'><li>get commitment and approval from senior managers to deliver apprenticeship standards</li><li>have a governance group in place to monitor delivery of training</li><li>have an implementation plan specific to apprenticeship training</li><li>have resources that support the delivery of apprenticeship standards</li></ul></p>\n<p class='govuk-body'>Your answer must also include when your organisation will do this.</p>",
+                    "QuestionBodyText": "<p class='govuk-body'>Your answer must include how your organisation will:</p><ul class='govuk-list govuk-list--bullet'><li>get commitment and approval from senior managers to deliver apprenticeship standards</li><li>have a governance group in place to monitor delivery of training</li><li>have an implementation plan specific to apprenticeship training</li><li>have resources that support the delivery of apprenticeship standards</li></ul></p><p class='govuk-body'>Your answer must also include:</p><ul class='govuk-list govuk-list--bullet'><li>when your organisation will transition from frameworks to standards</li><li>what sectors you're delivering frameworks in</li></ul></p>",
                     "Hint": "",
                     "Input": {
                         "Type": "Textarea",
@@ -541,7 +541,7 @@
                     "QuestionTag": null,
                     "Label": "Why will your organisation only deliver apprenticeship frameworks?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body'>Your answer must include a brief summary of why your organisation does not have a plan to transition to apprenticeship standards.</p>",
+                    "QuestionBodyText": "<p class='govuk-body'>Your answer must include:</p><ul class='govuk-list govuk-list--bullet'><li>a brief summary of why your organisation does not have a plan to transition to apprenticeship standards.</li><li>what sectors you're delivering frameworks in</li></ul></p>",
                     "Hint": "",
                     "Input": {
                         "Type": "Textarea",
@@ -613,9 +613,9 @@
                 {
                     "QuestionId": "PAT-60",
                     "QuestionTag": null,
-                    "Label": "Offering apprenticeship frameworks",
+                    "Label": "Does your organisation have a plan to transition from apprenticeship frameworks to apprenticeship standards?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body'>Apprenticeship frameworks will be replaced by apprenticeship standards by 1 August 2020. </p><p class='govuk-body' >Does your organisation have a plan to transition from apprenticeship frameworks to apprenticeship standards?</p><p class='govuk-body'>Find out more on <a href='https://www.gov.uk/government/publications/removal-of-apprenticeship-frameworks' class='govuk-link' target='_blank'>the withdrawal of apprenticeship frameworks  (opens in a new window or tab)</a>.</p>",
+                    "QuestionBodyText": "<p class='govuk-body'>Apprenticeship frameworks will be replaced by apprenticeship standards by 1 August 2020. </p><p class='govuk-body'>Existing apprentices on frameworks will still be able to complete the framework, providing they started on or before 31 July 2020.</p><p class='govuk-body'>Find out more on <a href='https://www.gov.uk/government/publications/removal-of-apprenticeship-frameworks' class='govuk-link' target='_blank'>the withdrawal of apprenticeship frameworks  (opens in a new window or tab)</a>.</p>",
                     "Hint": "",
                     "Input": {
                         "Type": "Radio",
@@ -724,7 +724,7 @@
                     "QuestionTag": null,
                     "Label": "How will your organisation transition from apprenticeship frameworks to apprenticeship standards?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body'>Your answer must include how your organisation has:</p><ul class='govuk-list govuk-list--bullet'><li>get commitment and approval from senior managers to deliver apprenticeship standards</li><li>have a governance group in place to monitor delivery of training</li><li>have an implementation plan specific to apprenticeship training</li><li>have resources that support the delivery of apprenticeship standards</li></ul></p>\n<p class='govuk-body'>Your answer must also include when your organisation will do this.</p>",
+                    "QuestionBodyText": "<p class='govuk-body'>Your answer must include how your organisation will:</p><ul class='govuk-list govuk-list--bullet'><li>get commitment and approval from senior managers to deliver apprenticeship standards</li><li>have a governance group in place to monitor delivery of training</li><li>have an implementation plan specific to apprenticeship training</li><li>have resources that support the delivery of apprenticeship standards</li></ul></p><p class='govuk-body'>Your answer must also include:</p><ul class='govuk-list govuk-list--bullet'><li>when your organisation will transition from frameworks to standards</li><li>what sectors you're delivering frameworks in</li></ul></p>",
                     "Hint": "",
                     "Input": {
                         "Type": "Textarea",
@@ -779,7 +779,7 @@
                     "QuestionTag": null,
                     "Label": "Why will your organisation only deliver apprenticeship frameworks?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body'>Your answer must include a brief summary of why your organisation has no plan to transition to apprenticeship standards.\n</p>",
+                    "QuestionBodyText": "<p class='govuk-body'>Your answer must include:</p><ul class='govuk-list govuk-list--bullet'><li>a brief summary of why your organisation does not have a plan to transition to apprenticeship standards.</li><li>what sectors you're delivering frameworks in</li></ul></p>",
                     "Hint": "",
                     "Input": {
                         "Type": "Textarea",
@@ -832,9 +832,9 @@
                 {
                     "QuestionId": "PAT-70",
                     "QuestionTag": null,
-                    "Label": "How will your organisation engage with end-point assessment organisations (EPAO's)?",
+                    "Label": "How will your organisation engage with end-point assessment organisations (EPAOs)?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body'>Your answer must include how your organisation will:</p><ul class='govuk-list govuk-list--bullet'><li>find EPAO's for relevant apprenticeship standards</li><li>contact EPAO's</li><li>engage employers in the process of choosing an EPAO</li><li>confirm a contract or service agreement with EPAO's</li><li>engage EPAOs throughout the apprenticeship journey</li><li>ensure the EPAO is suitable, by including what information you will ask from them</li><li>ensure End Point Assessments are booked within the timescales published in <a href='https://www.gov.uk/guidance/apprenticeship-funding-rules' class='govuk-link' target='_blank'>the apprenticeship funding rules</a></li></ul></p>",
+                    "QuestionBodyText": "<p class='govuk-body'>Your answer must include how your organisation will:</p><ul class='govuk-list govuk-list--bullet'><li>find EPAOs for relevant apprenticeship standards</li><li>contact EPAOs</li><li>engage employers in the process of choosing an EPAO</li><li>confirm a contract or service agreement with EPAOs</li><li>engage EPAOs throughout the apprenticeship journey</li><li>ensure the EPAO is suitable, by including what information you will ask from them</li><li>ensure End Point Assessments are booked within the timescales published in <a href='https://www.gov.uk/guidance/apprenticeship-funding-rules' class='govuk-link' target='_blank'>the apprenticeship funding rules</a></li></ul></p>",
                     "Hint": "",
                     "Input": {
                         "Type": "Textarea",
@@ -907,16 +907,16 @@
             "PageId": "6280",
             "SequenceId": null,
             "SectionId": null,
-            "Title": "How does your organisation plan to engage and work with awarding bodies?",
-            "LinkTitle": "How does your organisation plan to engage and work with awarding bodies?",
+            "Title": "How will your organisation plan to engage and work with awarding bodies?",
+            "LinkTitle": "How will your organisation plan to engage and work with awarding bodies?",
             "InfoText": "",
             "Questions": [
                 {
                     "QuestionId": "PAT-80",
                     "QuestionTag": null,
-                    "Label": "How does your organisation plan to engage and work with awarding bodies?",
+                    "Label": "How will your organisation plan to engage and work with awarding bodies?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body'>Your answer must include how your organisation will:</p><ul class='govuk-list govuk-list--bullet'><li>find awarding bodies for relevant apprenticeship frameworks</li><li>contact awarding bodies</li><li>get relevant information from awarding bodies</li><li>engage employers in the process of choosing an awarding body</li><li>confirm a contract or service agreement with awarding bodies</li></ul></p>\n<p class='govuk-body'>You'll also need to include what information your organisation will ask from an awarding body to ensure they are suitable.</p>",
+                    "QuestionBodyText": "<p class='govuk-body'>Your answer must include how your organisation will:</p><ul class='govuk-list govuk-list--bullet'><li>find awarding bodies for relevant apprenticeship frameworks</li><li>contact awarding bodies</li><li>get relevant information from awarding bodies</li><li>engage employers in the process of choosing an awarding body</li><li>confirm a contract or service agreement with awarding bodies</li><li>ensure the awarding body is suitable, by including what information you will ask from them</li></ul></p>",
                     "Hint": "",
                     "Input": {
                         "Type": "Textarea",
