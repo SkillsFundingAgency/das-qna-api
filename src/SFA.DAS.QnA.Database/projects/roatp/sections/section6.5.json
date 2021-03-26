@@ -259,9 +259,9 @@
             "Questions": [{
                     "QuestionId": "PAT-654",
                     "QuestionTag": null,
-                    "Label": "How do you agree with the apprentice what level of support is provided?",
+                    "Label": "How does your proposed staff to learner ratio offer quality support to your apprentices?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body' id='pat-level-of-support'>Your answer must include how your staff and apprentice agree:</p><ul class='govuk-list govuk-list--bullet'><li>how much face-to-face support is necessary</li><li>how much remote support is necessary</li><li>how the apprentice is challenged</li><li>the right staff to apprentice ratio</li></ul><p class='govuk-body' id='pat-level-of-support-2'>Your answer must also include how you would continue to provide the same level of support if your staff to apprentice ratio changed.</p>",
+                    "QuestionBodyText": "<p class='govuk-body' id='pat-level-of-support'>Your answer must include how:</p><ul class='govuk-list govuk-list--bullet'><li>you are making sure each apprentice is challenged</li><li>your delivery method is appropriate for your ratio</li><li>you deliver individual support based on your ratio</li><li>you would continue to deliver the same level of quality apprentice experience, if your ratio changes</li><li>you agree on time spent on remote support vs face to face</li></ul>",
                     "Hint": "",
                     "Input": {
                         "Type": "Textarea",
