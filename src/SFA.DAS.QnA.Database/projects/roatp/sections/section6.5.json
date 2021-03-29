@@ -254,7 +254,7 @@
             "SequenceId": null,
             "SectionId": null,
             "Title": "Forecasting starts",
-            "LinkTitle": "Level of support from apprentices",
+            "LinkTitle": "Proposed staff to learner support",
             "InfoText": "",
             "Questions": [{
                     "QuestionId": "PAT-654",
@@ -268,7 +268,7 @@
                         "Validations": [{
                                 "Name": "Required",
                                 "Value": "",
-                                "ErrorMessage": "Tell us how you agree with the apprentice what level of support is provided"
+                                "ErrorMessage": "Tell us how your proposed staff to learner ratio offer quality support to your apprentices"
                             }, {
                                 "Name": "MaxWordCount",
                                 "Value": "275",
