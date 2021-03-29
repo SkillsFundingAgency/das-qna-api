@@ -216,8 +216,13 @@
                                 "HintText": ""
                             },
                             {
-                                "Value": "One trainer between 30 or more apprentices",
-                                "Label": "One trainer between 30 or more apprentices",
+                                "Value": "One trainer between 30 to 49 apprentices",
+                                "Label": "One trainer between 30 to 49 apprentices",
+                                "HintText": ""
+                            },
+                            {
+                                "Value": "One trainer between 50 or more apprentices",
+                                "Label": "One trainer between 50 or more apprentices",
                                 "HintText": ""
                             }
                         ],
@@ -226,6 +231,48 @@
                                 "Name": "Required",
                                 "Value": "",
                                 "ErrorMessage": "Tell us what the typical ratio is of the staff who deliver training to the learners"
+                            }
+                        ]
+                    }
+                }],
+			"PageOfAnswers": [],
+            "Next": [
+                {
+                    "Action": "NextPage",
+                    "ReturnId": "6540",
+                    "Conditions": []
+                }
+            ],
+            "AllowMultipleAnswers": false,
+            "Active": false,
+            "NotRequiredConditions": [],
+            "BodyText": "",
+            "ActivatedByPageId": "6520"
+        },
+        {
+            "PageId": "6540",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "Forecasting starts",
+            "LinkTitle": "Level of support from apprentices",
+            "InfoText": "",
+            "Questions": [{
+                    "QuestionId": "PAT-654",
+                    "QuestionTag": null,
+                    "Label": "How do you agree with the apprentice what level of support is provided?",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "<p class='govuk-body' id='pat-level-of-support'>Your answer must include how your staff and apprentice agree:</p><ul class='govuk-list govuk-list--bullet'><li>how much face-to-face support is necessary</li><li>how much remote support is necessary</li><li>how the apprentice is challenged</li><li>the right staff to apprentice ratio</li></ul><p class='govuk-body' id='pat-level-of-support-2'>Your answer must also include how you would continue to provide the same level of support if your staff to apprentice ratio changed.</p>",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "Textarea",
+                        "Validations": [{
+                                "Name": "Required",
+                                "Value": "",
+                                "ErrorMessage": "Tell us how you agree with the apprentice what level of support is provided"
+                            }, {
+                                "Name": "MaxWordCount",
+                                "Value": "275",
+                                "ErrorMessage": "Your answer must be 275 words or less"
                             }
                         ]
                     }
@@ -242,7 +289,7 @@
             "Active": false,
             "NotRequiredConditions": [],
             "BodyText": "",
-            "ActivatedByPageId": "6520"
+            "ActivatedByPageId": "6530"
         }
     ]
 }
