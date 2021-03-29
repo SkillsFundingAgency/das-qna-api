@@ -273,8 +273,8 @@
                                 "FurtherQuestions": []
                             },
                             {
-                                "Label": "Higher Education Institute",
-                                "Value": "Higher Education Institute",
+                                "Label": "Higher Education Institute or university",
+                                "Value": "Higher Education Institute or university",
                                 "FurtherQuestions": []
                             },
                             {
@@ -345,7 +345,7 @@
                     "Conditions": [
                         {
                             "QuestionId": "YO-160",
-                            "MustEqual": "Higher Education Institute"
+                            "MustEqual": "Higher Education Institute or university"
                         }
                     ]
                 },
@@ -537,7 +537,7 @@
                         "Academy",
                         "Further Education Institute",
                         "General Further Education College",
-                        "Higher Education Institute",
+                        "Higher Education Institute or university",
                         "Multi-Academy Trust",
                         "National College",
                         "Sixth Form College"
@@ -597,7 +597,7 @@
                     "Field": "OrganisationEducationInstitute",
                     "IsOneOf": [
                         "General Further Education College",
-                        "Higher Education Institute",
+                        "Higher Education Institute or university",
                         "National College",
                         "Sixth Form College"
                     ]
@@ -664,7 +664,7 @@
                     "IsOneOf": [
                         "Academy",
                         "Further Education Institute",
-                        "Higher Education Institute",
+                        "Higher Education Institute or university",
                         "Multi-Academy Trust",
                         "School"
                     ]
