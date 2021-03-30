@@ -396,7 +396,7 @@
                     "QuestionTag": null,
                     "Label": "Does your organisation have a plan to transition from apprenticeship frameworks to apprenticeship standards?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body'>Apprenticeship frameworks will be replaced by apprenticeship standards by 1 August 2020. </p><p class='govuk-body'>Existing apprentices on frameworks will still be able to complete the framework, providing they started on or before 31 July 2020.</p><p class='govuk-body'>Find out more on <a href='https://www.gov.uk/government/publications/removal-of-apprenticeship-frameworks' class='govuk-link' target='_blank'>the withdrawal of apprenticeship frameworks  (opens in a new window or tab)</a>.</p>",
+                    "QuestionBodyText": "<p class='govuk-body'>Apprenticeship frameworks will be replaced by apprenticeship standards on 1 August 2020. </p><p class='govuk-body'>Existing apprentices on frameworks will still be able to complete the framework, providing they started on or before 31 July 2020.</p><p class='govuk-body'>Find out more on <a href='https://www.gov.uk/government/publications/removal-of-apprenticeship-frameworks' class='govuk-link' target='_blank'>the withdrawal of apprenticeship frameworks  (opens in a new window or tab)</a>.</p>",
                     "Hint": "",
                     "Input": {
                         "Type": "Radio",
@@ -615,7 +615,7 @@
                     "QuestionTag": null,
                     "Label": "Does your organisation have a plan to transition from apprenticeship frameworks to apprenticeship standards?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body'>Apprenticeship frameworks will be replaced by apprenticeship standards by 1 August 2020. </p><p class='govuk-body'>Existing apprentices on frameworks will still be able to complete the framework, providing they started on or before 31 July 2020.</p><p class='govuk-body'>Find out more on <a href='https://www.gov.uk/government/publications/removal-of-apprenticeship-frameworks' class='govuk-link' target='_blank'>the withdrawal of apprenticeship frameworks  (opens in a new window or tab)</a>.</p>",
+                    "QuestionBodyText": "<p class='govuk-body'>Apprenticeship frameworks will be replaced by apprenticeship standards on 1 August 2020. </p><p class='govuk-body'>Existing apprentices on frameworks will still be able to complete the framework, providing they started on or before 31 July 2020.</p><p class='govuk-body'>Find out more on <a href='https://www.gov.uk/government/publications/removal-of-apprenticeship-frameworks' class='govuk-link' target='_blank'>the withdrawal of apprenticeship frameworks  (opens in a new window or tab)</a>.</p>",
                     "Hint": "",
                     "Input": {
                         "Type": "Radio",
