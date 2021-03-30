@@ -1798,7 +1798,6 @@
                     "QuestionTag": "FHALiabilities",
                     "Label": "Enter your organisation's total current liabilities for the last financial year",
                     "ShortLabel": "",
-
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'balance sheet' under 'creditors: amount falling due within one year'.",
                     "Input": {
@@ -1995,26 +1994,79 @@
             "PageId": "2160",
             "SequenceId": null,
             "SectionId": null,
-            "Title": "Upload your organisation's latest full financial statements covering a minimum of 12 months",
-            "LinkTitle": "Upload your organisation's latest full financial statements covering a minimum of 12 months",
-            "InfoText": "<div class='govuk-warning-text'> <span class='govuk-warning-text__icon' aria-hidden='true'>!</span> <strong class='govuk-warning-text__text'> <span class='govuk-warning-text__assistive'>Warning</span>Financial statements must not be abbreviated, filleted or for a micro entity.</strong> </div>",
+            "Title": "Upload your organisation's latest full financial statements covering the last 12 months",
+            "LinkTitle": "Upload your organisation's latest full financial statements covering the last 12 months",
+            "InfoText": "<div class='govuk-warning-text'> <span class='govuk-warning-text__icon' aria-hidden='true'>!</span> <strong class='govuk-warning-text__text'> <span class='govuk-warning-text__assistive'>Warning</span>Financial statement uploads must not be abbreviated, filleted or accounts for a micro entity.</strong> </div>",
+            "DisplayType": "MultipleFileUpload",
             "Questions": [
                 {
                     "QuestionId": "FH-330",
-                    "QuestionTag": "FHA12MonthsFinancialStatements",
-                    "Label": "Upload your organisation's latest full financial statements covering a minimum of 12 months",
+                    "QuestionTag": "",
+                    "Label": "Upload your organisation's latest full financial statements covering the last 12 months",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body'>Financial statements must include a:</p><ul class='govuk-list govuk-list--bullet'><li>balance sheet - showing the value of everything your organisation owns, owes and is owed on the last day of the financial year</li><li>profit and loss account - showing your organisation's sales, running costs and profit and loss it made over the financial year</li><li>detailed notes about the accounts</li><li>breakdown of creditors and borrowings</li></ul><p class='govuk-body'>If applicable, financial statements should be signed and filed with Companies House or the Charity Commission of England and Wales.</p><p class='govuk-body'>The file must be a PDF and smaller than 5MB.</p>",
-                    "Hint": "Upload a file",
+                    "QuestionBodyText": "<p class='govuk-body'>Financial statements must include a:</p><ul class='govuk-list govuk-list--bullet'><li>balance sheet - showing the value of everything your organisation owns, owes and is owed on the last day of the financial year</li><li>profit and loss account - showing your organisation's sales, running costs and profit and loss it made over the financial year</li><li>detailed notes about the accounts</li><li>breakdown of creditors, other creditors and borrowings</li></ul><p class='govuk-body'>If applicable, financial statements should be signed and filed with Companies House or the Charity Commission of England and Wales, Scottish Charities Regulator or other regulatory body.</p><p class='govuk-body'>You can upload a maximum of 4 files</p><p class='govuk-body'>Each file must be a PDF and smaller than 5MB.</p>",
+                    "Hint": "",
                     "Input": {
                         "Type": "FileUpload",    
                         "Options": [],
                         "Validations": [
                             {
-                                "Name": "Required",
-                                "Value": "",
-                                "ErrorMessage": "Select your organisation's full financial statements covering the last 12 months"
-                            },
+                                "Name": "FileType",
+                                "Value": "pdf",
+                                "ErrorMessage": "The selected file must be a PDF"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "QuestionId": "FH-331",
+                    "QuestionTag": "",
+                    "Label": "",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "FileUpload",    
+                        "Options": [],
+                        "Validations": [
+                            {
+                                "Name": "FileType",
+                                "Value": "pdf",
+                                "ErrorMessage": "The selected file must be a PDF"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "QuestionId": "FH-332",
+                    "QuestionTag": "",
+                    "Label": "",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "FileUpload",    
+                        "Options": [],
+                        "Validations": [
+                            {
+                                "Name": "FileType",
+                                "Value": "pdf",
+                                "ErrorMessage": "The selected file must be a PDF"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "QuestionId": "FH-333",
+                    "QuestionTag": "",
+                    "Label": "",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "FileUpload",    
+                        "Options": [],
+                        "Validations": [
                             {
                                 "Name": "FileType",
                                 "Value": "pdf",
@@ -2193,24 +2245,77 @@
             "SectionId": null,
             "Title": "Upload your organisation's financial statements covering any period within the last 12 months",
             "LinkTitle": "Upload your organisation's financial statements covering any period within the last 12 months",
-            "InfoText": "<div class='govuk-warning-text'> <span class='govuk-warning-text__icon' aria-hidden='true'>!</span> <strong class='govuk-warning-text__text'> <span class='govuk-warning-text__assistive'>Warning</span>Financial statements must not be abbreviated, filleted or for a micro entity.</strong> </div>",
+            "InfoText": "<div class='govuk-warning-text'> <span class='govuk-warning-text__icon' aria-hidden='true'>!</span> <strong class='govuk-warning-text__text'> <span class='govuk-warning-text__assistive'>Warning</span>Financial statement uploads must not be abbreviated, filleted or accounts for a micro entity.</strong> </div>",
+            "DisplayType": "MultipleFileUpload",
             "Questions": [
                 {
                     "QuestionId": "FH-350",
                     "QuestionTag": null,
                     "Label": "Upload your organisation's financial statements covering any period within the last 12 months",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body'>Financial statements must include a:</p><ul class='govuk-list govuk-list--bullet'><li>balance sheet - showing the value of everything your organisation owns, owes and is owed</li><li>profit and loss account - showing your organisation's sales, running costs and profit and loss it's made</li><li>detailed notes about the accounts</li><li>breakdown of creditors and borrowings</li></ul><p class='govuk-body'>If applicable, financial statements should be signed and filed with Companies House or the Charity Commission of England and Wales.</p><p class='govuk-body'>Each file must be a PDF and smaller than 5MB.</p>",
-                    "Hint": "Upload a file",
+                    "QuestionBodyText": "<p class='govuk-body'>Financial statements must include a:</p><ul class='govuk-list govuk-list--bullet'><li>balance sheet - showing the value of everything your organisation owns, owes and is owed</li><li>profit and loss account - showing your organisation's sales, running costs and profit or loss it's made</li><li>detailed notes about the accounts</li><li>breakdown of creditors, other creditors and borrowings</li></ul><p class='govuk-body'>If applicable, financial statements should be signed and filed with Companies House or the Charity Commission of England and Wales, Scottish Charities Regulator or other regulatory body.</p><p class='govuk-body'>You can upload a maximum of 4 files.</p><p class='govuk-body'>Each file must be a PDF and smaller than 5MB.</p>",
+                    "Hint": "",
                     "Input": {
                         "Type": "FileUpload",    
                         "Options": [],
                         "Validations": [
                             {
-                                "Name": "Required",
-                                "Value": "",
-                                "ErrorMessage": "Select your organisation's financial statements covering any period within the last 12 months"
-                            },
+                                "Name": "FileType",
+                                "Value": "pdf",
+                                "ErrorMessage": "The selected file must be a PDF"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "QuestionId": "FH-351",
+                    "QuestionTag": "",
+                    "Label": "",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "FileUpload",    
+                        "Options": [],
+                        "Validations": [
+                            {
+                                "Name": "FileType",
+                                "Value": "pdf",
+                                "ErrorMessage": "The selected file must be a PDF"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "QuestionId": "FH-352",
+                    "QuestionTag": "",
+                    "Label": "",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "FileUpload",    
+                        "Options": [],
+                        "Validations": [
+                            {
+                                "Name": "FileType",
+                                "Value": "pdf",
+                                "ErrorMessage": "The selected file must be a PDF"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "QuestionId": "FH-353",
+                    "QuestionTag": "",
+                    "Label": "",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "FileUpload",    
+                        "Options": [],
+                        "Validations": [
                             {
                                 "Name": "FileType",
                                 "Value": "pdf",
@@ -2289,23 +2394,76 @@
             "Title": "Upload your organisation's management accounts covering the remaining period to date",
             "LinkTitle": "Upload your organisation's management accounts covering the remaining period to date",
             "InfoText": "",
+            "DisplayType": "MultipleFileUpload",
             "Questions": [
                 {
                     "QuestionId": "FH-360",
                     "QuestionTag": null,
                     "Label": "Upload your organisation's management accounts covering the remaining period to date",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body'>Management accounts must include:</p><ul class='govuk-list govuk-list--bullet'><li>a balance sheet - showing the value of everything your organisation owns, owes and is owed to date</li><li>a cash flow statement</li><li>profit and loss account - showing your organisation's sales, running costs and profit and loss it's made</li><li>detailed notes about any assumptions made</li></ul><p class='govuk-body'>Your management accounts must start from the date your financial statements end.</p><p class='govuk-body'>Each file must be a PDF and smaller than 5MB.</p>",
-                    "Hint": "Upload a file",
+                    "QuestionBodyText": "<p class='govuk-body'>Management accounts must include:</p><ul class='govuk-list govuk-list--bullet'><li>a balance sheet - showing the value of everything your organisation owns, owes and is owed to date</li><li>a cash flow statement</li><li>profit and loss account - showing your organisation's sales, running costs and profit or loss it's made</li><li>detailed notes about any assumptions made</li></ul><p class='govuk-body'>Your management accounts must start from the date your financial statements end.</p><p class='govuk-body'>You can upload a maximum of 4 files.</p><p class='govuk-body'>Each file must be a PDF and smaller than 5MB.</p>",
+                    "Hint": "",
                     "Input": {
                         "Type": "FileUpload",    
                         "Options": [],
                         "Validations": [
                             {
-                                "Name": "Required",
-                                "Value": "",
-                                "ErrorMessage": "Select your organisation's management accounts covering the remaining period to date"
-                            },
+                                "Name": "FileType",
+                                "Value": "pdf",
+                                "ErrorMessage": "The selected file must be a PDF"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "QuestionId": "FH-361",
+                    "QuestionTag": "",
+                    "Label": "",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "FileUpload",    
+                        "Options": [],
+                        "Validations": [
+                            {
+                                "Name": "FileType",
+                                "Value": "pdf",
+                                "ErrorMessage": "The selected file must be a PDF"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "QuestionId": "FH-362",
+                    "QuestionTag": "",
+                    "Label": "",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "FileUpload",    
+                        "Options": [],
+                        "Validations": [
+                            {
+                                "Name": "FileType",
+                                "Value": "pdf",
+                                "ErrorMessage": "The selected file must be a PDF"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "QuestionId": "FH-363",
+                    "QuestionTag": "",
+                    "Label": "",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "FileUpload",    
+                        "Options": [],
+                        "Validations": [
                             {
                                 "Name": "FileType",
                                 "Value": "pdf",
@@ -2454,23 +2612,76 @@
             "Title": "Upload your organisation's full management accounts for the last 12 months",
             "LinkTitle": "Upload your organisation's full management accounts for the last 12 months",
             "InfoText": "",
+            "DisplayType": "MultipleFileUpload",
             "Questions": [
                 {
                     "QuestionId": "FH-380",
                     "QuestionTag": null,
                     "Label": "Upload your organisation's full management accounts for the last 12 months",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body'>Management accounts must include:</p><ul class='govuk-list govuk-list--bullet'><li>a balance sheet - showing the value of everything your organisation owns, owes and is owed for the last 12 months</li><li>a cash flow statement</li><li>profit and loss account - showing your organisation's sales, running costs and profit and loss it's made</li><li>detailed notes about any assumptions made</li></ul><p class='govuk-body'>Each must be a PDF and smaller than 5MB.</p>",
-                    "Hint": "Upload a file",
+                    "QuestionBodyText": "<p class='govuk-body'>Management accounts must include:</p><ul class='govuk-list govuk-list--bullet'><li>a balance sheet - showing the value of everything your organisation owns, owes and is owed for the last 12 months</li><li>a cash flow statement</li><li>profit and loss account - showing your organisation's sales, running costs and profit or loss it's made</li><li>detailed notes about any assumptions made</li></ul><p class='govuk-body'>You can upload a maximum of 4 files.</p><p class='govuk-body'>Each must be a PDF and smaller than 5MB.</p>",
+                    "Hint": "",
                     "Input": {
                         "Type": "FileUpload",    
                         "Options": [],
                         "Validations": [
                             {
-                                "Name": "Required",
-                                "Value": "",
-                                "ErrorMessage": "Select your organisation's full management accounts for the last 12 months"
-                            },
+                                "Name": "FileType",
+                                "Value": "pdf",
+                                "ErrorMessage": "The selected file must be a PDF"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "QuestionId": "FH-381",
+                    "QuestionTag": "",
+                    "Label": "",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "FileUpload",    
+                        "Options": [],
+                        "Validations": [
+                            {
+                                "Name": "FileType",
+                                "Value": "pdf",
+                                "ErrorMessage": "The selected file must be a PDF"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "QuestionId": "FH-382",
+                    "QuestionTag": "",
+                    "Label": "",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "FileUpload",    
+                        "Options": [],
+                        "Validations": [
+                            {
+                                "Name": "FileType",
+                                "Value": "pdf",
+                                "ErrorMessage": "The selected file must be a PDF"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "QuestionId": "FH-383",
+                    "QuestionTag": "",
+                    "Label": "",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "FileUpload",    
+                        "Options": [],
+                        "Validations": [
                             {
                                 "Name": "FileType",
                                 "Value": "pdf",
@@ -2543,6 +2754,7 @@
             "SectionId": null,
             "Title": "Upload your organisation's management accounts covering at least 3 months within the last 12 months",
             "LinkTitle": "Upload your organisation's management accounts covering at least 3 months within the last 12 months",
+            "DisplayType": "MultipleFileUpload",
             "InfoText": "",
             "Questions": [
                 {
@@ -2550,17 +2762,69 @@
                     "QuestionTag": null,
                     "Label": "Upload your organisation's management accounts covering at least 3 months within the last 12 months",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body'>Management accounts must include:</p><ul class='govuk-list govuk-list--bullet'><li>a balance sheet - showing the value of everything your organisation owns, owes and is owed</li><li>a cash flow statement</li><li>profit and loss account - showing your organisation's sales, running costs and profit and loss it's made</li><li>detailed notes about any assumptions made</li></ul><p class='govuk-body'>Each file must be a PDF and smaller than 5MB.</p>",
-                    "Hint": "Upload a file",
+                    "QuestionBodyText": "<p class='govuk-body'>Management accounts must include:</p><ul class='govuk-list govuk-list--bullet'><li>a balance sheet - showing the value of everything your organisation owns, owes and is owed</li><li>a cash flow statement</li><li>profit and loss account - showing your organisation's sales, running costs and profit or loss it's made</li><li>detailed notes about any assumptions made</li></ul><p class='govuk-body'>You can upload a maximum of 4 files.</p><p class='govuk-body'>Each file must be a PDF and smaller than 5MB.</p>",
+                    "Hint": "",
                     "Input": {
                         "Type": "FileUpload",    
                         "Options": [],
                         "Validations": [
                             {
-                                "Name": "Required",
-                                "Value": "",
-                                "ErrorMessage": "Select your organisation's management accounts covering at least 3 months within the last 12 months"
-                            },
+                                "Name": "FileType",
+                                "Value": "pdf",
+                                "ErrorMessage": "The selected file must be a PDF"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "QuestionId": "FH-391",
+                    "QuestionTag": "",
+                    "Label": "",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "FileUpload",    
+                        "Options": [],
+                        "Validations": [
+                            {
+                                "Name": "FileType",
+                                "Value": "pdf",
+                                "ErrorMessage": "The selected file must be a PDF"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "QuestionId": "FH-392",
+                    "QuestionTag": "",
+                    "Label": "",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "FileUpload",    
+                        "Options": [],
+                        "Validations": [
+                            {
+                                "Name": "FileType",
+                                "Value": "pdf",
+                                "ErrorMessage": "The selected file must be a PDF"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "QuestionId": "FH-393",
+                    "QuestionTag": "",
+                    "Label": "",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "FileUpload",    
+                        "Options": [],
+                        "Validations": [
                             {
                                 "Name": "FileType",
                                 "Value": "pdf",
@@ -2598,23 +2862,76 @@
             "Title": "Upload your organisation's financial projections covering the remaining period",
             "LinkTitle": "Upload your organisation's financial projections covering the remaining period",
             "InfoText": "",
+            "DisplayType": "MultipleFileUpload",
             "Questions": [
                 {
                     "QuestionId": "FH-400",
                     "QuestionTag": null,
                     "Label": "Upload your organisation's financial projections covering the remaining period",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body'>Financial projections must include:</p><ul class='govuk-list govuk-list--bullet'><li>a balance sheet - showing a forecast of everything your organisation will own, owe and be owed</li><li>a profit and loss account - showing a forecast of your organisation's sales, running costs and the profit and loss</li><li>detailed notes about the accounts</li><li>a breakdown of creditors and borrowings</li></ul><p class='govuk-body'>Each file must be a PDF and smaller than 5MB.</p>",
-                    "Hint": "Upload a file",
+                    "QuestionBodyText": "<p class='govuk-body'>Financial projections must include:</p><ul class='govuk-list govuk-list--bullet'><li>a balance sheet - showing a forecast of everything your organisation will own, owe and be owed</li><li>a profit and loss account - showing a forecast of your organisation's sales, running costs and the profit or loss</li><li>detailed notes about the accounts</li><li>a breakdown of creditors, other creditors and borrowings</li></ul><p class='govuk-body'>You can upload a maximum of 4 files.</p><p class='govuk-body'>Each file must be a PDF and smaller than 5MB.</p>",
+                    "Hint": "",
                     "Input": {
                         "Type": "FileUpload",    
                         "Options": [],
                         "Validations": [
                             {
-                                "Name": "Required",
-                                "Value": "",
-                                "ErrorMessage": "Select your organisation's financial projections covering the remaining period"
-                            },
+                                "Name": "FileType",
+                                "Value": "pdf",
+                                "ErrorMessage": "The selected file must be a PDF"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "QuestionId": "FH-401",
+                    "QuestionTag": "",
+                    "Label": "",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "FileUpload",    
+                        "Options": [],
+                        "Validations": [
+                            {
+                                "Name": "FileType",
+                                "Value": "pdf",
+                                "ErrorMessage": "The selected file must be a PDF"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "QuestionId": "FH-402",
+                    "QuestionTag": "",
+                    "Label": "",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "FileUpload",    
+                        "Options": [],
+                        "Validations": [
+                            {
+                                "Name": "FileType",
+                                "Value": "pdf",
+                                "ErrorMessage": "The selected file must be a PDF"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "QuestionId": "FH-403",
+                    "QuestionTag": "",
+                    "Label": "",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "FileUpload",    
+                        "Options": [],
+                        "Validations": [
                             {
                                 "Name": "FileType",
                                 "Value": "pdf",
