@@ -2364,7 +2364,7 @@
             "Next": [
                 {
                     "Action": "NextPage",
-                    "ReturnId": "2200",
+                    "ReturnId": "2225", 
                     "Conditions": []
                 }
             ],
@@ -2703,13 +2703,6 @@
             "Active": false,
             "NotRequiredConditions": [
                 {
-                    "Field": "ApplyProviderRoute",
-                    "IsOneOf": [
-                        "1",
-                        "2"
-                    ]
-                },
-                {
                     "Field": "FHAHas12MonthsStatements",
                     "IsOneOf": [
                         "Yes"
@@ -2717,7 +2710,7 @@
                 }
             ],
             "BodyText": "",
-            "ActivatedByPageId": "2220"
+            "ActivatedByPageId": "2195,2220"
         },
         {
             "PageId": "2230",
@@ -3023,7 +3016,7 @@
             "Active": false,
             "NotRequiredConditions": [],
             "BodyText": "",
-            "ActivatedByPageId": "2160,2200,2220,2250"
+            "ActivatedByPageId": "2160,2200,2220,2250,2225"
         }
     ]
 }

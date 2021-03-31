@@ -82,7 +82,20 @@ namespace SFA.DAS.QnA.Api
             services.AddAutoMapper(typeof(SystemTime).Assembly);
             services.AddMediatR(AppDomain.CurrentDomain.GetAssemblies());
 
-            services.AddDbContext<QnaDataContext>(options => options.UseSqlServer(config.Value.SqlConnectionstring,providerOptions => providerOptions.EnableRetryOnFailure()));
+            services.AddDbContext<QnaDataContext>(options =>
+            {
+                var qnaSqlConnectionString = config.Value.SqlConnectionstring;
+
+                var connection = new System.Data.SqlClient.SqlConnection(qnaSqlConnectionString);
+
+                if (!_hostingEnvironment.IsDevelopment())
+                {
+                    var generateTokenTask = SqlTokenGenerator.GenerateTokenAsync();
+                    connection.AccessToken = generateTokenTask.GetAwaiter().GetResult();
+                }
+
+                options.UseSqlServer(connection, providerOptions => providerOptions.EnableRetryOnFailure());
+            });
 
             services.AddEntityFrameworkSqlServer();
 
