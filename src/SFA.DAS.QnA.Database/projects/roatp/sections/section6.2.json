@@ -825,8 +825,8 @@
             "PageId": "6270",
             "SequenceId": null,
             "SectionId": null,
-            "Title": "How will your organisation engage with end-point assessment organisations (EPAO's)?",
-            "LinkTitle": "How will your organisation engage with end-point assessment organisations (EPAO's)?",
+            "Title": "How will your organisation engage with end-point assessment organisations (EPAOs)?",
+            "LinkTitle": "How will your organisation engage with end-point assessment organisations (EPAOs)?",
             "InfoText": "",
             "Questions": [
                 {
@@ -843,7 +843,7 @@
                             {
                                 "Name": "Required",
                                 "Value": "",
-                                "ErrorMessage": "Tell us how your organisation will engage with end-point assessment organisations (EPAO's)"
+                                "ErrorMessage": "Tell us how your organisation will engage with end-point assessment organisations (EPAOs)"
                             },
                             {
                                 "Name": "MaxWordCount",
