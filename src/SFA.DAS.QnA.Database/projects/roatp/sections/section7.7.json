@@ -103,29 +103,29 @@
             "LinkTitle": "Maintain teaching and training",
             "InfoText": "",
             "Questions": [
-              {
-                "QuestionId": "DAT-772",
-                "QuestionTag": null,
-                "Label": "Give an example of how your organisation used this policy to maintain employee teaching and training knowledge",
-                "ShortLabel": "",
-                "QuestionBodyText": "<p class='govuk-body'>Your answer must include how your organisation:</p><ul class='govuk-list govuk-list--bullet'><li>ensured employee's teaching and training knowledge, skills and performance was kept relevant to apprenticeship training</li><li>used teaching and training bodies to ensure employee expertise was up to date</li><li>worked with teaching and training bodies to ensure employee expertise is maintained - for example, through co-creation of apprenticeship programmes or mentoring</li></ul>",
-                "Hint": "",
-                "Input": {
-                  "Type": "Textarea",
-                  "Validations": [
-                    {
-                      "Name": "Required",
-                      "Value": "",
-                      "ErrorMessage": "Enter an example of how your organisation used this policy to maintain employee teaching and training knowledge"
-                    },
-                    {
-                      "Name": "MaxWordCount",
-                      "Value": "275",
-                      "ErrorMessage": "Your answer must be 275 words or less"
+                {
+                    "QuestionId": "DAT-772",
+                    "QuestionTag": null,
+                    "Label": "Give an example of how your organisation used this policy to maintain employee teaching and training knowledge",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "<p class='govuk-body'>Your answer must include how your organisation:</p><ul class='govuk-list govuk-list--bullet'><li>ensured employee's teaching and training knowledge, skills and performance was kept relevant to apprenticeship training</li><li>used teaching and training bodies to ensure employee expertise was up to date</li><li>worked with teaching and training bodies to ensure employee expertise is maintained - for example, through co-creation of apprenticeship programmes or mentoring</li><li>will continue to improve teaching and training knowledge, if your delivery sector changes</li></ul>",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "Textarea",
+                        "Validations": [
+                            {
+                                "Name": "Required",
+                                "Value": "",
+                                "ErrorMessage": "Enter an example of how your organisation used this policy to maintain employee teaching and training knowledge"
+                            },
+                            {
+                                "Name": "MaxWordCount",
+                                "Value": "275",
+                                "ErrorMessage": "Your answer must be 275 words or less"
+                            }
+                        ]
                     }
-                  ]
                 }
-              }
             ],
 			"PageOfAnswers": [],
             "Next": [
