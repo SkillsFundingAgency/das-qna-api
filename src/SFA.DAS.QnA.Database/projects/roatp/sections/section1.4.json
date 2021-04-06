@@ -693,7 +693,7 @@
 				},
 				{
 					"Action": "NextPage",
-					"ReturnId": "51",
+					"ReturnId": "50",
 					"Conditions": [{
 						"QuestionTag": "ApplyProviderRoute",
 						"MustEqual": "2"
@@ -813,7 +813,143 @@
 							"MustEqual": "A public body"
 						}
                     ]
+                },
+                {	
+                    "Action": "ReturnToSection",
+                    "ReturnId": "1.5",
+                    "Conditions": [
+						{
+							"QuestionTag": "OrganisationTypeEmployer",
+							"MustEqual": "A public body"
+						}
+                    ]
+                },
+                {	
+                    "Action": "ReturnToSection",
+                    "ReturnId": "1.5",
+                    "Conditions": [
+						{
+							"QuestionTag": "OrganisationTypeEmployer",
+							"MustEqual": "A rail franchise operator"
+						}
+                    ]
+                },
+                {	
+                    "Action": "ReturnToSection",
+                    "ReturnId": "1.5",
+                    "Conditions": [
+						{
+							"QuestionTag": "OrganisationEducationInstitute",
+							"MustEqual": "National College"
+						},
+						{
+							"QuestionTag": "OrganisationFundedESFA",
+							"MustEqual": "Yes"
+						}
+                    ]
+                },
+                {	
+                    "Action": "ReturnToSection",
+                    "ReturnId": "1.5",
+                    "Conditions": [
+						{
+							"QuestionTag": "OrganisationEducationInstitute",
+							"MustEqual": "Sixth Form College"
+						},
+						{
+							"QuestionTag": "OrganisationFundedESFA",
+							"MustEqual": "Yes"
+						}
+                    ]
+                },
+                {	
+                    "Action": "ReturnToSection",
+                    "ReturnId": "1.5",
+                    "Conditions": [
+						{
+							"QuestionTag": "OrganisationEducationInstitute",
+							"MustEqual": "General Further Education College"
+						},
+						{
+							"QuestionTag": "OrganisationFundedESFA",
+							"MustEqual": "Yes"
+						}
+                    ]
+                },
+                {	
+                    "Action": "ReturnToSection",
+                    "ReturnId": "1.5",
+                    "Conditions": [
+						{
+							"QuestionTag": "OrganisationEducationInstitute",
+							"MustEqual": "Academy"
+						},
+						{
+							"QuestionTag": "OrganisationRegisteredESFA",
+							"MustEqual": "Yes"
+						}
+                    ]
+                },
+                {	
+                    "Action": "ReturnToSection",
+                    "ReturnId": "1.5",
+                    "Conditions": [
+						{
+							"QuestionTag": "OrganisationEducationInstitute",
+							"MustEqual": "Multi-Academy Trust"
+						},
+						{
+							"QuestionTag": "OrganisationRegisteredESFA",
+							"MustEqual": "Yes"
+						}
+                    ]
                 },   
+				{	
+                    "Action": "ReturnToSection",
+                    "ReturnId": "1.5",
+                    "Conditions": [
+						{
+							"QuestionTag": "OrganisationEducationInstitute",
+							"MustEqual": "School"
+						},
+						{
+							"QuestionTag": "OrganisationSchool",
+							"MustEqual": "Free school"
+						},
+						{
+							"QuestionTag": "OrganisationRegisteredESFA",
+							"MustEqual": "Yes"
+						}
+                    ]
+                },   
+				{	
+                    "Action": "ReturnToSection",
+                    "ReturnId": "1.5",
+                    "Conditions": [
+						{
+							"QuestionTag": "OrganisationEducationInstitute",
+							"MustEqual": "School"
+						},
+						{
+							"QuestionTag": "OrganisationSchool",
+							"MustEqual": "Local Education Authority (LEA) school"
+						}
+                    ]
+                },   
+				{	
+                    "Action": "ReturnToSection",
+                    "ReturnId": "1.5",
+                    "Conditions": [
+						{
+							"QuestionTag": "OrganisationEducationInstitute",
+							"MustEqual": "Higher Education Institute"
+						},
+						{
+							"QuestionTag": "OrganisationMonitoredOFS",
+							"MustEqual": "Yes"
+						}
+                    ]
+                },
 				{
                      "Action": "NextPage",
                     "ReturnId": "10001",
@@ -821,7 +957,25 @@
                         {
                             "QuestionId": "YO-50",
                             "MustEqual": "Less than 12 months"
-                        }
+                        },
+						{
+						"QuestionTag": "ApplyProviderRoute",
+						"MustEqual": "1"
+					}
+                    ]
+                },
+				{
+                     "Action": "NextPage",
+                    "ReturnId": "10002",
+                    "Conditions": [
+                        {
+                            "QuestionId": "YO-50",
+                            "MustEqual": "Less than 12 months"
+                        },
+						{
+						"QuestionTag": "ApplyProviderRoute",
+						"MustEqual": "2"
+					}
                     ]
                 }, 				
                 {
@@ -836,164 +990,11 @@
                 {
                     "Field": "ApplyProviderRoute",
                     "IsOneOf": [
-                        "2",
                         "3"
                     ]
                 }
             ],
             "ActivatedByPageId": "230",
-            "BodyText": ""
-        },
-        {
-            "PageId": "51",
-            "SequenceId": null,
-            "SectionId": null,
-            "Title": "How long has your organisation been actively trading?",
-            "LinkTitle": "How long has your organisation been actively trading?",
-            "InfoText": "",
-            "Questions": [
-                {
-                    "QuestionId": "YO-51",
-                    "QuestionTag": null,
-                    "Label": "How long has your organisation been actively trading?",
-                    "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body'>This is when your organisation has done at least one of the following things:</p> <ul class='govuk-list govuk-list--bullet'> <li>carried out a business activity - such as a trade or professional activity</li>\n<li>bought or sold goods or services with a view to making a profit or surplus</li> <li>provided chargeable services</li> </ul> <p class='govuk-body'>Actively trading does not include start-up or set-up costs.</p>",
-                    "Hint": "",
-                    "Input": {
-                        "Type": "Radio",
-                        "Options": [
-                            {
-                                "Label": "Less than 12 months",
-                                "Value": "Less than 12 months",
-                                "FurtherQuestions": []
-                            },
-                            {
-                                "Label": "12 to 18 months",
-                                "Value": "12 to 18 months",
-                                "FurtherQuestions": []
-                            },
-                            {
-                                "Label": "19 to 23 months",
-                                "Value": "19 to 23 months",
-                                "FurtherQuestions": []
-                            },
-                            {
-                                "Label": "More than 23 months",
-                                "Value": "More than 23 months",
-                                "FurtherQuestions": []
-                            }
-                        ],
-                        "Validations": [
-                            {
-                                "Name": "Required",
-                                "Value": "",
-                                "ErrorMessage": "Tell us how long your organisation has been actively trading"
-                            }
-                        ]
-                    }
-                }
-            ],
-            "PageOfAnswers": [],
-            "Next": [
-                {
-                    "Action": "NextPage",
-                    "ReturnId": "56",
-                    "Conditions": [
-                        {
-                            "QuestionId": "YO-51",
-                            "MustEqual": "Less than 12 months"
-                        }
-                    ]
-                },
-                {
-                    "Action": "ReturnToSection",
-                    "ReturnId": "1.3",
-                    "Conditions": []
-                }
-            ],
-            "AllowMultipleAnswers": false,
-            "Active": false,
-            "NotRequiredConditions": [
-                {
-                    "Field": "ApplyProviderRoute",
-                    "IsOneOf": [
-                        "1",
-                        "3"
-                    ]
-                }
-            ],
-            "ActivatedByPageId": "230",
-            "BodyText": ""
-        },
-        {
-            "PageId": "56",
-            "SequenceId": null,
-            "SectionId": null,
-            "Title": "Is your organisation a rail franchise operator?",
-            "LinkTitle": "Is your organisation a rail franchise operator?",
-            "InfoText": "",
-            "Questions": [
-                {
-                    "QuestionId": "YO-56",
-                    "QuestionTag": null,
-                    "Label": "Is your organisation a rail franchise operator?",
-                    "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body'>This means your organisation has a rail franchise license and can act on behalf of the Department for Transport.</p>",
-                    "Hint": "",
-                    "Input": {
-                        "Type": "Radio",
-                        "Options": [
-                            {
-                                "Label": "Yes",
-                                "Value": "Yes",
-                                "FurtherQuestions": []
-                            },
-                            {
-                                "Label": "No",
-                                "Value": "No",
-                                "FurtherQuestions": []
-                            }
-                        ],
-                        "Validations": [
-                            {
-                                "Name": "Required",
-                                "Value": "",
-                                "ErrorMessage": "Tell us if your organisation is a rail franchise operator"
-                            }
-                        ]
-                    }
-                }
-            ],
-            "PageOfAnswers": [],
-            "Next": [
-                {
-                    "Action": "NextPage",
-                    "ReturnId": "10002",
-                    "Conditions": [
-                        {
-                            "QuestionId": "YO-56",
-                            "MustEqual": "No"
-                        }
-                    ]
-                },
-                {
-                    "Action": "ReturnToSection",
-                    "ReturnId": "1.3",
-                    "Conditions": []
-                }
-            ],
-            "AllowMultipleAnswers": false,
-            "Active": false,
-            "NotRequiredConditions": [
-                {
-                    "Field": "ApplyProviderRoute",
-                    "IsOneOf": [
-                        "1",
-                        "3"
-                    ]
-                }
-            ],
-            "ActivatedByPageId": "51",
             "BodyText": ""
         },
         {
@@ -1048,18 +1049,184 @@
             "PageOfAnswers": [],
             "Next": [
                 {
-                    "Action": "NextPage",
-                    "ReturnId": "65",
+                    "Action": "ReturnToSection",
+                    "ReturnId": "1.5",
+                    "Conditions": [
+                        {
+                            "QuestionId": "YO-60",
+                            "MustEqual": "3 to 6 months"
+                        }
+                    ]
+                },
+				{
+                     "Action": "ReturnToSection",
+                    "ReturnId": "1.5",
+                    "Conditions": [
+                        {
+                            "QuestionId": "YO-60",
+                            "MustEqual": "7 to 11 months"
+                        }
+                    ]
+                },
+				{
+                     "Action": "ReturnToSection",
+                    "ReturnId": "1.5",
+                    "Conditions": [
+                        {
+                            "QuestionId": "YO-60",
+                            "MustEqual": "More than 11 months"
+                        }
+                    ]
+                },
+                {	
+                    "Action": "ReturnToSection",
+                    "ReturnId": "1.5",
+                    "Conditions": [
+						{
+							"QuestionTag": "OrganisationTypeMainSupporting",
+							"MustEqual": "A rail franchise operator"
+						}
+                    ]
+                },
+                {	
+                    "Action": "ReturnToSection",
+                    "ReturnId": "1.5",
+                    "Conditions": [
+						{
+							"QuestionTag": "OrganisationTypeMainSupporting",
+							"MustEqual": "A public body"
+						}
+                    ]
+                },
+                {	
+                    "Action": "ReturnToSection",
+                    "ReturnId": "1.5",
+                    "Conditions": [
+						{
+							"QuestionTag": "OrganisationEducationInstitute",
+							"MustEqual": "National College"
+						},
+						{
+							"QuestionTag": "OrganisationFundedESFA",
+							"MustEqual": "Yes"
+						}
+                    ]
+                },
+                {	
+                    "Action": "ReturnToSection",
+                    "ReturnId": "1.5",
+                    "Conditions": [
+						{
+							"QuestionTag": "OrganisationEducationInstitute",
+							"MustEqual": "Sixth Form College"
+						},
+						{
+							"QuestionTag": "OrganisationFundedESFA",
+							"MustEqual": "Yes"
+						}
+                    ]
+                },
+                {	
+                    "Action": "ReturnToSection",
+                    "ReturnId": "1.5",
+                    "Conditions": [
+						{
+							"QuestionTag": "OrganisationEducationInstitute",
+							"MustEqual": "General Further Education College"
+						},
+						{
+							"QuestionTag": "OrganisationFundedESFA",
+							"MustEqual": "Yes"
+						}
+                    ]
+                },
+                {	
+                    "Action": "ReturnToSection",
+                    "ReturnId": "1.5",
+                    "Conditions": [
+						{
+							"QuestionTag": "OrganisationEducationInstitute",
+							"MustEqual": "Academy"
+						},
+						{
+							"QuestionTag": "OrganisationRegisteredESFA",
+							"MustEqual": "Yes"
+						}
+                    ]
+                },
+                {	
+                    "Action": "ReturnToSection",
+                    "ReturnId": "1.5",
+                    "Conditions": [
+						{
+							"QuestionTag": "OrganisationEducationInstitute",
+							"MustEqual": "Multi-Academy Trust"
+						},
+						{
+							"QuestionTag": "OrganisationRegisteredESFA",
+							"MustEqual": "Yes"
+						}
+                    ]
+                },   
+				{	
+                    "Action": "ReturnToSection",
+                    "ReturnId": "1.5",
+                    "Conditions": [
+						{
+							"QuestionTag": "OrganisationEducationInstitute",
+							"MustEqual": "School"
+						},
+						{
+							"QuestionTag": "OrganisationSchool",
+							"MustEqual": "Free school"
+						},
+						{
+							"QuestionTag": "OrganisationRegisteredESFA",
+							"MustEqual": "Yes"
+						}
+                    ]
+                },   
+				{	
+                    "Action": "ReturnToSection",
+                    "ReturnId": "1.5",
+                    "Conditions": [
+						{
+							"QuestionTag": "OrganisationEducationInstitute",
+							"MustEqual": "School"
+						},
+						{
+							"QuestionTag": "OrganisationSchool",
+							"MustEqual": "Local Education Authority (LEA) school"
+						}
+                    ]
+                },   
+				{	
+                    "Action": "ReturnToSection",
+                    "ReturnId": "1.5",
+                    "Conditions": [
+						{
+							"QuestionTag": "OrganisationEducationInstitute",
+							"MustEqual": "Higher Education Institute"
+						},
+						{
+							"QuestionTag": "OrganisationMonitoredOFS",
+							"MustEqual": "Yes"
+						}
+                    ]
+                },
+				{
+                     "Action": "NextPage",
+                    "ReturnId": "10003",
                     "Conditions": [
                         {
                             "QuestionId": "YO-60",
                             "MustEqual": "Less than 3 months"
                         }
                     ]
-                },
+                },				
                 {
                     "Action": "ReturnToSection",
-                    "ReturnId": "1.3",
+                    "ReturnId": "1.5",
                     "Conditions": []
                 }
             ],
@@ -1077,78 +1244,7 @@
             "ActivatedByPageId": "230",
             "BodyText": ""
         },
-        {
-            "PageId": "65",
-            "SequenceId": null,
-            "SectionId": null,
-            "Title": "Is your organisation a rail franchise operator?",
-            "LinkTitle": "Is your organisation a rail franchise operator?",
-            "InfoText": "",
-            "Questions": [
-                {
-                    "QuestionId": "YO-65",
-                    "QuestionTag": null,
-                    "Label": "Is your organisation a rail franchise operator?",
-                    "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body'>This means your organisation has a rail franchise license and can act on behalf of the Department for Transport.</p>",
-                    "Hint": "",
-                    "Input": {
-                        "Type": "Radio",
-                        "Options": [
-                            {
-                                "Label": "Yes",
-                                "Value": "Yes",
-                                "FurtherQuestions": []
-                            },
-                            {
-                                "Label": "No",
-                                "Value": "No",
-                                "FurtherQuestions": []
-                            }
-                        ],
-                        "Validations": [
-                            {
-                                "Name": "Required",
-                                "Value": "",
-                                "ErrorMessage": "Tell us if your organisation is a rail franchise operator"
-                            }
-                        ]
-                    }
-                }
-            ],
-            "PageOfAnswers": [],
-            "Next": [
-                {
-                    "Action": "NextPage",
-                    "ReturnId": "10003",
-                    "Conditions": [
-                        {
-                            "QuestionId": "YO-65",
-                            "MustEqual": "No"
-                        }
-                    ]
-                },
-                {
-                    "Action": "ReturnToSection",
-                    "ReturnId": "1.3",
-                    "Conditions": []
-                }
-            ],
-            "AllowMultipleAnswers": false,
-            "Active": false,
-            "NotRequiredConditions": [
-                {
-                    "Field": "ApplyProviderRoute",
-                    "IsOneOf": [
-                        "1",
-                        "2"
-                    ]
-                }
-            ],
-            "ActivatedByPageId": "60",
-            "BodyText": ""
-        },
-        {
+         {
             "PageId": "10001",
             "SequenceId": null,
             "SectionId": null,
@@ -1203,7 +1299,7 @@
             "AllowMultipleAnswers": false,
             "Active": false,
             "NotRequiredConditions": [],
-            "ActivatedByPageId": "51,56",
+            "ActivatedByPageId": "50",
             "BodyText": ""
         },
         {
