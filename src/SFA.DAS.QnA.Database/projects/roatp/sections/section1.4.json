@@ -236,8 +236,8 @@
 							"FurtherQuestions": []
 						},
 						{
-							"Label": "Higher Education Institute",
-							"Value": "Higher Education Institute",
+							"Label": "Higher Education Institute or university",
+							"Value": "Higher Education Institute or university",
 							"FurtherQuestions": []
 						},
 						{
@@ -297,7 +297,7 @@
 					"ReturnId": "220",
 					"Conditions": [{
 						"QuestionId": "YO-160",
-						"MustEqual": "Higher Education Institute"
+						"MustEqual": "Higher Education Institute or university"
 					}]
 				},
 				{
@@ -464,7 +464,7 @@
 					"Academy",
 					"Further Education Institute",
 					"General Further Education College",
-					"Higher Education Institute",
+					"Higher Education Institute or university",
 					"Multi-Academy Trust",
 					"National College",
 					"Sixth Form College"
@@ -515,7 +515,7 @@
 					"Field": "OrganisationEducationInstitute",
 					"IsOneOf": [
 						"General Further Education College",
-						"Higher Education Institute",
+						"Higher Education Institute or university",
 						"National College",
 						"Sixth Form College"
 					]
@@ -574,7 +574,7 @@
 				"IsOneOf": [
 					"Academy",
 					"Further Education Institute",
-					"Higher Education Institute",
+					"Higher Education Institute or university",
 					"Multi-Academy Trust",
 					"School"
 				]
@@ -726,7 +726,7 @@
                     "QuestionTag": null,
                     "Label": "How long has your organisation been actively trading?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body'>This is when your organisation has done at least one of the following things:</p> <ul class='govuk-list govuk-list--bullet'> <li>carried out a business activity - such as a trade or professional activity</li>\n<li>bought or sold goods or services with a view to making a profit or surplus</li> <li>provided chargeable services</li> </ul> <p class='govuk-body'>Actively trading does not include start-up or set-up costs.</p>",
+                    "QuestionBodyText": "<p class='govuk-body'>Actively trading means your organisation has received income and has acquired expenses as a result of trade. This does not include set-up or start-up costs.</p>",
                     "Hint": "",
                     "Input": {
                         "Type": "Radio",
@@ -942,7 +942,7 @@
                     "Conditions": [
 						{
 							"QuestionTag": "OrganisationEducationInstitute",
-							"MustEqual": "Higher Education Institute"
+							"MustEqual": "Higher Education Institute or university"
 						},
 						{
 							"QuestionTag": "OrganisationMonitoredOFS",
@@ -1010,7 +1010,7 @@
                     "QuestionTag": null,
                     "Label": "How long has your organisation been actively trading?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body'>This is when your organisation has done at least one of the following things:</p> <ul class='govuk-list govuk-list--bullet'> <li>carried out a business activity - such as a trade or professional activity</li>\n<li>bought or sold goods or services with a view to making a profit or surplus</li> <li>provided chargeable services</li> </ul> <p class='govuk-body'>Actively trading does not include start-up or set-up costs.</p>",
+                    "QuestionBodyText": "<p class='govuk-body'>Actively trading means your organisation has received income and has acquired expenses as a result of trade. This does not include set-up or start-up costs.</p>",
                     "Hint": "",
                     "Input": {
                         "Type": "Radio",
@@ -1206,7 +1206,7 @@
                     "Conditions": [
 						{
 							"QuestionTag": "OrganisationEducationInstitute",
-							"MustEqual": "Higher Education Institute"
+							"MustEqual": "Higher Education Institute or university"
 						},
 						{
 							"QuestionTag": "OrganisationMonitoredOFS",
@@ -1257,7 +1257,7 @@
                     "QuestionTag": null,
                     "Label": "Your organisation is not eligible to apply to join RoATP",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body'>To apply as a main provider, your organisation must have been actively trading for at least 12 months.</p><p class='govuk-body'>You can try again once your organisation has enough trading history.</p><p class='govuk-body'><a href='https://www.gov.uk' class='govuk-link'>Back to GOV.UK</a></p>",
+                    "QuestionBodyText": "<p class='govuk-body'>Your organisation must have been actively trading for at least 12 months.</p><p class='govuk-body'>You can try again once your organisation has enough trading history.</p><p class='govuk-body'><a href='https://www.gov.uk' class='govuk-link'>Back to GOV.UK</a></p>",
                     "Hint": "",
                     "Input": {
                         "Type": "Hidden",
@@ -1286,7 +1286,7 @@
                     "QuestionTag": null,
                     "Label": "Your organisation is not eligible to apply to join RoATP",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body'>To apply as an employer provider, your organisation must have been actively trading for at least 12 months.</p><p class='govuk-body'>You can try again once your organisation has enough trading history.</p><p class='govuk-body'><a href='https://www.gov.uk' class='govuk-link'>Back to GOV.UK</a></p>",
+                    "QuestionBodyText": "<p class='govuk-body'>Your organisation must have been actively trading for at least 12 months.</p><p class='govuk-body'>You can try again once your organisation has enough trading history.</p><p class='govuk-body'><a href='https://www.gov.uk' class='govuk-link'>Back to GOV.UK</a></p>",
                     "Hint": "",
                     "Input": {
                         "Type": "Hidden",
@@ -1315,7 +1315,7 @@
                     "QuestionTag": null,
                     "Label": "Your organisation is not eligible to apply to join RoATP",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body'>To apply as a supporting provider, your organisation must have been actively trading for at least 3 months.</p><p class='govuk-body'>You can try again once your organisation has enough trading history.</p><p class='govuk-body'><a href='https://www.gov.uk' class='govuk-link'>Back to GOV.UK</a></p>",
+                    "QuestionBodyText": "<p class='govuk-body'>Your organisation must have been actively trading for at least 3 months.</p><p class='govuk-body'>You can try again once your organisation has enough trading history.</p><p class='govuk-body'><a href='https://www.gov.uk' class='govuk-link'>Back to GOV.UK</a></p>",
                     "Hint": "",
                     "Input": {
                         "Type": "Hidden",
@@ -1328,7 +1328,7 @@
             "AllowMultipleAnswers": false,
             "Active": false,
             "NotRequiredConditions": [],
-            "ActivatedByPageId": "60,65",
+            "ActivatedByPageId": "60",
             "BodyText": ""
         }
 	]
