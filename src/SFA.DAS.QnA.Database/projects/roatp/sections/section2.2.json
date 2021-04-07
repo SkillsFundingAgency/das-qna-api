@@ -1408,7 +1408,7 @@
               {
                 "QuestionId": "FH-230",
                 "QuestionTag": "FHATurnover",
-                "Label": "Enter your organisation's total annual turnover for the last financial year",
+                "Label": "Enter your organisation's total annual turnover for the latest reported financial year",
                 "ShortLabel": "",
                 "QuestionBodyText": "",
                 "Hint": "You can find this on your organisation's 'profit and loss statement', 'income and expenditure account' or 'statement of financial activities'.",
@@ -1419,7 +1419,7 @@
                     {
                       "Name": "Required",
                       "Value": "",
-                      "ErrorMessage": "Enter your organisation's total annual turnover for the last financial year"
+                      "ErrorMessage": "Enter your organisation's total annual turnover for the latest reported financial year"
                     },
                     {
                       "Name": "Regex",
@@ -1433,10 +1433,10 @@
               {
                 "QuestionId": "FH-240",
                 "QuestionTag": "FHADepreciation",
-                "Label": "Enter your organisation's total depreciation and amortisation charges for the last financial year",
+                "Label": "Enter your organisation's total depreciation and amortisation charges for the latest reported financial year",
                 "ShortLabel": "",
                 "QuestionBodyText": "",
-                "Hint": "You can find this on your organisation's 'operating profit note to the accounts'. You'll need to add up all the items under 'expenditure' and enter the total figure.",
+                "Hint": "You can find this on your organisation's 'operating profit note to the accounts'. You'll need to add up all the items of depreciation and amortisation and enter the total figure.",
                 "Input": {
                   "Type": "Number",
                   "InputClasses": "govuk-input--width-10",
@@ -1444,7 +1444,7 @@
                     {
                       "Name": "Required",
                       "Value": "",
-                      "ErrorMessage": "Enter your organisation's total depreciation and amortisation charges for the last financial year"
+                      "ErrorMessage": "Enter your organisation's total depreciation and amortisation charges for the latest reported financial year"
                     },
                     {
                       "Name": "Regex",
@@ -1458,7 +1458,7 @@
               {
                 "QuestionId": "FH-250",
                 "QuestionTag": "FHAProfitLoss",
-                "Label": "Enter your organisation's profit or loss for the last financial year",
+                "Label": "Enter your organisation's profit or loss for the latest reported financial year",
                 "ShortLabel": "",
                 "QuestionBodyText": "",
                 "Hint": "Profit or loss is the net amount earned after tax. You can find this under 'net profit' in your organisation accounts.",
@@ -1469,7 +1469,7 @@
                     {
                       "Name": "Required",
                       "Value": "",
-                      "ErrorMessage": "Enter your organisation's profit or loss for the last financial year"
+                      "ErrorMessage": "Enter your organisation's profit or loss for the latest reported financial year"
                     },
                     {
                       "Name": "Regex",
@@ -1483,10 +1483,10 @@
               {
                 "QuestionId": "FH-260",
                 "QuestionTag": "FHADividends",
-                "Label": "Enter your organisation's total dividends for the last financial year",
+                "Label": "Enter your organisation's total dividends for the latest reported financial year",
                 "ShortLabel": "",
                 "QuestionBodyText": "",
-                "Hint": "You can find this on your organisation's 'notes to the accounts'.",
+                "Hint": "You can find this on your organisation's 'notes to the accounts'. It may also be displayed in the calculation of shareholder funds / net assets or on a statement of changes in equity.",
                 "Input": {
                   "Type": "Number",
                   "InputClasses": "govuk-input--width-10",
@@ -1494,7 +1494,7 @@
                     {
                       "Name": "Required",
                       "Value": "",
-                      "ErrorMessage": "Enter your organisation's total dividends for the last financial year"
+                      "ErrorMessage": "Enter your organisation's total dividends for the latest reported financial year"
                     },
                     {
                       "Name": "Regex",
@@ -1508,10 +1508,10 @@
               {
                 "QuestionId": "FH-270",
                 "QuestionTag": "FHAAssets",
-                "Label": "Enter your organisation's total current assets for the last financial year",
+                "Label": "Enter your organisation's total current assets for the latest reported financial year",
                 "ShortLabel": "",
                 "QuestionBodyText": "",
-                "Hint": "You can find this on your organisation's 'balance sheet'.",
+                "Hint": "You can find this on your organisation's 'balance sheet'. It may be a combination of trade debtors, amounts due from group undertakings and cash.",
                 "Input": {
                   "Type": "Number",
                   "InputClasses": "govuk-input--width-10",
@@ -1519,7 +1519,7 @@
                     {
                       "Name": "Required",
                       "Value": "",
-                      "ErrorMessage": "Enter your organisation's total current assets for the last financial year"
+                      "ErrorMessage": "Enter your organisation's total current assets for the latest reported financial year"
                     },
                     {
                       "Name": "Regex",
@@ -1533,11 +1533,11 @@
               {
                 "QuestionId": "FH-280",
                 "QuestionTag": "FHALiabilities",
-                "Label": "Enter your organisation's total current liabilities for the last financial year",
+                "Label": "Enter your organisation's total current liabilities for the latest reported financial year",
                 "ShortLabel": "",
 
                 "QuestionBodyText": "",
-                "Hint": "You can find this on your organisation's 'balance sheet' under 'creditors: amount falling due within one year'.",
+                "Hint": "You can find this on your organisation's 'balance sheet' under 'creditors: amount falling due within one year'. If your current liabilities include other creditors you must supply a breakdown of these creditors as 'other creditors' is not an acceptable classification.",
                 "Input": {
                   "Type": "Number",
                   "InputClasses": "govuk-input--width-10",
@@ -1545,7 +1545,7 @@
                     {
                       "Name": "Required",
                       "Value": "",
-                      "ErrorMessage": "Enter your organisation's total current liabilities for the last financial year"
+                      "ErrorMessage": "Enter your organisation's total current liabilities for the latest reported financial year"
                     },
                     {
                       "Name": "Regex",
@@ -1559,10 +1559,10 @@
               {
                 "QuestionId": "FH-290",
                 "QuestionTag": "FHABorrowings",
-                "Label": "Enter your organisation's total borrowings for the last financial year",
+                "Label": "Enter your organisation's total borrowings for the latest reported financial year",
                 "ShortLabel": "",
                 "QuestionBodyText": "",
-                "Hint": "You will need to add up a total of: <ul class='govuk-list govuk-list--bullet govuk-hint'><li>bank overdraft</li><li>loans</li><li>amounts owed to directors - including director loans and director accounts</li><li>amounts owed to subsidiaries - if your organisation is part of a group</li><li>amounts due under finance leases or hire purchase contracts</li></ul>",
+                "Hint": "You will need to add up a total of: <ul class='govuk-list govuk-list--bullet govuk-hint'><li>bank overdraft</li><li>loans</li><li>amounts owed to directors - including director loans and director accounts</li><li>amounts owed to subsidiaries - if your organisation is part of a group</li><li>amounts due under finance leases or hire purchase contracts</li><li>additional borrowings not listed above, please refer to the <a href='https://www.google.com/url?q=https://www.gov.uk/government/publications/esfa-financial-health-assessment&sa=D&source=editors&ust=1617784055408000&usg=AOvVaw2UcO2N7rF5RijGst9HR2dp' class='govuk-link' target='_blank'>ESFA's financial health policy (opens in a new window or tab)</a> regarding other creditors.</li></ul>",
                 "Input": {
                   "Type": "Number",
                   "InputClasses": "govuk-input--width-10",
@@ -1570,7 +1570,7 @@
                     {
                       "Name": "Required",
                       "Value": "",
-                      "ErrorMessage": "Enter your organisation's total borrowings for the last financial year"
+                      "ErrorMessage": "Enter your organisation's total borrowings for the latest reported financial year"
                     },
                     {
                       "Name": "Regex",
@@ -1584,7 +1584,7 @@
               {
                 "QuestionId": "FH-300",
                 "QuestionTag": "FHAShareholderFunds",
-                "Label": "Enter your organisation's net assets for the last financial year",
+                "Label": "Enter your organisation's net assets for the latest reported financial year",
                 "ShortLabel": "",
                 "QuestionBodyText": "",
                 "Hint": "You can find this on your organisation's 'balance sheet' under the 'capital account balance'.",
@@ -1595,7 +1595,7 @@
                     {
                       "Name": "Required",
                       "Value": "",
-                      "ErrorMessage": "Enter your organisation's net assets for the last financial year"
+                      "ErrorMessage": "Enter your organisation's net assets for the latest reported financial year"
                     },
                     {
                       "Name": "Regex",
@@ -1609,7 +1609,7 @@
               {
                 "QuestionId": "FH-310",
                 "QuestionTag": "FHAIntangibleAssets",
-                "Label": "Enter your organisation's total intangible assets for the last financial year",
+                "Label": "Enter your organisation's total intangible assets for the latest reported financial year",
                 "ShortLabel": "",
                 "InputClasses": "govuk-input--width-10",
                 "QuestionBodyText": "",
@@ -1621,7 +1621,7 @@
                     {
                       "Name": "Required",
                       "Value": "",
-                      "ErrorMessage": "Enter your organisation's total intangible assets for the last financial year"
+                      "ErrorMessage": "Enter your organisation's total intangible assets for the latest reported financial year"
                     },
                     {
                       "Name": "Regex",
@@ -1671,7 +1671,7 @@
                 {
                     "QuestionId": "FH-230",
                     "QuestionTag": "FHATurnover",
-                    "Label": "Enter your organisation's total annual turnover for the last financial year",
+                    "Label": "Enter your organisation's total annual turnover for the latest reported financial year",
                     "ShortLabel": "",
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'profit and loss statement', 'income and expenditure account' or 'statement of financial activities'.",
@@ -1682,7 +1682,7 @@
                             {
                                 "Name": "Required",
                                 "Value": "",
-                                "ErrorMessage": "Enter your organisation's total annual turnover for the last financial year"
+                                "ErrorMessage": "Enter your organisation's total annual turnover for the latest reported financial year"
                             },
                             {
                                 "Name": "Regex",
@@ -1696,7 +1696,7 @@
                 {
                     "QuestionId": "FH-240",
                     "QuestionTag": "FHADepreciation",
-                    "Label": "Enter your organisation's total depreciation and amortisation charges for the last financial year",
+                    "Label": "Enter your organisation's total depreciation and amortisation charges for the latest reported financial year",
                     "ShortLabel": "",
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'operating profit note to the accounts'. You'll need to add up all the items under 'expenditure' and enter the total figure.",
@@ -1707,7 +1707,7 @@
                             {
                                 "Name": "Required",
                                 "Value": "",
-                                "ErrorMessage": "Enter your organisation's total depreciation and amortisation charges for the last financial year"
+                                "ErrorMessage": "Enter your organisation's total depreciation and amortisation charges for the latest reported financial year"
                             },
                             {
                                 "Name": "Regex",
@@ -1721,7 +1721,7 @@
                 {
                     "QuestionId": "FH-250",
                     "QuestionTag": "FHAProfitLoss",
-                    "Label": "Enter your organisation's profit or loss for the last financial year",
+                    "Label": "Enter your organisation's profit or loss for the latest reported financial year",
                     "ShortLabel": "",
                     "QuestionBodyText": "",
                     "Hint": "Profit or loss is the net amount earned after tax.",
@@ -1732,7 +1732,7 @@
                             {
                                 "Name": "Required",
                                 "Value": "",
-                                "ErrorMessage": "Enter your organisation's profit or loss for the last financial year"
+                                "ErrorMessage": "Enter your organisation's profit or loss for the latest reported financial year"
                             },
                             {
                                 "Name": "Regex",
@@ -1746,10 +1746,10 @@
                 {
                     "QuestionId": "FH-260",
                     "QuestionTag": "FHADividends",
-                    "Label": "Enter your organisation's total dividends for the last financial year",
+                    "Label": "Enter your organisation's total dividends for the latest reported financial year",
                     "ShortLabel": "",
                     "QuestionBodyText": "",
-                    "Hint": "You can find this on your organisation's 'notes to the accounts'.",
+                    "Hint": "You can find this on your organisation's 'notes to the accounts'. It may also be displayed in the calculation of shareholder funds / net assets or on a statement of changes in equity.",
                     "Input": {
                         "Type": "Number",
                         "InputClasses": "govuk-input--width-10",
@@ -1757,7 +1757,7 @@
                             {
                                 "Name": "Required",
                                 "Value": "",
-                                "ErrorMessage": "Enter your organisation's total dividends for the last financial year"
+                                "ErrorMessage": "Enter your organisation's total dividends for the latest reported financial year"
                             },
                             {
                                 "Name": "Regex",
@@ -1771,10 +1771,10 @@
                 {
                     "QuestionId": "FH-270",
                     "QuestionTag": "FHAAssets",
-                    "Label": "Enter your organisation's total current assets for the last financial year",
+                    "Label": "Enter your organisation's total current assets for the latest reported financial year",
                     "ShortLabel": "",
                     "QuestionBodyText": "",
-                    "Hint": "You can find this on your organisation's 'balance sheet'.",
+                    "Hint": "You can find this on your organisation's 'balance sheet'. It may be a combination of trade debtors, amounts due from group undertakings and cash.",
                     "Input": {
                         "Type": "Number",
                         "InputClasses": "govuk-input--width-10",
@@ -1782,7 +1782,7 @@
                             {
                                 "Name": "Required",
                                 "Value": "",
-                                "ErrorMessage": "Enter your organisation's total current assets for the last financial year"
+                                "ErrorMessage": "Enter your organisation's total current assets for the latest reported financial year"
                             },
                             {
                                 "Name": "Regex",
@@ -1796,10 +1796,10 @@
                 {
                     "QuestionId": "FH-280",
                     "QuestionTag": "FHALiabilities",
-                    "Label": "Enter your organisation's total current liabilities for the last financial year",
+                    "Label": "Enter your organisation's total current liabilities for the latest reported financial year",
                     "ShortLabel": "",
                     "QuestionBodyText": "",
-                    "Hint": "You can find this on your organisation's 'balance sheet' under 'creditors: amount falling due within one year'.",
+                    "Hint": "You can find this on your organisation's 'balance sheet' under 'creditors: amount falling due within one year'. If your current liabilities include other creditors you must supply a breakdown of these creditors as 'other creditors' is not an acceptable classification.",
                     "Input": {
                         "Type": "Number",
                         "InputClasses": "govuk-input--width-10",
@@ -1807,7 +1807,7 @@
                             {
                                 "Name": "Required",
                                 "Value": "",
-                                "ErrorMessage": "Enter your organisation's total current liabilities for the last financial year"
+                                "ErrorMessage": "Enter your organisation's total current liabilities for the latest reported financial year"
                             },
                             {
                                 "Name": "Regex",
@@ -1821,10 +1821,10 @@
                 {
                     "QuestionId": "FH-290",
                     "QuestionTag": "FHABorrowings",
-                    "Label": "Enter your organisation's total borrowings for the last financial year",
+                    "Label": "Enter your organisation's total borrowings for the latest reported financial year",
                     "ShortLabel": "",
                     "QuestionBodyText": "",
-                    "Hint": "You will need to add up a total of: <ul class='govuk-list govuk-list--bullet govuk-hint'><li>bank overdraft</li><li>loans</li><li>amounts owed to directors - including director loans and director accounts</li><li>amounts owed to subsidiaries - if your organisation is part of a group</li><li>amounts due under finance leases or hire purchase contracts</li></ul>",
+                    "Hint": "You will need to add up a total of: <ul class='govuk-list govuk-list--bullet govuk-hint'><li>bank overdraft</li><li>loans</li><li>amounts owed to directors - including director loans and director accounts</li><li>amounts owed to subsidiaries - if your organisation is part of a group</li><li>amounts due under finance leases or hire purchase contracts</li><li>additional borrowings not listed above, please refer to the <a href='https://www.google.com/url?q=https://www.gov.uk/government/publications/esfa-financial-health-assessment&sa=D&source=editors&ust=1617784055408000&usg=AOvVaw2UcO2N7rF5RijGst9HR2dp' class='govuk-link' target='_blank'>ESFA's financial health policy (opens in a new window or tab)</a> regarding other creditors.</li></ul>",
                     "Input": {
                         "Type": "Number",
                         "InputClasses": "govuk-input--width-10",
@@ -1832,7 +1832,7 @@
                             {
                                 "Name": "Required",
                                 "Value": "",
-                                "ErrorMessage": "Enter your organisation's total borrowings for the last financial year"
+                                "ErrorMessage": "Enter your organisation's total borrowings for the latest reported financial year"
                             },
                             {
                                 "Name": "Regex",
@@ -1846,7 +1846,7 @@
                 {
                     "QuestionId": "FH-300",
                     "QuestionTag": "FHAShareholderFunds",
-                    "Label": "Enter your organisation's net assets for the last financial year",
+                    "Label": "Enter your organisation's net assets for the latest reported financial year",
                     "ShortLabel": "",
                     "QuestionBodyText": "",
                     "Hint": "You can find this on your organisation's 'balance sheet' under the 'capital account balance'.",
@@ -1857,7 +1857,7 @@
                             {
                                 "Name": "Required",
                                 "Value": "",
-                                "ErrorMessage": "Enter your organisation's net assets for the last financial year"
+                                "ErrorMessage": "Enter your organisation's net assets for the latest reported financial year"
                             },
                             {
                                 "Name": "Regex",
@@ -1871,7 +1871,7 @@
                 {
                     "QuestionId": "FH-310",
                     "QuestionTag": "FHAIntangibleAssets",
-                    "Label": "Enter your organisation's total intangible assets for the last financial year",
+                    "Label": "Enter your organisation's total intangible assets for the latest reported financial year",
                     "ShortLabel": "",
                     "InputClasses": "govuk-input--width-10",
                     "QuestionBodyText": "",
@@ -1883,7 +1883,7 @@
                             {
                                 "Name": "Required",
                                 "Value": "",
-                                "ErrorMessage": "Enter your organisation's total intangible assets for the last financial year"
+                                "ErrorMessage": "Enter your organisation's total intangible assets for the latest reported financial year"
                             },
                             {
                                 "Name": "Regex",
