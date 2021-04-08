@@ -2720,7 +2720,7 @@
             "LinkTitle": "What you need to upload",
             "InfoText": "",
             "Questions": [],
-			"PageOfAnswers": [],
+            "PageOfAnswers": [],
             "Next": [
                 {
                     "Action": "NextPage",
@@ -2738,7 +2738,7 @@
                     ]
                 }
             ],
-            "BodyText": "<p class='govuk-body'>You'll need to upload your organisation's:</p><ul class='govuk-list govuk-list--bullet'><li>management accounts covering at least 3 months within the last 12 months to show active trading</li><li>financial projections covering the remaining period</li></ul><p class='govuk-body'>Management accounts and financial projections must cover a 12-month period in total.</p>",
+            "BodyText": "<p class='govuk-body'>You'll need to upload your organisation's:</p><ul class='govuk-list govuk-list--bullet'><li>management accounts covering at least 3 months within the last 12 months that evidence your organisation has actively traded</li><li>financial projections covering the remaining period</li></ul><p class='govuk-body'>Management accounts and financial projections must cover a 12-month period in total.</p>",
             "ActivatedByPageId": "2210"
         },
         {
