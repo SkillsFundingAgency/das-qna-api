@@ -190,8 +190,8 @@
             "PageId": "2520",
             "SequenceId": null,
             "SectionId": null,
-            "Title": "Does your UK ultimate parent company have other subsidiary companies?",
-            "LinkTitle": "Does your UK ultimate parent company have other subsidiary companies?",
+            "Title": "Does your UK ultimate parent company have other active subsidiary companies?",
+            "LinkTitle": "Does your UK ultimate parent company have other active subsidiary companies?",
             "InfoText": "",
             "Questions": [
                 {
@@ -219,7 +219,7 @@
                             {
                                 "Name": "Required",
                                 "Value": "",
-                                "ErrorMessage": "Tell us if your UK ultimate parent company has other subsidiary companies"
+                                "ErrorMessage": "Tell us if your UK ultimate parent company has other active subsidiary companies"
                             }
                         ]
                     }
