@@ -7,14 +7,14 @@
             "PageId": "2100",
             "SequenceId": null,
             "SectionId": null,
-            "Title": "Was your organisation's total annual turnover over &pound;75 million for the last financial year?",
-            "LinkTitle": "Was your organisation's total annual turnover over &pound;75 million for the last financial year?",
+            "Title": "Was your organisation's total annual turnover over &pound;75 million for the latest reported financial year?",
+            "LinkTitle": "Was your organisation's total annual turnover over &pound;75 million for the latest reported financial year?",
             "InfoText": "",
             "Questions": [
                 {
                     "QuestionId": "FH-30",
                     "QuestionTag": "FHATurnoverOver75m",
-                    "Label": "Was your organisation's total annual turnover over &pound;75 million for the last financial year?",
+                    "Label": "Was your organisation's total annual turnover over &pound;75 million for the latest reported financial year?",
                     "ShortLabel": "",
                     "QuestionBodyText": "",
                     "Hint": "",
@@ -36,7 +36,7 @@
                             {
                                 "Name": "Required",
                                 "Value": "",
-                                "ErrorMessage": "Tell us if your organisation's total annual turnover was over &pound;75 million for the last financial year"
+                                "ErrorMessage": "Tell us if your organisation's total annual turnover was over &pound;75 million for the latest reported financial year"
                             }
                         ]
                     }
