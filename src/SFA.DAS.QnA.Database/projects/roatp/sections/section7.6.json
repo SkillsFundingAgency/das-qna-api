@@ -99,6 +99,55 @@
 			"ActivatedByPageId": null
 		},
 		{
+			"PageId": "7610AA",
+			"SequenceId": null,
+			"SectionId": null,
+			"Title": "2. Delivering training in sectors",
+			"LinkTitle": "Agriculture, environmental and animal care",
+			"InfoText": "",
+			"Questions": [{
+					"QuestionId": "DAT-7610AA-1",
+					"QuestionTag": "DATAgricultureWhatStandardsOffered",
+					"Label": "What standards do you intend to deliver within the 'Agriculture, environmental and animal care' sector?",
+					"ShortLabel": "",
+					"QuestionBodyText": "<p class='govuk-body'>Add standards</a>",
+					"Hint": "List the names of all the standards you intend to deliver",
+					"Input": {
+								"Type": "Textarea",
+								"Options": [],
+								"Validations": [{
+										"Name": "Required",
+										"Value": "",
+										"ErrorMessage": "What standards do you intend to offer within the sector"
+									},
+									{
+										"Name": "MaxWordCount",
+										"Value": "750",
+										"ErrorMessage": "Your answer must be 750 words or less"
+									}
+								]
+							}
+				}
+			],
+			"PageOfAnswers": [],
+			"Next": [{
+				"Action": "NextPage",
+				"ReturnId": "7610A",
+				"Conditions": []
+			}],
+			"AllowMultipleAnswers": false,
+			"Active": true,
+			"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Agriculture&comma; environmental and animal care"
+				]
+			}],
+			"BodyText": "",
+			"DisplayType": "PagesWithSections",
+			"ActivatedByPageId": null
+		},
+		{
 			"PageId": "7610A",
 			"SequenceId": null,
 			"SectionId": null,
@@ -136,7 +185,7 @@
 				"Conditions": []
 			}],
 			"AllowMultipleAnswers": false,
-			"Active": true,
+			"Active": false,
 			"NotRequiredConditions": [{
 				"Field": "SectorsChosen",
 				"DoesNotContain": [
@@ -144,8 +193,8 @@
 				]
 			}],
 			"BodyText": "",
-			"DisplayType": "PagesWithSections",
-			"ActivatedByPageId": null
+			"DisplayType": "OtherPagesInPagesWithSections",
+			"ActivatedByPageId": "7610AA"
 		},
 		{
 			"PageId": "7610B",
