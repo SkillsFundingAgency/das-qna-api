@@ -994,7 +994,7 @@
                     ]
                 }
             ],
-            "ActivatedByPageId": "230",
+            "ActivatedByPageId": "140,150,230",
             "BodyText": ""
         },
         {
@@ -1241,7 +1241,7 @@
                     ]
                 }
             ],
-            "ActivatedByPageId": "230",
+            "ActivatedByPageId": "140,150,230",
             "BodyText": ""
         },
          {
@@ -1270,7 +1270,7 @@
             "AllowMultipleAnswers": false,
             "Active": false,
             "NotRequiredConditions": [],
-            "ActivatedByPageId": "50",
+            "ActivatedByPageId": "140,150,230,50",
             "BodyText": ""
         },
         {
@@ -1299,7 +1299,7 @@
             "AllowMultipleAnswers": false,
             "Active": false,
             "NotRequiredConditions": [],
-            "ActivatedByPageId": "50",
+            "ActivatedByPageId": "140,150,230,50",
             "BodyText": ""
         },
         {
@@ -1328,7 +1328,7 @@
             "AllowMultipleAnswers": false,
             "Active": false,
             "NotRequiredConditions": [],
-            "ActivatedByPageId": "60",
+            "ActivatedByPageId": "140,150,230,60",
             "BodyText": ""
         }
 	]
