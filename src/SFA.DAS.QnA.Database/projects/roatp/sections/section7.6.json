@@ -952,6 +952,55 @@
 			"ActivatedByPageId": "7612"
 		},
 		{
+			"PageId": "7615AA",  
+			"SequenceId": null,
+			"SectionId": null,
+			"Title": "2. Delivering training in sectors",
+			"LinkTitle": "Business and administration",
+			"InfoText": "",
+			"Questions": [{
+					"QuestionId": "DAT-7615AA-1",  
+					"QuestionTag": "DATBusinessWhatStandardsOffered",  
+					"Label": "What standards do you intend to deliver within the 'Business and administration' sector?", 
+					"ShortLabel": "",
+					"QuestionBodyText": "<p class='govuk-body'>Add standards</a>",
+					"Hint": "List the names of all the standards you intend to deliver",
+					"Input": {
+								"Type": "Textarea",
+								"Options": [],
+								"Validations": [{
+										"Name": "Required",
+										"Value": "",
+										"ErrorMessage": "What standards do you intend to offer within the sector"
+									},
+									{
+										"Name": "MaxWordCount",
+										"Value": "750",
+										"ErrorMessage": "Your answer must be 750 words or less"
+									}
+								]
+							}
+				}
+			],
+			"PageOfAnswers": [],
+			"Next": [{
+				"Action": "NextPage",
+				"ReturnId": "7615A", 
+				"Conditions": []
+			}],
+			"AllowMultipleAnswers": false,
+			"Active": true,
+			"NotRequiredConditions": [{
+				"Field": "SectorsChosen",
+				"DoesNotContain": [
+					"Business and administration"
+				]
+			}],
+			"BodyText": "",
+			"DisplayType": "PagesWithSections",
+			"ActivatedByPageId": null
+		},
+		{
 			"PageId": "7615A",
 			"SequenceId": null,
 			"SectionId": null,
@@ -989,7 +1038,7 @@
 				"Conditions": []
 			}],
 			"AllowMultipleAnswers": false,
-			"Active": true,
+			"Active": false,
 			"NotRequiredConditions": [{
 				"Field": "SectorsChosen",
 				"DoesNotContain": [
@@ -997,8 +1046,8 @@
 				]
 			}],
 			"BodyText": "",
-			"DisplayType": "PagesWithSections",
-			"ActivatedByPageId": null
+			"DisplayType": "OtherPagesInPagesWithSections",
+            "ActivatedByPageId": "7615AA"
 		},
 		{
 			"PageId": "7615B",  
@@ -1749,6 +1798,55 @@
 		"ActivatedByPageId": "7617"
 	},
 	{
+		"PageId": "7620AA",  
+		"SequenceId": null,
+		"SectionId": null,
+		"Title": "2. Delivering training in sectors",
+		"LinkTitle": "Care Services", 
+		"InfoText": "",
+		"Questions": [{
+				"QuestionId": "DAT-7620AA-1",   
+				"QuestionTag": "DATCareServicesWhatStandardsOffered",  
+				"Label": "What standards do you intend to deliver within the 'Care Services' sector?",
+				"ShortLabel": "",
+				"QuestionBodyText": "<p class='govuk-body'>Add standards</a>",
+				"Hint": "List the names of all the standards you intend to deliver",
+				"Input": {
+							"Type": "Textarea",
+							"Options": [],
+							"Validations": [{
+									"Name": "Required",
+									"Value": "",
+									"ErrorMessage": "What standards do you intend to offer within the sector"
+								},
+								{
+									"Name": "MaxWordCount",
+									"Value": "750",
+									"ErrorMessage": "Your answer must be 750 words or less"
+								}
+							]
+						}
+			}
+		],
+		"PageOfAnswers": [],
+		"Next": [{
+			"Action": "NextPage",
+			"ReturnId": "7620A", 
+			"Conditions": []
+		}],
+		"AllowMultipleAnswers": false,
+		"Active": true,
+		"NotRequiredConditions": [{
+			"Field": "SectorsChosen",
+			"DoesNotContain": [
+				"Care Services" 
+			]
+		}],
+		"BodyText": "",
+		"DisplayType": "PagesWithSections",
+		"ActivatedByPageId": null
+	},
+	{
 			"PageId": "7620A",
 			"SequenceId": null,
 			"SectionId": null,
@@ -1786,7 +1884,7 @@
 				"Conditions": []
 			}],
 			"AllowMultipleAnswers": false,
-			"Active": true,
+			"Active": false,
 			"NotRequiredConditions": [{
 				"Field": "SectorsChosen",
 				"DoesNotContain": [
@@ -1794,8 +1892,8 @@
 				]
 			}],
 			"BodyText": "", 
-			"DisplayType": "PagesWithSections",   
-			"ActivatedByPageId": null
+			"DisplayType": "OtherPagesInPagesWithSections",
+            "ActivatedByPageId": "7620AA"
 		},
 		{
 			"PageId": "7620B",  
@@ -2546,6 +2644,55 @@
 		"ActivatedByPageId": "7622"
 	},
 	{
+		"PageId": "7625AA",  
+		"SequenceId": null,
+		"SectionId": null,
+		"Title": "2. Delivering training in sectors",
+		"LinkTitle": "Catering and hospitality", 
+		"InfoText": "",
+		"Questions": [{
+				"QuestionId": "DAT-7625AA-1",  
+				"QuestionTag": "DATCateringWhatStandardsOffered", 
+				"Label": "What standards do you intend to deliver within the 'Catering and hospitality' sector?",
+				"ShortLabel": "",
+				"QuestionBodyText": "<p class='govuk-body'>Add standards</a>",
+				"Hint": "List the names of all the standards you intend to deliver",
+				"Input": {
+							"Type": "Textarea",
+							"Options": [],
+							"Validations": [{
+									"Name": "Required",
+									"Value": "",
+									"ErrorMessage": "What standards do you intend to offer within the sector"
+								},
+								{
+									"Name": "MaxWordCount",
+									"Value": "750",
+									"ErrorMessage": "Your answer must be 750 words or less"
+								}
+							]
+						}
+			}
+		],
+		"PageOfAnswers": [],
+		"Next": [{
+			"Action": "NextPage",
+			"ReturnId": "7625A",
+			"Conditions": []
+		}],
+		"AllowMultipleAnswers": false,
+		"Active": true,
+		"NotRequiredConditions": [{
+			"Field": "SectorsChosen",
+			"DoesNotContain": [
+				"Catering and hospitality" 
+			]
+		}],
+		"BodyText": "",
+		"DisplayType": "PagesWithSections",
+		"ActivatedByPageId": null
+	},
+	{
 			"PageId": "7625A", 
 			"SequenceId": null,
 			"SectionId": null,
@@ -2583,7 +2730,7 @@
 				"Conditions": []
 			}],
 			"AllowMultipleAnswers": false,
-			"Active": true,
+			"Active": false,
 			"NotRequiredConditions": [{
 				"Field": "SectorsChosen",
 				"DoesNotContain": [
@@ -2591,8 +2738,8 @@
 				]
 			}],
 			"BodyText": "", 
-			"DisplayType": "PagesWithSections",   
-			"ActivatedByPageId": null
+			"DisplayType": "OtherPagesInPagesWithSections",
+            "ActivatedByPageId": "7625AA"
 		},
 		{
 			"PageId": "7625B",  
@@ -3343,6 +3490,55 @@
 		"ActivatedByPageId": "7627"
 	},
 	{
+		"PageId": "7630AA",  
+		"SequenceId": null,
+		"SectionId": null,
+		"Title": "2. Delivering training in sectors",
+		"LinkTitle": "Construction", 
+		"InfoText": "",
+		"Questions": [{
+				"QuestionId": "DAT-7630AA-1", 
+				"QuestionTag": "DATConstructionWhatStandardsOffered",  
+				"Label": "What standards do you intend to deliver within the 'Construction' sector?", 
+				"ShortLabel": "",
+				"QuestionBodyText": "<p class='govuk-body'>Add standards</a>",
+				"Hint": "List the names of all the standards you intend to deliver",
+				"Input": {
+							"Type": "Textarea",
+							"Options": [],
+							"Validations": [{
+									"Name": "Required",
+									"Value": "",
+									"ErrorMessage": "What standards do you intend to offer within the sector"
+								},
+								{
+									"Name": "MaxWordCount",
+									"Value": "750",
+									"ErrorMessage": "Your answer must be 750 words or less"
+								}
+							]
+						}
+			}
+		],
+		"PageOfAnswers": [],
+		"Next": [{
+			"Action": "NextPage",
+			"ReturnId": "7630A", 
+			"Conditions": []
+		}],
+		"AllowMultipleAnswers": false,
+		"Active": true,
+		"NotRequiredConditions": [{
+			"Field": "SectorsChosen",
+			"DoesNotContain": [
+				"Construction" 
+			]
+		}],
+		"BodyText": "",
+		"DisplayType": "PagesWithSections",
+		"ActivatedByPageId": null
+	},
+	{
 			"PageId": "7630A", 
 			"SequenceId": null,
 			"SectionId": null,
@@ -3380,7 +3576,7 @@
 				"Conditions": []
 			}],
 			"AllowMultipleAnswers": false,
-			"Active": true,
+			"Active": false,
 			"NotRequiredConditions": [{
 				"Field": "SectorsChosen",
 				"DoesNotContain": [
@@ -3388,8 +3584,8 @@
 				]
 			}],
 			"BodyText": "", 
-			"DisplayType": "PagesWithSections",   
-			"ActivatedByPageId": null
+			"DisplayType": "OtherPagesInPagesWithSections",
+            "ActivatedByPageId": "7630AA"
 		},
 		{
 			"PageId": "7630B",  
