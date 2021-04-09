@@ -120,7 +120,7 @@ namespace SFA.DAS.QnA.Api
                 }
             });
             
-            services.AddHealthChecks();
+            services.AddHealthChecks().AddDbContextCheck<QnaDataContext>();
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
