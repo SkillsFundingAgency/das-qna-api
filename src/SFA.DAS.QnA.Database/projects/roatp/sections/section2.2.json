@@ -3071,14 +3071,14 @@
             "PageId": "2280",
             "SequenceId": null,
             "SectionId": null,
-            "Title": "How long is the accounting period for the financial information you are submitting?",
-            "LinkTitle": "How long is the accounting period for the financial information you are submitting?",
+            "Title": "How many months does the accounting period cover for the financial information you are submitting?,
+            "LinkTitle": "How many months does the accounting period cover for the financial information you are submitting?",
             "InfoText": "",
             "Questions": [
                 {
                     "QuestionId": "FH-430",
                     "QuestionTag": "FHAAccountingPeriod",
-                    "Label": "How long is the accounting period for the financial information you are submitting?",
+                    "Label": "How many months does the accounting period cover for the financial information you are submitting?",
                     "ShortLabel": "",
                     "QuestionBodyText": "<p class='govuk-body'>Your accounting period will be between 1 and 23 months.</p>",
                     "Hint": "Enter a number between 1 and 23",
