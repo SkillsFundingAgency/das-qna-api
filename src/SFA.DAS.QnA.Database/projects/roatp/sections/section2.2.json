@@ -35,7 +35,6 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": "",
                                 "ErrorMessage": "Tell us if your organisation's total annual turnover was over &pound;75 million for the last financial year"
                             }
                         ]
@@ -177,7 +176,6 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": "",
                                 "ErrorMessage": "Tell us if your organisation expects its funding from ESFA to be less than 5% of its total annual turnover"
                             }
                         ]
@@ -319,13 +317,17 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": "",
                                 "ErrorMessage": "Enter your organisation's total annual turnover for the latest reported financial year"
                             },
                             {
                                 "Name": "Regex",
                                 "Value": "^-?[0-9]+$",
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
+                            },
+                            {
+                                "Name": "MaxLength",
+                                "Value": "10",
+                                "ErrorMessage": "The amount must be 10 characters or less"
                             }
                         ],
                         "InputPrefix": "&pound;"
@@ -344,13 +346,17 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": "",
                                 "ErrorMessage": "Enter your organisation's total depreciation and amortisation charges for the latest reported financial year"
                             },
                             {
                                 "Name": "Regex",
                                 "Value": "^-?[0-9]+$",
                                 "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
+                            },
+                            {
+                                "Name": "MaxLength",
+                                "Value": "10",
+                                "ErrorMessage": "The amount must be 10 characters or less"
                             }
                         ],
                         "InputPrefix": "&pound;"
@@ -369,13 +375,17 @@
                   "Validations": [
                     {
                       "Name": "Required",
-                      "Value": "",
                       "ErrorMessage": "Enter your organisation's profit or loss for the latest reported financial year"
                     },
                     {
                       "Name": "Regex",
                       "Value": "^-?[0-9]+$",
                       "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
+                    },
+                    {
+                        "Name": "MaxLength",
+                        "Value": "10",
+                        "ErrorMessage": "The amount must be 10 characters or less"
                     }
                   ],
                   "InputPrefix": "&pound;"
@@ -394,13 +404,17 @@
                   "Validations": [
                     {
                       "Name": "Required",
-                      "Value": "",
                       "ErrorMessage": "Enter your organisation's total dividends for the latest reported financial year"
                     },
                     {
                       "Name": "Regex",
                       "Value": "^-?[0-9]+$",
                       "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
+                    },
+                    {
+                        "Name": "MaxLength",
+                        "Value": "10",
+                        "ErrorMessage": "The amount must be 10 characters or less"
                     }
                   ],
                   "InputPrefix": "&pound;"
@@ -419,13 +433,17 @@
                   "Validations": [
                     {
                       "Name": "Required",
-                      "Value": "",
                       "ErrorMessage": "Enter your organisation's total current assets for the latest reported financial year"
                     },
                     {
                       "Name": "Regex",
                       "Value": "^-?[0-9]+$",
                       "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
+                    },
+                    {
+                        "Name": "MaxLength",
+                        "Value": "10",
+                        "ErrorMessage": "The amount must be 10 characters or less"
                     }
                   ],
                   "InputPrefix": "&pound;"
@@ -444,13 +462,17 @@
                   "Validations": [
                     {
                       "Name": "Required",
-                      "Value": "",
                       "ErrorMessage": "Enter your organisation's total current liabilities for the latest reported financial year"
                     },
                     {
                       "Name": "Regex",
                       "Value": "^-?[0-9]+$",
                       "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
+                    },
+                    {
+                        "Name": "MaxLength",
+                        "Value": "10",
+                        "ErrorMessage": "The amount must be 10 characters or less"
                     }
                   ],
                   "InputPrefix": "&pound;"
@@ -469,13 +491,17 @@
                   "Validations": [
                     {
                       "Name": "Required",
-                      "Value": "",
                       "ErrorMessage": "Enter your organisation's total borrowings for the latest reported financial year"
                     },
                     {
                       "Name": "Regex",
                       "Value": "^-?[0-9]+$",
                       "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
+                    },
+                    {
+                        "Name": "MaxLength",
+                        "Value": "10",
+                        "ErrorMessage": "The amount must be 10 characters or less"
                     }
                   ],
                   "InputPrefix": "&pound;"
@@ -494,13 +520,17 @@
                   "Validations": [
                     {
                       "Name": "Required",
-                      "Value": "",
                       "ErrorMessage": "Enter your organisation's net assets for the latest reported financial year"
                     },
                     {
                       "Name": "Regex",
                       "Value": "^-?[0-9]+$",
                       "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
+                    },
+                    {
+                        "Name": "MaxLength",
+                        "Value": "10",
+                        "ErrorMessage": "The amount must be 10 characters or less"
                     }
                   ],
                   "InputPrefix": "&pound;"
@@ -520,13 +550,17 @@
                   "Validations": [
                     {
                       "Name": "Required",
-                      "Value": "",
                       "ErrorMessage": "Enter your organisation's total intangible assets for the latest reported financial year"
                     },
                     {
                       "Name": "Regex",
                       "Value": "^-?[0-9]+$",
                       "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
+                    },
+                    {
+                        "Name": "MaxLength",
+                        "Value": "10",
+                        "ErrorMessage": "The amount must be 10 characters or less"
                     }
                   ],
                   "InputPrefix": "&pound;"
@@ -593,13 +627,17 @@
                   "Validations": [
                     {
                       "Name": "Required",
-                      "Value": "",
                       "ErrorMessage": "Enter your organisation's total annual turnover for the latest reported financial year"
                     },
                     {
                       "Name": "Regex",
                       "Value": "^-?[0-9]+$",
                       "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
+                    },
+                    {
+                        "Name": "MaxLength",
+                        "Value": "10",
+                        "ErrorMessage": "The amount must be 10 characters or less"
                     }
                   ],
                   "InputPrefix": "&pound;"
@@ -618,13 +656,17 @@
                   "Validations": [
                     {
                       "Name": "Required",
-                      "Value": "",
                       "ErrorMessage": "Enter your organisation's total depreciation and amortisation charges for the latest reported financial year"
                     },
                     {
                       "Name": "Regex",
                       "Value": "^-?[0-9]+$",
                       "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
+                    },
+                    {
+                        "Name": "MaxLength",
+                        "Value": "10",
+                        "ErrorMessage": "The amount must be 10 characters or less"
                     }
                   ],
                   "InputPrefix": "&pound;"
@@ -643,13 +685,17 @@
                   "Validations": [
                     {
                       "Name": "Required",
-                      "Value": "",
                       "ErrorMessage": "Enter your organisation's profit or loss for the latest reported financial year"
                     },
                     {
                       "Name": "Regex",
                       "Value": "^-?[0-9]+$",
                       "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
+                    },
+                    {
+                        "Name": "MaxLength",
+                        "Value": "10",
+                        "ErrorMessage": "The amount must be 10 characters or less"
                     }
                   ],
                   "InputPrefix": "&pound;"
@@ -668,13 +714,17 @@
                   "Validations": [
                     {
                       "Name": "Required",
-                      "Value": "",
                       "ErrorMessage": "Enter your organisation's total dividends for the latest reported financial year"
                     },
                     {
                       "Name": "Regex",
                       "Value": "^-?[0-9]+$",
                       "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
+                    },
+                    {
+                        "Name": "MaxLength",
+                        "Value": "10",
+                        "ErrorMessage": "The amount must be 10 characters or less"
                     }
                   ],
                   "InputPrefix": "&pound;"
@@ -693,13 +743,17 @@
                   "Validations": [
                     {
                       "Name": "Required",
-                      "Value": "",
                       "ErrorMessage": "Enter your organisation's total current assets for the latest reported financial year"
                     },
                     {
                       "Name": "Regex",
                       "Value": "^-?[0-9]+$",
                       "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
+                    },
+                    {
+                        "Name": "MaxLength",
+                        "Value": "10",
+                        "ErrorMessage": "The amount must be 10 characters or less"
                     }
                   ],
                   "InputPrefix": "&pound;"
@@ -718,13 +772,17 @@
                   "Validations": [
                     {
                       "Name": "Required",
-                      "Value": "",
                       "ErrorMessage": "Enter your organisation's total current liabilities for the latest reported financial year"
                     },
                     {
                       "Name": "Regex",
                       "Value": "^-?[0-9]+$",
                       "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
+                    },
+                    {
+                        "Name": "MaxLength",
+                        "Value": "10",
+                        "ErrorMessage": "The amount must be 10 characters or less"
                     }
                   ],
                   "InputPrefix": "&pound;"
@@ -743,13 +801,17 @@
                   "Validations": [
                     {
                       "Name": "Required",
-                      "Value": "",
                       "ErrorMessage": "Enter your organisation's total borrowings for the latest reported financial year"
                     },
                     {
                       "Name": "Regex",
                       "Value": "^-?[0-9]+$",
                       "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
+                    },
+                    {
+                        "Name": "MaxLength",
+                        "Value": "10",
+                        "ErrorMessage": "The amount must be 10 characters or less"
                     }
                   ],
                   "InputPrefix": "&pound;"
@@ -768,13 +830,17 @@
                   "Validations": [
                     {
                       "Name": "Required",
-                      "Value": "",
                       "ErrorMessage": "Enter your organisation's net assets for the latest reported financial year"
                     },
                     {
                       "Name": "Regex",
                       "Value": "^-?[0-9]+$",
                       "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
+                    },
+                    {
+                        "Name": "MaxLength",
+                        "Value": "10",
+                        "ErrorMessage": "The amount must be 10 characters or less"
                     }
                   ],
                   "InputPrefix": "&pound;"
@@ -794,13 +860,17 @@
                   "Validations": [
                     {
                       "Name": "Required",
-                      "Value": "",
                       "ErrorMessage": "Enter your organisation's total intangible assets for the latest reported financial year"
                     },
                     {
                       "Name": "Regex",
                       "Value": "^-?[0-9]+$",
                       "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
+                    },
+                    {
+                        "Name": "MaxLength",
+                        "Value": "10",
+                        "ErrorMessage": "The amount must be 10 characters or less"
                     }
                   ],
                   "InputPrefix": "&pound;"
@@ -849,13 +919,17 @@
                   "Validations": [
                     {
                       "Name": "Required",
-                      "Value": "",
                       "ErrorMessage": "Enter your organisation's total annual turnover for the latest reported financial year"
                     },
                     {
                       "Name": "Regex",
                       "Value": "^-?[0-9]+$",
                       "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
+                    },
+                    {
+                        "Name": "MaxLength",
+                        "Value": "10",
+                        "ErrorMessage": "The amount must be 10 characters or less"
                     }
                   ],
                   "InputPrefix": "&pound;"
@@ -874,13 +948,17 @@
                   "Validations": [
                     {
                       "Name": "Required",
-                      "Value": "",
                       "ErrorMessage": "Enter your organisation's total depreciation and amortisation charges for the latest reported financial year"
                     },
                     {
                       "Name": "Regex",
                       "Value": "^-?[0-9]+$",
                       "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
+                    },
+                    {
+                        "Name": "MaxLength",
+                        "Value": "10",
+                        "ErrorMessage": "The amount must be 10 characters or less"
                     }
                   ],
                   "InputPrefix": "&pound;"
@@ -899,13 +977,17 @@
                   "Validations": [
                     {
                       "Name": "Required",
-                      "Value": "",
                       "ErrorMessage": "Enter your organisation's profit or loss for the latest reported financial year"
                     },
                     {
                       "Name": "Regex",
                       "Value": "^-?[0-9]+$",
                       "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
+                    },
+                    {
+                        "Name": "MaxLength",
+                        "Value": "10",
+                        "ErrorMessage": "The amount must be 10 characters or less"
                     }
                   ],
                   "InputPrefix": "&pound;"
@@ -924,13 +1006,17 @@
                   "Validations": [
                     {
                       "Name": "Required",
-                      "Value": "",
                       "ErrorMessage": "Enter your organisation's total dividends for the latest reported financial year"
                     },
                     {
                       "Name": "Regex",
                       "Value": "^-?[0-9]+$",
                       "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
+                    },
+                    {
+                        "Name": "MaxLength",
+                        "Value": "10",
+                        "ErrorMessage": "The amount must be 10 characters or less"
                     }
                   ],
                   "InputPrefix": "&pound;"
@@ -949,13 +1035,17 @@
                   "Validations": [
                     {
                       "Name": "Required",
-                      "Value": "",
                       "ErrorMessage": "Enter your organisation's total current assets for the latest reported financial year"
                     },
                     {
                       "Name": "Regex",
                       "Value": "^-?[0-9]+$",
                       "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
+                    },
+                    {
+                        "Name": "MaxLength",
+                        "Value": "10",
+                        "ErrorMessage": "The amount must be 10 characters or less"
                     }
                   ],
                   "InputPrefix": "&pound;"
@@ -975,13 +1065,17 @@
                   "Validations": [
                     {
                       "Name": "Required",
-                      "Value": "",
                       "ErrorMessage": "Enter your organisation's total current liabilities for the latest reported financial year"
                     },
                     {
                       "Name": "Regex",
                       "Value": "^-?[0-9]+$",
                       "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
+                    },
+                    {
+                        "Name": "MaxLength",
+                        "Value": "10",
+                        "ErrorMessage": "The amount must be 10 characters or less"
                     }
                   ],
                   "InputPrefix": "&pound;"
@@ -1000,13 +1094,17 @@
                   "Validations": [
                     {
                       "Name": "Required",
-                      "Value": "",
                       "ErrorMessage": "Enter your organisation's total borrowings for the latest reported financial year"
                     },
                     {
                       "Name": "Regex",
                       "Value": "^-?[0-9]+$",
                       "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
+                    },
+                    {
+                        "Name": "MaxLength",
+                        "Value": "10",
+                        "ErrorMessage": "The amount must be 10 characters or less"
                     }
                   ],
                   "InputPrefix": "&pound;"
@@ -1025,13 +1123,17 @@
                   "Validations": [
                     {
                       "Name": "Required",
-                      "Value": "",
                       "ErrorMessage": "Enter your organisation's net assets for the latest reported financial year"
                     },
                     {
                       "Name": "Regex",
                       "Value": "^-?[0-9]+$",
                       "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
+                    },
+                    {
+                        "Name": "MaxLength",
+                        "Value": "10",
+                        "ErrorMessage": "The amount must be 10 characters or less"
                     }
                   ],
                   "InputPrefix": "&pound;"
@@ -1051,13 +1153,17 @@
                   "Validations": [
                     {
                       "Name": "Required",
-                      "Value": "",
                       "ErrorMessage": "Enter your organisation's total intangible assets for the latest reported financial year"
                     },
                     {
                       "Name": "Regex",
                       "Value": "^-?[0-9]+$",
                       "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
+                    },
+                    {
+                        "Name": "MaxLength",
+                        "Value": "10",
+                        "ErrorMessage": "The amount must be 10 characters or less"
                     }
                   ],
                   "InputPrefix": "&pound;"
@@ -1123,7 +1229,6 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": "",
                                 "ErrorMessage": "Tell us if your organisation has produced full financial statements covering a minimum of 12 months"
                             }
                         ]
@@ -1298,7 +1403,6 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": "",
                                 "ErrorMessage": "Tell us if your organisation has produced financial statements covering any period within the last 12 months"
                             }
                         ]
@@ -1695,7 +1799,6 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": "",
                                 "ErrorMessage": "Tell us if your organisation has produced full management accounts covering the last 12 months"
                             }
                         ]
@@ -2166,7 +2269,6 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "Value": "",
                                 "ErrorMessage": "Tell us who prepared the answers and uploads in this section"
                             }
                         ]
