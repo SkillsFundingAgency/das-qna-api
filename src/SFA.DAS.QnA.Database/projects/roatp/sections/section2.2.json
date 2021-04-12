@@ -2275,7 +2275,102 @@
                     }
                 }
             ],
-			"PageOfAnswers": [],
+            "PageOfAnswers": [],
+            "Next": [
+                {
+                    "Action": "NextPage",
+                    "ReturnId": "2270",
+                    "Conditions": []
+                }
+            ],
+            "AllowMultipleAnswers": false,
+            "Active": true,
+            "NotRequiredConditions": [],
+            "BodyText": "",
+            "ActivatedByPageId": ""
+        },
+        {
+            "PageId": "2270",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "What's the accounting reference date for the financial information you are submitting?",
+            "LinkTitle": "What's the accounting reference date for the financial information you are submitting?",
+            "InfoText": "",
+            "Questions": [
+                {
+                    "QuestionId": "FH-420",
+                    "QuestionTag": "FHAAccountingReferenceDate",
+                    "Label": "What's the accounting reference date for the financial information you are submitting?",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "<p class='govuk-body'>Enter the accounting reference date.</p>",
+                    "Hint": "For example, 12 11 2018",
+                    "Input": {
+                        "Type": "Date",
+                        "Options": [],
+                        "Validations": [
+                            {
+                                "Name": "Required",
+                                "ErrorMessage": "Enter your accounting reference date"
+                            },
+                            {
+                                "Name": "Date",
+                                "ErrorMessage": "Enter a valid accounting reference date"
+                            },
+                            {
+                                "Name": "DateNotInFuture",
+                                "ErrorMessage": "The accounting reference date must be in the past"
+                            }
+                        ]
+                    }
+                }
+            ],
+            "PageOfAnswers": [],
+            "Next": [
+                {
+                    "Action": "NextPage",
+                    "ReturnId": "2280",
+                    "Conditions": []
+                }
+            ],
+            "AllowMultipleAnswers": false,
+            "Active": true,
+            "NotRequiredConditions": [],
+            "BodyText": "",
+            "ActivatedByPageId": ""
+        },
+        {
+            "PageId": "2280",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "How many months does the accounting period cover for the financial information you are submitting?",
+            "LinkTitle": "How many months does the accounting period cover for the financial information you are submitting?",
+            "InfoText": "",
+            "Questions": [
+                {
+                    "QuestionId": "FH-430",
+                    "QuestionTag": "FHAAccountingPeriod",
+                    "Label": "How many months does the accounting period cover for the financial information you are submitting?",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "<p class='govuk-body'>Your accounting period will be between 1 and 23 months.</p>",
+                    "Hint": "Enter a number between 1 and 23",
+                    "Input": {
+                        "Type": "Number",
+                        "InputClasses": "govuk-input--width-2",
+                        "Validations": [
+                            {
+                                "Name": "Required",
+                                "ErrorMessage": "Tell us what your accounting period is"
+                            },
+                            {
+                                "Name": "Regex",
+                                "Value": "^([1-9]|1[0-9]|2[0-3])$",
+                                "ErrorMessage": "Enter a number between 1 and 23"
+                            }
+                        ]
+                    }
+                }
+            ],
+            "PageOfAnswers": [],
             "Next": [
                 {
                     "Action": "ReturnToSection",
@@ -2284,10 +2379,10 @@
                 }
             ],
             "AllowMultipleAnswers": false,
-            "Active": false,
+            "Active": true,
             "NotRequiredConditions": [],
             "BodyText": "",
-            "ActivatedByPageId": "2160,2200,2220,2250,2225"
+            "ActivatedByPageId": ""
         }
     ]
 }
