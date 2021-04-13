@@ -197,7 +197,7 @@
                 {
                     "QuestionId": "FH-520",
                     "QuestionTag": "FHAParentHasOtherSubsidiaries",
-                    "Label": "Does your UK ultimate parent company have other subsidiary companies?",
+                    "Label": "Does your UK ultimate parent company have other active subsidiary companies?",
                     "ShortLabel": "",
                     "QuestionBodyText": "<p class='govuk-body'>Subsidiary companies must not be dormant.</p>",
                     "Hint": "",
