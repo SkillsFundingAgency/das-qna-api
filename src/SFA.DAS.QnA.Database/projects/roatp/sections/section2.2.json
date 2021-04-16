@@ -586,6 +586,11 @@
                       "Name": "Regex",
                       "Value": "^-?[0-9]+$",
                       "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
+                    },
+                    {
+                      "Name": "MaxLength",
+                      "Value": "10",
+                      "ErrorMessage": "The number must be 10 characters or less"
                     }
                   ],
                   "InputPrefix": ""
