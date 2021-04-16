@@ -205,8 +205,8 @@
 			"InfoText": "",
 			"Questions": [{
 					"QuestionId": "DAT-7610-1",
-					"QuestionTag": "DATAgricultureFullName",
-					"Label": "Full name",
+					"QuestionTag": "DATAgricultureFirstName",
+					"Label": "First name",
 					"ShortLabel": "",
 					"QuestionBodyText": "",
 					"Hint": "",
@@ -215,18 +215,40 @@
 						"Validations": [{
 								"Name": "Required",
 								"Value": "",
-								"ErrorMessage": "Enter a full name"
+								"ErrorMessage": "Enter first name"
 							},
 							{
 								"Name": "MaxLength",
 								"Value": "255",
-								"ErrorMessage": "Enter a full name using 255 characters or less"
+								"ErrorMessage": "Enter first name using 255 characters or less"
 							}
 						]
 					}
 				},
 				{
 					"QuestionId": "DAT-7610-2",
+					"QuestionTag": "DATAgricultureLastName",
+					"Label": "Last name",
+					"ShortLabel": "",
+					"QuestionBodyText": "",
+					"Hint": "",
+					"Input": {
+						"Type": "Text",
+						"Validations": [{
+								"Name": "Required",
+								"Value": "",
+								"ErrorMessage": "Enter last name"
+							},
+							{
+								"Name": "MaxLength",
+								"Value": "255",
+								"ErrorMessage": "Enter last name using 255 characters or less"
+							}
+						]
+					}
+				},
+				{
+					"QuestionId": "DAT-7610-3",
 					"QuestionTag": null,
 					"Label": "Job role",
 					"ShortLabel": "",
@@ -248,7 +270,7 @@
 					}
 				},
 				{
-					"QuestionId": "DAT-7610-3",
+					"QuestionId": "DAT-7610-4",
 					"QuestionTag": null,
 					"Label": "Time in role (years and months)",
 					"ShortLabel": "",
@@ -270,7 +292,7 @@
 					}
 				},
 				{
-					"QuestionId": "DAT-7610-4",
+					"QuestionId": "DAT-7610-5",
 					"QuestionTag": null,
 					"Label": "Is this person part of any other organisations?",
 					"ShortLabel": "",
@@ -283,12 +305,12 @@
 								"Label": "Yes",
 								"HintText": "",
 								"FurtherQuestions": [{
-									"QuestionId": "DAT-7610-4-1",
+									"QuestionId": "DAT-7610-5-1",
 									"QuestionTag": null,
 									"Label": "Enter the names of all these organisations",
 									"ShortLabel": "",
 									"QuestionBodyText": "",
-									"Hint": "You also need to include which of these organisations may receive funding directly from ESFA or as a subcontractor.",
+									"Hint": "Tell us which of these organisations receive funding directly from ESFA or as a subcontractor. Include the UKPRN if they have one and how many years you have been with the organisations.",
 									"Input": {
 										"Type": "Textarea",
 										"Options": [],
@@ -318,6 +340,73 @@
 							"ErrorMessage": "Tell us if this person is part of any other organisations"
 						}]
 					}
+				},
+				{
+                    "QuestionId": "DAT-7610-6",
+                    "QuestionTag": "",
+                    "Label": "Date of birth",
+                    "ShortLabel": "Date of birth",
+                    "QuestionBodyText": "",
+                    "Hint": "For example, 11 2020",
+                    "Input": {
+                        "Type": "MonthAndYear",
+                        "Validations": [
+							{
+                                "Name": "Required",
+                                "ErrorMessage": "Enter a date of birth using a month and year"
+                            },
+                            {
+                                "Name": "MonthAndYear",
+                                "ErrorMessage": "Enter a date of birth using a month and year"
+                            },
+                            {
+                                "Name": "MonthAndYearNotInFuture",
+                                "ErrorMessage": "Enter a date of birth using a month and year that's in the past"
+                            }
+                        ]
+                    }
+                },
+				{
+					"QuestionId": "DAT-7610-7",
+					"Label": "Email",
+					"ShortLabel": "",
+					"QuestionBodyText": "",
+					"Hint": "",
+					"Input": {
+						"Type": "Text",
+						"Validations": [{
+								"Name": "Required",
+								"Value": "",
+								"ErrorMessage": "Enter email"
+							},
+							{
+								"Name": "MaxLength",
+								"Value": "320",
+								"ErrorMessage": "Enter email using 320 characters or less"
+							}
+						]
+					}
+				},
+				{
+					"QuestionId": "DAT-7610-8",
+					"Label": "Contact number",
+					"ShortLabel": "",
+					"QuestionBodyText": "",
+					"Hint": "",
+					"Input": {
+						"Type": "Text",
+						"Validations": [{
+								"Name": "Required",
+								"Value": "",
+								"ErrorMessage": "Enter contact number"
+							},
+							{
+								"Name": "MaxLength",
+								"Value": "50",
+								"ErrorMessage": "Enter contact number using 50 characters or less"
+							}
+						]
+					}
 				}
 			],
 			"PageOfAnswers": [],
@@ -343,7 +432,7 @@
 			"SequenceId": null,
 			"SectionId": null,
 			"Title": "2. Delivering training in sectors",
-			"LinkTitle": "{{DATAgricultureFullName}}'s experience in the 'Agriculture, environmental and animal care' sector",
+			"LinkTitle": "{{DATAgricultureFirstName}} {{DATAgricultureLastName}}'s experience in the 'Agriculture, environmental and animal care' sector",
 			"InfoText": "",
 			"Questions": [{
 					"QuestionId": "DAT-76111",
@@ -645,7 +734,7 @@
 					"Agriculture&comma; environmental and animal care"
 				]
 			}],
-			"BodyText": "{{DATAgricultureFullName}}'s experience in the 'Agriculture, environmental and animal care' sector",
+			"BodyText": "{{DATAgricultureFirstName}} {{DATAgricultureLastName}}'s experience in the 'Agriculture, environmental and animal care' sector",
 			"DisplayType": "OtherPagesInPagesWithSections",
 			"ActivatedByPageId": "7610"
 		},
@@ -654,7 +743,7 @@
 			"SequenceId": null,
 			"SectionId": null,
 			"Title": "2. Delivering training in sectors",
-			"LinkTitle": "{{DATAgricultureFullName}}'s experience in the 'Agriculture, environmental and animal care' sector",
+			"LinkTitle": "{{DATAgricultureFirstName}} {{DATAgricultureLastName}}'s experience in the 'Agriculture, environmental and animal care' sector",
 			"InfoText": "",
 			"Questions": [{
 				"QuestionId": "DAT-76121",
@@ -718,7 +807,7 @@
 					"Agriculture&comma; environmental and animal care"
 				]
 			}],
-			"BodyText": "{{DATAgricultureFullName}}'s experience in the 'Agriculture, environmental and animal care' sector",
+			"BodyText": "{{DATAgricultureFirstName}} {{DATAgricultureLastName}}'s experience in the 'Agriculture, environmental and animal care' sector",
 			"DisplayType": "OtherPagesInPagesWithSections",
 			"ActivatedByPageId": "7611"
 		},
@@ -727,7 +816,7 @@
 			"SequenceId": null,
 			"SectionId": null,
 			"Title": "2. Delivering training in sectors",
-			"LinkTitle": "{{DATAgricultureFullName}}'s experience in the 'Agriculture, environmental and animal care' sector",
+			"LinkTitle": "{{DATAgricultureFirstName}} {{DATAgricultureLastName}}'s experience in the 'Agriculture, environmental and animal care' sector",
 			"InfoText": "",
 			"Questions": [{
 					"QuestionId": "DAT-76131",
@@ -898,7 +987,7 @@
 					"Agriculture&comma; environmental and animal care"
 				]
 			}],
-			"BodyText": "{{DATAgricultureFullName}}'s experience in the 'Agriculture, environmental and animal care' sector",
+			"BodyText": "{{DATAgricultureFirstName}} {{DATAgricultureLastName}}'s experience in the 'Agriculture, environmental and animal care' sector",
 			"DisplayType": "OtherPagesInPagesWithSections",
 			"ActivatedByPageId": "7612"
 		},
