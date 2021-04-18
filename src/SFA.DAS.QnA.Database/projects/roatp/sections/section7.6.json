@@ -429,6 +429,10 @@
 								"ErrorMessage": "Enter email"
 							},
 							{
+								"Name": "Email",
+								"ErrorMessage": "Enter a valid email"
+							},
+							{
 								"Name": "MaxLength",
 								"Value": "320",
 								"ErrorMessage": "Enter email using 320 characters or less"
@@ -1371,6 +1375,10 @@
 								"ErrorMessage": "Enter email"
 							},
 							{
+								"Name": "Email",
+								"ErrorMessage": "Enter a valid email"
+							},
+							{
 								"Name": "MaxLength",
 								"Value": "320",
 								"ErrorMessage": "Enter email using 320 characters or less"
@@ -2304,6 +2312,10 @@
 								"Name": "Required",
 								"Value": "",
 								"ErrorMessage": "Enter email"
+							},
+							{
+								"Name": "Email",
+								"ErrorMessage": "Enter a valid email"
 							},
 							{
 								"Name": "MaxLength",
@@ -3241,6 +3253,10 @@
 								"ErrorMessage": "Enter email"
 							},
 							{
+								"Name": "Email",
+								"ErrorMessage": "Enter a valid email"
+							},
+							{
 								"Name": "MaxLength",
 								"Value": "320",
 								"ErrorMessage": "Enter email using 320 characters or less"
@@ -4174,6 +4190,10 @@
 								"Name": "Required",
 								"Value": "",
 								"ErrorMessage": "Enter email"
+							},
+							{
+								"Name": "Email",
+								"ErrorMessage": "Enter a valid email"
 							},
 							{
 								"Name": "MaxLength",
@@ -5111,6 +5131,10 @@
 								"ErrorMessage": "Enter email"
 							},
 							{
+								"Name": "Email",
+								"ErrorMessage": "Enter a valid email"
+							},
+							{
 								"Name": "MaxLength",
 								"Value": "320",
 								"ErrorMessage": "Enter email using 320 characters or less"
@@ -6044,6 +6068,10 @@
 								"Name": "Required",
 								"Value": "",
 								"ErrorMessage": "Enter email"
+							},
+							{
+								"Name": "Email",
+								"ErrorMessage": "Enter a valid email"
 							},
 							{
 								"Name": "MaxLength",
@@ -6982,6 +7010,10 @@
 								"ErrorMessage": "Enter email"
 							},
 							{
+								"Name": "Email",
+								"ErrorMessage": "Enter a valid email"
+							},
+							{
 								"Name": "MaxLength",
 								"Value": "320",
 								"ErrorMessage": "Enter email using 320 characters or less"
@@ -7918,6 +7950,10 @@
 								"ErrorMessage": "Enter email"
 							},
 							{
+								"Name": "Email",
+								"ErrorMessage": "Enter a valid email"
+							},
+							{
 								"Name": "MaxLength",
 								"Value": "320",
 								"ErrorMessage": "Enter email using 320 characters or less"
@@ -8802,6 +8838,10 @@
 								"Name": "Required",
 								"Value": "",
 								"ErrorMessage": "Enter email"
+							},
+							{
+								"Name": "Email",
+								"ErrorMessage": "Enter a valid email"
 							},
 							{
 								"Name": "MaxLength",
@@ -9788,6 +9828,10 @@
 								"ErrorMessage": "Enter email"
 							},
 							{
+								"Name": "Email",
+								"ErrorMessage": "Enter a valid email"
+							},
+							{
 								"Name": "MaxLength",
 								"Value": "320",
 								"ErrorMessage": "Enter email using 320 characters or less"
@@ -10720,6 +10764,10 @@
 								"Name": "Required",
 								"Value": "",
 								"ErrorMessage": "Enter email"
+							},
+							{
+								"Name": "Email",
+								"ErrorMessage": "Enter a valid email"
 							},
 							{
 								"Name": "MaxLength",
@@ -11657,6 +11705,10 @@
 								"ErrorMessage": "Enter email"
 							},
 							{
+								"Name": "Email",
+								"ErrorMessage": "Enter a valid email"
+							},
+							{
 								"Name": "MaxLength",
 								"Value": "320",
 								"ErrorMessage": "Enter email using 320 characters or less"
@@ -12590,6 +12642,10 @@
 								"Name": "Required",
 								"Value": "",
 								"ErrorMessage": "Enter email"
+							},
+							{
+								"Name": "Email",
+								"ErrorMessage": "Enter a valid email"
 							},
 							{
 								"Name": "MaxLength",
@@ -13526,6 +13582,10 @@
 								"Name": "Required",
 								"Value": "",
 								"ErrorMessage": "Enter email"
+							},
+							{
+								"Name": "Email",
+								"ErrorMessage": "Enter a valid email"
 							},
 							{
 								"Name": "MaxLength",
