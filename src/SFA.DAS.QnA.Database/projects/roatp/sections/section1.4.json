@@ -49,8 +49,8 @@
 							"FurtherQuestions": []
 						},
 						{
-							"Label": "A rail franchise operator",
-							"Value": "A rail franchise operator",
+							"Label": "A rail franchise operator, licensed and acting on behalf of the Department for Transport",
+							"Value": "A rail franchise operator, licensed and acting on behalf of the Department for Transport",
 							"FurtherQuestions": []
 						}
 					],
@@ -114,7 +114,7 @@
 					"ReturnId": "230",
 					"Conditions": [{
 						"QuestionId": "YO-140",
-						"MustEqual": "A rail franchise operator"
+						"MustEqual": "A rail franchise operator, licensed and acting on behalf of the Department for Transport"
 					}]
 				}
 			],
@@ -154,8 +154,8 @@
 							"FurtherQuestions": []
 						},
 						{
-							"Label": "A rail franchise operator",
-							"Value": "A rail franchise operator",
+							"Label": "A rail franchise operator, licensed and acting on behalf of the Department for Transport",
+							"Value": "A rail franchise operator, licensed and acting on behalf of the Department for Transport",
 							"FurtherQuestions": []
 						},
 						{
@@ -800,7 +800,7 @@
                     "Conditions": [
 						{
 							"QuestionTag": "OrganisationTypeMainSupporting",
-							"MustEqual": "A rail franchise operator"
+							"MustEqual": "A rail franchise operator, licensed and acting on behalf of the Department for Transport"
 						}
                     ]
                 },
@@ -830,7 +830,7 @@
                     "Conditions": [
 						{
 							"QuestionTag": "OrganisationTypeEmployer",
-							"MustEqual": "A rail franchise operator"
+							"MustEqual": "A rail franchise operator, licensed and acting on behalf of the Department for Transport"
 						}
                     ]
                 },
@@ -1084,7 +1084,7 @@
                     "Conditions": [
 						{
 							"QuestionTag": "OrganisationTypeMainSupporting",
-							"MustEqual": "A rail franchise operator"
+							"MustEqual": "A rail franchise operator, licensed and acting on behalf of the Department for Transport"
 						}
                     ]
                 },
