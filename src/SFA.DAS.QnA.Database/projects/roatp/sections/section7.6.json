@@ -171,8 +171,8 @@
 							},
 							  {
 								"Name": "Regex",
-								"Value": "^[0]*[1-9]{1}[0-9]{0,2}$",
-								"ErrorMessage": "Enter number of starts in this sector using 3 digits or less"
+								"Value": "^[0]*[1-9]{1}[0-9]{0,3}$",
+								"ErrorMessage": "Enter number of starts in this sector using 4 digits or less"
 							  }
 						]
 					}
@@ -1024,8 +1024,8 @@
 							},
 							  {
 								"Name": "Regex",
-								"Value": "^[0]*[1-9]{1}[0-9]{0,2}$",
-								"ErrorMessage": "Enter number of starts in this sector using 3 digits or less"
+								"Value": "^[0]*[1-9]{1}[0-9]{0,3}$",
+								"ErrorMessage": "Enter number of starts in this sector using 4 digits or less"
 							  }
 						]
 					}
@@ -1870,8 +1870,8 @@
 							},
 							  {
 								"Name": "Regex",
-								"Value": "^[0]*[1-9]{1}[0-9]{0,2}$",
-								"ErrorMessage": "Enter number of starts in this sector using 3 digits or less"
+								"Value": "^[0]*[1-9]{1}[0-9]{0,3}$",
+								"ErrorMessage": "Enter number of starts in this sector using 4 digits or less"
 							  }
 						]
 					}
@@ -2716,8 +2716,8 @@
 							},
 							  {
 								"Name": "Regex",
-								"Value": "^[0]*[1-9]{1}[0-9]{0,2}$",
-								"ErrorMessage": "Enter number of starts in this sector using 3 digits or less"
+								"Value": "^[0]*[1-9]{1}[0-9]{0,3}$",
+								"ErrorMessage": "Enter number of starts in this sector using 4 digits or less"
 							  }
 						]
 					}
@@ -3562,8 +3562,8 @@
 							},
 							  {
 								"Name": "Regex",
-								"Value": "^[0]*[1-9]{1}[0-9]{0,2}$",
-								"ErrorMessage": "Enter number of starts in this sector using 3 digits or less"
+								"Value": "^[0]*[1-9]{1}[0-9]{0,3}$",
+								"ErrorMessage": "Enter number of starts in this sector using 4 digits or less"
 							  }
 						]
 					}
@@ -4408,8 +4408,8 @@
 							},
 							  {
 								"Name": "Regex",
-								"Value": "^[0]*[1-9]{1}[0-9]{0,2}$",
-								"ErrorMessage": "Enter number of starts in this sector using 3 digits or less"
+								"Value": "^[0]*[1-9]{1}[0-9]{0,3}$",
+								"ErrorMessage": "Enter number of starts in this sector using 4 digits or less"
 							  }
 						]
 					}
@@ -5254,8 +5254,8 @@
 							},
 							  {
 								"Name": "Regex",
-								"Value": "^[0]*[1-9]{1}[0-9]{0,2}$",
-								"ErrorMessage": "Enter number of starts in this sector using 3 digits or less"
+								"Value": "^[0]*[1-9]{1}[0-9]{0,3}$",
+								"ErrorMessage": "Enter number of starts in this sector using 4 digits or less"
 							  }
 						]
 					}
@@ -6100,8 +6100,8 @@
 							},
 							  {
 								"Name": "Regex",
-								"Value": "^[0]*[1-9]{1}[0-9]{0,2}$",
-								"ErrorMessage": "Enter number of starts in this sector using 3 digits or less"
+								"Value": "^[0]*[1-9]{1}[0-9]{0,3}$",
+								"ErrorMessage": "Enter number of starts in this sector using 4 digits or less"
 							  }
 						]
 					}
@@ -6948,8 +6948,8 @@
 							},
 							  {
 								"Name": "Regex",
-								"Value": "^[0]*[1-9]{1}[0-9]{0,2}$",
-								"ErrorMessage": "Enter number of starts in this sector using 3 digits or less"
+								"Value": "^[0]*[1-9]{1}[0-9]{0,3}$",
+								"ErrorMessage": "Enter number of starts in this sector using 4 digits or less"
 							  }
 						]
 					}
@@ -7794,8 +7794,8 @@
 							},
 							  {
 								"Name": "Regex",
-								"Value": "^[0]*[1-9]{1}[0-9]{0,2}$",
-								"ErrorMessage": "Enter number of starts in this sector using 3 digits or less"
+								"Value": "^[0]*[1-9]{1}[0-9]{0,3}$",
+								"ErrorMessage": "Enter number of starts in this sector using 4 digits or less"
 							  }
 						]
 					}
@@ -8640,8 +8640,8 @@
 							},
 							  {
 								"Name": "Regex",
-								"Value": "^[0]*[1-9]{1}[0-9]{0,2}$",
-								"ErrorMessage": "Enter number of starts in this sector using 3 digits or less"
+								"Value": "^[0]*[1-9]{1}[0-9]{0,3}$",
+								"ErrorMessage": "Enter number of starts in this sector using 4 digits or less"
 							  }
 						]
 					}
@@ -9486,8 +9486,8 @@
 							},
 							  {
 								"Name": "Regex",
-								"Value": "^[0]*[1-9]{1}[0-9]{0,2}$",
-								"ErrorMessage": "Enter number of starts in this sector using 3 digits or less"
+								"Value": "^[0]*[1-9]{1}[0-9]{0,3}$",
+								"ErrorMessage": "Enter number of starts in this sector using 4 digits or less"
 							  }
 						]
 					}
@@ -10332,8 +10332,8 @@
 							},
 							  {
 								"Name": "Regex",
-								"Value": "^[0]*[1-9]{1}[0-9]{0,2}$",
-								"ErrorMessage": "Enter number of starts in this sector using 3 digits or less"
+								"Value": "^[0]*[1-9]{1}[0-9]{0,3}$",
+								"ErrorMessage": "Enter number of starts in this sector using 4 digits or less"
 							  }
 						]
 					}
@@ -11178,8 +11178,8 @@
 							},
 							  {
 								"Name": "Regex",
-								"Value": "^[0]*[1-9]{1}[0-9]{0,2}$",
-								"ErrorMessage": "Enter number of starts in this sector using 3 digits or less"
+								"Value": "^[0]*[1-9]{1}[0-9]{0,3}$",
+								"ErrorMessage": "Enter number of starts in this sector using 4 digits or less"
 							  }
 						]
 					}
@@ -12025,8 +12025,8 @@
 							},
 							  {
 								"Name": "Regex",
-								"Value": "^[0]*[1-9]{1}[0-9]{0,2}$",
-								"ErrorMessage": "Enter number of starts in this sector using 3 digits or less"
+								"Value": "^[0]*[1-9]{1}[0-9]{0,3}$",
+								"ErrorMessage": "Enter number of starts in this sector using 4 digits or less"
 							  }
 						]
 					}
