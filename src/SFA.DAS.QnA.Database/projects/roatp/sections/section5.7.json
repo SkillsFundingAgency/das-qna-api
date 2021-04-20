@@ -1,37 +1,41 @@
 {
-    "Title": "Working with subcontractors",
-    "LinkTitle": "Working with subcontractors",
+    "Title": "English and maths assessments",
+    "LinkTitle": "English and maths assessments",
     "DisplayType": "Pages",
     "Pages": [{
-            "PageId": "5600",
-            "SequenceId": null,
-            "SectionId": null,
-            "Title": "Working with subcontractors",
-            "LinkTitle": "Working with subcontractors",
+            "PageId": "5550",
+            "Title": "English and maths assessments",
+            "LinkTitle": "English and maths assessments",
             "InfoText": "",
             "Questions": [{
-                    "QuestionId": "RTE-70",
-                    "QuestionTag": null,
-                    "Label": "Does your organisation expect to use subcontractors in the first 12 months of joining RoATP?",
+                    "QuestionId": "RTE-65",
+                    "Label": "How will you deliver the assessments in English and maths?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body' id='rte-subcontractors-use'>This includes using subcontractors for any part of apprenticeship training.</p>",
+                    "QuestionBodyText": "",
                     "Hint": "",
                     "Input": {
                         "Type": "Radio",
                         "Options": [{
-                                "Label": "Yes",
-                                "Value": "Yes",
-                                "FurtherQuestions": null
-                            }, {
-                                "Label": "No",
-                                "Value": "No",
-                                "FurtherQuestions": null
+                                "Label": "Digitally",
+                                "Value": "Digitally"
+                            }, 
+							{
+                                "Label": "Paper based",
+                                "Value": "Paper based"
+                            }, 
+							{
+                                "Label": "Both",
+                                "Value": "Both"
+                            }, 
+							{
+                                "Label": "Not decided (new providers only)",
+                                "Value": "Not decided (new providers only)"
                             }
                         ],
                         "Validations": [{
                                 "Name": "Required",
                                 "Value": "",
-                                "ErrorMessage": "Tell us if your organisation expects to use subcontractors in the first 12 months of joining RoATP"
+                                "ErrorMessage": "Tell us how you will deliver English and maths assessments"
                             }
                         ]
                     }
@@ -40,15 +44,7 @@
 			"PageOfAnswers": [],
             "Next": [{
                     "Action": "NextPage",
-                    "ReturnId": "5610",
-                    "Conditions": [{
-                            "QuestionId": "RTE-70",
-                            "MustEqual": "Yes"
-                        }]
-                },
-                {
-                    "Action": "ReturnToSection",
-                    "ReturnId": "6.1",
+                    "ReturnId": "5560",
                     "Conditions": []
                 }
             ],
@@ -56,26 +52,88 @@
             "Active": true,
             "NotRequiredConditions": [],
             "BodyText": ""
-        }, {
-            "PageId": "5610",
+        }, 
+		{
+            "PageId": "5560",
             "SequenceId": null,
             "SectionId": null,
-            "Title": "Working with subcontractors",
-            "LinkTitle": "Working with subcontractors",
+            "Title": "English and maths assessments",
+            "LinkTitle": "English and maths assessments",
             "InfoText": "",
             "Questions": [{
-                    "QuestionId": "RTE-71",
-                    "QuestionTag": null,
-                    "Label": "How will your organisation carry out due diligence on its subcontractors?",
+                    "QuestionId": "RTE-66",
+                    "Label": "Where will you deliver the assessments in English and maths?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body' id='rte-subcontractors-diligence'>Your answer must include how your organisation will:</p><ul class='govuk-list govuk-list--bullet'><li>ensure extremist organisations are not funded</li><li>ensure its commitments to ESFA are maintained through subcontractor delivery</li><li>manage and monitor subcontractors to ensure they deliver high quality training</li><li>manage subcontracting agreements including capacity and capability risks</li></ul>",
+                     "QuestionBodyText": "<p class='govuk-body govuk-hint'>Select all that apply.</p>",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "CheckBoxList",
+                        "Options": [{
+                                "Label": "Digital workplace assessment",
+                                "Value": "Digital workplace assessment"
+                            }, 
+							{
+                                "Label": "Paper-based workplace assessment",
+                                "Value": "Paper-based workplace assessment"
+                            }, 
+							{
+                                "Label": "Training centre",
+                                "Value": "Training centre"
+                            }, 
+							{
+                                "Label": "Remote venue",
+                                "Value": "Remote venue"
+                            }, 
+							{
+                                "Label": "Not decided yet (new providers only)",
+                                "Value": "Not decided yet (new providers only)"
+                            }
+                        ],
+                        "Validations": [{
+                                "Name": "Required",
+                                "Value": "",
+                                "ErrorMessage": "Tell us where you will deliver English and maths assessments"
+                            }
+                        ]
+                    }
+                }],
+			"PageOfAnswers": [],
+            "Next": [{
+                    "Action": "NextPage",
+                    "ReturnId": "5570",
+                    "Conditions": []
+                }
+            ],
+            "AllowMultipleAnswers": false,
+            "Active": false,
+            "NotRequiredConditions": [],
+            "BodyText": "",
+            "ActivatedByPageId": "5550"
+        },
+		{
+            "PageId": "5570",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "English and maths assessments holding page",
+            "LinkTitle": "English and maths assessments",
+            "InfoText": "",
+			 "Details": {
+                "Title": "What is a significant event",
+                "Body": "<p class='govuk-body'>It's when something happens which impacts the delivery of training and assessments. This includes things like a training location being unavailable or a loss of systems and data.</p>"
+            },
+            "Questions": [{
+                    "QuestionId": "RTE-67",
+                    "QuestionTag": null,
+                    "Label": "How will you continue to deliver English and maths training and assessments if there's a significant event?",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "<p class='govuk-body' id='rte-managing-employers'>Your answer must include how your organisation will:</p><ul class='govuk-list govuk-list--bullet'><li>continue to deliver training and assessments without delays</li><li>provide a different location, if needed</li><li>manage transportation needs</li><li>use different methods of communication</li><li>have a list of emergency contacts numbers, ESFA must be listed</li></ul>",
                     "Hint": "",
                     "Input": {
                         "Type": "Textarea",
                         "Validations": [{
                                 "Name": "Required",
                                 "Value": "",
-                                "ErrorMessage": "Tell us how your organisation will carry out due diligence on its subcontractors"
+                                "ErrorMessage": "Tell us how you will continue to deliver English and maths training and assessments if there's a significant event"
                             }, {
                                 "Name": "MaxWordCount",
                                 "Value": "275",
@@ -88,7 +146,7 @@
 			"PageOfAnswers": [],
             "Next": [{
                     "Action": "ReturnToSection",
-                    "ReturnId": "6.1",
+                    "ReturnId": "5.8",
                     "Conditions": []
                 }
             ],
@@ -96,7 +154,7 @@
             "Active": false,
             "NotRequiredConditions": [],
             "BodyText": "",
-            "ActivatedByPageId": "5600"
+            "ActivatedByPageId": "5560"
         }
     ]
 }

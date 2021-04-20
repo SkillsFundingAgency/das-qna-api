@@ -41,8 +41,8 @@
                                                 },
                                                 {
                                                     "Name": "MaxWordCount",
-                                                    "Value": "275",
-                                                    "ErrorMessage": "Your answer must be 275 words or less"
+                                                    "Value": "500",
+                                                    "ErrorMessage": "Your answer must be 500 words or less"
                                                 }
                                             ]
                                         }
@@ -120,8 +120,8 @@
                                                 },
                                                 {
                                                     "Name": "MaxWordCount",
-                                                    "Value": "275",
-                                                    "ErrorMessage": "Your answer must be 275 words or less"
+                                                    "Value": "500",
+                                                    "ErrorMessage": "Your answer must be 500 words or less"
                                                 }
                                             ]
                                         }
@@ -199,8 +199,8 @@
                                                 },
                                                 {
                                                     "Name": "MaxWordCount",
-                                                    "Value": "275",
-                                                    "ErrorMessage": "Your answer must be 275 words or less"
+                                                    "Value": "500",
+                                                    "ErrorMessage": "Your answer must be 500 words or less"
                                                 }
                                             ]
                                         }
@@ -278,8 +278,8 @@
                                                 },
                                                 {
                                                     "Name": "MaxWordCount",
-                                                    "Value": "275",
-                                                    "ErrorMessage": "Your answer must be 275 words or less"
+                                                    "Value": "500",
+                                                    "ErrorMessage": "Your answer must be 500 words or less"
                                                 }
                                             ]
                                         }
@@ -358,8 +358,8 @@
                                                 },
                                                 {
                                                     "Name": "MaxWordCount",
-                                                    "Value": "275",
-                                                    "ErrorMessage": "Your answer must be 275 words or less"
+                                                    "Value": "500",
+                                                    "ErrorMessage": "Your answer must be 500 words or less"
                                                 }
                                             ]
                                         }
@@ -438,8 +438,8 @@
                                                 },
                                                 {
                                                     "Name": "MaxWordCount",
-                                                    "Value": "275",
-                                                    "ErrorMessage": "Your answer must be 275 words or less"
+                                                    "Value": "500",
+                                                    "ErrorMessage": "Your answer must be 500 words or less"
                                                 }
                                             ]
                                         }
@@ -517,8 +517,8 @@
                                                 },
                                                 {
                                                     "Name": "MaxWordCount",
-                                                    "Value": "275",
-                                                    "ErrorMessage": "Your answer must be 275 words or less"
+                                                    "Value": "500",
+                                                    "ErrorMessage": "Your answer must be 500 words or less"
                                                 }
                                             ]
                                         }
@@ -566,63 +566,63 @@
             "LinkTitle": "Checks on your organisation",
             "InfoText": "",
             "Questions": [
-                {
-                    "QuestionId": "CC-26",
-                    "QuestionTag": null,
-                    "Label": "Has your organisation had involuntary withdrawal from Initial Teacher Training accreditation in the last 3 years?",
-                    "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body' id='cc-organisation-ittwithdrawal'></p>",
-                    "Hint": "",
-                    "Input": {
-                        "Type": "ComplexRadio",
-                        "Options": [
-                            {
-                                "FurtherQuestions": [
-                                    {
-                                        "QuestionId": "CC-26-1",
-                                        "QuestionTag": null,
-                                        "Label": "Give us more information",
-                                        "ShortLabel": "",
-                                        "QuestionBodyText": "",
-                                        "Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include a brief summary of why your organisation was withdrawn involuntarily.</p>",
-                                        "Input": {
-                                            "Type": "Textarea",
-                                            "Options": [],
-                                            "Validations": [
-                                                {
-                                                    "Name": "Required",
-                                                    "Value": "",
-                                                    "ErrorMessage": "Enter more information"
-                                                },
-                                                {
-                                                    "Name": "MaxWordCount",
-                                                    "Value": "275",
-                                                    "ErrorMessage": "Your answer must be 275 words or less"
-                                                }
-                                            ]
-                                        }
-                                    }
-                                ],
-                                "Value": "Yes",
-                                "Label": "Yes",
-                                "HintText": ""
-                            },
-                            {
-                                "FurtherQuestions": [],
-                                "Value": "No",
-                                "Label": "No",
-                                "HintText": ""
-                            }
-                        ],
-                        "Validations": [
-                            {
+              {
+                "QuestionId": "CC-26",
+                "QuestionTag": null,
+                "Label": "Has your organisation been involuntarily withdrawn from Initial Teacher Training accreditation in the last 3 years?",
+                "ShortLabel": "",
+                "QuestionBodyText": "<p class='govuk-body' id='cc-organisation-ittwithdrawal'></p>",
+                "Hint": "",
+                "Input": {
+                  "Type": "ComplexRadio",
+                  "Options": [
+                    {
+                      "FurtherQuestions": [
+                        {
+                          "QuestionId": "CC-26-1",
+                          "QuestionTag": null,
+                          "Label": "Give us more information",
+                          "ShortLabel": "",
+                          "QuestionBodyText": "",
+                          "Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include a brief summary of why your organisation was withdrawn involuntarily.</p>",
+                          "Input": {
+                            "Type": "Textarea",
+                            "Options": [],
+                            "Validations": [
+                              {
                                 "Name": "Required",
                                 "Value": "",
-                                "ErrorMessage": "Tell us if your organisation has had involuntary withdrawal from Initial Teacher Training accreditation in the last 3 years"
-                            }
-                        ]
+                                "ErrorMessage": "Enter more information"
+                              },
+                              {
+                                "Name": "MaxWordCount",
+                                "Value": "500",
+                                "ErrorMessage": "Your answer must be 500 words or less"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "Value": "Yes",
+                      "Label": "Yes",
+                      "HintText": ""
+                    },
+                    {
+                      "FurtherQuestions": [],
+                      "Value": "No",
+                      "Label": "No",
+                      "HintText": ""
                     }
+                  ],
+                  "Validations": [
+                    {
+                      "Name": "Required",
+                      "Value": "",
+                      "ErrorMessage": "Tell us if your organisation has had involuntary withdrawal from Initial Teacher Training accreditation in the last 3 years"
+                    }
+                  ]
                 }
+              }
             ],
 			"PageOfAnswers": [],
             "Next": [
@@ -675,8 +675,8 @@
                                                 },
                                                 {
                                                     "Name": "MaxWordCount",
-                                                    "Value": "275",
-                                                    "ErrorMessage": "Your answer must be 275 words or less"
+                                                    "Value": "500",
+                                                    "ErrorMessage": "Your answer must be 500 words or less"
                                                 }
                                             ]
                                         }
@@ -754,8 +754,8 @@
                                                 },
                                                 {
                                                     "Name": "MaxWordCount",
-                                                    "Value": "275",
-                                                    "ErrorMessage": "Your answer must be 275 words or less"
+                                                    "Value": "500",
+                                                    "ErrorMessage": "Your answer must be 500 words or less"
                                                 }
                                             ]
                                         }
@@ -833,8 +833,8 @@
                                                 },
                                                 {
                                                     "Name": "MaxWordCount",
-                                                    "Value": "275",
-                                                    "ErrorMessage": "Your answer must be 275 words or less"
+                                                    "Value": "500",
+                                                    "ErrorMessage": "Your answer must be 500 words or less"
                                                 }
                                             ]
                                         }
@@ -885,9 +885,9 @@
                 {
                     "QuestionId": "CC-30",
                     "QuestionTag": null,
-                    "Label": "Has your organisation or any of its partner organisations been subject to insolvency or winding up proceedings in the last 3 years?",
+                    "Label": "Has your organisation been subject to insolvency or winding up proceedings in the last 3 years?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body' id='cc-organisation-insolvency'>A partner organisation is an organisation who either:</p><ul class='govuk-list govuk-list--bullet'><li>shares the same UK ultimate parent company as your organisation - so they are part of the same group</li><li>has a legal contract with your organisation to deliver training</li></ul>",
+                    "QuestionBodyText": "<p class='govuk-body' id='cc-organisation-insolvency'>This applies to any of its current or historical partner organisations or organisations at which your directors have held directorships.</p><p class='govuk-body'>A partner organisation is an organisation who either:</p><ul class='govuk-list govuk-list--bullet'><li>shares the same UK ultimate parent company as your organisation - so they are part of the same group</li><li>has a legal contract with your organisation to deliver training</li></ul>",
                     "Hint": "",
                     "Input": {
                         "Type": "ComplexRadio",
@@ -912,8 +912,8 @@
                                                 },
                                                 {
                                                     "Name": "MaxWordCount",
-                                                    "Value": "275",
-                                                    "ErrorMessage": "Your answer must be 275 words or less"
+                                                    "Value": "500",
+                                                    "ErrorMessage": "Your answer must be 500 words or less"
                                                 }
                                             ]
                                         }
