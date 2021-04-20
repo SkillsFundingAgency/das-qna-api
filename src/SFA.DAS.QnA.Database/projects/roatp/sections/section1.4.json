@@ -1270,7 +1270,7 @@
             "AllowMultipleAnswers": false,
             "Active": false,
             "NotRequiredConditions": [],
-            "ActivatedByPageId": "140,150,230,50",
+            "ActivatedByPageId": "50",
             "BodyText": ""
         },
         {
@@ -1299,7 +1299,7 @@
             "AllowMultipleAnswers": false,
             "Active": false,
             "NotRequiredConditions": [],
-            "ActivatedByPageId": "140,150,230,50",
+            "ActivatedByPageId": "50",
             "BodyText": ""
         },
         {
@@ -1328,7 +1328,7 @@
             "AllowMultipleAnswers": false,
             "Active": false,
             "NotRequiredConditions": [],
-            "ActivatedByPageId": "140,150,230,60",
+            "ActivatedByPageId": "60",
             "BodyText": ""
         }
 	]
