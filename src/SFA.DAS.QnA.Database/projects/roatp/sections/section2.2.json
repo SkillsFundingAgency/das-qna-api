@@ -905,6 +905,36 @@
                   ],
                   "InputPrefix": "&pound;"
                 }
+              },
+              {
+                "QuestionId": "FH-225",
+                "QuestionTag": "FHAAverageNumberofFTEEmployees",
+                "Label": "Enter your organisation's average number of Full Time Equivalent Employees (FTE) for the last financial year.",
+                "ShortLabel": "",
+                "QuestionBodyText": "",
+                "Hint": "",
+                "Input": {
+                  "Type": "Number",
+                  "InputClasses": "govuk-input--width-10",
+                  "Validations": [
+                    {
+                      "Name": "Required",
+                      "Value": "",
+                      "ErrorMessage": "Enter your organisation's average number of Full Time Equivalent Employees (FTE) for the last financial year."
+                    },
+                    {
+                      "Name": "Regex",
+                      "Value": "^-?[0-9]+$",
+                      "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
+                    },
+                    {
+                      "Name": "MaxLength",
+                      "Value": "10",
+                      "ErrorMessage": "The number must be 10 characters or less"
+                    }
+                  ],
+                  "InputPrefix": ""
+                }
               }
             ],
 			"PageOfAnswers": [],
@@ -1197,6 +1227,36 @@
                     }
                   ],
                   "InputPrefix": "&pound;"
+                }
+              },
+              {
+                "QuestionId": "FH-315",
+                "QuestionTag": "FHAAverageNumberofFTEEmployees",
+                "Label": "Enter your organisation's average number of Full Time Equivalent Employees (FTE) for the last financial year.",
+                "ShortLabel": "",
+                "QuestionBodyText": "",
+                "Hint": "",
+                "Input": {
+                  "Type": "Number",
+                  "InputClasses": "govuk-input--width-10",
+                  "Validations": [
+                    {
+                      "Name": "Required",
+                      "Value": "",
+                      "ErrorMessage": "Enter your organisation's average number of Full Time Equivalent Employees (FTE) for the last financial year."
+                    },
+                    {
+                      "Name": "Regex",
+                      "Value": "^-?[0-9]+$",
+                      "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
+                    },
+                    {
+                      "Name": "MaxLength",
+                      "Value": "10",
+                      "ErrorMessage": "The number must be 10 characters or less"
+                    }
+                  ],
+                  "InputPrefix": ""
                 }
               }
             ],
