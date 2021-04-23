@@ -12,7 +12,7 @@
 			"Questions": [{
 				"QuestionId": "DAT-7600",
 				"QuestionTag": "SectorsChosen",
-				"Label": "What sectors will your organisation offer apprenticeship training in?",
+				"Label": "",
 				"QuestionBodyText": "<p  class='govuk-body' id='sector-list'>We'll ask you who the most experienced employees are in your selected sectors - including any sector specific qualifications they may have.</p>",
 				"ShortLabel": "",
 				"Hint": "Select all that apply.",
@@ -82,7 +82,7 @@
 					"Validations": [{
 						"Name": "Required",
 						"Value": "",
-						"ErrorMessage": "Tell us what sectors your organisation will offer apprenticeship training in"
+						"ErrorMessage": "Tell us what sectors your organisation will deliver apprenticeship training in"
 					}]
 				}
 			}],
@@ -94,7 +94,7 @@
 			}],
 			"AllowMultipleAnswers": false,
 			"Active": true,
-			"BodyText": "",
+			"BodyText": "What sectors will your organisation deliver apprenticeship training in?",
 			"DisplayType": "PagesWithSections",
 			"ActivatedByPageId": null
 		},
