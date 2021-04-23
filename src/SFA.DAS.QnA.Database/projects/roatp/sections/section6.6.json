@@ -104,8 +104,8 @@
                             },
                             {
                                 "Name": "MaxWordCount",
-                                "Value": "1000",
-                                "ErrorMessage": "Your answer must be 1000 words or less"
+                                "Value": "750",
+                                "ErrorMessage": "Your answer must be 750 words or less"
                             }
                         ]
                     }
