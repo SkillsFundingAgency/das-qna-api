@@ -16,7 +16,7 @@
                     "QuestionTag": null,
                     "Label": "How will your organisation ensure apprentices are supported during their apprenticeship training?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body'>Your answer must include how your organisation will:</p><ul class='govuk-list govuk-list--bullet'><li>have the right people in place to support apprentices</li><li>regularly check apprentice progress</li><li>financially support apprentices - for example, arranging funding for equipment</li></ul></p>",
+                    "QuestionBodyText": "<p class='govuk-body'>Your answer must include how your organisation will:</p><ul class='govuk-list govuk-list--bullet'><li>have the right people in place to support apprentices</li><li>regularly check apprentice progress</li><li>financially support apprentices - for example, arranging funding for equipment</li><li>actively seek and act on apprentice feedback to ensure the programme meets each apprentice's needs and informs continuous improvement that can be evidenced</li></ul></p>",
                     "Hint": "",
                     "Input": {
                         "Type": "Textarea",
@@ -71,7 +71,7 @@
                     "QuestionTag": null,
                     "Label": "How will your organisation ensure apprentices are supported during their apprenticeship training?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body'>Your answer must include how your organisation will:</p><ul class='govuk-list govuk-list--bullet'><li>have the right people in place to support apprentices</li><li>regularly check apprentice progress</li></ul></p>",
+                    "QuestionBodyText": "<p class='govuk-body'>Your answer must include how your organisation will:</p><ul class='govuk-list govuk-list--bullet'><li>have the right people in place to support apprentices</li><li>regularly check apprentice progress</li><li>actively seek and act on apprentice feedback to ensure the programme meets each apprentice's needs and informs continuous improvement that can be evidenced</li></ul></p>",
                     "Hint": "",
                     "Input": {
                         "Type": "Textarea",
