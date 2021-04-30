@@ -1687,7 +1687,7 @@
 				{
 					"QuestionId": "CC-131",
 					"QuestionTag": "CC-People-Teaching-Regulations-SoleTrader",
-					"Label": "Have you or anyone who's in control of your partner organisations been made bankrupt in the last 3 years?",
+					"Label": "Have you been subject to a prohibition order from the Teaching Regulation Agency on behalf of the Secretary of State for Education?",
 					"ShortLabel": "",
 					"QuestionBodyText": "",
 					"Hint": "",
@@ -1752,7 +1752,7 @@
 			],
 			"AllowMultipleAnswers": false,
 			"Active": false,
-			"ActivatedByPageId": "3390",
+			"ActivatedByPageId": "3381",
 			"NotRequiredConditions": [
 				{
 					"Field": "SoleTradeOrPartnership",
