@@ -1654,8 +1654,8 @@
 			"PageOfAnswers": [],
 			"Next": [
 				{
-					"Action": "ReturnToSection",
-					"ReturnId": "4.1",
+					"Action": "NextPage",
+					"ReturnId": "3395",
 					"Conditions": []
 				}
 			],
@@ -1745,8 +1745,8 @@
 			"PageOfAnswers": [],
 			"Next": [
 				{
-					"Action": "ReturnToSection",
-					"ReturnId": "4.1",
+					"Action": "NextPage",
+					"ReturnId": "3396",
 					"Conditions": []
 				}
 			],
@@ -1766,6 +1766,189 @@
 			"Details": {
 				"Title": "Further information",
 				"Body": "<p class='govuk-body'>Section 5.1.1 of the Funding higher risk organisations and subcontractors policy:<p><p class='govuk-body'>The provider:</p><p class='govuk-body'>XIII. Has a director, shadow director, person in control or with powers of representation, influence or management who is subject to a prohibition order from the Teaching Regulation Agency on behalf of the Secretary of State for Education.</p>"
+			}
+		},
+		{
+			"PageId": "3395",
+			"SequenceId": null,
+			"SectionId": null,
+			"Title": "Checks on who's in control of your organisation",
+			"LinkTitle": "Checks on who's in control of your organisation",
+			"InfoText": "",
+			"Questions": [
+				{
+					"QuestionId": "CC-135",
+					"QuestionTag": null,
+					"Label": "Has anyone who's in control of your organisation, or any of its partner organisations, been subject to a ban from management or governance of schools?",
+					"ShortLabel": "",
+					"QuestionBodyText": "<p class='govuk-body' id='cc-people-prohibition-order'>A partner organisation either:</p><ul class='govuk-list govuk-list--bullet'><li>shares the same UK ultimate parent company as your organisation - so they are part of the same group</li><li>has a legal contract with your organisation to deliver training</li></ul>",
+					"Hint": "",
+					"Input": {
+						"Type": "ComplexRadio",
+						"Options": [
+							{
+								"FurtherQuestions": [
+									{
+										"QuestionId": "CC-135-1",
+										"QuestionTag": null,
+										"Label": "Give us more information",
+										"ShortLabel": "",
+										"QuestionBodyText": "",
+										"Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include:</p><ul class='govuk-list govuk-list--bullet govuk-hint'><li>full names of who this was</li><li>why they were banned</li><li>if any actions were taken to resolve this</li></ul>",
+										"Input": {
+											"Type": "Textarea",
+											"Options": [],
+											"Validations": [
+												{
+													"Name": "Required",
+													"Value": "",
+													"ErrorMessage": "Enter more information"
+												},
+												{
+													"Name": "MaxWordCount",
+													"Value": "500",
+													"ErrorMessage": "Your answer must be 500 words or less"
+												}
+											]
+										}
+									}
+								],
+								"Value": "Yes",
+								"Label": "Yes",
+								"HintText": ""
+							},
+							{
+								"FurtherQuestions": [],
+								"Value": "No",
+								"Label": "No",
+								"HintText": ""
+							}
+						],
+						"Validations": [
+							{
+								"Name": "Required",
+								"Value": "",
+								"ErrorMessage": "Tell us if anyone who's in control of your organisation, or any of its partner organisations, have been subject to a ban from management or governance of schools"
+							}
+						]
+					}
+				}
+			],
+			"PageOfAnswers": [],
+			"Next": [
+				{
+					"Action": "ReturnToSection",
+					"ReturnId": "4.1",
+					"Conditions": []
+				}
+			],
+			"AllowMultipleAnswers": false,
+			"Active": false,
+			"ActivatedByPageId": "3390",
+			"NotRequiredConditions": [
+				{
+					"Field": "SoleTradeOrPartnership",
+					"IsOneOf": [
+						"Sole trader"
+					]
+				}
+			],
+			"BodyText": "",
+			"Details": {
+				"Title": "Further information",
+				"Body": "<p class='govuk-body'>This is covered in section 128 of the Education and skills act 2008<p><p class='govuk-body'>Section 5.1.1 of the Funding higher risk organisations and subcontractors policy:</p><p class='govuk-body'>The provider:</p><p class='govuk-body'>V. Has a director, shadow director, person in control or with powers of representation, influence or management who is subject to a ban under s.128 of the Education and Skills Act.</p>"
+			}
+		},
+		{
+			"PageId": "3396",
+			"SequenceId": null,
+			"SectionId": null,
+			"Title": "Checks on who's in control of your organisation",
+			"LinkTitle": "Checks on who's in control of your organisation",
+			"InfoText": "",
+			"Questions": [
+				{
+					"QuestionId": "CC-136",
+					"QuestionTag": "CC-People-School-Management-Ban-SoleTrader",
+					"Label": "Have you been subject to a ban from  management or governance of schools?",
+					"ShortLabel": "",
+					"QuestionBodyText": "",
+					"Hint": "",
+					"Input": {
+						"Type": "ComplexRadio",
+						"Options": [
+							{
+								"FurtherQuestions": [
+									{
+										"QuestionId": "CC-136-1",
+										"QuestionTag": "CC-People-Teaching-Regulations-SoleTrader-Information",
+										"Label": "Give us more information",
+										"ShortLabel": "",
+										"QuestionBodyText": "",
+										"Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include:</p><ul class='govuk-list govuk-list--bullet govuk-hint'><li>why you were banned</li><li>if any actions were taken to resolve this</li></ul>",
+										"Input": {
+											"Type": "Textarea",
+											"Options": [],
+											"Validations": [
+												{
+													"Name": "Required",
+													"Value": "",
+													"ErrorMessage": "Enter more information "
+												},
+												{
+													"Name": "MaxWordCount",
+													"Value": "500",
+													"ErrorMessage": "Your answer must be 500 words or less"
+												}
+											]
+										}
+									}
+								],
+								"Value": "Yes",
+								"Label": "Yes",
+								"HintText": ""
+							},
+							{
+								"FurtherQuestions": [],
+								"Value": "No",
+								"Label": "No",
+								"HintText": ""
+							}
+						],
+						"Validations": [
+							{
+								"Name": "Required",
+								"Value": "",
+								"ErrorMessage": "Tell us if you have been subject to a ban from management or governance of schools"
+							}
+						]
+					}
+				}
+			],
+			"PageOfAnswers": [],
+			"Next": [
+				{
+					"Action": "ReturnToSection",
+					"ReturnId": "4.1",
+					"Conditions": []
+				}
+			],
+			"AllowMultipleAnswers": false,
+			"Active": false,
+			"ActivatedByPageId": "3391",
+			"NotRequiredConditions": [
+				{
+					"Field": "SoleTradeOrPartnership",
+					"IsOneOf": [
+						null,
+						"Partnership"
+					]
+				}
+			],
+			"BodyText": "",
+			"Details": {
+				"Title": "Further information",
+				"Body": "<p class='govuk-body'>This is covered in section 128 of the Education and skills act 2008<p><p class='govuk-body'>Section 5.1.1 of the Funding higher risk organisations and subcontractors policy:</p><p class='govuk-body'>The provider:</p><p class='govuk-body'>V. Has a director, shadow director, person in control or with powers of representation, influence or management who is subject to a ban under s.128 of the Education and Skills Act.</p>"
 			}
 		}
 	]
