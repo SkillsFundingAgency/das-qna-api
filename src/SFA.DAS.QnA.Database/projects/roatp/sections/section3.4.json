@@ -794,7 +794,11 @@
 					]
 				}
 			],
-			"BodyText": ""
+			"BodyText": "",
+			"Details": {
+				"Title": "Further information",
+				"Body": "<p class='govuk-body'>Section 5.1.1 of the Funding higher risk organisations and subcontractors policy:<p><p class='govuk-body'>The provider:</p><p class='govuk-body'>III. Has a director, shadow director, person in control or with powers of representation, influence or management which has held or holds an equivalent or reasonably comparable position with another provider or in another organisation which has had (in relation to any ESFA monies) a contract for services, a grant funding agreement or an apprenticeship agreement with the ESFA terminated early for one or more of the criteria specified in this policy.</p>"
+			}
 		},
 		{
 			"PageId": "3341",
