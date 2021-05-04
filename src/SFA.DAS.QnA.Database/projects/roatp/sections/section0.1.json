@@ -394,7 +394,6 @@
             ],
             "AllowMultipleAnswers": false,
             "Active": true,
-            "Visible": true,
             "NotRequiredConditions": [],
             "BodyText": ""
         },
@@ -422,14 +421,47 @@
             "PageOfAnswers": [],
             "Next": [
                 {
-                    "Action": "ReturnToSection",
-                    "ReturnToSection": "0.1",
+                    "Action": "NextPage",
+                    "ReturnToSection": "3",
                     "Conditions": []
                 }
             ],
             "AllowMultipleAnswers": false,
             "Active": true,
-            "Visible": true,
+            "NotRequiredConditions": [],
+            "BodyText": ""
+        },
+        {
+            "PageId": "3",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "Conditions of acceptance",
+            "LinkTitle": "",
+            "InfoText": "",
+            "Questions": [
+                {
+                    "QuestionId": "COA-1",
+                    "QuestionTag": "COAStage1Application",
+                    "Label": "",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "Text",
+                        "Validations": []
+                    }
+                }
+            ],
+            "PageOfAnswers": [],
+            "Next": [
+                {
+                    "Action": "ReturnToSection",
+                    "ReturnId": "1.1",
+                    "Conditions": []
+                }
+            ],
+            "AllowMultipleAnswers": false,
+            "Active": true,
             "NotRequiredConditions": [],
             "BodyText": ""
         }
