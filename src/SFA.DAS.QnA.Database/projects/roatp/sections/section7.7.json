@@ -62,7 +62,7 @@
                     "QuestionTag": null,
                     "Label": "Give an example of how your organisation used this policy to improve employee sector expertise",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body'>Your answer must include how your organisation:</p><ul class='govuk-list govuk-list--bullet'><li>ensured employee sector expertise was relevant to apprenticeship training</li><li>ensured employee expertise was up to date in relevant sectors</li><li>maintained employee expertise in relevant sectors - for example, through co-creation of apprenticeship programmes or mentoring</li><li>will continue to improve employee expertise, if your delivery sector changes</li></ul>",
+                    "QuestionBodyText": "<p class='govuk-body'>Your answer must include how your organisation:</p><ul class='govuk-list govuk-list--bullet'><li>ensured employee sector expertise was relevant to apprenticeship training</li><li>ensured employee expertise was up to date in relevant sectors</li><li>maintained employee expertise in relevant sectors - for example, through co-creation of apprenticeship programmes or mentoring</li><li>will continue to improve employee expertise, if your delivery sector changes</li></ul><p class='govuk-body'>Also include:</p><ul class='govuk-list govuk-list--bullet'><li>your organisation's vision for professional development of employees</li><li>the last review date and frequency of policy reviews</li></ul>",
                     "Hint": "",
                     "Input": {
                         "Type": "Textarea",
