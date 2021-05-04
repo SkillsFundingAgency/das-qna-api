@@ -1587,7 +1587,11 @@
 					]
 				}
 			],
-			"BodyText": ""
+			"BodyText": "",
+			"Details": {
+				"Title": "Further information",
+				"Body": "<p class='govuk-body'>Section 4.4.1 of the Funding higher risk organisations and subcontractors policy:</p><p class='govuk-body'>A provider will be considered to be a high risk provider and the ESFA will take action where it, any of the directors, shadow directors, trustees or any person who is a member of the administrative, management or supervisory body of the provider or who has powers of representation, decision, influence, management or control of the provider organisation including through a blind trust, a partner organisation or a parent organisation:</p><p class='govuk-body'>I. Is bankrupt or is the subject of insolvency or winding-up proceedings, where its assets are being administered by a liquidator or by the court or where it is in an arrangement with creditors.</p><p class='govuk-body'>II. Have been served with a Public Interest Winding Up petition under section 124A of the Insolvency Act 1986.</p>"
+			}
 		},
 		{
 			"PageId": "3390",
