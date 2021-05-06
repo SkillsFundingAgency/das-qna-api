@@ -1566,8 +1566,8 @@
 			"PageOfAnswers": [],
 			"Next": [
 				{
-					"Action": "ReturnToSection",
-					"ReturnId": "4.1",
+					"Action": "NextPage",
+					"ReturnId": "3391",
 					"Conditions": []
 				}
 			],
@@ -1673,8 +1673,99 @@
 			"BodyText": "",
 			"Details": {
 				"Title": "Further information",
-				"Body": "<p class='govuk-body'>Section 5.1.1 of the Funding higher risk organisations and subcontractors policy:<p><p class='govuk-body'>The provider:</p><p class='govuk-body'>XIII. Has a director, shadow director, person in control or with powers of representation, influence or management who is subject to a prohibition order from the Teaching Regulation Agency on behalf of the Secretary of State for Education.
-</p>"
+				"Body": "<p class='govuk-body'>Section 5.1.1 of the Funding higher risk organisations and subcontractors policy:<p><p class='govuk-body'>The provider:</p><p class='govuk-body'>XIII. Has a director, shadow director, person in control or with powers of representation, influence or management who is subject to a prohibition order from the Teaching Regulation Agency on behalf of the Secretary of State for Education.</p>"
+			}
+		},
+		{
+			"PageId": "3391",
+			"SequenceId": null,
+			"SectionId": null,
+			"Title": "Checks on who's in control of your organisation",
+			"LinkTitle": "Checks on who's in control of your organisation",
+			"InfoText": "",
+			"Questions": [
+				{
+					"QuestionId": "CC-131",
+					"QuestionTag": "CC-People-Teaching-Regulations-SoleTrader",
+					"Label": "Have you been subject to a prohibition order from the Teaching Regulation Agency on behalf of the Secretary of State for Education?",
+					"ShortLabel": "",
+					"QuestionBodyText": "",
+					"Hint": "",
+					"Input": {
+						"Type": "ComplexRadio",
+						"Options": [
+							{
+								"FurtherQuestions": [
+									{
+										"QuestionId": "CC-131-1",
+										"QuestionTag": "CC-People-Teaching-Regulations-SoleTrader-Information",
+										"Label": "Give us more information",
+										"ShortLabel": "",
+										"QuestionBodyText": "",
+										"Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include:</p><ul class='govuk-list govuk-list--bullet govuk-hint'><li>why you were subject to a prohibition order</li><li>if any actions were taken to resolve this</li></ul>",
+										"Input": {
+											"Type": "Textarea",
+											"Options": [],
+											"Validations": [
+												{
+													"Name": "Required",
+													"Value": "",
+													"ErrorMessage": "Enter more information "
+												},
+												{
+													"Name": "MaxWordCount",
+													"Value": "500",
+													"ErrorMessage": "Your answer must be 500 words or less"
+												}
+											]
+										}
+									}
+								],
+								"Value": "Yes",
+								"Label": "Yes",
+								"HintText": ""
+							},
+							{
+								"FurtherQuestions": [],
+								"Value": "No",
+								"Label": "No",
+								"HintText": ""
+							}
+						],
+						"Validations": [
+							{
+								"Name": "Required",
+								"Value": "",
+								"ErrorMessage": "Tell us if you have been subject to a prohibition order from the Teaching Regulation Agency on behalf of the Secretary of State for Education"
+							}
+						]
+					}
+				}
+			],
+			"PageOfAnswers": [],
+			"Next": [
+				{
+					"Action": "ReturnToSection",
+					"ReturnId": "4.1",
+					"Conditions": []
+				}
+			],
+			"AllowMultipleAnswers": false,
+			"Active": false,
+			"ActivatedByPageId": "3381",
+			"NotRequiredConditions": [
+				{
+					"Field": "SoleTradeOrPartnership",
+					"IsOneOf": [
+						null,
+						"Partnership"
+					]
+				}
+			],
+			"BodyText": "",
+			"Details": {
+				"Title": "Further information",
+				"Body": "<p class='govuk-body'>Section 5.1.1 of the Funding higher risk organisations and subcontractors policy:<p><p class='govuk-body'>The provider:</p><p class='govuk-body'>XIII. Has a director, shadow director, person in control or with powers of representation, influence or management who is subject to a prohibition order from the Teaching Regulation Agency on behalf of the Secretary of State for Education.</p>"
 			}
 		}
 	]
