@@ -14,7 +14,7 @@
                 <td class="govuk-table__cell govuk-table__cell--break-word" scope="row">
                     <a class="govuk-link" href="@Url.Action("Download", "Application" , new
                        {
-                       Id=Model.Id,
+                       ApplicationId=Model.Id,
                        sequenceNo=Model.SequenceNo,
                        sectionId=Model.SectionId,
                        pageId=Model.PageId,
@@ -27,7 +27,7 @@
                 <td class="govuk-table__cell govuk-table__cell--numeric">
                     <a class="govuk-link" href="@Url.Action("DeleteFile", "Application", new
                     {
-                        Id = Model.Id,
+                        ApplicationId = Model.Id,
                         sequenceNo = Model.SequenceNo,
                         sectionId = Model.SectionId,
                         pageId = Model.PageId,
