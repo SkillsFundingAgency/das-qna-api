@@ -1520,9 +1520,9 @@
 				{
 					"QuestionId": "CC-121",
 					"QuestionTag": "CC-People-Bankruptcy-SoleTrader",
-					"Label": "Have you or anyone who's in control of your partner organisations been made bankrupt in the last 3 years?",
+					"Label": "Have you been made bankrupt in the last 3 years?",
 					"ShortLabel": "",
-					"QuestionBodyText": "<p class='govuk-body' id='cc-people-bankruptcy-soletrader'>A partner organisation is an organisation who either:</p><ul class='govuk-list govuk-list--bullet'><li>shares the same UK ultimate parent company as your organisation - so they are part of the same group</li><li>has a legal contract with your organisation to deliver training</li></ul>",
+					"QuestionBodyText": "",
 					"Hint": "",
 					"Input": {
 						"Type": "ComplexRadio",
@@ -1535,7 +1535,7 @@
 										"Label": "Give us more information",
 										"ShortLabel": "",
 										"QuestionBodyText": "",
-										"Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include:</p><ul class='govuk-list govuk-list--bullet govuk-hint'><li>full names of who this was and the organisations involved</li><li>why they were made bankrupt</li><li>if any actions were taken to resolve this</li></ul>",
+										"Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You'll need to include:</p><ul class='govuk-list govuk-list--bullet govuk-hint'><li>why you were made bankrupt</li><li>if any actions were taken to resolve this</li></ul>",
 										"Input": {
 											"Type": "Textarea",
 											"Options": [],
@@ -1569,7 +1569,7 @@
 							{
 								"Name": "Required",
 								"Value": "",
-								"ErrorMessage": "Tell us if you or anyone who's in control of your partner organisations been made bankrupt in the last 3 years"
+								"ErrorMessage": "Tell us if you have been made bankrupt in the last 3 years"
 							}
 						]
 					}
