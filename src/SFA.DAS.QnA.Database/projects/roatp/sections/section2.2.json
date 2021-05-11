@@ -141,7 +141,7 @@
             "AllowMultipleAnswers": false,
             "Active": true,
             "NotRequiredConditions": [],
-            "BodyText": "<p class='govuk-body'>You can find your organisation's total annual turnover on its:</p><ul class='govuk-list govuk-list--bullet'><li>'profit and loss statement'</li><li>'income and expenditure account'</li><li>'statement of financial activities'</li></ul>",
+            "BodyText": "<p class='govuk-body'>You can find your organisation's total annual turnover on its:</p><ul class='govuk-list govuk-list--bullet'><li>profit and loss statement</li><li>income and expenditure account</li><li>statement of financial activities</li></ul>",
             "ActivatedByPageId": null
         },
         {
