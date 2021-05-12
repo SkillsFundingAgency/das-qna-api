@@ -494,7 +494,7 @@
                   "ErrorMessage": "Tell us how your organisation will transition from apprenticeship frameworks to apprenticeship standards"
                 },
                 {
-                  "Name": "MaxWordLength",
+                  "Name": "MaxWordCount",
                   "Value": "275",
                   "ErrorMessage": "Your answer must be 275 words or less"
                 }
@@ -553,7 +553,7 @@
                               "ErrorMessage": "Tell us how your organisation will transition from apprenticeship frameworks to apprenticeship standards"
                             },
                             {
-                                "Name": "MaxWordLength",
+                                "Name": "MaxWordCount",
                                 "Value": "275",
                                 "ErrorMessage": "Your answer must be 275 words or less"
                             }
