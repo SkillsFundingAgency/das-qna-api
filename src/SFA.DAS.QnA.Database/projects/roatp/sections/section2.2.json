@@ -1247,7 +1247,7 @@
                     },
                     {
                       "Name": "Regex",
-                      "Value": "^-?[0-9]+$",
+                      "Value": "^[0-9]+$",
                       "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                     },
                     {
