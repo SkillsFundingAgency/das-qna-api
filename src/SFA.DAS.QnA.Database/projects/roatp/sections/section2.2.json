@@ -569,7 +569,7 @@
               {
                 "QuestionId": "FH-550",
                 "QuestionTag": "FHAAverageNumberofFTEEmployees",
-                "Label": "Enter your organisation's average number of Full Time Equivalent Employees (FTE) for the last financial year.",
+                "Label": "Enter your organisation's average number of Full Time Equivalent (FTE) employees for the last financial year",
                 "ShortLabel": "",
                 "QuestionBodyText": "",
                 "Hint": "",
@@ -580,11 +580,11 @@
                     {
                       "Name": "Required",
                       "Value": "",
-                      "ErrorMessage": "Enter your organisation's average number of Full Time Equivalent Employees (FTE) for the last financial year."
+                      "ErrorMessage": "Enter your organisation's average number of Full Time Equivalent (FTE) employees for the last financial year"
                     },
                     {
                       "Name": "Regex",
-                      "Value": "^-?[0-9]+$",
+                      "Value": "^[0-9]+$",
                       "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                     },
                     {
@@ -909,7 +909,7 @@
               {
                 "QuestionId": "FH-225",
                 "QuestionTag": "FHAAverageNumberofFTEEmployees",
-                "Label": "Enter your organisation's average number of Full Time Equivalent Employees (FTE) for the last financial year.",
+                "Label": "Enter your organisation's average number of Full Time Equivalent (FTE) employees for the last financial year",
                 "ShortLabel": "",
                 "QuestionBodyText": "",
                 "Hint": "",
@@ -920,11 +920,11 @@
                     {
                       "Name": "Required",
                       "Value": "",
-                      "ErrorMessage": "Enter your organisation's average number of Full Time Equivalent Employees (FTE) for the last financial year."
+                      "ErrorMessage": "Enter your organisation's average number of Full Time Equivalent (FTE) employees for the last financial year"
                     },
                     {
                       "Name": "Regex",
-                      "Value": "^-?[0-9]+$",
+                      "Value": "^[0-9]+$",
                       "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                     },
                     {
@@ -1232,7 +1232,7 @@
               {
                 "QuestionId": "FH-315",
                 "QuestionTag": "FHAAverageNumberofFTEEmployees",
-                "Label": "Enter your organisation's average number of Full Time Equivalent Employees (FTE) for the last financial year.",
+                "Label": "Enter your organisation's average number of Full Time Equivalent (FTE) employees for the last financial year",
                 "ShortLabel": "",
                 "QuestionBodyText": "",
                 "Hint": "",
@@ -1243,11 +1243,11 @@
                     {
                       "Name": "Required",
                       "Value": "",
-                      "ErrorMessage": "Enter your organisation's average number of Full Time Equivalent Employees (FTE) for the last financial year."
+                      "ErrorMessage": "Enter your organisation's average number of Full Time Equivalent (FTE) employees for the last financial year"
                     },
                     {
                       "Name": "Regex",
-                      "Value": "^-?[0-9]+$",
+                      "Value": "^[0-9]+$",
                       "ErrorMessage": "Enter a figure using numbers only. For example, 1300000"
                     },
                     {
