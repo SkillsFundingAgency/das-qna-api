@@ -188,6 +188,15 @@
             ],
             "AllowMultipleAnswers": false,
             "Active": false,
+            "NotRequiredConditions": [
+                {
+                    "Field": "ApplyProviderRoute",
+                    "IsOneOf": [
+                        "1",
+                        "3"
+                    ]
+                }
+            ],
             "ActivatedByPageId": "6400",
             "BodyText": ""
         },
@@ -234,7 +243,15 @@
 			],
             "AllowMultipleAnswers": false,
             "Active": false,
-            "NotRequiredConditions": [],
+            "NotRequiredConditions": [
+                {
+                    "Field": "ApplyProviderRoute",
+                    "IsOneOf": [
+                        "1",
+                        "3"
+                    ]
+                }
+            ],
             "BodyText": "",
             "ActivatedByPageId": "6410"
         }
