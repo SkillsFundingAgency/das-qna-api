@@ -497,7 +497,7 @@
             "Questions": [{
                     "QuestionId": "WR-10",
                     "QuestionTag": null,
-                    "Label": "When do you want to withdraw from the standard?",
+                    "Label": "When do you want to withdraw from {{StandardOrVersion}}?",
                     "ShortLabel": "",
                     "InputClasses": null,
                     "QuestionBodyText": "<p class='govuk-body'>If you have at least 1 registered learner, the earliest date you can withdraw is <span class='das-no-wrap'>{{EarliestDateOfWithdrawal:d MMM yyyy}}</span>.</p>",
