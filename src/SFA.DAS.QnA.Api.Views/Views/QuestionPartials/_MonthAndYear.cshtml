@@ -16,7 +16,7 @@
 
 <div class="govuk-date-input" id="dob">
     <div class="govuk-date-input__item">
-        <div class="govuk-form-group">
+        <div class="govuk-form-group" id="@Model.QuestionId">
             <label class="govuk-label govuk-date-input__label" for="@(Model.QuestionId + "_Month")">Month</label>
             <input 
                 value="@(string.IsNullOrWhiteSpace(Model.Value?.ToString()) ? "" : Model.Value?.ToString().Split(',')[0])"

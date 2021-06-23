@@ -460,6 +460,10 @@
                         "Type": "MonthAndYear",
                         "Validations": [
                             {
+                                "Name": "Required",
+                                "ErrorMessage": "Enter a date of birth using a month and year"
+                            },
+							{
                                 "Name": "MonthAndYear",
                                 "Value": null,
                                 "ErrorMessage": "Enter a date of birth using a month and year"
