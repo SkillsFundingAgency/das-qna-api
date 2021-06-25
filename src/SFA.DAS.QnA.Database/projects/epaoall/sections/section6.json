@@ -15,7 +15,7 @@
         {
           "QuestionId": "WR-06",
           "QuestionTag": null,
-          "Label": "What's the main reason you want to withdraw from assessing this {{StandardOrVersion}}?",
+          "Label": "What's the main reason you want to withdraw from assessing the {{StandardOrVersion}}?",
           "ShortLabel": "",
           "InputClasses": null,
           "QuestionBodyText": "<p class='govuk-body'>You can tell us more about why you want to withdraw after you select a reason.</p>",
@@ -544,7 +544,7 @@
         {
           "QuestionId": "WR-10",
           "QuestionTag": null,
-          "Label": "When do you want to withdraw from the {{StandardOrStandardVersion}}?",
+          "Label": "When do you want to withdraw from assessing the {{StandardOrVersion}}?",
           "ShortLabel": "",
           "InputClasses": null,
           "QuestionBodyText": "<p class='govuk-body'>If you have at least 1 registered learner, the earliest date you can withdraw is <span class='das-no-wrap'>{{EarliestDateOfWithdrawal:d MMM yyyy}}</span>.</p>",
@@ -567,6 +567,11 @@
                 "Name": "DateInFuture",
                 "Value": "",
                 "ErrorMessage": "The date must be in the future"
+              },
+              {
+                "Name": "ClientApiCall",
+                "Value": "Validations/WithdrawalDate",
+                "ErrorMessage": ""
               }
             ],
             "DataEndpoint": null
