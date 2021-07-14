@@ -114,8 +114,8 @@ Contains all of the application logic to handle requests
 #### SFA.DAS.QnA.Configuration
 Enables functionality to store and read configuration from Microsoft Azure storage
 
-- AuthenticationConfig
-  - JWT authentication
+- AzureActiveDirectoryConfiguration
+  - Azure Managed Identity authentication
 	
 - FileStorageConfig
 	- Information relating to storage of files
@@ -137,3 +137,38 @@ Database project containing setup in order to the create the QnA Database
 	
 - projects/{subfolder}/sections
 	- Holds QnAData for each WorkflowSection
+	
+### QnA Structure
+
+A Workflow is made up of multiple Sequences. Each Sequence may have multiple Sections.
+
+The QnAData within each Section defines the flow and logic. There are multiple Pages consisting of Questions and relevant Answers. Depending on Answers provided, it will decide which Pages are activate.
+
+#### Question
+
+Questions should an unique Id, an optional QuestionTag and a particular Input type. If the Input has different Options to select from, you may want to include FutherQuestions to allow a related/follow up Question (i.e. Yes selected, so now need to provide more details).
+
+#### Question Type
+Most are self explanatory and in most cases have built in validators.
+
+- TabularData is a JSON structure that represents a Table storage format (i.e. header and rows)
+
+- FileUpload is for uploading files. Note that this type should POST the Answer/Files to the File Upload endpoint and not the Save Answers end point
+
+- ComplexRadio & ComplexCheckboxList enables the use of FutherQuestions based on an Option being selected
+
+#### Next Conditions
+
+These are the primary mechanism to dictate logic flow within a Section. Should a QuestionId or QuestionTag match the Next condition then that specified Page will be made active. Any conditions that not match will make that specified Page inactive.
+
+#### Next Actions
+
+NextPage - Go to the next page
+
+Any other value can be specified. This is intended to allows the calling application to decide the logic. Such actions could be ReturnToSection or TaskList
+
+#### NotRequiredConditions
+
+There are situations where Next Conditions cannot control the Page flow (i.e. determining the entry point to the first Page within a Section based on a particular value).
+
+NotRequiredConditions is a way for QnA Api to remove Pages from the response payload back to the user.
