@@ -15,8 +15,7 @@ Post-Deployment Script Template
 
 -- Deploy any One Off Scripts
 -- NOTE: Remember to make these idempotent and remove when not required any more
-:r .\OneOffScripts\APR-2511.sql
-:r .\OneOffScripts\APR-2561.sql
+:r .\OneOffScripts\APR-2536.sql
 -- END
 
 
