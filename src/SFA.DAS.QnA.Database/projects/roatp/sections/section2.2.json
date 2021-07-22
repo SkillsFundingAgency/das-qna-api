@@ -1296,7 +1296,7 @@
             "InfoText": "",
             "Questions": [
                 {
-                    "QuestionId": "FHA-320",
+                    "QuestionId": "FH-320",
                     "QuestionTag": "FHAHas12MonthsStatements",
                     "Label": "Has your organisation produced its latest full financial statements covering a minimum of 12 months?",
                     "ShortLabel": "",
@@ -1332,7 +1332,7 @@
                     "ReturnId": "2160",
                     "Conditions": [
                         {
-                            "QuestionId": "FHA-320",
+                            "QuestionId": "FH-320",
                             "MustEqual": "Yes"
                         }
                     ]
@@ -1342,7 +1342,7 @@
                     "ReturnId": "2170",
                     "Conditions": [
                         {
-                            "QuestionId": "FHA-320",
+                            "QuestionId": "FH-320",
                             "MustEqual": "No"
                         }
                     ]
