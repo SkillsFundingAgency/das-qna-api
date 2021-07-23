@@ -239,15 +239,8 @@
             "Active": true,
             "NotRequiredConditions": [
                 {
-                    "Field": "ApplyProviderRoute",
-                    "IsOneOf": [
-                        "1",
-                        "2"
-                    ]
-                },
-                {
-                    "Field":"OnROATP",
-                    "DoesNotContain": ["TRUE"]
+                    "Field": "RouteAndOnRoatp",
+                    "DoesNotContain": ["SupportingOnRoatp"]
                 }
             ],
 			"PageOfAnswers": [],
@@ -379,15 +372,8 @@
             "Active": true,
             "NotRequiredConditions": [
                 {
-                    "Field": "ApplyProviderRoute",
-                    "IsOneOf": [
-                        "1",
-                        "2"
-                    ]
-                },
-                {
-                    "Field":"OnROATP",
-                    "IsOneOf": ["TRUE"]
+                    "Field": "RouteAndOnRoatp",
+                    "DoesNotContain": ["SupportingNotOnRoatp"]
                 }
             ],
 			"PageOfAnswers": [],
