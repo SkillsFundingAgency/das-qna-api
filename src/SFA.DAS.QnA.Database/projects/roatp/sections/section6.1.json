@@ -22,16 +22,9 @@
       "AllowMultipleAnswers": false,
       "Active": true,
       "NotRequiredConditions": [
-        {
-          "Field": "ApplyProviderRoute",
-          "IsOneOf": [
-            "2",
-            "3"
-          ]
-        },
 		{
-			"Field":"OnROATP",
-			"DoesNotContain": ["TRUE"]
+			"Field": "RouteAndOnRoatp",
+          "DoesNotContain": ["MainOnRoatp"]
 		}
       ],
       "BodyText": "<p class='govuk-body'>For this section you'll need to know:</p><ul class='govuk-list govuk-list--bullet'><li>what apprenticeship training your organisation will offer</li><li>how your organisation will engage with end-point assessment organisations (EPAOs) or awarding bodies</li><li>how your organisation will support apprentices</li><li>how many starts your organisation forecasts for the next 12 months</li><li>if your organisation is ready to deliver against these forecasts</li><li>if your organisation will recruit new staff against these forecasts</li><li>the typical ratio of staff and learners</li><li>how your organisation will deliver off the job training</li><li>where apprentices will be trained</li></ul></p>"
@@ -52,17 +45,10 @@
       ],
       "AllowMultipleAnswers": false,
       "Active": true,
-      "NotRequiredConditions": [
-        {
-          "Field": "Apply-ProviderRoute",
-          "IsOneOf": [
-            "2",
-            "3"
-          ]
-        },
+       "NotRequiredConditions": [
 		{
-			"Field":"OnROATP",
-			"IsOneOf": ["TRUE"]
+			"Field": "RouteAndOnRoatp",
+          "DoesNotContain": ["MainNotOnRoatp"]
 		}
       ],
       "BodyText": "<p class='govuk-body'>For this section you'll need to know:</p><ul class='govuk-list govuk-list--bullet'><li>how your organisation will engage with end-point assessment organisations (EPAOs)</li><li>how your organisation will support apprentices</li><li>how many starts your organisation forecasts for the next 12 months</li><li>if your organisation is ready to deliver against these forecasts</li><li>if your organisation will recruit new staff against these forecasts</li><li>the typical ratio of staff and learners</li><li>how your organisation will deliver off the job training</li><li>where apprentices will be trained</li></ul></p>"
