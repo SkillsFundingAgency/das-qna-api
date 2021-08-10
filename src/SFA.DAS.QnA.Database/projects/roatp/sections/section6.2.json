@@ -46,11 +46,8 @@
             "Active": true,
             "NotRequiredConditions": [
                 {
-                    "Field": "ApplyProviderRoute",
-                    "IsOneOf": [
-                        "2",
-                        "3"
-                    ]
+                    "Field": "RouteAndOnRoatp",
+                    "DoesNotContain": ["MainOnRoatp"]
                 }
             ],
 			"PageOfAnswers": [],
@@ -135,11 +132,8 @@
             "Active": true,
             "NotRequiredConditions": [
                 {
-                    "Field": "ApplyProviderRoute",
-                    "IsOneOf": [
-                        "1",
-                        "3"
-                    ]
+                    "Field": "RouteAndOnRoatp",
+                    "DoesNotContain": ["EmployerOnRoatp"]
                 }
             ],
 			"PageOfAnswers": [],
@@ -430,6 +424,108 @@
             "BodyText": ""
         },
         {
+            "PageId": "6205",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "Application standards",
+            "LinkTitle": "Application standards",
+            "InfoText": "",
+            "Questions": [
+                {
+                    "QuestionId": "PAT-30",
+                    "QuestionTag": null,
+                    "Label": "Tell us how your organisation is ready to deliver training in apprenticeship standards",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "<p class='govuk-body'>You must include how your organisation has:</p><ul class='govuk-list govuk-list--bullet'><li>commitment and approval from senior managers to deliver apprenticeship standards</li><li>a governance group in place to monitor delivery of training</li><li>an implementation plan specific to apprenticeship training </li><li>resources that support the delivery of apprenticeship standards</li></ul>",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "Textarea",
+                        "Options": [],
+                        "Validations": [
+                            {
+                                "Name": "Required",
+                                "Value": "",
+                                "ErrorMessage": "Tell us how your organisation is ensuring it's ready to deliver training in apprenticeship standards"
+                            },
+                            {
+                                "Name": "MaxWordCount",
+                                "Value": "275",
+                                "ErrorMessage": "Your answer must be 275 words or less"
+                            }
+                        ]
+                    }
+                }
+            ],
+			"PageOfAnswers": [],
+            "Next": [
+                {
+                    "Action": "NextPage",
+                    "ReturnId": "6270",
+                    "Conditions": []
+                }
+            ],
+            "AllowMultipleAnswers": false,
+            "Active": true,
+			"NotRequiredConditions": [
+                {
+                    "Field": "RouteAndOnRoatp",
+                    "DoesNotContain": ["MainNotOnRoatp"]
+                }
+				],
+            "BodyText": ""
+        },
+        {
+            "PageId": "6206",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "Application standards",
+            "LinkTitle": "Application standards",
+            "InfoText": "",
+            "Questions": [
+                {
+                    "QuestionId": "PAT-30",
+                    "QuestionTag": null,
+                    "Label": "Tell us how your organisation is ready to deliver training in apprenticeship standards",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "<p class='govuk-body'>You must include how your organisation has:</p><ul class='govuk-list govuk-list--bullet'><li>commitment and approval from senior managers to deliver apprenticeship standards</li><li>a governance group in place to monitor delivery of training</li><li>an implementation plan specific to apprenticeship training </li><li>resources that support the delivery of apprenticeship standards</li></ul>",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "Textarea",
+                        "Options": [],
+                        "Validations": [
+                            {
+                                "Name": "Required",
+                                "Value": "",
+                                "ErrorMessage": "Tell us how your organisation is ensuring it's ready to deliver training in apprenticeship standards"
+                            },
+                            {
+                                "Name": "MaxWordCount",
+                                "Value": "275",
+                                "ErrorMessage": "Your answer must be 275 words or less"
+                            }
+                        ]
+                    }
+                }
+            ],
+			"PageOfAnswers": [],
+            "Next": [
+                {
+                    "Action": "NextPage",
+                    "ReturnId": "6270",
+                    "Conditions": []
+                }
+            ],
+            "AllowMultipleAnswers": false,
+            "Active": true,
+			"NotRequiredConditions": [
+                {
+                    "Field": "RouteAndOnRoatp",
+                    "DoesNotContain": ["EmployerNotOnRoatp"]
+                }
+				],
+            "BodyText": ""
+        },
+        {
             "PageId": "6230",
             "SequenceId": null,
             "SectionId": null,
@@ -623,7 +719,7 @@
           },
           {
             "Action": "ReturnToSection",
-            "ReturnId": "",
+            "ReturnId": "6.3",
             "Conditions": []
           }
         ],
@@ -682,7 +778,7 @@
                 },
                 {
                     "Action": "ReturnToSection",
-                    "ReturnId": "",
+                    "ReturnId": "6.3",
                     "Conditions": []
                 }
             ],
@@ -1018,6 +1114,26 @@
 			"PageOfAnswers": [],
             "Next": [
                 {
+                    "Action": "ReturnToSection",
+                    "ReturnId": "6.3",
+                    "Conditions": [
+                        {
+                            "QuestionTag": "RouteAndOnRoatp",
+                            "MustEqual": "MainNotOnRoatp"
+                        }
+                    ]
+                },
+                {
+                    "Action": "ReturnToSection",
+                    "ReturnId": "6.3",
+                    "Conditions": [
+                        {
+                            "QuestionTag": "RouteAndOnRoatp",
+                            "MustEqual": "EmployerNotOnRoatp"
+                        }
+                    ]
+                },
+                {
                     "Action": "NextPage",
                     "ReturnId": "6280",
                     "Conditions": [
@@ -1057,7 +1173,7 @@
                     ]
                 }
             ],
-            "ActivatedByPageId": "6230,6252",
+            "ActivatedByPageId": "6230,6252,6205,6206",
             "BodyText": ""
         },
         {
