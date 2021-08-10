@@ -239,11 +239,8 @@
             "Active": true,
             "NotRequiredConditions": [
                 {
-                    "Field": "ApplyProviderRoute",
-                    "IsOneOf": [
-                        "1",
-                        "2"
-                    ]
+                    "Field": "RouteAndOnRoatp",
+                    "DoesNotContain": ["SupportingOnRoatp"]
                 }
             ],
 			"PageOfAnswers": [],
@@ -328,6 +325,111 @@
             "BodyText": ""
         },
         {
+            "PageId": "6204",
+            "SequenceId": null,
+            "SectionId": null,
+            "Title": "Type of apprenticeship training",
+            "LinkTitle": "Type of apprenticeship training",
+            "InfoText": "",
+            "Questions": [
+                {
+                    "QuestionId": "PAT-24",
+                    "QuestionTag": "PATTypeOfTrainingSupporting",
+                    "Label": "What type of apprenticeship training will your organisation offer?",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "",
+                    "Hint": "Select all that apply.",
+                    "Input": {
+                        "Type": "CheckboxList",
+                        "Options": [
+                            {
+                                "Label": "Full apprenticeship standards",
+                                "Value": "Full apprenticeship standards",
+                                "HintText": ""
+                            },
+                            {
+                                "Label": "Part apprenticeship standards",
+                                "Value": "Part apprenticeship standards",
+                                "HintText": ""
+                            },
+                            {
+                                "Label": "Functional skills",
+                                "Value": "Functional skills",
+                                "HintText": ""
+                            }
+                        ],
+                        "Validations": [
+                            {
+                                "Name": "Required",
+                                "Value": "",
+                                "ErrorMessage": "Tell us what type of apprenticeship training your organisation will offer"
+                            }
+                        ]
+                    }
+                }
+            ],
+            "AllowMultipleAnswers": false,
+            "Active": true,
+            "NotRequiredConditions": [
+                {
+                    "Field": "RouteAndOnRoatp",
+                    "DoesNotContain": ["SupportingNotOnRoatp"]
+                }
+            ],
+			"PageOfAnswers": [],
+            "Next": [
+                {
+                    "Action": "NextPage",
+                    "ReturnId": "6230",
+                    "Conditions": [
+                        {
+                            "QuestionId": "PAT-24",
+                            "Contains": "Full apprenticeship standards"
+                        },
+                        {
+                            "QuestionTag": "ApplyProviderRoute",
+                            "MustEqual": "3"
+                        }
+                    ]
+                },
+                {
+                    "Action": "NextPage",
+                    "ReturnId": "6230",
+                    "Conditions": [
+                        {
+                            "QuestionId": "PAT-24",
+                            "Contains": "Part apprenticeship standards"
+                        },
+                        {
+                            "QuestionTag": "ApplyProviderRoute",
+                            "MustEqual": "3"
+                        }
+                    ]
+                },
+                {
+                    "Action": "ReturnToSection",
+                    "ReturnId": "6.3",
+                    "Conditions": [
+                        {
+                            "QuestionId": "PAT-24",
+                            "Contains": "Functional skills"
+                        },
+                        {
+                            "QuestionTag": "ApplyProviderRoute",
+                            "MustEqual": "3"
+                        }
+                    ]
+                },
+                {
+                    "Action": "ReturnToSection",
+                    "ReturnId": "6.3",
+                    "Conditions": []
+                }
+            ],
+            "ActivatedByPageId": null,
+            "BodyText": ""
+        },
+        {
             "PageId": "6230",
             "SequenceId": null,
             "SectionId": null,
@@ -380,7 +482,7 @@
             ],
             "AllowMultipleAnswers": false,
             "Active": false,
-            "ActivatedByPageId": "6201,6202,6203",
+            "ActivatedByPageId": "6201,6202,6203,6204",
             "BodyText": ""
         },
         {
