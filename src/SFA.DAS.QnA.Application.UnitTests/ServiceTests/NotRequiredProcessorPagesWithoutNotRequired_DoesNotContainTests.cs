@@ -16,6 +16,7 @@ namespace SFA.DAS.QnA.Application.UnitTests.ServiceTests
         [TestCase("OrgType1", "OrgType", true)]   // not present (partial match) so should be removed
         [TestCase("OrgType1", "orgType1", true)]  // not present (case sensitive) so should be removed
         [TestCase("OrgType1", "", true)]          // Empty application data should render as satisfied NRC
+        [TestCase("OrgType1", null, true)]        // NULL application data should render as satisfied NRC
         public void When_DoesNotContain_conditions_are_removed_appropriately(string notRequiredConditionValue, string applicationDataValue, bool shouldRemovePage)
         {
             var expectedPagesCount = shouldRemovePage ? 1 : 2;

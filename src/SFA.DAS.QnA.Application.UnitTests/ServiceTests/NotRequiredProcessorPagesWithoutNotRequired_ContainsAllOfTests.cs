@@ -23,6 +23,7 @@ namespace SFA.DAS.QnA.Application.UnitTests.ServiceTests
         [TestCase(new[] { "value1", "value2" }, "value1", false)] // Only contains 1 (first) match so should not be removed
         [TestCase(new[] { "value1", "value2" }, "value2", false)] // Only contains 1 (last) match so should not be removed
         [TestCase(new[] { "value1", "value2" }, "", false)] // Empty application data should render as unsatisfied NRC
+        [TestCase(new[] { "value1", "value2" }, null, false)] // NULL application data should render as unsatisfied NRC
         public void When_PagesWithNotRequired_conditions_with_containsAllOf(string[] containsAllValues, string applicationDataValue, bool shouldRemovePage)
         {
             var expectedPagesCount = shouldRemovePage ? 1 : 2;

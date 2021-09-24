@@ -11,11 +11,12 @@ namespace SFA.DAS.QnA.Application.UnitTests.ServiceTests
     [TestFixture]
     public class NotRequiredProcessorPagesWithoutNotRequired_IsOneOfTests
     {
-        [TestCase("OrgType1", "OrgType1", true)]  // present so should be removed
+        [TestCase("OrgType1", "OrgType1", true)]   // present so should be removed
         [TestCase("OrgType1", "ABCDEF", false)]    // not present (no commonality) so should not be removed
         [TestCase("OrgType1", "OrgType", false)]   // not present (partial match) so should not be removed
         [TestCase("OrgType1", "orgType1", false)]  // not present (case sensitive) so should not be removed
         [TestCase("OrgType1", "", false)]          // Empty application data should render as unsatisfied NRC
+        [TestCase("OrgType1", null, false)]        // NULL application data should render as unsatisfied NRC
         public void When_IsOneOf_conditions_are_removed_appropriately(string notRequiredConditionValue, string applicationDataValue, bool shouldRemovePage)
         {
             var expectedPagesCount = shouldRemovePage ? 1 : 2;

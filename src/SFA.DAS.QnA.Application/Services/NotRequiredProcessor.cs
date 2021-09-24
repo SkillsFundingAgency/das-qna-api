@@ -30,7 +30,10 @@ namespace SFA.DAS.QnA.Application.Services
             {
                 var applicationDataValues = applicationData[notRequiredCondition.Field]?.Value<string>()?.Split(",", StringSplitOptions.RemoveEmptyEntries).Distinct();
 
-                if (applicationDataValues is null) continue;
+                if (applicationDataValues is null)
+                {
+                    applicationDataValues = new string[] { null };
+                };
 
                 var valuesThatMatch = notRequiredCondition.IsOneOf.Intersect(applicationDataValues);
 
@@ -51,7 +54,10 @@ namespace SFA.DAS.QnA.Application.Services
             {
                 var applicationDataValues = applicationData[notRequiredCondition.Field]?.Value<string>()?.Split(",", StringSplitOptions.RemoveEmptyEntries).Distinct();
 
-                if (applicationDataValues is null) continue;
+                if (applicationDataValues is null)
+                {
+                    applicationDataValues = new string[] { null };
+                };
 
                 var valuesThatDidNotMatch = notRequiredCondition.ContainsAllOf.Except(applicationDataValues);
 
@@ -72,7 +78,10 @@ namespace SFA.DAS.QnA.Application.Services
             {
                 var applicationDataValues = applicationData[notRequiredCondition.Field]?.Value<string>()?.Split(",", StringSplitOptions.RemoveEmptyEntries).Distinct();
 
-                if (applicationDataValues is null) continue;
+                if (applicationDataValues is null)
+                {
+                    applicationDataValues = new string[] { null };
+                };
 
                 var valuesThatMatch = notRequiredCondition.DoesNotContain.Intersect(applicationDataValues);
 
