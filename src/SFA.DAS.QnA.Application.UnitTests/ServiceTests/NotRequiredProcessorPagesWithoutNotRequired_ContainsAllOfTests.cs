@@ -24,6 +24,10 @@ namespace SFA.DAS.QnA.Application.UnitTests.ServiceTests
         [TestCase(new[] { "value1", "value2" }, "value2", false)] // Only contains 1 (last) match so should not be removed
         [TestCase(new[] { "value1", "value2" }, "", false)] // Empty application data should render as unsatisfied NRC
         [TestCase(new[] { "value1", "value2" }, null, false)] // NULL application data should render as unsatisfied NRC
+        [TestCase(new string[] { null }, null, true)] // NULL check should render as satisfied NRC
+        [TestCase(new string[] { null }, "", false)] // NULL check with Empty application data should render as unsatisfied NRC
+        [TestCase(new string[] { "" }, "", true)] // Emptiness check should render as satisfied NRC
+        [TestCase(new string[] { "" }, null, false)] // Emptiness check will NULL application data should render as unsatisfied NRC
         public void When_PagesWithNotRequired_conditions_with_containsAllOf(string[] containsAllValues, string applicationDataValue, bool shouldRemovePage)
         {
             var expectedPagesCount = shouldRemovePage ? 1 : 2;
@@ -66,12 +70,14 @@ namespace SFA.DAS.QnA.Application.UnitTests.ServiceTests
             Assert.AreNotEqual(actualPages.Any(p => p.PageId == pageIdAbsentIfNotRequired), shouldRemovePage);
         }
 
-        [Test]
-        public void When_ContainsAllOf_conditions_are_empty_then_page_is_removed()
+        [TestCase("OrgType1")]
+        [TestCase("")]
+        [TestCase(null)]
+        public void When_ContainsAllOf_conditions_are_empty_then_page_is_removed(string applicationDataValue)
         {
             var applicationDataJson = JsonConvert.SerializeObject(new
             {
-                FieldToTest = "OrgType1"
+                FieldToTest = applicationDataValue
             });
 
             var applicationData = JObject.Parse(applicationDataJson);
@@ -98,12 +104,14 @@ namespace SFA.DAS.QnA.Application.UnitTests.ServiceTests
             Assert.IsFalse(actualPages.Any());
         }
 
-        [Test]
-        public void When_ContainsAllOf_conditions_are_null_then_page_remains()
+        [TestCase("OrgType1")]
+        [TestCase("")]
+        [TestCase(null)]
+        public void When_ContainsAllOf_conditions_are_null_then_page_remains(string applicationDataValue)
         {
             var applicationDataJson = JsonConvert.SerializeObject(new
             {
-                FieldToTest = "OrgType1"
+                FieldToTest = applicationDataValue
             });
 
             var applicationData = JObject.Parse(applicationDataJson);

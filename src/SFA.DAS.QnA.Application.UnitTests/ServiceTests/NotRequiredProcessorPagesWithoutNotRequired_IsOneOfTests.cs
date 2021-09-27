@@ -17,6 +17,8 @@ namespace SFA.DAS.QnA.Application.UnitTests.ServiceTests
         [TestCase("OrgType1", "orgType1", false)]  // not present (case sensitive) so should not be removed
         [TestCase("OrgType1", "", false)]          // Empty application data should render as unsatisfied NRC
         [TestCase("OrgType1", null, false)]        // NULL application data should render as unsatisfied NRC
+        [TestCase("", "", true)]                   // Emptiness check should render as satisfied NRC
+        [TestCase(null, null, true)]               // NULL check should render as satisfied NRC
         public void When_IsOneOf_conditions_are_removed_appropriately(string notRequiredConditionValue, string applicationDataValue, bool shouldRemovePage)
         {
             var expectedPagesCount = shouldRemovePage ? 1 : 2;
@@ -59,12 +61,14 @@ namespace SFA.DAS.QnA.Application.UnitTests.ServiceTests
             Assert.AreNotEqual(actualPages.Any(p => p.PageId == pageIdAbsentIfNotRequired), shouldRemovePage);
         }
 
-        [Test]
-        public void When_IsOneOf_conditions_are_empty_then_page_remains()
+        [TestCase("OrgType1")]
+        [TestCase("")]
+        [TestCase(null)]
+        public void When_IsOneOf_conditions_are_empty_then_page_remains(string applicationDataValue)
         {
             var applicationDataJson = JsonConvert.SerializeObject(new
             {
-                FieldToTest = "OrgType1"
+                FieldToTest = applicationDataValue
             });
 
             var applicationData = JObject.Parse(applicationDataJson);
@@ -91,12 +95,14 @@ namespace SFA.DAS.QnA.Application.UnitTests.ServiceTests
             Assert.IsTrue(actualPages.Any());
         }
 
-        [Test]
-        public void When_IsOneOf_conditions_are_null_then_page_remains()
+        [TestCase("OrgType1")]
+        [TestCase("")]
+        [TestCase(null)]
+        public void When_IsOneOf_conditions_are_null_then_page_remains(string applicationDataValue)
         {
             var applicationDataJson = JsonConvert.SerializeObject(new
             {
-                FieldToTest = "OrgType1"
+                FieldToTest = applicationDataValue
             });
 
             var applicationData = JObject.Parse(applicationDataJson);

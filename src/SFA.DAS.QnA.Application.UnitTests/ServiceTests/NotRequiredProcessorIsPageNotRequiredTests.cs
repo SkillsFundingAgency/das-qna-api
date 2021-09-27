@@ -14,10 +14,12 @@ namespace SFA.DAS.QnA.Application.UnitTests.ServiceTests
         [TestCase("OrgType1", "ABCDEF", false)]
         [TestCase("OrgType1", "OrgType", false)]
         [TestCase("OrgType1", "orgType1", false)]
+        [TestCase("OrgType1", null, false)]
         [TestCase("OrgType1", "", false)]
         [TestCase(null, null, true)]
         [TestCase(null, "", false)]
-        [TestCase("OrgType1", null, false)]
+        [TestCase("", "", true)]
+        [TestCase("", null, false)]  
         public void When_IsPageNotRequired_returns_expected_result_When_IsOneOf_specified(string notRequiredConditionValue, string applicationDataValue, bool expectedResult)
         {
             var applicationDataJson = JsonConvert.SerializeObject(new
@@ -51,10 +53,12 @@ namespace SFA.DAS.QnA.Application.UnitTests.ServiceTests
         [TestCase("OrgType1", "ABCDEF", true)]
         [TestCase("OrgType1", "OrgType", true)]
         [TestCase("OrgType1", "orgType1", true)]
+        [TestCase("OrgType1", null, true)]
         [TestCase("OrgType1", "", true)]
         [TestCase(null, null, false)]
         [TestCase(null, "", true)]
-        [TestCase("OrgType1", null, true)]
+        [TestCase("", "", false)]
+        [TestCase("", null, true)]
         public void When_IsPageNotRequired_returns_expected_result_When_DoesNotContain_specified(string notRequiredConditionValue, string applicationDataValue, bool expectedResult)
         {
             var applicationDataJson = JsonConvert.SerializeObject(new
@@ -94,6 +98,10 @@ namespace SFA.DAS.QnA.Application.UnitTests.ServiceTests
         [TestCase(new[] { "value1", "value2" }, null, false)]
         [TestCase(new[] { null, "value1" }, null, false)]
         [TestCase(new[] { null, "value1" }, "", false)]
+        [TestCase(new string[] { null }, null, true)]
+        [TestCase(new string[] { null }, "", false)]
+        [TestCase(new string[] { "" }, "", true)]
+        [TestCase(new string[] { "" }, null, false)]
         public void When_IsPageNotRequired_returns_expected_result_When_ContainsAllOf_specified(string[] containsAllValues, string applicationDataValue, bool expectedResult)
         {
             var applicationDataJson = JsonConvert.SerializeObject(new

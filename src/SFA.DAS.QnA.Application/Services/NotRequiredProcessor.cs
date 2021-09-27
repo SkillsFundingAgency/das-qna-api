@@ -28,7 +28,7 @@ namespace SFA.DAS.QnA.Application.Services
 
             foreach (var notRequiredCondition in notRequiredConditions.Where(n => n.IsOneOf != null))
             {
-                var applicationDataValues = applicationData[notRequiredCondition.Field]?.Value<string>()?.Split(",", StringSplitOptions.RemoveEmptyEntries).Distinct();
+                var applicationDataValues = applicationData[notRequiredCondition.Field]?.Value<string>()?.Split(",", StringSplitOptions.None).Distinct();
 
                 if (applicationDataValues is null)
                 {
@@ -52,7 +52,7 @@ namespace SFA.DAS.QnA.Application.Services
 
             foreach (var notRequiredCondition in notRequiredConditions.Where(n => n.ContainsAllOf != null))
             {
-                var applicationDataValues = applicationData[notRequiredCondition.Field]?.Value<string>()?.Split(",", StringSplitOptions.RemoveEmptyEntries).Distinct();
+                var applicationDataValues = applicationData[notRequiredCondition.Field]?.Value<string>()?.Split(",", StringSplitOptions.None).Distinct();
 
                 if (applicationDataValues is null)
                 {
@@ -76,7 +76,7 @@ namespace SFA.DAS.QnA.Application.Services
 
             foreach (var notRequiredCondition in notRequiredConditions.Where(n => n.DoesNotContain != null))
             {
-                var applicationDataValues = applicationData[notRequiredCondition.Field]?.Value<string>()?.Split(",", StringSplitOptions.RemoveEmptyEntries).Distinct();
+                var applicationDataValues = applicationData[notRequiredCondition.Field]?.Value<string>()?.Split(",", StringSplitOptions.None).Distinct();
 
                 if (applicationDataValues is null)
                 {
