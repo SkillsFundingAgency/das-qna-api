@@ -16,7 +16,7 @@
                     "QuestionTag": "",
                     "Label": "When acting as a subcontractor, will your organisation follow its lead provider's policies and plans?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body'>Your organisation has an obligation to follow its lead provider's policies and plans if asked by them.</p>",
+                    "QuestionBodyText": "<p class='govuk-body'>Your organisation has an obligation to follow its lead provider's policies and plans if asked by them.</p><p class='govuk-body'>If you do not currently plan to act as a subcontractor, please confirm you understand your obligation in case you choose to subcontract in the future.</p>",
                     "Hint": "",
                     "Input":
                     {
