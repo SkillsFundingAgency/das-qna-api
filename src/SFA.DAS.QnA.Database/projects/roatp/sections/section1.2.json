@@ -120,13 +120,7 @@
                     "Input": {
                         "Type": "Text",
                         "InputClasses": "app-uppercase govuk-input--width-10",
-                        "Validations": [
-                            {
-                                "Name": "Required",
-                                "Value": "",
-                                "ErrorMessage": "Enter a company or charity number"
-                            }
-                        ]
+                        "Validations": []
                     }
                 }
             ],
