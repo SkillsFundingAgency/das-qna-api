@@ -1748,7 +1748,7 @@
                 }
             ],
             "BodyText": "<p class='govuk-body'>You'll need to upload your organisation's full management accounts for the last 12 months.</p>",
-            "ActivatedByPageId": "2170"
+            "ActivatedByPageId": "2100,2110,2120,2130,2140,2150,2170"
         },
         {
             "PageId": "2200",
@@ -2072,7 +2072,7 @@
                 }
             ],
             "BodyText": "",
-            "ActivatedByPageId": "2195,2220"
+            "ActivatedByPageId": "2100,2110,2120,2130,2140,2150,2170,2195,2220"
         },
         {
             "PageId": "2230",
