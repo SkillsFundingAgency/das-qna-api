@@ -250,8 +250,8 @@
                                                 },
                                                 {
                                                     "Name": "MaxLength",
-                                                    "Value": "100",
-                                                    "ErrorMessage": "Enter a website using 100 characters or less"
+                                                    "Value": "200",
+                                                    "ErrorMessage": "Enter a website using 200 characters or less"
                                                 },
                                                 {
                                                     "Name": "Regex",
