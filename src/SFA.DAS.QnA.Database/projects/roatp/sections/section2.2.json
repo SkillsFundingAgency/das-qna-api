@@ -1565,7 +1565,7 @@
                 }
             ],
             "BodyText": "",
-            "ActivatedByPageId": "2150"
+            "ActivatedByPageId": "2100,2110,2120,2130,2140,2150"
         },
         {
             "PageId": "2180",
@@ -1600,7 +1600,7 @@
                 }
             ],
             "BodyText": "<p class='govuk-body'>You'll need to upload your organisation's:</p><ul class='govuk-list govuk-list--bullet'><li>financial statements covering any period within the last 12 months</li><li>management accounts covering the remaining period to date</li></ul><p class='govuk-body'>Your management accounts must start from the date your financial statements end.</p><p class='govuk-body'>For example, if your financial statements end on 31 January, your management accounts must start on 1 February.</p>",
-            "ActivatedByPageId": "2170"
+            "ActivatedByPageId": "2100,2110,2120,2130,2140,2150,2170"
         },
         {
             "PageId": "2190",
@@ -1713,7 +1713,7 @@
                 }
             ],
             "BodyText": "",
-            "ActivatedByPageId": "2180"
+            "ActivatedByPageId": "2100,2110,2120,2130,2140,2150,2170,2180"
         },
         {
             "PageId": "2195",
@@ -1748,7 +1748,7 @@
                 }
             ],
             "BodyText": "<p class='govuk-body'>You'll need to upload your organisation's full management accounts for the last 12 months.</p>",
-            "ActivatedByPageId": "2170"
+            "ActivatedByPageId": "2100,2110,2120,2130,2140,2150,2170"
         },
         {
             "PageId": "2200",
@@ -1855,7 +1855,7 @@
                 }
             ],
             "BodyText": "",
-            "ActivatedByPageId": "2170,2190,2195"
+            "ActivatedByPageId": "2100,2110,2120,2130,2140,2150,2170,2190"
         },
         {
             "PageId": "2210",
@@ -1936,7 +1936,7 @@
                 }
             ],
             "BodyText": "",
-            "ActivatedByPageId": "2170"
+            "ActivatedByPageId": "2100,2110,2120,2130,2140,2150,2170"
         },
         {
             "PageId": "2220",
@@ -1965,7 +1965,7 @@
                 }
             ],
             "BodyText": "<p class='govuk-body'>You'll need to upload your organisation's full management accounts for the last 12 months.</p>",
-            "ActivatedByPageId": "2210"
+            "ActivatedByPageId": "2100,2110,2120,2130,2140,2150,2170,2210"
         },
         {
             "PageId": "2225",
@@ -2072,7 +2072,7 @@
                 }
             ],
             "BodyText": "",
-            "ActivatedByPageId": "2195,2220"
+            "ActivatedByPageId": "2100,2110,2120,2130,2140,2150,2170,2195,2210,2220"
         },
         {
             "PageId": "2230",
@@ -2101,7 +2101,7 @@
                 }
             ],
             "BodyText": "<p class='govuk-body'>You'll need to upload your organisation's:</p><ul class='govuk-list govuk-list--bullet'><li>management accounts covering at least 3 months within the last 12 months that evidence your organisation has actively traded</li><li>financial projections covering the remaining period</li></ul><p class='govuk-body'>Management accounts and financial projections must cover a 12-month period in total.</p>",
-            "ActivatedByPageId": "2210"
+            "ActivatedByPageId": "2100,2110,2120,2130,2140,2150,2170,2210"
         },
         {
             "PageId": "2240",
@@ -2208,7 +2208,7 @@
                 }
             ],
             "BodyText": "",
-            "ActivatedByPageId": "2230"
+            "ActivatedByPageId": "2100,2110,2120,2130,2140,2150,2170,2210,2230"
         },
         {
             "PageId": "2250",
@@ -2315,7 +2315,7 @@
                 }
             ],
             "BodyText": "",
-            "ActivatedByPageId": "2240"
+            "ActivatedByPageId": "2100,2110,2120,2130,2140,2150,2170,2210,2230,2240"
         },
         {
             "PageId": "2260",
