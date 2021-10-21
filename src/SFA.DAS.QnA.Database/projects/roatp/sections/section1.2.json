@@ -77,48 +77,14 @@
             "PageId": "21",
             "SequenceId": null,
             "SectionId": null,
-            "Title": "Enter your organisation's ultimate parent company details",
-            "LinkTitle": "Enter your organisation's ultimate parent company details",
+            "Title": "Enter your organisation's UK ultimate parent company details",
+            "LinkTitle": "Enter your organisation's UK ultimate parent company details",
             "InfoText": "",
             "Questions": [
                 {
-                    "QuestionId": "YO-21",
-                    "QuestionTag": null,
-                    "Label": "Company number",
-                    "ShortLabel": "",
-                    "QuestionBodyText": "",
-                    "Hint": "",
-                    "Input": {
-                        "Type": "Text",
-                        "InputClasses": "app-uppercase govuk-input--width-10",
-                        "Validations": [
-                            {
-                                "Name": "Required",
-                                "Value": "",
-                                "ErrorMessage": "Enter a company number"
-                            },
-                            {
-                                "Name": "MinLength",
-                                "Value": "8",
-                                "ErrorMessage": "Enter a company number using 8 characters"
-                            },
-                            {
-                                "Name": "MaxLength",
-                                "Value": "8",
-                                "ErrorMessage": "Enter a company number using 8 characters"
-                            },
-                            {
-                                "Name": "Regex",
-                                "Value": "[A-Za-z0-9]{2}[0-9]{4}[A-Za-z0-9]{2}",
-                                "ErrorMessage": "Enter a valid company number"
-                            }
-                        ]
-                    }
-                },
-                {
                     "QuestionId": "YO-22",
                     "QuestionTag": null,
-                    "Label": "Company name",
+                    "Label": "Organisation name",
                     "ShortLabel": "",
                     "QuestionBodyText": "",
                     "Hint": "",
@@ -129,19 +95,32 @@
                             {
                                 "Name": "Required",
                                 "Value": "",
-                                "ErrorMessage": "Enter a company name"
+                                "ErrorMessage": "Enter an organisation name"
                             },
                             {
                                 "Name": "MinLength",
                                 "Value": "2",
-                                "ErrorMessage": "Enter a company name using 2 characters or more"
+                                "ErrorMessage": "Enter an organisation name using 2 characters or more"
                             },
                             {
                                 "Name": "MaxLength",
                                 "Value": "200",
-                                "ErrorMessage": "Enter a company number using 200 characters or less"
+                                "ErrorMessage": "Enter an organisation name using 200 characters or less"
                             }
                         ]
+                    }
+                },
+				{
+                    "QuestionId": "YO-21",
+                    "QuestionTag": null,
+                    "Label": "",
+                    "ShortLabel": "",
+                    "QuestionBodyText": "<p class='govuk-body'>If your UK ultimate parent company is a registered company or charity, please tell us their company or charity number. </p><p class='govuk-body'>If you're not sure of the number, you can search:<ul class='govuk-list govuk-list--bullet'><li><a href='https://beta.companieshouse.gov.uk/' class='govuk-link' target='_blank'>the Companies House register (opens in a new window or tab)</li><li><a href='https://register-of-charities.charitycommission.gov.uk/charity-search' class='govuk-link' target='_blank'>the Charity Commission's register (opens in a new window or tab)</a></li></ul></p><label class='govuk-label' for='YO-21'>Company or charity number</label>",
+                    "Hint": "",
+                    "Input": {
+                        "Type": "Text",
+                        "InputClasses": "app-uppercase govuk-input--width-10",
+                        "Validations": []
                     }
                 }
             ],
@@ -165,7 +144,7 @@
                 }
             ],
             "ActivatedByPageId": "20",
-            "BodyText": "<p class='govuk-body'>If you're not sure, <a href='https://beta.companieshouse.gov.uk/' class='govuk-link' target='_blank'>search for your UK ultimate parent company (opens in a new window or tab)</a>.</p>"
+            "BodyText": ""
         },
         {
             "PageId": "30",
