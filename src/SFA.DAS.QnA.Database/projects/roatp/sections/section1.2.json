@@ -250,12 +250,12 @@
                                                 },
                                                 {
                                                     "Name": "MaxLength",
-                                                    "Value": "100",
-                                                    "ErrorMessage": "Enter a website using 100 characters or less"
-                                                },
+                                                    "Value": "200",
+                                                    "ErrorMessage": "Enter a website using 200 characters or less"
+                                                }, 
                                                 {
-                                                    "Name": "Regex",
-                                                    "Value": "^(http:\\/\\/www\\.|https:\\/\\/www\\.|http:\\/\\/|https:\\/\\/)?[a-z0-9]+([\\-\\.]{1}[a-z0-9]+)*\\.[a-z]{2,13}(:[0-9]{1,5})?(\\/.*)?$",
+                                                    "Name": "Url",
+                                                    "Value": "",
                                                     "ErrorMessage": "Enter a website using the correct format. For example, www.company.co.uk"
                                                 }
                                             ]
