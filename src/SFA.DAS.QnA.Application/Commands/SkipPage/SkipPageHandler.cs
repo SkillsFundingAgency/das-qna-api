@@ -42,7 +42,7 @@ namespace SFA.DAS.QnA.Application.Commands.SkipPage
 
                 return new HandlerResponse<SkipPageResponse>(new SkipPageResponse(nextAction.Action, nextAction.ReturnId));
             }
-            catch (ApplicationException)
+            catch (Exception ex) when (ex is ApplicationException || ex is NullReferenceException)
             {
                 if (page.Next is null || !page.Next.Any())
                 {
