@@ -66,7 +66,7 @@
                 },
                 {
                     "Action": "NextPage",
-                    "ReturnId": "90",
+                    "ReturnId": "80",
                     "Conditions": [
                         {
                             "QuestionTag": "CCTrusteeManualEntry",
@@ -128,8 +128,8 @@
             "PageOfAnswers": [],
             "Next": [
                 {
-                    "Action": "ReturnToSection",
-                    "ReturnId": "1.4",
+                    "Action": "NextPage",
+                    "ReturnId": "86",
                     "Conditions": []
                 }
             ],
@@ -146,7 +146,7 @@
             ]
         },
         {
-            "PageId": "90",
+            "PageId": "86",
             "SequenceId": null,
             "SectionId": null,
             "Title": "Confirm who's in control",
@@ -154,11 +154,11 @@
             "InfoText": "",
             "Questions": [
                 {
-                    "QuestionId": "YO-90",
-                    "QuestionTag": "AddTrustees",
-                    "Label": "Confirm who's in control",
+                    "QuestionId": "YO-86",
+                    "QuestionTag": "ConfirmTrusteesDob",
+                    "Label": "",
                     "ShortLabel": "",
-                    "QuestionBodyText": "Add Trustees",
+                    "QuestionBodyText": "",
                     "Hint": "",
                     "Input": {
                         "Type": "Hidden",
@@ -175,7 +175,7 @@
                 }
             ],
             "AllowMultipleAnswers": false,
-            "Active": false,
+            "Active": true,
             "BodyText": "",
             "NotRequiredConditions": [
                 {

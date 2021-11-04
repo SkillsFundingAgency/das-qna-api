@@ -84,8 +84,8 @@
                                 "ErrorMessage": "Enter a website link in the correct format, like www.example.com/complaintspolicy"
                             }, {
                                 "Name": "MaxLength",
-                                "Value": "100",
-                                "ErrorMessage": "Enter a website link using 100 characters or less"
+                                "Value": "200",
+                                "ErrorMessage": "Enter a website link using 200 characters or less"
                             }
                         ]
                     }
