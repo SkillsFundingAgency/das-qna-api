@@ -382,6 +382,12 @@
                     "IsOneOf": [
                         "3"
                     ]
+                },
+				 {
+                    "Field": "OfstedFESkills",
+                    "IsOneOf": [
+                        "No"
+                    ]
                 }
             ],
             "ActivatedByPageId": "235,240,250,260",
@@ -497,7 +503,7 @@
                     ]
                 }
             ],
-            "ActivatedByPageId": "235,240,250,260,270,300",
+            "ActivatedByPageId": "260,270,300",
             "BodyText": ""
         },
         {
@@ -570,7 +576,7 @@
                     ]
                 }
             ],
-            "ActivatedByPageId": "235,240,250,260",
+            "ActivatedByPageId": "260",
             "BodyText": ""
         },
         {
@@ -643,7 +649,7 @@
                     ]
                 }
             ],
-            "ActivatedByPageId": "235,240,250,260,290",
+            "ActivatedByPageId": "290",
             "BodyText": ""
         },
         {
@@ -716,7 +722,7 @@
                     ]
                 }
             ],
-            "ActivatedByPageId": "235,240,250,260,290,292",
+            "ActivatedByPageId": "292",
             "BodyText": ""
         },
         {
@@ -829,7 +835,7 @@
                     ]
                 }
             ],
-            "ActivatedByPageId": "235,240,250,260,270",
+            "ActivatedByPageId": "260,270",
             "BodyText": ""
         },
         {
@@ -942,7 +948,7 @@
                     ]
                 }
             ],
-            "ActivatedByPageId": "235,240,250,260,270",
+            "ActivatedByPageId": "270",
             "BodyText": ""
         },
         {
@@ -1027,7 +1033,7 @@
                     ]
                 }
             ],
-            "ActivatedByPageId": "235,240,250,260,270,280,300,301",
+            "ActivatedByPageId": "280,300,301",
             "BodyText": ""
         },
         {
@@ -1112,7 +1118,7 @@
                     ]
                 }
             ],
-            "ActivatedByPageId": "235,240,250,260,270,280,300,301",
+            "ActivatedByPageId": "280,300,301",
             "BodyText": ""
         },
         {
@@ -1201,7 +1207,7 @@
                     ]
                 }
             ],
-            "ActivatedByPageId": "235,240,250,260,270,280,310,330,340",
+            "ActivatedByPageId": "310,340",
             "BodyText": ""
         },
         {
@@ -1293,7 +1299,7 @@
                     ]
                 }
             ],
-            "ActivatedByPageId": "235,240,250,260,270,280,310",
+            "ActivatedByPageId": "310",
             "BodyText": ""
         },
         {
@@ -1378,7 +1384,7 @@
                     ]
                 }
             ],
-            "ActivatedByPageId": "235,240,250,260,270,280,310,330",
+            "ActivatedByPageId": "330",
             "BodyText": ""
         },
         {
