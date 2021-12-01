@@ -1538,7 +1538,7 @@
                     ]
                 }
             ],
-            "ActivatedByPageId": "235,240,250,260,270,280,300,301,311",
+            "ActivatedByPageId": "311",
             "BodyText": "<p class='govuk-body'>This is because your organisation got an 'inadequate' grade within the last 3 years.</p><p class='govuk-body'><a href='https://www.gov.uk' class='govuk-link'>Back to GOV.UK</a></p>"
         },
         {
@@ -1561,7 +1561,7 @@
                     ]
                 }
             ],
-            "ActivatedByPageId": "235,240,250,260,290,292,294",
+            "ActivatedByPageId": "294",
             "BodyText": "<p class='govuk-body'>This is because your organisation got an 'insufficient progress' grade in its most recent monitoring visit within the last 18 months.</p><p class='govuk-body'><a href='https://www.gov.uk' class='govuk-link'>Back to GOV.UK</a></p>"
         }
     ]
