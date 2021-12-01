@@ -503,7 +503,7 @@
                     ]
                 }
             ],
-            "ActivatedByPageId": "260,270,300",
+            "ActivatedByPageId": "270,300",
             "BodyText": ""
         },
         {
@@ -833,9 +833,27 @@
                     "IsOneOf": [
                         "Yes"
                     ]
+                },
+				{
+                    "Field": "OfstedApprenticeshipGrade",
+                    "IsOneOf": [
+                        "No"
+                    ]
+                },
+				{
+                    "Field": "OrganisationOfSFundedMS",
+                    "IsOneOf": [
+                        "Yes"
+                    ]
+                },
+				{
+                    "Field": "OrganisationOfSFundedEmp",
+                    "IsOneOf": [
+                        "Yes"
+                    ]
                 }
             ],
-            "ActivatedByPageId": "260,270",
+            "ActivatedByPageId": "235,240,260,270",
             "BodyText": ""
         },
         {
@@ -946,6 +964,12 @@
                     "IsOneOf": [
                         "Yes"
                     ]
+                },
+				{
+                    "Field": "OfstedApprenticeshipGrade",
+                    "IsOneOf": [
+                        "No"
+                    ]
                 }
             ],
             "ActivatedByPageId": "270",
@@ -1033,7 +1057,7 @@
                     ]
                 }
             ],
-            "ActivatedByPageId": "280,300,301",
+            "ActivatedByPageId": "235,240,260,270,280,300,301",
             "BodyText": ""
         },
         {
@@ -1207,7 +1231,7 @@
                     ]
                 }
             ],
-            "ActivatedByPageId": "310,340",
+            "ActivatedByPageId": "235,240,310,340",
             "BodyText": ""
         },
         {
@@ -1299,7 +1323,7 @@
                     ]
                 }
             ],
-            "ActivatedByPageId": "310",
+            "ActivatedByPageId": "235,240,310",
             "BodyText": ""
         },
         {
@@ -1384,7 +1408,7 @@
                     ]
                 }
             ],
-            "ActivatedByPageId": "330",
+            "ActivatedByPageId": "235,240,330",
             "BodyText": ""
         },
         {
