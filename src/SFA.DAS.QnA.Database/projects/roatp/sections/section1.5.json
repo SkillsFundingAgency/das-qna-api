@@ -1229,9 +1229,21 @@
                     "IsOneOf": [
                         "No"
                     ]
+                },
+                {
+                    "Field": "HadShortInspection",
+                    "IsOneOf": [
+                        "No"
+                    ]
+                },
+                {
+                    "Field": "MaintainedShortInspectionGrade",
+                    "IsOneOf": [
+                        "No"
+                    ]
                 }
             ],
-            "ActivatedByPageId": "235,240,310,340",
+            "ActivatedByPageId": "235,240,260,270,280,300,301,310,330,340",
             "BodyText": ""
         },
         {
