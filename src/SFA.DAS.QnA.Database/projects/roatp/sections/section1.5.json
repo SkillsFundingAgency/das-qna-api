@@ -1231,7 +1231,7 @@
                     ]
                 }
             ],
-            "ActivatedByPageId": "240,235,310,340",
+            "ActivatedByPageId": "235,240,310,340",
             "BodyText": ""
         },
         {
@@ -1321,9 +1321,15 @@
                     "IsOneOf": [
                         "Yes"
                     ]
+                },
+                {
+                    "Field": "OfstedGradeLast3Years",
+                    "IsOneOf": [
+                        "Yes"
+                    ]
                 }
             ],
-            "ActivatedByPageId": "235,240,310",
+            "ActivatedByPageId": "235,240,260,270,280,300,301,310",
             "BodyText": ""
         },
         {
