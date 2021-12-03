@@ -1412,9 +1412,21 @@
                     "IsOneOf": [
                         "Yes"
                     ]
-                }
+                },
+                {
+                    "Field": "OfstedGradeLast3Years",
+                    "IsOneOf": [
+                        "Yes"
+                    ]
+                },
+                {
+                    "Field": "HadShortInspection",
+                    "IsOneOf": [
+                        "No"
+                    ]
+                }	
             ],
-            "ActivatedByPageId": "235,240,330",
+            "ActivatedByPageId": "235,240,260,270,280,300,301,310,330",
             "BodyText": ""
         },
         {
