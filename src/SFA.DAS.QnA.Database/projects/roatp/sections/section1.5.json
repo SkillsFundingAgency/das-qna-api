@@ -216,9 +216,16 @@
                     "IsOneOf": [
                         "3"
                     ]
+                },
+				{
+                    "Field": "ITTAccredited",
+                    "IsOneOf": [
+                        "No"
+                    ]
                 }
+				
             ],
-            "ActivatedByPageId": "235,240",
+            "ActivatedByPageId": "240",
             "BodyText": ""
         },
         {
