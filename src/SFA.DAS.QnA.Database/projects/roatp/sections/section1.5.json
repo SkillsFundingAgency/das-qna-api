@@ -289,6 +289,12 @@
                     "IsOneOf": [
                         "3"
                     ]
+                },
+				{
+                    "Field": "ITTPGTA",
+                    "IsOneOf": [
+                        "Yes"
+                    ]
                 }
             ],
             "ActivatedByPageId": "235,240,250",
@@ -383,10 +389,17 @@
                         "3"
                     ]
                 },
+			
 				 {
                     "Field": "OfstedFESkills",
                     "IsOneOf": [
                         "No"
+                    ]
+                },
+				{
+                    "Field": "ITTPGTA",
+                    "IsOneOf": [
+                        "Yes"
                     ]
                 }
             ],
@@ -984,7 +997,7 @@
                     ]
                 }
             ],
-            "ActivatedByPageId": "270",
+            "ActivatedByPageId": "250,270",
             "BodyText": ""
         },
         {
@@ -1069,7 +1082,7 @@
                     ]
                 }
             ],
-            "ActivatedByPageId": "235,240,260,270,280,300,301",
+            "ActivatedByPageId": "235,240,250,260,270,280,300,301",
             "BodyText": ""
         },
         {
@@ -1255,7 +1268,7 @@
                     ]
                 }
             ],
-            "ActivatedByPageId": "235,240,260,270,280,300,301,310,330,340",
+            "ActivatedByPageId": "235,240,250,260,270,280,300,301,310,330,340",
             "BodyText": ""
         },
         {
@@ -1353,7 +1366,7 @@
                     ]
                 }
             ],
-            "ActivatedByPageId": "235,240,260,270,280,300,301,310",
+            "ActivatedByPageId": "235,240,250,260,270,280,300,301,310",
             "BodyText": ""
         },
         {
@@ -1450,7 +1463,7 @@
                     ]
                 }	
             ],
-            "ActivatedByPageId": "235,240,260,270,280,300,301,310,330",
+            "ActivatedByPageId": "235,240,250,260,270,280,300,301,310,330",
             "BodyText": ""
         },
         {
