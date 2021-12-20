@@ -521,7 +521,43 @@
                     "IsOneOf": [
                         "Yes"
                     ]
-                }
+                },
+                {
+                    "Field": "OfstedApprenticeshipsGrade",
+                    "IsOneOf": [
+                        "Oustanding"
+                    ]
+                },
+                {
+                    "Field": "OfstedApprenticeshipsGrade",
+                    "IsOneOf": [
+                        "Good"
+                    ]
+                },
+                {
+                    "Field": "OfstedApprenticeshipsGrade",
+                    "IsOneOf": [
+                        "Inadequate"
+                    ]
+                },
+                {
+                    "Field": "OfstedApprenticeshipsGradeOFS",
+                    "IsOneOf": [
+                        "Oustanding"
+                    ]
+                },
+                {
+                    "Field": "OfstedApprenticeshipsGradeOFS",
+                    "IsOneOf": [
+                        "Good"
+                    ]
+                },
+                {
+                    "Field": "OfstedApprenticeshipsGradeOFS",
+                    "IsOneOf": [
+                        "Inadequate"
+                    ]
+                }				
             ],
             "ActivatedByPageId": "270,300",
             "BodyText": ""
@@ -712,7 +748,7 @@
             "Questions": [
                 {
                     "QuestionId": "YO-294",
-                    "QuestionTag": null,
+                    "QuestionTag": "MostRecent18Months",
                     "Label": "Was the most recent monitoring visit within the last 18 months?",
                     "ShortLabel": "",
                     "QuestionBodyText": "",
@@ -795,7 +831,6 @@
                         "No"
                     ]
                 }
-				
             ],
             "ActivatedByPageId": "240,250,260,290,292",
             "BodyText": ""
@@ -1130,6 +1165,42 @@
                     "IsOneOf": [
                         "Yes"
                     ]
+                },
+                {
+                    "Field": "OfstedOEGrade",
+                    "IsOneOf": [
+                        "Inadequate"
+                    ]
+                },
+                {
+                    "Field": "OfstedOEGrade",
+                    "IsOneOf": [
+                        "Requires improvement"
+                    ]
+                },
+                {
+                    "Field": "OfstedApprenticeshipsGrade",
+                    "IsOneOf": [
+                        "Inadequate"
+                    ]
+                },
+                {
+                    "Field": "OfstedApprenticeshipsGradeOFS",
+                    "IsOneOf": [
+                        "Inadequate"
+                    ]
+                },
+                {
+                    "Field": "OfstedOEGrade",
+                    "IsOneOf": [
+                        "Inadequate"
+                    ]
+                },
+                {
+                    "Field": "OfstedOEGrade",
+                    "IsOneOf": [
+                        "Requires improvement"
+                    ]
                 }
             ],
             "ActivatedByPageId": "235,240,250,260,270,280,300,301",
@@ -1215,9 +1286,51 @@
                     "IsOneOf": [
                         "Yes"
                     ]
+                },
+                {
+                    "Field": "OfstedApprenticeshipsGrade",
+                    "IsOneOf": [
+                        "Oustanding"
+                    ]
+                },
+                {
+                    "Field": "OfstedApprenticeshipsGradeOFS",
+                    "IsOneOf": [
+                        "Oustanding"
+                    ]
+                },
+                {
+                    "Field": "OfstedApprenticeshipsGrade",
+                    "IsOneOf": [
+                        "Good"
+                    ]
+                },
+                {
+                    "Field": "OfstedApprenticeshipsGradeOFS",
+                    "IsOneOf": [
+                        "Good"
+                    ]
+                },
+                {
+                    "Field": "OfstedOEGrade",
+                    "IsOneOf": [
+                        "Oustanding"
+                    ]
+                },
+                {
+                    "Field": "OfstedOEGrade",
+                    "IsOneOf": [
+                        "Good"
+                    ]
+                },
+                {
+                    "Field": "OfstedOEGrade",
+                    "IsOneOf": [
+                        "Requires improvement"
+                    ]
                 }
             ],
-            "ActivatedByPageId": "280,300,301",
+            "ActivatedByPageId": "235,240,250,260,280,300,301",
             "BodyText": ""
         },
         {
@@ -1293,6 +1406,18 @@
                         "Sixth Form College"
                     ]
                 },
+				 {
+                    "Field": "ApplyProviderRoute",
+                    "IsOneOf": [
+                        "3"
+                    ]
+                },
+                {
+                    "Field": "OfstedFESkills",
+                    "IsOneOf": [
+                        "No"
+                    ]
+                },
                 {
                     "Field": "ITTPGTA",
                     "IsOneOf": [
@@ -1300,9 +1425,33 @@
                     ]
                 },
                 {
-                    "Field": "OfstedFESkills",
+                    "Field": "OfstedOEGrade",
                     "IsOneOf": [
-                        "No"
+                        "Inadequate"
+                    ]
+                },
+                {
+                    "Field": "OfstedOEGrade",
+                    "IsOneOf": [
+                        "Requires improvement"
+                    ]
+                },
+                {
+                    "Field": "OfstedApprenticeshipsGrade",
+                    "IsOneOf": [
+                        "Inadequate"
+                    ]
+                },
+                {
+                    "Field": "OfstedApprenticeshipsGradeOFS",
+                    "IsOneOf": [
+                        "Inadequate"
+                    ]
+                },
+                {
+                    "Field": "OfstedOEGrade",
+                    "IsOneOf": [
+                        "Requires improvement"
                     ]
                 },
                 {
@@ -1414,6 +1563,42 @@
                     "IsOneOf": [
                         "Yes"
                     ]
+                },
+                {
+                    "Field": "OfstedOEGrade",
+                    "IsOneOf": [
+                        "Inadequate"
+                    ]
+                },
+                {
+                    "Field": "OfstedOEGrade",
+                    "IsOneOf": [
+                        "Requires improvement"
+                    ]
+                },
+                {
+                    "Field": "OfstedApprenticeshipsGrade",
+                    "IsOneOf": [
+                        "Inadequate"
+                    ]
+                },
+                {
+                    "Field": "OfstedApprenticeshipsGradeOFS",
+                    "IsOneOf": [
+                        "Inadequate"
+                    ]
+                },
+                {
+                    "Field": "OfstedOEGrade",
+                    "IsOneOf": [
+                        "Inadequate"
+                    ]
+                },
+                {
+                    "Field": "OfstedOEGrade",
+                    "IsOneOf": [
+                        "Requires improvement"
+                    ]
                 }
             ],
             "ActivatedByPageId": "235,240,250,260,270,280,300,301,310",
@@ -1511,7 +1696,43 @@
                     "IsOneOf": [
                         "No"
                     ]
-                }	
+                },
+                {
+                    "Field": "OfstedOEGrade",
+                    "IsOneOf": [
+                        "Inadequate"
+                    ]
+                },
+                {
+                    "Field": "OfstedOEGrade",
+                    "IsOneOf": [
+                        "Requires improvement"
+                    ]
+                },
+                {
+                    "Field": "OfstedApprenticeshipsGrade",
+                    "IsOneOf": [
+                        "Inadequate"
+                    ]
+                },
+                {
+                    "Field": "OfstedApprenticeshipsGradeOFS",
+                    "IsOneOf": [
+                        "Inadequate"
+                    ]
+                },
+                {
+                    "Field": "OfstedOEGrade",
+                    "IsOneOf": [
+                        "Inadequate"
+                    ]
+                },
+                {
+                    "Field": "OfstedOEGrade",
+                    "IsOneOf": [
+                        "Requires improvement"
+                    ]
+                }
             ],
             "ActivatedByPageId": "235,240,250,260,270,280,300,301,310,330",
             "BodyText": ""
@@ -1671,9 +1892,63 @@
                     "IsOneOf": [
                         "Yes"
                     ]
+                },
+                {
+                    "Field": "OfstedFESkills",
+                    "IsOneOf": [
+                        "No"
+                    ]
+                },
+                {
+                    "Field": "OfstedApprenticeshipsGrade",
+                    "IsOneOf": [
+                        "Oustanding"
+                    ]
+                },
+                {
+                    "Field": "OfstedApprenticeshipsGradeOFS",
+                    "IsOneOf": [
+                        "Oustanding"
+                    ]
+                },
+                {
+                    "Field": "OfstedApprenticeshipsGrade",
+                    "IsOneOf": [
+                        "Good"
+                    ]
+                },
+                {
+                    "Field": "OfstedApprenticeshipsGradeOFS",
+                    "IsOneOf": [
+                        "Good"
+                    ]
+                },
+                {
+                    "Field": "OfstedOEGrade",
+                    "IsOneOf": [
+                        "Oustanding"
+                    ]
+                },
+                {
+                    "Field": "OfstedOEGrade",
+                    "IsOneOf": [
+                        "Good"
+                    ]
+                },
+                {
+                    "Field": "OfstedOEGrade",
+                    "IsOneOf": [
+                        "Requires improvement"
+                    ]
+                },
+                {
+                    "Field": "OfstedGradeLast3Years",
+                    "IsOneOf": [
+                        "No"
+                    ]
                 }
             ],
-            "ActivatedByPageId": "311",
+            "ActivatedByPageId": "235,240,250,260,280,300,301,311",
             "BodyText": "<p class='govuk-body'>This is because your organisation got an 'inadequate' grade within the last 3 years.</p><p class='govuk-body'><a href='https://www.gov.uk' class='govuk-link'>Back to GOV.UK</a></p>"
         },
         {
@@ -1689,10 +1964,40 @@
             "AllowMultipleAnswers": false,
             "Active": false,
             "NotRequiredConditions": [
-                {
+				 {
                     "Field": "ApplyProviderRoute",
                     "IsOneOf": [
                         "3"
+                    ]
+                },
+                {
+                    "Field": "OfstedFESkills",
+                    "IsOneOf": [
+                        "Yes"
+                    ]
+                },
+                {
+                    "Field": "ITTPGTA",
+                    "IsOneOf": [
+                        "Yes"
+                    ]
+                },
+                {
+                    "Field": "MonitoringVisit",
+                    "IsOneOf": [
+                        "No"
+                    ]
+                },
+                {
+                    "Field": "TwoConsecutiveVisits",
+                    "IsOneOf": [
+                        "No"
+                    ]
+                },
+                {
+                    "Field": "MostRecent18Months",
+                    "IsOneOf": [
+                        "No"
                     ]
                 }
             ],
