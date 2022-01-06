@@ -295,12 +295,6 @@
 				"SequenceNo": 9,
 				"SectionNo": 3,
 				"name": "Post application tasks"
-			},
-			{
-				"id": "section99.1",
-				"SequenceNo": 99,
-				"SectionNo": 1,
-				"name": "Conditions of acceptance"
 			}
 		]
 	}]
