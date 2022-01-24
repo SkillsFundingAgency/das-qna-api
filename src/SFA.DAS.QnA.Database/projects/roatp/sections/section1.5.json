@@ -1098,7 +1098,7 @@
                     "QuestionTag": "OfstedGradeLast3Years",
                     "Label": "Did your organisation get this grade within the last 3 years?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body'>If you're not sure, <a href='https://reports.ofsted.gov.uk/' class='govuk-link' target='blank'>check your organisation's Ofsted inspection report  (opens in a new window or tab)</a>.</p>",
+                    "QuestionBodyText": "<p class='govuk-body'>This is your last full inspection grade, not a grade received for a monitoring visit.</p><p class='govuk-body'>If you're not sure, <a href='https://reports.ofsted.gov.uk/' class='govuk-link' target='blank'>check your organisation's Ofsted inspection report  (opens in a new window or tab)</a>.</p>",
                     "Hint": "",
                     "Input": {
                         "Type": "Radio",
@@ -1219,7 +1219,7 @@
                     "QuestionTag": "OfstedGradeLast3Years",
                     "Label": "Did your organisation get this grade within the last 3 years?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body'>If you're not sure, <a href='https://reports.ofsted.gov.uk/' class='govuk-link' target='blank'>check your organisation's Ofsted inspection report  (opens in a new window or tab)</a>.</p>",
+                    "QuestionBodyText": "<p class='govuk-body'>This is your last full inspection grade, not a grade received for a monitoring visit.</p><p class='govuk-body'>If you're not sure, <a href='https://reports.ofsted.gov.uk/' class='govuk-link' target='blank'>check your organisation's Ofsted inspection report  (opens in a new window or tab)</a>.</p>",
                     "Hint": "",
                     "Input": {
                         "Type": "Radio",
