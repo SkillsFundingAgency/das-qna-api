@@ -5,9 +5,6 @@ trigger:
     include:
       - "*"
 
-variables:
-  buildPlatform: 'anycpu'
-
 resources:
   repositories:
   - repository: das-platform-building-blocks
