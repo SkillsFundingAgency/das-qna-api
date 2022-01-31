@@ -5,13 +5,7 @@ trigger:
     include:
       - "*"
 
-pr: none
-
-workspace:
-    clean: all
-
 variables:
-  buildConfiguration: 'release'
   buildPlatform: 'anycpu'
 
 resources:
