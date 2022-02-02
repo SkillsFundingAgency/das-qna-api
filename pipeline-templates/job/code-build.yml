@@ -10,7 +10,6 @@ jobs:
       clean: all
   variables:
   - group: BUILD Management Resources
-  - group: ESFA - SonarCloud
   - name: BuildConfiguration
     value: release
 
