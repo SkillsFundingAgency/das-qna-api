@@ -13,12 +13,6 @@ Post-Deployment Script Template
 -- deploy QnA Workflow Definitions for all projects
 :r .\projects\Inject-projects.sql
 
--- Deploy any One Off Scripts
--- NOTE: Remember to make these idempotent and remove when not required any more
-:r .\OneOffScripts\APR-2654.sql
--- END
-
-
 -- Finally rebuild indexes on all tables, helps keep fragmentation down
 ALTER INDEX ALL ON [Projects] REBUILD;
 ALTER INDEX ALL ON [Workflows] REBUILD;
