@@ -69,7 +69,6 @@
     <Folder Include="projects\epaoall\sections" />
     <Folder Include="projects\roatp" />
     <Folder Include="projects\roatp\sections" />
-    <Folder Include="OneOffScripts" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Tables\Applications.sql" />
