@@ -1255,13 +1255,6 @@
                     ]
                 },
                 {
-                    "Field": "OrganisationSchool",
-                    "IsOneOf": [
-                        "Local Education Authority (LEA) school",
-                        "None of the above"
-                    ]
-                },
-                {
                     "Field": "ITTPGTA",
                     "IsOneOf": [
                         "Yes"
