@@ -64,7 +64,7 @@ namespace SFA.DAS.QnA.Api
             var serviceProvider = services.BuildServiceProvider();
             var config = serviceProvider.GetService<IOptions<QnAConfig>>();
 
-            IdentityModelEventSource.ShowPII = true; 
+            IdentityModelEventSource.ShowPII = false; 
 
             services.AddApiAuthorization(_hostingEnvironment);
             services.AddApiAuthentication(serviceProvider);
