@@ -63,7 +63,6 @@ namespace SFA.DAS.QnA.Api
             services.Configure<FileStorageConfig>(Configuration.GetSection("FileStorage"));
             var serviceProvider = services.BuildServiceProvider();
             var config = serviceProvider.GetService<IOptions<QnAConfig>>();
-
             IdentityModelEventSource.ShowPII = false; 
 
             services.AddApiAuthorization(_hostingEnvironment);
