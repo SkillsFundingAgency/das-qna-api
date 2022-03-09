@@ -12,6 +12,7 @@ using SFA.DAS.QnA.Api.Types;
 using SFA.DAS.QnA.Api.Types.Page;
 using SFA.DAS.QnA.Application.Commands.AddPageAnswer;
 using SFA.DAS.QnA.Application.Commands.RemovePageAnswer;
+using SFA.DAS.QnA.Application.Commands.ResetCompletePages;
 using SFA.DAS.QnA.Application.Commands.SetPageAnswers;
 using SFA.DAS.QnA.Application.Commands.ResetPageAnswers;
 using SFA.DAS.QnA.Application.Commands.SkipPage;
@@ -322,6 +323,21 @@ namespace SFA.DAS.QnA.Api.Controllers
             _logger.LogInformation($"Response from SkipPageBySectionNo: {JsonConvert.SerializeObject(getNextActionResponse.Value)}");
 
             return getNextActionResponse.Value;
+        }
+
+
+        /// <summary>
+        ///     Sets pages in a section to complete=false, based on list of pageIdsExcluded passed in
+        /// </summary>
+        /// <returns>An object describing validity / next steps</returns>
+        /// <response code="200">Returns the response</response>
+        [HttpPost("{applicationId}/sequences/{sequenceNo}/sections/{sectionNo}/reset-complete")]
+        [ProducesResponseType(200)]
+        public async Task SetPagesToIncomplete(Guid applicationId, int sequenceNo, int sectionNo, [FromBody] List<string> pageIdsExcluded)
+        {
+            // APR-2877
+            _logger.LogInformation($"Pages sent to reset-complete to false: {JsonConvert.SerializeObject(pageIdsExcluded)} in SetPagesToIncomplete");
+            await _mediator.Send(new ResetPagesToIncompleteRequest(applicationId, sequenceNo, sectionNo, pageIdsExcluded), CancellationToken.None);
         }
     }
 }

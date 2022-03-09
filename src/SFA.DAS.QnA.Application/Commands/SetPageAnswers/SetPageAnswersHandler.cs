@@ -1,3 +1,4 @@
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
@@ -34,6 +35,7 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
             
             SetStatusOfNextPagesBasedOnDeemedNextActions(section, request.PageId, nextAction, checkboxListAllNexts);
 
+           
             await _dataContext.SaveChangesAsync(cancellationToken);
             
             return new HandlerResponse<SetPageAnswersResponse>(new SetPageAnswersResponse(nextAction.Action, nextAction.ReturnId));

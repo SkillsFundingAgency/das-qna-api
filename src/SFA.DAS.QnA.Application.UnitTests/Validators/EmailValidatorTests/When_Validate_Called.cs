@@ -32,6 +32,7 @@ namespace SFA.DAS.QnA.Application.UnitTests.Validators.EmailValidatorTests
         [TestCase("test-test@123test.co.uk", true)]
         [TestCase("test.test@123test.education", true)]
         [TestCase("test-test@123test.education", true)]
+        [TestCase("test-test@20-20test.education", true)]
         public void Then_correct_errors_are_returned(string input, bool isValid)
         {
             var validator = new EmailValidator
