@@ -1380,31 +1380,6 @@
             "AllowMultipleAnswers": false,
             "Active": false,
             "NotRequiredConditions": [
-                {
-                    "Field": "OrganisationEducationInstitute",
-                    "IsOneOf": [
-                        "General Further Education College",
-                        "Higher Education Institute",
-                        "National College",
-                        "Sixth Form College"
-                    ]
-                },
-                {
-                    "Field": "OrganisationSchool",
-                    "IsOneOf": [
-                        "Local Education Authority (LEA) school",
-                        "None of the above"
-                    ]
-                },
-                {
-                    "Field": "OrganisationEducationInstitute",
-                    "IsOneOf": [
-                        "General Further Education College",
-                        "Higher Education Institute",
-                        "National College",
-                        "Sixth Form College"
-                    ]
-                },
 				 {
                     "Field": "ApplyProviderRoute",
                     "IsOneOf": [
@@ -1542,13 +1517,6 @@
                     "Field": "OfstedFESkills",
                     "IsOneOf": [
                         "No"
-                    ]
-                },
-                {
-                    "Field": "OrganisationSchool",
-                    "IsOneOf": [
-                        "Local Education Authority (LEA) school",
-                        "None of the above"
                     ]
                 },
                 {
