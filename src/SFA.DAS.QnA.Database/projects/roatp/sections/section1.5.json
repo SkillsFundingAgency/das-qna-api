@@ -1164,31 +1164,6 @@
             "Active": false,
             "NotRequiredConditions": [
                 {
-                    "Field": "OrganisationEducationInstitute",
-                    "IsOneOf": [
-                        "General Further Education College",
-                        "Higher Education Institute",
-                        "National College",
-                        "Sixth Form College"
-                    ]
-                },
-                {
-                    "Field": "OrganisationSchool",
-                    "IsOneOf": [
-                        "Local Education Authority (LEA) school",
-                        "None of the above"
-                    ]
-                },
-                {
-                    "Field": "OrganisationEducationInstitute",
-                    "IsOneOf": [
-                        "General Further Education College",
-                        "Higher Education Institute",
-                        "National College",
-                        "Sixth Form College"
-                    ]
-                },
-                {
                     "Field": "ITTPGTA",
                     "IsOneOf": [
                         "Yes"
@@ -1277,13 +1252,6 @@
                     "Field": "OfstedFESkills",
                     "IsOneOf": [
                         "No"
-                    ]
-                },
-                {
-                    "Field": "OrganisationSchool",
-                    "IsOneOf": [
-                        "Local Education Authority (LEA) school",
-                        "None of the above"
                     ]
                 },
                 {
