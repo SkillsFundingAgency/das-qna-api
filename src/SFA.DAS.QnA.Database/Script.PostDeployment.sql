@@ -12,12 +12,3 @@ Post-Deployment Script Template
 
 -- deploy QnA Workflow Definitions for all projects
 :r .\projects\Inject-projects.sql
-
--- Finally rebuild indexes on all tables, helps keep fragmentation down
-ALTER INDEX ALL ON [Projects] REBUILD;
-ALTER INDEX ALL ON [Workflows] REBUILD;
-ALTER INDEX ALL ON [WorkflowSequences] REBUILD;
-ALTER INDEX ALL ON [WorkflowSections] REBUILD;
-ALTER INDEX ALL ON [Applications] REBUILD;
-ALTER INDEX ALL ON [ApplicationSequences] REBUILD;
-ALTER INDEX ALL ON [ApplicationSections] REBUILD;
