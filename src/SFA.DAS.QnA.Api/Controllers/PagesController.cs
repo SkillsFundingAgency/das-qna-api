@@ -14,7 +14,7 @@ using SFA.DAS.QnA.Application.Commands.AddPageAnswer;
 using SFA.DAS.QnA.Application.Commands.RemovePageAnswer;
 using SFA.DAS.QnA.Application.Commands.SetPageAnswers;
 using SFA.DAS.QnA.Application.Commands.ResetPageAnswers;
-using SFA.DAS.QnA.Application.Commands.ResetPagesToInomplete;
+using SFA.DAS.QnA.Application.Commands.ResetPagesToIncomplete;
 using SFA.DAS.QnA.Application.Commands.SkipPage;
 using SFA.DAS.QnA.Application.Queries.Sections.GetPage;
 using SFA.DAS.QnA.Application.Queries.Sections.CanUpdatePage;
@@ -326,16 +326,16 @@ namespace SFA.DAS.QnA.Api.Controllers
         }
 
         /// <summary>
-        ///     Sets pages in a section to complete=false, based on list of pageIdsExcluded passed in (which are not reset)
+        ///     Sets pages in a section to complete=false, based on list of pageIdsToExclude passed in (which are not reset)
         /// </summary>
         /// <returns>confirmation</returns>
         /// <response code="200">Returns the response</response>
-        [HttpPost("{applicationId}/sequences/{sequenceNo}/sections/{sectionNo}/reset-complete")]
+        [HttpPost("{applicationId}/sequences/{sequenceNo}/sections/{sectionNo}/reset-completeflag")]
         [ProducesResponseType(200)]
-        public async Task SetPagesToIncomplete(Guid applicationId, int sequenceNo, int sectionNo, [FromBody] List<string> pageIdsExcluded)
+        public async Task SetPagesToIncomplete(Guid applicationId, int sequenceNo, int sectionNo, [FromBody] List<string> pageIdsToExclude)
         {
-            _logger.LogInformation($"Pages sent to reset-complete to false: {JsonConvert.SerializeObject(pageIdsExcluded)} in SetPagesToIncomplete");
-            await _mediator.Send(new ResetPagesToIncompleteRequest(applicationId, sequenceNo, sectionNo, pageIdsExcluded), CancellationToken.None);
+            _logger.LogInformation($"Pages sent to reset-completeflag to false: {JsonConvert.SerializeObject(pageIdsToExclude)} in SetPagesToIncomplete");
+            await _mediator.Send(new ResetPagesToIncompleteRequest(applicationId, sequenceNo, sectionNo, pageIdsToExclude), CancellationToken.None);
         }
     }
 }

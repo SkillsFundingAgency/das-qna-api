@@ -2,18 +2,21 @@
 using System.Threading.Tasks;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using SFA.DAS.QnA.Api.Types;
 using SFA.DAS.QnA.Api.Types.Page;
 using SFA.DAS.QnA.Application.Commands.SetPageAnswers;
 using SFA.DAS.QnA.Application.Services;
 using SFA.DAS.QnA.Data;
 
-namespace SFA.DAS.QnA.Application.Commands.ResetPagesToInomplete
+namespace SFA.DAS.QnA.Application.Commands.ResetPagesToIncomplete
 {
     public class ResetPagesToIncompleteHandler : SetAnswersBase, IRequestHandler<ResetPagesToIncompleteRequest, HandlerResponse<bool>>
     {
-        public ResetPagesToIncompleteHandler(QnaDataContext dataContext, INotRequiredProcessor notRequiredProcessor, ITagProcessingService tagProcessingService) : base(dataContext, notRequiredProcessor, tagProcessingService, null)
+        private readonly ILogger<ResetPagesToIncompleteHandler> _logger;
+        public ResetPagesToIncompleteHandler(QnaDataContext dataContext, INotRequiredProcessor notRequiredProcessor, ITagProcessingService tagProcessingService, ILogger<ResetPagesToIncompleteHandler> logger) : base(dataContext, notRequiredProcessor, tagProcessingService, null)
         {
+            _logger = logger;
         }
 
         public async Task<HandlerResponse<bool>> Handle(ResetPagesToIncompleteRequest request, CancellationToken cancellationToken)
@@ -26,9 +29,10 @@ namespace SFA.DAS.QnA.Application.Commands.ResetPagesToInomplete
 
             foreach (var page in qnaData.Pages)
             {
-                if (request.PageIdsExcluded.Contains(page.PageId)) continue;
+                if (request.PageIdsToExclude.Contains(page.PageId)) continue;
                 if (!page.Complete) continue;
                 page.Complete = false;
+                _logger.LogInformation($"Reset applicationId {request.ApplicationId} PageId {page.PageId} to complete=false");
                 updateMade = true;
             }
 
