@@ -14,7 +14,6 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.FindNextRequiredAction
     [TestFixture]
     public class FindNextRequiredActionTestsBase
     {
-        //MFCMFC
         protected SetAnswersBase SetAnswersBase;
         protected QnaDataContext QnaDataContext;
         protected Guid ApplicationId;
