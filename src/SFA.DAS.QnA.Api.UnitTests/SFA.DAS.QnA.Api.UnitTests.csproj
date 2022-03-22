@@ -10,6 +10,7 @@
         <PackageReference Include="FluentAssertions" Version="5.7.0" />
         <PackageReference Include="Microsoft.AspNetCore.App" />
         <PackageReference Include="MediatR" Version="7.0.0" />
+        <PackageReference Include="Moq" Version="4.17.2" />
         <PackageReference Include="NSubstitute" Version="4.2.0" />
         <PackageReference Include="nunit" Version="3.11.0" />
         <PackageReference Include="NUnit3TestAdapter" Version="3.11.0" />
