@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>netcoreapp2.2</TargetFramework>
+        <TargetFramework>net6.0</TargetFramework>
         <PackageId>SFA.DAS.QnA.Api.Views</PackageId>
         <Version>0.4.1</Version>
         <Authors>EFSA</Authors>
