@@ -36,7 +36,7 @@ namespace SFA.DAS.QnA.Api.Controllers
 
             if (!applicationDataResponse.Success) return NotFound(new NotFoundError(applicationDataResponse.Message));
 
-            return JsonConvert.DeserializeObject(applicationDataResponse.Value);
+            return Ok(JsonConvert.DeserializeObject(applicationDataResponse.Value));
         }
 
         /// <summary>
