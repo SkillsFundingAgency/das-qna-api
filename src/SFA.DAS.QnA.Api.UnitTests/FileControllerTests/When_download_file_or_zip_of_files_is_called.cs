@@ -53,7 +53,7 @@ namespace SFA.DAS.QnA.Api.UnitTests.FileControllerTests
 
             var result = await _fileController.DownloadFileOrZipOfFiles(expectedApplicationId, expectedSequenceNo, expectedSectionNo, expectedPageId, expectedQuestionId) as FileStreamResult;
 
-            result.FileStream.Should().Be(expectedResponse.Stream);
+            result.FileStream.Should().BeSameAs(expectedResponse.Stream);
             result.ContentType.Should().Be(expectedResponse.ContentType);
             result.FileDownloadName.Should().Be(expectedResponse.FileName);
         }
