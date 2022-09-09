@@ -30,7 +30,7 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.StartApplicationTests
             await Handler.Handle(new StartApplicationRequest() {UserReference = "dave", WorkflowType = "EPAO"}, CancellationToken.None);
 
             var newApplication = await DataContext.Applications.FirstAsync();
-            var newSequences = await DataContext.ApplicationSequences.ToListAsync();
+            var newSequences = await DataContext.ApplicationSequences.OrderBy(s => s.SequenceNo).ToListAsync();
 
             newSequences.Count.Should().Be(2);
             newSequences.Should().AllBeEquivalentTo(new{ApplicationId = newApplication.Id});
@@ -44,7 +44,7 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.StartApplicationTests
             await Handler.Handle(new StartApplicationRequest() {UserReference = "dave", WorkflowType = "EPAO"}, CancellationToken.None);
 
             var newApplication = await DataContext.Applications.FirstAsync();
-            var newSections = await DataContext.ApplicationSections.ToListAsync();
+            var newSections = await DataContext.ApplicationSections.OrderBy(s => s.SequenceNo).ThenBy(s => s.SectionNo).ToListAsync();
 
             newSections.Count.Should().Be(4);
             newSections.Should().AllBeEquivalentTo(new{ApplicationId = newApplication.Id});
