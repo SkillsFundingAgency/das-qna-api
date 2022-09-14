@@ -97,14 +97,15 @@ namespace SFA.DAS.QnA.Api
 
             services.AddEntityFrameworkSqlServer();
 
-            services.AddMvc(setup => {
+            services.AddMvc(setup =>
+            {
                 setup.EnableEndpointRouting = false;
                 if (!_hostingEnvironment.IsDevelopment())
                 {
                     setup.Filters.Add(new AuthorizeFilter("default"));
                 }
                 setup.Conventions.Add(new ApiExplorerGroupConvention());
-            }).SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            }).AddNewtonsoftJson();
 
             services.AddSwaggerGen(c =>
             {
