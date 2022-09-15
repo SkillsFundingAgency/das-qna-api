@@ -1,5 +1,5 @@
 ﻿using FluentAssertions;
-using Microsoft.AspNetCore.Http.Internal;
+using Microsoft.AspNetCore.Http;
 using NUnit.Framework;
 using SFA.DAS.QnA.Application.Commands;
 using System.IO;
