@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <PackageId>SFA.DAS.QnA.Api.Types</PackageId>
+        <Version>0.4.1</Version>
+        <Authors>EFSA</Authors>
+        <Company>EFSA</Company>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <PackageOutputPath>..\NugetPackages</PackageOutputPath>
+        <PackageVersion>0.2.32.0</PackageVersion>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="MediatR" Version="10.0.1" />
+      <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    </ItemGroup>
+
+</Project>

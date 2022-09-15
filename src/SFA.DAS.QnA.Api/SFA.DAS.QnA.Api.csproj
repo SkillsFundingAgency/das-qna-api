@@ -31,7 +31,7 @@
     <ItemGroup>
       <ProjectReference Include="..\SFA.DAS.QnA.Application\SFA.DAS.QnA.Application.csproj" />
       <ProjectReference Include="..\SFA.DAS.QnA.Configuration\SFA.DAS.QnA.Configuration.csproj" />
-      <ProjectReference Include="..\SFA.DAS.Qna.Data\SFA.DAS.Qna.Data.csproj" />
+      <ProjectReference Include="..\SFA.DAS.QnA.Data\SFA.DAS.QnA.Data.csproj" />
     </ItemGroup>
 
     <ItemGroup>
