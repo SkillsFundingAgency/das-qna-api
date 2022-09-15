@@ -16,8 +16,8 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\SFA.DAS.Qna.Api.Types\SFA.DAS.Qna.Api.Types.csproj" />
+      <ProjectReference Include="..\SFA.DAS.QnA.Api.Types\SFA.DAS.QnA.Api.Types.csproj" />
       <ProjectReference Include="..\SFA.DAS.QnA.Configuration\SFA.DAS.QnA.Configuration.csproj" />
-      <ProjectReference Include="..\SFA.DAS.Qna.Data\SFA.DAS.QnA.Data.csproj" />
+      <ProjectReference Include="..\SFA.DAS.QnA.Data\SFA.DAS.QnA.Data.csproj" />
     </ItemGroup>
 </Project>
