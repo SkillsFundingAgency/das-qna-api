@@ -67,8 +67,8 @@ jobs:
     displayName: 'Copy Files to: $(build.artifactstagingdirectory)'
     inputs:
       Contents: |
-        azure\**
-        src\${{ parameters.SolutionBaseName }}.Database\projects\**
+        azure/**
+        src/${{ parameters.SolutionBaseName }}.Database\projects\**
       TargetFolder: '$(build.artifactstagingdirectory)/'
       OverWrite: true
 
