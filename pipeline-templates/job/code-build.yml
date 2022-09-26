@@ -68,7 +68,7 @@ jobs:
     inputs:
       Contents: |
         azure/**
-        src/${{ parameters.SolutionBaseName }}.Database\projects\**
+        src/${{ parameters.SolutionBaseName }}.Database/projects/**
       TargetFolder: '$(build.artifactstagingdirectory)/'
       OverWrite: true
 
