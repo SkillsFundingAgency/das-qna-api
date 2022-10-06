@@ -14,7 +14,6 @@ using SFA.DAS.QnA.Application.Commands.Files;
 using System.IO;
 using SFA.DAS.QnA.Application.Services;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Http.Internal;
 using System.Text;
 
 namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.SubmitPageOfFilesHandlerTests

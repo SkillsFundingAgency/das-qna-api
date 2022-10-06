@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿
+using System;
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Reflection;
 using AutoMapper;
 using MediatR;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -15,20 +14,20 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Logging;
+using Microsoft.OpenApi.Models;
 using SFA.DAS.QnA.Api.Authentication;
 using SFA.DAS.QnA.Api.Authorization;
 using SFA.DAS.QnA.Api.Infrastructure;
 using SFA.DAS.QnA.Application;
 using SFA.DAS.QnA.Application.Commands;
 using SFA.DAS.QnA.Application.Commands.Files;
-using SFA.DAS.QnA.Application.Commands.Files.UploadFile;
 using SFA.DAS.QnA.Application.Commands.StartApplication;
 using SFA.DAS.QnA.Application.Services;
 using SFA.DAS.QnA.Application.Validators;
 using SFA.DAS.QnA.Configuration.Config;
 using SFA.DAS.QnA.Configuration.Infrastructure;
 using SFA.DAS.QnA.Data;
-using Swashbuckle.AspNetCore.Swagger;
+
 
 namespace SFA.DAS.QnA.Api
 {
@@ -98,18 +97,20 @@ namespace SFA.DAS.QnA.Api
 
             services.AddEntityFrameworkSqlServer();
 
-            services.AddMvc(setup => {
+            services.AddMvc(setup =>
+            {
+                setup.EnableEndpointRouting = false;
                 if (!_hostingEnvironment.IsDevelopment())
                 {
                     setup.Filters.Add(new AuthorizeFilter("default"));
                 }
                 setup.Conventions.Add(new ApiExplorerGroupConvention());
-            }).SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            }).AddNewtonsoftJson();
 
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new Info{Title = "QnA API", Version = "0.1"});
-                c.SwaggerDoc("config", new Info{Title = "QnA API Config", Version = "0.1"});
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "QnA API", Version = "0.1"});
+                c.SwaggerDoc("config", new OpenApiInfo { Title = "QnA API Config", Version = "0.1"});
 
                 if (_hostingEnvironment.IsDevelopment())
                 {

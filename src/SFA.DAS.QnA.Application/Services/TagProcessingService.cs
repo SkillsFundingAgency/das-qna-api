@@ -21,7 +21,7 @@ namespace SFA.DAS.QnA.Application.Services
 
         public void ClearDeactivatedTags(Guid applicationId, Guid sectionId)
         {
-            var section = _dataContext.ApplicationSections.AsNoTracking().SingleOrDefault(sec =>
+            var section = _dataContext.ApplicationSections.SingleOrDefault(sec =>
                 sec.Id == sectionId && sec.ApplicationId == applicationId);
             if (section == null) return;
             var pages = new QnAData(section.QnAData).Pages;

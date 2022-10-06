@@ -1,17 +1,15 @@
 ﻿namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.SubmitPageOfFilesHandlerTests
 {
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using System.Text;
-    using System.Threading;
-    using System.Threading.Tasks;
     using FluentAssertions;
-    using Microsoft.AspNetCore.Http.Internal;
+    using Microsoft.AspNetCore.Http;
     using NUnit.Framework;
     using SFA.DAS.QnA.Api.Types.Page;
     using SFA.DAS.QnA.Application.Commands.Files.UploadFile;
     using SFA.DAS.QnA.Data.Entities;
+    using System;
+    using System.Collections.Generic;
+    using System.Threading;
+    using System.Threading.Tasks;
 
     public class When_page_allows_multiple_answers : SubmitPageOfFilesTestBase
     {
