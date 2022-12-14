@@ -9,9 +9,9 @@
 This service is a Web API service which allows question sets to be organised and presented and their answers collected by exposing HTTP REST end points.
 
 Nuget packages that go with this solution include:
-* [![QnA API Client](https://buildstats.info/nuget/SFA.DAS.QnA.Api.Client)](https://www.nuget.org/packages/SFA.DAS.QnA.Api.Client): A .Net Core client library for QnA API HTTP REST end points.
-* [![QnA API Types](https://buildstats.info/nuget/SFA.DAS.QnA.Api.Types)](https://www.nuget.org/packages/SFA.DAS.QnA.Api.Types): Common types to interact with the QnA Api.
-* [![QnA API Views](https://buildstats.info/nuget/SFA.DAS.QnA.Api.Views)](https://www.nuget.org/packages/SFA.DAS.QnA.Api.Views): Asp.Net Core Views using [GOV UK Design System](https://design-system.service.gov.uk/get-started/)
+* A .Net Core client library for QnA API HTTP REST end points : [![QnA API Client](https://buildstats.info/nuget/SFA.DAS.QnA.Api.Client)](https://www.nuget.org/packages/SFA.DAS.QnA.Api.Client)
+* Common types to interact with the QnA Api : [![QnA API Types](https://buildstats.info/nuget/SFA.DAS.QnA.Api.Types)](https://www.nuget.org/packages/SFA.DAS.QnA.Api.Types)
+* Asp.Net Core Views using [GOV UK Design System](https://design-system.service.gov.uk/get-started/) : [![QnA API Views](https://buildstats.info/nuget/SFA.DAS.QnA.Api.Views)](https://www.nuget.org/packages/SFA.DAS.QnA.Api.Views)
 
 ## Developer Setup
 ### Requirements
@@ -63,9 +63,6 @@ or
 * **NB** - To run a local copy you may also need:
 	* To create a JSON structure required to author updates and create new question sets: [Config Tool](https://github.com/SkillsFundingAgency/das-qna-config)
 	* To view how the question sets will be presented when integrated into a client application using [GOV UK Design System](https://design-system.service.gov.uk/get-started/) and [Config Preview](https://github.com/SkillsFundingAgency/das-qna-config-preview)
-
-	- `AnswerValidator` will execute each validator and return any validation errors
-	### Important Concepts
 
 #### `SFA.DAS.QnA.Application`
 
@@ -133,11 +130,11 @@ There are situations where `Next` Conditions cannot control the page flow (i.e. 
 
 `NotRequiredConditions` is a way for `QnA Api` to remove pages from the response payload back to the user.
 
-#### Tests
+### Tests
 
 This codebase includes unit tests.
 
-##### Unit Tests
+#### Unit Tests
 There are two unit test projects, each named after the project that their tests cover. These tests use Moq, FluentAssertions, NewtonSoft, MediatR, and NUnit.
-* 'SFA.DAS.QnA.Api.UnitTests'
-* 'SFA.DAS.QnA.Application.UnitTests'
+* `SFA.DAS.QnA.Api.UnitTests`
+* `SFA.DAS.QnA.Application.UnitTests`
