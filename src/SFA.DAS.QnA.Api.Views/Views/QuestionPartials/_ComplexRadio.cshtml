@@ -76,7 +76,7 @@
                             }
                         }
                     <div class="govuk-form-group">
-                        <label class="govuk-label" for="@Model.Options[i].FurtherQuestions[furtherQuestionIndex].QuestionId">@Model.Options[i].FurtherQuestions[furtherQuestionIndex].Label</label>
+                            <label class="govuk-label" for="@Model.Options[i].FurtherQuestions[furtherQuestionIndex].QuestionId" id="@Model.Options[i].FurtherQuestions[furtherQuestionIndex].QuestionId-label">@Model.Options[i].FurtherQuestions[furtherQuestionIndex].Label</label>
                         @if (Model.Options[i].FurtherQuestions[furtherQuestionIndex].Hint != null)
                         {
                             <span id="@Model.Options[i].FurtherQuestions[furtherQuestionIndex].QuestionId-hint" class="govuk-hint govuk-radios__hint">
