@@ -75,3 +75,8 @@ jobs:
     displayName: 'Publish Artifact'
     inputs:
       PathtoPublish: '$(build.artifactstagingdirectory)/'
+
+  - template: azure-pipelines-templates/build/step/nuget-pack.yml@das-platform-building-blocks
+    parameters:
+      DotNetStandardPackagesToPack: |
+        src/${{ parameters.SolutionBaseName }}.Api.Views/${{ parameters.SolutionBaseName }}.Api.Views.csproj;
