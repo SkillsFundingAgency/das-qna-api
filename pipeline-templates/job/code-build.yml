@@ -84,9 +84,9 @@ jobs:
   - template: azure-pipelines-templates/build/step/nuget-pack.yml@das-platform-building-blocks
     parameters:
       DotNetStandardPackagesToPack: |
-        src/${{ parameters.SolutionBaseName }}.Api.Client/${{ parameters.SolutionBaseName }}.Api.Views.csproj;
+        src/${{ parameters.SolutionBaseName }}.Api.Client/${{ parameters.SolutionBaseName }}.Api.Client.csproj;
         
   - template: azure-pipelines-templates/build/step/nuget-pack.yml@das-platform-building-blocks
     parameters:
       DotNetStandardPackagesToPack: |
-        src/${{ parameters.SolutionBaseName }}.Api.Types/${{ parameters.SolutionBaseName }}.Api.Views.csproj;
+        src/${{ parameters.SolutionBaseName }}.Api.Types/${{ parameters.SolutionBaseName }}.Api.Types.csproj;
