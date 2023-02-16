@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Text.Json.Nodes;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using NUnit.Framework;
@@ -31,10 +32,10 @@ namespace SFA.DAS.QnA.Application.UnitTests.ServiceTests
                 FieldToTest = applicationDataValue
             });
 
-            var applicationData = JObject.Parse(applicationDataJson);
+            var applicationData = JsonNode.Parse(applicationDataJson);
 
 
-            var result = notRequiredProcessor.NotRequired(notRequiredConditions,applicationData);
+            var result = notRequiredProcessor.NotRequired(notRequiredConditions, applicationData);
 
             Assert.AreEqual(match, result);
         }

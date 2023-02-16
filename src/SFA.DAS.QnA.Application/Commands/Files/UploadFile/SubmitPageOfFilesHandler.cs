@@ -1,13 +1,12 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.Json.Nodes;
 using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using SFA.DAS.QnA.Api.Types;
 using SFA.DAS.QnA.Api.Types.Page;
 using SFA.DAS.QnA.Application.Commands.SetPageAnswers;
@@ -161,7 +160,7 @@ namespace SFA.DAS.QnA.Application.Commands.Files.UploadFile
         {
             if (application != null)
             {
-                var applicationData = JObject.Parse(application.ApplicationData ?? "{}");
+                var applicationData = JsonObject.Parse(application.ApplicationData ?? "{}");
 
                 var page = section?.QnAData?.Pages.SingleOrDefault(p => p.PageId == request.PageId);
 
@@ -172,7 +171,7 @@ namespace SFA.DAS.QnA.Application.Commands.Files.UploadFile
 
                     foreach (var question in page.Questions)
                     {
-                        SetApplicationDataField(question, answers, applicationData);
+                        SetApplicationDataField(question, answers, applicationData.AsObject());
                         if (!string.IsNullOrWhiteSpace(question.QuestionTag))
                             questionTagsWhichHaveBeenUpdated.Add(question.QuestionTag);
 
@@ -182,7 +181,7 @@ namespace SFA.DAS.QnA.Application.Commands.Files.UploadFile
                             {
                                 foreach (var furtherQuestion in option.FurtherQuestions)
                                 {
-                                    SetApplicationDataField(furtherQuestion, answers, applicationData);
+                                    SetApplicationDataField(furtherQuestion, answers, applicationData.AsObject());
                                     if (!string.IsNullOrWhiteSpace(furtherQuestion.QuestionTag))
                                         questionTagsWhichHaveBeenUpdated.Add(furtherQuestion.QuestionTag);
                                 }
@@ -190,7 +189,7 @@ namespace SFA.DAS.QnA.Application.Commands.Files.UploadFile
                         }
                     }
 
-                    application.ApplicationData = applicationData.ToString(Formatting.None);
+                    application.ApplicationData = applicationData.ToString();
 
                     SetStatusOfAllPagesBasedOnUpdatedQuestionTags(application, questionTagsWhichHaveBeenUpdated);
                     _tagProcessingService.ClearDeactivatedTags(application.Id, request.SectionId);

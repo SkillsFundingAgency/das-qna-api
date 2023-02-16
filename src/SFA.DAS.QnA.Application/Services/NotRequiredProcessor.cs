@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Nodes;
 using Newtonsoft.Json.Linq;
 using SFA.DAS.QnA.Api.Types.Page;
 
@@ -10,16 +11,16 @@ namespace SFA.DAS.QnA.Application.Services
 {
     public class NotRequiredProcessor: INotRequiredProcessor
     {
-        public bool NotRequired(IEnumerable<NotRequiredCondition> notRequiredConditions, JObject applicationData)
+        public bool NotRequired(IEnumerable<NotRequiredCondition> notRequiredConditions, JsonNode applicationData)
         {
             return notRequiredConditions.Any(nrc =>
-                nrc.IsOneOf != null && nrc.IsOneOf.Contains(applicationData[nrc.Field]?.Value<string>()));
+                nrc.IsOneOf != null && nrc.IsOneOf.Contains(applicationData[nrc.Field]?.GetValue<string>()));
         }
 
-        public IEnumerable<Page> PagesWithoutNotRequired(List<Page> pages, JObject applicationData)
+        public IEnumerable<Page> PagesWithoutNotRequired(List<Page> pages, JsonNode applicationData)
         {
             pages.RemoveAll(p => p.NotRequiredConditions != null &&
-                                 p.NotRequiredConditions.Any(nrc => nrc.IsOneOf != null && nrc.IsOneOf.Contains(applicationData[nrc.Field]?.Value<string>())));
+                                 p.NotRequiredConditions.Any(nrc => nrc.IsOneOf != null && nrc.IsOneOf.Contains(applicationData[nrc.Field]?.GetValue<string>())));
 
             var pagesToRemove = new List<string>();
             foreach (var page in pages.Where(p=>p.NotRequiredConditions!=null))
@@ -28,7 +29,7 @@ namespace SFA.DAS.QnA.Application.Services
                 foreach (var notRequiredCondition in page.NotRequiredConditions.Where(n=>n.ContainsAllOf!=null && n.ContainsAllOf.Any()))
                 {
                     var fieldToCheck = notRequiredCondition.Field;
-                    var fieldValue = applicationData[fieldToCheck]?.Value<string>();
+                    var fieldValue = applicationData[fieldToCheck]?.GetValue<string>();
                     if (string.IsNullOrEmpty(fieldValue)) continue;
 
                     var applicationDataValues = fieldValue.Split(",", StringSplitOptions.RemoveEmptyEntries);
@@ -47,7 +48,7 @@ namespace SFA.DAS.QnA.Application.Services
                 {
                     var isPresent = false;
                     var fieldToCheck = notRequiredCondition.Field;
-                    var fieldValue = applicationData[fieldToCheck]?.Value<string>();
+                    var fieldValue = applicationData[fieldToCheck]?.GetValue<string>();
                     if (!string.IsNullOrEmpty(fieldValue))
                     {
 

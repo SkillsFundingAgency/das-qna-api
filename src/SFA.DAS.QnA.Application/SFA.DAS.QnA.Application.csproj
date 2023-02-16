@@ -5,14 +5,20 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <Compile Remove="Commands\StartApplication\Helpers\**" />
+      <EmbeddedResource Remove="Commands\StartApplication\Helpers\**" />
+      <None Remove="Commands\StartApplication\Helpers\**" />
+    </ItemGroup>
+
+    <ItemGroup>
       <PackageReference Include="AutoMapper" Version="11.0.1" />
       <PackageReference Include="MediatR" Version="10.0.1" />
       <PackageReference Include="Microsoft.Azure.Storage.Blob" Version="11.2.3" />
       <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="6.0.8" />
-      <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-      <PackageReference Include="Newtonsoft.Json.Schema" Version="3.0.14" />
       <PackageReference Include="Microsoft.AspNetCore.Http.Features" Version="5.0.17" />
+      <PackageReference Include="Newtonsoft.Json.Schema" Version="3.0.14" />
       <PackageReference Include="System.Data.SqlClient" Version="4.8.3" />
+      <PackageReference Include="System.Text.Json" Version="7.0.2" />
     </ItemGroup>
 
     <ItemGroup>

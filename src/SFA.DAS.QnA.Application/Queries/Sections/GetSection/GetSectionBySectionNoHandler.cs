@@ -9,6 +9,8 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using SFA.DAS.QnA.Application.Services;
+using System.Text.Json;
+using System.Text.Json.Nodes;
 
 namespace SFA.DAS.QnA.Application.Queries.Sections.GetSection
 {
@@ -40,7 +42,7 @@ namespace SFA.DAS.QnA.Application.Queries.Sections.GetSection
 
         private   void RemovePages(Data.Entities.Application application, ApplicationSection section)
         {
-            var applicationData = JObject.Parse(application.ApplicationData);
+            var applicationData = JsonNode.Parse(application.ApplicationData).AsObject();
 
             RemovePagesBasedOnNotRequiredConditions(section, applicationData);
             RemoveInactivePages(section);
@@ -51,7 +53,7 @@ namespace SFA.DAS.QnA.Application.Queries.Sections.GetSection
             section.QnAData.Pages.RemoveAll(p => !p.Active);
         }
 
-        private  void RemovePagesBasedOnNotRequiredConditions(ApplicationSection section, JObject applicationData)
+        private  void RemovePagesBasedOnNotRequiredConditions(ApplicationSection section, JsonObject applicationData)
         {
             section.QnAData.Pages =
                 _notRequiredProcessor.PagesWithoutNotRequired(section.QnAData.Pages, applicationData).ToList();
