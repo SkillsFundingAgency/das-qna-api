@@ -105,7 +105,7 @@ namespace SFA.DAS.QnA.Api
                     setup.Filters.Add(new AuthorizeFilter("default"));
                 }
                 setup.Conventions.Add(new ApiExplorerGroupConvention());
-            }).AddNewtonsoftJson();
+            });
 
             services.AddSwaggerGen(c =>
             {
