@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text.Json;
 using System.Text.Json.Nodes;
 using System.Threading;
 using System.Threading.Tasks;
@@ -66,7 +65,7 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
 
                     foreach (var question in page.Questions)
                     {
-                        SetApplicationDataField(question, answers, applicationData.AsObject());
+                        SetApplicationDataField(question, answers, applicationData);
                         if (!string.IsNullOrWhiteSpace(question.QuestionTag))
                             questionTagsWhichHaveBeenUpdated.Add(question.QuestionTag);
 
@@ -76,7 +75,7 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
                             {
                                 foreach (var furtherQuestion in option.FurtherQuestions)
                                 {
-                                    SetApplicationDataField(furtherQuestion, answers, applicationData.AsObject());
+                                    SetApplicationDataField(furtherQuestion, answers, applicationData);
                                     if (!string.IsNullOrWhiteSpace(furtherQuestion.QuestionTag))
                                         questionTagsWhichHaveBeenUpdated.Add(furtherQuestion.QuestionTag);
                                 }
@@ -173,7 +172,7 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
             return null;
         }
 
-        protected static void SetApplicationDataField(Question question, List<Answer> answers, JsonObject applicationData)
+        protected static void SetApplicationDataField(Question question, List<Answer> answers, JsonNode applicationData)
         {
             if (question != null && applicationData != null)
             {
@@ -182,13 +181,13 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
 
                 if (!string.IsNullOrWhiteSpace(questionTag))
                 {
-                    if (applicationData.ContainsKey(questionTag))
+                    if (applicationData.AsObject().ContainsKey(questionTag))
                     {
                         applicationData[questionTag] = questionTagAnswer;
                     }
                     else
                     {
-                        applicationData.Add(questionTag, questionTagAnswer);
+                        applicationData.AsObject().Add(questionTag, questionTagAnswer);
                     }
                 }
             }
@@ -278,7 +277,7 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
 
             foreach (var matchingNext in matchingNexts)
             {
-                var nextAction = FindNextRequiredAction(section, matchingNext, applicationData.AsObject());
+                var nextAction = FindNextRequiredAction(section, matchingNext, applicationData);
 
                 if (nextAction != null)
                 {
@@ -399,7 +398,7 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
         }
 
 
-        public Next FindNextRequiredAction(ApplicationSection section, Next nextAction, JsonObject applicationData)
+        public Next FindNextRequiredAction(ApplicationSection section, Next nextAction, JsonNode applicationData)
         {
             if (section?.QnAData is null || nextAction is null || nextAction.Action != "NextPage") return nextAction;
 
@@ -408,13 +407,13 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
             // Check here for any NotRequiredConditions on the next page.
             var nextPage = section.QnAData?.Pages.FirstOrDefault(p => p.PageId == nextAction.ReturnId);
 
-            if (nextPage is null || applicationData is null)
+            if (nextPage is null || applicationData.AsObject() is null)
             {
                 return nextAction;
             }
             else if (nextPage.NotRequiredConditions != null && nextPage.NotRequiredConditions.Any())
             {
-                nextPage.NotRequired = _notRequiredProcessor.NotRequired(nextPage.NotRequiredConditions, applicationData);
+                nextPage.NotRequired = _notRequiredProcessor.NotRequired(nextPage.NotRequiredConditions, applicationData.AsObject());
                 if (nextPage.NotRequired)
                 {
                     isRequiredNextAction = false;
@@ -443,7 +442,7 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
             }
 
             // NOTE the recursion!
-            return FindNextRequiredAction(section, nextAction, applicationData);
+            return FindNextRequiredAction(section, nextAction, applicationData.AsObject());
         }
 
         protected void MarkPageAsComplete(Page page)

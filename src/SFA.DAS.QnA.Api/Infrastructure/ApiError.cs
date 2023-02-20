@@ -1,5 +1,5 @@
 using System.Diagnostics.CodeAnalysis;
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace SFA.DAS.QnA.Api.Infrastructure
 {
@@ -10,7 +10,7 @@ namespace SFA.DAS.QnA.Api.Infrastructure
 
         public string StatusDescription { get; private set; }
     
-        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
+        [JsonIgnore]
         public string Message { get; private set; }
 
         public ApiError(int statusCode, string statusDescription)

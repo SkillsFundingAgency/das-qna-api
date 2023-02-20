@@ -1,12 +1,12 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
-using Newtonsoft.Json;
 using SFA.DAS.QnA.Api.Types;
 using SFA.DAS.QnA.Data;
 using SFA.DAS.QnA.Data.Entities;
@@ -42,7 +42,7 @@ namespace SFA.DAS.QnA.Application.Commands.StartApplication
             {
                 _applicationDataIsInvalid = !_applicationDataValidator.IsValid(latestWorkflow.ApplicationDataSchema, request.ApplicationData);
             }
-            catch (JsonReaderException)
+            catch (JsonException)
             {
                 _logger.LogError("Supplied ApplicationData is not valid JSON");
                 return new HandlerResponse<StartApplicationResponse>(false, $"Supplied ApplicationData is not valid JSON.");

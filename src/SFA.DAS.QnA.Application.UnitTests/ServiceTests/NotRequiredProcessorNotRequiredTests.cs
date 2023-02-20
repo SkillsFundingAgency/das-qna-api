@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.Text.Json;
 using System.Text.Json.Nodes;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using NUnit.Framework;
 using SFA.DAS.QnA.Api.Types.Page;
 using SFA.DAS.QnA.Application.Services;
@@ -27,7 +26,7 @@ namespace SFA.DAS.QnA.Application.UnitTests.ServiceTests
             var notRequiredConditions = new List<NotRequiredCondition>
                 {new NotRequiredCondition() {Field = "FieldToTest", IsOneOf = new string[] { "value1",notRequiredConditionValue, "value2", "value3"}}};
 
-            var applicationDataJson = JsonConvert.SerializeObject(new
+            var applicationDataJson = JsonSerializer.Serialize(new
             {
                 FieldToTest = applicationDataValue
             });

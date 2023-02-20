@@ -1,13 +1,13 @@
 ﻿namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.ResetPageAnswersHandlerTests
 {
     using FluentAssertions;
-    using Newtonsoft.Json.Linq;
     using NSubstitute;
     using NUnit.Framework;
     using SFA.DAS.QnA.Application.Commands.Files.DeleteFile;
     using SFA.DAS.QnA.Application.Commands.ResetPageAnswers;
     using SFA.DAS.QnA.Application.Queries.ApplicationData.GetApplicationData;
     using SFA.DAS.QnA.Application.Queries.Sections.GetPage;
+    using System.Text.Json.Nodes;
     using System.Threading;
     using System.Threading.Tasks;
 
@@ -51,14 +51,14 @@
 
             var getApplicationDataResponse = await GetApplicationDataHandler.Handle(new GetApplicationDataRequest(ApplicationId), CancellationToken.None);
 
-            var applicationData = JObject.Parse(getApplicationDataResponse.Value);
+            var applicationData = JsonNode.Parse(getApplicationDataResponse.Value).AsObject();
             var questionTag = applicationData[questionId];
 
             if(tagShouldExist)
             {
                 // active tags should still exists
                 questionTag.Should().NotBeNull();
-                questionTag.Value<string>().Should().BeNullOrEmpty();
+                questionTag.GetValue<string>().Should().BeNullOrEmpty();
             }
             else
             {

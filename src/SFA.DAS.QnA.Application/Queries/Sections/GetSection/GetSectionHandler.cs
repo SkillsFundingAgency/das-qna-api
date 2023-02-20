@@ -5,7 +5,6 @@ using System.Threading.Tasks;
 using AutoMapper;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
-using Newtonsoft.Json.Linq;
 using SFA.DAS.QnA.Api.Types;
 using SFA.DAS.QnA.Application.Services;
 using SFA.DAS.QnA.Data;
@@ -41,7 +40,7 @@ namespace SFA.DAS.QnA.Application.Queries.Sections.GetSection
 
         private  void RemovePages(Data.Entities.Application application, ApplicationSection section)
         {
-            var applicationData = JsonNode.Parse(application.ApplicationData).AsObject();
+            var applicationData = JsonNode.Parse(application.ApplicationData);
 
             RemoveInactivePages(section);
             RemovePagesBasedOnNotRequiredConditions(section, applicationData);
@@ -52,10 +51,10 @@ namespace SFA.DAS.QnA.Application.Queries.Sections.GetSection
             section.QnAData.Pages.RemoveAll(p => !p.Active);
         }
 
-        private  void RemovePagesBasedOnNotRequiredConditions(ApplicationSection section, JsonObject applicationData)
+        private  void RemovePagesBasedOnNotRequiredConditions(ApplicationSection section, JsonNode applicationData)
         {
              section.QnAData.Pages =
-                _notRequiredProcessor.PagesWithoutNotRequired(section.QnAData.Pages, applicationData).ToList();
+                _notRequiredProcessor.PagesWithoutNotRequired(section.QnAData.Pages, applicationData.AsObject()).ToList();
         }
     }
 }

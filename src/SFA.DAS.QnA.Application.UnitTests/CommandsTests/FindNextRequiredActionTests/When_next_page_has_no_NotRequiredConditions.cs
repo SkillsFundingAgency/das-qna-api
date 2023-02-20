@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using System.Text.Json.Nodes;
 using System.Threading.Tasks;
 using FluentAssertions;
-using Newtonsoft.Json.Linq;
 using NUnit.Framework;
 using SFA.DAS.QnA.Api.Types.Page;
 using SFA.DAS.QnA.Data.Entities;
@@ -27,7 +26,7 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.FindNextRequiredAction
                 }}
             };
 
-            var applicationData = JsonNode.Parse(ApplicationDataJson).AsObject();
+            var applicationData = JsonNode.Parse(ApplicationDataJson);
             var nextActionAfterFindingNextAction = SetAnswersBase.FindNextRequiredAction(section, NextAction, applicationData);
             nextActionAfterFindingNextAction.Should().BeEquivalentTo(NextAction);
         }
@@ -48,7 +47,7 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.FindNextRequiredAction
                 }}
             };
 
-            var applicationData = JsonNode.Parse(ApplicationDataJson).AsObject();
+            var applicationData = JsonNode.Parse(ApplicationDataJson);
             var nextActionAfterFindingNextAction = SetAnswersBase.FindNextRequiredAction(section, NextAction, applicationData);
             nextActionAfterFindingNextAction.Should().BeEquivalentTo(NextAction);
         }

@@ -1,8 +1,8 @@
+using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
-using Newtonsoft.Json;
 using SFA.DAS.QnA.Api.Types;
 using SFA.DAS.QnA.Application.Commands.StartApplication;
 using SFA.DAS.QnA.Data;
@@ -27,7 +27,7 @@ namespace SFA.DAS.QnA.Application.Commands.SetApplicationData
             
             var workflow = await _dataContext.Workflows.SingleOrDefaultAsync(wf => wf.Id == application.WorkflowId, cancellationToken);
 
-            var serializedApplicationData = JsonConvert.SerializeObject(request.ApplicationData);
+            var serializedApplicationData = JsonSerializer.Serialize(request.ApplicationData);
             
             if (!_applicationDataValidator.IsValid(workflow.ApplicationDataSchema, serializedApplicationData))
             {

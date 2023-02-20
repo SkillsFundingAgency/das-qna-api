@@ -5,12 +5,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Compile Remove="Commands\StartApplication\Helpers\**" />
-      <EmbeddedResource Remove="Commands\StartApplication\Helpers\**" />
-      <None Remove="Commands\StartApplication\Helpers\**" />
-    </ItemGroup>
-
-    <ItemGroup>
       <PackageReference Include="AutoMapper" Version="11.0.1" />
       <PackageReference Include="MediatR" Version="10.0.1" />
       <PackageReference Include="Microsoft.Azure.Storage.Blob" Version="11.2.3" />

@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Text.Json.Nodes;
-using Newtonsoft.Json.Linq;
 using SFA.DAS.QnA.Api.Types.Page;
 
 namespace SFA.DAS.QnA.Application.Services

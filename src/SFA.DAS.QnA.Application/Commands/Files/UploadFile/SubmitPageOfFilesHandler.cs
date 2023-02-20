@@ -171,7 +171,7 @@ namespace SFA.DAS.QnA.Application.Commands.Files.UploadFile
 
                     foreach (var question in page.Questions)
                     {
-                        SetApplicationDataField(question, answers, applicationData.AsObject());
+                        SetApplicationDataField(question, answers, applicationData);
                         if (!string.IsNullOrWhiteSpace(question.QuestionTag))
                             questionTagsWhichHaveBeenUpdated.Add(question.QuestionTag);
 
@@ -181,7 +181,7 @@ namespace SFA.DAS.QnA.Application.Commands.Files.UploadFile
                             {
                                 foreach (var furtherQuestion in option.FurtherQuestions)
                                 {
-                                    SetApplicationDataField(furtherQuestion, answers, applicationData.AsObject());
+                                    SetApplicationDataField(furtherQuestion, answers, applicationData);
                                     if (!string.IsNullOrWhiteSpace(furtherQuestion.QuestionTag))
                                         questionTagsWhichHaveBeenUpdated.Add(furtherQuestion.QuestionTag);
                                 }
