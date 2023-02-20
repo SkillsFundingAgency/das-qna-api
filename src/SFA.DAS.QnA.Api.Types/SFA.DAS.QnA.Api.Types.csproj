@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>net6.0</TargetFramework>
+        <TargetFrameworks>netstandard2.0;net6.0</TargetFrameworks>
         <PackageId>SFA.DAS.QnA.Api.Types</PackageId>
         <Version>0.4.1</Version>
         <Authors>EFSA</Authors>
@@ -12,8 +12,15 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="MediatR" Version="10.0.1" />
       <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     </ItemGroup>
+
+    <ItemGroup Condition=" '$(TargetFramework)' == 'net6.0'">
+      <PackageReference Include="MediatR" Version="10.0.1" />
+    </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0'">
+      <PackageReference Include="MediatR" Version="7.0.000" />
+  </ItemGroup>
 
 </Project>
