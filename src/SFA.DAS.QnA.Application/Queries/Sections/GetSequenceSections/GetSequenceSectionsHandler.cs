@@ -24,7 +24,7 @@ namespace SFA.DAS.QnA.Application.Queries.Sections.GetSequenceSections
             _mapper = mapper;
             _notRequiredProcessor = notRequiredProcessor;
         }
-        
+
         public async Task<HandlerResponse<List<Section>>> Handle(GetSequenceSectionsRequest request, CancellationToken cancellationToken)
         {
             var application = await _dataContext.Applications.AsNoTracking().FirstOrDefaultAsync(app => app.Id == request.ApplicationId, cancellationToken: cancellationToken);
@@ -41,11 +41,11 @@ namespace SFA.DAS.QnA.Application.Queries.Sections.GetSequenceSections
             {
                 RemovePages(application, section);
             }
-            
+
             return new HandlerResponse<List<Section>>(sections);
         }
-        
-        private  void RemovePages(Data.Entities.Application application, Section section)
+
+        private void RemovePages(Data.Entities.Application application, Section section)
         {
             var applicationData = JsonNode.Parse(application.ApplicationData);
 
@@ -58,10 +58,10 @@ namespace SFA.DAS.QnA.Application.Queries.Sections.GetSequenceSections
             section.QnAData.Pages.RemoveAll(p => !p.Active);
         }
 
-        private  void RemovePagesBasedOnNotRequiredConditions(Section section, JsonNode applicationData)
+        private void RemovePagesBasedOnNotRequiredConditions(Section section, JsonNode applicationData)
         {
-             section.QnAData.Pages =
-                _notRequiredProcessor.PagesWithoutNotRequired(section.QnAData.Pages, applicationData.AsObject()).ToList();
+            section.QnAData.Pages =
+               _notRequiredProcessor.PagesWithoutNotRequired(section.QnAData.Pages, applicationData.AsObject()).ToList();
 
         }
     }
