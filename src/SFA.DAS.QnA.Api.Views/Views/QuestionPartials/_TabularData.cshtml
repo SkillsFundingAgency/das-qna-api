@@ -3,7 +3,7 @@
 @{
     var isError = Model.ErrorMessages != null && Model.ErrorMessages.Count > 0 ? "govuk-input--error" : "";
 
-    var tableData = JsonSerializer.DeSerialize<dynamic>(Model.Value);
+    var tableData = JsonSerializer.Deserialize<dynamic>(Model.Value);
 }
 
 @if (Model.ErrorMessages != null && Model.ErrorMessages.Count > 0)
