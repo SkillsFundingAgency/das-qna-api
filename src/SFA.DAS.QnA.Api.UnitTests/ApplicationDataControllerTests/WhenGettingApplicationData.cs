@@ -46,7 +46,7 @@ namespace SFA.DAS.QnA.Api.UnitTests.ApplicationDataControllerTests
 
             var result = controller.Get(applicationId);
 
-            result.Result.Result.Should().BeOfType<OkObjectResult>(deserializedApplicationData);
+            result.Result.Result.Should().BeOfType<OkObjectResult>();
         }
 
     }
