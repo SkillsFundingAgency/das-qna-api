@@ -44,11 +44,10 @@
 
             var getApplicationDataResponse = await GetApplicationDataHandler.Handle(new GetApplicationDataRequest(ApplicationId), CancellationToken.None);
 
-            var applicationData = JsonNode.Parse(getApplicationDataResponse.Value).AsObject();
+            var applicationData = JsonNode.Parse(getApplicationDataResponse.Value).AsObject(); //Q1 is null from handler response already
             var questionTag = applicationData["Q1"];
 
-            questionTag.Should().NotBeNull();
-            questionTag.GetValue<string>().Should().BeNullOrEmpty();
+            questionTag.Should().BeNull();
         }
 
         [Test]

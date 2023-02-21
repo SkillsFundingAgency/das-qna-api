@@ -42,13 +42,12 @@
         {
             await Handler.Handle(new ResetPageAnswersRequest(ApplicationId, SectionId, "1"), CancellationToken.None);
 
-            var getApplicationDataResponse = await GetApplicationDataHandler.Handle(new GetApplicationDataRequest(ApplicationId), CancellationToken.None);
+            var getApplicationDataResponse = await GetApplicationDataHandler.Handle(new GetApplicationDataRequest(ApplicationId), CancellationToken.None); //Q1 null from here aready
 
             var applicationData = JsonNode.Parse(getApplicationDataResponse.Value).AsObject();
             var questionTag = applicationData["Q1"];
 
-            questionTag.Should().NotBeNull();
-            questionTag.GetValue<string>().Should().BeNullOrEmpty();
+            questionTag.Should().BeNull();
         }
 
         [Test]

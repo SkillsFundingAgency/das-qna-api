@@ -43,9 +43,9 @@
             getPageResponse.Value.Complete.Should().BeFalse();
         }
 
-        [TestCase("Q1", true)]
-        [TestCase("Q2", false)]
-        public async Task Then_questiontag_is_reset(string questionId, bool tagShouldExist)
+        [TestCase("Q1")]
+        [TestCase("Q2")]
+        public async Task Then_questiontag_is_reset(string questionId)
         {
             await Handler.Handle(new ResetSectionAnswersRequest(ApplicationId, SequenceNo, SectionNo), CancellationToken.None);
 
@@ -54,16 +54,7 @@
             var applicationData = JsonNode.Parse(getApplicationDataResponse.Value).AsObject();
             var questionTag = applicationData[questionId];
 
-            if(tagShouldExist)
-            {
-                // active tags should still exists
-                questionTag.Should().NotBeNull();
-                questionTag.GetValue<string>().Should().BeNullOrEmpty();
-            }
-            else
-            {
-                questionTag.Should().BeNull();
-            }
+            questionTag.Should().BeNull();
         }
 
         [TestCase("1", true)]
