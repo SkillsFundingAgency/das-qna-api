@@ -37,14 +37,7 @@ namespace SFA.DAS.QnA.Configuration.Infrastructure
 
             var jsonObject = JObject.Parse(configItem.Data);
 
-            foreach (var child in jsonObject.Children())
-            {
-                foreach (var jToken in child.Children().Children())
-                {
-                    var child1 = (JProperty)jToken;
-                    Data.Add($"{child.Path}:{child1.Name}", child1.Value.ToString());
-                }
-            }
+            ConfigHelper.AddKeyValuePairsToDictionary(jsonObject, Data);
         }
 
         private CloudTable GetTable()

@@ -54,7 +54,7 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
         {
             if (application != null)
             {
-                var applicationData = JsonObject.Parse(application.ApplicationData ?? "{}");
+                var applicationData = JsonNode.Parse(application.ApplicationData ?? "{}").AsObject();
 
                 var page = section?.QnAData?.Pages.SingleOrDefault(p => p.PageId == pageId);
 
@@ -475,7 +475,7 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
                 }
 
                 var application = await _dataContext.Applications.SingleOrDefaultAsync(app => app.Id == applicationId, cancellationToken);
-                UpdateApplicationData(pageId, new List<Answer>(), section, application);
+                UpdateApplicationData(pageId, new List<Answer>(), section, application); 
 
                 var nextAction = GetNextActionForPage(section, application, pageId);
                 var checkboxListAllNexts = GetCheckboxListMatchingNextActionsForPage(section, application, pageId);
