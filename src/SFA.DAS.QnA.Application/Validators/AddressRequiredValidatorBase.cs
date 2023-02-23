@@ -1,6 +1,5 @@
-using System.Collections.Generic;
-using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using System.Collections.Generic;
 
 namespace SFA.DAS.QnA.Application.Validators
 {
@@ -27,7 +26,7 @@ namespace SFA.DAS.QnA.Application.Validators
                     errorMessages.Add(new KeyValuePair<string, string>(questionId, errorMessage));
                 }
             }
-            catch (JsonReaderException)
+            catch (System.Text.Json.JsonException)
             {
                 errorMessages.Add(new KeyValuePair<string, string>(questionId, "Address data is not JSON"));
                 

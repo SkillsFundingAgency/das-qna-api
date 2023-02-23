@@ -1,8 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Newtonsoft.Json;
 using SFA.DAS.QnA.Api.Types;
 using SFA.DAS.QnA.Api.Types.Page;
 using SFA.DAS.QnA.Data.Entities;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace SFA.DAS.QnA.Data
 {
@@ -17,18 +18,18 @@ namespace SFA.DAS.QnA.Data
             modelBuilder.Entity<ApplicationSection>()
                 .Property(c => c.QnAData)
                 .HasConversion(
-                    v => JsonConvert.SerializeObject(v,
-                        new JsonSerializerSettings {NullValueHandling = NullValueHandling.Ignore}),
-                    v => JsonConvert.DeserializeObject<QnAData>(v,
-                        new JsonSerializerSettings {NullValueHandling = NullValueHandling.Ignore}));
+                    v => JsonSerializer.Serialize(v,
+                        new JsonSerializerOptions { DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull}),
+                    v => JsonSerializer.Deserialize<QnAData>(v,
+                        new JsonSerializerOptions { DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull }));
             
             modelBuilder.Entity<WorkflowSection>()
                 .Property(c => c.QnAData)
                 .HasConversion(
-                    v => JsonConvert.SerializeObject(v,
-                        new JsonSerializerSettings {NullValueHandling = NullValueHandling.Ignore}),
-                    v => JsonConvert.DeserializeObject<QnAData>(v,
-                        new JsonSerializerSettings {NullValueHandling = NullValueHandling.Ignore}));
+                    v => JsonSerializer.Serialize(v,
+                        new JsonSerializerOptions { DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull }),
+                    v => JsonSerializer.Deserialize<QnAData>(v,
+                        new JsonSerializerOptions { DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull }));
         }
         
         public DbSet<Workflow> Workflows { get; set; }

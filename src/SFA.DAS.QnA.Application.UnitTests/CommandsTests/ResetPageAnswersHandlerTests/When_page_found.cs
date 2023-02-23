@@ -1,9 +1,9 @@
 ﻿namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.ResetPageAnswersHandlerTests
 {
+    using System.Text.Json.Nodes;
     using System.Threading;
     using System.Threading.Tasks;
     using FluentAssertions;
-    using Newtonsoft.Json.Linq;
     using NUnit.Framework;
     using SFA.DAS.QnA.Application.Commands.ResetPageAnswers;
     using SFA.DAS.QnA.Application.Queries.ApplicationData.GetApplicationData;
@@ -44,11 +44,10 @@
 
             var getApplicationDataResponse = await GetApplicationDataHandler.Handle(new GetApplicationDataRequest(ApplicationId), CancellationToken.None);
 
-            var applicationData = JObject.Parse(getApplicationDataResponse.Value);
+            var applicationData = JsonNode.Parse(getApplicationDataResponse.Value).AsObject();
             var questionTag = applicationData["Q1"];
 
-            questionTag.Should().NotBeNull();
-            questionTag.Value<string>().Should().BeNullOrEmpty();
+            questionTag.Should().BeNull();
         }
 
         [Test]

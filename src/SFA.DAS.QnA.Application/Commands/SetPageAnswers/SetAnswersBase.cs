@@ -1,11 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.Json.Nodes;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using SFA.DAS.QnA.Api.Types;
 using SFA.DAS.QnA.Api.Types.Page;
 using SFA.DAS.QnA.Application.Services;
@@ -55,7 +54,7 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
         {
             if (application != null)
             {
-                var applicationData = JObject.Parse(application.ApplicationData ?? "{}");
+                var applicationData = JsonNode.Parse(application.ApplicationData ?? "{}");
 
                 var page = section?.QnAData?.Pages.SingleOrDefault(p => p.PageId == pageId);
 
@@ -84,7 +83,7 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
                         }
                     }
 
-                    application.ApplicationData = applicationData.ToString(Formatting.None);
+                    application.ApplicationData = applicationData.ToString();
 
                     SetStatusOfAllPagesBasedOnUpdatedQuestionTags(application, questionTagsWhichHaveBeenUpdated);
                     _tagProcessingService.ClearDeactivatedTags(application.Id, section.Id);
@@ -173,7 +172,7 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
             return null;
         }
 
-        protected static void SetApplicationDataField(Question question, List<Answer> answers, JObject applicationData)
+        protected static void SetApplicationDataField(Question question, List<Answer> answers, JsonNode applicationData)
         {
             if (question != null && applicationData != null)
             {
@@ -182,13 +181,13 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
 
                 if (!string.IsNullOrWhiteSpace(questionTag))
                 {
-                    if (applicationData.ContainsKey(questionTag))
+                    if (applicationData.AsObject().ContainsKey(questionTag))
                     {
                         applicationData[questionTag] = questionTagAnswer;
                     }
                     else
                     {
-                        applicationData.Add(questionTag, new JValue(questionTagAnswer));
+                        applicationData.AsObject().Add(questionTag, questionTagAnswer);
                     }
                 }
             }
@@ -273,7 +272,7 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
                 }
             }
 
-            var applicationData = JObject.Parse(application?.ApplicationData ?? "{}");
+            var applicationData = JsonNode.Parse(application?.ApplicationData ?? "{}").AsObject();
             var matchingNextsToReturn = new List<Next>();
 
             foreach (var matchingNext in matchingNexts)
@@ -302,7 +301,7 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
                 throw new ApplicationException($"Page {page.PageId}, in Sequence {page.SequenceId}, Section {page.SectionId} has no 'Next' instructions.");
             }
 
-            var applicationData = JObject.Parse(application?.ApplicationData ?? "{}");
+            var applicationData = JsonNode.Parse(application?.ApplicationData ?? "{}");
 
             Next nextAction = null;
 
@@ -322,7 +321,7 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
                         if (!String.IsNullOrWhiteSpace(condition.QuestionTag))
                         {
                             var questionTagValue = applicationData[condition.QuestionTag];
-                            var questionTag = questionTagValue?.Value<string>();
+                            var questionTag = questionTagValue?.GetValue<string>();
                             allConditionsSatisfied = CheckAllConditionsSatisfied(condition, questionTag);
 
                             if (!allConditionsSatisfied)
@@ -399,7 +398,7 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
         }
 
 
-        public Next FindNextRequiredAction(ApplicationSection section, Next nextAction, JObject applicationData)
+        public Next FindNextRequiredAction(ApplicationSection section, Next nextAction, JsonNode applicationData)
         {
             if (section?.QnAData is null || nextAction is null || nextAction.Action != "NextPage") return nextAction;
 
@@ -408,13 +407,13 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
             // Check here for any NotRequiredConditions on the next page.
             var nextPage = section.QnAData?.Pages.FirstOrDefault(p => p.PageId == nextAction.ReturnId);
 
-            if (nextPage is null || applicationData is null)
+            if (nextPage is null || applicationData.AsObject() is null)
             {
                 return nextAction;
             }
             else if (nextPage.NotRequiredConditions != null && nextPage.NotRequiredConditions.Any())
             {
-                nextPage.NotRequired = _notRequiredProcessor.NotRequired(nextPage.NotRequiredConditions, applicationData);
+                nextPage.NotRequired = _notRequiredProcessor.NotRequired(nextPage.NotRequiredConditions, applicationData.AsObject());
                 if (nextPage.NotRequired)
                 {
                     isRequiredNextAction = false;
@@ -443,7 +442,7 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
             }
 
             // NOTE the recursion!
-            return FindNextRequiredAction(section, nextAction, applicationData);
+            return FindNextRequiredAction(section, nextAction, applicationData.AsObject());
         }
 
         protected void MarkPageAsComplete(Page page)

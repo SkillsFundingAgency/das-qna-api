@@ -1,6 +1,5 @@
 using System;
 using MediatR;
-using Newtonsoft.Json.Schema;
 using SFA.DAS.QnA.Api.Types;
 using SFA.DAS.QnA.Api.Types.Page;
 

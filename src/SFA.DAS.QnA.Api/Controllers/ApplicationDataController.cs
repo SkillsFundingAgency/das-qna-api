@@ -1,9 +1,8 @@
 using System;
+using System.Text.Json;
 using System.Threading.Tasks;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using SFA.DAS.QnA.Api.Infrastructure;
 using SFA.DAS.QnA.Application.Commands.SetApplicationData;
 using SFA.DAS.QnA.Application.Queries.ApplicationData.GetApplicationData;
@@ -36,7 +35,7 @@ namespace SFA.DAS.QnA.Api.Controllers
 
             if (!applicationDataResponse.Success) return NotFound(new NotFoundError(applicationDataResponse.Message));
 
-            return Ok(JsonConvert.DeserializeObject(applicationDataResponse.Value));
+            return Ok(JsonSerializer.Deserialize<object>(applicationDataResponse.Value));
         }
 
         /// <summary>
@@ -75,7 +74,7 @@ namespace SFA.DAS.QnA.Api.Controllers
 
             if (!applicationDataResponse.Success) return NotFound(new NotFoundError(applicationDataResponse.Message));
 
-            return JsonConvert.DeserializeObject(applicationDataResponse.Value);
+            return JsonSerializer.Deserialize<object>(applicationDataResponse.Value);
         }
     }
 }

@@ -1,13 +1,11 @@
 using System;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using NUnit.Framework;
 using SFA.DAS.QnA.Api.Types.Page;
 using SFA.DAS.QnA.Application.Commands.SetPageAnswers;
 using SFA.DAS.QnA.Application.Services;
 using SFA.DAS.QnA.Data;
-using SFA.DAS.QnA.Data.Entities;
+using JsonSerializer = System.Text.Json.JsonSerializer;
 
 namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.FindNextRequiredActionTests
 {
@@ -32,7 +30,7 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.FindNextRequiredAction
 
             ApplicationId = Guid.NewGuid();
 
-            ApplicationDataJson = JsonConvert.SerializeObject(new
+            ApplicationDataJson = JsonSerializer.Serialize(new
             {
                 OrgType = "OrgType1"
             });

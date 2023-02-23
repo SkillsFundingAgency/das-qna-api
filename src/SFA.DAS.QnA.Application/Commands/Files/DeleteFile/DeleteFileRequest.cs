@@ -1,12 +1,11 @@
 using System;
 using System.Linq;
+using System.Text.Json.Nodes;
 using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using SFA.DAS.QnA.Api.Types;
 using SFA.DAS.QnA.Api.Types.Page;
 using SFA.DAS.QnA.Configuration.Config;
@@ -120,13 +119,13 @@ namespace SFA.DAS.QnA.Application.Commands.Files.DeleteFile
         private async Task RemoveApplicationDataForThisQuestion(Guid applicationId, string questionId, Page page)
         {
             var application = await _dataContext.Applications.SingleOrDefaultAsync(app => app.Id == applicationId);
-            var applicationData = JObject.Parse(application.ApplicationData);
+            var applicationData = JsonNode.Parse(application.ApplicationData).AsObject();
 
             var question = page.Questions.Single(q => q.QuestionId == questionId);
 
             applicationData.Remove(question.QuestionTag);
             
-            application.ApplicationData = applicationData.ToString(Formatting.None);
+            application.ApplicationData = applicationData.ToString();
 
             await _dataContext.SaveChangesAsync();
         }
