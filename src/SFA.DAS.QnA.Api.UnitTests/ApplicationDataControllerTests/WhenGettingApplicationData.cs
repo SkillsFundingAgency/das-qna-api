@@ -55,7 +55,10 @@ namespace SFA.DAS.QnA.Api.UnitTests.ApplicationDataControllerTests
             var controller = new Controllers.ApplicationDataController(mediator);
             var applicationData = File.ReadAllText("ApplicationDataControllerTests/test.json");
 
-            // var applicationDataDeserialized = JsonConvert.DeserializeObject(applicationData); <-- don't need this anymore
+            // I've commented the line below because we shouldn't be serialising / deserialising in unit tests.
+            // The controller takes care of that already. I should have pointed this out last week,
+            // but I didn't know enough about Text.Json to suggest a better idea back then.
+            // var applicationDataDeserialized = JsonConvert.DeserializeObject(applicationData);
             mediator.Send(Arg.Any<GetApplicationDataRequest>()).Returns(new HandlerResponse<string>(applicationData));
 
             var result = await controller.Get(Guid.NewGuid());
