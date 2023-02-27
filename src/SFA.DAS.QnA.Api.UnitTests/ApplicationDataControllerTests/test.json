@@ -31,21 +31,21 @@
     "Trustees": [
       {
         "Id": "1111111",
-        "Name": "DR DOOM"
+        "Name": "test name 1"
       },
       {
         "Id": "2222222",
-        "Name": "Clark Kent"
+        "Name": "test name 2"
       }
     ],
     "TrusteeManualEntryRequired": false
   },
   "trading_name": "Test",
   "use_trading_name": "Yes",
-  "contact_given_name": "Blah",
-  "contact_family_name": "Blah",
-  "contact_address": "{\r\n  \"AddressLine1\": \"48 Blah Street\",\r\n  \"AddressLine2\": \"\",\r\n  \"AddressLine3\": \"London\",\r\n  \"AddressLine4\": \"\",\r\n  \"Postcode\": \"M38 9RZ\"\r\n}",
-  "contact_email": "saw.naw@digital.education.gov.uk",
+  "contact_given_name": "test first name",
+  "contact_family_name": "test surname",
+  "contact_address": "{\r\n  \"AddressLine1\": \"48 test Street\",\r\n  \"AddressLine2\": \"\",\r\n  \"AddressLine3\": \"London\",\r\n  \"AddressLine4\": \"\",\r\n  \"Postcode\": \"M38 9RZ\"\r\n}",
+  "contact_email": "test.gov.uk",
   "contact_phone_number": "+441234567809",
   "company_ukprn": "12346333",
   "company_number": "",

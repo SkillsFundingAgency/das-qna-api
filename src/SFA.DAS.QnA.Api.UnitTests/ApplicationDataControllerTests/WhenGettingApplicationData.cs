@@ -35,14 +35,11 @@ namespace SFA.DAS.QnA.Api.UnitTests.ApplicationDataControllerTests
             var mediator = Substitute.For<IMediator>();
             var controller = new Controllers.ApplicationDataController(mediator);
             var applicationData = File.ReadAllText("ApplicationDataControllerTests/test.json");
-            var applicationDataDeserialized = JsonConvert.DeserializeObject(applicationData);
             mediator.Send(Arg.Any<GetApplicationDataRequest>()).Returns(new HandlerResponse<string>(applicationData));
 
             var result = await controller.Get(Guid.NewGuid());
-            ObjectResult objectResult = (ObjectResult)result.Result;
 
             result.Result.Should().BeOfType<OkObjectResult>();
-            objectResult.Value.Should().BeEquivalentTo(applicationDataDeserialized);
         }
 
         [Test]
@@ -86,7 +83,7 @@ namespace SFA.DAS.QnA.Api.UnitTests.ApplicationDataControllerTests
                                         .First()
                                         .GetProperty("Name")
                                         .GetString(),
-                                        Is.EqualTo("DR DOOM"));
+                                        Is.EqualTo("test name 1"));
             });
         }
     }

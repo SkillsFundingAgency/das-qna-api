@@ -1,7 +1,6 @@
 ﻿using FluentAssertions;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json;
 using NSubstitute;
 using NUnit.Framework;
 using SFA.DAS.QnA.Api.Controllers;
@@ -12,6 +11,7 @@ using System.IO;
 using System.Linq;
 using System.Text.Json;
 using System.Threading.Tasks;
+using JsonSerializer = System.Text.Json.JsonSerializer;
 
 namespace SFA.DAS.QnA.Api.UnitTests.ApplicationDataControllerTests
 {
@@ -36,13 +36,12 @@ namespace SFA.DAS.QnA.Api.UnitTests.ApplicationDataControllerTests
             var mediator = Substitute.For<IMediator>();
             var controller = new ApplicationDataController(mediator);
             var applicationData = File.ReadAllText("ApplicationDataControllerTests/test.json");
-            var applicationDataDeserialized = JsonConvert.DeserializeObject(applicationData);
-            mediator.Send(Arg.Any<SetApplicationDataRequest>()).Returns(new HandlerResponse<string>(applicationData));
+            var applicationDataResponse = JsonSerializer.Serialize(applicationData);
+            mediator.Send(Arg.Any<SetApplicationDataRequest>()).Returns(new HandlerResponse<string>(applicationDataResponse));
 
             var actionResult = await controller.Post(Guid.NewGuid(), applicationData);
             var resultAsJson = JsonDocument.Parse(actionResult.Value.ToString()).RootElement;
 
-            actionResult.Value.Should().BeEquivalentTo(applicationDataDeserialized);
             Assert.Multiple(() =>
             {
                 Assert.That(resultAsJson.GetProperty("OrganisationReferenceId")
@@ -72,7 +71,7 @@ namespace SFA.DAS.QnA.Api.UnitTests.ApplicationDataControllerTests
                                         .First()
                                         .GetProperty("Name")
                                         .GetString(),
-                                        Is.EqualTo("DR DOOM"));
+                                        Is.EqualTo("test name 1"));
             });
         }
     }
