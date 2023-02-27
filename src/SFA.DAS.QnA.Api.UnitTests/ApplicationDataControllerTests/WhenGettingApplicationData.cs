@@ -45,6 +45,26 @@ namespace SFA.DAS.QnA.Api.UnitTests.ApplicationDataControllerTests
             objectResult.Value.Should().BeEquivalentTo(applicationDataDeserialized);
         }
 
+        // While waiting for Chris to decide, we can still make this test pass regardless of 
+        // whether we use Newtonsoft or not. Here's a suggested refactor that should make all 3 tests pass 
+        // regardless of whether the controller uses Newtonsoft.
+        [Test]
+        public async Task Suggestion_For_Above_Test()
+        {
+            var mediator = Substitute.For<IMediator>();
+            var controller = new Controllers.ApplicationDataController(mediator);
+            var applicationData = File.ReadAllText("ApplicationDataControllerTests/test.json");
+
+            // var applicationDataDeserialized = JsonConvert.DeserializeObject(applicationData); <-- don't need this anymore
+            mediator.Send(Arg.Any<GetApplicationDataRequest>()).Returns(new HandlerResponse<string>(applicationData));
+
+            var result = await controller.Get(Guid.NewGuid());
+            // ObjectResult objectResult = (ObjectResult)result.Result; <-- don't need this cast
+
+            result.Result.Should().BeOfType<OkObjectResult>();
+            // objectResult.Value.Should().BeEquivalentTo(applicationDataDeserialized); <-- instead of this, test the actual content, like the test below
+        }
+
         [Test]
         public async Task And_MediatorCallIsSuccessful_Then_Result_Contains_ExpectedProperties()
         {
