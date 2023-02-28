@@ -2,10 +2,10 @@ using System;
 using System.Threading.Tasks;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using SFA.DAS.QnA.Api.Controllers.Deserializer;
 using SFA.DAS.QnA.Api.Infrastructure;
 using SFA.DAS.QnA.Application.Commands.SetApplicationData;
 using SFA.DAS.QnA.Application.Queries.ApplicationData.GetApplicationData;
-using JsonSerializer = System.Text.Json.JsonSerializer;
 
 namespace SFA.DAS.QnA.Api.Controllers
 {
@@ -14,12 +14,10 @@ namespace SFA.DAS.QnA.Api.Controllers
     public class ApplicationDataController : Controller
     {
         private readonly IMediator _mediator;
-        private readonly HandlerResponseDeserializer _handlerResponseDeserializer;
 
-        public ApplicationDataController(IMediator mediator, HandlerResponseDeserializer handlerResponseDeserializer)
+        public ApplicationDataController(IMediator mediator)
         {
             _mediator = mediator;
-            _handlerResponseDeserializer = handlerResponseDeserializer;
         }
 
         /// <summary>
@@ -37,7 +35,7 @@ namespace SFA.DAS.QnA.Api.Controllers
 
             if (!applicationDataResponse.Success) return NotFound(new NotFoundError(applicationDataResponse.Message));
 
-            return Ok(_handlerResponseDeserializer.Deserialize(applicationDataResponse));
+            return Ok(HandlerResponseDeserializer.Deserialize(applicationDataResponse));
         }
 
         /// <summary>
@@ -76,7 +74,7 @@ namespace SFA.DAS.QnA.Api.Controllers
 
             if (!applicationDataResponse.Success) return NotFound(new NotFoundError(applicationDataResponse.Message));
 
-            return _handlerResponseDeserializer.Deserialize(applicationDataResponse);
+            return HandlerResponseDeserializer.Deserialize(applicationDataResponse);
         }
     }
 }

@@ -1,10 +1,10 @@
 ﻿using NUnit.Framework;
-using SFA.DAS.QnA.Api.Controllers;
 using System.Text.Json;
 using System.Threading.Tasks;
 using System.IO;
 using SFA.DAS.QnA.Api.Types;
 using System.Linq;
+using SFA.DAS.QnA.Api.Controllers.Deserializer;
 
 namespace SFA.DAS.QnA.Api.UnitTests.ApplicationDataControllerTests
 {
@@ -14,10 +14,9 @@ namespace SFA.DAS.QnA.Api.UnitTests.ApplicationDataControllerTests
         [Test]
         public async Task And_MediatorCallIsSuccessful_Then_Result_Contains_ExpectedProperties()
         {
-            var handlerResponseDeserializer = new HandlerResponseDeserializer();
             var handlerResponse = new HandlerResponse<string>() { Value = File.ReadAllText("ApplicationDataControllerTests/test.json"), Message = "Test Message", Success = true };
 
-            var response = await handlerResponseDeserializer.Deserialize(handlerResponse);
+            var response = HandlerResponseDeserializer.Deserialize(handlerResponse);
             var value = JsonDocument.Parse(response.ToString()).RootElement;
 
             Assert.Multiple(() =>

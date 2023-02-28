@@ -18,8 +18,7 @@ namespace SFA.DAS.QnA.Api.UnitTests.ApplicationDataControllerTests
         public async Task And_MediatorCallFails_ThenNotFoundResultReturned()
         {
             var mediator = Substitute.For<IMediator>();
-            var handlerResponseDeserializer = new HandlerResponseDeserializer();
-            var controller = new ApplicationDataController(mediator, handlerResponseDeserializer);
+            var controller = new ApplicationDataController(mediator);
             var applicationData = File.ReadAllText("ApplicationDataControllerTests/test.json");
             mediator.Send(Arg.Any<SetApplicationDataRequest>()).Returns(new HandlerResponse<string>() { Success = false, Message = "ApplicationData does not validated against the Project's Schema." });
 
@@ -32,8 +31,7 @@ namespace SFA.DAS.QnA.Api.UnitTests.ApplicationDataControllerTests
         public async Task And_MediatorCallIsSuccessful_ThenDeserializedResultReturned()
         {
             var mediator = Substitute.For<IMediator>();
-            var handlerResponseDeserializer = new HandlerResponseDeserializer();
-            var controller = new ApplicationDataController(mediator, handlerResponseDeserializer);
+            var controller = new ApplicationDataController(mediator);
             var applicationData = File.ReadAllText("ApplicationDataControllerTests/test.json");
             var handlerResponseValue = new HandlerResponse<string>() { Value = applicationData, Message = "Test Message", Success = true };
             mediator.Send(Arg.Any<SetApplicationDataRequest>()).Returns(handlerResponseValue);

@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using NSubstitute;
 using NUnit.Framework;
 using SFA.DAS.QnA.Api.Controllers;
+using SFA.DAS.QnA.Api.Controllers.Deserializer;
 using SFA.DAS.QnA.Api.Types;
 using SFA.DAS.QnA.Application.Queries.ApplicationData.GetApplicationData;
 using System;
@@ -19,8 +20,7 @@ namespace SFA.DAS.QnA.Api.UnitTests.ApplicationDataControllerTests
         public async Task And_MediatorCallFails_ThenNotFoundResultReturned()
         {
             var mediator = Substitute.For<IMediator>();
-            var handlerResponseDeserializer = new HandlerResponseDeserializer();
-            var controller = new ApplicationDataController(mediator, handlerResponseDeserializer);
+            var controller = new ApplicationDataController(mediator);
             mediator.Send(Arg.Any<GetApplicationDataRequest>()).Returns(new HandlerResponse<string>() { Success = false, Message = "Application does not exist." });
 
             var result = await controller.Get(Guid.NewGuid());
@@ -32,8 +32,7 @@ namespace SFA.DAS.QnA.Api.UnitTests.ApplicationDataControllerTests
         public async Task And_MediatorCallIsSuccessful_ThenOkObjectResultReturned()
         {
             var mediator = Substitute.For<IMediator>();
-            var handlerResponseDeserializer = new HandlerResponseDeserializer();
-            var controller = new ApplicationDataController(mediator, handlerResponseDeserializer);
+            var controller = new ApplicationDataController(mediator);
             var applicationData = File.ReadAllText("ApplicationDataControllerTests/test.json");
             mediator.Send(Arg.Any<GetApplicationDataRequest>()).Returns(new HandlerResponse<string>(applicationData));
 
