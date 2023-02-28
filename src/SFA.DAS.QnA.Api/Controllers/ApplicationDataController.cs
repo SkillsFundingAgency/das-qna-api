@@ -14,10 +14,12 @@ namespace SFA.DAS.QnA.Api.Controllers
     public class ApplicationDataController : Controller
     {
         private readonly IMediator _mediator;
+        private readonly HandlerResponseDeserializer _handlerResponseDeserializer;
 
-        public ApplicationDataController(IMediator mediator)
+        public ApplicationDataController(IMediator mediator, HandlerResponseDeserializer handlerResponseDeserializer)
         {
             _mediator = mediator;
+            _handlerResponseDeserializer = handlerResponseDeserializer;
         }
 
         /// <summary>
@@ -35,7 +37,7 @@ namespace SFA.DAS.QnA.Api.Controllers
 
             if (!applicationDataResponse.Success) return NotFound(new NotFoundError(applicationDataResponse.Message));
 
-            return Ok(JsonSerializer.Deserialize<object>(applicationDataResponse.Value.ToString()));
+            return Ok(_handlerResponseDeserializer.Deserialize(applicationDataResponse));
         }
 
         /// <summary>
@@ -74,7 +76,7 @@ namespace SFA.DAS.QnA.Api.Controllers
 
             if (!applicationDataResponse.Success) return NotFound(new NotFoundError(applicationDataResponse.Message));
 
-            return JsonSerializer.Deserialize<object>(applicationDataResponse.Value).ToString();
+            return _handlerResponseDeserializer.Deserialize(applicationDataResponse);
         }
     }
 }
