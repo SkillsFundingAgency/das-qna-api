@@ -1,0 +1,6 @@
+﻿{
+  "Caption": "Test caption",
+  "HeadingTitles": [ "Title1", "Title2", "Title3" ],
+  "DataRows": [ "row1", "row2", "row3", "row4" ],
+  "ErrorMessages":  ["error 1", "error 2"]
+}
