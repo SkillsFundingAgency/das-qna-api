@@ -4,7 +4,8 @@
 @{
     var isError = Model.ErrorMessages != null && Model.ErrorMessages.Count > 0 ? "govuk-input--error" : "";
 
-    var tableData = JsonSerializer.Deserialize<dynamic>(Model.Value);
+    //var tableData = JsonSerializer.Deserialize<dynamic>(Model.Value);
+    var tableData = SFA.DAS.QnA.Api.Types.Page.ModelValueDeserializer.Deserialize(Model.Value);
 }
 
 @if (Model.ErrorMessages != null && Model.ErrorMessages.Count > 0)
