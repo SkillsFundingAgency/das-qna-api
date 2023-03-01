@@ -6,10 +6,17 @@
 		<IsPackable>false</IsPackable>
 	</PropertyGroup>
 
+	<ItemGroup>
+	  <Content Remove="DeserializerTests\test.json" />
+	</ItemGroup>
+
 
 	<ItemGroup>
 		<None Include="ApplicationDataControllerTests\test.json">
 			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<None Include="DeserializerTests\test.json">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 		</None>
 	</ItemGroup>
 
