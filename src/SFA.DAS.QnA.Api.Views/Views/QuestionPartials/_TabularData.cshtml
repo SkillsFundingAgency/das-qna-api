@@ -1,10 +1,10 @@
-@using NewtonSoft.Json
+@using Newtonsoft.Json
 @model dynamic
 
 @{
     var isError = Model.ErrorMessages != null && Model.ErrorMessages.Count > 0 ? "govuk-input--error" : "";
 
-    var tableData = JsonSerializer.Deserialize<dynamic>(Model.Value);
+    var tableData = JsonConvert.DeserializeObject<dynamic>(Model.Value);
 }
 
 @if (Model.ErrorMessages != null && Model.ErrorMessages.Count > 0)
