@@ -7,7 +7,6 @@ using SFA.DAS.QnA.Api.Controllers;
 using SFA.DAS.QnA.Api.Types;
 using SFA.DAS.QnA.Application.Commands.SetApplicationData;
 using System;
-using System.IO;
 using System.Threading.Tasks;
 
 namespace SFA.DAS.QnA.Api.UnitTests.ApplicationDataControllerTests
@@ -19,7 +18,7 @@ namespace SFA.DAS.QnA.Api.UnitTests.ApplicationDataControllerTests
         {
             var mediator = Substitute.For<IMediator>();
             var controller = new ApplicationDataController(mediator);
-            var applicationData = File.ReadAllText("ApplicationDataControllerTests/test.json");
+            var applicationData = @"{""OrganisationReferenceId"": ""c3333b62-a07c-415e-8778-84222231b0s1""}";
             mediator.Send(Arg.Any<SetApplicationDataRequest>()).Returns(new HandlerResponse<string>() { Success = false, Message = "ApplicationData does not validated against the Project's Schema." });
 
             var result = await controller.Post(Guid.NewGuid(), applicationData);
@@ -32,7 +31,7 @@ namespace SFA.DAS.QnA.Api.UnitTests.ApplicationDataControllerTests
         {
             var mediator = Substitute.For<IMediator>();
             var controller = new ApplicationDataController(mediator);
-            var applicationData = File.ReadAllText("ApplicationDataControllerTests/test.json");
+            var applicationData = @"{""OrganisationReferenceId"": ""c3333b62-a07c-415e-8778-84222231b0s1""}";
             var handlerResponseValue = new HandlerResponse<string>() { Value = applicationData, Message = "Test Message", Success = true };
             mediator.Send(Arg.Any<SetApplicationDataRequest>()).Returns(handlerResponseValue);
 

@@ -32,7 +32,7 @@ namespace SFA.DAS.QnA.Api.UnitTests.ApplicationDataControllerTests
         {
             var mediator = Substitute.For<IMediator>();
             var controller = new ApplicationDataController(mediator);
-            var applicationData = File.ReadAllText("ApplicationDataControllerTests/test.json");
+            var applicationData = @"{""OrganisationReferenceId"": ""c3333b62-a07c-415e-8778-84222231b0s1""}";
             mediator.Send(Arg.Any<GetApplicationDataRequest>()).Returns(new HandlerResponse<string>(applicationData));
 
             var result = await controller.Get(Guid.NewGuid());
