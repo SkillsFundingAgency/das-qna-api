@@ -7,6 +7,7 @@
     using SFA.DAS.QnA.Application.Commands.ResetPageAnswers;
     using SFA.DAS.QnA.Application.Queries.ApplicationData.GetApplicationData;
     using SFA.DAS.QnA.Application.Queries.Sections.GetPage;
+    using System.Text.Json;
     using System.Text.Json.Nodes;
     using System.Threading;
     using System.Threading.Tasks;
@@ -43,17 +44,27 @@
             getPageResponse.Value.Complete.Should().BeFalse();
         }
 
-        [TestCase("Q1")]
-        [TestCase("Q2")]
-        public async Task Then_questiontag_is_reset(string questionId)
+        [TestCase("Q1", true)]
+        [TestCase("Q2", false)]
+        public async Task Then_questiontag_is_reset(string questionId, bool tagShouldExist)
         {
             await Handler.Handle(new ResetSectionAnswersRequest(ApplicationId, SequenceNo, SectionNo), CancellationToken.None);
 
             var getApplicationDataResponse = await GetApplicationDataHandler.Handle(new GetApplicationDataRequest(ApplicationId), CancellationToken.None);
 
-            var applicationData = JsonNode.Parse(getApplicationDataResponse.Value).AsObject();
-            var questionTag = applicationData[questionId];
+            var applicationData = JsonDocument.Parse(getApplicationDataResponse.Value).RootElement;
+            var questionTag = applicationData.GetProperty(questionId);
 
+            if (tagShouldExist)
+            {
+                questionTag.Should().NotBeNull();
+                questionTag.ValueKind.Should().NotBe(JsonValueKind.Null);
+                questionTag.ValueKind.Should().NotBe(JsonValueKind.Undefined);
+            }
+            else
+            {
+                questionTag.Should().BeNull();
+            }
             questionTag.Should().BeNull();
         }
 
