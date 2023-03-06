@@ -48,8 +48,7 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.ResetPageAnswersBySect
             var questionTag = applicationData.GetProperty("Q1");
 
             questionTag.Should().NotBeNull();
-            questionTag.ValueKind.Should().NotBe(JsonValueKind.Null);
-            questionTag.ValueKind.Should().NotBe(JsonValueKind.Undefined);
+            questionTag.ValueKind.Should().Be(JsonValueKind.Null);
         }
 
         [Test]
