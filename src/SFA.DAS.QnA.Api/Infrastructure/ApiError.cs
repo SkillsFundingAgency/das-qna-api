@@ -11,6 +11,7 @@ namespace SFA.DAS.QnA.Api.Infrastructure
         public string StatusDescription { get; private set; }
     
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+        [JsonInclude]
         public string Message { get; private set; }
 
         public ApiError(int statusCode, string statusDescription)
