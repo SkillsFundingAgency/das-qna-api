@@ -2,6 +2,7 @@
 using System.Threading;
 using System.Threading.Tasks;
 using FluentAssertions;
+using FluentAssertions.Execution;
 using NUnit.Framework;
 using SFA.DAS.QnA.Application.Commands.ResetPageAnswers;
 using SFA.DAS.QnA.Application.Queries.ApplicationData.GetApplicationData;
@@ -47,7 +48,6 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.ResetPageAnswersBySect
             var applicationData = JsonDocument.Parse(getApplicationDataResponse.Value).RootElement;
             var questionTag = applicationData.GetProperty("Q1");
 
-            questionTag.Should().NotBeNull();
             questionTag.ValueKind.Should().Be(JsonValueKind.Null);
         }
 
