@@ -1,11 +1,11 @@
 using System;
+using System.Text.Json;
 using System.Threading.Tasks;
 using NUnit.Framework;
 using SFA.DAS.QnA.Api.Types.Page;
 using SFA.DAS.QnA.Application.Commands.SetPageAnswers;
 using SFA.DAS.QnA.Application.Services;
 using SFA.DAS.QnA.Data;
-using JsonSerializer = System.Text.Json.JsonSerializer;
 
 namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.FindNextRequiredActionTests
 {
