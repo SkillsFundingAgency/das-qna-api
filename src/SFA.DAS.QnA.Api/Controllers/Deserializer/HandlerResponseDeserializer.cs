@@ -6,6 +6,6 @@ namespace SFA.DAS.QnA.Api.Controllers.Deserializer
 {
     public static class HandlerResponseDeserializer
     {
-        public static object Deserialize(HandlerResponse<string> handlerResponse) { return JsonSerializer.Deserialize<object>(handlerResponse.Value).ToString(); }
+        public static object Deserialize(HandlerResponse<string> handlerResponse) { return JsonSerializer.Deserialize<object>(handlerResponse.Value); }
     }
 }
