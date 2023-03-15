@@ -13,8 +13,8 @@ namespace SFA.DAS.QnA.Application.UnitTests.Validators.MaxWordCountValidatorTest
         [TestCase("    Mary  had   a   little lamb ", "10", true)]
         [TestCase("Mary had a little lamb, its fleece was white as snow", "10", false)]
         [TestCase("   Mary had a     little lamb, its fleece was white as snow                   ", "10", false)]
-        [TestCase("\r\none two three four \r\five-six-seven eight nine ten", "10", true)]
-        [TestCase("\r\none two three four \r\five-six-seven eight nine ten\r\n", "10", true)]
+        [TestCase("\r\none two three four \r\nfive-six-seven eight nine ten\r\n", "10", true)]
+        [TestCase(" \r\n one two three four \r\nfive-six-seven eight nine ten \r\n ", "10", true)]
         public void Then_correct_errors_are_returned(string input, string wordLimit, bool isValid)
         {
             var validator = new MaxWordCountValidator
