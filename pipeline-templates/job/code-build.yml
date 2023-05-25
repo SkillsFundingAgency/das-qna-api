@@ -80,11 +80,6 @@ jobs:
     parameters:
       DotNetStandardPackagesToPack: |
         src/${{ parameters.SolutionBaseName }}.Api.Views/${{ parameters.SolutionBaseName }}.Api.Views.csproj;
-
-  - template: azure-pipelines-templates/build/step/nuget-pack.yml@das-platform-building-blocks
-    parameters:
-      DotNetStandardPackagesToPack: |
-        src/${{ parameters.SolutionBaseName }}.Api.Client/${{ parameters.SolutionBaseName }}.Api.Client.csproj;
         
   - template: azure-pipelines-templates/build/step/nuget-pack.yml@das-platform-building-blocks
     parameters:
