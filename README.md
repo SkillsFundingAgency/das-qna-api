@@ -9,7 +9,6 @@
 This service is a Web API service which allows question sets to be organised and presented and their answers collected by exposing HTTP REST end points.
 
 Nuget packages that go with this solution include:
-* A .Net Core client library for QnA API HTTP REST end points [![QnA API Client](https://buildstats.info/nuget/SFA.DAS.QnA.Api.Client)](https://www.nuget.org/packages/SFA.DAS.QnA.Api.Client)
 * Common types to interact with the QnA Api [![QnA API Types](https://buildstats.info/nuget/SFA.DAS.QnA.Api.Types)](https://www.nuget.org/packages/SFA.DAS.QnA.Api.Types)
 * Asp.Net Core Views using [GOV UK Design System](https://design-system.service.gov.uk/get-started/) [![QnA API Views](https://buildstats.info/nuget/SFA.DAS.QnA.Api.Views)](https://www.nuget.org/packages/SFA.DAS.QnA.Api.Views)
 
