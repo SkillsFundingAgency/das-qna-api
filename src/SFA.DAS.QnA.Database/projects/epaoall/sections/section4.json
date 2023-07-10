@@ -35,7 +35,13 @@
                                 "HintText": ""
                             }
                         ],
-                        "Validations": [],
+                        "Validations": [
+                            {
+                                "Name": "Required",
+                                "Value": "",
+                                "ErrorMessage": "Select yes if you have the required level"
+                            }
+                        ],
                         "DataEndpoint": null
                     },
                     "Order": null,
@@ -59,7 +65,7 @@
             "Active": true,
             "NotRequiredConditions": [
                 {
-                    "Field": "eqap",
+                    "Field": "Eqap",
                     "DoesNotContain": [
                         "Office for Students"
                     ]
@@ -102,7 +108,13 @@
                                 "HintText": ""
                             }
                         ],
-                        "Validations": [],
+                        "Validations": [
+                            {
+                                "Name": "Required",
+                                "Value": "",
+                                "ErrorMessage": "Select yes if you have received approval"
+                            }
+                        ],
                         "DataEndpoint": null
                     },
                     "Order": null,
