@@ -6,7 +6,7 @@
     "Workflows": [
 		{
 			"Description": "EPAO Workflow",
-			"Version": "1.4",
+			"Version": "2.0",
 			"Type": "EPAO",
 			"section": [
 				{
