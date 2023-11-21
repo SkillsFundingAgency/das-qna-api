@@ -114,7 +114,7 @@
                                     {
                                         "QuestionId": "DAT-10-4-1",
                                         "Label": "Enter the names of all these organisations",
-										"Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You also need to include which of these organisations may receive funding directly from ESFA or as a subcontractor.</p>",
+										"Hint": "<p class='govuk-body govuk-hint govuk-!-margin-bottom-1'>You also need to include which of these organisations may receive funding directly from DfE or as a subcontractor.</p>",
                                         "Input": {
                                             "Type": "Textarea",
                                             "InputClasses": "",
@@ -162,7 +162,7 @@
             "AllowMultipleAnswers": false,
             "Active": true,
             "NotRequiredConditions": [],
-            "BodyText": "<p class='govuk-body' id='dat-overall-accountability'>This must be someone who's accountable for the overall management and governance of apprenticeships.</p><p class='govuk-body'>We will contact them for all apprenticeship related concerns, issues or queries after your organisation joins the RoATP.</p>",
+            "BodyText": "<p class='govuk-body' id='dat-overall-accountability'>This must be someone who's accountable for the overall management and governance of apprenticeships.</p><p class='govuk-body'>We will contact them for all apprenticeship related concerns, issues or queries after your organisation joins the APAR.</p>",
             "ActivatedByPageId": null
         }
     ]

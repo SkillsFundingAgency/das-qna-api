@@ -14,7 +14,7 @@
                 {
                     "QuestionId": "PAT-650",
                     "QuestionTag": null,
-                    "Label": "How many starts does your organisation forecast in the first 12 months of joining the RoATP?",
+                    "Label": "How many starts does your organisation forecast in the first 12 months of joining the APAR?",
                     "ShortLabel": "",
                     "QuestionBodyText": "",
                     "Hint": "",
@@ -51,7 +51,7 @@
                             {
                                 "Name": "Required",
                                 "Value": "",
-                                "ErrorMessage": "Tell us how many starts your organisation forecasts in the first 12 months of joining RoATP"
+                                "ErrorMessage": "Tell us how many starts your organisation forecasts in the first 12 months of joining APAR"
                             }
                         ]
                     }
@@ -79,7 +79,7 @@
             "BodyText": "",
             "Details": {
                 "Title": "What is a 'start'?",
-                "Body": "A 'start' is an apprentice who will start their apprenticeship after your organisation joins the RoATP."
+                "Body": "A 'start' is an apprentice who will start their apprenticeship after your organisation joins the APAR."
             }
         },
         {
@@ -101,13 +101,13 @@
                         "Type": "Radio",
                         "Options": [
                             {
-                                "Value": "Within the first 3 months of joining the RoATP",
-                                "Label": "Within the first 3 months of joining the RoATP",
+                                "Value": "Within the first 3 months of joining the APAR",
+                                "Label": "Within the first 3 months of joining the APAR",
                                 "HintText": ""
                             },
                             {
-                                "Value": "Between the first 3 to 6 months of joining the RoATP",
-                                "Label": "Between the first 3 to 6 months of joining the RoATP",
+                                "Value": "Between the first 3 to 6 months of joining the APAR",
+                                "Label": "Between the first 3 to 6 months of joining the APAR",
                                 "HintText": ""
                             }
                         ],
