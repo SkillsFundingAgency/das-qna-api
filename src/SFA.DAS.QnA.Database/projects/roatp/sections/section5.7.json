@@ -126,7 +126,7 @@
                     "QuestionTag": null,
                     "Label": "How will you continue to deliver English and maths training and assessments if there's a significant event?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body' id='rte-managing-employers'>Your answer must include how your organisation will:</p><ul class='govuk-list govuk-list--bullet'><li>continue to deliver training and assessments without delays</li><li>provide a different location, if needed</li><li>manage transportation needs</li><li>use different methods of communication</li><li>have a list of emergency contacts numbers, ESFA must be listed</li></ul>",
+                    "QuestionBodyText": "<p class='govuk-body' id='rte-managing-employers'>Your answer must include how your organisation will:</p><ul class='govuk-list govuk-list--bullet'><li>continue to deliver training and assessments without delays</li><li>provide a different location, if needed</li><li>manage transportation needs</li><li>use different methods of communication</li><li>have a list of emergency contacts numbers, DfE must be listed</li></ul>",
                     "Hint": "",
                     "Input": {
                         "Type": "Textarea",

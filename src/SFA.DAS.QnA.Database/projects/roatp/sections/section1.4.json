@@ -477,13 +477,13 @@
 			"PageId": "200",
 			"SequenceId": null,
 			"SectionId": null,
-			"Title": "Is your organisation registered and receiving funding from ESFA?",
-			"LinkTitle": "Is your organisation registered and receiving funding from ESFA?",
+			"Title": "Is your organisation registered and receiving funding from DfE?",
+			"LinkTitle": "Is your organisation registered and receiving funding from DfE?",
 			"InfoText": "",
 			"Questions": [{
 				"QuestionId": "YO-200",
 				"QuestionTag": "OrganisationRegisteredESFA",
-				"Label": "Is your organisation registered and receiving funding from ESFA?",
+				"Label": "Is your organisation registered and receiving funding from DfE?",
 				"ShortLabel": "",
 				"QuestionBodyText": "",
 				"Hint": "",
@@ -500,7 +500,7 @@
 					],
 					"Validations": [{
 						"Name": "Required",
-						"ErrorMessage": "Tell us if your organisation is registered and receiving funding from ESFA"
+						"ErrorMessage": "Tell us if your organisation is registered and receiving funding from DfE"
 					}]
 				}
 			}],
@@ -535,13 +535,13 @@
 			"PageId": "210",
 			"SequenceId": null,
 			"SectionId": null,
-			"Title": "Is your organisation receiving funding from ESFA?",
-			"LinkTitle": "Is your organisation receiving funding from ESFA?",
+			"Title": "Is your organisation receiving funding from DfE?",
+			"LinkTitle": "Is your organisation receiving funding from DfE?",
 			"InfoText": "",
 			"Questions": [{
 				"QuestionId": "YO-210",
 				"QuestionTag": "OrganisationFundedESFA",
-				"Label": "Is your organisation receiving funding from ESFA?",
+				"Label": "Is your organisation receiving funding from DfE?",
 				"ShortLabel": "",
 				"QuestionBodyText": "",
 				"Hint": "",
@@ -558,7 +558,7 @@
 					],
 					"Validations": [{
 						"Name": "Required",
-						"ErrorMessage": "Tell us if your organisation is receiving funding from ESFA"
+						"ErrorMessage": "Tell us if your organisation is receiving funding from DfE"
 					}]
 				}
 			}],
@@ -1248,14 +1248,14 @@
             "PageId": "10001",
             "SequenceId": null,
             "SectionId": null,
-            "Title": "Your organisation is not eligible to apply to join RoATP",
+            "Title": "Your organisation is not eligible to apply to join APAR",
             "LinkTitle": "",
             "InfoText": "",
             "Questions": [
                 {
                     "QuestionId": "SHUT-001",
                     "QuestionTag": null,
-                    "Label": "Your organisation is not eligible to apply to join RoATP",
+                    "Label": "Your organisation is not eligible to apply to join APAR",
                     "ShortLabel": "",
                     "QuestionBodyText": "<p class='govuk-body'>Your organisation must have been actively trading for at least 12 months.</p><p class='govuk-body'>You can try again once your organisation has enough trading history.</p><p class='govuk-body'><a href='https://www.gov.uk' class='govuk-link'>Back to GOV.UK</a></p>",
                     "Hint": "",
@@ -1277,14 +1277,14 @@
             "PageId": "10002",
             "SequenceId": null,
             "SectionId": null,
-            "Title": "Your organisation is not eligible to apply to join RoATP",
+            "Title": "Your organisation is not eligible to apply to join APAR",
             "LinkTitle": "",
             "InfoText": "",
             "Questions": [
                 {
                     "QuestionId": "SHUT-002",
                     "QuestionTag": null,
-                    "Label": "Your organisation is not eligible to apply to join RoATP",
+                    "Label": "Your organisation is not eligible to apply to join APAR",
                     "ShortLabel": "",
                     "QuestionBodyText": "<p class='govuk-body'>Your organisation must have been actively trading for at least 12 months.</p><p class='govuk-body'>You can try again once your organisation has enough trading history.</p><p class='govuk-body'><a href='https://www.gov.uk' class='govuk-link'>Back to GOV.UK</a></p>",
                     "Hint": "",
@@ -1306,14 +1306,14 @@
             "PageId": "10003",
             "SequenceId": null,
             "SectionId": null,
-            "Title": "Your organisation is not eligible to apply to join RoATP",
+            "Title": "Your organisation is not eligible to apply to join APAR",
             "LinkTitle": "",
             "InfoText": "",
             "Questions": [
                 {
                     "QuestionId": "SHUT-003",
                     "QuestionTag": null,
-                    "Label": "Your organisation is not eligible to apply to join RoATP",
+                    "Label": "Your organisation is not eligible to apply to join APAR",
                     "ShortLabel": "",
                     "QuestionBodyText": "<p class='govuk-body'>Your organisation must have been actively trading for at least 3 months.</p><p class='govuk-body'>You can try again once your organisation has enough trading history.</p><p class='govuk-body'><a href='https://www.gov.uk' class='govuk-link'>Back to GOV.UK</a></p>",
                     "Hint": "",

@@ -12,7 +12,7 @@
             "InfoText": "",
             "Details": {
                 "Title": "Further information",
-                "Body": "<p class='govuk-body'>Section 4.4.1 of the Funding higher risk organisations and subcontractors policy:</p><p class='govuk-body'>A provider will be considered to be a high risk provider and the ESFA will take action where it, any of the directors, shadow directors, trustees or any person who is a member of the administrative, management or supervisory body of the provider or who has powers of representation, decision, influence, management or control of the provider organisation including through a blind trust, a connected party, a partner organisation or a parent organisation:<br/>I. Is bankrupt or is the subject of insolvency or winding-up proceedings, where its assets are being administered by a liquidator or by the court or where it is in an arrangement with creditors.</p>"
+                "Body": "<p class='govuk-body'>Section 4.4.1 of the Funding higher risk organisations and subcontractors policy:</p><p class='govuk-body'>A provider will be considered to be a high risk provider and the DfE will take action where it, any of the directors, shadow directors, trustees or any person who is a member of the administrative, management or supervisory body of the provider or who has powers of representation, decision, influence, management or control of the provider organisation including through a blind trust, a connected party, a partner organisation or a parent organisation:<br/>I. Is bankrupt or is the subject of insolvency or winding-up proceedings, where its assets are being administered by a liquidator or by the court or where it is in an arrangement with creditors.</p>"
             },
             "Questions": [
                 {
@@ -99,7 +99,7 @@
                     "QuestionTag": null,
                     "Label": "Has your organisation failed to pay back funds in the last 3 years?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body' id='cc-organisation-repayfunding'>Tell us if your organisation has failed to repay &pound;50,000 or more:</p><ul class='govuk-list govuk-list--bullet'><li>to ESFA or any other public body</li><li>under a subcontract to deliver education and training services funded by ESFA</li></ul>",
+                    "QuestionBodyText": "<p class='govuk-body' id='cc-organisation-repayfunding'>Tell us if your organisation has failed to repay &pound;50,000 or more:</p><ul class='govuk-list govuk-list--bullet'><li>to DfE or any other public body</li><li>under a subcontract to deliver education and training services funded by DfE</li></ul>",
                     "Hint": "",
                     "Input": {
                         "Type": "ComplexRadio",
@@ -174,7 +174,7 @@
             "InfoText": "",
             "Details": {
                 "Title": "Further information",
-                "Body": "<p class='govuk-body'>Section 5.1.1 of the Funding higher risk organisations and subcontractors policy:</p><p class='govuk-body'>The provider:<br/>II. Has previously had, in relation to any ESFA (and/or EFA or SFA) monies, a contract for services, a grant funding agreement or an apprenticeship agreement with the ESFA terminated as a consequence of falling within one or more of the criteria specified in this policy and has not been able to present sufficient evidence such that the ESFA can be satisfied that there would be no risk to public funds, were funding provided.</p>"
+                "Body": "<p class='govuk-body'>Section 5.1.1 of the Funding higher risk organisations and subcontractors policy:</p><p class='govuk-body'>The provider:<br/>II. Has previously had, in relation to any DfE (and/or EFA or SFA) monies, a contract for services, a grant funding agreement or an apprenticeship agreement with the DfE terminated as a consequence of falling within one or more of the criteria specified in this policy and has not been able to present sufficient evidence such that the DfE can be satisfied that there would be no risk to public funds, were funding provided.</p>"
             },
             "Questions": [
                 {
@@ -814,7 +814,7 @@
                 {
                     "QuestionId": "CC-29",
                     "QuestionTag": null,
-                    "Label": "Is your organisation currently, or has within the last 5 years been, subject to an investigation by the ESFA or other public body or regulator?",
+                    "Label": "Is your organisation currently, or has within the last 5 years been, subject to an investigation by the DfE or other public body or regulator?",
                     "ShortLabel": "",
                     "QuestionBodyText": "<p class='govuk-body' id='cc-organisation-whistleblowing'></p>",
                     "Hint": "",
@@ -863,7 +863,7 @@
                             {
                                 "Name": "Required",
                                 "Value": "",
-                                "ErrorMessage": "Tell us if your organisation is currently, or has within the last 5 years been, subject to an investigation by the ESFA or other public body or regulator"
+                                "ErrorMessage": "Tell us if your organisation is currently, or has within the last 5 years been, subject to an investigation by the DfE or other public body or regulator"
                             }
                         ]
                     }
@@ -891,7 +891,7 @@
             "InfoText": "",
             "Details": {
                 "Title": "Further information",
-                "Body": "<p class='govuk-body'>Section 4.4.1 of the Funding higher risk organisations and subcontractors policy:</p><p class='govuk-body'>A provider will be considered to be a high risk provider and the ESFA will take action where it, any of the directors, shadow directors, trustees or any person who is a member of the administrative, management or supervisory body of the provider or who has powers of representation, decision, influence, management or control of the provider organisation including through a blind trust, a connected party, a partner organisation or a parent organisation:<br/>I. Is bankrupt or is the subject of insolvency or winding-up proceedings, where its assets are being administered by a liquidator or by the court or where it is in an arrangement with creditors.<br/>II. Have been served with a Public Interest Winding Up petition under section 124A of the Insolvency Act 1986.</p>"
+                "Body": "<p class='govuk-body'>Section 4.4.1 of the Funding higher risk organisations and subcontractors policy:</p><p class='govuk-body'>A provider will be considered to be a high risk provider and the DfE will take action where it, any of the directors, shadow directors, trustees or any person who is a member of the administrative, management or supervisory body of the provider or who has powers of representation, decision, influence, management or control of the provider organisation including through a blind trust, a connected party, a partner organisation or a parent organisation:<br/>I. Is bankrupt or is the subject of insolvency or winding-up proceedings, where its assets are being administered by a liquidator or by the court or where it is in an arrangement with creditors.<br/>II. Have been served with a Public Interest Winding Up petition under section 124A of the Insolvency Act 1986.</p>"
             },
             "Questions": [
                 {

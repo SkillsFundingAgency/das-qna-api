@@ -30,7 +30,7 @@
                                 "Label": "No",
                                 "Value": "No",
                                 "FurtherQuestions": null,
-                                "ConditionalContentText": "<p class='govuk-body'>Before joining the RoATP, your organisation must have systems and processes in place to get this data. We may ask for evidence on this.</p>"
+                                "ConditionalContentText": "<p class='govuk-body'>Before joining the APAR, your organisation must have systems and processes in place to get this data. We may ask for evidence on this.</p>"
                             }
                         ],
                         "Validations": [
@@ -69,7 +69,7 @@
                     "QuestionTag": null,
                     "Label": "Does your organisation have the resources to submit Individualised Learner Record (ILR) data?",
                     "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body' id='eat-evaluating-ilrdata'>As part of joining the RoATP, your organisation is required to submit data every month using the ILR. If your organisation fails to do this, it will not receive funding under levy agreements.</p><p class='govuk-body'>Find out more about <a href='https://www.gov.uk/government/collections/individualised-learner-record-ilr' class='govuk-link' target='_blank'>the ILR (opens in a new window or tab)</a>.</p>",
+                    "QuestionBodyText": "<p class='govuk-body' id='eat-evaluating-ilrdata'>As part of joining the APAR, your organisation is required to submit data every month using the ILR. If your organisation fails to do this, it will not receive funding under levy agreements.</p><p class='govuk-body'>Find out more about <a href='https://www.gov.uk/government/collections/individualised-learner-record-ilr' class='govuk-link' target='_blank'>the ILR (opens in a new window or tab)</a>.</p>",
                     "Hint": "",
                     "Input": {
                         "Type": "Radio",

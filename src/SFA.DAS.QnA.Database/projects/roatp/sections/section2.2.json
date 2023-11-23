@@ -148,14 +148,14 @@
             "PageId": "2110",
             "SequenceId": null,
             "SectionId": null,
-            "Title": "Does your organisation expect its funding from ESFA to be less than 5% of its total annual turnover?",
-            "LinkTitle": "Does your organisation expect its funding from ESFA to be less than 5% of its total annual turnover?",
+            "Title": "Does your organisation expect its funding from DfE to be less than 5% of its total annual turnover?",
+            "LinkTitle": "Does your organisation expect its funding from DfE to be less than 5% of its total annual turnover?",
             "InfoText": "",
             "Questions": [
                 {
                     "QuestionId": "FH-40",
                     "QuestionTag": "FHAFundingTurnover5pc",
-                    "Label": "Does your organisation expect its funding from ESFA to be less than 5% of its total annual turnover?",
+                    "Label": "Does your organisation expect its funding from DfE to be less than 5% of its total annual turnover?",
                     "ShortLabel": "",
                     "QuestionBodyText": "",
                     "Hint": "",
@@ -176,7 +176,7 @@
                         "Validations": [
                             {
                                 "Name": "Required",
-                                "ErrorMessage": "Tell us if your organisation expects its funding from ESFA to be less than 5% of its total annual turnover"
+                                "ErrorMessage": "Tell us if your organisation expects its funding from DfE to be less than 5% of its total annual turnover"
                             }
                         ]
                     }
@@ -292,7 +292,7 @@
             "BodyText": "<p class='govuk-body'>We'll check your organisation's financial statements to confirm your answer.</p><p class='govuk-body'>If your answer is incorrect, we may ask you to provider further financial information for your organisation.</p>",
             "Details": {
                 "Title": "Show me an example",
-                "Body": "<p class='govuk-body'>Your organisation's total annual turnover is &pound;80 million and it expects to receive &pound;3 million of funding from the ESFA.</p><p class='govuk-body'>This is less than 5% of its total annual turnover, so the answer is yes.</p>"
+                "Body": "<p class='govuk-body'>Your organisation's total annual turnover is &pound;80 million and it expects to receive &pound;3 million of funding from the DfE.</p><p class='govuk-body'>This is less than 5% of its total annual turnover, so the answer is yes.</p>"
             },
             "ActivatedByPageId": "2100"
         },
@@ -484,7 +484,7 @@
                 "Label": "Enter your organisation's total borrowings for the latest reported financial year",
                 "ShortLabel": "",
                 "QuestionBodyText": "",
-                "Hint": "You will need to add up a total of: <ul class='govuk-list govuk-list--bullet govuk-hint'><li>bank overdraft</li><li>loans</li><li>amounts owed to directors - including director loans and director accounts</li><li>amounts owed to subsidiaries - if your organisation is part of a group</li><li>amounts due under finance leases or hire purchase contracts</li><li>additional borrowings not listed above, please refer to the <a href='https://www.gov.uk/government/publications/esfa-financial-health-assessment' class='govuk-link' target='_blank'>ESFA's financial health policy (opens in a new window or tab)</a> regarding other creditors.</li></ul>",
+                "Hint": "You will need to add up a total of: <ul class='govuk-list govuk-list--bullet govuk-hint'><li>bank overdraft</li><li>loans</li><li>amounts owed to directors - including director loans and director accounts</li><li>amounts owed to subsidiaries - if your organisation is part of a group</li><li>amounts due under finance leases or hire purchase contracts</li><li>additional borrowings not listed above, please refer to the <a href='https://www.gov.uk/government/publications/esfa-financial-health-assessment' class='govuk-link' target='_blank'>DfE's financial health policy (opens in a new window or tab)</a> regarding other creditors.</li></ul>",
                 "Input": {
                   "Type": "Number",
                   "InputClasses": "govuk-input--width-10",
@@ -824,7 +824,7 @@
                 "Label": "Enter your organisation's total borrowings for the latest reported financial year",
                 "ShortLabel": "",
                 "QuestionBodyText": "",
-                "Hint": "You will need to add up a total of: <ul class='govuk-list govuk-list--bullet govuk-hint'><li>bank overdraft</li><li>loans</li><li>amounts owed to directors - including director loans and director accounts</li><li>amounts owed to subsidiaries - if your organisation is part of a group</li><li>amounts due under finance leases or hire purchase contracts</li><li>additional borrowings not listed above, please refer to the <a href='https://www.gov.uk/government/publications/esfa-financial-health-assessment' class='govuk-link' target='_blank'>ESFA's financial health policy (opens in a new window or tab)</a> regarding other creditors.</li></ul>",
+                "Hint": "You will need to add up a total of: <ul class='govuk-list govuk-list--bullet govuk-hint'><li>bank overdraft</li><li>loans</li><li>amounts owed to directors - including director loans and director accounts</li><li>amounts owed to subsidiaries - if your organisation is part of a group</li><li>amounts due under finance leases or hire purchase contracts</li><li>additional borrowings not listed above, please refer to the <a href='https://www.gov.uk/government/publications/esfa-financial-health-assessment' class='govuk-link' target='_blank'>DfE's financial health policy (opens in a new window or tab)</a> regarding other creditors.</li></ul>",
                 "Input": {
                   "Type": "Number",
                   "InputClasses": "govuk-input--width-10",
@@ -1147,7 +1147,7 @@
                 "Label": "Enter your organisation's total borrowings for the latest reported financial year",
                 "ShortLabel": "",
                 "QuestionBodyText": "",
-                "Hint": "You will need to add up a total of: <ul class='govuk-list govuk-list--bullet govuk-hint'><li>bank overdraft</li><li>loans</li><li>amounts owed to directors - including director loans and director accounts</li><li>amounts owed to subsidiaries - if your organisation is part of a group</li><li>amounts due under finance leases or hire purchase contracts</li><li>additional borrowings not listed above, please refer to the <a href='https://www.gov.uk/government/publications/esfa-financial-health-assessment' class='govuk-link' target='_blank'>ESFA's financial health policy (opens in a new window or tab)</a> regarding other creditors.</li></ul>",
+                "Hint": "You will need to add up a total of: <ul class='govuk-list govuk-list--bullet govuk-hint'><li>bank overdraft</li><li>loans</li><li>amounts owed to directors - including director loans and director accounts</li><li>amounts owed to subsidiaries - if your organisation is part of a group</li><li>amounts due under finance leases or hire purchase contracts</li><li>additional borrowings not listed above, please refer to the <a href='https://www.gov.uk/government/publications/esfa-financial-health-assessment' class='govuk-link' target='_blank'>DfE's financial health policy (opens in a new window or tab)</a> regarding other creditors.</li></ul>",
                 "Input": {
                   "Type": "Number",
                   "InputClasses": "govuk-input--width-10",

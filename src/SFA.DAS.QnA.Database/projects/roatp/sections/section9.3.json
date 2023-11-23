@@ -7,14 +7,14 @@
             "PageId": "9200",
             "SequenceId": null,
             "SectionId": null,
-            "Title": "Do you understand that your organisation will not join the RoATP until it completes all post application tasks?",
-            "LinkTitle": "Do you understand that your organisation will not join the RoATP until it completes all post application tasks?",
+            "Title": "Do you understand that your organisation will not join the APAR until it completes all post application tasks?",
+            "LinkTitle": "Do you understand that your organisation will not join the APAR until it completes all post application tasks?",
             "InfoText": "",
             "Questions": [
                 {
                     "QuestionId": "FIN-50",
                     "QuestionTag": "COAPart2MainEmployer",
-                    "Label": "Do you understand that your organisation will not join the RoATP until it completes all post application tasks?",
+                    "Label": "Do you understand that your organisation will not join the APAR until it completes all post application tasks?",
                     "ShortLabel": "",
                     "QuestionBodyText": "<p class='govuk-body'>We'll tell you more about the post application tasks after you submit your application.</p>",
                     "Hint": "",
@@ -36,7 +36,7 @@
                             {
                                 "Name": "Required",
                                 "Value": "",
-                                "ErrorMessage": "Tell us if you understand that your organisation will not join the RoATP until it completes all post application tasks"
+                                "ErrorMessage": "Tell us if you understand that your organisation will not join the APAR until it completes all post application tasks"
                             }
                         ]
                     }
@@ -86,7 +86,7 @@
             "AllowMultipleAnswers": false,
             "Active": false,
             "NotRequiredConditions": [],
-            "BodyText": "<p class='govuk-body'>Before you submit your application you must understand that your organisation will not join the RoATP until it completes all post application tasks.</p>",
+            "BodyText": "<p class='govuk-body'>Before you submit your application you must understand that your organisation will not join the APAR until it completes all post application tasks.</p>",
             "ActivatedByPageId": "9200"
         }
     ]
