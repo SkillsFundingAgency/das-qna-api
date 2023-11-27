@@ -414,7 +414,7 @@ namespace SFA.DAS.QnA.Application.Commands.SetPageAnswers
             }
             else if (nextPage.NotRequiredConditions != null && nextPage.NotRequiredConditions.Any())
             {
-                nextPage.NotRequired = _notRequiredProcessor.NotRequired(nextPage.NotRequiredConditions, applicationData);
+                nextPage.NotRequired = _notRequiredProcessor.IsPageNotRequired(nextPage, applicationData);
                 if (nextPage.NotRequired)
                 {
                     isRequiredNextAction = false;
