@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Nodes;
 using Microsoft.EntityFrameworkCore;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using SFA.DAS.QnA.Api.Types.Page;
 using SFA.DAS.QnA.Data;
 
@@ -42,14 +41,14 @@ namespace SFA.DAS.QnA.Application.Services
 
             var application = _dataContext.Applications.SingleOrDefault(app => app.Id == applicationId);
             if (application == null) return;
-            var applicationData = JObject.Parse(application.ApplicationData ?? "{}");
+            var applicationData = JsonNode.Parse(application.ApplicationData ?? "{}").AsObject();
 
             foreach (var tag in deactivatedTags)
             {
                 applicationData.Remove(tag);
             }
 
-            application.ApplicationData = applicationData.ToString(Formatting.None);
+            application.ApplicationData = applicationData.ToString();
             _dataContext.SaveChanges();
         }
     }

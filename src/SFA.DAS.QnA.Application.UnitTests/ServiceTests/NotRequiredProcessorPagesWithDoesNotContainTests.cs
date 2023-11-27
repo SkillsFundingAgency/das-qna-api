@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
+using System.Text.Json;
+using System.Text.Json.Nodes;
 using NUnit.Framework;
 using SFA.DAS.QnA.Api.Types.Page;
 using SFA.DAS.QnA.Application.Services;
@@ -29,12 +29,12 @@ namespace SFA.DAS.QnA.Application.UnitTests.ServiceTests
 
             var pageIdAlwaysPresent = "3";
             var pageIdAbsentIfNotRequired = "2";
-            var applicationDataJson = JsonConvert.SerializeObject(new
+            var applicationDataJson = JsonSerializer.Serialize(new
             {
                 FieldToTest = applicationDataValue
             });
 
-            var applicationData = JObject.Parse(applicationDataJson);
+            var applicationData = JsonNode.Parse(applicationDataJson);
             var doesNotContainList = new string[] {notRequiredConditionValue};
             if (!singleValue)
                 doesNotContainList = new string[] {"value1", notRequiredConditionValue, "value2"};

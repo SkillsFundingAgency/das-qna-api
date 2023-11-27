@@ -4,13 +4,13 @@ using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper;
 using FluentAssertions;
-using Newtonsoft.Json;
 using NUnit.Framework;
 using SFA.DAS.QnA.Api.Types;
 using SFA.DAS.QnA.Api.Types.Page;
 using SFA.DAS.QnA.Application.Queries.Sections.GetSection;
 using SFA.DAS.QnA.Application.Services;
 using SFA.DAS.QnA.Data.Entities;
+using JsonSerializer = System.Text.Json.JsonSerializer;
 
 namespace SFA.DAS.QnA.Application.UnitTests.QueriesTests.GetSectionTests
 {
@@ -29,7 +29,7 @@ namespace SFA.DAS.QnA.Application.UnitTests.QueriesTests.GetSectionTests
             dataContext.Applications.Add(new Data.Entities.Application()
             {
                 Id = applicationId,
-                ApplicationData = JsonConvert.SerializeObject(applicationData)
+                ApplicationData = JsonSerializer.Serialize(applicationData)
             });
 
             dataContext.ApplicationSections.Add(new ApplicationSection()

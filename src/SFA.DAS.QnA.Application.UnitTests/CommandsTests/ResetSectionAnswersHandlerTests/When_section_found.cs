@@ -1,16 +1,17 @@
-﻿namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.ResetPageAnswersHandlerTests
-{
-    using FluentAssertions;
-    using Newtonsoft.Json.Linq;
-    using NSubstitute;
-    using NUnit.Framework;
-    using SFA.DAS.QnA.Application.Commands.Files.DeleteFile;
-    using SFA.DAS.QnA.Application.Commands.ResetPageAnswers;
-    using SFA.DAS.QnA.Application.Queries.ApplicationData.GetApplicationData;
-    using SFA.DAS.QnA.Application.Queries.Sections.GetPage;
-    using System.Threading;
-    using System.Threading.Tasks;
+﻿using FluentAssertions;
+using FluentAssertions.Execution;
+using NSubstitute;
+using NUnit.Framework;
+using SFA.DAS.QnA.Application.Commands.Files.DeleteFile;
+using SFA.DAS.QnA.Application.Commands.ResetPageAnswers;
+using SFA.DAS.QnA.Application.Queries.ApplicationData.GetApplicationData;
+using SFA.DAS.QnA.Application.Queries.Sections.GetPage;
+using System.Text.Json;
+using System.Threading;
+using System.Threading.Tasks;
 
+namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.ResetPageAnswersHandlerTests
+{
     public class When_section_found : ResetSectionAnswersTestBase
     {
         [Test]
@@ -43,26 +44,20 @@
             getPageResponse.Value.Complete.Should().BeFalse();
         }
 
-        [TestCase("Q1", true)]
-        [TestCase("Q2", false)]
-        public async Task Then_questiontag_is_reset(string questionId, bool tagShouldExist)
+        [Test]
+        public async Task Then_questiontag_is_reset()
         {
             await Handler.Handle(new ResetSectionAnswersRequest(ApplicationId, SequenceNo, SectionNo), CancellationToken.None);
 
             var getApplicationDataResponse = await GetApplicationDataHandler.Handle(new GetApplicationDataRequest(ApplicationId), CancellationToken.None);
 
-            var applicationData = JObject.Parse(getApplicationDataResponse.Value);
-            var questionTag = applicationData[questionId];
+            var applicationData = JsonDocument.Parse(getApplicationDataResponse.Value).RootElement;
+            var questionTag = applicationData.GetProperty("Q1");
 
-            if(tagShouldExist)
+            using (new AssertionScope())
             {
-                // active tags should still exists
-                questionTag.Should().NotBeNull();
-                questionTag.Value<string>().Should().BeNullOrEmpty();
-            }
-            else
-            {
-                questionTag.Should().BeNull();
+                questionTag.ValueKind.Should().Be(JsonValueKind.Null);
+                applicationData.TryGetProperty("Q2", out _).Should().BeFalse();
             }
         }
 

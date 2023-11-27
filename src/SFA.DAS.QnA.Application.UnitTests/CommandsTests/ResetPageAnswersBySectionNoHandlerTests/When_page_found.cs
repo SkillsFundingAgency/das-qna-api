@@ -1,20 +1,21 @@
-﻿namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.ResetPageAnswersBySectionNoHandlerTests
-{
-    using System.Threading;
-    using System.Threading.Tasks;
-    using FluentAssertions;
-    using Newtonsoft.Json.Linq;
-    using NUnit.Framework;
-    using SFA.DAS.QnA.Application.Commands.ResetPageAnswers;
-    using SFA.DAS.QnA.Application.Queries.ApplicationData.GetApplicationData;
-    using SFA.DAS.QnA.Application.Queries.Sections.GetPage;
+﻿using System.Text.Json;
+using System.Threading;
+using System.Threading.Tasks;
+using FluentAssertions;
+using FluentAssertions.Execution;
+using NUnit.Framework;
+using SFA.DAS.QnA.Application.Commands.ResetPageAnswers;
+using SFA.DAS.QnA.Application.Queries.ApplicationData.GetApplicationData;
+using SFA.DAS.QnA.Application.Queries.Sections.GetPage;
 
+namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.ResetPageAnswersBySectionNoHandlerTests
+{
     public class When_page_found : ResetPageAnswersBySectionNoTestBase
     {
         [Test]
         public async Task Then_successful_response()
         {
-            var response = await Handler.Handle(new ResetPageAnswersBySectionNoRequest(ApplicationId, SequenceNo,SectionNo, "1"), CancellationToken.None);
+            var response = await Handler.Handle(new ResetPageAnswersBySectionNoRequest(ApplicationId, SequenceNo, SectionNo, "1"), CancellationToken.None);
 
             response.Value.HasPageAnswersBeenReset.Should().BeTrue();
         }
@@ -44,11 +45,10 @@
 
             var getApplicationDataResponse = await GetApplicationDataHandler.Handle(new GetApplicationDataRequest(ApplicationId), CancellationToken.None);
 
-            var applicationData = JObject.Parse(getApplicationDataResponse.Value);
-            var questionTag = applicationData["Q1"];
+            var applicationData = JsonDocument.Parse(getApplicationDataResponse.Value).RootElement;
+            var questionTag = applicationData.GetProperty("Q1");
 
-            questionTag.Should().NotBeNull();
-            questionTag.Value<string>().Should().BeNullOrEmpty();
+            questionTag.ValueKind.Should().Be(JsonValueKind.Null);
         }
 
         [Test]

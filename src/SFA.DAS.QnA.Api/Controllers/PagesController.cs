@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using Newtonsoft.Json;
 using SFA.DAS.QnA.Api.Infrastructure;
 using SFA.DAS.QnA.Api.Types;
 using SFA.DAS.QnA.Api.Types.Page;
@@ -18,6 +17,7 @@ using SFA.DAS.QnA.Application.Commands.ResetPagesToIncomplete;
 using SFA.DAS.QnA.Application.Commands.SkipPage;
 using SFA.DAS.QnA.Application.Queries.Sections.GetPage;
 using SFA.DAS.QnA.Application.Queries.Sections.CanUpdatePage;
+using System.Text.Json;
 
 namespace SFA.DAS.QnA.Api.Controllers
 {
@@ -127,7 +127,7 @@ namespace SFA.DAS.QnA.Api.Controllers
         [ProducesResponseType(200)]
         public async Task<ActionResult<SetPageAnswersResponse>> SetPageAnswers(Guid applicationId, Guid sectionId, string pageId, [FromBody] List<Answer> answers)
         {
-            _logger.LogInformation($"Answers sent to SetPageAnswers: {JsonConvert.SerializeObject(answers)}");
+            _logger.LogInformation($"Answers sent to SetPageAnswers: {JsonSerializer.Serialize(answers)}");
             
             var savePageAnswersResponse = await _mediator.Send(new SetPageAnswersRequest(applicationId, sectionId, pageId, answers), CancellationToken.None);
             if (!savePageAnswersResponse.Success)
@@ -136,7 +136,7 @@ namespace SFA.DAS.QnA.Api.Controllers
                 return BadRequest(new BadRequestError(savePageAnswersResponse.Message));
             }
 
-            _logger.LogInformation($"Response from SetPageAnswers: {JsonConvert.SerializeObject(savePageAnswersResponse.Value)}");
+            _logger.LogInformation($"Response from SetPageAnswers: {JsonSerializer.Serialize(savePageAnswersResponse.Value)}");
             
             return savePageAnswersResponse.Value;
         }
@@ -150,7 +150,7 @@ namespace SFA.DAS.QnA.Api.Controllers
         [ProducesResponseType(200)]
         public async Task<ActionResult<SetPageAnswersResponse>> SetPageAnswers(Guid applicationId, int sequenceNo, int sectionNo, string pageId, [FromBody] List<Answer> answers)
         {
-            _logger.LogInformation($"Answers sent to SetPageAnswers: {JsonConvert.SerializeObject(answers)}");
+            _logger.LogInformation($"Answers sent to SetPageAnswers: {JsonSerializer.Serialize(answers)}");
 
             var savePageAnswersResponse = await _mediator.Send(new SetPageAnswersBySectionNoRequest(applicationId, sequenceNo, sectionNo, pageId, answers), CancellationToken.None);
             if (!savePageAnswersResponse.Success)
@@ -159,7 +159,7 @@ namespace SFA.DAS.QnA.Api.Controllers
                 return BadRequest(new BadRequestError(savePageAnswersResponse.Message));
             }
 
-            _logger.LogInformation($"Response from SetPageAnswers: {JsonConvert.SerializeObject(savePageAnswersResponse.Value)}");
+            _logger.LogInformation($"Response from SetPageAnswers: {JsonSerializer.Serialize(savePageAnswersResponse.Value)}");
 
             return savePageAnswersResponse.Value;
         }
@@ -182,7 +182,7 @@ namespace SFA.DAS.QnA.Api.Controllers
                 return BadRequest(new BadRequestError(resetPageAnswersResponse.Message));
             }
 
-            _logger.LogInformation($"Response from ResetPageAnswers: {JsonConvert.SerializeObject(resetPageAnswersResponse.Value)}");
+            _logger.LogInformation($"Response from ResetPageAnswers: {JsonSerializer.Serialize(resetPageAnswersResponse.Value)}");
 
             return resetPageAnswersResponse.Value;
         }
@@ -205,7 +205,7 @@ namespace SFA.DAS.QnA.Api.Controllers
                 return BadRequest(new BadRequestError(resetPageAnswersResponse.Message));
             }
 
-            _logger.LogInformation($"Response from ResetPageAnswersBySectionNumber: {JsonConvert.SerializeObject(resetPageAnswersResponse.Value)}");
+            _logger.LogInformation($"Response from ResetPageAnswersBySectionNumber: {JsonSerializer.Serialize(resetPageAnswersResponse.Value)}");
 
             return resetPageAnswersResponse.Value;
         }
@@ -228,7 +228,7 @@ namespace SFA.DAS.QnA.Api.Controllers
                 return BadRequest(new BadRequestError(resetSectionAnswersResponse.Message));
             }
 
-            _logger.LogInformation($"Response from ResetPageAnswersBySectionNumber: {JsonConvert.SerializeObject(resetSectionAnswersResponse.Value)}");
+            _logger.LogInformation($"Response from ResetPageAnswersBySectionNumber: {JsonSerializer.Serialize(resetSectionAnswersResponse.Value)}");
 
             return resetSectionAnswersResponse.Value;
         }
@@ -295,7 +295,7 @@ namespace SFA.DAS.QnA.Api.Controllers
                 return BadRequest(new BadRequestError(getNextActionResponse.Message));
             }
 
-            _logger.LogInformation($"Response from SkipPage: {JsonConvert.SerializeObject(getNextActionResponse.Value)}");
+            _logger.LogInformation($"Response from SkipPage: {JsonSerializer.Serialize(getNextActionResponse.Value)}");
 
             return getNextActionResponse.Value;
         }
@@ -320,7 +320,7 @@ namespace SFA.DAS.QnA.Api.Controllers
                 return BadRequest(new BadRequestError(getNextActionResponse.Message));
             }
 
-            _logger.LogInformation($"Response from SkipPageBySectionNo: {JsonConvert.SerializeObject(getNextActionResponse.Value)}");
+            _logger.LogInformation($"Response from SkipPageBySectionNo: {JsonSerializer.Serialize(getNextActionResponse.Value)}");
 
             return getNextActionResponse.Value;
         }
@@ -334,7 +334,7 @@ namespace SFA.DAS.QnA.Api.Controllers
         [ProducesResponseType(200)]
         public async Task SetPagesToIncomplete(Guid applicationId, int sequenceNo, int sectionNo, [FromBody] List<string> pageIdsToExclude)
         {
-            _logger.LogInformation($"Pages sent to reset-completeflag to false: {JsonConvert.SerializeObject(pageIdsToExclude)} in SetPagesToIncomplete");
+            _logger.LogInformation($"Pages sent to reset-completeflag to false: {JsonSerializer.Serialize(pageIdsToExclude)} in SetPagesToIncomplete");
             await _mediator.Send(new ResetPagesToIncompleteRequest(applicationId, sequenceNo, sectionNo, pageIdsToExclude), CancellationToken.None);
         }
     }
