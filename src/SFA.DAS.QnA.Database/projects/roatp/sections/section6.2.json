@@ -47,7 +47,7 @@
             "NotRequiredConditions": [
                 {
                     "Field": "RouteAndOnRoatp",
-                    "DoesNotContain": ["MainOnRoatp"]
+                    "DoesNotContain": ["MainOnRoatp", "EmployerOnRoatp"]
                 }
             ],
 			"PageOfAnswers": [],
@@ -68,82 +68,10 @@
                 },
                 {
                     "Action": "NextPage",
-                    "ReturnId": "6250",
-                    "Conditions": [
-                        {
-                            "QuestionId": "PAT-21",
-                            "Contains": "Apprenticeship frameworks"
-                        },
-                        {
-                            "QuestionTag": "ApplyProviderRoute",
-                            "MustEqual": "1"
-                        }
-                    ]
-                },
-                {
-                    "Action": "ReturnToSection",
-                    "ReturnId": "6.3",
-                    "Conditions": []
-                }
-            ],
-            "ActivatedByPageId": null,
-            "BodyText": ""
-        },
-        {
-            "PageId": "6202",
-            "SequenceId": null,
-            "SectionId": null,
-            "Title": "Type of apprenticeship training",
-            "LinkTitle": "Type of apprenticeship training",
-            "InfoText": "",
-            "Questions": [
-                {
-                    "QuestionId": "PAT-22",
-                    "QuestionTag": "PATTypeOfTrainingMainEmployer",
-                    "Label": "What type of apprenticeship training will your organisation offer?",
-                    "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body'>Apprenticeship frameworks were replaced by apprenticeship standards on 1 August 2020. </p><p class='govuk-body'>Existing apprentices on frameworks will still be able to complete the framework, providing they started on or before 31 July 2020.</p>",
-                    "Hint": "Select all that apply. ",
-                    "Input": {
-                        "Type": "CheckboxList",
-                        "Options": [
-                            {
-                                "Label": "Apprenticeship standards",
-                                "Value": "Apprenticeship standards",
-                                "HintText": ""
-                            },
-                            {
-                                "Label": "Apprenticeship frameworks",
-                                "Value": "Apprenticeship frameworks",
-                                "HintText": ""
-                            }
-                        ],
-                        "Validations": [
-                            {
-                                "Name": "Required",
-                                "Value": "",
-                                "ErrorMessage": "Tell us what type of apprenticeship training your organisation will offer"
-                            }
-                        ]
-                    }
-                }
-            ],
-            "AllowMultipleAnswers": false,
-            "Active": true,
-            "NotRequiredConditions": [
-                {
-                    "Field": "RouteAndOnRoatp",
-                    "DoesNotContain": ["EmployerOnRoatp"]
-                }
-            ],
-			"PageOfAnswers": [],
-            "Next": [
-                {
-                    "Action": "NextPage",
                     "ReturnId": "6230",
                     "Conditions": [
                         {
-                            "QuestionId": "PAT-22",
+                            "QuestionId": "PAT-21",
                             "Contains": "Apprenticeship standards"
                         },
                         {
@@ -157,7 +85,21 @@
                     "ReturnId": "6250",
                     "Conditions": [
                         {
-                            "QuestionId": "PAT-22",
+                            "QuestionId": "PAT-21",
+                            "Contains": "Apprenticeship frameworks"
+                        },
+                        {
+                            "QuestionTag": "ApplyProviderRoute",
+                            "MustEqual": "1"
+                        }
+                    ]
+                },
+                {
+                    "Action": "NextPage",
+                    "ReturnId": "6250",
+                    "Conditions": [
+                        {
+                            "QuestionId": "PAT-21",
                             "Contains": "Apprenticeship frameworks"
                         },
                         {
@@ -170,7 +112,7 @@
                     "Action": "ReturnToSection",
                     "ReturnId": "6.3",
                     "Conditions": []
-                }
+                }				
             ],
             "ActivatedByPageId": null,
             "BodyText": ""
@@ -469,58 +411,7 @@
 			"NotRequiredConditions": [
                 {
                     "Field": "RouteAndOnRoatp",
-                    "DoesNotContain": ["MainNotOnRoatp"]
-                }
-				],
-            "BodyText": ""
-        },
-        {
-            "PageId": "6206",
-            "SequenceId": null,
-            "SectionId": null,
-            "Title": "Application standards",
-            "LinkTitle": "Application standards",
-            "InfoText": "",
-            "Questions": [
-                {
-                    "QuestionId": "PAT-30",
-                    "QuestionTag": null,
-                    "Label": "Tell us how your organisation is ready to deliver training in apprenticeship standards",
-                    "ShortLabel": "",
-                    "QuestionBodyText": "<p class='govuk-body'>You must include how your organisation has:</p><ul class='govuk-list govuk-list--bullet'><li>commitment and approval from senior managers to deliver apprenticeship standards</li><li>a governance group in place to monitor delivery of training</li><li>an implementation plan specific to apprenticeship training </li><li>resources that support the delivery of apprenticeship standards</li></ul>",
-                    "Hint": "",
-                    "Input": {
-                        "Type": "Textarea",
-                        "Options": [],
-                        "Validations": [
-                            {
-                                "Name": "Required",
-                                "Value": "",
-                                "ErrorMessage": "Tell us how your organisation is ensuring it's ready to deliver training in apprenticeship standards"
-                            },
-                            {
-                                "Name": "MaxWordCount",
-                                "Value": "275",
-                                "ErrorMessage": "Your answer must be 275 words or less"
-                            }
-                        ]
-                    }
-                }
-            ],
-			"PageOfAnswers": [],
-            "Next": [
-                {
-                    "Action": "NextPage",
-                    "ReturnId": "6270",
-                    "Conditions": []
-                }
-            ],
-            "AllowMultipleAnswers": false,
-            "Active": true,
-			"NotRequiredConditions": [
-                {
-                    "Field": "RouteAndOnRoatp",
-                    "DoesNotContain": ["EmployerNotOnRoatp"]
+                    "DoesNotContain": ["MainNotOnRoatp", "EmployerNotOnRoatp"]
                 }
 				],
             "BodyText": ""
@@ -578,7 +469,7 @@
             ],
             "AllowMultipleAnswers": false,
             "Active": false,
-            "ActivatedByPageId": "6201,6202,6203,6204",
+            "ActivatedByPageId": "6201,6203,6204",
             "BodyText": ""
         },
         {
@@ -664,7 +555,7 @@
                     ]
                 }
             ],
-            "ActivatedByPageId": "6201,6202",
+            "ActivatedByPageId": "6201",
             "BodyText": ""
         },
       {
@@ -1173,7 +1064,7 @@
                     ]
                 }
             ],
-            "ActivatedByPageId": "6230,6252,6205,6206",
+            "ActivatedByPageId": "6230,6252,6205",
             "BodyText": ""
         },
         {
