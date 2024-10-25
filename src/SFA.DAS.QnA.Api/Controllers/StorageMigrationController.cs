@@ -1,12 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
-using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Azure.Storage.Blobs;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Azure.Storage;
-using Microsoft.Azure.Storage.Blob;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
@@ -60,27 +58,26 @@ namespace SFA.DAS.QnA.Api.Controllers
                                     if (!string.IsNullOrWhiteSpace(answer.Value))
                                     {
                                         // get original file...
-                                        var account = CloudStorageAccount.Parse(_fileStorageConfig.Value.StorageConnectionString);
-                                        var client = account.CreateCloudBlobClient();
-                                        var container = client.GetContainerReference(_fileStorageConfig.Value.ContainerName);
+                                        var blobServiceClient = new BlobServiceClient(_fileStorageConfig.Value.StorageConnectionString);
+                                        var containerClient = blobServiceClient.GetBlobContainerClient(_fileStorageConfig.Value.ContainerName);
 
-                                        var applicationFolder = container.GetDirectoryReference(section.ApplicationId.ToString());
-                                        var sequenceFolder = applicationFolder.GetDirectoryReference(section.SequenceNo.ToString());
-                                        var sectionFolder = sequenceFolder.GetDirectoryReference(section.SectionNo.ToString());
-                                        var pageFolder = sectionFolder.GetDirectoryReference(page.PageId.ToLower());
+                                        var applicationFolder = $"{section.ApplicationId.ToString().ToLower()}";
+                                        var sequenceFolder = $"{sequenceId.ToString().ToLower()}";
+                                        var sectionFolder = $"{sectionId.ToString().ToLower()}";
+                                        var pageFolder = $"{page.PageId.ToLower()}";
+                                        var questionFolder = $"{answer.QuestionId.ToLower()}";
 
-                                        var questionFolder = pageFolder.GetDirectoryReference(answer.QuestionId.ToLower());
+                                        var originalBlobPath = $"{applicationFolder}/{sequenceFolder}/{sectionFolder}/{pageFolder}/{questionFolder}/{answer.Value}";
+                                        var blobClient = containerClient.GetBlobClient(originalBlobPath);
 
-                                        var blobReference = questionFolder.GetBlockBlobReference(answer.Value);
-
-                                        if (blobReference.Exists())
+                                        if (await blobClient.ExistsAsync())
                                         {
-                                            var newfileurl = $"{section.ApplicationId.ToString().ToLower()}/{sequenceId.ToString().ToLower()}/{sectionId.ToString().ToLower()}/{page.PageId}/{answer.QuestionId.ToLower()}/{answer.Value}";
-                                            var newFileLocation = container.GetBlockBlobReference(newfileurl);
+                                            var newFileUrl = $"{applicationFolder}/{sequenceFolder}/{sectionFolder}/{page.PageId}/{answer.QuestionId.ToLower()}/{answer.Value}";
+                                            var newBlobClient = containerClient.GetBlobClient(newFileUrl);
 
-                                            await newFileLocation.StartCopyAsync(blobReference);
+                                            await newBlobClient.StartCopyFromUriAsync(blobClient.Uri);
 
-                                            result.MigratedFiles.Add(new MigratedFile {From = blobReference.Name, To = newfileurl});
+                                            result.MigratedFiles.Add(new MigratedFile { From = blobClient.Name, To = newFileUrl });
                                         }
                                     }
                                 }

@@ -10,10 +10,12 @@ using Microsoft.Extensions.Options;
 using SFA.DAS.QnA.Configuration.Config;
 using SFA.DAS.QnA.Application.Commands.CreateSnapshot;
 using Microsoft.Extensions.Logging;
-using Microsoft.Azure.Storage.Blob;
+using Azure.Storage.Blobs;
 using SFA.DAS.QnA.Application.Commands.Files;
 using System.Text;
 using System.IO;
+using Azure.Storage.Blobs.Models;
+using System.Diagnostics;
 
 namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.CreateSnapshotTests
 {
@@ -33,7 +35,7 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.CreateSnapshotTests
         protected CreateSnapshotHandler Handler;
 
         protected QnaDataContext DataContext;
-        protected CloudBlobContainer Container;
+        protected BlobContainerClient ContainerClient;
 
         [SetUp]
         public async Task SetUp()
@@ -51,7 +53,7 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.CreateSnapshotTests
             QuestionId = "Q1";
             Filename = "file.txt";
 
-            Container = await GetContainer(fileStorageConfig);
+            ContainerClient = await  GetContainerClient(fileStorageConfig);
 
             await DataContext.Applications.AddAsync(new Data.Entities.Application() { Id = ApplicationId, ApplicationData = "{}" });
 
@@ -86,15 +88,15 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.CreateSnapshotTests
 
             await DataContext.SaveChangesAsync();
 
-            await AddFile(ApplicationId, SequenceId, SectionId, PageId, QuestionId, Filename, Container);
+            await AddFile(ApplicationId, SequenceId, SectionId, PageId, QuestionId, Filename, ContainerClient);
         }
 
         [TearDown]
         public void TearDown()
         {
-            if (Container != null)
+            if (ContainerClient != null)
             {
-                Container.DeleteIfExists();
+                ContainerClient.DeleteIfExists();
             }
         }
 
@@ -103,31 +105,38 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.CreateSnapshotTests
             return Options.Create(new FileStorageConfig { ContainerName = _fileStorageContainerName, StorageConnectionString = _fileStorageConnectionString });
         }
 
-        private static async Task<CloudBlobContainer> GetContainer(IOptions<FileStorageConfig> config)
+        private static async Task<BlobContainerClient> GetContainerClient(IOptions<FileStorageConfig> config)
         {
             return await ContainerHelpers.GetContainer(config.Value.StorageConnectionString, config.Value.ContainerName);
         }
 
-        private static async Task AddFile(Guid applicationId, Guid sequenceId, Guid sectionId, string pageId, string questionId, string filename, CloudBlobContainer container)
+        private static async Task AddFile(Guid applicationId, Guid sequenceId, Guid sectionId, string pageId, string questionId, string filename, BlobContainerClient container)
         {
-            var questionDirectory = ContainerHelpers.GetDirectory(applicationId, sequenceId, sectionId, pageId, questionId, container);
+            var questionDirectory = ContainerHelpers.GetDirectoryPath(applicationId, sequenceId, sectionId, pageId, questionId);
+
+            var fullBlobPath = $"{questionDirectory}/{filename}";
+
+
+
+            Trace.WriteLine($"Writing blob ->  {fullBlobPath}");
 
             byte[] byteArray = Encoding.ASCII.GetBytes(filename);
 
             using (var stream = new MemoryStream(byteArray))
             {
-                var fileBlob = questionDirectory.GetBlockBlobReference(filename);
-                fileBlob.Properties.ContentType = "text/plain";
-                await fileBlob.UploadFromStreamAsync(stream);
+                var fileBlob = container.GetBlobClient(fullBlobPath);
+                await fileBlob.UploadAsync(stream, new BlobHttpHeaders { ContentType = "text/plain" });
             }
         }
 
-        protected bool FileExists(Guid applicationId, Guid sequenceId, Guid sectionId, string pageId, string questionId, string filename, CloudBlobContainer container)
+        protected async Task<bool> FileExists(Guid applicationId, Guid sequenceId, Guid sectionId, string pageId, string questionId, string filename, BlobContainerClient container)
         {
-            var questionDirectory = ContainerHelpers.GetDirectory(applicationId, sequenceId, sectionId, pageId, questionId, container);
+            var questionDirectory = ContainerHelpers.GetDirectoryPath(applicationId, sequenceId, sectionId, pageId, questionId);
 
-            var fileBlob = questionDirectory.GetBlockBlobReference(filename);
-            return fileBlob.Exists();
+            var fileBlob = container.GetBlobClient($"{questionDirectory}/{filename}");
+
+            return await fileBlob.ExistsAsync();
+
         }
     }
 }
