@@ -21,6 +21,7 @@ using Microsoft.OpenApi.Models;
 using SFA.DAS.QnA.Api.Authentication;
 using SFA.DAS.QnA.Api.Authorization;
 using SFA.DAS.QnA.Api.Infrastructure;
+using SFA.DAS.QnA.Api.Types;
 using SFA.DAS.QnA.Application;
 using SFA.DAS.QnA.Application.Commands;
 using SFA.DAS.QnA.Application.Commands.Files;
@@ -59,7 +60,7 @@ namespace SFA.DAS.QnA.Api
         
         public void ConfigureServices(IServiceCollection services)
         {
-            var qnaConfig = _config.GetSection("QnAConfig").Get<QnAConfig>();
+            var qnaConfig = _config.GetSection("QnA").Get<QnAConfig>();
             services.AddSingleton(qnaConfig);      
             
             services.AddOptions();
@@ -83,7 +84,7 @@ namespace SFA.DAS.QnA.Api
             services.AddTransient<IKeyProvider, ConfigKeyProvider>();
             services.AddTransient<ITagProcessingService, TagProcessingService>();
             services.AddAutoMapper(typeof(SystemTime).Assembly);
-            services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(typeof(Startup).Assembly));
+            services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(AppDomain.CurrentDomain.GetAssemblies()));
 
             services.AddDbContext<QnaDataContext>(options =>
             {
