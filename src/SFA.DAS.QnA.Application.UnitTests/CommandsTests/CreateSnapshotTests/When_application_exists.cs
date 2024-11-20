@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using System.Threading.Tasks;
+using FluentAssertions;
 using NUnit.Framework;
 using SFA.DAS.QnA.Application.Commands.CreateSnapshot;
 
@@ -15,8 +16,8 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.CreateSnapshotTests
         {
             var snapshot = await Handler.Handle(new CreateSnapshotRequest(ApplicationId), new System.Threading.CancellationToken());
 
-            Assert.IsTrue(snapshot.Success);
-            Assert.AreNotEqual(ApplicationId, snapshot.Value.ApplicationId);
+            snapshot.Success.Should().BeTrue();
+            snapshot.Value.ApplicationId.Should().NotBe(ApplicationId);
         }
 
         [Test]
@@ -26,15 +27,15 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.CreateSnapshotTests
         public async Task Then_snapshot_has_copied_over_files_successfully()
         {
             var snapshot = await Handler.Handle(new CreateSnapshotRequest(ApplicationId), new System.Threading.CancellationToken());
-            Assert.IsTrue(snapshot.Success);
+            snapshot.Success.Should().BeTrue();
 
             var section = DataContext.ApplicationSections.SingleOrDefault(sec => sec.ApplicationId == snapshot.Value.ApplicationId);
             var page = section?.QnAData.Pages.SingleOrDefault(p => p.PageId == PageId);
             var answer = page?.PageOfAnswers.SelectMany(pao => pao.Answers).SingleOrDefault(ans => ans.QuestionId == QuestionId);
 
-            Assert.IsNotNull(answer);
-            Assert.AreEqual(Filename, answer.Value);
-            Assert.IsTrue(FileExists(section.ApplicationId, section.SequenceId, section.Id, page.PageId, answer.QuestionId, answer.Value, Container));
+            answer.Should().NotBeNull();
+            answer.Value.Should().Be(Filename);
+            (await FileExists(section.ApplicationId, section.SequenceId, section.Id, page.PageId, answer.QuestionId, answer.Value, ContainerClient)).Should().BeTrue();
         }
     }
 }

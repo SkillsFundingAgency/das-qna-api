@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using FluentAssertions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using NUnit.Framework;
@@ -75,9 +76,9 @@ namespace SFA.DAS.QnA.Application.UnitTests.ServiceTests
             var notRequiredProcessor = new NotRequiredProcessor();
             var actualPages = notRequiredProcessor.PagesWithoutNotRequired(pages, applicationData);
 
-            Assert.AreEqual(actualPages.ToList().Count, expectedPagesCount);
-            Assert.IsTrue(actualPages.Any(p=>p.PageId == pageIdAlwaysPresent));
-            Assert.AreNotEqual(actualPages.Any(p=>p.PageId==pageIdAbsentIfNotRequired), match);
+            actualPages.ToList().Should().HaveCount(expectedPagesCount);
+            actualPages.Any(p=>p.PageId == pageIdAlwaysPresent).Should().BeTrue();
+            actualPages.Any(p=>p.PageId==pageIdAbsentIfNotRequired).Should().NotBe(match);
         }
     }
 }

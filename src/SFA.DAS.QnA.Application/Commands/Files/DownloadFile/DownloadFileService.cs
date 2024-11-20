@@ -4,7 +4,7 @@ using System.IO.Compression;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using Microsoft.Azure.Storage.Blob;
+using Azure.Storage.Blobs;
 using Microsoft.Extensions.Options;
 using SFA.DAS.QnA.Api.Types;
 using SFA.DAS.QnA.Api.Types.Page;
@@ -37,33 +37,33 @@ namespace SFA.DAS.QnA.Application.Commands.Files.DownloadFile
             {
                 return new HandlerResponse<DownloadFile>(success:false, message:$"Page {pageId} in Application {applicationId} does not contain any File Upload questions.");
             }
-            
+
             if (page.PageOfAnswers == null || !page.PageOfAnswers.Any())
             {
                 return new HandlerResponse<DownloadFile>(success:false, message:$"Page {pageId} in Application {applicationId} does not contain any uploads.");
             }
 
             var container = await ContainerHelpers.GetContainer(_fileStorageConfig.Value.StorageConnectionString, _fileStorageConfig.Value.ContainerName);
-            var questionDirectory = ContainerHelpers.GetDirectory(applicationId, section.SequenceId, section.Id, pageId, questionId, container);
-            var pageDirectory = ContainerHelpers.GetDirectory(applicationId, section.SequenceId, section.Id, pageId, null, container);
+            var questionDirectoryPath = ContainerHelpers.GetDirectoryPath(applicationId, section.SequenceId, section.Id, pageId, questionId);
+            var pageDirectoryPath = ContainerHelpers.GetDirectoryPath(applicationId, section.SequenceId, section.Id, pageId, null);
 
-            if ((questionId is null)) return await PageFiles(applicationId, pageId, cancellationToken, page, pageDirectory);
-            
-            if (!(fileName is null)) return await SpecifiedFile(applicationId, fileName, pageId, questionId, cancellationToken, page, questionDirectory);
+            if (questionId is null) return await PageFiles(applicationId, pageId, cancellationToken, page, container, pageDirectoryPath);
 
-            var blobs = questionDirectory.ListBlobs(useFlatBlobListing: true).ToList();
+            if (fileName is null) return await SpecifiedFile(applicationId, fileName, pageId, questionId, cancellationToken, page, container, questionDirectoryPath);
+
+            var blobs = container.GetBlobs(prefix: questionDirectoryPath).ToList();
             if (blobs.Count() == 1)
             {
                 var answer = page.PageOfAnswers.SelectMany(poa => poa.Answers).Single(a => a.QuestionId == questionId);
-                return await IndividualFile(answer.Value, cancellationToken, questionDirectory);
+                return await IndividualFile(answer.Value, cancellationToken, container, questionDirectoryPath);
             }
 
             if (!blobs.Any()) return new HandlerResponse<DownloadFile>(success: false, message: $"Page {pageId} in Application {applicationId} does not contain any uploads.");
-                
-            return await ZippedMultipleFiles(questionId, cancellationToken, page, questionDirectory);
+
+            return await ZippedMultipleFiles(questionId, cancellationToken, page, container, questionDirectoryPath);
         }
 
-        private async Task<HandlerResponse<DownloadFile>> PageFiles(Guid applicationId, string pageId, CancellationToken cancellationToken, Page page, CloudBlobDirectory pageDirectory)
+        private async Task<HandlerResponse<DownloadFile>> PageFiles(Guid applicationId, string pageId, CancellationToken cancellationToken, Page page, BlobContainerClient container, string pageDirectoryPath)
         {
             // Get All answers on the page./
             // Loop them.
@@ -77,8 +77,8 @@ namespace SFA.DAS.QnA.Application.Commands.Files.DownloadFile
                 {
                     foreach (var answer in page.PageOfAnswers.SelectMany(poa => poa.Answers))
                     {
-                        var questionDirectory = pageDirectory.GetDirectoryReference(answer.QuestionId.ToLower());
-                        var blobStream = await GetFileStream(cancellationToken, questionDirectory, answer.Value);
+                        var blobName = Path.Combine(pageDirectoryPath, answer.QuestionId.ToLower(), answer.Value);
+                        var blobStream = await GetFileStream(cancellationToken, container, blobName);
 
                         var zipEntry = zipArchive.CreateEntry(answer.Value);
                         using (var entryStream = zipEntry.Open())
@@ -96,11 +96,11 @@ namespace SFA.DAS.QnA.Application.Commands.Files.DownloadFile
             }
         }
 
-        private async Task<HandlerResponse<DownloadFile>> ZippedMultipleFiles(string questionId, CancellationToken cancellationToken, Page page, CloudBlobDirectory directory)
+        private async Task<HandlerResponse<DownloadFile>> ZippedMultipleFiles(string questionId, CancellationToken cancellationToken, Page page, BlobContainerClient container, string directoryPath)
         {
             using (var zipStream = new MemoryStream())
             {
-                await ZipUploadedFiles(questionId, cancellationToken, zipStream, page, directory);
+                await ZipUploadedFiles(questionId, cancellationToken, zipStream, page, container, directoryPath);
                 zipStream.Position = 0;
                 var newStream = new MemoryStream();
                 zipStream.CopyTo(newStream);
@@ -109,13 +109,14 @@ namespace SFA.DAS.QnA.Application.Commands.Files.DownloadFile
             }
         }
 
-        private async Task ZipUploadedFiles(string questionId, CancellationToken cancellationToken, MemoryStream zipStream, Page page, CloudBlobDirectory directory)
+        private async Task ZipUploadedFiles(string questionId, CancellationToken cancellationToken, MemoryStream zipStream, Page page, BlobContainerClient container, string directoryPath)
         {
             using (var zipArchive = new ZipArchive(zipStream, ZipArchiveMode.Create, true))
             {
                 foreach (var answer in page.PageOfAnswers.SelectMany(poa => poa.Answers).Where(a => a.QuestionId == questionId))
                 {
-                    var blobStream = await GetFileStream(cancellationToken, directory, answer.Value);
+                    var blobName = Path.Combine(directoryPath, answer.Value);
+                    var blobStream = await GetFileStream(cancellationToken, container, blobName);
 
                     var zipEntry = zipArchive.CreateEntry(answer.Value);
                     using (var entryStream = zipEntry.Open())
@@ -126,7 +127,7 @@ namespace SFA.DAS.QnA.Application.Commands.Files.DownloadFile
             }
         }
 
-        private async Task<HandlerResponse<DownloadFile>> SpecifiedFile(Guid applicationId, string fileName, string pageId, string questionId, CancellationToken cancellationToken, Page page, CloudBlobDirectory directory)
+        private async Task<HandlerResponse<DownloadFile>> SpecifiedFile(Guid applicationId, string fileName, string pageId, string questionId, CancellationToken cancellationToken, Page page, BlobContainerClient container, string directoryPath)
         {
             var answer = page.PageOfAnswers.SelectMany(poa => poa.Answers).SingleOrDefault(a => a.Value == fileName && a.QuestionId == questionId);
             if (answer is null)
@@ -134,27 +135,28 @@ namespace SFA.DAS.QnA.Application.Commands.Files.DownloadFile
                 return new HandlerResponse<DownloadFile>(success: false, message: $"Question {questionId} on Page {pageId} in Application {applicationId} does not contain an upload named {fileName}");
             }
 
-            return await IndividualFile(fileName, cancellationToken, directory);
+            return await IndividualFile(fileName, cancellationToken, container, directoryPath);
         }
 
-        private async Task<HandlerResponse<DownloadFile>> IndividualFile(string filename, CancellationToken cancellationToken, CloudBlobDirectory directory)
+        private async Task<HandlerResponse<DownloadFile>> IndividualFile(string filename, CancellationToken cancellationToken, BlobContainerClient container, string directoryPath)
         {
-            var blobStream = await GetFileStream(cancellationToken, directory, filename);
+            var blobStream = await GetFileStream(cancellationToken, container, Path.Combine(directoryPath, filename));
 
             return new HandlerResponse<DownloadFile>(new DownloadFile() { ContentType = blobStream.Item2, FileName = filename, Stream = blobStream.Item1 });
         }
 
-        private async Task<Tuple<Stream, string>> GetFileStream(CancellationToken cancellationToken, CloudBlobDirectory directory, string blobName)
+        private async Task<Tuple<Stream, string>> GetFileStream(CancellationToken cancellationToken, BlobContainerClient container, string blobName)
         {
-            var blobReference = directory.GetBlobReference(blobName);
+            var blobClient = container.GetBlobClient(blobName);
             var blobStream = new MemoryStream();
 
-            await blobReference.DownloadToStreamAsync(blobStream, null, new BlobRequestOptions() { DisableContentMD5Validation = true }, null, cancellationToken);
+            var downloadResponse = await blobClient.DownloadAsync(cancellationToken);
+            await downloadResponse.Value.Content.CopyToAsync(blobStream);
             blobStream.Position = 0;
 
             var decryptedStream = _encryptionService.Decrypt(blobStream);
 
-            return new Tuple<Stream, string>(decryptedStream, blobReference.Properties.ContentType);
+            return new Tuple<Stream, string>(decryptedStream, downloadResponse.Value.ContentType);
         }
     }
 }

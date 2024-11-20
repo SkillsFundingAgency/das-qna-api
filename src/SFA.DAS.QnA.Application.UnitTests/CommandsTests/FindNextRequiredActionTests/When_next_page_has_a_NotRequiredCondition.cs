@@ -145,7 +145,7 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.FindNextRequiredAction
 
             var applicationData = JObject.Parse(ApplicationDataJson);
             SetAnswersBase.FindNextRequiredAction(section, NextAction, applicationData);
-            Assert.IsTrue(section.QnAData.Pages.First().NotRequired);
+            section.QnAData.Pages.First().NotRequired.Should().BeTrue();
         }
     }
 

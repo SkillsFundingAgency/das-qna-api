@@ -15,6 +15,9 @@ using SFA.DAS.QnA.Application.Services;
 using SFA.DAS.QnA.Configuration.Config;
 using SFA.DAS.QnA.Data;
 using SFA.DAS.QnA.Data.Entities;
+using Azure.Storage.Blobs;
+using System.IO;
+using Azure.Storage.Blobs.Models;
 
 namespace SFA.DAS.QnA.Application.Commands.Files.UploadFile
 {
@@ -24,7 +27,8 @@ namespace SFA.DAS.QnA.Application.Commands.Files.UploadFile
         private readonly IEncryptionService _encryptionService;
         private readonly IFileContentValidator _fileContentValidator;
 
-        public SubmitPageOfFilesHandler(QnaDataContext dataContext, IOptions<FileStorageConfig> fileStorageConfig, IEncryptionService encryptionService, IAnswerValidator answerValidator, IFileContentValidator fileContentValidator, INotRequiredProcessor notRequiredProcessor, ITagProcessingService tagProcessingService) : base(dataContext, notRequiredProcessor, tagProcessingService, answerValidator)
+        public SubmitPageOfFilesHandler(QnaDataContext dataContext, IOptions<FileStorageConfig> fileStorageConfig, IEncryptionService encryptionService, IAnswerValidator answerValidator, IFileContentValidator fileContentValidator, INotRequiredProcessor notRequiredProcessor, ITagProcessingService tagProcessingService)
+            : base(dataContext, notRequiredProcessor, tagProcessingService, answerValidator)
         {
             _fileStorageConfig = fileStorageConfig;
             _encryptionService = encryptionService;
@@ -115,14 +119,17 @@ namespace SFA.DAS.QnA.Application.Commands.Files.UploadFile
                     foreach (var file in request.Files)
                     {
                         var questionIdFromFileName = file.Name;
-                        var questionFolder = ContainerHelpers.GetDirectory(request.ApplicationId, section.SequenceId, request.SectionId, request.PageId, questionIdFromFileName, container);
+                        var directoryPath = ContainerHelpers.GetDirectoryPath(request.ApplicationId, section.SequenceId, request.SectionId, request.PageId, questionIdFromFileName);
 
-                        var blob = questionFolder.GetBlockBlobReference(file.FileName);
-                        blob.Properties.ContentType = file.ContentType;
+                        var blobClient = container.GetBlobClient(Path.Combine(directoryPath, file.FileName));
+
+                        var blobHttpHeaders = new BlobHttpHeaders
+                        {
+                            ContentType = file.ContentType
+                        };
 
                         var encryptedFileStream = _encryptionService.Encrypt(file.OpenReadStream());
-
-                        await blob.UploadFromStreamAsync(encryptedFileStream, cancellationToken);
+                        await blobClient.UploadAsync(encryptedFileStream, new BlobUploadOptions { HttpHeaders = blobHttpHeaders }, cancellationToken);
 
                         if (page.PageOfAnswers is null)
                         {
@@ -137,13 +144,13 @@ namespace SFA.DAS.QnA.Application.Commands.Files.UploadFile
                             {
                                 Id = Guid.NewGuid(),
                                 Answers = new List<Answer>
-                                {
-                                    new Answer
-                                    {
-                                        QuestionId = file.Name,
-                                        Value = file.FileName
-                                    }
-                                }
+                        {
+                            new Answer
+                            {
+                                QuestionId = file.Name,
+                                Value = file.FileName
+                            }
+                        }
                             });
                         }
                     }
@@ -151,7 +158,7 @@ namespace SFA.DAS.QnA.Application.Commands.Files.UploadFile
                     MarkPageAsComplete(page);
                     MarkPageFeedbackAsComplete(page);
 
-                    // Assign QnAData back so Entity Framework will pick up changes
+                    // Assign QnAData back so EF will pick up changes
                     section.QnAData = qnaData;
                 }
             }
@@ -251,5 +258,3 @@ namespace SFA.DAS.QnA.Application.Commands.Files.UploadFile
         }
     }
 }
-
-

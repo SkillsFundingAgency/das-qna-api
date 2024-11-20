@@ -1,3 +1,4 @@
+using System;
 using System.Net;
 using System.Threading.Tasks;
 using MediatR;
@@ -34,15 +35,24 @@ namespace SFA.DAS.QnA.Api.Controllers
         [ProducesResponseType((int) HttpStatusCode.BadRequest)]
         public async Task<ActionResult> StartApplication([FromBody] StartApplicationRequest request)
         {
-            var newApplicationResponse = await _mediator.Send(request);
-
-            if (!newApplicationResponse.Success)
+            try
             {
-                _logger.LogError($"Unable to start application | Reason : {newApplicationResponse.Message}");
-                return BadRequest(new BadRequestError(newApplicationResponse.Message));
-            }
+                var newApplicationResponse = await _mediator.Send(request);
 
-            return Ok(new {newApplicationResponse.Value.ApplicationId});
+                if (!newApplicationResponse.Success)
+                {
+                    _logger.LogError($"Unable to start application | Reason : {newApplicationResponse.Message}");
+                    return BadRequest(new BadRequestError(newApplicationResponse.Message));
+                }
+
+                return Ok(new {newApplicationResponse.Value.ApplicationId});
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "An error occurred while starting the application");
+                return StatusCode((int)HttpStatusCode.InternalServerError, new ApiError((int)HttpStatusCode.InternalServerError, "An unexpected error occurred"));
+            }
         }
+
     }
 }
