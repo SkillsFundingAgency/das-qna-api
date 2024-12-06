@@ -78,7 +78,7 @@
         },
         "minimumTlsVersion": {
             "type": "string",
-            "defaultValue": "TLS1_2"
+            "defaultValue": "TLS1_0"
         }
     },
     "variables": {
