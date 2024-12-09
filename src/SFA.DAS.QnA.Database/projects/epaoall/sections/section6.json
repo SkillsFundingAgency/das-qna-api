@@ -547,7 +547,7 @@
           "Label": "When do you want to withdraw from assessing the standard?",
           "ShortLabel": "",
           "InputClasses": null,
-          "QuestionBodyText": "<p class='govuk-body'>If you have at least 1 registered learner, the earliest date you can withdraw is <span class='das-no-wrap'>{{EarliestDateOfWithdrawal:d MMM yyyy}}</span>.</p>",
+          "QuestionBodyText": "<p class='govuk-body'>If you have at least one registered learner, the earliest date you can withdraw is <span class='das-no-wrap'>{{EarliestDateOfWithdrawal:d MMM yyyy}}</span>.</p>",
           "Hint": "",
           "Input": {
             "Type": "Date",
