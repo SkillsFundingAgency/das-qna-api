@@ -66,9 +66,9 @@
     <Folder Include="ApplicationDataSchema" />
     <Folder Include="projects\" />
     <Folder Include="projects\epaoall\" />
-    <Folder Include="projects\epaoall\sections" />
     <Folder Include="projects\roatp" />
     <Folder Include="projects\roatp\sections" />
+    <Folder Include="projects\epaoall\sections" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Tables\Applications.sql" />
