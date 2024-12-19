@@ -23,6 +23,8 @@ namespace SFA.DAS.QnA.Configuration.Infrastructure
 
         public override void Load()
         {
+            return;
+
             if (_environment.Equals("DEV", StringComparison.CurrentCultureIgnoreCase))
             {
                 return;
