@@ -1,0 +1,69 @@
+{
+    "Title": "Section 1",
+    "LinkTitle": "Section 1",
+    "DisplayType": "Pages",
+    "RequestedFeedbackAnswered": null,
+    "ShowTitleAsCaption": true,
+    "Pages": [
+        {
+            "PageId": "1",
+            "SequenceId": 1,
+            "SectionId": "section1",
+            "Title": "User Details",
+            "LinkTitle": "User Details",
+            "InfoText": "",
+            "Questions": [
+                {
+                    "QuestionId": "S1-1",
+                    "QuestionTag": null,
+                    "Label": "First name",
+                    "ShortLabel": "First name",
+                    "InputClasses": null,
+                    "QuestionBodyText": "Please enter name",
+                    "Hint": "Your forename",
+                    "Input": {
+                        "Type": "Text",
+                        "InputClasses": "govuk-input--width-20",
+                        "Options": [],
+                        "Validations": [],
+                        "DataEndpoint": null
+                    },
+                    "Order": null,
+                    "Value": "",
+                    "ErrorMessages": null
+                },
+                {
+                    "QuestionId": "S1-2",
+                    "QuestionTag": null,
+                    "Label": "Surname",
+                    "ShortLabel": "Surname",
+                    "InputClasses": null,
+                    "QuestionBodyText": "Please enter surname",
+                    "Hint": "Your Surname",
+                    "Input": {
+                        "Type": "Text",
+                        "InputClasses": null,
+                        "Options": [],
+                        "Validations": [],
+                        "DataEndpoint": null
+                    },
+                    "Order": null,
+                    "Value": "",
+                    "ErrorMessages": null
+                }
+            ],
+            "PageOfAnswers": [],
+            "Next": [],
+            "Complete": false,
+            "AllowMultipleAnswers": false,
+            "Order": null,
+            "Active": true,
+            "NotRequiredConditions": [],
+            "BodyText": "Please supply details",
+            "Details": null,
+            "DisplayType": null,
+            "Feedback": null,
+            "ActivatedByPageId": null
+        }
+    ]
+}

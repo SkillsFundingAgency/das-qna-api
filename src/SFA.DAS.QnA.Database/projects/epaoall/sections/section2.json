@@ -1,0 +1,50 @@
+{
+    "Title": "Section 2",
+    "LinkTitle": "Section 2",
+    "DisplayType": "Pages",
+    "RequestedFeedbackAnswered": null,
+    "ShowTitleAsCaption": true,
+    "Pages": [
+        {
+            "PageId": "1",
+            "SequenceId": 1,
+            "SectionId": "section2",
+            "Title": "Address details",
+            "LinkTitle": "Address details",
+            "InfoText": "",
+            "Questions": [
+                {
+                    "QuestionId": "S2-1",
+                    "QuestionTag": null,
+                    "Label": "Address",
+                    "ShortLabel": "Address details",
+                    "InputClasses": null,
+                    "QuestionBodyText": "Please enter address details",
+                    "Hint": "Your address",
+                    "Input": {
+                        "Type": "Text",
+                        "InputClasses": "govuk-input--width-30",
+                        "Options": [],
+                        "Validations": [],
+                        "DataEndpoint": null
+                    },
+                    "Order": null,
+                    "Value": "",
+                    "ErrorMessages": null
+                }
+            ],
+            "PageOfAnswers": [],
+            "Next": [],
+            "Complete": false,
+            "AllowMultipleAnswers": false,
+            "Order": null,
+            "Active": true,
+            "NotRequiredConditions": [],
+            "BodyText": "",
+            "Details": null,
+            "DisplayType": null,
+            "Feedback": null,
+            "ActivatedByPageId": null
+        }
+    ]
+}

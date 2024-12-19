@@ -82,6 +82,8 @@
   <ItemGroup>
     <None Include="ApplicationDataSchema\Assessor.json" />
     <None Include="SFA.DAS.QnA.Database.publish.xml" />
+    <None Include="projects\epaoall\sections\section1.json" />
+    <None Include="projects\epaoall\sections\section2.json" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="Script.PostDeployment.sql" />
