@@ -7,8 +7,8 @@
     "Pages": [
         {
             "PageId": "1",
-            "SequenceId": 1,
-            "SectionId": "section1",
+            "SequenceId": null,
+            "SectionId": null,
             "Title": "User Details",
             "LinkTitle": "User Details",
             "InfoText": "",
