@@ -14,6 +14,12 @@
 					"SectionNo": 1,
 					"SequenceNo": 1,
 					"name": "Test"
+				},
+				{
+					"id": "section2",
+					"SectionNo": 2,
+					"SequenceNo": 1,
+					"name": "Test2"
 				}
 			]
 		}
