@@ -1,5 +1,6 @@
 ﻿
 using System;
+using System.Configuration;
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Reflection;
@@ -12,12 +13,15 @@ using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Diagnostics.HealthChecks;
+using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Logging;
 using Microsoft.OpenApi.Models;
 using SFA.DAS.QnA.Api.Authentication;
 using SFA.DAS.QnA.Api.Authorization;
 using SFA.DAS.QnA.Api.Infrastructure;
+using SFA.DAS.QnA.Api.Types;
 using SFA.DAS.QnA.Application;
 using SFA.DAS.QnA.Application.Commands;
 using SFA.DAS.QnA.Application.Commands.Files;
@@ -34,13 +38,13 @@ namespace SFA.DAS.QnA.Api
     [ExcludeFromCodeCoverage]
     public class Startup
     {
-        private readonly IHostingEnvironment _hostingEnvironment;
-        private IConfiguration Configuration { get; }
+        private readonly IWebHostEnvironment _hostingEnvironment;
+        private IConfiguration _config { get; }
 
-        public Startup(IConfiguration configuration, IHostingEnvironment hostingEnvironment)
+        public Startup(IConfiguration configuration, IWebHostEnvironment hostingEnvironment)
         {
             _hostingEnvironment = hostingEnvironment;
-            Configuration = configuration;
+            _config = configuration;
 
             var config = new ConfigurationBuilder()
                 .AddConfiguration(configuration)
@@ -51,21 +55,23 @@ namespace SFA.DAS.QnA.Api
                     configuration["Version"]
                 ).Build();
 
-            Configuration = config;
+            _config = config;
         }
         
         public void ConfigureServices(IServiceCollection services)
         {
+            var qnaConfig = _config.GetSection("QnA").Get<QnAConfig>();
+            services.AddSingleton(qnaConfig);      
+            
             services.AddOptions();
-            services.Configure<QnAConfig>(Configuration.GetSection("QnA"));
-            services.Configure<AzureActiveDirectoryConfiguration>(Configuration.GetSection("AzureActiveDirectoryConfiguration"));
-            services.Configure<FileStorageConfig>(Configuration.GetSection("FileStorage"));
-            var serviceProvider = services.BuildServiceProvider();
-            var config = serviceProvider.GetService<IOptions<QnAConfig>>();
-            IdentityModelEventSource.ShowPII = false; 
+            services.Configure<QnAConfig>(_config.GetSection("QnA"));
+            services.Configure<AzureActiveDirectoryConfiguration>(_config.GetSection("AzureActiveDirectoryConfiguration"));
+            services.Configure<FileStorageConfig>(_config.GetSection("FileStorage"));
+            
+            IdentityModelEventSource.ShowPII = false;
 
             services.AddApiAuthorization(_hostingEnvironment);
-            services.AddApiAuthentication(serviceProvider);
+            services.AddApiAuthentication();
 
             services.RegisterAllTypes<IValidator>(new[] { typeof(IValidator).Assembly });
             services.AddTransient<IValidatorFactory, ValidatorFactory>();
@@ -78,11 +84,11 @@ namespace SFA.DAS.QnA.Api
             services.AddTransient<IKeyProvider, ConfigKeyProvider>();
             services.AddTransient<ITagProcessingService, TagProcessingService>();
             services.AddAutoMapper(typeof(SystemTime).Assembly);
-            services.AddMediatR(AppDomain.CurrentDomain.GetAssemblies());
+            services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(AppDomain.CurrentDomain.GetAssemblies()));
 
             services.AddDbContext<QnaDataContext>(options =>
             {
-                var qnaSqlConnectionString = config.Value.SqlConnectionstring;
+                var qnaSqlConnectionString = qnaConfig.SqlConnectionstring;
 
                 var connection = new System.Data.SqlClient.SqlConnection(qnaSqlConnectionString);
 
@@ -97,20 +103,16 @@ namespace SFA.DAS.QnA.Api
 
             services.AddEntityFrameworkSqlServer();
 
-            services.AddMvc(setup =>
+            services.AddControllers(setup =>
             {
-                setup.EnableEndpointRouting = false;
-                if (!_hostingEnvironment.IsDevelopment())
-                {
-                    setup.Filters.Add(new AuthorizeFilter("default"));
-                }
+                setup.Filters.Add(new AuthorizeFilter("default"));
                 setup.Conventions.Add(new ApiExplorerGroupConvention());
             }).AddNewtonsoftJson();
 
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "QnA API", Version = "0.1"});
-                c.SwaggerDoc("config", new OpenApiInfo { Title = "QnA API Config", Version = "0.1"});
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "QnA API", Version = "0.1" });
+                c.SwaggerDoc("config", new OpenApiInfo { Title = "QnA API Config", Version = "0.1" });
 
                 if (_hostingEnvironment.IsDevelopment())
                 {
@@ -119,11 +121,11 @@ namespace SFA.DAS.QnA.Api
                     c.IncludeXmlComments(xmlPath);
                 }
             });
-            
+
             services.AddHealthChecks().AddDbContextCheck<QnaDataContext>();
         }
 
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
@@ -146,11 +148,12 @@ namespace SFA.DAS.QnA.Api
             });
 
             app.UseHealthChecks("/health");
-            app.UseMvc(routes =>
+
+            app.UseRouting();
+            app.UseAuthorization();
+            app.UseEndpoints(endpoints =>
             {
-                routes.MapRoute(
-                    name: "default",
-                    template: "api/{controller}/{action}/{id?}");
+                endpoints.MapControllers();
             });
         }
     }

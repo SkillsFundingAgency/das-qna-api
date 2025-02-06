@@ -1,5 +1,6 @@
 ﻿using System;
-using Microsoft.Azure.Cosmos.Table;
+using System.Threading.Tasks;
+using Azure.Data.Tables;
 using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json.Linq;
 
@@ -23,19 +24,20 @@ namespace SFA.DAS.QnA.Configuration.Infrastructure
 
         public override void Load()
         {
+            LoadAsync().GetAwaiter().GetResult();
+        }
+
+        private async Task LoadAsync()
+        {
             if (_environment.Equals("DEV", StringComparison.CurrentCultureIgnoreCase))
             {
                 return;
             }
 
-            var table = GetTable();
-            var operation = GetOperation(_appName, _environment, _version);
-            
-            var result = table.ExecuteAsync(operation).Result;
+            var tableClient = GetTableClient(); ;
+            var entity = await GetEntityAsync(tableClient, _appName, _environment, _version);
 
-            var configItem = (ConfigurationItem)result.Result;
-
-            var jsonObject = JObject.Parse(configItem.Data);
+            var jsonObject = JObject.Parse(entity.GetString("Data"));
 
             foreach (var child in jsonObject.Children())
             {
@@ -47,16 +49,15 @@ namespace SFA.DAS.QnA.Configuration.Infrastructure
             }
         }
 
-        private CloudTable GetTable()
+        private TableClient GetTableClient()
         {
-            var storageAccount = CloudStorageAccount.Parse(_connection);
-            var tableClient = storageAccount.CreateCloudTableClient();
-            return tableClient.GetTableReference("Configuration");
+            return new TableClient(_connection, "Configuration");
         }
 
-        private TableOperation GetOperation(string serviceName, string environmentName, string version)
+        private async Task<TableEntity> GetEntityAsync(TableClient tableClient, string serviceName, string environmentName, string version)
         {
-            return TableOperation.Retrieve<ConfigurationItem>(environmentName, $"{serviceName}_{version}");
+            var entity = await tableClient.GetEntityAsync<TableEntity>(environmentName, $"{serviceName}_{version}");
+            return entity.Value;
         }
     }
 }

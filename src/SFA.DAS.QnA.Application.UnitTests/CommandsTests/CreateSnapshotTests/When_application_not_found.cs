@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using FluentAssertions;
 using NUnit.Framework;
 using SFA.DAS.QnA.Application.Commands.CreateSnapshot;
 
@@ -15,8 +16,8 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.CreateSnapshotTests
         {
             var snapshot = await Handler.Handle(new CreateSnapshotRequest(Guid.NewGuid()), new System.Threading.CancellationToken());
 
-            Assert.IsFalse(snapshot.Success);
-            Assert.IsNotNull(snapshot.Message);
+            snapshot.Success.Should().BeFalse();
+            snapshot.Message.Should().NotBeNull();
         }
     }
 }

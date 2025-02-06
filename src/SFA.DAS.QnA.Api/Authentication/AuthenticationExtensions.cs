@@ -8,16 +8,17 @@ namespace SFA.DAS.QnA.Api.Authentication
 {
     public static class AuthenticationExtensions
     {
-        public static IServiceCollection AddApiAuthentication(this IServiceCollection services, ServiceProvider serviceProvider)
+        public static IServiceCollection AddApiAuthentication(this IServiceCollection services)
         {
-            var azureActiveDirectoryConfiguration = serviceProvider.GetService<IOptions<AzureActiveDirectoryConfiguration>>().Value;
-
             services.AddAuthentication(auth =>
             {
                 auth.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
-
-            }).AddJwtBearer(auth =>
+            })
+            .AddJwtBearer(auth =>
             {
+                var serviceProvider = services.BuildServiceProvider();
+                var azureActiveDirectoryConfiguration = serviceProvider.GetService<IOptions<AzureActiveDirectoryConfiguration>>().Value;
+
                 auth.Authority = $"https://login.microsoftonline.com/{azureActiveDirectoryConfiguration.Tenant}";
                 auth.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
                 {

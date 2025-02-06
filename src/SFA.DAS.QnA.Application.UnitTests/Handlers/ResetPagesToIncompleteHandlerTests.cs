@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using FluentAssertions;
 using Microsoft.Extensions.Logging;
 using Moq;
 using NUnit.Framework;
@@ -68,21 +69,21 @@ namespace SFA.DAS.QnA.Application.UnitTests.Handlers
 
             var updatedPages = DataContext.ApplicationSections.First().QnAData.Pages;
 
-            Assert.AreEqual(5, updatedPages.Count);
+            updatedPages.Should().HaveCount(5);
 
             foreach (var page in updatedPages)
             {
                 if (pagesToExclude.Contains(page.PageId))
                 {
-                    Assert.IsTrue(page.Complete);
+                    page.Complete.Should().BeTrue();
                 }
                 else
                 {
-                    Assert.IsFalse(page.Complete);
+                    page.Complete.Should().BeFalse();
                 }
             }
             
-            Assert.IsTrue(result.Value);
+            result.Value.Should().BeTrue();
         }
 
         [Test]
@@ -119,14 +120,14 @@ namespace SFA.DAS.QnA.Application.UnitTests.Handlers
 
             var updatedPages = DataContext.ApplicationSections.First().QnAData.Pages;
 
-            Assert.AreEqual(5, updatedPages.Count);
+            updatedPages.Should().HaveCount(5);
 
             foreach (var page in updatedPages)
             {
-                Assert.IsFalse(page.Complete);
+                page.Complete.Should().BeFalse();
             }
 
-           Assert.IsTrue( result.Value);
+           result.Value.Should().BeTrue();
         }
 
         [Test]
@@ -165,14 +166,14 @@ namespace SFA.DAS.QnA.Application.UnitTests.Handlers
 
             var updatedPages = DataContext.ApplicationSections.First().QnAData.Pages;
 
-            Assert.AreEqual(5, updatedPages.Count);
+            updatedPages.Should().HaveCount(5);
 
             foreach (var page in updatedPages)
             {
-                Assert.IsTrue(page.Complete);
+                page.Complete.Should().BeTrue();
             }
 
-            Assert.IsTrue(result.Value);
+            result.Value.Should().BeTrue();
         }
 
         [Test]
@@ -200,8 +201,8 @@ namespace SFA.DAS.QnA.Application.UnitTests.Handlers
             var result = await _handler.Handle(request, new CancellationToken());
 
             var qnaData = DataContext.ApplicationSections.First().QnAData;
-            Assert.IsNull(qnaData.Pages);
-            Assert.IsTrue(result.Value);
+            qnaData.Pages.Should().BeNull();
+            result.Value.Should().BeTrue();
         }
 
         [Test]
@@ -230,8 +231,8 @@ namespace SFA.DAS.QnA.Application.UnitTests.Handlers
 
             var result = await _handler.Handle(request, new CancellationToken());
             var sectionPresent = DataContext.ApplicationSections.Any(x=>x.ApplicationId==_applicationId && x.SequenceNo==SequenceNo && x.SectionNo==SectionNo );
-            Assert.IsFalse(sectionPresent);
-            Assert.IsTrue(result.Value);
+            sectionPresent.Should().BeFalse();
+            result.Value.Should().BeTrue();
         }
     }
 }

@@ -1,13 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Logging;
+using NLog;
 using NLog.Web;
 
 namespace SFA.DAS.QnA.Api
@@ -17,23 +12,38 @@ namespace SFA.DAS.QnA.Api
     {
         public static void Main(string[] args)
         {
-            var logger = NLogBuilder.ConfigureNLog("nlog.config").GetCurrentClassLogger();
+            LogManager.Setup().LoadConfigurationFromFile("nlog.config"); 
+            var logger = LogManager.GetCurrentClassLogger();
+
             try
             {
                 logger.Info("Starting up host");
-                CreateWebHostBuilder(args).Build().Run();
+
+                var builder = WebApplication.CreateBuilder(args);
+
+                // Configure NLog
+                builder.Logging.ClearProviders();
+                builder.Logging.AddConsole();
+                builder.Host.UseNLog();
+
+                // Initialize Startup for services and middleware
+                var startup = new Startup(builder.Configuration, builder.Environment);
+                startup.ConfigureServices(builder.Services);
+
+                var app = builder.Build();
+                startup.Configure(app, app.Environment);
+
+                app.Run();
             }
             catch (Exception ex)
             {
                 logger.Error(ex, "Stopped program because of exception");
                 throw;
             }
+            finally
+            {
+                NLog.LogManager.Shutdown();
+            }
         }
-
-        public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
-            WebHost.CreateDefaultBuilder(args)
-                .UseApplicationInsights()
-                .UseStartup<Startup>()
-                .UseNLog();
     }
 }
