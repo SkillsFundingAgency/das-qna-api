@@ -23,6 +23,7 @@ namespace SFA.DAS.QnA.Api
 
                 // Configure NLog
                 builder.Logging.ClearProviders();
+                builder.Logging.AddConsole();
                 builder.Host.UseNLog();
 
                 // Initialize Startup for services and middleware
