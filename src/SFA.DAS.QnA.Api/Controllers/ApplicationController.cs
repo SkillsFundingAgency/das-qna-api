@@ -34,6 +34,8 @@ namespace SFA.DAS.QnA.Api.Controllers
         [ProducesResponseType((int) HttpStatusCode.BadRequest)]
         public async Task<ActionResult> StartApplication([FromBody] StartApplicationRequest request)
         {
+            _logger.LogInformation("StartApplication called");
+
             var newApplicationResponse = await _mediator.Send(request);
 
             if (!newApplicationResponse.Success)
