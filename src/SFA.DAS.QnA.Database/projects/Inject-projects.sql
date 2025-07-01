@@ -6,6 +6,7 @@ PRINT @ProjectPath
 
 IF NULLIF(LTRIM(RTRIM(@ProjectPath)), '') IS NOT NULL
 BEGIN
+    PRINT 'ProjectPath is set. LoadProjectsFromBlobStorage ' + @ProjectPath
     EXEC dbo.LoadProjectsFromBlobStorage @ProjectPath;
 END
 ELSE
