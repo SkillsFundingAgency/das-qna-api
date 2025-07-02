@@ -10,5 +10,5 @@ Post-Deployment Script Template
 --------------------------------------------------------------------------------------
 */
 
--- deploy QnA Workflow Definitions for all projects
-:r .\projects\Inject-projects.sql
+-- Deploy QnA Workflow Definitions for all projects
+:r .\projects\LoadProjectsPostDeployment.sql

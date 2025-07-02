@@ -80,14 +80,12 @@
     <Build Include="Tables\Workflows.sql" />
     <Build Include="Tables\WorkflowSections.sql" />
     <Build Include="Tables\WorkflowSequences.sql" />
-    <Build Include="StoredProcedures\LoadProjectsFromStorage.sql" />
+    <Build Include="StoredProcedures\LoadProjects.sql" />
     <Build Include="Types\JsonFileTable.sql" />
-    <Build Include="StoredProcedures\LoadProjectsJsonFiles.sql" />
-    <Build Include="Tables\ProjectsJsonFiles.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ApplicationDataSchema\Assessor.json" />
-    <None Include="projects\Inject-projects.sql" />
+    <None Include="projects\LoadProjectsPostDeployment.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="Script.PostDeployment.sql" />

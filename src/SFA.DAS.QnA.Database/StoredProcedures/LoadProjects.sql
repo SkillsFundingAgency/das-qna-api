@@ -1,5 +1,6 @@
-CREATE PROCEDURE dbo.LoadProjectsFromStorage
-    @ProjectPath VARCHAR(100)
+CREATE PROCEDURE dbo.LoadProjects
+    @ProjectPath VARCHAR(100),
+    @JsonFiles [dbo].[JsonFileTable] READONLY
 AS
 BEGIN
     SET NOCOUNT ON;
@@ -7,19 +8,6 @@ BEGIN
     -- Loads projects defined in @ProjectList
     DECLARE @ProjectList VARCHAR(100) = '{"projects":["epaoall","roatp"]}';
     
-    /* 
-    If using BLOB storage then an External Data Source 'BlobStorage' must exist, a scoped credential will be used to access
-    this which is created by the pipeline.
-    
-    If running locally a storage account is needed with a scoped credential and external data source, the secret is a SAS key
-    which is generated for the external secret. Note that an IP address must not be set if the target database is on Azure
-    as the command actually runs from the Azure backplace.
-
-	CREATE MASTER KEY ENCRYPTION BY PASSWORD = 'SomethingYouKnow';
-	CREATE DATABASE SCOPED CREDENTIAL BlobCredential WITH IDENTITY = 'SHARED ACCESS SIGNATURE', SECRET = 'shared access secret';
-	CREATE EXTERNAL DATA SOURCE BlobStorage WITH (LOCATION = '<ProjectPath>',CREDENTIAL = BlobCredential,TYPE = BLOB_STORAGE);
-    */
-
     DECLARE @ProjectLocation VARCHAR(100);
 
     DECLARE @ProjectDef VARCHAR(100),
@@ -55,7 +43,7 @@ BEGIN
             @SectionLinkTitle VARCHAR(250),
             @SectionDisplayType VARCHAR(200);
 
-    DECLARE @LoadBLOB BIT = 0;  -- assume local - set to 1 if @ProjectPath starts with http
+    DECLARE @LoadJsonFilesParameter BIT = 0;  -- loading from local file storage during publish
 
     DECLARE @SQLString NVARCHAR(4000);  
     DECLARE @ParmDefinition NVARCHAR(500);
@@ -77,32 +65,33 @@ BEGIN
 		    IF @ProjectDef IS NULL
 			    BREAK;
 
-		    IF SUBSTRING(@ProjectPath,1,4) = 'http'
+		    IF (SELECT COUNT(*) FROM @JsonFiles [JsonFiles]) > 0
 		    BEGIN
-			    SET @LoadBLOB = 1;
-			    SET @ProjectLocation = 'projects/projects/' + @ProjectDef +'/';
-			    PRINT 'Loading from BLOB Storage: '+@ProjectLocation;
+			    SET @LoadJsonFilesParameter = 1;
+			    SET @ProjectLocation = @ProjectDef + '\';
+			    PRINT 'Loading from Json Files Parameter: ' + @ProjectLocation;
 		    END
 		    ELSE
 		    BEGIN
-			    SET @ProjectLocation = @ProjectPath + 'projects\' + @ProjectDef +'\';
-			    PRINT 'Loading from File Storage: '+@ProjectLocation;
+			    SET @ProjectLocation = @ProjectPath + 'projects\' + @ProjectDef + '\';
+			    PRINT 'Loading from File Storage: ' + @ProjectLocation;
 		    END
 	
 		    -- get project file
-		    IF @LoadBLOB = 1
-			    SET @SQLString = 'SELECT @project = BulkColumn
-			    FROM OPENROWSET
-			    (BULK '''+@ProjectLocation+'project.json'', DATA_SOURCE = ''BlobStorage'', SINGLE_CLOB) 
-			    AS project';
+		    IF @LoadJsonFilesParameter = 1
+            BEGIN
+                SET @JSON = (SELECT JsonContent FROM @JsonFiles [JsonFiles] WHERE RelativeFilePath = @ProjectLocation + 'project.json')
+            END
 		    ELSE
-			    SET @SQLString = 'SELECT @project = BulkColumn
+            BEGIN
+				SET @SQLString = 'SELECT @project = BulkColumn
 			    FROM OPENROWSET
-			    (BULK '''+@ProjectLocation+'project.json'', SINGLE_CLOB) 
+			    (BULK ''' + @ProjectLocation + 'project.json'', SINGLE_CLOB) 
 			    AS project';
 		
-		    SET @ParmDefinition = '@project VARCHAR(MAX) OUTPUT';
-		    EXECUTE sp_executesql @SQLString, @ParmDefinition, @project = @JSON OUTPUT;
+		        SET @ParmDefinition = '@project VARCHAR(MAX) OUTPUT';
+		        EXECUTE sp_executesql @SQLString, @ParmDefinition, @project = @JSON OUTPUT;
+            END
 
 		    -- extract project and workflow  
             SELECT @ProjectName = JSON_VALUE(@JSON,'$.Name'),  @ProjectDesc = JSON_VALUE(@JSON,'$.Description');
@@ -131,19 +120,20 @@ BEGIN
                 SELECT @ProjectExists = COUNT(*) FROM projects WHERE Name = @ProjectName
 
                 -- Get the ApplicationDataSchema
-                IF @LoadBLOB = 1
-                    SET @SQLString = 'SELECT @ad = BulkColumn
-                    FROM OPENROWSET
-                    (BULK '''+@ProjectLocation+'ApplicationDataSchema.json'', DATA_SOURCE = ''BlobStorage'', SINGLE_CLOB) 
-                    AS ad';
+                IF @LoadJsonFilesParameter = 1
+                BEGIN
+                    SET @ApplicationDataSchema = (SELECT JsonContent FROM @JsonFiles [JsonFiles] WHERE RelativeFilePath = @ProjectLocation + 'ApplicationDataSchema.json')
+                END
                 ELSE
+                BEGIN
                     SET @SQLString = 'SELECT @ad = BulkColumn
                     FROM OPENROWSET
-                    (BULK '''+@ProjectLocation+'ApplicationDataSchema.json'', SINGLE_CLOB) 
+                    (BULK ''' + @ProjectLocation + 'ApplicationDataSchema.json'', SINGLE_CLOB) 
                     AS ad';
                     
-                SET @ParmDefinition = '@ad VARCHAR(MAX) OUTPUT';
-                EXECUTE sp_executesql @SQLString, @ParmDefinition, @ad = @ApplicationDataSchema OUTPUT;
+                    SET @ParmDefinition = '@ad VARCHAR(MAX) OUTPUT';
+                    EXECUTE sp_executesql @SQLString, @ParmDefinition, @ad = @ApplicationDataSchema OUTPUT;
+                END
                 
                 IF @ProjectExists = 0 
                 BEGIN
@@ -240,23 +230,25 @@ BEGIN
                     WHERE [WorkflowId] = @WorkflowId AND [SequenceNo] = @sequenceNo AND [SectionNo] = @sectionNo;
 
                     PRINT 'Load Sequence '+RTRIM(CONVERT(char,@sequenceNo))+' Section '+RTRIM(CONVERT(char,@sectionNo));
-                    IF @LoadBLOB = 1
-                        SET @SQLString = 'SELECT @qnaData = BulkColumn
-                        FROM OPENROWSET
-                        (BULK '''+@ProjectLocation+'sections/'+@sectionFileId+''', DATA_SOURCE = ''BlobStorage'', SINGLE_CLOB) 
-                        AS qnaData';
+                    
+                    IF @LoadJsonFilesParameter = 1
+                    BEGIN
+                        SET @QJSON = (SELECT JsonContent FROM @JsonFiles [JsonFiles] WHERE RelativeFilePath = @ProjectLocation + 'sections\' + @sectionFileId)
+                    END
                     ELSE
+                    BEGIN
                         SET @SQLString = 'SELECT @qnaData = BulkColumn
                         FROM OPENROWSET
-                        (BULK '''+@ProjectLocation+'sections\'+@sectionFileId+''', SINGLE_CLOB) 
+                        (BULK ''' + @ProjectLocation + 'sections\' + @sectionFileId + ''', SINGLE_CLOB) 
                         AS qnaData';
 
-                    SET @ParmDefinition = '@qnaData VARCHAR(MAX) OUTPUT';
-                    EXECUTE sp_executesql @SQLString, @ParmDefinition, @qnaData = @QJSON OUTPUT;
+                        SET @ParmDefinition = '@qnaData VARCHAR(MAX) OUTPUT';
+                        EXECUTE sp_executesql @SQLString, @ParmDefinition, @qnaData = @QJSON OUTPUT;
+                    END
             
                     -- get the Section details
                     SELECT @SectionTitle = JSON_VALUE(@QJSON,'$.Title'),  @SectionLinkTitle = JSON_VALUE(@QJSON,'$.LinkTitle'), @SectionDisplayType = JSON_VALUE(@QJSON,'$.DisplayType')
-            
+
                     MERGE INTO [Workflowsections] ws1
                     USING (SELECT @sectionId sectionId) upd
                     ON (ws1.Id = upd.sectionId)
