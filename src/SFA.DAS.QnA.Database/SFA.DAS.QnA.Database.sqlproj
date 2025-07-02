@@ -79,7 +79,7 @@
     <Build Include="Tables\Workflows.sql" />
     <Build Include="Tables\WorkflowSections.sql" />
     <Build Include="Tables\WorkflowSequences.sql" />
-    <Build Include="StoredProcedures\LoadProjectsFromBlobStorage.sql" />
+    <Build Include="StoredProcedures\LoadProjectsFromStorage.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ApplicationDataSchema\Assessor.json" />

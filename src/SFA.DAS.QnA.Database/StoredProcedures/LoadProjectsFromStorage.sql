@@ -1,4 +1,4 @@
-CREATE PROCEDURE dbo.LoadProjectsFromBlobStorage
+CREATE PROCEDURE dbo.LoadProjectsFromStorage
     @ProjectPath VARCHAR(100)
 AS
 BEGIN
@@ -20,9 +20,7 @@ BEGIN
 	CREATE EXTERNAL DATA SOURCE BlobStorage WITH (LOCATION = '<ProjectPath>',CREDENTIAL = BlobCredential,TYPE = BLOB_STORAGE);
     */
 
-    -- The $(ProjectPath) variable should be set in the Publish Database dialog if running the DACPAC from Visual Studio publish command
-    -- e.g. C:\Source\Repos\SFA\das-qna-api\src\SFA.DAS.QnA.Database\
-    DECLARE @ProjectLocation VARCHAR(100) = @ProjectPath;
+    DECLARE @ProjectLocation VARCHAR(100);
 
     DECLARE @ProjectDef VARCHAR(100),
              @ProjectIndex INT,
@@ -57,7 +55,7 @@ BEGIN
             @SectionLinkTitle VARCHAR(250),
             @SectionDisplayType VARCHAR(200);
 
-    DECLARE @LoadBLOB BIT = 0;  -- assume local - set to 1 if $(ProjectPath) starts with http
+    DECLARE @LoadBLOB BIT = 0;  -- assume local - set to 1 if @ProjectPath starts with http
 
     DECLARE @SQLString NVARCHAR(4000);  
     DECLARE @ParmDefinition NVARCHAR(500);
@@ -79,17 +77,15 @@ BEGIN
 		    IF @ProjectDef IS NULL
 			    BREAK;
 
-		    SET @ProjectLocation = '$(ProjectPath)';
-
-		    IF SUBSTRING(@ProjectLocation,1,4) = 'http'
+		    IF SUBSTRING(@ProjectPath,1,4) = 'http'
 		    BEGIN
 			    SET @LoadBLOB = 1;
 			    SET @ProjectLocation = 'projects/' + @ProjectDef +'/';
-			    PRINT 'Loading from BLOB Storage '+@ProjectLocation;
+			    PRINT 'Loading from BLOB Storage: '+@ProjectLocation;
 		    END
 		    ELSE
 		    BEGIN
-			    SET @ProjectLocation = @ProjectLocation + 'projects\' + @ProjectDef +'\';
+			    SET @ProjectLocation = @ProjectPath + 'projects\' + @ProjectDef +'\';
 			    PRINT 'Loading from File Storage: '+@ProjectLocation;
 		    END
 	
