@@ -70,6 +70,7 @@
     <Folder Include="projects\roatp" />
     <Folder Include="projects\roatp\sections" />
     <Folder Include="StoredProcedures" />
+    <Folder Include="Types" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Tables\Applications.sql" />
@@ -80,6 +81,9 @@
     <Build Include="Tables\WorkflowSections.sql" />
     <Build Include="Tables\WorkflowSequences.sql" />
     <Build Include="StoredProcedures\LoadProjectsFromStorage.sql" />
+    <Build Include="Types\JsonFileTable.sql" />
+    <Build Include="StoredProcedures\LoadProjectsJsonFiles.sql" />
+    <Build Include="Tables\ProjectsJsonFiles.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ApplicationDataSchema\Assessor.json" />
