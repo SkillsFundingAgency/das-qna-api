@@ -80,7 +80,7 @@ BEGIN
 		    IF SUBSTRING(@ProjectPath,1,4) = 'http'
 		    BEGIN
 			    SET @LoadBLOB = 1;
-			    SET @ProjectLocation = 'projects/' + @ProjectDef +'/';
+			    SET @ProjectLocation = 'projects/projects/' + @ProjectDef +'/';
 			    PRINT 'Loading from BLOB Storage: '+@ProjectLocation;
 		    END
 		    ELSE
