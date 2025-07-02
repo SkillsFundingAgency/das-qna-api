@@ -35,6 +35,9 @@ $param = $command.Parameters.Add("@JsonFiles", [System.Data.SqlDbType]::Structur
 $param.TypeName = "dbo.JsonFileTable"
 $param.Value = $table
 
+$projectPathParam = $command.Parameters.Add("@ProjectPath", [System.Data.SqlDbType]::NVarChar, 4000)
+$projectPathParam.Value = [System.DBNull]::Value
+
 # Execute LoadProjects
 $connection.Open()
 $command.ExecuteNonQuery()
