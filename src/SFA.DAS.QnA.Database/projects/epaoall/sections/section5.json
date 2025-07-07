@@ -7,13 +7,13 @@
             "PageId": "1",
             "SequenceId": null,
             "SectionId": null,
-            "Title": "What's the main reason you want to withdraw from the register?",
+            "Title": "What's the main reason you want to withdraw from all standards?",
             "LinkTitle": "Reason for withdrawing",
             "InfoText": "",
             "Questions": [{
                     "QuestionId": "WR-01",
                     "QuestionTag": null,
-                    "Label": "What's the main reason you want to withdraw from the register?",
+                    "Label": "What's the main reason you want to withdraw from all standards?",
                     "ShortLabel": "",
                     "InputClasses": null,
                     "QuestionBodyText": "<p class='govuk-body'>You can tell us more about why you want to withdraw after you select a reason.</p>",
@@ -271,7 +271,7 @@
                         "Validations": [{
                                 "Name": "Required",
                                 "Value": "",
-                                "ErrorMessage": "Select the main reason you want to withdraw from the register"
+                                "ErrorMessage": "Select the main reason you want to withdraw from all standards"
                             }
                         ],
                         "DataEndpoint": null
@@ -502,16 +502,16 @@
             "PageId": "5",
             "SequenceId": null,
             "SectionId": null,
-            "Title": "When do you want to withdraw from the register?",
+            "Title": "When do you want to withdraw from all standards?",
             "LinkTitle": "Withdrawal date",
             "InfoText": "",
             "Questions": [{
                     "QuestionId": "WR-05",
                     "QuestionTag": null,
-                    "Label": "When do you want to withdraw from the register?",
+                    "Label": "When do you want to withdraw from all standards?",
                     "ShortLabel": "",
                     "InputClasses": null,
-                    "QuestionBodyText": "<p class='govuk-body'>If you have at least 1 registered learner, the earliest date you can withdraw is <span class='das-no-wrap'>{{EarliestDateOfWithdrawal:d MMM yyyy}}</span>.</p>",
+                    "QuestionBodyText": "<p class='govuk-body'>If you have at least one registered learner, the earliest date you can withdraw is <span class='das-no-wrap'>{{EarliestDateOfWithdrawal:d MMM yyyy}}</span>.</p>",
                     "Hint": "",
                     "Input": {
                         "Type": "Date",
