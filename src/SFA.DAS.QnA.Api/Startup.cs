@@ -1,27 +1,17 @@
 ﻿
-using System;
-using System.Configuration;
-using System.Diagnostics.CodeAnalysis;
-using System.IO;
-using System.Reflection;
-using AutoMapper;
-using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Logging;
 using Microsoft.OpenApi.Models;
 using SFA.DAS.QnA.Api.Authentication;
 using SFA.DAS.QnA.Api.Authorization;
+using SFA.DAS.QnA.Api.Extensions;
 using SFA.DAS.QnA.Api.Infrastructure;
-using SFA.DAS.QnA.Api.Types;
 using SFA.DAS.QnA.Application;
 using SFA.DAS.QnA.Application.Commands;
 using SFA.DAS.QnA.Application.Commands.Files;
@@ -31,6 +21,10 @@ using SFA.DAS.QnA.Application.Validators;
 using SFA.DAS.QnA.Configuration.Config;
 using SFA.DAS.QnA.Configuration.Infrastructure;
 using SFA.DAS.QnA.Data;
+using System;
+using System.Diagnostics.CodeAnalysis;
+using System.IO;
+using System.Reflection;
 
 
 namespace SFA.DAS.QnA.Api
@@ -85,6 +79,8 @@ namespace SFA.DAS.QnA.Api
             services.AddTransient<ITagProcessingService, TagProcessingService>();
             services.AddAutoMapper(typeof(SystemTime).Assembly);
             services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(AppDomain.CurrentDomain.GetAssemblies()));
+
+            services.AddOpenTelemetryRegistration(_config["APPLICATIONINSIGHTS_CONNECTION_STRING"]!);
 
             services.AddDbContext<QnaDataContext>(options =>
             {
