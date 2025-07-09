@@ -150,11 +150,13 @@ namespace SFA.DAS.QnA.Application.Commands.Files
             aes.BlockSize = 128;
             aes.Mode = CipherMode.CBC;
 
+            // Legacy salt and parameters – DO NOT use for new encryption!
             var salt = new byte[] { 1, 2, 3, 4, 5, 6, 7, 8 };
             int keySize = aes.KeySize / 8;
             int ivSize = aes.BlockSize / 8;
             int totalSize = keySize + ivSize;
 
+#pragma warning disable S5344 // Suppress SonarCloud warning for known legacy use
             var derived = Rfc2898DeriveBytes.Pbkdf2(
                 passwordBytes,
                 salt,
@@ -162,6 +164,7 @@ namespace SFA.DAS.QnA.Application.Commands.Files
                 HashAlgorithmName.SHA1,
                 totalSize
             );
+#pragma warning restore S5344
 
             aes.Key = derived[..keySize];
             aes.IV = derived[keySize..];
