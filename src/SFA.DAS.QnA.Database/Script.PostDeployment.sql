@@ -10,5 +10,18 @@ Post-Deployment Script Template
 --------------------------------------------------------------------------------------
 */
 
--- deploy QnA Workflow Definitions for all projects
-:r .\projects\Inject-projects.sql
+-- Deploy QnA Workflow Definitions for all projects when publishing the database locally from Visual Studio the $(ProjectPath) variable 
+-- must be set in the Publish Database dialog e.g. C:\LocalPathToRepos\das-qna-api\src\SFA.DAS.QnA.Database\
+
+DECLARE @ProjectPath NVARCHAR(4000) = '$(ProjectPath)';
+DECLARE @JsonFiles dbo.JsonFileTable;
+
+IF NULLIF(LTRIM(RTRIM(@ProjectPath)), '') IS NOT NULL
+BEGIN
+    PRINT 'Loading projects during DACPAC publish from ' + @ProjectPath
+    EXEC dbo.LoadProjects @ProjectPath, @JsonFiles;
+END
+ELSE
+BEGIN
+    PRINT 'Loading projects will be completed after DACPAC publish by a pipeline task';
+END
