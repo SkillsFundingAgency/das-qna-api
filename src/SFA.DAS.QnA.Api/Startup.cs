@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Reflection;
@@ -53,7 +52,7 @@ namespace SFA.DAS.QnA.Api
 
             Configuration = config;
         }
-        
+
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddOptions();
@@ -62,7 +61,7 @@ namespace SFA.DAS.QnA.Api
             services.Configure<FileStorageConfig>(Configuration.GetSection("FileStorage"));
             var serviceProvider = services.BuildServiceProvider();
             var config = serviceProvider.GetService<IOptions<QnAConfig>>();
-            IdentityModelEventSource.ShowPII = false; 
+            IdentityModelEventSource.ShowPII = false;
 
             services.AddApiAuthorization(_hostingEnvironment);
             services.AddApiAuthentication(serviceProvider);
@@ -72,13 +71,15 @@ namespace SFA.DAS.QnA.Api
             services.AddTransient<IAnswerValidator, AnswerValidator>();
             services.AddTransient<IFileContentValidator, FileContentValidator>();
             services.AddTransient<IApplicationDataValidator, ApplicationDataValidator>();
-            
+
             services.AddTransient<IEncryptionService, EncryptionService>();
             services.AddTransient<INotRequiredProcessor, NotRequiredProcessor>();
             services.AddTransient<IKeyProvider, ConfigKeyProvider>();
             services.AddTransient<ITagProcessingService, TagProcessingService>();
             services.AddAutoMapper(typeof(SystemTime).Assembly);
             services.AddMediatR(AppDomain.CurrentDomain.GetAssemblies());
+
+            services.AddOpenTelemetryRegistration(Configuration["APPLICATIONINSIGHTS_CONNECTION_STRING"]!);
 
             services.AddDbContext<QnaDataContext>(options =>
             {
@@ -109,8 +110,8 @@ namespace SFA.DAS.QnA.Api
 
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "QnA API", Version = "0.1"});
-                c.SwaggerDoc("config", new OpenApiInfo { Title = "QnA API Config", Version = "0.1"});
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "QnA API", Version = "0.1" });
+                c.SwaggerDoc("config", new OpenApiInfo { Title = "QnA API Config", Version = "0.1" });
 
                 if (_hostingEnvironment.IsDevelopment())
                 {
@@ -119,7 +120,7 @@ namespace SFA.DAS.QnA.Api
                     c.IncludeXmlComments(xmlPath);
                 }
             });
-            
+
             services.AddHealthChecks().AddDbContextCheck<QnaDataContext>();
         }
 
