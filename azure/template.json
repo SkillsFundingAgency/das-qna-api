@@ -158,7 +158,6 @@
             "apiVersion": "2018-05-01",
             "name": "[concat('app-service-certificate-', parameters('utcValue'))]",
             "resourceGroup": "[parameters('sharedBackEndAppServicePlanResourceGroupName')]",
-            "location": "[parameters('resourceGroupLocation')]",
             "type": "Microsoft.Resources/deployments",
             "properties": {
                 "mode": "Incremental",
