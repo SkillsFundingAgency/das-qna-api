@@ -96,7 +96,7 @@
     },
     "resources": [
         {
-            "apiVersion": "2017-05-10",
+            "apiVersion": "2018-05-01",
             "name": "[concat('storage-account-', parameters('utcValue'))]",
             "type": "Microsoft.Resources/deployments",
             "properties": {
@@ -119,7 +119,7 @@
             }
         },
         {
-            "apiVersion": "2017-05-10",
+            "apiVersion": "2018-05-01",
             "name": "[concat('storage-container-', variables('storageAccountContainerArray')[copyIndex()].name, '-', parameters('utcValue'))]",
             "type": "Microsoft.Resources/deployments",
             "condition": "[greater(length(variables('storageAccountContainerArray')), 0)]",
@@ -151,7 +151,7 @@
         },
         {
             "condition": "[greater(length(parameters('customHostName')), 0)]",
-            "apiVersion": "2017-05-10",
+            "apiVersion": "2018-05-01",
             "name": "[concat('app-service-certificate-', parameters('utcValue'))]",
             "resourceGroup": "[parameters('sharedBackEndAppServicePlanResourceGroupName')]",
             "type": "Microsoft.Resources/deployments",
@@ -175,7 +175,7 @@
             }
         },
         {
-            "apiVersion": "2017-05-10",
+            "apiVersion": "2018-05-01",
             "name": "[concat('application-insights-', parameters('utcValue'))]",
             "type": "Microsoft.Resources/deployments",
             "properties": {
@@ -195,7 +195,7 @@
             }
         },
         {
-            "apiVersion": "2017-05-10",
+            "apiVersion": "2018-05-01",
             "name": "[concat('app-service-', parameters('utcValue'))]",
             "type": "Microsoft.Resources/deployments",
             "properties": {
