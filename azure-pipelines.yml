@@ -114,20 +114,20 @@ stages:
       ServiceConnection: SFA-DIG-PreProd-ARM
       OverrideBlockOnPossibleDataLoss: ${{ parameters.OverrideBlockOnPossibleDataLoss }}
 
-- stage: Deploy_PROD
-  dependsOn: Build
-  displayName: Deploy to PROD
-  variables:
-  - group: PROD Management Resources
-  - group: PROD Shared Resources
-  - group: PROD das-qna-api
-  jobs:
-  - template: pipeline-templates/job/deploy.yml
-    parameters:
-      Environment: PROD
-      SolutionBaseName: $(SolutionBaseName)
-      ServiceConnection: SFA-DIG-Prod-ARM
-      OverrideBlockOnPossibleDataLoss: ${{ parameters.OverrideBlockOnPossibleDataLoss }}
+# - stage: Deploy_PROD
+#   dependsOn: Build
+#   displayName: Deploy to PROD
+#   variables:
+#   - group: PROD Management Resources
+#   - group: PROD Shared Resources
+#   - group: PROD das-qna-api
+#   jobs:
+#   - template: pipeline-templates/job/deploy.yml
+#     parameters:
+#       Environment: PROD
+#       SolutionBaseName: $(SolutionBaseName)
+#       ServiceConnection: SFA-DIG-Prod-ARM
+#       OverrideBlockOnPossibleDataLoss: ${{ parameters.OverrideBlockOnPossibleDataLoss }}
 
 - stage: Deploy_MO
   dependsOn: Build
@@ -144,17 +144,17 @@ stages:
       ServiceConnection: SFA-ASM-ModelOffice-ARM
       OverrideBlockOnPossibleDataLoss: ${{ parameters.OverrideBlockOnPossibleDataLoss }}
 
-- stage: Deploy_DEMO
-  dependsOn: Build
-  displayName: Deploy to DEMO
-  variables:
-  - group: DevTest Management Resources
-  - group: DEMO DevTest Shared Resources
-  - group: DEMO das-qna-api
-  jobs:
-  - template: pipeline-templates/job/deploy.yml
-    parameters:
-      Environment: DEMO
-      SolutionBaseName: $(SolutionBaseName)
-      ServiceConnection: SFA-DAS-DevTest-ARM
-      OverrideBlockOnPossibleDataLoss: ${{ parameters.OverrideBlockOnPossibleDataLoss }}
+# - stage: Deploy_DEMO
+#   dependsOn: Build
+#   displayName: Deploy to DEMO
+#   variables:
+#   - group: DevTest Management Resources
+#   - group: DEMO DevTest Shared Resources
+#   - group: DEMO das-qna-api
+#   jobs:
+#   - template: pipeline-templates/job/deploy.yml
+#     parameters:
+#       Environment: DEMO
+#       SolutionBaseName: $(SolutionBaseName)
+#       ServiceConnection: SFA-DAS-DevTest-ARM
+#       OverrideBlockOnPossibleDataLoss: ${{ parameters.OverrideBlockOnPossibleDataLoss }}
