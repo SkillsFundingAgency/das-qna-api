@@ -25,8 +25,7 @@
         },
         "appServiceAllowedIPs": {
             "type": "array",
-            "defaultValue": [
-            ]
+            "defaultValue": []
         },
         "loggingRedisConnectionString": {
             "type": "securestring"
@@ -79,6 +78,9 @@
         "minimumTlsVersion": {
             "type": "string",
             "defaultValue": "TLS1_2"
+        },
+        "resourceGroupLocation": {
+            "type": "string"
         }
     },
     "variables": {
@@ -99,6 +101,7 @@
             "apiVersion": "2018-05-01",
             "name": "[concat('storage-account-', parameters('utcValue'))]",
             "type": "Microsoft.Resources/deployments",
+            "location": "[parameters('resourceGroupLocation')]",
             "properties": {
                 "mode": "Incremental",
                 "templateLink": {
@@ -122,6 +125,7 @@
             "apiVersion": "2018-05-01",
             "name": "[concat('storage-container-', variables('storageAccountContainerArray')[copyIndex()].name, '-', parameters('utcValue'))]",
             "type": "Microsoft.Resources/deployments",
+            "location": "[parameters('resourceGroupLocation')]",
             "condition": "[greater(length(variables('storageAccountContainerArray')), 0)]",
             "properties": {
                 "mode": "Incremental",
@@ -154,6 +158,7 @@
             "apiVersion": "2018-05-01",
             "name": "[concat('app-service-certificate-', parameters('utcValue'))]",
             "resourceGroup": "[parameters('sharedBackEndAppServicePlanResourceGroupName')]",
+            "location": "[parameters('resourceGroupLocation')]",
             "type": "Microsoft.Resources/deployments",
             "properties": {
                 "mode": "Incremental",
@@ -178,6 +183,7 @@
             "apiVersion": "2018-05-01",
             "name": "[concat('application-insights-', parameters('utcValue'))]",
             "type": "Microsoft.Resources/deployments",
+            "location": "[parameters('resourceGroupLocation')]",
             "properties": {
                 "mode": "Incremental",
                 "templateLink": {
@@ -190,136 +196,6 @@
                     },
                     "attachedService": {
                         "value": "[variables('appServiceName')]"
-                    }
-                }
-            }
-        },
-        {
-            "apiVersion": "2018-05-01",
-            "name": "[concat('app-service-', parameters('utcValue'))]",
-            "type": "Microsoft.Resources/deployments",
-            "properties": {
-                "mode": "Incremental",
-                "templateLink": {
-                    "uri": "[concat(variables('deploymentUrlBase'),'app-service-v2.json')]",
-                    "contentVersion": "1.0.0.0"
-                },
-                "parameters": {
-                    "appServiceName": {
-                        "value": "[variables('appServiceName')]"
-                    },
-                    "appServicePlanName": {
-                        "value": "[parameters('sharedBackEndAppServicePlanName')]"
-                    },
-                    "appServicePlanResourceGroup": {
-                        "value": "[parameters('sharedBackEndAppServicePlanResourceGroupName')]"
-                    },
-                    "subnetResourceId": {
-                        "value": "[parameters('sharedBackEndSubnetResourceId')]"
-                    },
-                    "appServiceAppSettings": {
-                        "value": {
-                            "array": [
-                                {
-                                    "name": "ConfigurationStorageConnectionString",
-                                    "value": "[parameters('configurationStorageConnectionString')]"
-                                },
-                                {
-                                    "name": "ASPNETCORE_ENVIRONMENT",
-                                    "value": "[toUpper(parameters('environmentName'))]"
-                                },
-                                {
-                                    "name": "LoggingRedisConnectionString",
-                                    "value": "[parameters('loggingRedisConnectionString')]"
-                                },
-                                {
-                                    "name": "LoggingRedisKey",
-                                    "value": "[parameters('loggingRedisKey')]"
-                                },
-                                {
-                                    "name": "APPLICATIONINSIGHTS_CONNECTION_STRING",
-                                    "value": "[reference(concat('application-insights-', parameters('utcValue'))).outputs.ConnectionString.value]"
-                                },
-                                {
-                                    "name": "EnvironmentName",
-                                    "value": "[toUpper(parameters('environmentName'))]"
-                                },
-                                {
-                                    "name": "Environment",
-                                    "value": "[toUpper(parameters('environmentName'))]"
-                                },
-                                {
-                                    "name": "ConfigNames",
-                                    "value": "SFA.DAS.QnA.Api"
-                                },
-                                {
-                                    "name": "AllowedHosts",
-                                    "value": "*"
-                                }
-                            ]
-                        }
-                    },
-                    "appServiceConnectionStrings": {
-                        "value": {
-                            "array": [
-                                {
-                                    "name": "Redis",
-                                    "connectionString": "[parameters('loggingRedisConnectionString')]",
-                                    "type": "Custom"
-                                }
-                            ]
-                        }
-                    },
-                    "customHostName": {
-                        "value": "[parameters('customHostName')]"
-                    },
-                    "certificateThumbprint": {
-                        "value": "[if(greater(length(parameters('customHostname')), 0), reference(concat('app-service-certificate-', parameters('utcValue')), '2018-11-01').outputs.certificateThumbprint.value, '')]"
-                    },
-                    "ipSecurityRestrictions": {
-                        "value": "[parameters('appServiceAllowedIPs')]"
-                    }
-                }
-            },
-            "dependsOn": [
-                "[concat('app-service-certificate-', parameters('utcValue'))]"
-            ]
-        },
-        {
-            "apiVersion": "2018-02-01",
-            "name": "[concat('qna-sql-database-', parameters('utcValue'))]",
-            "type": "Microsoft.Resources/deployments",
-            "resourceGroup": "[parameters('sharedSqlResourceGroup')]",
-            "properties": {
-                "mode": "Incremental",
-                "templateLink": {
-                    "uri": "[concat(variables('deploymentUrlBase'),'sql-database.json')]",
-                    "contentVersion": "1.0.0.0"
-                },
-                "parameters": {
-                    "databaseName": {
-                        "value": "[variables('databaseName')]"
-                    },
-                    "sqlServerName": {
-                        "value": "[parameters('sharedSqlServerName')]"
-                    },
-                    "elasticPoolName": {
-                        "value": "[parameters('elasticPoolName')]"
-                    },
-                    "databaseSkuName": {
-                        "value": "[parameters('databaseSkuName')]"
-                    },
-                    "databaseTier": {
-                        "value": "[parameters('databaseTier')]"
-                    },
-                    "logAnalyticsSubscriptionId": {
-                        "value": "[parameters('logAnalyticsSubscriptionId')]"
-                    },
-                    "logAnalyticsResourceGroup": {
-                        "value": "[parameters('sharedManagementResourceGroup')]"
-                    },
-                    "logAnalyticsWorkspaceName": {
-                        "value": "[parameters('logAnalyticsWorkspaceName')]"
                     }
                 }
             }
