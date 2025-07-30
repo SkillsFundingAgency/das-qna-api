@@ -138,7 +138,7 @@
                     "minimumTlsVersion": {
                         "value": "[parameters('minimumTlsVersion')]"
                     },
-                    "location": {
+                    "storageAccountLocation": {
                         "value": "[parameters('resourceGroupLocation')]"
                     }
                 }
@@ -172,9 +172,6 @@
                     },
                     "publicAccess": {
                         "value": "None"
-                    },
-                    "location": {
-                        "value": "[parameters('resourceGroupLocation')]"
                     }
                 }
             }
@@ -201,8 +198,8 @@
                     "keyVaultResourceGroup": {
                         "value": "[parameters('sharedManagementResourceGroup')]"
                     },
-                    "location": {
-                        "value": "[parameters('resourceGroupLocation')]"
+                    "serverFarmId": {
+                        "value": "[resourceId(parameters('sharedBackEndAppServicePlanResourceGroupName'), 'Microsoft.Web/serverfarms', parameters('sharedBackEndAppServicePlanName'))]"
                     }
                 }
             }
@@ -338,8 +335,8 @@
                     "attachedService": {
                         "value": "[variables('appServiceName')]"
                     },
-                    "location": {
-                        "value": "[parameters('resourceGroupLocation')]"
+                    "logAnalyticsWorkspaceId": {
+                        "value": "[resourceId(subscription().subscriptionId, 'Microsoft.OperationalInsights/workspaces', parameters('logAnalyticsWorkspaceName'))]"
                     }
                 }
             }
