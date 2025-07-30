@@ -179,7 +179,7 @@
         {
             "condition": "[greater(length(parameters('customHostName')), 0)]",
             "type": "Microsoft.Resources/deployments",
-            "apiVersion": "2020-10-01",
+            "apiVersion": "2017-05-10",
             "name": "[concat('app-service-certificate-', parameters('utcValue'))]",
             "resourceGroup": "[parameters('sharedBackEndAppServicePlanResourceGroupName')]",
             "properties": {
@@ -197,9 +197,6 @@
                     },
                     "keyVaultResourceGroup": {
                         "value": "[parameters('sharedManagementResourceGroup')]"
-                    },
-                    "serverFarmId": {
-                        "value": "[resourceId(parameters('sharedBackEndAppServicePlanResourceGroupName'), 'Microsoft.Web/serverfarms', parameters('sharedBackEndAppServicePlanName'))]"
                     }
                 }
             }
@@ -334,9 +331,6 @@
                     },
                     "attachedService": {
                         "value": "[variables('appServiceName')]"
-                    },
-                    "logAnalyticsWorkspaceId": {
-                        "value": "[resourceId(subscription().subscriptionId, 'Microsoft.OperationalInsights/workspaces', parameters('logAnalyticsWorkspaceName'))]"
                     }
                 }
             }
