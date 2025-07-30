@@ -71,7 +71,8 @@
             "type": "string"
         },
         "utcValue": {
-            "type": "string"
+            "type": "string",
+            "defaultValue": "[utcNow('yyMMddHHmmss')]"
         },
         "minimumTlsVersion": {
             "type": "string",
