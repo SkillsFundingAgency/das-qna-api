@@ -58,7 +58,7 @@ jobs:
             ServerName: $(SharedSQLServerFQDN)
             DatabaseName: $(DatabaseName)
             SqlUsername: $(SharedSQLServerUsername)
-            DacpacFile: $(Pipeline.Workspace)/DacpacArtifact/src/${{ parameters.SolutionBaseName }}.Database/bin/release/netstandard2.1/${{ parameters.SolutionBaseName }}.Database.dacpac
+            DacpacFile: $(Pipeline.Workspace)/DacpacArtifact/src/SFA.DAS.QnA.Database/bin/output/SFA.DAS.QnA.Database.dacpac
             OverrideBlockOnPossibleDataLoss: ${{ parameters.OverrideBlockOnPossibleDataLoss }}
             Environment: ${{ parameters.Environment }}
         - template: azure-pipelines-templates/deploy/step/app-deploy.yml@das-platform-building-blocks
