@@ -1,5 +1,4 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
-
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
@@ -24,5 +23,4 @@
     <ProjectReference Include="..\SFA.DAS.QnA.Configuration\SFA.DAS.QnA.Configuration.csproj" />
     <ProjectReference Include="..\SFA.DAS.QnA.Data\SFA.DAS.QnA.Data.csproj" />
   </ItemGroup>
-
 </Project>

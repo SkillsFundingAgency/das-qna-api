@@ -31,12 +31,14 @@ namespace SFA.DAS.QnA.Api.Controllers
         /// <response code="201">Returns the newly created application's Id</response>
         /// <response code="400">If the WorkflowType does not exist or the ApplicationData supplied does not match the Project's schema.</response>
         [HttpPost("start")]
-        [ProducesResponseType((int) HttpStatusCode.Created)]
-        [ProducesResponseType((int) HttpStatusCode.BadRequest)]
+        [ProducesResponseType((int)HttpStatusCode.Created)]
+        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
         public async Task<ActionResult> StartApplication([FromBody] StartApplicationRequest request)
         {
             try
             {
+                _logger.LogInformation("StartApplication called");
+
                 var newApplicationResponse = await _mediator.Send(request);
 
                 if (!newApplicationResponse.Success)
@@ -45,7 +47,7 @@ namespace SFA.DAS.QnA.Api.Controllers
                     return BadRequest(new BadRequestError(newApplicationResponse.Message));
                 }
 
-                return Ok(new {newApplicationResponse.Value.ApplicationId});
+                return Ok(new { newApplicationResponse.Value.ApplicationId });
             }
             catch (Exception ex)
             {

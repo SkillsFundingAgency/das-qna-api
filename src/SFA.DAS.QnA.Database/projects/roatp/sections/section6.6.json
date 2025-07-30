@@ -7,14 +7,14 @@
             "PageId": "6600",
             "SequenceId": null,
             "SectionId": null,
-            "Title": "What teaching methods will your organisation use to deliver 20% off the job training?",
-            "LinkTitle": "Deliver 20% OTJ",
+            "Title": "What teaching methods will your organisation use to deliver the minimum required off the job training?",
+            "LinkTitle": "Deliver minimum OTJ",
             "InfoText": "<p class='govuk-body'>Find out more about <a class='govuk-link' href='https://www.gov.uk/government/publications/apprenticeships-off-the-job-training' target='_blank'>apprenticeship off the job training (opens in a new window or tab)</a>.</p>",
             "Questions": [
                 {
                     "QuestionId": "PAT-660",
                     "QuestionTag": null,
-                    "Label": "What teaching methods will your organisation use to deliver 20% off the job training?",
+                    "Label": "What teaching methods will your organisation use to deliver the minimum required off the job training?",
                     "ShortLabel": "",
                     "QuestionBodyText": "<p class='govuk-body govuk-hint'>Select all that apply.</p>",
                     "Hint": "",
@@ -51,7 +51,7 @@
                             {
                                 "Name": "Required",
                                 "Value": "",
-                                "ErrorMessage": "Tell us what teaching methods your organisation will use to deliver 20% off the job training"
+                                "ErrorMessage": "Tell us what teaching methods will your organisation use to deliver the minimum required off the job training"
                             }
                         ]
                     }
@@ -82,14 +82,14 @@
             "PageId": "6610",
             "SequenceId": null,
             "SectionId": null,
-            "Title": "How will your organisation ensure 20% off the job training is relevant to the specific apprenticeship being delivered?",
+            "Title": "How will your organisation ensure the minimum required off the job training is relevant to the specific apprenticeship being delivered?",
             "LinkTitle": "Ensure OTJ Relevant",
             "InfoText": "",
             "Questions": [
                 {
                     "QuestionId": "PAT-661",
                     "QuestionTag": null,
-                    "Label": "How will your organisation ensure 20% off the job training is relevant to the specific apprenticeship being delivered?",
+                    "Label": "How will your organisation ensure the minimum required off the job training is relevant to the specific apprenticeship being delivered?",
                     "ShortLabel": "",
                     "QuestionBodyText": "<p class='govuk-body' id='pya-equality-policy'>Your answer must include how your organisation will:</p><ul class='govuk-list govuk-list--bullet'><li>use technical and theoretical elements of the apprenticeship to decide the best training method</li><li>ensure training methods suit the employers and apprentices circumstances</li><li>work with employers to define a delivery plan</li><li>ensure its delivery plan is flexible and meets employers and apprentices needs</li><li>choose the right time for off the job training - the apprentice must have had sufficient time to gain the right knowledge and skills before starting off the job training</li><li>get feedback from the apprentice and how it's used</li></ul>",
                     "Hint": "",
@@ -100,7 +100,7 @@
                             {
                                 "Name": "Required",
                                 "Value": "",
-                                "ErrorMessage": "Tell us how your organisation will ensure 20% off the job training is relevant to the specific apprenticeship being delivered"
+                                "ErrorMessage": "Tell us how will your organisation ensure the minimum required off the job training is relevant to the specific apprenticeship being delivered"
                             },
                             {
                                 "Name": "MaxWordCount",

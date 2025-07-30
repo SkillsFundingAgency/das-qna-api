@@ -1,4 +1,3 @@
-﻿
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Authorization;
@@ -25,6 +24,7 @@ using System;
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Reflection;
+using Microsoft.Extensions.Options;
 
 
 namespace SFA.DAS.QnA.Api
@@ -51,17 +51,18 @@ namespace SFA.DAS.QnA.Api
 
             _config = config;
         }
-        
+
         public void ConfigureServices(IServiceCollection services)
         {
             var qnaConfig = _config.GetSection("QnA").Get<QnAConfig>();
-            services.AddSingleton(qnaConfig);      
-            
+            services.AddSingleton(qnaConfig);
+
             services.AddOptions();
+
             services.Configure<QnAConfig>(_config.GetSection("QnA"));
             services.Configure<AzureActiveDirectoryConfiguration>(_config.GetSection("AzureActiveDirectoryConfiguration"));
             services.Configure<FileStorageConfig>(_config.GetSection("FileStorage"));
-            
+
             IdentityModelEventSource.ShowPII = false;
 
             services.AddApiAuthorization(_hostingEnvironment);
@@ -72,7 +73,7 @@ namespace SFA.DAS.QnA.Api
             services.AddTransient<IAnswerValidator, AnswerValidator>();
             services.AddTransient<IFileContentValidator, FileContentValidator>();
             services.AddTransient<IApplicationDataValidator, ApplicationDataValidator>();
-            
+
             services.AddTransient<IEncryptionService, EncryptionService>();
             services.AddTransient<INotRequiredProcessor, NotRequiredProcessor>();
             services.AddTransient<IKeyProvider, ConfigKeyProvider>();
