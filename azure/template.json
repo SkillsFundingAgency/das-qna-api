@@ -62,8 +62,7 @@
             "defaultValue": "Standard"
         },
         "logAnalyticsSubscriptionId": {
-            "type": "string",
-            "defaultValue": "[subscription().subscriptionId]"
+            "type": "string"
         },
         "sharedManagementResourceGroup": {
             "type": "string"
@@ -72,8 +71,7 @@
             "type": "string"
         },
         "utcValue": {
-            "type": "string",
-            "defaultValue": "[utcNow('yyMMddHHmmss')]"
+            "type": "string"
         },
         "minimumTlsVersion": {
             "type": "string",
@@ -88,7 +86,7 @@
         "resourceNamePrefix": "[toLower(concat('das-', parameters('resourceEnvironmentName'),'-', parameters('serviceName')))]",
         "appServiceName": "[concat(variables('resourceNamePrefix'), '-as')]",
         "databaseName": "[concat(variables('resourceNamePrefix'), '-db')]",
-        "storageAccountName": "[tolower(concat('das', parameters('resourceEnvironmentName'), parameters('serviceName'), 'str' ))]",
+        "storageAccountName": "[toLower(concat('das', parameters('resourceEnvironmentName'), parameters('serviceName'), 'str'))]",
         "storageAccountContainerArray": [
             {
                 "name": "projects"
@@ -157,8 +155,8 @@
             "condition": "[greater(length(parameters('customHostName')), 0)]",
             "apiVersion": "2018-05-01",
             "name": "[concat('app-service-certificate-', parameters('utcValue'))]",
-            "resourceGroup": "[parameters('sharedBackEndAppServicePlanResourceGroupName')]",
             "type": "Microsoft.Resources/deployments",
+            "resourceGroup": "[parameters('sharedBackEndAppServicePlanResourceGroupName')]",
             "properties": {
                 "mode": "Incremental",
                 "templateLink": {
