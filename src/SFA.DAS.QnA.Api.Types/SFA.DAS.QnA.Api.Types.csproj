@@ -1,26 +1,19 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFrameworks>netstandard2.0;net6.0</TargetFrameworks>
+        <TargetFrameworks>net8.0</TargetFrameworks>
         <PackageId>SFA.DAS.QnA.Api.Types</PackageId>
         <Version>0.4.1</Version>
         <Authors>EFSA</Authors>
         <Company>EFSA</Company>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <PackageOutputPath>..\NugetPackages</PackageOutputPath>
-        <PackageVersion>0.2.32.0</PackageVersion>
+        <PackageVersion>0.2.32.1</PackageVersion>
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+      <PackageReference Include="MediatR" Version="13.0.0" />
+      <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     </ItemGroup>
-
-    <ItemGroup Condition=" '$(TargetFramework)' == 'net6.0'">
-      <PackageReference Include="MediatR" Version="10.0.1" />
-    </ItemGroup>
-
-  <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0'">
-      <PackageReference Include="MediatR" Version="7.0.000" />
-  </ItemGroup>
 
 </Project>

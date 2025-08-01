@@ -11,6 +11,7 @@ using SFA.DAS.QnA.Api.Types;
 using SFA.DAS.QnA.Api.Types.Page;
 using SFA.DAS.QnA.Configuration.Config;
 using SFA.DAS.QnA.Data;
+using System.IO;
 
 namespace SFA.DAS.QnA.Application.Commands.Files.DeleteFile
 {
@@ -31,7 +32,7 @@ namespace SFA.DAS.QnA.Application.Commands.Files.DeleteFile
             FileName = fileName;
         }
     }
-    
+
     public class DeleteFileHandler : IRequestHandler<DeleteFileRequest, HandlerResponse<bool>>
     {
         private readonly QnaDataContext _dataContext;
@@ -44,17 +45,16 @@ namespace SFA.DAS.QnA.Application.Commands.Files.DeleteFile
             _fileStorageConfig = fileStorageConfig;
             _answerValidator = answerValidator;
         }
-        
+
         public async Task<HandlerResponse<bool>> Handle(DeleteFileRequest request, CancellationToken cancellationToken)
         {
-            
             var section = await _dataContext.ApplicationSections.FirstOrDefaultAsync(sec => sec.Id == request.SectionId && sec.ApplicationId == request.ApplicationId, cancellationToken);
-            
+
             if (section == null)
             {
                 return new HandlerResponse<bool>(success:false, message:$"Section {request.SectionId} in Application {request.ApplicationId} does not exist.");
             }
-            
+
             var qnaData = new QnAData(section.QnAData);
             var page = qnaData.Pages.FirstOrDefault(p => p.PageId == request.PageId);
 
@@ -67,14 +67,14 @@ namespace SFA.DAS.QnA.Application.Commands.Files.DeleteFile
             {
                 return new HandlerResponse<bool>(success:false, message:$"Page {request.PageId} in Application {request.ApplicationId} does not contain any File Upload questions.");
             }
-            
+
             if (page.PageOfAnswers == null || !page.PageOfAnswers.Any())
             {
                 return new HandlerResponse<bool>(success:false, message:$"Page {request.PageId} in Application {request.ApplicationId} does not contain any uploads.");
             }
 
             var container = await ContainerHelpers.GetContainer(_fileStorageConfig.Value.StorageConnectionString, _fileStorageConfig.Value.ContainerName);
-            var directory = ContainerHelpers.GetDirectory(request.ApplicationId, section.SequenceId, request.SectionId, request.PageId, request.QuestionId, container);
+            var directoryPath = ContainerHelpers.GetDirectoryPath(request.ApplicationId, section.SequenceId, request.SectionId, request.PageId, request.QuestionId);
 
             var answer = page.PageOfAnswers.SingleOrDefault(poa => poa.Answers.Any(a => a.QuestionId == request.QuestionId && a.Value == request.FileName));
             if (answer is null)
@@ -109,11 +109,12 @@ namespace SFA.DAS.QnA.Application.Commands.Files.DeleteFile
             section.QnAData = qnaData;
             await _dataContext.SaveChangesAsync(cancellationToken);
 
-            var blobRef = directory.GetBlobReference(request.FileName);
-            await blobRef.DeleteAsync(cancellationToken);
+            var blobName = Path.Combine(directoryPath, request.FileName);
+            var blobClient = container.GetBlobClient(blobName);
+            await blobClient.DeleteIfExistsAsync(cancellationToken: cancellationToken);
 
             await RemoveApplicationDataForThisQuestion(request.ApplicationId, request.QuestionId, page);
-            
+
             return new HandlerResponse<bool>(true);
         }
 
@@ -125,7 +126,7 @@ namespace SFA.DAS.QnA.Application.Commands.Files.DeleteFile
             var question = page.Questions.Single(q => q.QuestionId == questionId);
 
             applicationData.Remove(question.QuestionTag);
-            
+
             application.ApplicationData = applicationData.ToString(Formatting.None);
 
             await _dataContext.SaveChangesAsync();

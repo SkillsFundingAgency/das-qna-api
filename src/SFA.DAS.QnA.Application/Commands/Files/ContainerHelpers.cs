@@ -1,33 +1,30 @@
 using System;
 using System.Threading.Tasks;
-using Microsoft.Azure.Storage;
-using Microsoft.Azure.Storage.Blob;
+using Azure.Storage.Blobs;
 
 namespace SFA.DAS.QnA.Application.Commands.Files
 {
     public static class ContainerHelpers
     {
-        public static async Task<CloudBlobContainer> GetContainer(string connectionString, string containerName)
+        public static async Task<BlobContainerClient> GetContainer(string connectionString, string containerName)
         {
-            var account = CloudStorageAccount.Parse(connectionString);
-            var client = account.CreateCloudBlobClient();
-            var container = client.GetContainerReference(containerName);
-            await container.CreateIfNotExistsAsync();
-            return container;
+            var serviceClient = new BlobServiceClient(connectionString);
+            var containerClient = serviceClient.GetBlobContainerClient(containerName);
+
+            await containerClient.CreateIfNotExistsAsync();
+            return containerClient;
         }
-        
-        public static CloudBlobDirectory GetDirectory(Guid applicationId, Guid sequenceId, Guid sectionId, string pageId, string questionId, CloudBlobContainer container)
+
+        public static string GetDirectoryPath(Guid applicationId, Guid sequenceId, Guid sectionId, string pageId, string questionId)
         {
-            var applicationFolder = container.GetDirectoryReference(applicationId.ToString());
-            var sequenceFolder = applicationFolder.GetDirectoryReference(sequenceId.ToString());
-            var sectionFolder = sequenceFolder.GetDirectoryReference(sectionId.ToString());
-            var pageFolder = sectionFolder.GetDirectoryReference(pageId.ToLower());
-            if (questionId is null)
-            {
-                return pageFolder;
-            }
-            var questionFolder = pageFolder.GetDirectoryReference(questionId.ToLower());
-            return questionFolder;
+            var applicationFolder = applicationId.ToString();
+            var sequenceFolder = sequenceId.ToString();
+            var sectionFolder = sectionId.ToString();
+            var pageFolder = pageId.ToLower();
+
+            return string.IsNullOrEmpty(questionId)
+                ? $"{applicationFolder}/{sequenceFolder}/{sectionFolder}/{pageFolder}"
+                : $"{applicationFolder}/{sequenceFolder}/{sectionFolder}/{pageFolder}/{questionId.ToLower()}";
         }
     }
 }

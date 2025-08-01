@@ -1,4 +1,5 @@
-﻿using Microsoft.Azure.Services.AppAuthentication;
+﻿using Azure.Core;
+using Azure.Identity;
 using System.Threading.Tasks;
 
 namespace SFA.DAS.QnA.Api.Infrastructure
@@ -9,10 +10,12 @@ namespace SFA.DAS.QnA.Api.Infrastructure
 
         public static async Task<string> GenerateTokenAsync()
         {
-            var azureServiceTokenProvider = new AzureServiceTokenProvider();
-            var accessToken = await azureServiceTokenProvider.GetAccessTokenAsync(AzureResource);
+            var credential = new DefaultAzureCredential();
 
-            return accessToken;
+            var tokenRequestContext = new TokenRequestContext([AzureResource]);
+            var accessToken = await credential.GetTokenAsync(tokenRequestContext);
+
+            return accessToken.Token;
         }
     }
 }
