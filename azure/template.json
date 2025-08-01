@@ -294,6 +294,10 @@
                                     "value": "SFA.DAS.QnA.Api"
                                 },
                                 {
+                                    "name": "APPLICATIONINSIGHTS_CONNECTION_STRING",
+                                    "value": "[reference(concat(variables('uiAppServiceName'), '-application-insights-', parameters('utcValue'))).outputs.ConnectionString.value]"
+                                },
+                                {
                                     "name": "AllowedHosts",
                                     "value": "*"
                                 }
