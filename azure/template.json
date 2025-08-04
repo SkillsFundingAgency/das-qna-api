@@ -282,6 +282,10 @@
                                     "value": "[parameters('loggingRedisKey')]"
                                 },
                                 {
+                                    "name": "APPLICATIONINSIGHTS_CONNECTION_STRING",
+                                    "value": "[reference(concat('application-insights-', parameters('utcValue'))).outputs.ConnectionString.value]"
+                                },
+                                {
                                     "name": "Environment",
                                     "value": "[toUpper(parameters('environmentName'))]"
                                 },
