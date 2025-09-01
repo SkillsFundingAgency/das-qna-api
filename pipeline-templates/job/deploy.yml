@@ -61,8 +61,29 @@ jobs:
             DacpacFile: $(Pipeline.Workspace)/DacpacArtifact/src/SFA.DAS.QnA.Database/bin/output/SFA.DAS.QnA.Database.dacpac
             OverrideBlockOnPossibleDataLoss: ${{ parameters.OverrideBlockOnPossibleDataLoss }}
             Environment: ${{ parameters.Environment }}
+        - task: PowerShell@2
+          displayName: Install SqlServer Module
+          inputs:
+            targetType: inline
+            script: |
+              Set-PSRepository -Name PSGallery -InstallationPolicy Trusted
+              Install-Module SqlServer -Force -Scope CurrentUser
+              Import-Module SqlServer -Force
+            pwsh: true
+        - task: PowerShell@2
+          displayName: Load Projects JSON Files
+          inputs:
+            targetType: filePath
+            filePath: '$(Pipeline.Workspace)/${{ parameters.SolutionBaseName }}/src/SFA.DAS.QnA.Database/projects/LoadProjects.ps1'
+            arguments: >
+              -RootPath "$(Pipeline.Workspace)/${{ parameters.SolutionBaseName }}/src/SFA.DAS.QnA.Database/projects"
+              -SqlServer "$(SharedSQLServerFQDN)"
+              -SqlDatabase "$(DatabaseName)"
+              -SqlUsername "$(SharedSQLServerUsername)"
+              -SqlPassword "$(SharedSQLServerPassword)"
+            pwsh: true
         - template: azure-pipelines-templates/deploy/step/app-deploy.yml@das-platform-building-blocks
           parameters:
             ServiceConnection: ${{ parameters.ServiceConnection }}
             AppServiceName: $(AppServiceName)
-            DeploymentPackagePath: $(Pipeline.Workspace)/SFA.DAS.QnA/SFA.DAS.QnA.Api.zip
+            DeploymentPackagePath: $(Pipeline.Workspace)/${{ parameters.SolutionBaseName }}/SFA.DAS.QnA.Api.zip

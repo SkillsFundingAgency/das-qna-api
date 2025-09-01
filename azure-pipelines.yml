@@ -144,17 +144,17 @@ stages:
       ServiceConnection: SFA-ASM-ModelOffice-ARM
       OverrideBlockOnPossibleDataLoss: ${{ parameters.OverrideBlockOnPossibleDataLoss }}
 
-- stage: Deploy_DEMO
-  dependsOn: Build
-  displayName: Deploy to DEMO
-  variables:
-  - group: DevTest Management Resources
-  - group: DEMO DevTest Shared Resources
-  - group: DEMO das-qna-api
-  jobs:
-  - template: pipeline-templates/job/deploy.yml
-    parameters:
-      Environment: DEMO
-      SolutionBaseName: $(SolutionBaseName)
-      ServiceConnection: SFA-DAS-DevTest-ARM
-      OverrideBlockOnPossibleDataLoss: ${{ parameters.OverrideBlockOnPossibleDataLoss }}
+# - stage: Deploy_DEMO
+#   dependsOn: Build
+#   displayName: Deploy to DEMO
+#   variables:
+#   - group: DevTest Management Resources
+#   - group: DEMO DevTest Shared Resources
+#   - group: DEMO das-qna-api
+#   jobs:
+#   - template: pipeline-templates/job/deploy.yml
+#     parameters:
+#       Environment: DEMO
+#       SolutionBaseName: $(SolutionBaseName)
+#       ServiceConnection: SFA-DAS-DevTest-ARM
+#       OverrideBlockOnPossibleDataLoss: ${{ parameters.OverrideBlockOnPossibleDataLoss }}
