@@ -152,14 +152,14 @@
             "PageId": "250",
             "SequenceId": null,
             "SectionId": null,
-            "Title": "Is the postgraduate teaching apprenticeship the only apprenticeship your organisation intends to deliver?",
-            "LinkTitle": "Is the postgraduate teaching apprenticeship the only apprenticeship your organisation intends to deliver?",
+            "Title": "Is the postgraduate and/or undergraduate teaching apprenticeships the only apprenticeship programmes your organisation intends to deliver?",
+            "LinkTitle": "Is the postgraduate and/or undergraduate teaching apprenticeships the only apprenticeship programmes your organisation intends to deliver?",
             "InfoText": "",
             "Questions": [
                 {
                     "QuestionId": "YO-250",
                     "QuestionTag": "ITTPGTA",
-                    "Label": "Is the postgraduate teaching apprenticeship the only apprenticeship your organisation intends to deliver?",
+                    "Label": "Is the postgraduate and/or undergraduate teaching apprenticeships the only apprenticeship programmes your organisation intends to deliver?",
                     "ShortLabel": "",
                     "QuestionBodyText": "<p class='govuk-body'>The postgraduate teaching apprenticeship is an employment-based initial teacher training route leading to qualified teacher status.</p>",
                     "Hint": "",
