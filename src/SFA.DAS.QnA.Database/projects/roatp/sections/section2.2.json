@@ -2100,22 +2100,22 @@
                     ]
                 }
             ],
-            "BodyText": "<p class='govuk-body'>You'll need to upload your organisation's:</p><ul class='govuk-list govuk-list--bullet'><li>management accounts covering at least 3 months within the last 12 months that evidence your organisation has actively traded</li><li>financial projections covering the remaining period</li></ul><p class='govuk-body'>Management accounts and financial projections must cover a 12-month period in total.</p>",
+            "BodyText": "<p class='govuk-body'>You'll need to upload your organisation's:</p><ul class='govuk-list govuk-list--bullet'><li>Upload your organisation’s management accounts covering a period no less than one year, with the management accounts comprising at least 6 months of actual trading activity</li><li>financial projections covering the remaining period</li></ul><p class='govuk-body'>Management accounts and financial projections must cover a 12-month period in total.</p>",
             "ActivatedByPageId": "2100,2110,2120,2130,2140,2150,2170,2210"
         },
         {
             "PageId": "2240",
             "SequenceId": null,
             "SectionId": null,
-            "Title": "Upload your organisation's management accounts covering at least 3 months within the last 12 months",
-            "LinkTitle": "Upload your organisation's management accounts covering at least 3 months within the last 12 months",
+            "Title": "Upload your organisation’s management accounts showing between 6 to 12 months of actual trading activity",
+            "LinkTitle": "Upload your organisation’s management accounts showing between 6 to 12 months of actual trading activity",
             "DisplayType": "MultipleFileUpload",
             "InfoText": "",
             "Questions": [
                 {
                     "QuestionId": "FH-390",
                     "QuestionTag": null,
-                    "Label": "Upload your organisation's management accounts covering at least 3 months within the last 12 months",
+                    "Label": "Upload your organisation’s management accounts showing between 6 to 12 months of actual trading activity",
                     "ShortLabel": "",
                     "QuestionBodyText": "<p class='govuk-body'>Management accounts must include:</p><ul class='govuk-list govuk-list--bullet'><li>a balance sheet - showing the value of everything your organisation owns, owes and is owed</li><li>a cash flow statement</li><li>profit and loss account - showing your organisation's sales, running costs and profit or loss it's made</li><li>detailed notes about any assumptions made</li></ul><p class='govuk-body'>You can upload a maximum of 4 files.</p><p class='govuk-body'>Each file must be a PDF and smaller than 5MB.</p>",
                     "Hint": "",
