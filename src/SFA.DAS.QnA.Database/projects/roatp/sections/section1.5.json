@@ -300,12 +300,12 @@
             "SectionId": null,
             "Title": "Did your organisation get a separate grade for Apprenticeships in this Ofsted inspection?",
             "LinkTitle": "Did your organisation get a separate grade for Apprenticeships in this Ofsted inspection?",
-            "InfoText": "",
+            "InfoText": "<div class='govuk-warning-text'> <span class='govuk-warning-text__icon' aria-hidden='true'>!</span> <strong class='govuk-warning-text__text'> <span class='govuk-warning-text__assistive'>Warning</span>If your organisation got its grading after November 2025, you cannot continue this application.  You should return to the application overview using the link in the banner and <a href='https://apply.apprenticeships.education.gov.uk/Home/ContactUs' class='govuk-link' target='blank'>contact us</a> instead.</strong> </div>",
             "Questions": [
                 {
                     "QuestionId": "YO-270",
                     "QuestionTag": "OfstedApprenticeshipGrade",
-                    "Label": "Did your organisation get a grade for apprenticeships in this full Ofsted inspection?",
+                    "Label": "Did your organisation get a separate grade for Apprenticeships in this Ofsted inspection?",
                     "ShortLabel": "",
                     "QuestionBodyText": "<p class='govuk-body'>If you're not sure, <a href='https://reports.ofsted.gov.uk/' class='govuk-link' target='blank'>check your organisation's Ofsted inspection report</a>.</p><p class='govuk-body'>If your organisation got its grading after November 2025, you cannot continue. <a href='https://apply.apprenticeships.education.gov.uk/Home/ContactUs' class='govuk-link' target='blank'>Contact us</a> and we will give you advice on how to complete this part of the application.</p>",
                     "Hint": "",
@@ -313,8 +313,8 @@
                         "Type": "Radio",
                         "Options": [
                             {
-                                "Label": "Yes",
-                                "Value": "Yes"
+                                "Label": "Yes - but before November 2025",
+                                "Value": "Yes - but before November 2025"
                             },
                             {
                                 "Label": "No",
@@ -328,8 +328,7 @@
                                 "ErrorMessage": "Tell us if your organisation was awarded a grade for apprenticeships in this Ofsted inspection"
                             }
                         ]
-                    },
-					"InfoText": "<div class='govuk-warning-text'> <span class='govuk-warning-text__icon' aria-hidden='true'>!</span> <strong class='govuk-warning-text__text'> <span class='govuk-warning-text__assistive'>Warning</span>If your organisation got its grading after November 2025, you cannot continue this application.  You should return to the application overview using the link in the banner and <a href='https://apply.apprenticeships.education.gov.uk/Home/ContactUs' class='govuk-link' target='blank'>contact us</a> instead.</strong> </div>"
+                    } 
                 }
             ],
             "PageOfAnswers": [],
