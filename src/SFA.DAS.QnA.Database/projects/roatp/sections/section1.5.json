@@ -313,7 +313,7 @@
                         "Type": "Radio",
                         "Options": [
                             {
-                                "Label": "Yes - but before November 2025",
+                                "Label": "Yes",
                                 "Value": "Yes"
                             },
                             {
