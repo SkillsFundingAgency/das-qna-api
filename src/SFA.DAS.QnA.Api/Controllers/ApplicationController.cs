@@ -1,3 +1,4 @@
+using System;
 using System.Net;
 using System.Threading.Tasks;
 using MediatR;
@@ -30,21 +31,30 @@ namespace SFA.DAS.QnA.Api.Controllers
         /// <response code="201">Returns the newly created application's Id</response>
         /// <response code="400">If the WorkflowType does not exist or the ApplicationData supplied does not match the Project's schema.</response>
         [HttpPost("start")]
-        [ProducesResponseType((int) HttpStatusCode.Created)]
-        [ProducesResponseType((int) HttpStatusCode.BadRequest)]
+        [ProducesResponseType((int)HttpStatusCode.Created)]
+        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
         public async Task<ActionResult> StartApplication([FromBody] StartApplicationRequest request)
         {
-            _logger.LogInformation("StartApplication called");
-
-            var newApplicationResponse = await _mediator.Send(request);
-
-            if (!newApplicationResponse.Success)
+            try
             {
-                _logger.LogError($"Unable to start application | Reason : {newApplicationResponse.Message}");
-                return BadRequest(new BadRequestError(newApplicationResponse.Message));
-            }
+                _logger.LogInformation("StartApplication called");
 
-            return Ok(new {newApplicationResponse.Value.ApplicationId});
+                var newApplicationResponse = await _mediator.Send(request);
+
+                if (!newApplicationResponse.Success)
+                {
+                    _logger.LogError($"Unable to start application | Reason : {newApplicationResponse.Message}");
+                    return BadRequest(new BadRequestError(newApplicationResponse.Message));
+                }
+
+                return Ok(new { newApplicationResponse.Value.ApplicationId });
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "An error occurred while starting the application");
+                return StatusCode((int)HttpStatusCode.InternalServerError, new ApiError((int)HttpStatusCode.InternalServerError, "An unexpected error occurred"));
+            }
         }
+
     }
 }

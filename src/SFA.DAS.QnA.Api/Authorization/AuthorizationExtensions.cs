@@ -1,22 +1,23 @@
 ﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 
 namespace SFA.DAS.QnA.Api.Authorization
 {
     public static class AuthorizationExtensions
     {
-        public static IServiceCollection AddApiAuthorization(this IServiceCollection services, IHostingEnvironment environment)
+        public static IServiceCollection AddApiAuthorization(this IServiceCollection services, IWebHostEnvironment environment)
         {
             var isDevelopment = environment.IsDevelopment();
 
-            services.AddAuthorization(x =>
+            services.AddAuthorization(options =>
             {
-                x.AddPolicy("Default", policy =>
+                options.AddPolicy("Default", policy =>
                 {
                     if (isDevelopment)
                     {
-                        policy.AllowAnonymousUser();
+                        policy.RequireAssertion(_ => true);
                     }
                     else
                     {
@@ -25,7 +26,7 @@ namespace SFA.DAS.QnA.Api.Authorization
                     }
                 });
 
-                x.DefaultPolicy = x.GetPolicy("Default");
+                options.DefaultPolicy = options.GetPolicy("Default");
             });
 
             if (isDevelopment)

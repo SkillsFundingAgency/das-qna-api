@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Azure.Monitor.OpenTelemetry.AspNetCore;
 
-namespace SFA.DAS.QnA.Api.Infrastructure
+namespace SFA.DAS.QnA.Api.Extensions
 {
     public static class AddOpenTelemetryExtensions
     {

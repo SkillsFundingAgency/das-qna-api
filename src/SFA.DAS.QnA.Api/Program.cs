@@ -1,6 +1,5 @@
-﻿using System.Diagnostics.CodeAnalysis;
-using Microsoft.AspNetCore;
-using Microsoft.AspNetCore.Hosting;
+﻿﻿using System.Diagnostics.CodeAnalysis;
+using Microsoft.AspNetCore.Builder;
 
 namespace SFA.DAS.QnA.Api
 {
@@ -9,11 +8,17 @@ namespace SFA.DAS.QnA.Api
     {
         public static void Main(string[] args)
         {
-            CreateWebHostBuilder(args).Build().Run();
-        }
+            var builder = WebApplication.CreateBuilder(args);
 
-        public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
-            WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>();
+
+            // Initialize Startup for services and middleware
+            var startup = new Startup(builder.Configuration, builder.Environment);
+            startup.ConfigureServices(builder.Services);
+
+            var app = builder.Build();
+            startup.Configure(app, app.Environment);
+
+            app.Run();
+        }
     }
 }
