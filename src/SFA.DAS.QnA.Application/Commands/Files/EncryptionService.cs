@@ -85,7 +85,7 @@ namespace SFA.DAS.QnA.Application.Commands.Files
         {
             aes.KeySize = 256;
             aes.BlockSize = 128;
-            var key = new Rfc2898DeriveBytes(passwordBytes, new byte[] {1, 2, 3, 4, 5, 6, 7, 8}, 1000);
+            var key = new Rfc2898DeriveBytes(passwordBytes, new byte[] { 1, 2, 3, 4, 5, 6, 7, 8 }, 1000);
             aes.Key = key.GetBytes(aes.KeySize / 8);
             aes.IV = key.GetBytes(aes.BlockSize / 8);
             aes.Mode = CipherMode.CBC;

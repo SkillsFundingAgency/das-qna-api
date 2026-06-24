@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using FluentAssertions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using NUnit.Framework;
@@ -36,7 +37,7 @@ namespace SFA.DAS.QnA.Application.UnitTests.ServiceTests
 
             var result = notRequiredProcessor.NotRequired(notRequiredConditions,applicationData);
 
-            Assert.AreEqual(match, result);
+            result.Should().Be(match);
         }
     }
 }

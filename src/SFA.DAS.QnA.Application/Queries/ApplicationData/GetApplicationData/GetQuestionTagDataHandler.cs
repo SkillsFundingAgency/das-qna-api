@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using SFA.DAS.QnA.Api.Types;
