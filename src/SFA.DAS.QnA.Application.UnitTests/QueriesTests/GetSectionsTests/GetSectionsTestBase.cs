@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging.Abstractions;
 using NUnit.Framework;
 using SFA.DAS.QnA.Api.Types.Page;
 using SFA.DAS.QnA.Application.Queries.Sections.GetSections;
@@ -29,7 +30,7 @@ namespace SFA.DAS.QnA.Application.UnitTests.QueriesTests.GetSectionsTests
 
             ApplicationId = Guid.NewGuid();
 
-            context.Applications.Add(new Data.Entities.Application { Id = ApplicationId, ApplicationData = "{}"});
+            context.Applications.Add(new Data.Entities.Application { Id = ApplicationId, ApplicationData = "{}" });
 
             context.ApplicationSequences.AddRange(new[]
             {
@@ -46,7 +47,7 @@ namespace SFA.DAS.QnA.Application.UnitTests.QueriesTests.GetSectionsTests
 
             await context.SaveChangesAsync();
 
-            var mapper = new Mapper(new MapperConfiguration(config => { config.AddMaps(AppDomain.CurrentDomain.GetAssemblies()); }));
+            var mapper = new Mapper(new MapperConfiguration(config => { config.AddMaps(AppDomain.CurrentDomain.GetAssemblies()); }, NullLoggerFactory.Instance));
 
             Handler = new GetSectionsHandler(context, mapper, new NotRequiredProcessor());
         }

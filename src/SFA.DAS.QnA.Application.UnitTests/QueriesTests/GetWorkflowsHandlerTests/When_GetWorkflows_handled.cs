@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using FluentAssertions;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging.Abstractions;
 using NUnit.Framework;
 using SFA.DAS.QnA.Api.Types;
 using SFA.DAS.QnA.Application.Queries.GetWorkflows;
@@ -26,17 +27,17 @@ namespace SFA.DAS.QnA.Application.UnitTests.QueriesTests.GetWorkflowsHandlerTest
             var context = new QnaDataContext(dbContextOptions);
 
             var projectId = Guid.NewGuid();
-            
-            context.Workflows.AddRange(new []
+
+            context.Workflows.AddRange(new[]
             {
-                new Workflow(){Id = Guid.NewGuid(), Status = WorkflowStatus.Live, ProjectId = projectId}, 
-                new Workflow(){Id = Guid.NewGuid(), ProjectId = projectId}, 
-                new Workflow(){Id = Guid.NewGuid(), Status = WorkflowStatus.Live, ProjectId = projectId}, 
+                new Workflow(){Id = Guid.NewGuid(), Status = WorkflowStatus.Live, ProjectId = projectId},
+                new Workflow(){Id = Guid.NewGuid(), ProjectId = projectId},
+                new Workflow(){Id = Guid.NewGuid(), Status = WorkflowStatus.Live, ProjectId = projectId},
             });
 
             await context.SaveChangesAsync();
-            
-            var mapper = new Mapper(new MapperConfiguration(config => { config.AddMaps(AppDomain.CurrentDomain.GetAssemblies()); }));
+
+            var mapper = new Mapper(new MapperConfiguration(config => { config.AddMaps(AppDomain.CurrentDomain.GetAssemblies()); }, NullLoggerFactory.Instance));
 
             var handler = new GetWorkflowsHandler(context, mapper);
 

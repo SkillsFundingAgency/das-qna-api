@@ -1,20 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Text;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Options;
 using NSubstitute;
 using NUnit.Framework;
 using SFA.DAS.QnA.Api.Types.Page;
-using SFA.DAS.QnA.Application.Commands.Files.UploadFile;
 using SFA.DAS.QnA.Application.Commands;
+using SFA.DAS.QnA.Application.Commands.Files;
+using SFA.DAS.QnA.Application.Commands.Files.UploadFile;
+using SFA.DAS.QnA.Application.Services;
+using SFA.DAS.QnA.Configuration.Config;
 using SFA.DAS.QnA.Data;
 using SFA.DAS.QnA.Data.Entities;
-using Microsoft.Extensions.Options;
-using SFA.DAS.QnA.Configuration.Config;
-using SFA.DAS.QnA.Application.Commands.Files;
-using System.IO;
-using SFA.DAS.QnA.Application.Services;
-using Microsoft.AspNetCore.Http;
-using System.Text;
 
 namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.SubmitPageOfFilesHandlerTests
 {
@@ -38,7 +38,7 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.SubmitPageOfFilesHandl
             NotRequiredProcessor = new NotRequiredProcessor();
             TagProcessingService = new TagProcessingService(DataContext);
             var fileStorageConfig = GetFileStorageConfig();
-            
+
             var encryptionService = Substitute.For<IEncryptionService>();
             encryptionService.Encrypt(Arg.Any<Stream>()).Returns(callinfo => callinfo.ArgAt<Stream>(0)); // Don't Encrypt stream
             encryptionService.Decrypt(Arg.Any<Stream>()).Returns(callinfo => callinfo.ArgAt<Stream>(0)); // Don't Decrypt stream
@@ -49,7 +49,7 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.SubmitPageOfFilesHandl
             var fileContentValidator = Substitute.For<IFileContentValidator>();
             fileContentValidator.Validate(Arg.Any<IFormFileCollection>()).Returns(new List<KeyValuePair<string, string>>());
 
-            Handler = new SubmitPageOfFilesHandler(DataContext, fileStorageConfig, encryptionService, validator, fileContentValidator, NotRequiredProcessor,TagProcessingService);
+            Handler = new SubmitPageOfFilesHandler(DataContext, fileStorageConfig, encryptionService, validator, fileContentValidator, NotRequiredProcessor, TagProcessingService);
 
             ApplicationId = Guid.NewGuid();
             SectionId = Guid.NewGuid();
@@ -86,10 +86,10 @@ namespace SFA.DAS.QnA.Application.UnitTests.CommandsTests.SubmitPageOfFilesHandl
         protected static FormFile GenerateFile(string content, string questionId, string filename)
         {
             return new FormFile(new MemoryStream(Encoding.UTF8.GetBytes(content)), 0, 0, questionId, filename)
-                                {
-                                    Headers = new HeaderDictionary(),
-                                    ContentType = "application/octet-stream"
-                                };
+            {
+                Headers = new HeaderDictionary(),
+                ContentType = "application/octet-stream"
+            };
         }
     }
 }

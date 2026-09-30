@@ -13,7 +13,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Logging;
-using Microsoft.OpenApi.Models;
+using Microsoft.OpenApi;
 using SFA.DAS.QnA.Api.Authentication;
 using SFA.DAS.QnA.Api.Authorization;
 using SFA.DAS.QnA.Api.Infrastructure;
@@ -76,8 +76,8 @@ namespace SFA.DAS.QnA.Api
             services.AddTransient<INotRequiredProcessor, NotRequiredProcessor>();
             services.AddTransient<IKeyProvider, ConfigKeyProvider>();
             services.AddTransient<ITagProcessingService, TagProcessingService>();
-            services.AddAutoMapper(typeof(SystemTime).Assembly);
-            services.AddMediatR(AppDomain.CurrentDomain.GetAssemblies());
+            services.AddAutoMapper(cfg => cfg.AddMaps(typeof(SystemTime).Assembly));
+            services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(AppDomain.CurrentDomain.GetAssemblies()));
 
             services.AddOpenTelemetryRegistration(Configuration["APPLICATIONINSIGHTS_CONNECTION_STRING"]!);
 
