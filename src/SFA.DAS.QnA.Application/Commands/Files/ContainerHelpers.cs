@@ -1,33 +1,29 @@
 using System;
 using System.Threading.Tasks;
-using Microsoft.Azure.Storage;
-using Microsoft.Azure.Storage.Blob;
+using Azure.Storage.Blobs;
 
 namespace SFA.DAS.QnA.Application.Commands.Files
 {
     public static class ContainerHelpers
     {
-        public static async Task<CloudBlobContainer> GetContainer(string connectionString, string containerName)
+        public static async Task<BlobContainerClient> GetContainer(string connectionString, string containerName)
         {
-            var account = CloudStorageAccount.Parse(connectionString);
-            var client = account.CreateCloudBlobClient();
-            var container = client.GetContainerReference(containerName);
+            var client = new BlobServiceClient(connectionString);
+            var container = client.GetBlobContainerClient(containerName);
             await container.CreateIfNotExistsAsync();
             return container;
         }
-        
-        public static CloudBlobDirectory GetDirectory(Guid applicationId, Guid sequenceId, Guid sectionId, string pageId, string questionId, CloudBlobContainer container)
+
+        public static string GetDirectory(Guid applicationId, Guid sequenceId, Guid sectionId, string pageId, string questionId)
         {
-            var applicationFolder = container.GetDirectoryReference(applicationId.ToString());
-            var sequenceFolder = applicationFolder.GetDirectoryReference(sequenceId.ToString());
-            var sectionFolder = sequenceFolder.GetDirectoryReference(sectionId.ToString());
-            var pageFolder = sectionFolder.GetDirectoryReference(pageId.ToLower());
+            var path = $"{applicationId}/{sequenceId}/{sectionId}/{pageId.ToLower()}";
+
             if (questionId is null)
             {
-                return pageFolder;
+                return path;
             }
-            var questionFolder = pageFolder.GetDirectoryReference(questionId.ToLower());
-            return questionFolder;
+
+            return $"{path}/{questionId.ToLower()}";
         }
     }
 }

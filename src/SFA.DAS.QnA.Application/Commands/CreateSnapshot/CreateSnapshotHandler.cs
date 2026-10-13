@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using Azure.Storage.Blobs;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using Microsoft.Azure.Storage;
-using Microsoft.Azure.Storage.Blob;
 using SFA.DAS.QnA.Api.Types;
 using SFA.DAS.QnA.Configuration.Config;
 using SFA.DAS.QnA.Data;
@@ -157,16 +156,16 @@ namespace SFA.DAS.QnA.Application.Commands.CreateSnapshot
         {
             try
             {
-                var account = CloudStorageAccount.Parse(_fileStorageConfig.Value.StorageConnectionString);
-                var client = account.CreateCloudBlobClient();
-                var container = client.GetContainerReference(_fileStorageConfig.Value.ContainerName);
+                var client = new BlobServiceClient(_fileStorageConfig.Value.StorageConnectionString);
+                var container = client.GetBlobContainerClient(
+                    _fileStorageConfig.Value.ContainerName);
 
-                var sourceFileBlobReference = container.GetBlockBlobReference(source);
+                var sourceFileBlobReference = container.GetBlobClient(source);
 
                 if (sourceFileBlobReference.Exists())
                 {
-                    var destinationFileBlobReference = container.GetBlockBlobReference(destination);
-                    await destinationFileBlobReference.StartCopyAsync(sourceFileBlobReference);
+                    var destinationFileBlobReference = container.GetBlobClient(destination);
+                    await destinationFileBlobReference.StartCopyFromUriAsync(sourceFileBlobReference.Uri);
                 }
             }
             catch (Exception ex)

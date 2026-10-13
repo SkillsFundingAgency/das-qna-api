@@ -1,5 +1,5 @@
 ﻿using System;
-using Microsoft.Azure.Cosmos.Table;
+using Azure.Data.Tables;
 using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json.Linq;
 
@@ -13,7 +13,7 @@ namespace SFA.DAS.QnA.Configuration.Infrastructure
         private readonly string _appName;
 
 
-        public AzureTableStorageConfigurationProvider(string connection,string appName, string environment, string version)
+        public AzureTableStorageConfigurationProvider(string connection, string appName, string environment, string version)
         {
             _connection = connection;
             _environment = environment;
@@ -28,12 +28,7 @@ namespace SFA.DAS.QnA.Configuration.Infrastructure
                 return;
             }
 
-            var table = GetTable();
-            var operation = GetOperation(_appName, _environment, _version);
-            
-            var result = table.ExecuteAsync(operation).Result;
-
-            var configItem = (ConfigurationItem)result.Result;
+            var configItem = GetOperation(_appName, _environment, _version);
 
             var jsonObject = JObject.Parse(configItem.Data);
 
@@ -47,16 +42,20 @@ namespace SFA.DAS.QnA.Configuration.Infrastructure
             }
         }
 
-        private CloudTable GetTable()
+        private TableClient GetTable()
         {
-            var storageAccount = CloudStorageAccount.Parse(_connection);
-            var tableClient = storageAccount.CreateCloudTableClient();
-            return tableClient.GetTableReference("Configuration");
+            var tableClient = new TableServiceClient(_connection);
+            return tableClient.GetTableClient("Configuration");
         }
 
-        private TableOperation GetOperation(string serviceName, string environmentName, string version)
+        private ConfigurationItem GetOperation(
+            string serviceName,
+            string environmentName,
+            string version)
         {
-            return TableOperation.Retrieve<ConfigurationItem>(environmentName, $"{serviceName}_{version}");
+            return GetTable().GetEntity<ConfigurationItem>(
+                environmentName,
+                $"{serviceName}_{version}").Value;
         }
     }
 }

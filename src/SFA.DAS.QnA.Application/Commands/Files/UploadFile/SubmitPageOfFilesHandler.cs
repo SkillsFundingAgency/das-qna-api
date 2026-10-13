@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using Azure.Storage.Blobs.Models;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
@@ -115,14 +116,21 @@ namespace SFA.DAS.QnA.Application.Commands.Files.UploadFile
                     foreach (var file in request.Files)
                     {
                         var questionIdFromFileName = file.Name;
-                        var questionFolder = ContainerHelpers.GetDirectory(request.ApplicationId, section.SequenceId, request.SectionId, request.PageId, questionIdFromFileName, container);
+                        var questionFolder = ContainerHelpers.GetDirectory(request.ApplicationId, section.SequenceId, request.SectionId, request.PageId, questionIdFromFileName);
 
-                        var blob = questionFolder.GetBlockBlobReference(file.FileName);
-                        blob.Properties.ContentType = file.ContentType;
+                        var blob = container.GetBlobClient($"{questionFolder}/{file.FileName}");
+
+                        var options = new BlobUploadOptions
+                        {
+                            HttpHeaders = new BlobHttpHeaders
+                            {
+                                ContentType = file.ContentType
+                            }
+                        };
 
                         var encryptedFileStream = _encryptionService.Encrypt(file.OpenReadStream());
 
-                        await blob.UploadFromStreamAsync(encryptedFileStream, cancellationToken);
+                        await blob.UploadAsync(encryptedFileStream, options, cancellationToken);
 
                         if (page.PageOfAnswers is null)
                         {
