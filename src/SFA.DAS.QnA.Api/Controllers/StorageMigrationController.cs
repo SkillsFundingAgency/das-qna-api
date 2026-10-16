@@ -4,8 +4,9 @@ using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-using Azure.Storage.Blobs;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Azure.Storage;
+using Microsoft.Azure.Storage.Blob;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
@@ -35,7 +36,7 @@ namespace SFA.DAS.QnA.Api.Controllers
         [HttpPost("/storageMigration")]
         public async Task<ActionResult<FileMigrationResult>> Migrate()
         {
-            var result = new FileMigrationResult { MigratedFiles = new List<MigratedFile>() };
+            var result = new FileMigrationResult {MigratedFiles = new List<MigratedFile>()};
 
             try
             {
@@ -59,26 +60,27 @@ namespace SFA.DAS.QnA.Api.Controllers
                                     if (!string.IsNullOrWhiteSpace(answer.Value))
                                     {
                                         // get original file...
-                                        var account = new BlobServiceClient(_fileStorageConfig.Value.StorageConnectionString);
-                                        var container = account.GetBlobContainerClient(_fileStorageConfig.Value.ContainerName);
+                                        var account = CloudStorageAccount.Parse(_fileStorageConfig.Value.StorageConnectionString);
+                                        var client = account.CreateCloudBlobClient();
+                                        var container = client.GetContainerReference(_fileStorageConfig.Value.ContainerName);
 
-                                        var questionFolder =
-                                            $"{section.ApplicationId}/{section.SequenceNo}/{section.SectionNo}/{page.PageId.ToLower()}/{answer.QuestionId.ToLower()}";
+                                        var applicationFolder = container.GetDirectoryReference(section.ApplicationId.ToString());
+                                        var sequenceFolder = applicationFolder.GetDirectoryReference(section.SequenceNo.ToString());
+                                        var sectionFolder = sequenceFolder.GetDirectoryReference(section.SectionNo.ToString());
+                                        var pageFolder = sectionFolder.GetDirectoryReference(page.PageId.ToLower());
 
-                                        var blobReference = container.GetBlobClient($"{questionFolder}/{answer.Value}");
+                                        var questionFolder = pageFolder.GetDirectoryReference(answer.QuestionId.ToLower());
 
-                                        if ((await blobReference.ExistsAsync()).Value)
+                                        var blobReference = questionFolder.GetBlockBlobReference(answer.Value);
+
+                                        if (blobReference.Exists())
                                         {
                                             var newfileurl = $"{section.ApplicationId.ToString().ToLower()}/{sequenceId.ToString().ToLower()}/{sectionId.ToString().ToLower()}/{page.PageId}/{answer.QuestionId.ToLower()}/{answer.Value}";
-                                            var newFileLocation = container.GetBlobClient(newfileurl);
+                                            var newFileLocation = container.GetBlockBlobReference(newfileurl);
 
-                                            await newFileLocation.StartCopyFromUriAsync(blobReference.Uri);
+                                            await newFileLocation.StartCopyAsync(blobReference);
 
-                                            result.MigratedFiles.Add(new MigratedFile
-                                            {
-                                                From = blobReference.Name,
-                                                To = newfileurl
-                                            });
+                                            result.MigratedFiles.Add(new MigratedFile {From = blobReference.Name, To = newfileurl});
                                         }
                                     }
                                 }
@@ -90,7 +92,7 @@ namespace SFA.DAS.QnA.Api.Controllers
             catch (Exception ex)
             {
                 _log.LogInformation($"Error running file migration: {ex.Message}. Stack trace: {ex.StackTrace}");
-                return new FileMigrationResult() { Error = ex.Message, ErrorStackTrace = ex.StackTrace };
+                return new FileMigrationResult() {Error = ex.Message, ErrorStackTrace = ex.StackTrace};
             }
 
             return result;

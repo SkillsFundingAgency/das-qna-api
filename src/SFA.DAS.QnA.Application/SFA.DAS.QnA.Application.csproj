@@ -6,12 +6,12 @@
 
     <ItemGroup>
       <PackageReference Include="AutoMapper" Version="16.2.0" />
-      <PackageReference Include="Azure.Storage.Blobs" Version="12.30.1" />
       <PackageReference Include="MediatR" Version="12.5.0" />
-      <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.3.13" />
+      <PackageReference Include="Microsoft.Azure.Storage.Blob" Version="11.2.3" />
       <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="10.0.12" />
       <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
       <PackageReference Include="Newtonsoft.Json.Schema" Version="4.0.1" />
+      <PackageReference Include="Microsoft.AspNetCore.Http.Features" Version="5.0.17" />
       <PackageReference Include="System.Data.SqlClient" Version="4.9.1" />
     </ItemGroup>
 

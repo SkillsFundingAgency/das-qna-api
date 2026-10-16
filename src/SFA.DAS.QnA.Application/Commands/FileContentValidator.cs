@@ -1,7 +1,7 @@
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using Microsoft.AspNetCore.Http;
+using System.IO;
 
 namespace SFA.DAS.QnA.Application.Commands
 {

@@ -1,29 +1,33 @@
 using System;
 using System.Threading.Tasks;
-using Azure.Storage.Blobs;
+using Microsoft.Azure.Storage;
+using Microsoft.Azure.Storage.Blob;
 
 namespace SFA.DAS.QnA.Application.Commands.Files
 {
     public static class ContainerHelpers
     {
-        public static async Task<BlobContainerClient> GetContainer(string connectionString, string containerName)
+        public static async Task<CloudBlobContainer> GetContainer(string connectionString, string containerName)
         {
-            var client = new BlobServiceClient(connectionString);
-            var container = client.GetBlobContainerClient(containerName);
+            var account = CloudStorageAccount.Parse(connectionString);
+            var client = account.CreateCloudBlobClient();
+            var container = client.GetContainerReference(containerName);
             await container.CreateIfNotExistsAsync();
             return container;
         }
-
-        public static string GetDirectory(Guid applicationId, Guid sequenceId, Guid sectionId, string pageId, string questionId)
+        
+        public static CloudBlobDirectory GetDirectory(Guid applicationId, Guid sequenceId, Guid sectionId, string pageId, string questionId, CloudBlobContainer container)
         {
-            var path = $"{applicationId}/{sequenceId}/{sectionId}/{pageId.ToLower()}";
-
+            var applicationFolder = container.GetDirectoryReference(applicationId.ToString());
+            var sequenceFolder = applicationFolder.GetDirectoryReference(sequenceId.ToString());
+            var sectionFolder = sequenceFolder.GetDirectoryReference(sectionId.ToString());
+            var pageFolder = sectionFolder.GetDirectoryReference(pageId.ToLower());
             if (questionId is null)
             {
-                return path;
+                return pageFolder;
             }
-
-            return $"{path}/{questionId.ToLower()}";
+            var questionFolder = pageFolder.GetDirectoryReference(questionId.ToLower());
+            return questionFolder;
         }
     }
 }
