@@ -1,10 +1,11 @@
 #  Question and Answer API
 <img src="https://avatars.githubusercontent.com/u/9841374?s=200&v=4" align="right" alt="UK Government logo">
 
-[![Build Status](https://sfa-gov-uk.visualstudio.com/Digital%20Apprenticeship%20Service/_apis/build/status/Endpoint%20Assessment%20Organisation/das-qna-api?branchName=master)](https://sfa-gov-uk.visualstudio.com/Digital%20Apprenticeship%20Service/_build/latest?definitionId=1654&branchName=master)
+[![Build Status](https://sfa-gov-uk.visualstudio.com/Digital%20Apprenticeship%20Service/_apis/build/status%2FEndpoint%20Assessment%20Organisation%2Fdas-qna-api?repoName=SkillsFundingAgency%2Fdas-qna-api&branchName=master)](https://sfa-gov-uk.visualstudio.com/Digital%20Apprenticeship%20Service/_build/latest?definitionId=1654&repoName=SkillsFundingAgency%2Fdas-qna-api&branchName=master)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=SkillsFundingAgency_das-qna-api&metric=alert_status)](https://sonarcloud.io/project/overview?id=SkillsFundingAgency_das-qna-api)
-[![Confluence Project](https://img.shields.io/badge/Confluence-Project-blue)](https://skillsfundingagency.atlassian.net/wiki/spaces/NDL/pages/1686274228/QnA+API+-+Developer+Overview)
 [![License](https://img.shields.io/badge/license-MIT-lightgrey.svg?longCache=true&style=flat-square)](https://en.wikipedia.org/wiki/MIT_License)
+
+# About
 
 This service is a Web API service which allows question sets to be organised and presented and their answers collected by exposing HTTP REST end points.
 
@@ -13,17 +14,14 @@ Nuget packages that go with this solution include:
 * Common types to interact with the QnA Api [![QnA API Types](https://buildstats.info/nuget/SFA.DAS.QnA.Api.Types)](https://www.nuget.org/packages/SFA.DAS.QnA.Api.Types)
 * Asp.Net Core Views using [GOV UK Design System](https://design-system.service.gov.uk/get-started/) [![QnA API Views](https://buildstats.info/nuget/SFA.DAS.QnA.Api.Views)](https://www.nuget.org/packages/SFA.DAS.QnA.Api.Views)
 
-## Developer Setup
-### Requirements
+## 🚀 Installation
 
-* Install [.NET Core 2.2 SDK](https://www.microsoft.com/net/download)
-* Install [Visual Studio 2019](https://www.visualstudio.com/downloads/) with the following workloads:
-	* ASP.NET and web development
-* Install [SQL Server 2017 Developer Edition](https://go.microsoft.com/fwlink/?linkid=853016)
-* Install [SQL Management Studio](https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms)
-* Install [Azure Storage Emulator](https://go.microsoft.com/fwlink/?linkid=717179&clcid=0x409) (Make sure you are on at least v5.3)
-* Install [Azure Storage Explorer](http://storageexplorer.com/) 
-* Administrator Access
+### Pre-Requisites
+
+* A clone of this repository
+* Azurite or similar local storage emulator
+* SQL Database
+* Visual studio or similar IDE
 
 ### Environment Setup
 
@@ -50,53 +48,80 @@ Data:
 
 ### Running
 
-JSON configuration was created to work with dotnet run.
-* Navigate to `src/SFA.DAS.QnA.API/`
-* run `dotnet restore`
-* run `dotnet run`
-
-or
-
 * Set `SFA.DAS.QnA.API` as the startup project
-* Running the solution will launch the API in your browser.
+* Running the solution will launch the API.
 	
 * **NB** - To run a local copy you may also need:
 	* To create a JSON structure required to author updates and create new question sets: [Config Tool](https://github.com/SkillsFundingAgency/das-qna-config)
 	* To view how the question sets will be presented when integrated into a client application using [GOV UK Design System](https://design-system.service.gov.uk/get-started/) and [Config Preview](https://github.com/SkillsFundingAgency/das-qna-config-preview)
 
-#### `SFA.DAS.QnA.Application`
+	When launching with the QnA Config Preview solution, the starting web page will display 3 free text input fields. These are
+	* Project Type - this should be populated with "roatp"
+	* Sequence Number - this should be populated with an integer that is incremented each time you start the journey
+	* Application Data.Json - this should be populated with the following seed json:
+	```	
+	{
+	"OrganisationReferenceId": "10088539",
+	"OrganisationName": "SAMPLE EDUCATION LIMITED",
+	"ApplyProviderRoute": "1",
+	"UKPRN": "10088539",
+	"UKRLPLegalName": "SAMPLE EDUCATION LIMITED",
+	"UKRLPWebsite": "www.sample.education",
+	"UKRLPNoWebsite": "",
+	"CHManualEntryRequired": "",
+	"UKRLPVerificationCompanyNumber": "09950816",
+	"UKRLPVerificationCompany": "TRUE
+	"CCTrusteeManualEntry": 
+	"UKRLPVerificationCharityRegNumber": null,
+	"UKRLPVerificationCharity": "",
+	"UKRLPVerificationSoleTraderPartnership": "",
+	"UKRLPPrimaryVerificationSource": "Companies House",
+	"RouteAndOnRoatp": "MainNotOnRoatp",
+	"OnROATP": "",
+	"COAStage1Application": "TRUE",
+	"CompaniesHouseDirectors": "{\"Caption\":\"Company directors\",\"HeadingTitles\":[\"Name\",\"Date of birth\"],\"DataRows\":[{\"Id\":\"_-wFtGEW6y8j9sXdwECdMHXetYM\",\"Columns\":[\"FLINTSTONE, Timothy John\",\"Oct 1964\"]},{\"Id\":\"WHCXVIL2dmyAQmIaVn6p9hHOo_A\",\"Columns\":[\"FLINTSTONE, Mark\",\"Aug 1965\"]},{\"Id\":\"lXX8igijzpyJ9NGW4qvrMJnD_3M\",\"Columns\":[\"FLINTSTONE, Bethany\",\"Oct 1995\"]},{\"Id\":\"gjb5TukqEALaPUAch06snifZ_2Q\",\"Columns\":[\"FLINTSTONE, Thomas George\",\"Nov 1974\"]}]}",
+	"CompaniesHousePSCs": "{\"Caption\":\"People with significant control (PSCs)\",\"HeadingTitles\":[\"Name\",\"Date of birth\"],\"DataRows\":[{\"Id\":\"/company/09950816/persons-with-significant-control/individual/iUYwRxO1eMOiTX7tRD9n7pSi5F4\",\"Columns\":[\"Mr Mark Flintstone\",\"Aug 1965\"]}]}",
+	"DirectorsPSCsConfirmed": "Y",
+	"HasParentCompany": "No",
+	"OrganisationTypeMainSupporting": "An Independent Training Provider",
+	"OFSFunded": "No",
+	"ITTAccredited": "No",
+	"OfstedFESkills": "No",
+	"FHATurnoverOver75m": "No",
+	"FHATurnover": "3629927",
+	"FHADepreciation": "146099",
+	"FHAProfitLoss": "77825",
+	"FHADividends": "0",
+	"FHAAssets": "640742",
+	"FHALiabilities": "559888",
+	"FHABorrowings": "586798",
+	"FHAShareholderFunds": "3390",
+	"FHAIntangibleAssets": "0",
+	"FHAAverageNumberofFTEEmployees": "63",
+	"FHAHas12MonthsStatements": "Yes",
+	"FHAAccountingPeriod": "12",
+	"CCOrganisationComposition": "No",
+	"CC-Organisation-RoTO": "No",
+	"CC-Organisation-RoTO-Information": null,
+	"FHAAccountingReferenceDate": "31,08,2025",
+	"AddManagementHierarchy": "{\"Caption\":null,\"HeadingTitles\":[\"First Name\",\"Last Name\",\"Job role\",\"Years in role\",\"Months in role\",\"Part of another organisation\",\"Organisation details\",\"Month\",\"Year\",\"Email\",\"Contact number\"],\"DataRows\":[{\"Id\":\"e6385e66-50a1-4225-9f23-40216415d419\",\"Columns\":[\"Mark\",\"Flintstone\",\"CEO \",\"14\",\"0\",\"No\",\"\",\"08\",\"1965\",\"mark@sample.com\",\"01179428429\"]},{\"Id\":\"bbcbc81e-e138-4edd-aec4-15283b4a040a\",\"Columns\":[\"Tim\",\"Flintstone\",\"Chief Financial Officer \",\"1\",\"0\",\"No\",\"\",\"10\",\"1964\",\"tim.flintstone@sample.com\",\"01179428429\"]},{\"Id\":\"3da75bde-a872-4d9d-bb55-cce50814763f\",\"Columns\":[\"Beth\",\"Flintstone \",\"Operations Director \",\"1\",\"9\",\"No\",\"\",\"10\",\"1995\",\"beth@sample.com\",\"01179428429\"]},{\"Id\":\"74ec14d2-b754-4709-b1ff-3cf8373807d2\",\"Columns\":[\"Joanna\",\"Flintstone\",\"Head of Apprenticeships\",\"0\",\"6\",\"No\",\"\",\"03\",\"1971\",\"jo.flintstone@sample.com\",\"01179428429\"]}]}",
+	"DeliveringTeamResponsible": "Yes",
+	"SectorsChosen": "Creative and design",
+	"DATCreativeWhatStandardsOffered": "Photographer \r\nContent Creator ",
+	"DATCreativeHowManyStarts": "40",
+	"DATCreativeHowManyEmployees": "2",
+	"DATCreativeFirstName": "Freya",
+	"DATCreativeLastName": "Flintstone",
+	"FinishPermissionPersonalDetails": "Yes",
+	"FinishAccuratePersonalDetails": "Yes",
+	"FinishPermissionSubmitApp": "Yes",
+	"FinishCommercialConfidence": "Yes",
+	"COAPart2MainEmployer": "Yes"
+	}
+	```
 
-This project contains all of the application logic to handle requests.
 
-#### `SFA.DAS.QnA.Configuration`
-
-This project enables functionality to store and read configuration from Microsoft Azure Storage.
-
-* AzureActiveDirectoryConfiguration
-	*  Azure Managed Identity authentication
-	
-* FileStorageConfig
-	* Information relating to storage of files
-	
-* QnAConfig
-	* Connection string for the QnA Database
-
-#### `SFA.DAS.QnA.Database`
-This is the database project containing setup in order to the create the QnA Database.
-
-* projects
-	* A subfolder should be created per project.
-	
-* `projects/{subfolder}/project.json`
-	* Contains information on how to setup the Workflow information.
-	
-* `projects/{subfolder}/ApplicationDataSchema.json`
-	* Contains JSON schema to validate ApplicationData.
-	
-* `projects/{subfolder}/sections`
-	* Holds QnAData for each WorkflowSection.
-	
-#### QnA Structure
+## QnA Structure
 
 A Workflow is made up of multiple sequences. Each sequence may have multiple sections.
 
@@ -130,11 +155,11 @@ There are situations where `Next` Conditions cannot control the page flow (i.e. 
 
 `NotRequiredConditions` is a way for `QnA Api` to remove pages from the response payload back to the user.
 
-### Tests
 
-This codebase includes unit tests.
+## Technologies
 
-#### Unit Tests
-There are two unit test projects, each named after the project that their tests cover. These tests use Moq, FluentAssertions, NewtonSoft, MediatR, and NUnit.
-* `SFA.DAS.QnA.Api.UnitTests`
-* `SFA.DAS.QnA.Application.UnitTests`
+* .Net 10
+* Azure Table Storage
+* NUnit
+* Moq
+* FluentAssertions
