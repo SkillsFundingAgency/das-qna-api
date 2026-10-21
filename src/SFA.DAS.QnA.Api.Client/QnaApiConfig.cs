@@ -1,5 +1,5 @@
 using System;
-using Microsoft.IdentityModel.Clients.ActiveDirectory;
+using Microsoft.Identity.Client;
 
 namespace SFA.DAS.QnA.Api.Client
 {
@@ -11,11 +11,19 @@ namespace SFA.DAS.QnA.Api.Client
             {
                 return "";
             }
-            
+
             var authority = $"https://login.microsoftonline.com/{TenantId}";
-            var clientCredential = new ClientCredential(ClientId, ClientSecret);
-            var context = new AuthenticationContext(authority, true);
-            var result = context.AcquireTokenAsync(ResourceId, clientCredential).Result;
+
+            var app = ConfidentialClientApplicationBuilder
+                .Create(ClientId)
+                .WithClientSecret(ClientSecret)
+                .WithAuthority(authority)
+                .Build();
+
+            var result = app
+                .AcquireTokenForClient(new[] { $"{ResourceId}/.default" })
+                .ExecuteAsync()
+                .Result;
 
             return result.AccessToken;
         }

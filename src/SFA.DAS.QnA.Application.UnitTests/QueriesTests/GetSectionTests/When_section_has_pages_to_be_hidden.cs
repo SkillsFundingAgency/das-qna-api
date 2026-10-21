@@ -4,6 +4,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper;
 using FluentAssertions;
+using Microsoft.Extensions.Logging.Abstractions;
 using Newtonsoft.Json;
 using NUnit.Framework;
 using SFA.DAS.QnA.Api.Types;
@@ -25,7 +26,7 @@ namespace SFA.DAS.QnA.Application.UnitTests.QueriesTests.GetSectionTests
             var dataContext = DataContextHelpers.GetInMemoryDataContext();
 
             var applicationData = new { OrganisationType = "HEI" };
-            
+
             dataContext.Applications.Add(new Data.Entities.Application()
             {
                 Id = applicationId,
@@ -36,20 +37,23 @@ namespace SFA.DAS.QnA.Application.UnitTests.QueriesTests.GetSectionTests
             {
                 Id = sectionId,
                 ApplicationId = applicationId,
-                QnAData = new QnAData(){Pages = new List<Page>()
+                QnAData = new QnAData()
+                {
+                    Pages = new List<Page>()
                 {
                     new Page() {PageId = "1", Active = true},
                     new Page() {PageId = "2", NotRequiredConditions = new List<NotRequiredCondition>(){new NotRequiredCondition(){Field = "OrganisationType", IsOneOf = new []{"HEI"}}}, Active = true},
                     new Page() {PageId = "3", Active = true}
-                }}
+                }
+                }
             });
-            
+
             dataContext.SaveChanges();
-            
-            var mapperConfig = new MapperConfiguration(options => { options.CreateMap<ApplicationSection, Section>(); });
+
+            var mapperConfig = new MapperConfiguration(options => { options.CreateMap<ApplicationSection, Section>(); }, NullLoggerFactory.Instance);
             var notRequiredProcessor = new NotRequiredProcessor();
 
-            var handler = new GetSectionHandler(dataContext, mapperConfig.CreateMapper(),notRequiredProcessor);
+            var handler = new GetSectionHandler(dataContext, mapperConfig.CreateMapper(), notRequiredProcessor);
 
             var section = await handler.Handle(new GetSectionRequest(applicationId, sectionId), CancellationToken.None);
 

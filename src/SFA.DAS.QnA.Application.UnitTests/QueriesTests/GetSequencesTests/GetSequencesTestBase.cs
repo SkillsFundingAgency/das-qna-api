@@ -2,6 +2,7 @@ using System;
 using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging.Abstractions;
 using NUnit.Framework;
 using SFA.DAS.QnA.Application.Queries.Sequences.GetSequences;
 using SFA.DAS.QnA.Data;
@@ -14,7 +15,7 @@ namespace SFA.DAS.QnA.Application.UnitTests.QueriesTests.GetSequencesTests
     {
         protected GetSequencesHandler Handler;
         protected Guid ApplicationId;
-        
+
         [SetUp]
         public async Task SetUp()
         {
@@ -26,8 +27,8 @@ namespace SFA.DAS.QnA.Application.UnitTests.QueriesTests.GetSequencesTests
 
             ApplicationId = Guid.NewGuid();
 
-            context.Applications.Add(new Data.Entities.Application {Id = ApplicationId});
-            
+            context.Applications.Add(new Data.Entities.Application { Id = ApplicationId });
+
             context.ApplicationSequences.AddRange(new[]
             {
                 new ApplicationSequence {ApplicationId = ApplicationId, IsActive = false, SequenceNo = 1},
@@ -36,9 +37,9 @@ namespace SFA.DAS.QnA.Application.UnitTests.QueriesTests.GetSequencesTests
             });
 
             await context.SaveChangesAsync();
-            
-            var mapper = new Mapper(new MapperConfiguration(config => { config.AddMaps(AppDomain.CurrentDomain.GetAssemblies()); }));
-            
+
+            var mapper = new Mapper(new MapperConfiguration(config => { config.AddMaps(AppDomain.CurrentDomain.GetAssemblies()); }, NullLoggerFactory.Instance));
+
             Handler = new GetSequencesHandler(context, mapper);
         }
     }
